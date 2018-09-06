@@ -1,0 +1,24 @@
+\documentclass{book}
+
+% PACKAGES
+
+\usepackage{shuaiweibook}
+\usepackage{listings}
+
+\title{Commutative Algebra}
+\pagestyle{headings}
+
+\begin{document}	
+    \maketitle
+\addtocontents{toc}{\protect\hypertarget{toc}{}}
+\tableofcontents 
+\pagenumbering{Roman} 
+\newpage
+\clearpage
+\setcounter{page}{1}
+\pagenumbering{arabic} 
+
+\include{chapters/introduction}
+\include{chapters/ringsAndIdeals}
+
+\end{document}

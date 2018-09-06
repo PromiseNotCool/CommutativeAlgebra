@@ -1,0 +1,485 @@
+\chapter{Rings and Ideals}
+
+\begin{remark}[Fact]
+    $R = 0$ iff $1_R = 0_R$.
+\end{remark}
+
+\begin{remark}[Fact]
+    \begin{enumerate}[(1)]
+        \item $1_R$ and $0_R$ are both unique.
+        \item For any $r \in R$, $-r$ is unique.
+        \item If $r \in R^\times$, then $r^{-1}$ is also unique.
+    \end{enumerate}
+\end{remark}
+
+\begin{definition}
+    A \emph{subring} of $R$ is a subset $S \subseteq R$ such that $S$ is a CRW1 under the operations for $R$ and $1_S = 1_R$, i.e., $1_R \in S$.
+\end{definition}
+
+\begin{remark}[Subring test]
+    Need $\emptyset \neq S \subseteq R$, and $S$ is closed under $+,\cdot,-$ and $1_R \in S$.
+\end{remark}
+
+\begin{example}
+    $R = \bbF_3 \times \bbF_3 \supseteq \{(a,a) \mid a \in \bbF_3\} =: S$. Then $S$ is a subring of $R$. Although $S_1 = \{(a,0) \mid a \in \bbF_3\}$ and $S_2 = \{(0,a) \mid a \in \bbF_3\}$ are rings but not subrings of $R$ since $1_R = (1,1) \not \in S_1$ and $1_R = (1,1) \not \in S_2$. 
+\end{example}
+
+\begin{remark}[Fact]
+    If $S \subseteq R$, the inclusion map $\varepsilon: S \to R$ given by $\varepsilon(s) = s$ is a ring homomorphism.
+\end{remark}
+
+\begin{definition}
+    An \emph{ideal} of $R$ is a non-empty set $\ffa \subseteq R$ which is a subgroup under addition such that for any $r \in R$ and any $a \in \ffa$, we have $ra \in \ffa$. 
+    \begin{enumerate}[(1)]
+        \item 
+            An ideal $\ffa \leq R$ is \emph{prime} if $\ffa \neq R$ and for any $a,b \in R$, if $a,b \not \in \ffa$, then $ab \not \in \ffa$, i.e., if $ab \in \ffa$, then $a \in \ffa$ or $b \in \ffa$. 
+        \item 
+            An ideal $\ffa \leq R$ is \emph{maximal} if $\ffa \neq R$ and for any ideal $\ffb \leq R$, if $\ffa \subseteq \ffb \subseteq R$, then either $\ffa = \ffb$ or $\ffb = R$.
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}[ideal test?]
+    A subset $\ffa \subseteq R$ is an ideal iff $\ffa \neq \emptyset$, $\ffa$ is closed under $+$ and $\cdot$, since if $\ffa \neq \emptyset$ and $\ffa$ is closed under $\cdot$, then for any $a \in \ffa$, $-a = (-1_R)a \in \ffa$ and since $\ffa$ is also closed under $+$, it is automatically closed under $-$.
+\end{remark}
+
+\begin{example}
+    In $R = \bbZ$, ideals are $n\bbZ = \{nm \mid m \in \bbZ\}$, where $n \in \bbZ$.
+    \begin{enumerate}[(1)]
+        \item $n\bbZ$ is prime iff $n = 0$ or $\abs n$ is prime.
+        \item $n\bbZ$ is maximal iff $\abs n$ is prime.
+    \end{enumerate}
+\end{example}
+
+\begin{example}
+    \begin{enumerate}[(1)]
+        \item 
+            If $I_\lambda \leq R$ for any $\lambda \in \Lambda$, then $\bigcap_{\lambda \in \Lambda} I_\lambda \leq R$.
+        \item 
+            If $r_1,\cdots,r_m \in R$, then $\langle r_1,\cdots,r_m \rangle = \langle r_1,\cdots,r_m \rangle R = (r_1,\cdots,r_m) = (r_1,\cdots,r_m)R = \bigcap_{r_1,\cdots,r_m \in I \leq R} I = \{\sum_{i=1}^m a_ir_i \mid a_i \in R,\fa i = 1,\cdots,n\} \leq R$. In particular, for any $r \in R$, $\langle r \rangle = \langle r \rangle R = (r) = (r)R = rR = Rr = \{ar \mid a \in R\} = \bigcap_{r \in I \leq R}I$.
+        \item If $A \subseteq R$, then $\langle A \rangle = \bigcap_{A \subseteq I \leq R}I = \{\sum_{a \in A}^{\text{finite}} r_a a \mid r_a \in R\}$.
+    \end{enumerate}
+\end{example}
+
+\begin{remark}[Fact]
+    For any $r_1,\cdots,r_m \in R$, $\langle r_1,\cdots,r_m \rangle$ is the smallest ideal of $R$ containing $r_1,\cdots,r_m$, i.e., for any $\ffa \leq R$, we have $r_1,\cdots,r_m \in \ffa$ iff $\langle r_1,\cdots,r_m \rangle \subseteq \ffa$. Similarly, $A \subseteq \ffa$ iff $\langle A \rangle \subseteq \ffa$. 
+\end{remark}
+
+\begin{example}
+    If $A \leq R$, then $A = \langle A \rangle$.
+\end{example}
+
+\begin{remark}[Construction]
+    Let $\ffa \leq R$. For any $r \in R$: $r+\ffa = \{r + a \mid a \in \ffa\} = \overline r$. $R/\ffa = \{r + \ffa \mid r \in R\}$. Then $R/\ffa$ is a CRW1. $\overline r \pm \overline s = \overline {r \pm s}$, $\bar r \bar s = \overline{rs}$, $0_{R/\ffa} = \overline {0_R}$ and $1_{R/\ffa} = \overline {1_R}$. Let $\pi: R \to R/\ffa$ given by $\pi(r) = \overline r$. Then $\pi$ is a well-defined ring homomorphism. Consider
+    \begin{center}
+        \begin{tikzcd}
+            R \arrow[r,"\phi"] \arrow[d,"\pi"] & S \\
+            R/\ffa \arrow[ru,dashed,"\ex !\ \overline \phi"']
+        \end{tikzcd}
+    \end{center}
+    For any $\phi: R \to S$ ring homomorphism, if $\phi(\ffa) = 0$, then there exists a unique ring homomorphism $\overline \phi: R/\ffa \to S$ making the diagram commute, where $\overline \phi(\overline r) = \overline \phi (\pi(r)) = \phi(r)$. \\
+    Note $\phi(\ffa) = 0$ iff $\ffa \subseteq \ker(\phi)$ and if $\ffa = \langle A \rangle$, then $\ffa \subseteq \ker(\phi)$ iff $A \subseteq \ker(\phi)$.
+\end{remark}
+
+\begin{remark}[Fact]
+    Let $\ffa \leq R$. 
+    \begin{enumerate}[(1)]
+        \item $\ffa$ is prime iff $R/\ffa$ is an integral domain.
+        \item $\ffa$ is maximal iff $R/\ffa$ is a field.
+        \item If $\ffa$ is maximal, then $\ffa$ is prime.
+    \end{enumerate}
+\end{remark}
+
+\begin{theorem}[ideal correspondence for quotients]
+    Let $\ffa \leq R$ and $\pi: R \to R/\ffa$ be the canonical epimorphism. Then 
+    \begin{align*}
+        \{\text{ideals }I \leq R/\ffa\} &\rightleftarrows \{\text{ideals }J \leq R \mid \ffa \subseteq J\} \\
+        I &\mapsto \pi^{-1}(I) \\
+        J/\ffa &\mapsfrom J
+    \end{align*}
+    \[ \{\text{primes ideals of } R/\ffa\} \rightleftarrows \{\text{prime ideals }\ffp \leq R \mid \ffa \subseteq \ffp\} \]
+    \[ \{\text{maximal ideals of } R/\ffa\} \rightleftarrows \{\text{maximal ideals }\ffm \leq R \mid \ffa \subseteq \ffm\} \]
+    Note maximal ideals are a subset of prime ideals and prime ideals are a subset of ideals.
+\end{theorem}
+
+\begin{remark}
+    The proof of $\frac{R/\ffa}{J/\ffa} \cong \frac{R}{J}$.
+    \begin{center}
+        \begin{tikzcd}
+            R \arrow[d,two heads,"\pi"] \arrow[r,two heads,"p"] & R/\ffa \arrow[r,two heads,"\tau"] & \frac{R/\ffa}{J/\ffa} \\
+            R/J \arrow[rru,dashed,hook,two heads,"\ex !\ \overline \phi"']
+        \end{tikzcd}
+    \end{center}
+    Clearly $J \subseteq \ker(\tau \circ p)$ and we can use the UMP. Actually, $J = \ker(\tau \circ p)$. Also, since $\ker(\overline \phi) = 0+J$, $\overline \phi$ is 1-1. Since $\tau \circ p$ is onto and the diagram commutes, $\overline \phi$ is onto. \\
+    Note $\overline \phi(\overline r) = \overline {\overline r}$, i.e., $\overline \phi(r + J) = (r+\ffa) + J/\ffa$.
+\end{remark}
+
+\begin{definition}
+    Let $\operatorname{Spec}(R) = \{\text{primes ideals of $R$}\}$, which is called the \emph{prime spectrum of} $R$. \\
+    Let $\operatorname{V}(\ffa) = \{\ffp \in \operatorname{Spec}(R) \mid \ffp \supseteq \ffa\}$.
+\end{definition}
+
+\begin{remark}[Fact]
+    Let $\varphi: R \to S$ be a ring homomorphism. Then $\ker(\varphi) \leq R$, $\im(\varphi) \subseteq S$ is a subring and $\im(\varphi) \cong R/\ker(\varphi)$. \\
+    If $S$ is an integral domain, then so is $\im(\varphi)$. Hence $\ker(\varphi)$ is prime. More generally, for any $\ffq \leq S$, we have $\varphi^{-1}(\ffq) = \{x \in R \mid \varphi(x) \in \ffq\} \leq R$. \\
+    Let now $\ffq \in \operatorname{Spec}(S)$. Then $S/q$ is an integral domain. Since $R/\ker(\pi \circ \varphi) \cong S/\ffq$, $\ker(\pi \circ \varphi)$ is prime. Note $\varphi^{-1}(\ffq) = \ker(\pi \circ \varphi)$, we have $\varphi^{-1}(\ffq)$ is prime, i.e., $\varphi^{-1}(\ffq) \in \operatorname{Spec}(R)$. Thus, $\varphi$ induces a well-defined map $\varphi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$.
+    \begin{center}
+        \begin{tikzcd}
+            R \arrow[d,two heads,"p"] \arrow[r,"\varphi"] & S \arrow[r,two heads,"\pi"] & S/\ffq \\
+            \frac{R}{\varphi^{-1}(\ffq)} \arrow[rru,dashed,hook,"\ex !\ \overline \phi:= \overline {\pi \circ \varphi}"']
+        \end{tikzcd}
+    \end{center}
+\end{remark}
+
+\begin{remark}[Fact]
+    \begin{enumerate}[(1)]
+        \item 
+            If $R \neq 0$, then $R$ has a maximal ideal $\ffm$. So $R$ has a prime ideal. Moreover, for any $\ffa \lneq R$, there exists a maximal ideal $\ffm \supseteq \ffa$, in particular, $V(\ffa) \neq \emptyset$. 
+        \item 
+            Let $\ffa \lneq R$. Then $0 \neq R/\ffa$ is a CRW1. So $R/\ffa$ has a maximal ideal, the ideal corresponds for quoitients and it is of the form $\ffm/\ffa$, where $\ffm$ is the maximal ideal of $R$ containing $\ffa$.
+    \end{enumerate}
+\end{remark}
+
+\begin{definition}
+    $R$ is \emph{local} if it has a unique maximal ideal $\ffm$, which is also known as (A.K.A) \emph{quasi-local}. The \emph{residue field} of $R$ is $R/\ffm$. 
+\end{definition}
+
+\begin{remark}[Shorthand]
+    Assume $(R,\ffm,k)$ is local, where $\ffm$ is the unique maximal ideal of $R$ and $k = R/\ffm$. Or assume $(R,\ffm)$ is local.
+\end{remark}
+
+\begin{remark}[Fact]
+    If $(R,\ffm)$ is local and $\ffa \lneq R$, then $(R/\ffa,\ffm/\ffa)$ is also local and $\frac{R/\ffa}{\ffm/\ffa} \cong R/\ffm$ canonical isomorphic residue fields. Converse fails in general by h19. 
+\end{remark}
+
+\begin{example}
+    \begin{enumerate}[(1)]
+        \item Any field is local with the maximal ideal $\{0\}$.
+        \item Let $p$ be prime in $\bbZ$. Since $\bbZ$ is a PID, $\bbZ/\langle p^n \rangle$ has a maximal ideal $\ffm = \langle p \rangle/\langle p^n \rangle$, where $\langle p \rangle$ is a maxiaml ideal of $R$ containing $\langle p^n \rangle$. Assume there is $\ffm_1 \leq R$ maximal such that $\ffm_1 \supseteq \langle p^n \rangle$. Then $\ffm_1$ is prime, so $p \in \ffm_1$ and hence $\langle p \rangle \subseteq \ffm_1$. Since $\langle p \rangle$ is maximal, $\langle p \rangle = \langle \ffm_1 \rangle$. Thus, $\langle p \rangle$ is the unique maximal ideal containing $\langle p^n \rangle$ and so $\bbZ/\langle p^n \rangle$ is local. Similarly, $\operatorname{Spec}(\bbZ/\langle p^n \rangle) = \left\{\langle p \rangle/\langle p^n \rangle\right\}$. 
+        \item Let $R = k[X]/\langle X^n \rangle$ is local with the maximal ideal $\langle X \rangle / \langle X^n \rangle$ and $\operatorname{Spec}(R) = \{k[X]/\langle X^n \rangle\}$.
+        \item Let $R = \frac{k[X_1,\cdots,X_d]}{\langle X_1^{a_1} \cdots X_d^{a_d}\rangle}$, where $a_i \geq 1$ for any $i = 1,\cdots,d$. Then $\operatorname{Spec}(R) = \left\{\frac{\langle X_1,\cdots,X_d\rangle}{\langle X_1^{a_1} \cdots X_d^{a_d}\rangle}\right\}$.
+    \end{enumerate}
+\end{example}
+
+\begin{remark}[Notation]
+    Let $R^\times = R^* = \{\text{units of }R\}$.
+\end{remark}
+
+\begin{proposition}
+    TFAE.
+    \begin{enumerate}[(1)]
+        \item $R$ is local.
+        \item $R \setminus R^\times \lneq R$.
+        \item There exists $\ffa \lneq R$ such that $R \setminus \ffa \subseteq R^\times$.
+    \end{enumerate}
+    When these are satisfied, $\ffm = R \setminus R^\times = \ffa$.
+\end{proposition}
+
+\begin{proof}
+    ``(i)$\Rightarrow$(ii)''. Claim $\ffm = R \setminus R^\times$. It suffices to show $R \setminus \ffm = R^\times$. ``$\supseteq$''. Let $u \in R^\times$. Then $u \not \in \ffm$ and so $R^\times \subseteq R \setminus \ffm$. ``$\subseteq$''. Let $x \in R \setminus R^\times$. Since $1 \in R^\times$, $\langle x \rangle \lneq R$. Since $\ffm$ is the unique maximal ideal in $R$, $\langle x \rangle \subseteq \ffm$, i.e., $x \in \ffm$. Thus, $R \setminus R^\times$, i.e., $R \setminus \ffm \subseteq R^\times$. \\
+    ``(ii)$\Rightarrow$(iii)''. Assume $R \setminus R^\times \lneq R$. Set $\ffa = R \setminus R^\times$. Then $R \setminus \ffa = R^\times$. \\
+    ``(iii)$\Rightarrow$(i)''. Claim $\ffa = R \setminus R^\times$. ``$\supseteq$''. Let $\ffa \lneq R$ such that $R \setminus \ffa \subseteq R^\times$. Then $\ffa \supseteq R \setminus R^\times$. ``$\subseteq$''. Let $a \in \ffa$. Since $\ffa \lneq R$, $a \not \in R^\times$. So $a \in R \setminus R^\times$. Then $\ffa \subseteq R \setminus R^\times$. Let $\ffn \lneq R$ be maximal and $y \in \ffn$. Then $y \not \in R^\times$. So $y \in R \setminus R^\times = \ffa$. Thus, $\ffn \subseteq \ffa \lneq R$. Since $\ffn$ is maximal, $\ffn = \ffa$. 
+\end{proof}
+
+\begin{proposition}
+    Let $\ffm \lneq R$ be maximal such that $1 + \ffm \subseteq R^\times$. Then $R$ is local.
+\end{proposition}
+
+\begin{proof}
+    By previous proposition, it suffices to show $R \setminus \ffm \subseteq R^\times$. Let $x \in R \setminus \ffm$. Set $\langle x, \ffm \rangle = \langle \{x\} \cup \ffm \rangle = \{ax+m \mid a \in R, m \in \ffm\}$. Then $\ffm \subsetneq \langle x, \ffm \rangle \leq R$. Since $\ffm$ is maximal, $\langle x,\ffm \rangle = R$. So $1 = ax + m$ for some $a \in R$ and $m \in \ffm$, i.e., $ax = 1-m \in 1 + \ffm \subseteq R^\times$. Thus, $a,x \in R^\times$.
+\end{proof}
+
+\begin{definition}
+    $x \in R$ is \emph{nilpotent} if there exists $n \in \bbN$ such that $x^n = 0$. Then \emph{nilradical} of $R$ is $\operatorname{Nil}(R) = \operatorname{N}(R) = \{\text{nilpotent elements of }R\}$.
+\end{definition}
+
+\begin{example}
+    In $\bbZ/\langle p^n \rangle$, $\overline p$ is nilpotent. Similarly, in $k[x]/\langle x^n \rangle$ and $k[x_1,\cdots,x_n]/\langle x_1^{a_1},\cdots,x_d^{a_d}\rangle$.
+\end{example}
+
+\begin{proposition}
+    \begin{enumerate}[(1)]
+        \item $\operatorname{Nil}(R) \leq R$.
+        \item $\operatorname{Nil}(R/\operatorname{Nil}(R)) = 0$.
+        \item $\operatorname{Nil}(R) = R$ iff $R = 0$.
+        \item $\operatorname{Nil}(R) = \bigcap_{\ffp \in \operatorname{Spec}(R)}\ffp$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}[(1)]
+        \item Let $r \in R$ and $a,b \in \operatorname{Nil}(R)$. Then there exists $m,n \in \bbN$ such that $a^m = 0 = b^n$. Then $(ra)^m = r^ma^m = 0$ and so $ra \in \operatorname{Nil}(R)$. Since $(a+b)^{m+n} = \sum_{i=0}^{m+n} \binom {m+n} i a^i b^{m+n-i} = 0$, we have $a+b \in \operatorname{Nil}(R)$.
+        \item Let $\overline x \in \operatorname{Nil}(R/\operatorname{Nil}(R))$. Then there exists $n \in \bbN$ such that $\overline x^n = 0$, i.e., $x^n \in \operatorname{Nil}(R)$. So there exists $m \in \bbN$ such that $(x^n)^m = 0$, i.e., $x^{mn} = 0$. So $x \in \operatorname{Nil}(R)$. Thus, $\overline x = 0$.
+        \item Since $1 \in \operatorname{Nil}(R)$,, there exists $n \in \bbN$ such that $1 = 1^n = 0$. So $R = 0$.
+        \item ``$\subseteq$''. Let $x \in \operatorname{Nil}(R)$. Then $x^n = 0 \in \ffp$ for any $\ffp \in \operatorname{Spec}(R)$. So $x \in \ffp$ for any $p \in \operatorname{Spec}(R)$. Thus, $x \in \bigcap_{\ffp \in \operatorname{Spec}(R)} \ffp$. \\
+            ``$\supseteq$''. Let $x \in R \setminus \operatorname{Nil}(R)$. It suffices to show $x \not \in \bigcap_{\ffp \in \operatorname{Spec}(R)}$. It is enough to show there exists $\ffp \in \operatorname{Spec}(R)$ such that $x \not \in \ffp$. Let $\Sigma = \{\ffa \leq R \mid x,x^2,x^3 \cdots \not \in \ffa\}$. Since $x \neq 0$, $(0) \in \Sigma$ and then $\Sigma \neq \emptyset$. Let $\mathscr C \subseteq \Sigma$ be chain. Then $\ffq := \bigcup_{\ffa \in \mathscr C} \ffa \leq R$. Suppose $x^n \in \ffq$ for some $n \in \bbN$. Then $x^n \in \ffa$ for some $\ffa \in \mathscr C \subseteq \Sigma$, a contradiction. So $x^n \not \in \ffq$ for any $n \in \bbN$ and hence $\ffq \in \Sigma$. Then $\ffq$ is an upper bound for $\mathscr C$ in $\Sigma$. So by Zorn's lemma, $\Sigma$ has a maximal element $I$. Claim $I$ is prime. Suppose $I = R$. Then $x^n \in R = I$, a contradiction. So $I \lneq R$. Let $r,s \in R \setminus I$. Then $I \lneq \langle r,I \rangle \leq R$ and $I \lneq \langle s,I \rangle \leq R$. By the maximality of $I$ in $\Sigma$, we have $\langle r,I \rangle, \langle s,I \rangle \not \in \Sigma$. So there exists $m,n \in \bbN$ such that $x^m \in \langle r,I \rangle$ and $x^n \in \langle s,I \rangle$. Then $x^m = ar+i$ for some $a \in R$ and $i \in I$, and $x^n = bs + j$ for some $b \in R$ and $j \in I$. So $x^{m+n} = x^m x^n = (ar+i)(bs+j) = abrs + (arj+bsi+ij) \in \langle rs,I \rangle$. Hence $\langle rs, I \rangle \not\in \Sigma$ and so $rs \not \in I$. Thus, $I \in \operatorname{Spec}(R)$ such that $x \not \in I$.
+    \end{enumerate}
+\end{proof}
+
+\begin{example}
+    Let $R = \frac{k[X_1,\cdots,X_d]}{(X_1^{a_1},\cdots,X_d^{a_d})} \neq 0$. Then $\operatorname{Nil}(R) = \frac{\langle X_1,\cdots,X_d \rangle}{\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle}$.
+\end{example}
+
+\begin{proof}
+    M1: This is the intersection of the unique prime ideal of $R$. \\
+    M2: Since $\overline X_i \in \operatorname{Nil}(R)$ for each $i = 1,\cdots,d$, we have $\overline {\langle X_1,\cdots,X_d \rangle} = \langle \overline X_1,\cdots,\overline X_d \rangle \subseteq \operatorname{Nil}(R) \subsetneq R$. Since $\overline {\langle X_1,\cdots,X_d \rangle}$ is maximal, we have $\operatorname{Nil}(R) = \overline {\langle X_1,\cdots,X_d \rangle}$.
+\end{proof}
+
+\begin{remark}[Fact]
+    If $\ffa \leq R$ and $r_1,\cdots,r_n \in R$, then $R/\ffa \supseteq \langle \overline r_1,\cdots,\overline r_n \rangle = \frac{\langle r_1,\cdots,r_n, \ffa \rangle}{\ffa}$. In particular, if $\langle r_1,\cdots,r_n \rangle \supseteq \ffa$, then $\langle \overline r_1, \cdots, \overline r_n \rangle = \frac{\langle r_1,\cdots,r_n \rangle}{\ffa}$.
+\end{remark}
+
+\begin{definition}
+    The Jacobson radical of $R$ is $\operatorname{Jac}(J) = \mathcal R(R) = \llJ(R) = \bigcap_{\ffm \leq R \text{ max'l}}\ffm$.
+\end{definition}
+
+\begin{remark}
+    $\operatorname{Jac}(R) \supseteq \operatorname{Nil}(R) = \bigcap_{\ffp \in \operatorname{Spec}(R)}\ffp$.
+\end{remark}
+
+\begin{proposition}
+    $\llJ(R) = \{x \in R \mid 1-xy \in R^\times, \fa y \in Y\}$.
+\end{proposition}
+
+\begin{proof}
+    ``$\subseteq$''. Let $x \in \llJ(R)$. By way of contradiction (BWOC), suppose there exists $y \in R$ such that $1-xy \not \in R^\times$. Then there exists $\ffm \leq R$ maximal such that $1-xy \in \ffm$. Since $x \in \llJ(R) \subseteq \ffm$, $xy \in \ffm$. So $1 = (1-xy) + xy \in \ffm$, a contradiction. \\
+    ``$\supseteq$''. Argue by contrapositive. Let $x \in R$ such that $1-xy \in R^\times$ for any $y \in Y$. Suppose $x \not \in \llJ(R)$. Then there exists $\ffm \leq R$ maximal such that $x \not \in \ffm$. So $\ffm \lneq \langle \ffm, x \rangle \leq R$. Hence $\langle x,\ffm \rangle = R$. Then there exists $y \in R$ and $m \in \ffm$ such that $1 = xy+m$. Then $1-xy = m \in \ffm$. So $1-xy \not \in R^\times$, a contradiction.
+\end{proof}
+
+\section{Operations on Ideals}
+
+Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \leq R$ for any $\lambda \in \Lambda$, where $\Lambda$ is an index set.
+
+\begin{definition}
+    $\ffa + \ffb = \langle \ffa \cup \ffb \rangle = \bigcap_{\ffa \cup \ffb \subseteq I \leq R}$.
+\end{definition}
+
+\begin{remark}[Fact]
+    \begin{enumerate}[(1)]
+        \item $\ffa + \ffb \subseteq \ffc$ iff $\ffa \cup \ffb \subseteq \ffc$.
+        \item $\ffa + \ffb$ is the (unique) smallest ideal of $R$ that contains $\ffa \cup \ffb$.
+    \end{enumerate}
+\end{remark}
+
+\begin{proposition}
+    \begin{enumerate}[(1)]
+        \item $\ffa + \ffb = \{a + b \mid a \in \ffa, b \in \ffb\}$.
+        \item If $\ffa = \langle S \rangle$ and $\ffb = \langle T \rangle$, then $\ffa + \ffb = \langle S \cup T \rangle$.
+        \item If $\ffa = \langle x_1,\cdots,x_m \rangle$ and $\ffb = \langle y_1,\cdots,y_n \rangle$, then $\ffa + \ffb = \langle x_1,\cdots,x_m, y_1,\cdots,y_n \rangle$.
+        \item If $x \in R$, then $\langle x,\ffa \rangle = \langle x \rangle + \ffa$.
+        \item If $\ffa + (\ffb + \ffc) = (\ffa + \ffb) + \ffc$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}[(1)]
+        \item 
+            Set $I = \{a+b \mid a \in \ffa,b \in \ffb\} \leq R$. For any $a \in \ffa$, $a = a + 0 \in I$ and for any $b \in \ffb$, $b = 0 + b \in I$. So $\ffa \cup \ffb \subseteq I$. By (1), $\ffa + \ffb \subseteq I$. On the other hand (OTOH), for any $a+b \in I$, $a,b \in \ffa \cup \ffb \subseteq \ffa + \ffb \leq R$. So $a + b \in \ffa + \ffb$.
+        \item Let $I \leq R$. $I \supseteq \ffa \cup \ffb$ iff $I \supseteq \ffa,\ffb$ iff $I \supseteq \langle S \rangle, \langle T \rangle$ iff $I \supseteq S,T$ iff $I \supseteq S \cup T$. So $\ffa + \ffb = \bigcap_{\ffa \cup \ffb \subseteq I \leq R} I = \bigcap_{S \cup T \subseteq I \leq R} I = \langle S \cup T \rangle$.
+        \item By (2).
+        \item By (1).
+        \item The essential point is $\ffa + (\ffb + \ffc) = \langle \ffa \cup (\ffb \cup \ffc) \rangle = \langle (\ffa \cup \ffb) \cup \ffc \rangle = (\ffa + \ffb) + \ffc$.
+    \end{enumerate}
+\end{proof}
+
+\begin{example}
+    $m\bbZ + n\bbZ = \langle m,n \rangle\bbZ = \operatorname{gcd}(m,n)\bbZ$, where $m \neq 0$ or $n \neq 0$.
+\end{example}
+
+\begin{remark}[Recall]
+    $\operatorname{Spec}(R) = \{\text{prime ideals of $R$}\}$. For any $S \subseteq R$, $\operatorname{V}(S) = \{\ffp \in \operatorname{Spec}(R) \mid \ffp \supseteq S\}$.
+\end{remark}
+
+\begin{proposition}
+    \begin{enumerate}[(1)]
+        \item $\operatorname{V}(S) = \operatorname{V}(\langle S \rangle)$ for any $S \subseteq R$.
+        \item $\ffa = R$ iff $\operatorname{V}(\ffa) = \emptyset$.
+        \item $\ffa \subseteq \operatorname{Nil}(R)$ iff $\operatorname{V}(\ffa) = \operatorname{Spec}(R)$.
+        \item If $\ffa \subseteq \ffb$, then $\operatorname{V}(\ffa) \supseteq \operatorname{V}(\ffb)$. 
+        \item If $S \subseteq T \subseteq R$, then $\operatorname{V}(S) \supseteq \operatorname{V}(T)$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}[(a)]
+        \item 
+            ``$\supseteq$''. Since $S \subseteq \langle S \rangle$, $\operatorname{V}(S) \supseteq \operatorname{V}(\langle S \rangle)$ by definition. \\
+            ``$\subseteq$''. Let $\ffp \in \operatorname{V}(S)$. Then $\ffp \supseteq S$. So $\ffp \supseteq \langle S \rangle$ and then $\ffp \in \operatorname{V}(\langle S \rangle)$. Hence $\operatorname{V}(S) \subseteq \operatorname{V}(\langle S \rangle)$.
+        \item 
+            ``$\Rightarrow$''. Let $\ffa = R$. Then $\ffp \not \supseteq \ffa$ for any $\ffp \in \operatorname{Spec}(R)$. So $\operatorname{V}(\ffa) = \emptyset$. \\
+            ``$\Leftarrow$''. Let $\operatorname{V}(\ffa) = \emptyset$. Suppose $\ffa \neq R$, then there exists $\ffm \leq R$ maximal such that $\ffm \supseteq \ffa$. Since $\ffm \in \operatorname{Spec}(R)$, $\ffm \in \operatorname{V}(\ffa)$, a contradiction.
+        \item $\ffa \subseteq \operatorname{Nil}(R)$ iff $\ffp \supseteq \ffa$ for any $\ffp \in \operatorname{Spec}(R)$ iff $\operatorname{V}(R) = \operatorname{Spec}(R)$.
+        \item Similar to (1).
+        \item By (1) and (4).
+    \end{enumerate}
+\end{proof}
+
+\begin{proposition}
+    \begin{enumerate}[(a)]
+        \item $\operatorname{V}(\ffa + \ffb) = \operatorname{V}(\ffa \cup \ffb) = \operatorname{V}(\ffa) \cap \operatorname{V}(\ffb)$.
+        \item $\operatorname{V}(\ffa) \cap \operatorname{V}(\ffb) = \emptyset$ iff $\ffa + \ffb = R$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}[(a)]
+        \item 
+            Since $\ffa + \ffb = \langle \ffa \cup \ffb \rangle$, $\operatorname{V}(\ffa + \ffb) = \operatorname{V}(\ffa \cup \ffb)$. Let $\ffp \in \operatorname{Spec}(R)$. Note $\ffp \supseteq \ffa \cup \ffb$ iff $\ffp \supseteq \ffa$ and $\ffp \supseteq \ffb$. So $\operatorname{V}(\ffa \cup \ffb) = \operatorname{V}(\ffa) \cap \operatorname{V}(\ffb)$.
+        \item 
+            $\operatorname{V}(\ffa) \cap \operatorname{V}(\ffb) = \emptyset$ iff $\operatorname{V}(\ffa + \ffb) = \emptyset$ iff $\ffa + \ffb = R$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    You can define $\ffa_1 + \cdots + \ffa_n$ inductively and same properties as above hold for finite sums.
+\end{remark}
+
+\begin{remark}[Fact]
+    \begin{enumerate}[(a)]
+        \item $\sum_{\lambda \in \Lambda} \ffa_\lambda \subseteq \ffc$ iff $\bigcup_{\lambda \in \Lambda} \ffa_\lambda \subseteq \ffc$.
+        \item $\sum_{\lambda \in \Lambda} \ffa_\lambda$ is the (unique) smallest ideal of $R$ containing $\bigcup_{\lambda \in \Lambda} \ffa_\lambda$.
+        \item $\sum_{\lambda \in \Lambda} \ffa_\lambda = \left\{\sum_{\lambda \in \Lambda}^{\text{finite}}a_\lambda \mathrel{\Big |} a_\lambda \in \ffa_\lambda, \fa \lambda \in \Lambda\right\}$
+        \item If $\ffa_\lambda = \langle S_\lambda \rangle$ for any $\lambda \in \Lambda$, then $\sum_{\lambda \in \Lambda} \ffa_\lambda = \langle \bigcup_{\lambda \in \Lambda}S_\lambda \rangle$.
+    \end{enumerate}
+\end{remark}
+
+\begin{remark}[Fact]
+    \begin{enumerate}[(a)]
+        \item $\operatorname{V}(\sum_{\lambda \in \Lambda} \ffa_\lambda) = \operatorname{V}(\bigcup_{\lambda \in \Lambda} \ffa_\lambda) = \bigcap_{\lambda \in \Lambda} V(\ffa_\lambda)$.
+        \item $\bigcap_{\lambda \in \Lambda}V(\ffa_\lambda) = \emptyset$ iff $\sum_{\lambda \in \Lambda} \ffa_\lambda = R$.
+    \end{enumerate}
+\end{remark}
+
+\begin{definition}
+    $\ffa \ffb = \langle N \rangle = \bigcap_{N \subseteq I \leq R}R$, where $N = \{ab \mid a \in \ffa,b \in \ffb\}$. 
+\end{definition}
+
+\begin{remark}[Fact]
+    Let $\ffa \ffb = \langle N \rangle$.
+    \begin{enumerate}[(a)]
+        \item $\ffa \ffb \subseteq \ffc$ iff $N \subseteq \ffc$.
+        \item $\ffa \ffb$ is the (unique) smallest ideal of $R$ containing $N$.
+        \item $\ffa\ffb = \{\sum_{i}^{\text{finite}}a_ib_i \mid a_i \in \ffa,b_i \in \ffb,\fa i\}$.
+        \item If $\ffa = \langle S \rangle$ and $\ffb = \langle T \rangle$, then $\ffa\ffb = \langle st \mid s \in S, t \in T\rangle$.
+        \item If $\ffa = \langle x_1,\cdots,x_m \rangle$ and $\ffb = \langle y_1,\cdots,y_n \rangle$, then $\ffa\ffb = \langle x_iy_j \mid i = 1,\cdots,m,j = 1,\cdots,n \rangle$.
+        \item $\ffa \ffb \subseteq \ffa \cap \ffb$.
+    \end{enumerate}
+\end{remark}
+
+\begin{proof}
+    \begin{enumerate}
+        \item [(c)]
+            Let $I = \{\sum_{i}^{\text{finite}} a_ib_i \mid a_i \in \ffa,b_i \in \ffb\} \leq R$. Then, by definition, $\ffa \ffb = \langle N \rangle = I$.
+        \item [(f)]
+            To show $\ffa \ffb \subseteq \ffa \cap \ffb$, it suffices to show $ab \in \ffa \cap \ffb$ for any $a \in \ffa$ and $b \in \ffb$. Since $a \in \ffa$, $ab \in \ffa$. Since $b \in \ffb$, $ab \in \ffb$. So $ab \in \ffa \cap \ffb$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proposition}
+    \begin{enumerate}[(a)]
+        \item 
+            $\operatorname{V}(\ffa \ffb) = \operatorname{V}(\ffa \cap \ffb) = \operatorname{V}(\ffa) \cup \operatorname{V}(\ffb)$.
+        \item 
+            $\operatorname{V}(\ffa) \cup \operatorname{V}(\ffb) = \operatorname{Spec}(R)$ iff $\ffa \ffb \subseteq \operatorname{Nil}(R)$ iff $\ffa \cap \ffb \subseteq \operatorname{Nil}(R)$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}[(a)]
+        \item Let $\ffp \in \operatorname{Spec}(R)$. Then $\ffp \supseteq \ffa \ffb$ iff $\ffp \supseteq \ffa$ or $\ffp \supseteq \ffb$. So $\operatorname{V}(\ffa \ffb) = \operatorname{V}(\ffa) \cup \operatorname{V}(\ffb)$. \\
+            Since $\ffa \ffb \subseteq \ffa \cap \ffb$, $\operatorname{V}(\ffa \ffb) \supseteq \operatorname{V}(\ffa \cap \ffb)$. Let $\ffp \in \operatorname{V}(\ffa \ffb)$. Let $x \in \ffa \cap \ffb$. Then $x^2 = x \cdot x \in \ffa \ffb \subseteq \ffp$. Since $\ffp$ is prime, $x \in \ffp$. So $\ffp \subseteq \ffa \cap \ffb$ and then $\ffp \in \operatorname{V}(\ffa \cap \ffb)$. Hence $\operatorname{V}(\ffa \ffb) \subseteq \operatorname{V}(\ffa \cap \ffb)$.
+        \item $\operatorname{V}(\ffa) \cap \operatorname{V}(\ffb) = \operatorname{Spec}(R)$ iff $\operatorname{V}(\ffa \ffb) = \operatorname{Spec}(R)$ iff $\ffa\ffb \subseteq \operatorname{Nil}(R)$ and similarly for $\ffa \cap \ffb$.
+    \end{enumerate}
+\end{proof}
+
+\begin{definition}
+    If $\ffa + \ffb = R$, then $\ffa$ and $\ffb$ are called ``coprime'' or ``comaximal''.
+\end{definition}
+
+\begin{proposition}
+    \begin{enumerate}[(a)]
+        \item $\ffa \ffb = \ffb \ffa$ and $(\ffa \ffb)\ffc = \ffa(\ffb\ffc)$.
+        \item $\ffa(\ffb + \ffc) = \ffa \ffb + \ffa \ffc$.
+        \item If $\ffa + \ffb = R$, then $\ffa \ffb = \ffa \cap \ffb$.
+        \item If $R$ is PID and $\ffa \ffb = \ffa \cap \ffb$ with $\ffa \neq 0 \neq \ffb$, then $\ffa + \ffb = R$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}
+        \item [(c)]
+            We always have $\ffa \cap \ffb \supseteq \ffa \ffb$. \\
+            M1: Assume $\ffa + \ffb = R$. Then $1 = a+b$ for some $a \in \ffa$ and $b \in \ffb$. Let $x \in \ffa \cap \ffb$. Then $x = 1 \cdot x = (a+b)x = ax + bx \in \operatorname{\ffa \ffb}$. \\
+            M2: $\ffa \cap \ffb = R(\ffa \cap \ffb) = (\ffa + \ffb)(\ffa \cap \ffb) = \ffa(\ffa \cap \ffb) + \ffb(\ffa \cap \ffb) \subseteq \ffa \ffb$.
+        \item[(d)]
+            Let $R$ be a PID and $\ffa,\ffb \neq 0$. Write $\ffa = \ffp_1^{e_1} \cdots \ffp_n^{e_n} R$ and $\ffb = \ffp_1^{f_1} \cdots \ffp_n^{f_n}R$ with $e_i,f_i \geq 0$ for any $i = 1,\cdots,n$, and $\ffp_i\text{'s} \in \operatorname{Spec}(R)$ non-associates. Assume $\ffa \cap \ffb = \ffa \ffb$. Since $R$ is a PID, $\ffa \cap \ffb = \operatorname{lcm}(p_1^{e_1} \cdots p_n^{e_n},p_1^{f_1} \cdots p_n^{f_n})R = \ffp_1^{\max\{e_1,f_1\}} \cdots \ffp_n^{\max\{e_n,f_n\}}$ and $\ffa\ffb = \ffp_1^{e_1+f_1} \cdots \ffp_n^{e_n+f_n}$. So $e_i = 0$ or $f_i = 0$ for any $i = 1,\cdots,n$. In other words, for any $\ffp \in \operatorname{Spec}(R)$, either $\ffa \not \subseteq \ffp R$ or $\ffb \not \subseteq \ffp R$. So $\operatorname{V}(\ffa) \cap \operatorname{V}(\ffb) = \emptyset$ for any $\ffp \in \operatorname{Spec}(R)$. Thus, $\ffa + \ffb = R$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}
+    You can do this for $\ffa_1,\cdots,\ffa_n$. \\
+    If $R$ is not a UFD, (4) may fail. For example, $R = k[x,y]$. Let $\ffa = \langle x \rangle$ and $\ffb = \langle y \rangle$. Then $\ffa \cap \ffb = \langle xy \rangle = \ffa \ffb$. But $\ffa + \ffb = \langle x,y \rangle \subsetneq R$.
+\end{remark}
+
+\begin{definition}
+    Let $\ffa \leq R$ and $n \in \bbN$. Let $\ffa^n = \underbrace{\ffa \cdots \ffa}_{n\text{ times}}$ and $\ffa^0 = R$.
+\end{definition}
+
+\begin{remark}[Warning]
+    $\ffa^n$ is not generated by $\{a^n \mid a \in \ffa\}$. For example, let $R = \bbF_2[x,y]$ and $\ffa = \langle x,y \rangle$, then $\ffa^2 = \langle x^2,xy,y^2 \rangle \neq \langle f^2 \mid f \in \ffa \rangle \not \ni xy$.
+\end{remark}
+
+\begin{proposition}
+    \begin{enumerate}[(a)]
+        \item
+            Let $\ffa^n = \langle N \rangle$. Then for any $\ffb \leq R$, $\ffa^n \subseteq \ffb$ iff $N \subseteq \ffb$.
+        \item 
+            $\ffa^n$ is the (unique) smallest ideal of $R$ containing $N$.
+        \item $\ffa^n = \{\sum_{i}^{\text{finite}}a_{i1} \cdots a_{in} \mid a_{ij} \in \ffa_j\right,\fa j\}$.
+        \item If $\ffa = \langle S \rangle$, then $\ffa^n = \langle s_1 \cdots s_n \mid s_i \in S,\fa i = 1,\cdots,n\rangle$.
+        \item 
+            If $\ffa = \langle x_1,\cdots,x_m \rangle$, then $\ffa^n = \langle x_{i_1} \cdots x_{i_n} \mid i_j = 1,\cdots,m,\fa j = 1,\cdots,n \rangle$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{remark}[Fact]
+    $\operatorname{V}(\ffa^n) = \operatorname{V}(\ffa)$.
+\end{remark}
+
+\begin{proposition}
+    Let $\ffa_1,\cdots,\ffa_n \leq R$.
+    \begin{enumerate}[(a)]
+        \item The function $\phi: R \to (R/\ffa_1) \times \cdots \times (R/\ffa_n)$ given by $\phi(x) = (\overline x, \cdots, \overline x) = (x+\ffa_1,\cdots,x+\ffa_n)$ is a well-defined ring homomorphism.
+        \item If $\ffa_i + \ffa_j = R$ for any $1 \leq i \neq j \leq R$, then $\bigcap_{i=1}^n \ffa_i = \ffa_1 \cdots \ffa_n$ and $\ffa_i + (\bigcap_{j \neq i} \ffa_j)R = R$.
+        \item $\phi$ is surjective iff $\ffa_i + \ffb_j = R$ for any $1 \leq i \neq j \leq n$.
+        \item $\ker(\phi) = \ffa_1 \cap \cdots \cap \ffa_n$.
+        \item If $\ffa_i + \ffa_j = R$ for any $1 \leq i \neq j \leq R$ and $\bigcap_{i=1}^n \ffa_i = 0$, then $R \cong (R/\ffa_1)R \cap \cdots \times (R/\ffa_n)R$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}
+        \item [(2)]
+            To show $\ffa_i + (\bigcap_{j \neq i})R = R$. It suffices to show $V() \neq \emptyset$.
+        \item [(3)]
+            ``$\Rightarrow$''. Assume $\phi$ is surjective. In particular, there exists $x \in R$ such that $(\overline 1,\overline 0,\cdots,\overline 0) = \phi(x) = (\overline x, \overline x, \cdots, \overline x)$. So $x+\ffa_1 = 1+\ffa_1$ and $x+\ffa_i = 0 + \ffa_i$ for any $2 \leq i \leq n$. Hence $1-x \in \ffa_1$ and $x \in \ffa_i$ for any $2 \leq i \leq n$. Also, since $1 = (1-x) + x$, we have $\ffa_1 + \ffa_i = R$ for any $2 \leq i \leq n$. Consider $(\overline 0, \cdots, \overline 0, \overline 1, \overline 0, \cdots, \overline 0)$ arrow $\ffa_i + \ffa_j = R$ for any $1 \leq i \neq j \leq n$. \\
+            ``$\Leftarrow$''. Assume $\ffa_i + \ffb_j = R$ for any $1 \leq i \neq j \leq n$. By (2), $\ffa_1 + (\bigcap_{i=2}^n \ffa_i)R = R$. So $1 = a_1 + y$ with $a_1 \in \ffa_1$ and $y \in \bigcap_{i=2}^n \ffa_i$. Then $\phi(y) = (\overline y, \overline y, \cdots, \overline y) = (y + \ffa_1, y + \ffb_2, \cdots, y + \ffa_n) = (1+\ffa_1,0+\ffa_2,\cdots,0+\ffa_n) = (\overline 1,\overline 0, \cdots, \overline 0)$. Similarly, for any $i = 1,\cdots,n$, there exists $y_i$ such that $\phi(y_i) = (\overline 0, \cdots, \overline 0, \overline 1, \overline 0, \cdots, \overline 0)$. Then for any $(\overline r_1,\cdots, \overline r_n) \in \frac{R}{\ffa_1} \times \cdots \times \frac{R}{\ffa_n}$, $(\overline r_1,\cdots, \overline r_n) = \sum_{i=1}^n r_i((\overline 0, \cdots, \overline 0, \overline 1, \overline 0, \cdots, \overline 0)) = \sum_{i=1}^n r_i\phi(y_i) = \phi(\sum_{i=1}^nr_iy_i)$.
+    \end{enumerate}
+\end{proof}
+
+\begin{proposition}
+    Let $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffp \in \operatorname{Spec}(R)$.
+    \begin{enumerate}[(a)]
+        \item If $\ffa = \ffp_1 \cdots \ffp_n$, then $\ffp = \ffa_i$ for some $i \in \{1,\cdots,n\}$.
+        \item If $\ffp = \ffa_1 \cap \cdots \cap \ffa_n$, then $\ffp = \ffa_1$ for some $i \in \{1,\cdots,n\}$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}
+        \item [(2)] Assume $\ffp_1 \cap \cdots \ffp_n \supseteq \ffa_1 \cdots \ffa_n$. Since $\ffp \in \operatorname{Spec}(R)$, there exists $i \in \{1,\cdots,n\}$ such that $\ffp \supseteq \ffa_i$.
+    \end{enumerate}
+\end{proof}
+
+\begin{fact}
+\end{fact}
+

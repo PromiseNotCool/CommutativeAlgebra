@@ -1,0 +1,24 @@
+\chapter{Introduction}
+
+\begin{remark}
+    Throughout this book, $R$ is a CRW1, $k$ is a field.
+\end{remark}
+
+\begin{remark}[Application]
+    \begin{enumerate}[(1)]
+        \item In calculus, e.g., $\llC(\bbR)$ and $\llD(\bbR)$ are both CRW1's.
+        \item In graph theory, e.g., let $G$ be a finite simple graph with vertex set $V = \{v_1,\cdots,v_d\}$. The edge ideal of $G$ is $I(G) = \langle v_iv_j \mid v_iv_j \text{ is an edge in }G\rangle \leq K[v_1,\cdots,v_d]$. Then
+            \[\text{algebraic properties of $I(G)$} \rightleftarrows \text{combinatorial properties of $G$}.\]
+        \item In combinatorics, e.g., a simplicial complex $\Delta$ on $V$. Stanley-Reisner ideal $J(\Delta) \leq K[v_1,\cdots,v_d]$. Then
+            \[\text{algebraic properties of $J(\Delta)$} \rightleftarrows \text{combinatorics properties of $\Delta$}.\]
+            Let $P$ be a poset and $\Delta(P) = ``\text{order complex of $P$''} = \{\text{chains in $P$}\}$. Study $P$ via $J(\Delta(P))$.
+        \item In number theory, which study the solutions of polynomial equations over $\bbZ$, e.g., given an intermediate field $\bbQ \subseteq K \subseteq \bbC$, let $R = \{\alpha \in K \mid \ex \text{monic }f \in \bbZ[x] \text{ s.t. } f(\alpha) = 0\}$. Then $\bbZ \subseteq R \subseteq K$ and $R$ is a subring of $K$.
+        \item In algebraic geometry, which study solution sets for systems of polynomial equations over fields. Let $K$ be a field and $f_1,\cdots,f_m \in K[X_1,\cdots,X_d]$. Let $V(f_1,\cdots,f_n) = \{\underline x \in K^d \mid f_i(\underline x) = 0,\fa i = 1,\cdots,m\}$, where $V$ for ``variety''. Let $I(V) = \{f \in K[X_1,\cdots,X_d \mid f(\underline x) = 0,\fa \underline x \in V\} \leq K[X_1,\cdots,X_d]$. Then
+            \[\text{algebraic properties of $I(V)$} \rightleftarrows \text{geometric properties of $V$}.\]
+    \end{enumerate}
+\end{remark}
+
+\begin{remark}
+    To study geometry, we need continuity. Let $V = V(f_1,\cdots,f_m)$, $W = V(g_1,\cdots,g_n)$ and $\phi: V \to W$. What does it mean for $\phi$ to be continuous if $K = \bbF_3$? Need a notion of open sets in $V$ and $W$.
+\end{remark}
+
