@@ -1,0 +1,217 @@
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb,enumerate}
+\usepackage{amsthm,stmaryrd}
+\usepackage[all]{xy}
+\usepackage{hyperref}
+
+\usepackage{listings}
+
+\usepackage{upgreek}
+\usepackage{extarrows}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{tipa}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\urlstyle{same}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest, ticks=none}
+%\theoremstyle{definition}
+%\newtheorem{exer}{Exercise} 
+
+\newcommand{\myrightleftarrows}[1]{\mathrel{\substack{\xrightarrow{#1} \\[-.9ex] \xleftarrow{#1}}}}
+
+
+\usepackage{arydshln}
+\usepackage{leftidx}
+ 
+\newcommand\llo{
+  \mathchoice
+    {{\scriptstyle\mathcal{O}}}% \displaystyle
+    {{\scriptstyle\mathcal{O}}}% \textstyle
+    {{\scriptscriptstyle\mathcal{O}}}% \scriptstyle
+    {\scalebox{.7}{$\scriptscriptstyle\mathcal{O}$}}%\scriptscriptstyle
+}
+
+\newcommand{\bsb}{\boldsymbol {b}}
+\newcommand{\bsx}{\boldsymbol {x}}
+
+\newcommand{\ol}{\overline}
+\newcommand{\llll}{\mathcal{L}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\llA}{\mathcal{A}}
+\newcommand{\ssA}{\mathscr{A}}
+\newcommand{\llB}{\mathcal{B}}
+\newcommand{\ssB}{\mathscr{B}}
+\newcommand{\bbA}{\mathbb{A}}
+\newcommand{\llG}{\mathcal{G}}
+\newcommand{\llC}{\mathcal{C}}
+\newcommand{\ssC}{\mathscr{C}}
+\newcommand{\llD}{\mathcal{D}}
+\newcommand{\ssD}{\mathscr{D}}
+\newcommand{\bbE}{\mathbb{E}}
+\newcommand{\llE}{\mathcal{E}}
+\newcommand{\bbF}{\mathbb{F}}
+\newcommand{\llF}{\mathcal{F}}
+\newcommand{\ssF}{\mathscr{F}}
+\newcommand{\ssG}{\mathscr{G}}
+\newcommand{\llH}{\mathcal{H}}
+\newcommand{\llI}{\mathcal{I}}
+\newcommand{\llJ}{\mathcal{J}}
+\newcommand{\llK}{\mathcal{K}}
+\newcommand{\llM}{\mathcal{M}}
+\newcommand{\llN}{\mathcal{N}}
+\newcommand{\llO}{\mathcal{O}}
+\newcommand{\llP}{\mathcal{P}}
+\newcommand{\ssP}{\mathscr{P}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\llT}{\mathcal{T}}
+\newcommand{\llS}{\mathcal{S}}
+\newcommand{\ssS}{\mathscr{S}}
+\newcommand{\llU}{\mathcal{U}}
+\newcommand{\llZ}{\mathcal{Z}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\ba}{\mathbf{a}}
+
+\newcommand{\bbH}{\mathbb{H}}
+\newcommand{\ffJ}{\mathfrak{J}}
+\newcommand{\ffP}{\mathfrak{P}}
+\newcommand{\ffN}{\mathfrak{N}}
+
+\newcommand{\ffa}{\mathfrak{a}}
+\newcommand{\ffb}{\mathfrak{b}}
+\newcommand{\ffc}{\mathfrak{c}}
+\newcommand{\ffk}{\mathfrak{k}}
+\newcommand{\ffm}{\mathfrak{m}}
+\newcommand{\ffn}{\mathfrak{n}}
+\newcommand{\ffp}{\mathfrak{p}}
+\newcommand{\ffq}{\mathfrak{q}}
+\newcommand{\ffu}{\mathfrak{u}}
+\newcommand{\Hom}{\operatorname{Hom}}
+%\newcommand{\Hom}[3][R]{\operatorname{Hom}_{#1}(#2,#3)}	
+\renewcommand{\ker}{\operatorname{Ker}}
+\newcommand{\im}{\operatorname{Im}}
+\newcommand{\xra}{\xrightarrow}
+\newcommand{\wti}{\widetilde}
+\newcommand{\coker}{\operatorname{Coker}}
+\newcommand{\fa}{\ \forall \ }
+\newcommand{\fz}{\ \forall \ n\in \mathbb {Z}^{\geq 0} }
+\newcommand {\Pa} {\ P\text{-a.s.}}
+\newcommand{\ex}{\exists \ }
+
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\supp}{\operatorname{Supp}}
+\newcommand{\ass}{\operatorname{Ass}}
+\newcommand{\ann}{\operatorname{Ann}}
+
+%number theory
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+%\newcommand{\gcd}{\operatorname{gcd}}
+%\newcommand{\disc}{\operatorname{disc}}
+%complex analysis
+%\newcommand{\Re}{\operatorname{Re}}
+
+
+\usepackage{bbold}
+\newcommand{\idca}{\mathbb{1}}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+
+\theoremstyle{definition}
+
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conj}[theorem]{Conjecture}
+\newtheorem{intthm}{Theorem}
+\renewcommand{\theintthm}{\Alph{intthm}}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem*{example*}{Example}
+ 
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{warning}[theorem]{Warning}
+\newtheorem{recall}[theorem]{Recall}
+\newtheorem*{recall*}{Recall}
+\newtheorem*{fact*}{Fact}
+\newtheorem{question}{Question}
+\newtheorem{questions}{Questions}
+\newtheorem{problem}{Problem}
+\newtheorem{disc}{Remark}
+\newtheorem*{remark}{Remark}
+\newtheorem{construction}[theorem]{Construction}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem*{notation*}{Notation}
+\newtheorem{para}{}
+\newtheorem{exer}{Exercise}[chapter]
+\newtheorem{remarkdefinition}{Remark/Definition}
+\newtheorem{step}{Step}
+\newtheorem{convention}{Convention}
+\newtheorem*{Convention}{Convention}
+\newtheorem{assumption}{Assumption}
+
+\newcommand{\fmn}{F^{m\times n}}
+\newcommand{\fnn}{F^{n\times n}}
+\newcommand{\col}{\operatorname{Col}}
+\newcommand{\row}{\operatorname{Row}}
+\newcommand{\Span}{\operatorname{Span}}	
+\newcommand{\rank}{\operatorname{rank}}	
+\newcommand{\OO}[1]{\mathcal{O}_{#1}}
+\newcommand{\Ext}[4][R]{\operatorname{Ext}_{#1}^{#2}(#3,#4)}	
+\newcommand{\depth}{\operatorname{depth}}
+
+\usepackage{mdframed}
+\newenvironment{aside}
+  {\begin{mdframed}[style=0,%
+      leftline=false,rightline=false,leftmargin=2em,rightmargin=2em,%
+          innerleftmargin=0pt,innerrightmargin=0pt,linewidth=0.75pt,%
+      skipabove=7pt,skipbelow=7pt]\small}
+  {\end{mdframed}}
+
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{mathrsfs} % https://www.ctan.org/pkg/mathrsfs
+
+\usepackage{graphicx}
+\newcommand{\indep}{\rotatebox[origin=c]{90}{$\models$}}
+
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage{pgfplots}
+\usepackage{float}
+\usepackage{tikz-cd}
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\usepackage{undertilde}
+
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\makeatletter
+\def\BState{\State\hskip-\ALG@thistlm}
+\makeatother
+
+
