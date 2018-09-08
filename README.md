@@ -1,3 +1,0 @@
-# CommutativeAlgebra
-# CommutativeAlgebra
-# CommutativeAlgebra
