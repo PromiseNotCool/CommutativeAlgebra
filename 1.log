@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  6 SEP 2018 11:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  7 SEP 2018 20:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -657,37 +657,34 @@ LaTeX Font Info:    Redeclaring math alphabet \mathbb on input line 42.
 )
 \c@theorem=\count172
 \c@intthm=\count173
-\c@fact=\count174
-\c@question=\count175
-\c@questions=\count176
-\c@problem=\count177
-\c@disc=\count178
-\c@construction=\count179
-\c@notation=\count180
-\c@para=\count181
-\c@exer=\count182
-\c@remarkdefinition=\count183
-\c@step=\count184
-\c@convention=\count185
-\c@assumption=\count186
+\c@question=\count174
+\c@questions=\count175
+\c@problem=\count176
+\c@disc=\count177
+\c@para=\count178
+\c@exer=\count179
+\c@remarkdefinition=\count180
+\c@step=\count181
+\c@convention=\count182
+\c@assumption=\count183
  (/usr/local/texlive/2018/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
  (/usr/local/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2018/03/05 L3 programming layer (loader) 
  (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2018/03/05 L3 programming layer (code)
-\c_max_int=\count187
-\l_tmpa_int=\count188
-\l_tmpb_int=\count189
-\g_tmpa_int=\count190
-\g_tmpb_int=\count191
-\g__intarray_font_int=\count192
-\g__prg_map_int=\count193
-\c_log_iow=\count194
-\l_iow_line_count_int=\count195
-\l__iow_line_target_int=\count196
-\l__iow_one_indent_int=\count197
-\l__iow_indent_int=\count198
+\c_max_int=\count184
+\l_tmpa_int=\count185
+\l_tmpb_int=\count186
+\g_tmpa_int=\count187
+\g_tmpb_int=\count188
+\g__intarray_font_int=\count189
+\g__prg_map_int=\count190
+\c_log_iow=\count191
+\l_iow_line_count_int=\count192
+\l__iow_line_target_int=\count193
+\l__iow_one_indent_int=\count194
+\l__iow_indent_int=\count195
 \c_zero_dim=\dimen285
 \c_max_dim=\dimen286
 \l_tmpa_dim=\dimen287
@@ -706,77 +703,77 @@ Package: expl3 2018/03/05 L3 programming layer (code)
 \l_tmpb_muskip=\muskip15
 \g_tmpa_muskip=\muskip16
 \g_tmpb_muskip=\muskip17
-\l_keys_choice_int=\count199
-\c__fp_leading_shift_int=\count266
-\c__fp_middle_shift_int=\count267
-\c__fp_trailing_shift_int=\count268
-\c__fp_big_leading_shift_int=\count269
-\c__fp_big_middle_shift_int=\count270
-\c__fp_big_trailing_shift_int=\count271
-\c__fp_Bigg_leading_shift_int=\count272
-\c__fp_Bigg_middle_shift_int=\count273
-\c__fp_Bigg_trailing_shift_int=\count274
-\c__fp_rand_size_int=\count275
-\c__fp_rand_four_int=\count276
-\c__fp_rand_eight_int=\count277
-\l__sort_length_int=\count278
-\l__sort_min_int=\count279
-\l__sort_top_int=\count280
-\l__sort_max_int=\count281
-\l__sort_true_max_int=\count282
-\l__sort_block_int=\count283
-\l__sort_begin_int=\count284
-\l__sort_end_int=\count285
-\l__sort_A_int=\count286
-\l__sort_B_int=\count287
-\l__sort_C_int=\count288
-\l__tl_build_start_index_int=\count289
-\l__tl_build_index_int=\count290
-\l__tl_analysis_normal_int=\count291
-\l__tl_analysis_index_int=\count292
-\l__tl_analysis_nesting_int=\count293
-\l__tl_analysis_type_int=\count294
-\l__regex_internal_a_int=\count295
-\l__regex_internal_b_int=\count296
-\l__regex_internal_c_int=\count297
-\l__regex_balance_int=\count298
-\l__regex_group_level_int=\count299
-\l__regex_mode_int=\count300
-\c__regex_cs_in_class_mode_int=\count301
-\c__regex_cs_mode_int=\count302
-\l__regex_catcodes_int=\count303
-\l__regex_default_catcodes_int=\count304
-\c__regex_catcode_D_int=\count305
-\c__regex_catcode_S_int=\count306
-\c__regex_catcode_L_int=\count307
-\c__regex_catcode_O_int=\count308
-\c__regex_catcode_A_int=\count309
-\c__regex_all_catcodes_int=\count310
-\l__regex_show_lines_int=\count311
-\l__regex_min_state_int=\count312
-\l__regex_max_state_int=\count313
-\l__regex_left_state_int=\count314
-\l__regex_right_state_int=\count315
-\l__regex_capturing_group_int=\count316
-\l__regex_min_pos_int=\count317
-\l__regex_max_pos_int=\count318
-\l__regex_curr_pos_int=\count319
-\l__regex_start_pos_int=\count320
-\l__regex_success_pos_int=\count321
-\l__regex_curr_char_int=\count322
-\l__regex_curr_catcode_int=\count323
-\l__regex_last_char_int=\count324
-\l__regex_case_changed_char_int=\count325
-\l__regex_curr_state_int=\count326
-\l__regex_step_int=\count327
-\l__regex_min_active_int=\count328
-\l__regex_max_active_int=\count329
-\l__regex_replacement_csnames_int=\count330
-\l__regex_match_count_int=\count331
-\l__regex_min_submatch_int=\count332
-\l__regex_submatch_int=\count333
-\l__regex_zeroth_submatch_int=\count334
-\g__regex_trace_regex_int=\count335
+\l_keys_choice_int=\count196
+\c__fp_leading_shift_int=\count197
+\c__fp_middle_shift_int=\count198
+\c__fp_trailing_shift_int=\count199
+\c__fp_big_leading_shift_int=\count266
+\c__fp_big_middle_shift_int=\count267
+\c__fp_big_trailing_shift_int=\count268
+\c__fp_Bigg_leading_shift_int=\count269
+\c__fp_Bigg_middle_shift_int=\count270
+\c__fp_Bigg_trailing_shift_int=\count271
+\c__fp_rand_size_int=\count272
+\c__fp_rand_four_int=\count273
+\c__fp_rand_eight_int=\count274
+\l__sort_length_int=\count275
+\l__sort_min_int=\count276
+\l__sort_top_int=\count277
+\l__sort_max_int=\count278
+\l__sort_true_max_int=\count279
+\l__sort_block_int=\count280
+\l__sort_begin_int=\count281
+\l__sort_end_int=\count282
+\l__sort_A_int=\count283
+\l__sort_B_int=\count284
+\l__sort_C_int=\count285
+\l__tl_build_start_index_int=\count286
+\l__tl_build_index_int=\count287
+\l__tl_analysis_normal_int=\count288
+\l__tl_analysis_index_int=\count289
+\l__tl_analysis_nesting_int=\count290
+\l__tl_analysis_type_int=\count291
+\l__regex_internal_a_int=\count292
+\l__regex_internal_b_int=\count293
+\l__regex_internal_c_int=\count294
+\l__regex_balance_int=\count295
+\l__regex_group_level_int=\count296
+\l__regex_mode_int=\count297
+\c__regex_cs_in_class_mode_int=\count298
+\c__regex_cs_mode_int=\count299
+\l__regex_catcodes_int=\count300
+\l__regex_default_catcodes_int=\count301
+\c__regex_catcode_D_int=\count302
+\c__regex_catcode_S_int=\count303
+\c__regex_catcode_L_int=\count304
+\c__regex_catcode_O_int=\count305
+\c__regex_catcode_A_int=\count306
+\c__regex_all_catcodes_int=\count307
+\l__regex_show_lines_int=\count308
+\l__regex_min_state_int=\count309
+\l__regex_max_state_int=\count310
+\l__regex_left_state_int=\count311
+\l__regex_right_state_int=\count312
+\l__regex_capturing_group_int=\count313
+\l__regex_min_pos_int=\count314
+\l__regex_max_pos_int=\count315
+\l__regex_curr_pos_int=\count316
+\l__regex_start_pos_int=\count317
+\l__regex_success_pos_int=\count318
+\l__regex_curr_char_int=\count319
+\l__regex_curr_catcode_int=\count320
+\l__regex_last_char_int=\count321
+\l__regex_case_changed_char_int=\count322
+\l__regex_curr_state_int=\count323
+\l__regex_step_int=\count324
+\l__regex_min_active_int=\count325
+\l__regex_max_active_int=\count326
+\l__regex_replacement_csnames_int=\count327
+\l__regex_match_count_int=\count328
+\l__regex_min_submatch_int=\count329
+\l__regex_submatch_int=\count330
+\l__regex_zeroth_submatch_int=\count331
+\g__regex_trace_regex_int=\count332
 \c_empty_box=\box49
 \l_tmpa_box=\box50
 \l_tmpb_box=\box51
@@ -820,17 +817,17 @@ Package: expl3 2018/03/05 L3 programming layer (code)
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2017/03/18 v L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count336
+\l__driver_color_stack_int=\count333
 ))
 Package: xparse 2018/02/21 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count337
-\g__xparse_grabber_int=\count338
-\l__xparse_m_args_int=\count339
-\l__xparse_mandatory_args_int=\count340
-\l__xparse_v_nesting_int=\count341
+\l__xparse_current_arg_int=\count334
+\g__xparse_grabber_int=\count335
+\l__xparse_m_args_int=\count336
+\l__xparse_mandatory_args_int=\count337
+\l__xparse_v_nesting_int=\count338
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count342
+\etb@tempcnta=\count339
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
 Package: zref-abspage 2016/05/21 v2.26 Module abspage for zref (HO)
  (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/zref-base.sty
@@ -839,13 +836,13 @@ Package zref Info: New property list: main on input line 759.
 Package zref Info: New property: default on input line 760.
 Package zref Info: New property: page on input line 761.
 )
-\c@abspage=\count343
+\c@abspage=\count340
 Package zref Info: New property: abspage on input line 62.
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip59
-\c@mdf@globalstyle@cnt=\count344
+\c@mdf@globalstyle@cnt=\count341
 \mdf@skipabove@length=\skip60
 \mdf@skipbelow@length=\skip61
 \mdf@leftmargin@length=\skip62
@@ -920,7 +917,7 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@horizontalspaceofbox=\skip123
 \mdfsubtitleheight=\skip124
 \mdfsubsubtitleheight=\skip125
-\c@mdfcountframes=\count345
+\c@mdfcountframes=\count342
 
 ****** mdframed patching \endmdf@trivlist
 
@@ -936,16 +933,16 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 . 
 . Defining command \mdtheorem with sig. ' O{} m o m o ' on line 701.
 .................................................
-\mdf@envdepth=\count346
-\c@mdf@env@i=\count347
-\c@mdf@env@ii=\count348
-\c@mdf@zref@counter=\count349
+\mdf@envdepth=\count343
+\c@mdf@env@i=\count344
+\c@mdf@env@ii=\count345
+\c@mdf@zref@counter=\count346
 Package zref Info: New property: mdf@pagevalue on input line 895.
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2018/03/24 v5.7 Page Geometry
-\Gm@cnth=\count350
-\Gm@cntv=\count351
-\c@Gm@tempcnt=\count352
+\Gm@cnth=\count347
+\Gm@cntv=\count348
+\c@Gm@tempcnt=\count349
 \Gm@bindingoffset=\dimen316
 \Gm@wd@mp=\dimen317
 \Gm@odd@mp=\dimen318
@@ -964,7 +961,7 @@ File: tikzlibrarypatterns.code.tex 2008/01/15 v3.0.1a (rcs-revision 1.2)
 File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
 )) (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count353
+\c@float@type=\count350
 \float@exts=\toks57
 \float@box=\box69
 \@float@everytoks=\toks58
@@ -990,7 +987,7 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count354
+\g_MT_multlinerow_int=\count351
 \l_MT_multwidth_dim=\dimen328
 \origjot=\skip126
 \l_MT_shortvdotswithinadjustabove_dim=\dimen329
@@ -1005,22 +1002,22 @@ Package: undertilde 2000/08/08 v1.0 Tilde under a math object
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
 \@float@every@algorithm=\toks59
-\c@algorithm=\count355
+\c@algorithm=\count352
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
  (/usr/local/texlive/2018/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count356
-\c@ALG@rem=\count357
-\c@ALG@nested=\count358
+\c@ALG@line=\count353
+\c@ALG@rem=\count354
+\c@ALG@nested=\count355
 \ALG@tlm=\skip128
 \ALG@thistlm=\skip129
-\c@ALG@Lnr=\count359
-\c@ALG@blocknr=\count360
-\c@ALG@storecount=\count361
-\c@ALG@tmpcounter=\count362
+\c@ALG@Lnr=\count356
+\c@ALG@blocknr=\count357
+\c@ALG@storecount=\count358
+\c@ALG@tmpcounter=\count359
 \ALG@tmplength=\skip130
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
@@ -1069,7 +1066,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count363
+\c@section@level=\count360
 )
 LaTeX Info: Redefining \ref on input line 11.
 LaTeX Info: Redefining \pageref on input line 11.
@@ -1078,19 +1075,19 @@ LaTeX Info: Redefining \nameref on input line 11.
 \@outlinefile=\write5
 \openout5 = `1.out'.
 
-\c@lstlisting=\count364
+\c@lstlisting=\count361
  (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count365
+\scratchcounter=\count362
 \scratchdimen=\dimen335
 \scratchbox=\box72
-\nofMPsegments=\count366
-\nofMParguments=\count367
+\nofMPsegments=\count363
+\nofMParguments=\count364
 \everyMPshowfont=\toks60
-\MPscratchCnt=\count368
+\MPscratchCnt=\count365
 \MPscratchDim=\dimen336
-\MPnumerator=\count369
-\makeMPintoPDFobject=\count370
+\MPnumerator=\count366
+\makeMPintoPDFobject=\count367
 \everyMPtoPDFconversion=\toks61
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1162,11 +1159,10 @@ LaTeX Warning: No \author given.
 \openout2 = `chapters/introduction.aux'.
 
  (./chapters/introduction.tex
-Chapter 1.
-LaTeX Font Info:    Try loading font information for U+bbold on input line 9.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/bbold/Ubbold.fd)
-Overfull \hbox (1.37854pt too wide) in paragraph at lines 12--13
-[]\OT1/cmr/m/n/10 In com-bi-na-torics, e.g., a sim-pli-cial com-plex $^^A$ on $\OML/cmm/m/it/10 V$\OT1/cmr/m/n/10 . Stanley-Reisner ideal $\OML/cmm/m/it/10 J\OT1/cmr/m/n/10 (^^A) \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 K\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 v[]; []  ; v[]\OT1/cmr/m/n/10 ]$.
+LaTeX Font Info:    Try loading font information for U+bbold on input line 7.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/bbold/Ubbold.fd)
+Underfull \hbox (badness 10000) in paragraph at lines 18--23
+
  []
 
 )pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
@@ -1189,58 +1185,34 @@ l.1 \chapter
 
 
 ]
-Chapter 2.
-LaTeX Font Info:    Try loading font information for U+euf on input line 32.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
+Chapter 1.
+[3]
+LaTeX Font Info:    Try loading font information for U+euf on input line 58.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [3] [4] [5]
-Overfull \hbox (2.21043pt too wide) in paragraph at lines 196--197
-[][]\OT1/cmr/bx/n/10 Example 2.0.14. []\OT1/cmr/m/n/10 In $\U/bbold/m/n/10 Z\OML/cmm/m/it/10 =\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 p[]\OMS/cmsy/m/n/10 i$\OT1/cmr/m/n/10 , $[]$ is nilpo-tent. Sim-i-larly, in $\OML/cmm/m/it/10 k\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 =\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 x[]\OMS/cmsy/m/n/10 i$ \OT1/cmr/m/n/10 and $\OML/cmm/m/it/10 k\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 x[]; []  ; x[]\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 =\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 x[]; []  ; x[]\OMS/cmsy/m/n/10 i$\OT1/cmr/m/n/10 . 
- []
-
-[6] [7] [8] [9]
-./chapters/ringsAndIdeals.tex:437: Missing delimiter (. inserted).
-<to be read again> 
-                   ,
-l.437 ...dots a_{in} \mid a_{ij} \in \ffa_j\right,
-                                                  \fa j\}$.
-I was expecting to see something like `(' or `\{' or
-`\}' here. If you typed, e.g., `{' instead of `\{', you
-should probably delete the `{' by typing `1' now, so that
-braces don't get unbalanced. Otherwise just proceed.
-Acceptable delimiters are characters whose \delcode is
-nonnegative, or you can use `\delimiter <delimiter code>'.
-
-./chapters/ringsAndIdeals.tex:437: Extra \right.
-<to be read again> 
-                   ,
-l.437 ...dots a_{in} \mid a_{ij} \in \ffa_j\right,
-                                                  \fa j\}$.
-I'm ignoring a \right that had no matching \left.
-
-[10]) [11]
+) [4] [5] [6] [7] [8] [9] [10] [11]) [12]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 24.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 24.
  (./1.aux (./chapters/introduction.aux) (./chapters/ringsAndIdeals.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 24.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 24.
 Package rerunfilecheck Info: File `1.out' has not changed.
-(rerunfilecheck)             Checksum: AB76F16C44D58362A7B5775FEA590690;164.
+(rerunfilecheck)             Checksum: 1B2CF02545E49D9C994AE377DCD42BB4;165.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 24.
  ) 
 Here is how much of TeX's memory you used:
- 44638 strings out of 492649
- 973922 string characters out of 6129622
- 1197447 words of memory out of 5000000
- 47666 multiletter control sequences out of 15000+600000
- 547371 words of font info for 94 fonts, out of 8000000 for 9000
+ 44641 strings out of 492649
+ 973921 string characters out of 6129622
+ 1197348 words of memory out of 5000000
+ 47658 multiletter control sequences out of 15000+600000
+ 546673 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,14n,138p,10434b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2018/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on 1.pdf (14 pages, 275602 bytes).
+ 86i,17n,138p,10434b,1023s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/bbold-type1/bbold10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
+Output written on 1.pdf (15 pages, 268839 bytes).
 PDF statistics:
- 332 PDF objects out of 1000 (max. 8388607)
- 288 compressed objects within 3 object streams
- 134 named destinations out of 1000 (max. 500000)
+ 347 PDF objects out of 1000 (max. 8388607)
+ 302 compressed objects within 4 object streams
+ 146 named destinations out of 1000 (max. 500000)
  37 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,5 @@
 \babel@toc {english}{}
 \hypertarget {toc}{}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Rings and Ideals}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Operations on Ideals}{7}{section.2.1}
+\contentsline {chapter}{Introduction}{1}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Rings and Ideals}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Operations on Ideals}{8}{section.1.1}

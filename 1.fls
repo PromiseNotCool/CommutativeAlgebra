@@ -1,4 +1,4 @@
-PWD /Users/shuaiwei/Documents/MATH/math/MATH9550/notes
+PWD /Users/shuaiwei/Documents/CommutativeAlgebra
 INPUT /usr/local/texlive/2018/texmf.cnf
 INPUT /usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt
@@ -465,8 +465,6 @@ OUTPUT 1.toc
 OUTPUT chapters/introduction.aux
 INPUT chapters/introduction.tex
 INPUT chapters/introduction.tex
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/bbold/Ubbold.fd
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/bbold/Ubbold.fd
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/bbold/bbold10.tfm
@@ -475,13 +473,13 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/bbold/bbold5.tfm
 OUTPUT chapters/ringsAndIdeals.aux
 INPUT chapters/ringsAndIdeals.tex
 INPUT chapters/ringsAndIdeals.tex
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 INPUT /usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/ueuf.fd
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm5.tfm
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT 1.aux
@@ -508,7 +506,6 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
-INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
