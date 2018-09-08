@@ -513,3 +513,5 @@ INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/rsfs/rsfs7.pfb
 INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/xypic/xyatip10.pfb
+INPUT /usr/local/texlive/2018/texmf-dist/fonts/type1/public/xypic/xybtip10.pfb
