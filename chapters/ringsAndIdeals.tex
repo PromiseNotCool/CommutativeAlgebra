@@ -90,15 +90,15 @@ Let $R$ be a CRW1.
 \end{fact}
 
 \begin{construction}
-    Let $\ffa \leq R$. For any $r \in R$, $r+\ffa = \{r + a \mid a \in \ffa\} = \overline r$. Let $R/\ffa := \{r + \ffa \mid r \in R\}$. Then $R/\ffa$ is a CRW1 with $\overline r \pm \overline s = \overline {r \pm s}$, $\bar r \bar s = \overline{rs}$, $0_{R/\ffa} = \overline {0_R}$ and $1_{R/\ffa} = \overline {1_R}$. \\
-    Let $\pi: R \to R/\ffa$ be given by $\pi(r) = \overline r$. Then $\pi$ is a well-defined ring epimorphism.
+    Let $\ffa \leq R$. For any $r \in R$, $r+\ffa = \{r + a \mid a \in \ffa\} = \overbar r$. Let $R/\ffa := \{r + \ffa \mid r \in R\}$. Then $R/\ffa$ is a CRW1 with $\overbar r \pm \overbar s = \overbar {r \pm s}$, $\bar r \bar s = \overbar{rs}$, $0_{R/\ffa} = \overbar {0_R}$ and $1_{R/\ffa} = \overbar {1_R}$. \\
+    Let $\pi: R \to R/\ffa$ be given by $\pi(r) = \overbar r$. Then $\pi$ is a well-defined ring epimorphism.
     \begin{center}
         \begin{tikzcd}
             R \arrow[r,"\phi"] \arrow[d,"\pi"] & S \\
-            R/\ffa \arrow[ru,dashed,"\ex !\ \overline \phi"']
+            R/\ffa \arrow[ru,dashed,"\ex !\ \overbar \phi"']
         \end{tikzcd}
     \end{center}
-    For any $\phi: R \to S$ ring homomorphism, if $\phi(\ffa) = 0$, then there exists a unique ring homomorphism $\overline \phi: R/\ffa \to S$ making the diagram commute, where $\overline \phi(\overline r) = \overline \phi (\pi(r)) = \phi(r)$. \\
+    For any $\phi: R \to S$ ring homomorphism, if $\phi(\ffa) = 0$, then there exists a unique ring homomorphism $\overbar \phi: R/\ffa \to S$ making the diagram commute, where $\overbar \phi(\overbar r) = \overbar \phi (\pi(r)) = \phi(r)$. \\
     Note $\phi(\ffa) = 0$ iff $\ffa \subseteq \ker(\phi)$. In particular, if $\ffa = \langle A \rangle$, then $\ffa \subseteq \ker(\phi)$ iff $A \subseteq \ker(\phi)$.
 \end{construction}
 
@@ -126,14 +126,14 @@ Let $R$ be a CRW1.
     \begin{center}
         \begin{tikzcd}
             R \arrow[d,two heads,"\pi"] \arrow[r,two heads,"p"] & R/\ffa \arrow[r,two heads,"\tau"] & \frac{R/\ffa}{J/\ffa} \\
-            R/J \arrow[rru,dashed,hook,two heads,"\ex !\ \overline \phi"']
+            R/J \arrow[rru,dashed,hook,two heads,"\ex !\ \overbar \phi"']
         \end{tikzcd}
     \end{center}
     Clearly $J \subseteq \ker(\tau \circ p)$, so we can use the UMP. \\
     Since the diagram commutes, $J = \ker(\pi) = \ker(\pi \circ p)$. \\
-    So the kernel is ``modulo out'' by $\pi$ and hence $\overline \phi$ is 1-1. \\
-    Since $\tau \circ p$ is onto and the diagram commutes, $\overline \phi$ is onto. \\
-    Note $\overline \phi(\overline r) = \overline {\overline r}$, i.e., $\overline \phi(r + J) = (r+\ffa) + J/\ffa$.
+    So the kernel is ``modulo out'' by $\pi$ and hence $\overbar \phi$ is 1-1. \\
+    Since $\tau \circ p$ is onto and the diagram commutes, $\overbar \phi$ is onto. \\
+    Note $\overbar \phi(\overbar r) = \overbar {\overbar r}$, i.e., $\overbar \phi(r + J) = (r+\ffa) + J/\ffa$.
 
 \end{fact}
 
@@ -149,7 +149,7 @@ Let $R$ be a CRW1.
     \begin{center}
         \begin{tikzcd}
             R \arrow[d,two heads,"p"] \arrow[r,"\phi"] & S \arrow[r,two heads,"\pi"] & S/\ffq \\
-            \frac{R}{\phi^{-1}(\ffq)} \arrow[rru,dashed,hook,"\ex !\ \overline {\pi \circ \phi}"']
+            \frac{R}{\phi^{-1}(\ffq)} \arrow[rru,dashed,hook,"\ex !\ \overbar {\pi \circ \phi}"']
         \end{tikzcd}
     \end{center}
     Let $\ffq \in \operatorname{Spec}(S)$. Then $S/\ffq$ is an integral domain. Also, since $R/\ker(\pi \circ \phi) \cong S/\ffq$, we have $R/\ker(\pi \circ \phi)$ is an integral domain and then $\ker(\pi \circ \phi)$ is prime. Observe $\phi^{-1}(\ffq) = \ker(\pi \circ \phi)$ is then prime, i.e., $\phi^{-1}(\ffq) \in \operatorname{Spec}(R)$. Thus, $\phi$ induces a well-defined map $\phi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$.
@@ -222,7 +222,7 @@ Let $R$ be a CRW1.
 \end{definition}
 
 \begin{example}
-    In $\bbZ/\langle p^n \rangle$, $\overline p$ is nilpotent. It is similar in $k[x]/\langle x^n \rangle$ and $k[x_1,\cdots,x_n]/\langle x_1^{a_1},\cdots,x_d^{a_d}\rangle$, where $k$ is a field.
+    In $\bbZ/\langle p^n \rangle$, $\overbar p$ is nilpotent. It is similar in $k[x]/\langle x^n \rangle$ and $k[x_1,\cdots,x_n]/\langle x_1^{a_1},\cdots,x_d^{a_d}\rangle$, where $k$ is a field.
 \end{example}
 
 \begin{proposition}
@@ -237,7 +237,7 @@ Let $R$ be a CRW1.
 \begin{proof}
     \begin{enumerate}[(a)]
         \item Since $0 \in \operatorname{Nil}(R)$, $\operatorname{Nil}(R) \neq \emptyset$. Let $r \in R$ and $a,b \in \operatorname{Nil}(R)$. Then there exists $m,n \in \bbN$ such that $a^m = 0 = b^n$. Then $(ra)^m = r^ma^m = 0$ and so $ra \in \operatorname{Nil}(R)$. By binomial theorem, $(a+b)^{m+n} = \sum_{i=0}^{m+n} \binom {m+n} i a^i b^{m+n-i} = 0$. Since for any $0 \leq i \leq m+n$, either $i \geq m$ or $i < m$, i.e., $i \geq m$ or $m+n-i > n$. we have $a^i = 0$ when $i \geq m$, and $b^{m+n-i} = 0 $ when $m +n-i > n$. So $(a+b)^{m+n} = 0$ and thus $a+b \in \operatorname{Nil}(R)$.
-        \item Let $\overline x \in \operatorname{Nil}(R/\operatorname{Nil}(R))$. Then there exists $n \in \bbN$ such that $\overline {x^n} = \overline x^n = 0$, i.e., $x^n \in \operatorname{Nil}(R)$. So there exists $m \in \bbN$ such that $(x^n)^m = 0$, i.e., $x^{mn} = 0$. Thus, $x \in \operatorname{Nil}(R)$, i.e., $\overline x = 0$.
+        \item Let $\overbar x \in \operatorname{Nil}(R/\operatorname{Nil}(R))$. Then there exists $n \in \bbN$ such that $\overbar {x^n} = \overbar x^n = 0$, i.e., $x^n \in \operatorname{Nil}(R)$. So there exists $m \in \bbN$ such that $(x^n)^m = 0$, i.e., $x^{mn} = 0$. Thus, $x \in \operatorname{Nil}(R)$, i.e., $\overbar x = 0$.
         \item Since $1 \in \operatorname{Nil}(R)$,, there exists $n \in \bbN$ such that $1 = 1^n = 0$. So $R = 0$.
         \item ``$\subseteq$''. Let $x \in \operatorname{Nil}(R)$. Then there exists $n \in \bbN$ such that $x^n = 0 \in \ffp$ for any $\ffp \in \operatorname{Spec}(R)$. So $x \in \ffp$ for any $p \in \operatorname{Spec}(R)$. Thus, $x \in \bigcap_{\ffp \in \operatorname{Spec}(R)} \ffp$. \\
             ``$\supseteq$''. Let $x \in R \setminus \operatorname{Nil}(R)$. Need to show $x \not \in \bigcap_{\ffp \in \operatorname{Spec}(R)}$. It is equivalent to show there exists $\ffp \in \operatorname{Spec}(R)$ such that $x \not \in \ffp$. Let $\Sigma = \{\ffa \leq R \mid x,x^2,x^3 \cdots \not \in \ffa\}$. Since $x \not \in \operatorname{Nil}(R)$, $x^k \neq 0$ for any $k \in \bbN$. So $(0) \in \Sigma$ and then $\Sigma \neq \emptyset$. Let $\mathscr C \subseteq \Sigma$ be chain. Then we have $\ffq := \bigcup_{\ffa \in \mathscr C} \ffa \leq R$. Suppose $x^n \in \ffq$ for some $n \in \bbN$. Then $x^n \in \ffa$ for some $\ffa \in \mathscr C \subseteq \Sigma$, contradicting $\ffa \in \Sigma$. So $x^n \not \in \ffq$ for any $n \in \bbN$ and hence $\ffq \in \Sigma$. Hence $\ffq$ is an upper bound for $\mathscr C$ in $\Sigma$. Since the chain $\ssC \subseteq \Sigma$ is arbitrary, by Zorn's lemma, $\Sigma$ has a maximal element $I$. \\
@@ -251,11 +251,11 @@ Let $R$ be a CRW1.
 
 \begin{proof}
     Method 1: Since $\operatorname{Spec}(R) = \left\{\frac{\langle X_1,\cdots,X_d \rangle}{\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle}\right\}$, $\operatorname{Nil}(R) = \bigcap_{\ffp \in \operatorname{Spec}(R)} \ffp =  \frac{\langle X_1,\cdots,X_d \rangle}{\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle}$. \\
-    Method 2: Since $\overline X_i \in \operatorname{Nil}(R) \leq R$ for each $i = 1,\cdots,d$, we have $\overline {\langle X_1,\cdots,X_d \rangle} = \langle \overline X_1,\cdots,\overline X_d \rangle \subseteq \operatorname{Nil}(R) \subsetneq R$. Also, since $\overline {\langle X_1,\cdots,X_d \rangle}$ is maximal, we have $\operatorname{Nil}(R) = \overline {\langle X_1,\cdots,X_d \rangle}$.
+    Method 2: Since $\overbar X_i \in \operatorname{Nil}(R) \leq R$ for each $i = 1,\cdots,d$, we have $\overbar {\langle X_1,\cdots,X_d \rangle} = \langle \overbar X_1,\cdots,\overbar X_d \rangle \subseteq \operatorname{Nil}(R) \subsetneq R$. Also, since $\overbar {\langle X_1,\cdots,X_d \rangle}$ is maximal, we have $\operatorname{Nil}(R) = \overbar {\langle X_1,\cdots,X_d \rangle}$.
 \end{proof}
 
 \begin{fact*}
-    If $\ffa \leq R$ and $r_1,\cdots,r_n \in R$, then $R/\ffa \supseteq \langle \overline r_1,\cdots,\overline r_n \rangle = \frac{\langle r_1,\cdots,r_n, \ffa \rangle}{\ffa}$. In particular, if $\langle r_1,\cdots,r_n \rangle \supseteq \ffa$, then $\langle \overline r_1, \cdots, \overline r_n \rangle = \frac{\langle r_1,\cdots,r_n \rangle}{\ffa}$.
+    If $\ffa \leq R$ and $r_1,\cdots,r_n \in R$, then $R/\ffa \supseteq \langle \overbar r_1,\cdots,\overbar r_n \rangle = \frac{\langle r_1,\cdots,r_n, \ffa \rangle}{\ffa}$. In particular, if $\langle r_1,\cdots,r_n \rangle \supseteq \ffa$, then $\langle \overbar r_1, \cdots, \overbar r_n \rangle = \frac{\langle r_1,\cdots,r_n \rangle}{\ffa}$.
 \end{fact*}
 
 \begin{definition}
@@ -486,7 +486,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \le
 \begin{proposition}[CRT]
     Let $\ffa_1,\cdots,\ffa_n \leq R$.
     \begin{enumerate}[(a)]
-        \item The function $\phi: R \to (R/\ffa_1) \times \cdots \times (R/\ffa_n)$ given by $\phi(x) = (\overline x, \cdots, \overline x) = (x+\ffa_1,\cdots,x+\ffa_n)$ is a well-defined ring homomorphism.
+        \item The function $\phi: R \to (R/\ffa_1) \times \cdots \times (R/\ffa_n)$ given by $\phi(x) = (\overbar x, \cdots, \overbar x) = (x+\ffa_1,\cdots,x+\ffa_n)$ is a well-defined ring homomorphism.
         \item If $\ffa_i + \ffa_j = R$ for any $1 \leq i \neq j \leq R$, i.e., $\{\ffa_1,\cdots,\ffa_n\}$ are pairwise co-prime, then $\bigcap_{i=1}^n \ffa_i = \ffa_1 \cdots \ffa_n$ and $\ffa_i + (\bigcap_{j \neq i} \ffa_j)R = R$ for any $i = 1,\cdots,n$.
         \item $\phi$ is surjective iff $\ffa_i + \ffa_j = R$ for any $1 \leq i \neq j \leq n$.
         \item $\ker(\phi) = \ffa_1 \cap \cdots \cap \ffa_n$.
@@ -500,8 +500,8 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \le
             Let $i \in \{1,\cdots,r\}$. To show $\ffa_i + (\bigcap_{j \neq i})R = R$. It suffices to show $\operatorname{V}(\ffa_i) \cap \left( \bigcup_{j \neq i} \operatorname{V}(\ffa_j)\right) = \operatorname{V}(\ffa_i) \cap \operatorname{V}\left(\bigcap_{j \neq i} \ffa_j\right) = \operatorname{V}(\ffa_i + \bigcap_{j \neq i} \ffa_j) = \emptyset$. Suppose $\operatorname{V}(\ffa_i) \cap \left(\bigcup_{j \neq i}\operatorname{V}(\ffa_j)\right) \neq \emptyset$. Then there exists $\ffp \in \operatorname{V}(\ffa_i) \cap \operatorname{V}(\ffa_j) = \operatorname{V}(\ffa_i + \ffa_j) = \operatorname{V}(R) = \emptyset$ for some $j \neq i$, a contradiction. \\
             Now for $\bigcap_{i=1}^n \ffa_i = \ffa_1 \cdots \ffa_n$, prove by induction on $n$.  Base case $n = 1$: trivial. Base case $n = 2$: by 1.40(c). Induction step: assume $n \in \bbZ^{\geq 3}$ and $\bigcap_{i=1}^{n-1}\ffa_i = \ffa_1 \cdots \ffa_{n-1}$. Then $\ffa_n + (\ffa_1 \cdots \ffa_{n-1})R = \ffa_n + (\bigcap_{j=1}^{n-1} \ffa_j)R = R$. So by proposition 1.40(c), we have $\bigcap_{i=1}^n \ffa_i = (\bigcap_{i=1}^{n-1} \ffa_i) \cap \ffa_n = (\ffa_1 \cdots \ffa_{n-1}) \cap \ffa_n = (\ffa_1 \cdots \ffa_{n-1})\ffa_n = \ffa_1 \cdots \ffa_n$. 
         \item [(c)]
-            ``$\Rightarrow$''. Assume $\phi$ is surjective. In particular, there exists $x \in R$ such that $(\overline 1,\overline 0,\cdots,\overline 0) = \phi(x) = (\overline x, \overline x, \cdots, \overline x)$. So $x+\ffa_1 = 1+\ffa_1$ and $x+\ffa_i = 0 + \ffa_i$ for any $2 \leq i \leq n$. Hence $1-x \in \ffa_1$ and $x \in \ffa_i$ for any $2 \leq i \leq n$. Also, since $\mathpunct{\underset{\mathclap{\substack{\ \in \ffa_i \\ \textstyle }}}{(x)}} + \mathpunct{\underset{\mathclap{\substack{\ \in \ffa_1 \\ \textstyle }}}{(1-x)}} = 1$, we have $\ffa_i + \ffa_1 = R$ for any $2 \leq i \leq n$. Similarly, consider $(\overline 0, \cdots, \overline 0, \mathpunct{\underset{\mathclap{\substack{\ \ \ \uparrow j\text{th} \\ \textstyle }}}{\overline 1}}, \overline 0, \cdots, \overline 0) \xymatrix{{}\ar@{~>}[r]&{}} \ffa_i + \ffa_j = R$ for any $1 \leq i \neq j \leq n$. \\
-            ``$\Leftarrow$''. Assume $\ffa_i + \ffb_j = R$ for any $1 \leq i \neq j \leq n$. By (b), $\ffa_1 + (\bigcap_{j=2}^n \ffa_j)R = R$. So $a_1 + y = 1$ with $a_1 \in \ffa_1$ and $y \in \bigcap_{j=2}^n \ffa_j$, i.e., $1-y = a_1 \in \ffa_1$ and $y \in \ffa_j$ for any $2 \leq j \leq n$. Then $\phi(y) = (\overline y, \overline y, \cdots, \overline y) = (y + \ffa_1, y + \ffa_2, \cdots, y + \ffa_n) = (1+\ffa_1,0+\ffa_2,\cdots,0+\ffa_n) = (\overline 1,\overline 0, \cdots, \overline 0)$. Similarly, for any $j = 1,\cdots,n$, there exists $y_j$ such that $\phi(y_j) = (\overline 0, \cdots, \overline 0, \mathpunct{\underset{\mathclap{\substack{\ \ \ \uparrow j\text{th}\\ \textstyle }}}{\overline 1}}, \overline 0, \cdots, \overline 0)$. Then for any $(\overline r_1,\cdots, \overline r_n) \in \frac{R}{\ffa_1} \times \cdots \times \frac{R}{\ffa_n}$, $(\overline r_1,\cdots, \overline r_n) = \sum_{j=1}^n r_j(\overline 0, \cdots, \overline 0, \mathpunct{\underset{\mathclap{\substack{\ \ \ \uparrow j\text{th} \\ \textstyle }}}{\overline 1}}, \overline 0, \cdots, \overline 0) = \sum_{j=1}^n r_j\phi(y_j) = \phi(\sum_{j=1}^nr_jy_j)$. So $\phi$ is surjective.
+            ``$\Rightarrow$''. Assume $\phi$ is surjective. In particular, there exists $x \in R$ such that $(\overbar 1,\overbar 0,\cdots,\overbar 0) = \phi(x) = (\overbar x, \overbar x, \cdots, \overbar x)$. So $x+\ffa_1 = 1+\ffa_1$ and $x+\ffa_i = 0 + \ffa_i$ for any $2 \leq i \leq n$. Hence $1-x \in \ffa_1$ and $x \in \ffa_i$ for any $2 \leq i \leq n$. Also, since $\mathpunct{\underset{\mathclap{\substack{\ \in \ffa_i \\ \textstyle }}}{(x)}} + \mathpunct{\underset{\mathclap{\substack{\ \in \ffa_1 \\ \textstyle }}}{(1-x)}} = 1$, we have $\ffa_i + \ffa_1 = R$ for any $2 \leq i \leq n$. Similarly, consider $(\overbar 0, \cdots, \overbar 0, \mathpunct{\underset{\mathclap{\substack{\ \ \ \uparrow j\text{th} \\ \textstyle }}}{\overbar 1}}, \overbar 0, \cdots, \overbar 0) \xymatrix{{}\ar@{~>}[r]&{}} \ffa_i + \ffa_j = R$ for any $1 \leq i \neq j \leq n$. \\
+            ``$\Leftarrow$''. Assume $\ffa_i + \ffb_j = R$ for any $1 \leq i \neq j \leq n$. By (b), $\ffa_1 + (\bigcap_{j=2}^n \ffa_j)R = R$. So $a_1 + y = 1$ with $a_1 \in \ffa_1$ and $y \in \bigcap_{j=2}^n \ffa_j$, i.e., $1-y = a_1 \in \ffa_1$ and $y \in \ffa_j$ for any $2 \leq j \leq n$. Then $\phi(y) = (\overbar y, \overbar y, \cdots, \overbar y) = (y + \ffa_1, y + \ffa_2, \cdots, y + \ffa_n) = (1+\ffa_1,0+\ffa_2,\cdots,0+\ffa_n) = (\overbar 1,\overbar 0, \cdots, \overbar 0)$. Similarly, for any $j = 1,\cdots,n$, there exists $y_j$ such that $\phi(y_j) = (\overbar 0, \cdots, \overbar 0, \mathpunct{\underset{\mathclap{\substack{\ \ \ \uparrow j\text{th}\\ \textstyle }}}{\overbar 1}}, \overbar 0, \cdots, \overbar 0)$. Then for any $(\overbar r_1,\cdots, \overbar r_n) \in \frac{R}{\ffa_1} \times \cdots \times \frac{R}{\ffa_n}$, $(\overbar r_1,\cdots, \overbar r_n) = \sum_{j=1}^n r_j(\overbar 0, \cdots, \overbar 0, \mathpunct{\underset{\mathclap{\substack{\ \ \ \uparrow j\text{th} \\ \textstyle }}}{\overbar 1}}, \overbar 0, \cdots, \overbar 0) = \sum_{j=1}^n r_j\phi(y_j) = \phi(\sum_{j=1}^nr_jy_j)$. So $\phi$ is surjective.
     \end{enumerate}
 \end{proof}
 
