@@ -525,27 +525,8 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \le
     The converses fail in general. Let $R = k[X,Y]$, $\ffp = \ffa_1 = \langle x \rangle$ and $\ffa_2 = \langle y \rangle$. Then $\ffa_1 \cap \ffa_2 = \langle xy \rangle \neq \langle x \rangle = \ffp = \langle x \rangle \neq  \langle xy \rangle = \ffa_1\ffa_2$.
 \end{example*}
 
-\setcounter{theorem}{50}
-
-\begin{theorem}[Prime Avoidence]
-    Let $\ffp_1,\cdots,\ffp_n \in \operatorname{Spec}(R)$. If $\ffa \subseteq \bigcup_{i=1}^n \ffp_i$, then $\ffa \subseteq \ffp_i$ for some $i \in \{1,\cdots,n\}$, i.e., if $\ffa \not \subseteq \ffp_i$ for any $i = 1,\cdots,r$, then $\ffa \not \subseteq \bigcup_{i=1}^n \ffp_i$.
-\end{theorem}
-
-\setcounter{theorem}{49}
-
-\begin{theorem}[More general version]
-    Let $\ffb_1,\cdots,\ffb_n \leq R$. Assume
-    \begin{enumerate}[(1)]
-        \item $R$ contains an infinite field $k$ as a subring, or
-        \item $\ffb_3,\cdots,\ffb_n \in \operatorname{Spec}(R)$.
-    \end{enumerate}
-    Then if $\ffa \subseteq \bigcup_{i=1}^n \ffb_i$, $\ffa \subseteq \ffb_i$ for some $i \in \{1,\cdots,n\}$.
-\end{theorem}
-
-\setcounter{theorem}{47}
-
 \begin{lemma}
-    Let $k$ be an infinite field, $V \neq 0$ a vector space over $k$, and $V_1,\cdots,V_n$ proper subspaces of $V$. Then $V \neq \bigcup_{i=1}^n V_i$.
+    Let $k$ be an infinite field, $V \neq 0$ a vector space over $k$, and $V_1,\cdots,V_n \lneq V$. Then $\bigcup_{i=1}^n V_i \subsetneq V$.
     \begin{center}
         \begin{tikzpicture}
           \draw[->] (-1,0) -- (1,0) node[right] {$X$};
@@ -557,3 +538,78 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \le
         \end{center}
 \end{lemma}
 
+\begin{proof}
+    Induction on $n$. Base case $n = 1$: trivial. \\
+    Inductive step: assume $n \geq 2$ and $\bigcup_{i \neq j}V_j \subsetneq V$ for any $j = 1,\cdots,n$. Then there exists $v_j \in V \setminus \{\bigcup_{i \neq j}V_j\}$ for any $j = 1,\cdots,n$. BWOC, suppose $\bigcup_{i=1}^nV_i = V \ni v_j$. Since $v_j \not \in \bigcup_{i \neq j}V_j$, $v_j \in V_j$. Let $1 \leq i \neq j \leq n$. Consider $v_i + \lambda v_j$ with $\lambda \in k$. Check if $\lambda \neq \mu$ in $k$, then $v_i + \lambda v_j \neq v_i + \mu v_j$. So there exists $l$ such that $V_l$ contains two distinct elements $v_i + \lambda v_j$ and $v_i + \mu v_j$ with $\lambda, \mu \neq 0$. Note $V_l \ni (v_i + \lambda v_j) - (v_i + u v_j) = (\lambda - \mu)v_j$. Since $\lambda \neq \mu$, $v_j \in V_l$ and then $l = j$. Note $V_l \ni \lambda^{-1}(v_i + \lambda v_j) - \mu^{-1}(v_i + \mu v_j) = (\lambda^{-1}-\mu^{-1})v_i$. So $v_i \in V_l$ and then $i = l$. Hence $i = l = j$, a contradiction.
+\end{proof}
+
+\begin{example}
+    If $\abs k < \infty$, then fail. Since $\abs{k^2} < \infty$, $k^2 = \bigcup_{v \in k^2} \{v\} = \bigcup_{0 \neq v \in k^2} \operatorname{span}\{v\}$ finite union but $\operatorname{span}(v) \subsetneq k^2$? \\
+    Same technique shows that can's replace $V_1,\cdots,V_n$ with $V_1,V_2,\cdots,$ over $\bbQ$.
+\end{example}
+
+\begin{theorem}[More general version]
+    Let $\ffb_1,\cdots,\ffb_n \leq R$. Assume
+    \begin{enumerate}[(1)]
+        \item $R$ contains an infinite field $k$ as a subring, or
+        \item $\ffb_3,\cdots,\ffb_n \in \operatorname{Spec}(R)$.
+    \end{enumerate}
+    Then if $\ffa \subseteq \bigcup_{i=1}^n \ffb_i$, $\ffa \subseteq \ffb_i$ for some $i \in \{1,\cdots,n\}$.
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}[(1)]
+        \item Assume $\ffa \not \subseteq \ffb_i$ for any $i = 1,\cdots,n$. Then $\ffa \cap \ffb_i \subsetneq \ffa$ for any $i = 1,\cdots,n$. Since $\ffa$ is a $k$-vector space and $\ffa \cap \ffb_i \lneq \ffa$ for any $i = 1,\cdots,n$, by 1.48, $\ffa \cap \bigcup_{i=1}^n \ffb_i = \bigcup_{i=1}^n (\ffa \cap \ffb_i) \lneq \ffa$. So $\ffa \not \subseteq \bigcup_{i=1}^n \ffb_i$. 
+        \item Induct on $n$. Base case $n = 1$: done. Base case $n = 2$. Let $a_i \in \ffa \setminus \ffb_i$ for any $i = 1,2$. Consider $a_1 + a_2 \in \ffa$. Suppose $\ffa \subseteq \ffb_1 \cup \ffb_2$. Then $a_1 + a_2 \in \ffb_1 \cup \ffb_2$, say $a_1 + a_2 \in \ffb_2$. Since $a_1 \in \ffa \subseteq \ffb_1 \cup \ffb_2$ and $a_1 \not \in \ffb_1$, $a_1 \in \ffb_2$. So $a_2 = (a_1 + a_2) - a_1 \in \ffb_2$, a contradiction. \\
+            Induct on $n \geq 3$. Assume $\ffa \not \subseteq \ffb_i$ for any $i = 1,\cdots,n$. Suppose $\ffa \subseteq \bigcup_{i=1}^n \ffb_i$. Inducitve hypothesis: $\ffa \not \subseteq \bigcup_{i \neq j} \ffb_i$ for any $j = 1,\cdots,n$, there exists $a_j \in \ffa \setminus \{\bigcup_{i \neq j} \ffb_i\}$. Consider $a_1 \cdot a_{n-1} + a_n \in \ffa \subseteq \bigcup_{i=1}^n \ffb_i$. Since $a_j \in \ffa \subseteq \bigcup_{i=1}^n \ffb_i$ and $a_j \not \in \bigcup_{i \neq j} \ffb_i$, we have $a_j \in V_j$. So there exists $l \in \{1,\cdots,n\}$ such that $a_1 \cdots a_{n-1} + a_n \in \ffb_l$. Suppose $l=n$. Then $a_n \in \ffb_n$ and so $a_1 \cdots a_{n-1} \in \ffb_n$. Since $n \geq 3$, $\ffb_n$ is prime. So $\ffb_n \ni a_i$ for some $i < n$, a contradiction. Hence $l < n$. So $a_1 \cdots a_l \cdots a_{n-1} \in \ffq_l$.
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}[Prime Avoidence]
+    Let $\ffp_1,\cdots,\ffp_n \in \operatorname{Spec}(R)$. If $\ffa \subseteq \bigcup_{i=1}^n \ffp_i$, then $\ffa \subseteq \ffp_i$ for some $i \in \{1,\cdots,n\}$, i.e., if $\ffa \not \subseteq \ffp_i$ for any $i = 1,\cdots,r$, then $\ffa \not \subseteq \bigcup_{i=1}^n \ffp_i$.
+\end{theorem}
+
+
+
+
+
+\begin{definition}
+    Let $\ffa \leq R$ and $S \subseteq R$. $(\ffa:S) = \{r \in R \mid rs \in R,\fa s \in S\}$.
+\end{definition}
+
+\begin{example}
+    Let $R = k[X,Y]$. $(\langle XY \rangle: \{X,Y\}) = \langle XY \rangle$ and $(\langle X^2,XY \rangle: \{X,Y\}) = \langle X \rangle$.
+\end{example}
+
+\begin{fact}
+    \begin{enumerate}[(a)]
+        \item $\ffa \subseteq (\ffa:S) \leq R$.
+        \item $(\ffa:\ffb)\ffb \subseteq \ffa$. 
+        \item If $S \subseteq T$, $(\ffa:S) \supseteq (\ffa:T)$.
+        \item 
+    \end{enumerate}
+\end{fact}
+
+\begin{proof}
+    \begin{enumerate}
+        \item[(b)]
+            Let $r \in (\ffa:\ffb)$ and $b \in \ffb$. Then $br \in \ffa$. So all generators of $(\ffa:\ffb)\ffb$ is in $\ffa$.
+        \item[(e)]
+            Since $S \subseteq \langle S \rangle$, by (c), $(\ffa:S) \supseteq (\ffa:\langle S \rangle)$. ``$\subseteq$''.
+        \item [(j)]
+            ``$\subseteq$''.\\
+            ``$\supseteq$''. Reverse the above proof.
+    \end{enumerate}
+\end{proof}
+
+\begin{example}
+    Let $R = k[X,Y]$.
+\end{example}
+
+\begin{definition}
+    The \emph{radical} of $\ffa \leq R$ is $\operatorname{rad}(\ffa) = \operatorname{r}(\ffa) = \sqrt \ffa = \{x \in R \mid x^n \in \ffa, \fa n \geq\geq 0\} = \{x \in R \mid x^n \in \ffa \text{ for some }n \in \bbN\}$. 
+\end{definition}
+
+\begin{example}
+    $\operatorname{rad}(\langle X^2Y,XY^2 \rangle) = \langle XY \rangle$ in $k[X,Y]$.
+\end{example}
