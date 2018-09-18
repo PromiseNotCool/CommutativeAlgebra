@@ -540,12 +540,12 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \le
 
 \begin{proof}
     Induction on $n$. Base case $n = 1$: trivial. \\
-    Inductive step: assume $n \geq 2$ and $\bigcup_{i \neq j}V_j \subsetneq V$ for any $j = 1,\cdots,n$. Then there exists $v_j \in V \setminus \{\bigcup_{i \neq j}V_j\}$ for any $j = 1,\cdots,n$. BWOC, suppose $\bigcup_{i=1}^nV_i = V \ni v_j$. Since $v_j \not \in \bigcup_{i \neq j}V_j$, $v_j \in V_j$. Let $1 \leq i \neq j \leq n$. Consider $v_i + \lambda v_j$ with $\lambda \in k$. Check if $\lambda \neq \mu$ in $k$, then $v_i + \lambda v_j \neq v_i + \mu v_j$. So there exists $l$ such that $V_l$ contains two distinct elements $v_i + \lambda v_j$ and $v_i + \mu v_j$ with $\lambda, \mu \neq 0$. Note $V_l \ni (v_i + \lambda v_j) - (v_i + u v_j) = (\lambda - \mu)v_j$. Since $\lambda \neq \mu$, $v_j \in V_l$ and then $l = j$. Note $V_l \ni \lambda^{-1}(v_i + \lambda v_j) - \mu^{-1}(v_i + \mu v_j) = (\lambda^{-1}-\mu^{-1})v_i$. So $v_i \in V_l$ and then $i = l$. Hence $i = l = j$, a contradiction.
+    Inductive step: assume $n \geq 2$ and $\bigcup_{i \neq j}V_j \subsetneq V$ for any $j = 1,\cdots,n$. Then there exists $0 \neq v_j \in V \setminus \{\bigcup_{i \neq j}V_j\}$ for any $j = 1,\cdots,n$. BWOC, suppose $\bigcup_{i=1}^nV_i = V$. Then $v_j \in \bigcup_{i=1}^n V_i \setminus \{\bigcup_{i \neq j}V_j\} = V_j$ for any $j = 1,\cdots,n$. Let $1 \leq i \neq j \leq n$. Since $v_j \neq 0$, we have $v_i + \lambda v_j \neq v_i + \mu v_j$ for any $\lambda \neq \mu$ in $k$. Since $k$ is infinite, there exists $l$ such that $V_l$ contains two distinct elements $v_i + \lambda v_j$ and $v_i + \mu v_j$ with $0 \neq \lambda, \mu \in k$. Then $(\lambda-\mu)v_j = (v_i + \lambda v_j) - (v_i + \mu v_j) \in V_l$. Since $\lambda \neq \mu$, we have $v_j \in V_l$. Since $v_j \not \in V_k$ for any $k \neq j$ and $v_j \in V_j$, we have $l = j$. Also, since $(\lambda^{-1}-\mu^{-1})v_i = \lambda^{-1}(v_i + \lambda v_j) - \mu^{-1}(v_i + \mu v_j) \in V_l$, we have $v_i \in V_l$ and then similarly, we have $l=i$. Hence $i = l = j$, a contradiction.
 \end{proof}
 
 \begin{example}
-    If $\abs k < \infty$, then fail. Since $\abs{k^2} < \infty$, $k^2 = \bigcup_{v \in k^2} \{v\} = \bigcup_{0 \neq v \in k^2} \operatorname{span}\{v\}$ finite union but $\operatorname{span}(v) \subsetneq k^2$? \\
-    Same technique shows that can's replace $V_1,\cdots,V_n$ with $V_1,V_2,\cdots,$ over $\bbQ$.
+    If $\abs k < \infty$, then fail. For example, let $V = k^2 = \bigcup_{v \in k^2} \{v\} = \bigcup_{0 \neq v \in k^2} \operatorname{span}\{v\}$ with $0 \neq \operatorname{span}(v) \lneq k^2 = V$. \\
+    Same technique shows that can't replace $V_1,\cdots,V_n$ with $V_1,V_2,\cdots,$ over $\bbQ$.
 \end{example}
 
 \begin{theorem}[More general version]
@@ -554,14 +554,14 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \le
         \item $R$ contains an infinite field $k$ as a subring, or
         \item $\ffb_3,\cdots,\ffb_n \in \operatorname{Spec}(R)$.
     \end{enumerate}
-    Then if $\ffa \subseteq \bigcup_{i=1}^n \ffb_i$, $\ffa \subseteq \ffb_i$ for some $i \in \{1,\cdots,n\}$.
+    Then if $\ffa \not \subseteq \ffb_i$ for any $i = 1,\cdots,n$, then $\ffa \not \subsetneq \bigcup_{i=1}^n \ffb_i$.
 \end{theorem}
 
 \begin{proof}
     \begin{enumerate}[(1)]
-        \item Assume $\ffa \not \subseteq \ffb_i$ for any $i = 1,\cdots,n$. Then $\ffa \cap \ffb_i \subsetneq \ffa$ for any $i = 1,\cdots,n$. Since $\ffa$ is a $k$-vector space and $\ffa \cap \ffb_i \lneq \ffa$ for any $i = 1,\cdots,n$, by 1.48, $\ffa \cap \bigcup_{i=1}^n \ffb_i = \bigcup_{i=1}^n (\ffa \cap \ffb_i) \lneq \ffa$. So $\ffa \not \subseteq \bigcup_{i=1}^n \ffb_i$. 
-        \item Induct on $n$. Base case $n = 1$: done. Base case $n = 2$. Let $a_i \in \ffa \setminus \ffb_i$ for any $i = 1,2$. Consider $a_1 + a_2 \in \ffa$. Suppose $\ffa \subseteq \ffb_1 \cup \ffb_2$. Then $a_1 + a_2 \in \ffb_1 \cup \ffb_2$, say $a_1 + a_2 \in \ffb_2$. Since $a_1 \in \ffa \subseteq \ffb_1 \cup \ffb_2$ and $a_1 \not \in \ffb_1$, $a_1 \in \ffb_2$. So $a_2 = (a_1 + a_2) - a_1 \in \ffb_2$, a contradiction. \\
-            Induct on $n \geq 3$. Assume $\ffa \not \subseteq \ffb_i$ for any $i = 1,\cdots,n$. Suppose $\ffa \subseteq \bigcup_{i=1}^n \ffb_i$. Inducitve hypothesis: $\ffa \not \subseteq \bigcup_{i \neq j} \ffb_i$ for any $j = 1,\cdots,n$, there exists $a_j \in \ffa \setminus \{\bigcup_{i \neq j} \ffb_i\}$. Consider $a_1 \cdot a_{n-1} + a_n \in \ffa \subseteq \bigcup_{i=1}^n \ffb_i$. Since $a_j \in \ffa \subseteq \bigcup_{i=1}^n \ffb_i$ and $a_j \not \in \bigcup_{i \neq j} \ffb_i$, we have $a_j \in V_j$. So there exists $l \in \{1,\cdots,n\}$ such that $a_1 \cdots a_{n-1} + a_n \in \ffb_l$. Suppose $l=n$. Then $a_n \in \ffb_n$ and so $a_1 \cdots a_{n-1} \in \ffb_n$. Since $n \geq 3$, $\ffb_n$ is prime. So $\ffb_n \ni a_i$ for some $i < n$, a contradiction. Hence $l < n$. So $a_1 \cdots a_l \cdots a_{n-1} \in \ffq_l$.
+        \item For any $i = 1,\cdots,n$, since $\ffa \not \subseteq \ffb_i$, $\ffa \cap \ffb_i \lneq \ffa$. Also, since $\ffa$ is a $k$-vector space, by lemma 1.48, $\ffa \cap \bigcup_{i=1}^n \ffb_i = \bigcup_{i=1}^n (\ffa \cap \ffb_i) \lneq \ffa$. So $\ffa \not \subseteq \bigcup_{i=1}^n \ffb_i$. 
+        \item Induct on $n$. Base case $n = 1$, done. Base case $n = 2$. Let $a_i \in \ffa \setminus \ffb_i$ for any $i = 1,2$. Then $a_1 + a_2 \in \ffa$. Suppose $\ffa \subseteq \ffb_1 \cup \ffb_2$. Then $a_1 + a_2 \in \ffb_1 \cup \ffb_2$, say $a_1 + a_2 \in \ffb_2$. Since $a_1 \in \ffa \subseteq \ffb_1 \cup \ffb_2$ and $a_1 \not \in \ffb_1$, $a_1 \in \ffb_2$. So $a_2 = (a_1 + a_2) - a_1 \in \ffb_2$, a contradiction. \\
+            Induct on $n \geq 3$. Let $\ffa \not \subseteq \ffb_i$ for any $i = 1,\cdots,n$. Assume $\ffa \not \subseteq \bigcup_{i \neq j} \ffb_i$ for any $j = 1,\cdots,n$, there exists $a_j \in \ffa \setminus \{\bigcup_{i \neq j} \ffb_i\}$. BWOC, suppose $\ffa \subseteq \bigcup_{i=1}^n \ffb_i$. Then $a_j \in \bigcup_{i=1}^n \ffb_i \setminus \{\bigcup_{i \neq j}\ffb_i\} = \ffb_j$ for any $j = 1,\cdots,n$. Note $a_1 \cdots a_{n-1} + a_n \in \ffa \subseteq \bigcup_{i=1}^n \ffb_i$. So there exists $l \in \{1,\cdots,n\}$ such that $a_1 \cdots a_{n-1} + a_n \in \ffb_l$. Suppose $l=n$. Since $a_n \in \ffb_n$, $a_1 \cdots a_{n-1} \in \ffb_n$. Since $n \geq 3$, we have $\ffb_n \in \operatorname{Spec}(R)$ and then $a_i \in \ffb_n$ for some $1 < i < n$, a contradiction. Hence we must have $l < n$. But since $a_1 \cdots a_l \cdots a_{n-1} \in \ffb_l$, we have $a_n \in \ffb_l$, a contradiction.
     \end{enumerate}
 \end{proof}
 
@@ -569,23 +569,41 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \le
     Let $\ffp_1,\cdots,\ffp_n \in \operatorname{Spec}(R)$. If $\ffa \subseteq \bigcup_{i=1}^n \ffp_i$, then $\ffa \subseteq \ffp_i$ for some $i \in \{1,\cdots,n\}$, i.e., if $\ffa \not \subseteq \ffp_i$ for any $i = 1,\cdots,r$, then $\ffa \not \subseteq \bigcup_{i=1}^n \ffp_i$.
 \end{theorem}
 
-
-
-
-
 \begin{definition}
-    Let $\ffa \leq R$ and $S \subseteq R$. $(\ffa:S) = \{r \in R \mid rs \in R,\fa s \in S\}$.
+    Let $\ffa \leq R$ and $S \subseteq R$. Let 
+    \begin{enumerate}[(a)]
+        \item 
+            $(\ffa:S) = \{r \in R \mid rs \in R,\fa s \in S\}$.
+        \item
+            $(0:S) = \{r \in R \mid rs = 0, \fa s \in S\} = \operatorname{Ann}_R(S)$.
+    \end{enumerate}
 \end{definition}
 
 \begin{example}
-    Let $R = k[X,Y]$. $(\langle XY \rangle: \{X,Y\}) = \langle XY \rangle$ and $(\langle X^2,XY \rangle: \{X,Y\}) = \langle X \rangle$.
+    Let $R = k[X,Y]$. 
+    \begin{enumerate}[(a)]
+        \item $(\langle XY \rangle: \{X,Y\}) = (\langle XY \rangle: \langle X,Y \rangle) = (\langle XY \rangle: \langle X \rangle) \bigcap (\langle XY \rangle: \langle Y \rangle) = \langle Y \rangle \bigcap \langle X \rangle= \langle XY \rangle$.
+        \item
+            \begin{align*}
+                & (\langle X^2,XY \rangle: \{X,Y\}) = (\langle X^2,XY \rangle: \langle X,Y \rangle) = \left((\langle X^2 \rangle: \langle X \rangle) + (\langle X^2 \rangle: \langle Y \rangle)\right) \\
+                &\ \ \ \textstyle \bigcap\left((\langle XY \rangle: \langle X \rangle)+(\langle XY \rangle: \langle Y \rangle)\right) = (\langle X \rangle + \langle X^2 \rangle) \textstyle \bigcap (\langle Y \rangle + \langle X \rangle) \\
+                &= \langle X \rangle \textstyle \bigcap \langle X,Y \rangle = \langle X,XY \rangle = \langle X \rangle.
+            \end{align*}
+    \end{enumerate}
 \end{example}
 
 \begin{fact}
+    Let $S \subseteq R$.
     \begin{enumerate}[(a)]
         \item $\ffa \subseteq (\ffa:S) \leq R$.
         \item $(\ffa:\ffb)\ffb \subseteq \ffa$. 
-        \item If $S \subseteq T$, $(\ffa:S) \supseteq (\ffa:T)$.
+        \item If $S \subseteq T$, then $(\ffa:S) \supseteq (\ffa:T)$.
+        \item If $\ffa \subseteq \ffb$, then $(\ffa:S) \subseteq (\ffb:S)$.
+        \item $(\ffa:S) = (\ffa:\langle S \rangle)$.
+        \item $\ffb \subseteq \ffa$ iff $(\ffa:\ffb) = R$.
+        \item 
+        \item 
+        \item 
         \item 
     \end{enumerate}
 \end{fact}
@@ -613,3 +631,69 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \le
 \begin{example}
     $\operatorname{rad}(\langle X^2Y,XY^2 \rangle) = \langle XY \rangle$ in $k[X,Y]$.
 \end{example}
+
+\begin{example}
+    Let $R = \bbF_2[X,Y]$, $\ffa = \langle X,Y \rangle$, $\ffb_1 = \langle X,X^2,XY,Y^2 \rangle$, $\ffb_2 = \langle X+Y,X^2,XY,Y^2 \rangle$, and $\ffb_3 = \langle Y,X^2,XY,Y^2 \rangle$. Then $\ffa = \ffb_1 \cup \ffb_2 \cup \ffb_3$, but $\ffa \supsetneq \ffb_i$ for any $i = 1,2,3$. \\
+    $\frac{\bbF_2[X,Y]}{\langle X^2,XY,Y^2 \rangle} \geq \langle \overline X, \overline Y \rangle \cong \bbF_2^2$. Let $\ffb_1 = \langle \overline X, \overline Y \rangle$, $\ffb_2 = \langle \overline X + \overline Y \rangle$ and $\ffb_3 = \langle Y \rangle$. Then $\langle \overline X,\overline Y \rangle = \ffb_1 \cup \ffb_2 \cup \ffb_2$, but $\ffb_i \subseteq \langle \overline X,\overline Y \rangle$ for any $i = 1,2,3$.
+\end{example}
+
+\begin{fact}
+    Let $\ffa \leq R$ and $\pi: R \to R/\ffa$ be the natural projection.
+    \begin{enumerate}[(a)]
+        \item $\operatorname{rad}(\ffa) = \pi^{-1}(\operatorname{Nil}(R/\ffa)) \leq R$. 
+        \item If $\ffa \subseteq \ffb$, then $\operatorname{rad}(\ffa) \subseteq \operatorname{rad}(\ffb)$ (converse fails).
+        \item $\ffa \subseteq \operatorname{rad}(\ffa) = \operatorname{rad}(\operatorname{rad}(\ffa))$ (equality fails in general). 
+        \item $\operatorname{rad}(\ffa\ffb) = \operatorname{rad}(\ffa \cap \ffb) = \operatorname{rad}(\ffa) \cap \operatorname{rad}(\ffb)$.
+        \item $\operatorname{rad}(\ffa) = R$ iff $\ffa = R$.
+        \item $\operatorname{rad}(\ffa + \ffb) = \operatorname{rad}(\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb))$.
+        \item $\operatorname{rad}(\ffa) = \bigcap_{\ffp \in \operatorname{V}(\ffa)} \ffp$. 
+        \item $\operatorname{rad}(\bigcap_{i=1}^n \ffp_i^{e_i}) = \bigcap_{i=1}^n \ffp_i$, where $\ffp_i \in \operatorname{Spec}(R)$ and $e_i \in \bbN$ for any $i = 1,\cdots,n$.
+        \item $\ffa + \ffb = R$ iff $\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb) = R$. 
+        \item Special case:
+        \item $\ffa + \ffb = R$. 
+    \end{enumerate}
+\end{fact}
+
+\begin{proof}
+    \begin{enumerate}[(a)]
+    \end{enumerate}
+\end{proof}
+
+\begin{example}
+    \begin{enumerate}
+        \item [(b)] If $\operatorname{rad}(\ffa)+\operatorname{rad}(\ffb)$, then we may not have $\ffa \subseteq \ffb$. 
+        \item [(c)]
+        \item [(d)]
+    \end{enumerate}
+\end{example}
+
+\begin{definition}[extension and contraction of ideals along ring homomorphisms]
+    Let $\varphi: R \to S$ be a ring homomorphism. Let $\ffa \leq R$, then the \emph{extension} of $\ffa$ along $\varphi$ is $\ffa^e = \ffa S = \langle \varphi(\ffa) \rangle \leq S$. Let $\ffb \leq S$, then the \emph{extraction} of $\ffb$ along $\varphi$ is $\ffa^c = \varphi^{-1}(\ffb) \leq R$.
+\end{definition}
+
+\begin{example}
+    \begin{enumerate}
+        \item[(a)] Let $R$ be an integral domain with field of fraction $Q(R)$. Then $R \subseteq Q(R)$ with the inclusion map $\epsilon:R \to Q(R)$ given by $\varepsilon(r) = r/1$. If $0 \neq \ffa \leq R$, then $\ffa Q(R) = Q(R)$ and $0Q(R) = 0$.
+        \item[(b)] Note $\langle X\rangle k[X] \subseteq k[X] \subseteq k[X,Y]$, $\left(\langle X \rangle k[X]\right)k[X,Y] = \langle X \rangle k[X,Y]$.
+        \item[(c)] Let $R \subseteq S$ be rings and $\varepsilon: R \xrightarrow \subseteq S$. Let $\ffb \subseteq S$, then $\varepsilon^{-1}(\ffb) = \ffb \cap R$.
+        \item[(b)]
+    \end{enumerate}
+\end{example}
+
+\begin{proposition}
+    Let $\varphi: R \to S$ be a ring homomorphism.
+    \begin{enumerate}[(a)]
+        \item
+        \item
+        \item 
+        \item 
+        \item 
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}[(a)]
+        \item 
+        \item 
+    \end{enumerate}
+\end{proof}
