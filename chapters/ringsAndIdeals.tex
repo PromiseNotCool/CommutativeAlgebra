@@ -236,7 +236,7 @@ Let $R$ be a CRW1.
 
 \begin{proof}
     \begin{enumerate}[(a)]
-        \item Since $0 \in \operatorname{Nil}(R)$, $\operatorname{Nil}(R) \neq \emptyset$. Let $r \in R$ and $a,b \in \operatorname{Nil}(R)$. Then there exists $m,n \in \bbN$ such that $a^m = 0 = b^n$. Then $(ra)^m = r^ma^m = 0$ and so $ra \in \operatorname{Nil}(R)$. By binomial theorem, $(a+b)^{m+n} = \sum_{i=0}^{m+n} \binom {m+n} i a^i b^{m+n-i} = 0$. Since for any $0 \leq i \leq m+n$, either $i \geq m$ or $i < m$, i.e., $i \geq m$ or $m+n-i > n$. we have $a^i = 0$ when $i \geq m$, and $b^{m+n-i} = 0 $ when $m +n-i > n$. So $(a+b)^{m+n} = 0$ and thus $a+b \in \operatorname{Nil}(R)$.
+        \item Since $0 \in \operatorname{Nil}(R)$, $\operatorname{Nil}(R) \neq \emptyset$. Let $r \in R$ and $a,b \in \operatorname{Nil}(R)$. Then there exists $m,n \in \bbN$ such that $a^m = 0 = b^n$. Then $(ra)^m = r^ma^m = 0$ and so $ra \in \operatorname{Nil}(R)$. By binomial theorem, $(a+b)^{m+n} = \sum_{i=0}^{m+n} \binom {m+n} i a^i b^{m+n-i} = 0$. Since for any $0 \leq i \leq m+n$, either $i \geq m$ or $i < m$, i.e., $i \geq m$ or $m+n-i > n$. we have $a^i = 0$ when $i \geq m$, and $b^{m+n-i} = 0 $ when $m + n-i > n$. So $(a+b)^{m+n} = 0$ and thus $a+b \in \operatorname{Nil}(R)$.
         \item Let $\overbar x \in \operatorname{Nil}(R/\operatorname{Nil}(R))$. Then there exists $n \in \bbN$ such that $\overbar {x^n} = \overbar x^n = 0$, i.e., $x^n \in \operatorname{Nil}(R)$. So there exists $m \in \bbN$ such that $(x^n)^m = 0$, i.e., $x^{mn} = 0$. Thus, $x \in \operatorname{Nil}(R)$, i.e., $\overbar x = 0$.
         \item Since $1 \in \operatorname{Nil}(R)$,, there exists $n \in \bbN$ such that $1 = 1^n = 0$. So $R = 0$.
         \item ``$\subseteq$''. Let $x \in \operatorname{Nil}(R)$. Then there exists $n \in \bbN$ such that $x^n = 0 \in \ffp$ for any $\ffp \in \operatorname{Spec}(R)$. So $x \in \ffp$ for any $p \in \operatorname{Spec}(R)$. Thus, $x \in \bigcap_{\ffp \in \operatorname{Spec}(R)} \ffp$. \\
@@ -277,7 +277,7 @@ Let $R$ be a CRW1.
 
 \section{Operations on Ideals}
 
-Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \leq R$ for any $\lambda \in \Lambda$, where $\Lambda$ is an index set.
+Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, and $S_\lambda \subseteq R$ and $\ffa_\lambda,\ffb_\lambda \leq R$ for any $\lambda \in \Lambda$, where $\Lambda$ is an index set.
 
 \begin{definition}
     $\ffa + \ffb = \langle \ffa \cup \ffb \rangle = \bigcap_{\ffa \cup \ffb \subseteq I \leq R}I$.
@@ -441,7 +441,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \le
             ``$\subseteq$''. Assume $\ffa + \ffb = R$.  \\
             Method 1: Note $1 = a+b$ for some $a \in \ffa$ and $b \in \ffb$. Let $x \in \ffa \cap \ffb$. Then $x \in \ffb$ and $x \in \ffa$. So $x = 1 \cdot x = (a+b)x = ax + bx = ax + xb \in \operatorname{\ffa \ffb}$. Hence $\ffa \cap \ffb \subseteq \ffa \ffb$. \\
             Method 2: Note $\ffa \cap \ffb = R(\ffa \cap \ffb) = (\ffa + \ffb)(\ffa \cap \ffb) = \ffa(\underbrace{\ffa \cap \ffb}_{\subseteq \ffb}) + \ffb(\underbrace{\ffa \cap \ffb}_{\subseteq \ffa}) \subseteq \ffa \ffb$ by (a) and (b). \\
-            Conversely, assume $R$ is a PID and $\ffa,\ffb \neq 0$. Write $\ffa = \ffp_1^{e_1} \cdots \ffp_n^{e_n} R$ and $\ffb = \ffp_1^{f_1} \cdots \ffp_n^{f_n}R$ with $e_i,f_i \geq 0$ for any $i = 1,\cdots,n$, and $\ffp_i\text{'s} \in \operatorname{Spec}(R)$ non-associates. Assume $\ffa \cap \ffb = \ffa \ffb$. Since $R$ is a PID, $\ffa \cap \ffb = \operatorname{lcm}(\ffp_1^{e_1} \cdots \ffp_n^{e_n},\ffp_1^{f_1} \cdots \ffp_n^{f_n})R = \ffp_1^{\max\{e_1,f_1\}} \cdots \ffp_n^{\max\{e_n,f_n\}}$. By the fact 1.38(e), $\ffa\ffb = \ffp_1^{e_1+f_1} \cdots \ffp_n^{e_n+f_n}$. So $\max\{e_i,f_i\} = e_i + f_i$, i.e, $e_i = 0$ or $f_i = 0$ for any $i = 1,\cdots,n$. In other words, for any $\ffp \in \operatorname{Spec}(R)$, either $\ffa \not \subseteq \ffp R$ or $\ffb \not \subseteq \ffp R$. So $\operatorname{V}(\ffa) \cap \operatorname{V}(\ffb) = \emptyset$ for any $\ffp \in \operatorname{Spec}(R)$. Thus, $\ffa + \ffb = R$.
+            Conversely, assume $R$ is a PID and $\ffa,\ffb \neq 0$. Write $\ffa = \ffp_1^{e_1} \cdots \ffp_n^{e_n} R$ and $\ffb = \ffp_1^{f_1} \cdots \ffp_n^{f_n}R$ with $e_i,f_i \geq 0$ for any $i = 1,\cdots,n$, and $\{\ffp_1,\cdots,f\ffp_n\} \subseteq \operatorname{Spec}(R)$ non-associates. Assume $\ffa \cap \ffb = \ffa \ffb$. Since $R$ is a PID, $\ffa \cap \ffb = \operatorname{lcm}(\ffp_1^{e_1} \cdots \ffp_n^{e_n},\ffp_1^{f_1} \cdots \ffp_n^{f_n})R = \ffp_1^{\max\{e_1,f_1\}} \cdots \ffp_n^{\max\{e_n,f_n\}}$. By the fact 1.38(e), $\ffa\ffb = \ffp_1^{e_1+f_1} \cdots \ffp_n^{e_n+f_n}$. So $\max\{e_i,f_i\} = e_i + f_i$, i.e, $e_i = 0$ or $f_i = 0$ for any $i = 1,\cdots,n$. In other words, for any $\ffp \in \operatorname{Spec}(R)$, either $\ffa \not \subseteq \ffp R$ or $\ffb \not \subseteq \ffp R$. So $\operatorname{V}(\ffa) \cap \operatorname{V}(\ffb) = \emptyset$ for any $\ffp \in \operatorname{Spec}(R)$. Thus, $\ffa + \ffb = R$.
     \end{enumerate}
 \end{proof}
 
@@ -601,10 +601,10 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \le
         \item If $\ffa \subseteq \ffb$, then $(\ffa:S) \subseteq (\ffb:S)$.
         \item $(\ffa:S) = (\ffa:\langle S \rangle)$.
         \item $\ffb \subseteq \ffa$ iff $(\ffa:\ffb) = R$.
-        \item 
-        \item 
-        \item 
-        \item 
+        \item $(\ffa: \bigcup_{\lambda \in \Lambda}S_\lambda) = \bigcap_{\lambda \in \Lambda} (\ffa:S_\lambda)$.
+        \item $(\ffa: \sum_{\lambda \in \Lambda}\ffb_\lambda) = (\ffa: \bigcup_{\lambda \in \Lambda} \ffb_\lambda) = \bigcap_{\lambda \in \Lambda}(\ffa: \ffb_\lambda)$.
+        \item $(\bigcap_{\lambda}\ffa_\lambda:S) = \bigcap_{\lambda \in \Lambda}(\ffa_\lambda:S)$.
+        \item $((\ffa:\ffb):\ffc) = (\ffa:\ffb\ffc) = ((\ffa:\ffc):\ffb)$.
     \end{enumerate}
 \end{fact}
 
@@ -613,32 +613,31 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \le
         \item[(b)]
             Let $r \in (\ffa:\ffb)$ and $b \in \ffb$. Then $br \in \ffa$. So all generators of $(\ffa:\ffb)\ffb$ is in $\ffa$.
         \item[(e)]
-            Since $S \subseteq \langle S \rangle$, by (c), $(\ffa:S) \supseteq (\ffa:\langle S \rangle)$. ``$\subseteq$''.
+            ``$\supseteq$''. Since $S \subseteq \langle S \rangle$, by (c), $(\ffa:S) \supseteq (\ffa:\langle S \rangle)$. ``$\subseteq$''. Let $r \in (\ffa:S)$. Then $rs \in \ffa$ for any $s \in S$. Let $s \in \langle S \rangle$. Then $s = \sum_{i}^{\text{finite}}a_is_i$ for some $a_i \in R$ and $s_i \in S$ for each $i$. So $rs = r(\sum_i^{\text{finite}}a_is_i) = \sum_i^{\text{finite}} a_i(rs_i) \in R$. Hence $r \in (\ffa:\langle S \rangle)$.
+        \item[(h)] Follow from (e) and (g).
         \item [(j)]
-            ``$\subseteq$''.\\
-            ``$\supseteq$''. Reverse the above proof.
+            It is enough to prove the first equality since $\ffb\ffc = \ffc\ffb$. Note $r \in ((\ffa:\ffb):\ffc)$ iff $rc \in (\ffa:\ffb)$ for any $c \in \ffc$ iff $r(bc) = (rc)b \in \ffa$ for any $b \in \ffb$ and $c \in \ffc$ iff $r \in (\ffa:\ffb\ffc)$. 
     \end{enumerate}
 \end{proof}
 
 \begin{example}
-    Let $R = k[X,Y]$.
+    Let $R = k[X,Y]$. Since for $\underline p,\underline q \in \bbN^2$, we have $(\langle \underline X^{\underline p} \rangle\underline: X^{\underline q}) = \langle \underline X^{(p-q)^+} \rangle$, then
+    \begin{enumerate}[(a)]
+        \item $(\langle XY \rangle: \{X,Y\}) = (\langle XY \rangle: \{X,Y\}) = (\langle XY \rangle: X) \cap (\langle XY \rangle : Y) = \langle Y \rangle \cap \langle X \rangle = \langle XY \rangle$.
+        \item $(\langle X^2,XY \rangle: \langle X,Y \rangle) = (\langle X^2,XY \rangle: \{X,Y\}) = (\langle X^2,XY \rangle:X) \cap (\langle X^2,XY \rangle: Y) = \langle X,Y \rangle \cap \langle X \rangle = \langle X \rangle$.
+    \end{enumerate}
 \end{example}
 
 \begin{definition}
-    The \emph{radical} of $\ffa \leq R$ is $\operatorname{rad}(\ffa) = \operatorname{r}(\ffa) = \sqrt \ffa = \{x \in R \mid x^n \in \ffa, \fa n \geq\geq 0\} = \{x \in R \mid x^n \in \ffa \text{ for some }n \in \bbN\}$. 
+    The \emph{radical} of $\ffa \leq R$ is $\operatorname{rad}(\ffa) = \operatorname{r}(\ffa) = \sqrt \ffa = \{x \in R \mid x^n \in \ffa, \fa n \gg 0\} = \{x \in R \mid x^n \in \ffa \text{ for some }n \in \bbN\}$. 
 \end{definition}
 
 \begin{example}
-    $\operatorname{rad}(\langle X^2Y,XY^2 \rangle) = \langle XY \rangle$ in $k[X,Y]$.
-\end{example}
-
-\begin{example}
-    Let $R = \bbF_2[X,Y]$, $\ffa = \langle X,Y \rangle$, $\ffb_1 = \langle X,X^2,XY,Y^2 \rangle$, $\ffb_2 = \langle X+Y,X^2,XY,Y^2 \rangle$, and $\ffb_3 = \langle Y,X^2,XY,Y^2 \rangle$. Then $\ffa = \ffb_1 \cup \ffb_2 \cup \ffb_3$, but $\ffa \supsetneq \ffb_i$ for any $i = 1,2,3$. \\
-    $\frac{\bbF_2[X,Y]}{\langle X^2,XY,Y^2 \rangle} \geq \langle \overline X, \overline Y \rangle \cong \bbF_2^2$. Let $\ffb_1 = \langle \overline X, \overline Y \rangle$, $\ffb_2 = \langle \overline X + \overline Y \rangle$ and $\ffb_3 = \langle Y \rangle$. Then $\langle \overline X,\overline Y \rangle = \ffb_1 \cup \ffb_2 \cup \ffb_2$, but $\ffb_i \subseteq \langle \overline X,\overline Y \rangle$ for any $i = 1,2,3$.
+    $\operatorname{rad}(\langle X^2Y,XY^2 \rangle) = \operatorname{m-rad}(\langle X^2Y,XY^2 \rangle) = \langle \operatorname{red}(f) \mid f \in \{X^2Y,XY^2\} \rangle = \langle XY \rangle$ in $k[X,Y]$.
 \end{example}
 
 \begin{fact}
-    Let $\ffa \leq R$ and $\pi: R \to R/\ffa$ be the natural projection.
+    Let $\pi: R \to R/\ffa$ be the natural projection.
     \begin{enumerate}[(a)]
         \item $\operatorname{rad}(\ffa) = \pi^{-1}(\operatorname{Nil}(R/\ffa)) \leq R$. 
         \item If $\ffa \subseteq \ffb$, then $\operatorname{rad}(\ffa) \subseteq \operatorname{rad}(\ffb)$ (converse fails).
@@ -649,15 +648,30 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \le
         \item $\operatorname{rad}(\ffa) = \bigcap_{\ffp \in \operatorname{V}(\ffa)} \ffp$. 
         \item $\operatorname{rad}(\bigcap_{i=1}^n \ffp_i^{e_i}) = \bigcap_{i=1}^n \ffp_i$, where $\ffp_i \in \operatorname{Spec}(R)$ and $e_i \in \bbN$ for any $i = 1,\cdots,n$.
         \item $\ffa + \ffb = R$ iff $\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb) = R$. 
-        \item Special case:
-        \item $\ffa + \ffb = R$. 
     \end{enumerate}
 \end{fact}
 
 \begin{proof}
     \begin{enumerate}[(a)]
+        \item Let $r \in R$. Then $r \in \pi^{-1}(\operatorname{Nil}(R/\ffa))$ iff $\pi(r) \in \operatorname{Nil}(R/\ffa)$ iff $\overline r^n = 0$ in $R/\ffa$ for some $n \in \bbN$ iff $r^n \in \ffa$ for some $n \in \bbN$ iff $r \in \operatorname{rad}(\ffa)$.
+        \item It is clear.
+        \item Since $a^1 = a \in \ffa$ for any $a \in \ffa$, we have $a \in \operatorname{rad}(\ffa)$ for any $a \in \ffa$. So $\ffa \subseteq \operatorname{rad}(\ffa)$. Then by (b), $\operatorname{rad}(\ffa) \subseteq \operatorname{rad}(\operatorname{rad}(\ffa))$. Let $r \in \operatorname{rad}(\operatorname{rad}(\ffa))$. Then there exists $n \in \bbN$ such that $r^n \in \operatorname{rad}(\ffa)$. So there exists $m \in \bbN$ such that $r^{mn} = (r^n)^m \in \ffa$. Hence $r \in \operatorname{rad}(I)$. 
+        \item Since $\ffa\ffb \subseteq \ffa \cap \ffb \subseteq \ffa,\ffb$, by (b), we have $\operatorname{rad}(\ffa\ffb) \subseteq \operatorname{rad}(\ffa \cap \ffb) \subseteq \operatorname{rad}(\ffa),\operatorname{rad}(\ffb)$ and then $\operatorname{rad}(\ffa\ffb) \subseteq \operatorname{rad}(\ffa \cap \ffb) \subseteq \operatorname{rad}(\ffa) \cap \operatorname{rad}(\ffb)$. On the other hand, let $x \in \operatorname{rad}(\ffa) \cap \operatorname{rad}(\ffb)$. Then there exist $m,n \in \bbN$ such that $x^m \in \ffa$ and $x^n \in \ffb$. So $x^{m+n} = x^m \cdot x^n \in \ffa \ffb$. Hence $x \in \operatorname{rad}(\ffa\ffb)$.
+        \item $\ffa = R$ iff $1 \in \ffa$ iff $1^n \in \ffa$ iff $\operatorname{rad}(\ffa) = R$. 
+        \item Since $\ffa + \ffb \subseteq \operatorname{rad}(\ffa) + \operatorname{rad}(\ffb)$, we have $\operatorname{rad}(\ffa + \ffb) \subseteq \operatorname{rad}(\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb))$. \\
+            Let $x \in \operatorname{rad}(\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb))$. Then there exists $n \in \bbN$ such that $x^n \in \operatorname{rad}(\ffa) + \operatorname{rad}(\ffb)$. So there exist $a \in \ffa$ and $b \in \ffb$ such that $x^n = a + b$. Then there exist $j,k \in \bbN$ such that $a^j \in \ffa$ and $b^k \in \ffb$. So $x^{n(j+k)} = (x^n)^{j+k} = (a+b)^{j+k} = \sum_{l = 0}^{j+k} a^lb^{j+k-l}$. Since for any $0 \leq l \leq j+k$, either $l \geq j$ or $l < j$, i.e., $l \geq j$ or $j+k-l > k$. we have $a^l \in \ffa$ when $l \geq j$, and $b^{j+k-l} \in \ffb$ when $j + k - l > n$. So $x^{n(j+k)} = 0$. Thus, $x\in \operatorname{rad}(\ffa+\ffb)$.
+        \item 
+        \item
+        \item
     \end{enumerate}
 \end{proof}
+
+\begin{example}
+    Let $R = \bbF_2[X,Y]$, $\ffa = \langle X,Y \rangle$, $\ffb_1 = \langle X,X^2,XY,Y^2 \rangle$, $\ffb_2 = \langle X+Y,X^2,XY,Y^2 \rangle$, and $\ffb_3 = \langle Y,X^2,XY,Y^2 \rangle$. Then $\ffa = \ffb_1 \cup \ffb_2 \cup \ffb_3$, but $\ffa \supsetneq \ffb_i$ for any $i = 1,2,3$. \\
+    $\frac{\bbF_2[X,Y]}{\langle X^2,XY,Y^2 \rangle} \geq \langle \overline X, \overline Y \rangle \cong \bbF_2^2$. Let $\ffb_1 = \langle \overline X, \overline Y \rangle$, $\ffb_2 = \langle \overline X + \overline Y \rangle$ and $\ffb_3 = \langle Y \rangle$. Then $\langle \overline X,\overline Y \rangle = \ffb_1 \cup \ffb_2 \cup \ffb_2$, but $\ffb_i \subseteq \langle \overline X,\overline Y \rangle$ for any $i = 1,2,3$.
+\end{example}
+
+
 
 \begin{example}
     \begin{enumerate}
@@ -681,19 +695,76 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffa_\lambda \le
 \end{example}
 
 \begin{proposition}
-    Let $\varphi: R \to S$ be a ring homomorphism.
+    Let $f: R \to S$ be a ring homomorphism.
     \begin{enumerate}[(a)]
+        \item $\ffa \subseteq f^{-1}(\ffa S)$. If $\ffa_1 \subseteq \ffb_1$, then $\ffa_1S \subseteq \ffa_2S$. $f^{-1}(\ffb)S \subseteq \ffb$. If $\ffb_1 \subseteq \ffb_2$, then $f^{-1}(\ffb_1) \subseteq f^{-1}(\ffb_2)$. If $T \subseteq R$, then $(\langle T \rangle R)S = \langle f(T) \rangle S$.
+        \item $\ffa S = f^{-1}(\ffa S)S$, $f^{-1}(\ffb) = f^{-1}(f^{-1}(\ffb)S)$.
+        \item $(\ffa_1 + \ffa_2)S = \ffa_1S + \ffa_2S$. $f^{-1}(\ffb_1) + f^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1 + \ffb_2)$, not equal in general.
+        \item $(\ffa_1 \cap \ffa_2)S \subseteq \ffa_1S \cap \ffa_2S$, $f^{-1}(\ffb_1 \cap \ffb_2) = f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$.
+        \item $(\ffa_1\ffa_2)S = (\ffa_1S)(\ffa_2S)$, $f^{-1}(\ffb_1)f^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1\ffb_2)$.
+        \item $(\ffa_1:\ffa_2)S \subseteq (\ffa_1S:\ffa_2S)$, $f^{-1}(\ffb_1:\ffb_2) \subseteq (f^{-1}(\ffb_1):f^{-1}(\ffb_2))$.
+        \item $\operatorname{rad}(\ffa)S \subseteq \operatorname{rad}(\ffa S)$, $f^{-1}(\operatorname{rad}(\ffb)) = \operatorname{rad}(f^{-1}(\ffb))$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}[(a)]
+        \item LHS gen. over $S$ by $f(\langle T \rangle R)$, $f(\sum_i^{\text{finite}}t_ir_i) = \sum_i^{\text{finite}} f(t_i)f(r_i) \in \langle f(T) \rangle S$. gen of RHS is $f(t) = f(t \cdot 1)$ gen. of LHS.
+        \item 
+            \begin{itemize}
+                \item 
+                    ``$\subseteq$''. Since $\ffa \subseteq f^{-1}(\ffa S)$, $\ffa S \subseteq f^{-1}(\ffa S)S$. ``$\supseteq$''. gen. of $f^{-1}(\ffa S)S$ is element $f(x)$, where $x \in f^{-1}(\ffa S)$. Then $f(x) \in \ffa S$. gen. of $f^{-1}(\ffa S)S$ is in $\ffa S$. $\ffb \supseteq f^{-1}(\ffb)S$. 
+                \item 
+                    ``$\subseteq$''. Since $\ffb \supseteq f^{-1}(\ffb)S$, $f^{-1}(\ffb) \supseteq f^{-1}(f^{-1}(\ffb)S)$. ``$\subseteq$''. Let $x \in f^{-1}(\ffb)$. Then $x \in R$ such that $f(x) \in \ffb$. .... 
+            \end{itemize}
+        \item ``$\supseteq$''. Since $\ffa_1 + \ffa_2 \supseteq \ffa_1,\ffa_2$, $(\ffa_1+\ffa_2)S \supseteq \ffa_1S,\ffa_2S$. So $(\ffa_1+\ffa_2)S \supseteq \ffa_1S + \ffa_2S$. ``$\subseteq$''. gens. of LHS: $f(a_1+a_2) = f(a_1) + f(a_2) \in \ffa_1 S + \ffa_2 S$. Example for $f^{-1}(\ffb_1) + f^{-1}(\ffb_2) \subsetneq f^{-1}(\ffb_1+\ffb_2)$, $R = k \xrightarrow{\subseteq}_f k[X] = S$, $\ffb_1 = \langle X \rangle S$, $\ffb_2 = \langle X+1 \rangle S$. $f^{-1}(\ffb_1) = 0 = f^{-1}(\ffb_2)$, but $\ffb_1 + \ffb_2 = S$, $f^{-1}(\ffb_1 + \ffb_2) = R \neq 0$.
+        \item Clearly, $f^{-1}(\ffb_1 \cap \ffb_2) \subseteq f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$. Let $x \in f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$. Then $f(x) \in \ffb_1$ and $f(x) \in \ffb_2$. So $f(x) \in \ffb_1 \cap \ffb_2$. Hence $x \in f^{-1}(\ffb_1 \cap \ffb_2)$.
+        \item 
+            $(\ffa_1\ffb_2)S \subseteq (\ffa_1S)(\ffa_2S)$ $f(x)$ such that $x \in \ffa_1\ffa_2$, $x = \sum a_{1i}a_{2i}$, $f(x) = \sum_i f(a_{1i})f(a_{2i}) \in (\ffa_1S)(\ffa_2S)$. ``$\supseteq$''. gens. of RHS are $(\ffa_1S)(\ffa_2S) = (f(\ffa_1)S)(f(\ffa_2)S) = \langle f(a_1)f(a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2 \rangle S = \langle f(a_1a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2 \rangle S \subseteq \langle f(\ffa_1\ffa_2) \rangle S = (\ffa_1\ffa_2)S$.
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}[Q]
+    Avoidence for monomials ideals: If $\ffa,\ffb_1,\cdots,\ffb_n$ are monomial ideals in a polynomial ring $A[X_1,\cdots,X_n]$ such that $\ffa \subseteq \bigcup_{i=1}^n \ffb_i$, do we have $\ffa \subseteq \ffb_i$ for some $\ffb_i$? \\
+    Yes: by Dickson's lemma, $\ffa = \langle f_1,\cdots,f_m \rangle$ for some monomials $f_1,\cdots,f_m \in k[X_1,\cdots,X_n]$. Then $f = f_1 + \cdots + f_m \in \ffa \subseteq \bigcup_{i=1}^n \ffb_i$. So $f = f_1 + \cdots + f_m \in \ffb_i$ for some $i \in \{1,\cdots,n\}$. Then $f_1,\cdots,f_m \in \ffb_i$. So $\ffa = \langle f_1,\cdots,f_m \rangle \subseteq \ffb_i$.
+\end{remark}
+
+\begin{proposition}
+    $R^\times + \operatorname{Nil}(R) \subseteq R^\times$. For any $u \in R^\times$ and any $x \in \operatorname{Nil}(R)$; we have $u+x \in R^\times$, e.g., $1+x \in R^\times$.
+\end{proposition}
+
+\begin{proof}
+    Let $x \in \operatorname{Nil}(R)$. Then there is a $n \in \bbN$ such that $x^n = 0$. Let $\eta = 1-x+x^2-\cdots+(-1)^{n-1}x^{n-1}$. Then $\eta(1+x) = 1-x^n = 1$. So $1+x \in R^\times$. Then $u + x = u(1+(u^{-1}x)) \in R^\times$.
+\end{proof}
+
+\section{Power Series Rings}
+
+Let $A$ be a CRW1.
+
+\begin{definition}
+    $A \llbracket X \rrbracket = $
+\end{definition}
+
+\begin{example}
+
+\end{example}
+
+\begin{theorem}
+
+\end{theorem}
+
+\begin{proposition}
+    \begin{enumerate}[(a)]
+        \item 
         \item
-        \item
-        \item 
-        \item 
-        \item 
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
     \begin{enumerate}[(a)]
         \item 
-        \item 
+        \item
     \end{enumerate}
 \end{proof}
+
+
