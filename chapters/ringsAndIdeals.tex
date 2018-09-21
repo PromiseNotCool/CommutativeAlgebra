@@ -81,7 +81,7 @@ Let $R$ be a CRW1.
             \end{align*}
             In particular, for any $r \in R$, $\langle r \rangle = \langle r \rangle R = (r) = (r)R = rR = Rr = \{ar \mid a \in R\} = \bigcap_{r \in I \leq R}I$.
         \item 
-            If $A \subseteq R$, then $\langle A \rangle = \bigcap_{A \subseteq I \leq R}I$ and $\langle A \rangle = \{\sum_{a \in A}^{\text{finite}} r_a a \mid r_a \in R,\fa a\}$.
+            If $A \subseteq R$, then $\langle A \rangle = \bigcap_{A \subseteq I \leq R}I$ and $\langle A \rangle = RAR = AR = RA = \{\sum_{a \in A}^{\text{finite}} r_a a \mid r_a \in R,\fa a\}$.
     \end{enumerate}
 \end{example}
 
@@ -569,6 +569,14 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, and $S_\lambda \subs
     Let $\ffp_1,\cdots,\ffp_n \in \operatorname{Spec}(R)$. If $\ffa \subseteq \bigcup_{i=1}^n \ffp_i$, then $\ffa \subseteq \ffp_i$ for some $i \in \{1,\cdots,n\}$, i.e., if $\ffa \not \subseteq \ffp_i$ for any $i = 1,\cdots,r$, then $\ffa \not \subseteq \bigcup_{i=1}^n \ffp_i$.
 \end{theorem}
 
+\begin{fact*}[Avoidence for monomial ideals] 
+    Let $A$ be CRW1$\neq 0$ and $\ffa,\ffb_1,\cdots,\ffb_n$ be monomial ideals of $A[X_1,\cdots,X_d]$. If $\ffa \subseteq \bigcup_{i=1}^n \ffb_i$, then $\ffa \subseteq \ffb_i$ for some $i \in \{1,\cdots,n\}$.
+\end{fact*}
+
+\begin{proof}
+     By Dickson's lemma, $\ffa = \langle f_1,\cdots,f_m \rangle$ for some monomials $f_1,\cdots,f_m \in A[X_1,\cdots,X_d]$. Then $f_1 + \cdots + f_m \in \ffa \subseteq \bigcup_{i=1}^n \ffb_i$. So $f_1 + \cdots + f_m \in \ffb_i$ for some $i \in \{1,\cdots,n\}$. Since $\ffb_i$ is a monomial ideal, $f_1,\cdots,f_m \in \ffb_i$. So $\ffa = \langle f_1,\cdots,f_m \rangle \subseteq \ffb_i$.
+\end{proof}
+
 \begin{definition}
     Let $S \subseteq R$. Let 
     \begin{enumerate}[(a)]
@@ -683,12 +691,14 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, and $S_\lambda \subs
 \end{example}
 
 \begin{example}
-    Let $R = \bbF_2[X,Y]$, $\ffa = \langle X,Y \rangle$, $\ffb_1 = \langle X,X^2,XY,Y^2 \rangle$, $\ffb_2 = \langle X+Y,X^2,XY,Y^2 \rangle$, and $\ffb_3 = \langle Y,X^2,XY,Y^2 \rangle$. Then $\ffa = \ffb_1 \cup \ffb_2 \cup \ffb_3$, but $\ffa \supsetneq \ffb_i$ for any $i = 1,2,3$. \\
-    $\frac{\bbF_2[X,Y]}{\langle X^2,XY,Y^2 \rangle} \geq \langle \overline X, \overline Y \rangle \cong \bbF_2^2$. Let $\ffb_1 = \langle \overline X, \overline Y \rangle$, $\ffb_2 = \langle \overline X + \overline Y \rangle$ and $\ffb_3 = \langle Y \rangle$. Then $\langle \overline X,\overline Y \rangle = \ffb_1 \cup \ffb_2 \cup \ffb_2$ with $\ffb_i \subsetneq \langle \overline X,\overline Y \rangle$ for any $i = 1,2,3$.
+    \begin{enumerate}[(a)]
+        \item Let $R = \bbF_2[X,Y]$, $\ffa = \langle X,Y \rangle$, $\ffb_1 = \langle X,X^2,XY,Y^2 \rangle$, $\ffb_2 = \langle X+Y,X^2,XY,Y^2 \rangle$, and $\ffb_3 = \langle Y,X^2,XY,Y^2 \rangle$. Then $\ffa = \ffb_1 \cup \ffb_2 \cup \ffb_3$, but $\ffb_i \subsetneq \ffa$ for any $i = 1,2,3$.
+        \item $\frac{\bbF_2[X,Y]}{\langle X^2,XY,Y^2 \rangle} \geq \langle \overline X, \overline Y \rangle \cong \bbF_2^2$. Let $\ffb_1 = \langle \overline X, \overline Y \rangle$, $\ffb_2 = \langle \overline X + \overline Y \rangle$ and $\ffb_3 = \langle Y \rangle$. Then $\langle \overline X,\overline Y \rangle = \ffb_1 \cup \ffb_2 \cup \ffb_2$ with $\ffb_i \subsetneq \langle \overline X,\overline Y \rangle$ for any $i = 1,2,3$.
+    \end{enumerate}
 \end{example}
 
 \begin{definition}
-    Let $\varphi: R \to S$ be a ring homomorphism. Let $\ffa \leq R$ and $\ffb \leq S$. The \emph{extension} of $\ffa$ along $\varphi$ is $\ffa^e = \ffa S = \langle \varphi(\ffa) \rangle S \leq S$. The \emph{contraction} of $\ffb$ along $\varphi$ is $\ffa^c = \varphi^{-1}(\ffb) \leq R$.
+    Let $f: R \to S$ be a ring homomorphism. Let $\ffa \leq R$ and $\ffb \leq S$. The \emph{extension} of $\ffa$ along $f$ is $\ffa^e = \ffa S = \langle f(\ffa) \rangle S  = f(\ffa)S = \{\sum_i^{\text{finite}} f(a_i)s_i \mid a_i \in \ffa, s_i \in S,\fa i\} \leq S$. The \emph{contraction} of $\ffb$ along $f$ is $\ffb^c = f^{-1}(\ffb) \leq R$.
 \end{definition}
 
 \begin{example}
@@ -701,51 +711,69 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, and $S_\lambda \subs
 \end{example}
 
 \begin{proposition}
-    Let $f: R \to S$ be a ring homomorphism and $\ffb_1,\ffb_2 \leq S$.
+    Let $f: R \to S$ be a ring homomorphism and $\ffb,\ffb_1,\ffb_2 \leq S$.
     \begin{enumerate}[(a)]
-        \item $\ffa \subseteq f^{-1}(\ffa S)$ and $f^{-1}(\ffb)S \subseteq \ffb$. If $\ffa_1 \subseteq \ffa_2$, then $\ffa_1S \subseteq \ffa_2S$. If $\ffb_1 \subseteq \ffb_2$, then $f^{-1}(\ffb_1) \subseteq f^{-1}(\ffb_2)$. If $T \subseteq R$, then $(\langle T \rangle R)S = \langle f(T) \rangle S$. \\
-            Example of $\ffa \subsetneq f^{-1}(\ffa S)$. Let $f: \bbZ \xrightarrow {\subseteq} \bbQ$ and $\ffa = 2\bbZ$. Then $f^{-1}(\ffa \bbQ) = f^{-1}(2\bbQ) = f^{-1}(\bbQ) = \bbZ \supsetneq 2\bbZ = \ffa$. \\
-            Example of $f^{-1}(\ffb)S \subsetneq \ffb$. Let $f: k[X] \xrightarrow {\subseteq }k[X,Y]$. Let $\ffb = \langle Y \rangle k[X,Y]$. Then $f^{-1}(\ffb) = 0$. So $f^{-1}(\ffb)k[X,Y] = 0 \subsetneq \langle Y \rangle k[X,Y] = \ffb$.
+        \item $\ffa \subseteq f^{-1}(\ffa S)$ and $f^{-1}(\ffb)S \subseteq \ffb$. If $\ffa_1 \subseteq \ffa_2$, then $\ffa_1S \subseteq \ffa_2S$. If $\ffb_1 \subseteq \ffb_2$, then $f^{-1}(\ffb_1) \subseteq f^{-1}(\ffb_2)$. If $T \subseteq R$, then $(\langle T \rangle R) S = \langle f(T) \rangle S$. \\
+            Example of $\ffa \subsetneq f^{-1}(\ffa S)$. Let $f: R = \bbZ \xrightarrow {\subseteq} S = \bbQ$ and $\ffa = \langle 2 \rangle R$. Then $f^{-1}(\ffa S) = f^{-1}(2S) = f^{-1}(S) = R \supsetneq \langle 2 \rangle R = \ffa$. \\
+            Example of $f^{-1}(\ffb)S \subsetneq \ffb$. Let $f: R = k[X] \xrightarrow {\subseteq } S = k[X,Y]$. Let $\ffb = \langle Y \rangle S$. Then $f^{-1}(\ffb) = 0$ and so $f^{-1}(\ffb)S = 0 \subsetneq \langle Y \rangle S = \ffb$.
         \item $\ffa S = f^{-1}(\ffa S)S$ and $f^{-1}(\ffb) = f^{-1}(f^{-1}(\ffb)S)$.
-        \item $(\ffa_1 + \ffa_2)S = \ffa_1S + \ffa_2S$ and $f^{-1}(\ffb_1) + f^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1 + \ffb_2)$.
-        \item $(\ffa_1 \cap \ffa_2)S \subseteq \ffa_1S \cap \ffa_2S$ and $f^{-1}(\ffb_1 \cap \ffb_2) = f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$. Example of $(\ffa_1 \cap \ffa_2)S \subsetneq \ffa_1S \cap \ffa_2S$. let $f: k[X,Y] \to k[X,Y]/\langle X,Y \rangle^2$, $\ffa_1 = \langle x \rangle R$, $\ffa_2 = \langle X+Y^2 \rangle$, then $\ffa_1 \cap \ffa_2 = \langle X(X+Y^2) \rangle = \langle X^2 + X - Y^2\rangle$. $\ffa_1 S = \langle \overbar X \rangle S$, $\ffa_2 S = \langle \overbar{X+Y^2} \rangle S = \langle \overbar X \rangle S$. $(\ffa_1 \cap \ffa_2)S = \langle \overbar{X^2+XY^2} \rangle = 0 \subseteq \langle \overline X \rangle S = \ffa_1 S \cap \ffa_2 S$.
-        \item $(\ffa_1\ffa_2)S = (\ffa_1S)(\ffa_2S)$ and $f^{-1}(\ffb_1)f^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1\ffb_2)$. Example of $f^{-1}(\ffb_1)f^{-1}(\ffb_2) \subsetneq f^{-1}(\ffb_1\ffb_2) \subseteq f^{-1}(\ffb_1 \cap \ffb_2) = f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$. Let $f: k[X] \to k[X]/(X(X-1)) = k[X]/(X^2-X) \cong k \times k$ by CRT. In $k \times k$, $(1,0) = (1,0)^2$. Let $\ffb_1 = \langle \overbar X \rangle S = \ffb_2$. Then $\ffb_1 \ffb_2 = \langle \overline X^2 \rangle S = \langle \overline X \rangle S = \ffb_1$. So $f^{-1}(\ffb_1) = f^{-1}(\ffb_2) = f^{-1}(\ffb_1 \ffb_2) = f^{-1}(\langle \overbar X \rangle) = \langle X \rangle R \neq \langle X^2 \rangle R = f^{-1}(\ffb_1)f^{-1}(\ffb_2)$.
-        \item $(\ffa_1:\ffa_2)S \subseteq (\ffa_1S:\ffa_2S)$ and $f^{-1}(\ffb_1:\ffb_2) \subseteq (f^{-1}(\ffb_1):f^{-1}(\ffb_2))$. Example of $(\ffa_1:\ffa_2)S \subsetneq (\ffa_1S : \ffa_2 S)$. Let $f: k[X] \to k[X]/\langle X \rangle \cong k$. Let $\ffa_1 = \langle X^2 \rangle$ and $\ffa_2 = \langle X \rangle$. Then $(\ffa_1:\ffa_2)S = (\langle X^2 \rangle: \langle X \rangle)S = \langle X \rangle S$. But note $\ffa_1 S = 0 = \ffa_2 S$, so $(\ffa_1 S: \ffa_2 S) = (0:0) = S$.
-        \item $\operatorname{rad}(\ffa)S \subseteq \operatorname{rad}(\ffa S)$, $f^{-1}(\operatorname{rad}(\ffb)) = \operatorname{rad}(f^{-1}(\ffb))$.
+        \item $(\ffa_1 + \ffa_2)S = \ffa_1S + \ffa_2S$ and $f^{-1}(\ffb_1) + f^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1 + \ffb_2)$. Example for $f^{-1}(\ffb_1) + f^{-1}(\ffb_2) \subsetneq f^{-1}(\ffb_1+\ffb_2)$. Let $f: R = k \xrightarrow \subseteq S = k[X]$, $\ffb_1 = \langle X \rangle S$ and $\ffb_2 = \langle X+1 \rangle S$. Then $f^{-1}(\ffb_1) = 0 = f^{-1}(\ffb_2)$ and so $f^{-1}(\ffb_1) + f^{-1}(\ffb_2) = 0$, but $\ffb_1 + \ffb_2 = S$, $f^{-1}(\ffb_1 + \ffb_2) = R \neq 0$.
+        \item $(\ffa_1 \cap \ffa_2)S \subseteq \ffa_1S \cap \ffa_2S$ and $f^{-1}(\ffb_1 \cap \ffb_2) = f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$. Example of $(\ffa_1 \cap \ffa_2)S \subsetneq \ffa_1S \cap \ffa_2S$. Let $f: R = k[X,Y] \to S = k[X,Y]/\langle X,Y \rangle^2$, $\ffa_1 = \langle X \rangle R$ and $\ffa_2 = \langle X+Y^2 \rangle R$. Then $\ffa_1 \cap \ffa_2 = \langle X(X+Y^2) \rangle R = \langle X^2 + XY^2 \rangle R$, $\ffa_1 S = \langle \overbar X \rangle S$ and $\ffa_2 S = \langle \overbar{X+Y^2} \rangle S = \langle \overbar X \rangle S$. So $(\ffa_1 \cap \ffa_2)S = \langle \overbar{X^2+XY^2} \rangle = 0 \subsetneq \langle \overline X \rangle S = \ffa_1 S \cap \ffa_2 S$.
+        \item $(\ffa_1\ffa_2)S = (\ffa_1S)(\ffa_2S)$ and $f^{-1}(\ffb_1)f^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1\ffb_2)$. Example of $f^{-1}(\ffb_1)f^{-1}(\ffb_2) \subsetneq f^{-1}(\ffb_1\ffb_2) \subseteq f^{-1}(\ffb_1 \cap \ffb_2) = f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$. Let $f: R = k[X] \to S = k[X]/(X(X-1)) = k[X]/(X^2-X) \cong k[X]/\langle X \rangle \times k[X]/\langle X-1 \rangle \cong k \times k$ by CRT. Note in $k \times k$, $(1,0) = (1,0)^2$. Let $\ffb_1 = \langle \overbar X \rangle S = \ffb_2$. Then $\ffb_1 \ffb_2 = \langle \overline X^2 \rangle S = \langle \overline X \rangle S = \ffb_1$. So $f^{-1}(\ffb_1) = f^{-1}(\ffb_2) = f^{-1}(\ffb_1 \ffb_2) = f^{-1}(\langle \overbar X \rangle) = \langle X \rangle R \supsetneq \langle X^2 \rangle R = f^{-1}(\ffb_1)f^{-1}(\ffb_2)$.
+        \item $(\ffa_1:\ffa_2)S \subseteq (\ffa_1S:\ffa_2S)$ and $f^{-1}(\ffb_1:\ffb_2) \subseteq (f^{-1}(\ffb_1):f^{-1}(\ffb_2))$. Example of $(\ffa_1:\ffa_2)S \subsetneq (\ffa_1S : \ffa_2 S)$. Let $f: R = k[X] \to S = k[X]/\langle X \rangle \cong k$. Let $\ffa_1 = \langle X^2 \rangle R$ and $\ffa_2 = \langle X \rangle R$. Then $\ffa_1 S = 0 = \ffa_2 S$ and so $(\ffa_1 S: \ffa_2 S) = (0:0) = S \supsetneq \langle X \rangle S = (\langle X^2 \rangle: \langle X \rangle)S = (\ffa_1:\ffa_2)S$.
+        \item $\operatorname{rad}(\ffa)S \subseteq \operatorname{rad}(\ffa S)$ and $f^{-1}(\operatorname{rad}(\ffb)) = \operatorname{rad}(f^{-1}(\ffb))$.
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
     \begin{enumerate}[(a)]
-        \item 
-            Note for any $a \in \ffa$, $f(a) \in f(\ffa) \subseteq \langle f(\ffa) \rangle S = \ffa S$, i.e., $a \in f^{-1}(\ffa S)$. \\
-            To show $\langle f(f^{-1}(\ffb)) \rangle S = f^{-1}(\ffb)S \subseteq \ffb$, it suffices to show $\langle f(f^{-1}(\ffb)) \rangle \subseteq \ffb$, then it is equivalent to show $f(f^{-1}(\ffb)) \subseteq \ffb$, which is true. \\
-                 LHS gen. over $S$ by $f(\langle T \rangle R)$, $f(\sum_i^{\text{finite}}t_ir_i) = \sum_i^{\text{finite}} f(t_i)f(r_i) \in \langle f(T) \rangle S$. gen of RHS is $f(t) = f(t \cdot 1)$ gen. of LHS.
         \item 
             \begin{itemize}
                 \item 
-                    ``$\subseteq$''. Since $\ffa \subseteq f^{-1}(\ffa S)$, $\ffa S \subseteq f^{-1}(\ffa S)S$. ``$\supseteq$''. gen. of $f^{-1}(\ffa S)S$ is element $f(x)$, where $x \in f^{-1}(\ffa S)$. Then $f(x) \in \ffa S$. gen. of $f^{-1}(\ffa S)S$ is in $\ffa S$. $\ffb \supseteq f^{-1}(\ffb)S$. 
+                    Note $\ffa \subseteq f^{-1}(f(\ffa)) \subseteq f^{-1}(\ffa S)$. So we have equality iff $f$ is bijective.
                 \item 
-                    ``$\subseteq$''. Since $\ffb \supseteq f^{-1}(\ffb)S$, $f^{-1}(\ffb) \supseteq f^{-1}(f^{-1}(\ffb)S)$. ``$\subseteq$''. Let $x \in f^{-1}(\ffb)$. Then $x \in R$ such that $f(x) \in \ffb$. .... 
+                    To show $\langle f(f^{-1}(\ffb)) \rangle S = f^{-1}(\ffb)S \subseteq \ffb$, it suffices to show $\langle f(f^{-1}(\ffb)) \rangle \subseteq \ffb$, then it is equivalent to show $f(f^{-1}(\ffb)) \subseteq \ffb$, which is true. So we have equality iff $f$ is onto.
+                \item 
+                    The set of generators of $(\langle T \rangle R)S$ over $S$ is $\{f(\sum_i^{\text{finite}}t_ir_i) = \sum_i^{\text{finite}} f(t_i)f(r_i) \mid t_i \in T,r_i \in S,\fa i\} \subseteq \langle f(T) \rangle S$. The set of generators of $\langle f(T) \rangle S$ over $S$ is $\{f(t) \mid t \in T\} = \{f(t \cdot 1) \mid t \in T\}$ which is a subset of the generators of $(\langle T \rangle R)S$.
             \end{itemize}
-        \item ``$\supseteq$''. Since $\ffa_1 + \ffa_2 \supseteq \ffa_1,\ffa_2$, $(\ffa_1+\ffa_2)S \supseteq \ffa_1S,\ffa_2S$. So $(\ffa_1+\ffa_2)S \supseteq \ffa_1S + \ffa_2S$. ``$\subseteq$''. gens. of LHS: $f(a_1+a_2) = f(a_1) + f(a_2) \in \ffa_1 S + \ffa_2 S$. Example for $f^{-1}(\ffb_1) + f^{-1}(\ffb_2) \subsetneq f^{-1}(\ffb_1+\ffb_2)$, $R = k \xrightarrow{\subseteq}_f k[X] = S$, $\ffb_1 = \langle X \rangle S$, $\ffb_2 = \langle X+1 \rangle S$. $f^{-1}(\ffb_1) = 0 = f^{-1}(\ffb_2)$, but $\ffb_1 + \ffb_2 = S$, $f^{-1}(\ffb_1 + \ffb_2) = R \neq 0$.
-        \item Clearly, $f^{-1}(\ffb_1 \cap \ffb_2) \subseteq f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$. Let $x \in f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$. Then $f(x) \in \ffb_1$ and $f(x) \in \ffb_2$. So $f(x) \in \ffb_1 \cap \ffb_2$. Hence $x \in f^{-1}(\ffb_1 \cap \ffb_2)$.
         \item 
-            $(\ffa_1\ffb_2)S \subseteq (\ffa_1S)(\ffa_2S)$ $f(x)$ such that $x \in \ffa_1\ffa_2$, $x = \sum a_{1i}a_{2i}$, $f(x) = \sum_i f(a_{1i})f(a_{2i}) \in (\ffa_1S)(\ffa_2S)$. ``$\supseteq$''. gens. of RHS are $(\ffa_1S)(\ffa_2S) = (f(\ffa_1)S)(f(\ffa_2)S) = \langle f(a_1)f(a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2 \rangle S = \langle f(a_1a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2 \rangle S \subseteq \langle f(\ffa_1\ffa_2) \rangle S = (\ffa_1\ffa_2)S$.
+            \begin{itemize}
+                \item 
+                    ``$\subseteq$''. Since $\ffa \subseteq f^{-1}(\ffa S)$, $\ffa S \subseteq f^{-1}(\ffa S)S$. ``$\supseteq$''. The set of generators of $f^{-1}(\ffa S)S$ over $S$ is $\{f(x) \mid x \in f^{-1}(\ffa S)\} = f(f^{-1}(\ffa S)) \subseteq \ffa S$.
+                \item 
+                    ``$\subseteq$''. Since $\ffb \supseteq f^{-1}(\ffb)S$, $f^{-1}(\ffb) \supseteq f^{-1}(f^{-1}(\ffb)S)$. ``$\subseteq$''. Let $x \in f^{-1}(\ffb)$. Then $f(x) = f(x) \cdot 1 \in \langle f(f^{-1}\ffb) \rangle S = f^{-1}(\ffb)S$. So $x \in f^{-1}(f^{-1}(\ffb))$.
+            \end{itemize}
+        \item ``$\supseteq$''. Since $\ffa_1 + \ffa_2 \supseteq \ffa_1,\ffa_2$, $(\ffa_1+\ffa_2)S \supseteq \ffa_1S,\ffa_2S$. So $(\ffa_1+\ffa_2)S \supseteq \ffa_1S + \ffa_2S$. ``$\subseteq$''. The set of generators of $(\ffa_1+\ffa_2)S$ over $S$ is $\{f(a_1+a_2) = f(a_1) + f(a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2\} \subseteq \ffa_1 S + \ffa_2 S$.         
+        \item 
+            \begin{itemize}
+                \item Since $\ffa_1 \cap \ffa_2 \subseteq \ffa_1,\ffa_2$, $(\ffa_1 \cap \ffa_2)S \subseteq \ffa_1S,\ffa_2S$. So $(\ffa_1 \cap \ffa_2) S \subseteq \ffa_1 S \cap \ffa_2 S$.
+                \item $x \in f^{-1}(\ffb_1 \cap \ffb_2)$ iff $f(x) \in \ffb_1 \cap \ffb_2$ iff $f(x) \in \ffb_1,\ffb_2$ iff $x \in f^{-1}(\ffb_1),f^{-1}(\ffb_2)$ iff $x \in f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$.
+            \end{itemize}
+        \item 
+            ``$\subseteq$''. The set of generators of $(\ffa_1\ffa_2)S$ over $S$ is $\{f(\sum_i^{\text{finite}}\alpha_i\beta_i) = \sum_i^{\text{finite}} f(\alpha_i)f(\beta_i) \mid \alpha_i \in \ffa_1,\beta_i \in \ffa_2,\fa i\} \subseteq (\ffa_1S)(\ffa_2S)$. ``$\supseteq$''. $(\ffa_1S)(\ffa_2S) = (f(\ffa_1)S)(f(\ffa_2)S) = (f(\ffa_1)f(\ffa_2))S = \langle f(a_1)f(a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2 \rangle S = \langle f(a_1a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2 \rangle S \subseteq \langle f(\ffa_1\ffa_2) \rangle S = (\ffa_1\ffa_2)S$. 
+        \item 
+            \begin{itemize}
+                \item 
+                    The set of generators of $(\ffa_1:\ffa_2)S$ over $S$ is $\{f(r) \mid r \in (\ffa_1:\ffa_2)\} = \{f(r) \mid r \ffa_2 \subseteq \ffa_1\} \subseteq \{f(r) \mid r f(\ffa_2) \subseteq f(\ffa_1)\} \subseteq \{s \in S \mid sf(\ffa_2) \subseteq f(\ffa_1)\} = \{s \in S \mid s f(\ffa_2)S \subseteq f(\ffa_1)S \} = \{s \in S \mid s \ffa_2 S \subseteq \ffa_1 S\} = (\ffa_1S:\ffa_2S)$.
+                \item $f^{-1}(\ffb_1:\ffb_2) = \{f^{-1}(s) \mid s \in (\ffb_1:\ffb_2)\} = \{f^{-1}(s) \mid s\ffb_2 \subseteq \ffb_1\} \subseteq \{f^{-1}(s) \mid sf^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1)\} \subseteq \{r \in R\mid rf^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1)\} = (f^{-1}(\ffb_1):f^{-1}(\ffb_2))$.
+            \end{itemize}
+        \item 
+            \begin{itemize}
+                \item Let $s \in \operatorname{rad}(\ffa)S$. Then there exists $m \in \bbN$ and $a_i \in \operatorname{rad}(\ffa)$ and $s_i \in S$ for any $i = 1,\cdots,m$ such that $s = \sum_{i=1}^m f(a_i)s_i$. Since $a_i \in \operatorname{rad}(\ffa)$, there exists $n_i \in \bbN$ such that $a_i^{n_i} \in \ffa$ for each $i = 1,\cdots,m$. Let $n = n_1 + \cdots + n_m$. Then by PHP, 
+                    \[s^n = \left(\sum_{i=1}^m f(a_i)s_i\right)^n = \sum_{k_1 + \cdots + k_m = n} \frac{n!}{k_1! \cdots k_m!} \prod_{i=1}^m f(a_i^{k_i})s_i^{k_i} \subseteq f(\ffa)S = \ffa S.\]
+                    So $s \in \operatorname{rad}(\ffa S)$.
+                \item
+                    Note $x \in f^{-1}(\operatorname{rad}(\ffb))$ iff $f(x) \in \operatorname{rad}(\ffb)$ iff $f(x)^n \in \ffb$ for some $n \in \bbN$ iff $f(x^n) \in \ffb$ for some $n \in \bbN$ iff $x^n  \in f^{-1}(\ffb)$ for some $n \in \bbN$ iff $x \in \operatorname{rad}(\ffb)$.
+            \end{itemize}
     \end{enumerate}
 \end{proof}
 
-\begin{remark}[Q]
-    Avoidence for monomials ideals: If $\ffa,\ffb_1,\cdots,\ffb_n$ are monomial ideals in a polynomial ring $A[X_1,\cdots,X_n]$ such that $\ffa \subseteq \bigcup_{i=1}^n \ffb_i$, do we have $\ffa \subseteq \ffb_i$ for some $\ffb_i$? \\
-    Yes: by Dickson's lemma, $\ffa = \langle f_1,\cdots,f_m \rangle$ for some monomials $f_1,\cdots,f_m \in k[X_1,\cdots,X_n]$. Then $f = f_1 + \cdots + f_m \in \ffa \subseteq \bigcup_{i=1}^n \ffb_i$. So $f = f_1 + \cdots + f_m \in \ffb_i$ for some $i \in \{1,\cdots,n\}$. Then $f_1,\cdots,f_m \in \ffb_i$. So $\ffa = \langle f_1,\cdots,f_m \rangle \subseteq \ffb_i$.
-\end{remark}
-
 \begin{proposition}
-    $R^\times + \operatorname{Nil}(R) \subseteq R^\times$. For any $u \in R^\times$ and any $x \in \operatorname{Nil}(R)$; we have $u+x \in R^\times$, e.g., $1+x \in R^\times$.
+    $R^\times + \operatorname{Nil}(R) \subseteq R^\times$. For any $u \in R^\times$ and any $x \in \operatorname{Nil}(R)$, we have $u+x \in R^\times$. For example, $1+x \in R^\times$.
 \end{proposition}
 
 \begin{proof}
-    Let $x \in \operatorname{Nil}(R)$. Then there is a $n \in \bbN$ such that $x^n = 0$. Let $\eta = 1-x+x^2-\cdots+(-1)^{n-1}x^{n-1}$. Then $\eta(1+x) = 1-x^n = 1$. So $1+x \in R^\times$. Then $u + x = u(1+(u^{-1}x)) \in R^\times$.
+    Let $x \in \operatorname{Nil}(R)$. Then there is a $n \in \bbN$ such that $x^n = 0$. Let $\eta = 1-x+x^2-\cdots+(-1)^{n-1}x^{n-1}$. Then $\eta(1+x) = 1-x^n = 1$. So $1+x \in R^\times$. Let $u \in R^\times$. Then $u^{-1}x \in \operatorname{Nil}(R)$. So $1+u^{-1}x \in R^\times$. Hence $u + x = u(1+(u^{-1}x)) \in R^\times$. 
 \end{proof}
 
 \section{Power Series Rings}
