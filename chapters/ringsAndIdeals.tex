@@ -570,7 +570,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, and $S_\lambda \subs
 \end{theorem}
 
 \begin{definition}
-    Let $\ffa \leq R$ and $S \subseteq R$. Let 
+    Let $S \subseteq R$. Let 
     \begin{enumerate}[(a)]
         \item 
             $(\ffa:S) = \{r \in R \mid rs \in R,\fa s \in S\}$.
@@ -623,7 +623,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, and $S_\lambda \subs
 \begin{example}
     Let $R = k[X,Y]$. Since for $\underline p,\underline q \in \bbN^2$, we have $(\langle \underline X^{\underline p} \rangle\underline: X^{\underline q}) = \langle \underline X^{(p-q)^+} \rangle$, then
     \begin{enumerate}[(a)]
-        \item $(\langle XY \rangle: \{X,Y\}) = (\langle XY \rangle: \{X,Y\}) = (\langle XY \rangle: X) \cap (\langle XY \rangle : Y) = \langle Y \rangle \cap \langle X \rangle = \langle XY \rangle$.
+        \item $(\langle XY \rangle: \langle X,Y \rangle) = (\langle XY \rangle: \{X,Y\}) = (\langle XY \rangle: X) \cap (\langle XY \rangle : Y) = \langle Y \rangle \cap \langle X \rangle = \langle XY \rangle$.
         \item $(\langle X^2,XY \rangle: \langle X,Y \rangle) = (\langle X^2,XY \rangle: \{X,Y\}) = (\langle X^2,XY \rangle:X) \cap (\langle X^2,XY \rangle: Y) = \langle X,Y \rangle \cap \langle X \rangle = \langle X \rangle$.
     \end{enumerate}
 \end{example}
@@ -631,6 +631,10 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, and $S_\lambda \subs
 \begin{definition}
     The \emph{radical} of $\ffa \leq R$ is $\operatorname{rad}(\ffa) = \operatorname{r}(\ffa) = \sqrt \ffa = \{x \in R \mid x^n \in \ffa, \fa n \gg 0\} = \{x \in R \mid x^n \in \ffa \text{ for some }n \in \bbN\}$. 
 \end{definition}
+
+\begin{remark}
+    $\operatorname{rad}(0) = \operatorname{Nil}(R)$.
+\end{remark}
 
 \begin{example}
     $\operatorname{rad}(\langle X^2Y,XY^2 \rangle) = \operatorname{m-rad}(\langle X^2Y,XY^2 \rangle) = \langle \operatorname{red}(f) \mid f \in \{X^2Y,XY^2\} \rangle = \langle XY \rangle$ in $k[X,Y]$.
@@ -640,8 +644,8 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, and $S_\lambda \subs
     Let $\pi: R \to R/\ffa$ be the natural projection.
     \begin{enumerate}[(a)]
         \item $\operatorname{rad}(\ffa) = \pi^{-1}(\operatorname{Nil}(R/\ffa)) \leq R$. 
-        \item If $\ffa \subseteq \ffb$, then $\operatorname{rad}(\ffa) \subseteq \operatorname{rad}(\ffb)$ (converse fails).
-        \item $\ffa \subseteq \operatorname{rad}(\ffa) = \operatorname{rad}(\operatorname{rad}(\ffa))$ (equality fails in general). 
+        \item If $\ffa \subseteq \ffb$, then $\operatorname{rad}(\ffa) \subseteq \operatorname{rad}(\ffb)$. 
+        \item $\ffa \subseteq \operatorname{rad}(\ffa) = \operatorname{rad}(\operatorname{rad}(\ffa))$. 
         \item $\operatorname{rad}(\ffa\ffb) = \operatorname{rad}(\ffa \cap \ffb) = \operatorname{rad}(\ffa) \cap \operatorname{rad}(\ffb)$.
         \item $\operatorname{rad}(\ffa) = R$ iff $\ffa = R$.
         \item $\operatorname{rad}(\ffa + \ffb) = \operatorname{rad}(\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb))$.
@@ -660,56 +664,63 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, and $S_\lambda \subs
         \item $\ffa = R$ iff $1 \in \ffa$ iff $1^n \in \ffa$ iff $\operatorname{rad}(\ffa) = R$. 
         \item Since $\ffa + \ffb \subseteq \operatorname{rad}(\ffa) + \operatorname{rad}(\ffb)$, we have $\operatorname{rad}(\ffa + \ffb) \subseteq \operatorname{rad}(\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb))$. \\
             Let $x \in \operatorname{rad}(\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb))$. Then there exists $n \in \bbN$ such that $x^n \in \operatorname{rad}(\ffa) + \operatorname{rad}(\ffb)$. So there exist $a \in \ffa$ and $b \in \ffb$ such that $x^n = a + b$. Then there exist $j,k \in \bbN$ such that $a^j \in \ffa$ and $b^k \in \ffb$. So $x^{n(j+k)} = (x^n)^{j+k} = (a+b)^{j+k} = \sum_{l = 0}^{j+k} a^lb^{j+k-l}$. Since for any $0 \leq l \leq j+k$, either $l \geq j$ or $l < j$, i.e., $l \geq j$ or $j+k-l > k$. we have $a^l \in \ffa$ when $l \geq j$, and $b^{j+k-l} \in \ffb$ when $j + k - l > n$. So $x^{n(j+k)} = 0$. Thus, $x\in \operatorname{rad}(\ffa+\ffb)$.
-        \item 
         \item
+            Note $\operatorname{Nil}(R/\ffa) = \bigcap_{\ffp \in \operatorname{Spec}(R/\ffa)} \ffp = \bigcap_{\ffp \in \operatorname{V}(\ffa)} \ffp/\ffa$ by 3IT/4IT. Then by (a) and the property of preimage, $\operatorname{rad}(\ffa) = \pi^{-1}(\operatorname{Nil}(R/\ffa))  = \pi^{-1}(\bigcap_{\ffp \in \operatorname{V}(\ffa)} \ffp/\ffa) = \bigcap_{\ffp \in \operatorname{V}(\ffa)} \pi^{-1}(\ffp/\ffa) = \bigcap_{\ffp \in \operatorname{V}(\ffa)} \ffp$.
+        \item Since $\ffp_i \in \operatorname{Spec}(R)$, $\ffp_i \in \operatorname{V}(\ffp_i)$ and then $\ffp_i \subseteq \operatorname{rad}(\ffp_i) = \bigcap_{\ffp \in \operatorname{V}(\ffp_i)}\ffp \subseteq \ffp_i$, i.e., $\ffp_i = \operatorname{rad}(\ffp_i)$ for each $i = 1,\cdots,n$. Then by (d), $\operatorname{rad}(\bigcap_{i=1}^n \ffp_i^{e_i}) = \bigcap_{i=1}^n \operatorname{rad}(\ffp_i^{e_i}) = \bigcap_{i=1}^n \operatorname{rad}(\ffp_i) = \bigcap_{i=1}^n \ffp_i$. 
         \item
+            By (e) and (f), $\ffa + \ffb = R$ iff $\operatorname{rad}(\ffa + \ffb) = R$ iff $\operatorname{rad}(\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb)) = R$ iff $\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb) = R$. 
     \end{enumerate}
 \end{proof}
 
 \begin{example}
-    Let $R = \bbF_2[X,Y]$, $\ffa = \langle X,Y \rangle$, $\ffb_1 = \langle X,X^2,XY,Y^2 \rangle$, $\ffb_2 = \langle X+Y,X^2,XY,Y^2 \rangle$, and $\ffb_3 = \langle Y,X^2,XY,Y^2 \rangle$. Then $\ffa = \ffb_1 \cup \ffb_2 \cup \ffb_3$, but $\ffa \supsetneq \ffb_i$ for any $i = 1,2,3$. \\
-    $\frac{\bbF_2[X,Y]}{\langle X^2,XY,Y^2 \rangle} \geq \langle \overline X, \overline Y \rangle \cong \bbF_2^2$. Let $\ffb_1 = \langle \overline X, \overline Y \rangle$, $\ffb_2 = \langle \overline X + \overline Y \rangle$ and $\ffb_3 = \langle Y \rangle$. Then $\langle \overline X,\overline Y \rangle = \ffb_1 \cup \ffb_2 \cup \ffb_2$, but $\ffb_i \subseteq \langle \overline X,\overline Y \rangle$ for any $i = 1,2,3$.
-\end{example}
-
-
-
-\begin{example}
     \begin{enumerate}
-        \item [(b)] If $\operatorname{rad}(\ffa)+\operatorname{rad}(\ffb)$, then we may not have $\ffa \subseteq \ffb$. 
-        \item [(c)]
-        \item [(d)]
+        \item[(b)] If $\operatorname{rad}(\ffa) \subseteq \operatorname{rad}(\ffb)$, we can have $\ffa \not \subseteq \ffb$. For example, in $R = \bbZ$, $\langle 2 \rangle = \operatorname{rad}(\langle 2 \rangle) = \operatorname{rad}(\langle 4 \rangle) = \langle 2 \rangle$, but $\langle 2 \rangle \not \subseteq \langle 4 \rangle$.
+        \item[(c)]
+            We can have $\ffa \subsetneq \operatorname{rad}(\ffa)$. For example, in $R = \bbZ$, $\langle 4 \rangle \subsetneq \langle 2 \rangle = \operatorname{rad}(\langle 4 \rangle)$.
+        \item[(d)] We can have $\operatorname{rad}(\bigcap_{i=1}^\infty \ffa_i) \neq \bigcap_{i=1}^\infty \operatorname{rad}(\ffa_i)$. For example, in $R = k[X_1,X_2,\cdots]$, let $\ffa_1 = \langle X_1 \rangle$, $\ffa_2 = \langle X_1^2,X_2^2 \rangle$, $\cdots$, $\ffa_n = \langle X_1^n,\cdots,X_n^n \rangle$, $\cdots$, then $\bigcap_{i=1}^\infty \ffa_i = 0$, so $\operatorname{rad}(\bigcap_{i=1}^\infty \ffa_i) = \operatorname{rad}(0) = 0$, but since $\langle X_i \rangle, \langle X_1,\cdots,X_n \rangle \in \operatorname{Spec}(\ffa)$ for each $i \in \bbN$, then by (f), $\bigcap_{i=1}^\infty \operatorname{rad}(\ffa_i) = \bigcap_{i=1}^\infty \operatorname{rad}(\langle X_1,\cdots,X_i \rangle) = \bigcap_{i=1}^\infty \langle X_1,\cdots,X_i \rangle = \langle X_1 \rangle \neq 0$. 
+        \item[(f)] We may have $\operatorname{rad}(\ffa + \ffb) \supsetneq \operatorname{rad}(\ffa) + \operatorname{rad}(\ffb)$. For example, in $R = k[X,Y]$, let $\ffa = \langle X+Y^2 \rangle$ and $\ffb = \langle X \rangle$. Then $\ffa,\ffb \in \operatorname{Spec}(R)$. Also, since $\langle X,Y \rangle \in \operatorname{Spec}(R)$, $\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb) = \ffa + \ffb = \langle X+Y^2,X \rangle = \langle X,Y^2 \rangle \subsetneq \langle X,Y \rangle = \operatorname{rad}(\langle X,Y^2 \rangle) = \operatorname{rad}(\ffa + \ffb)$.
     \end{enumerate}
 \end{example}
 
-\begin{definition}[extension and contraction of ideals along ring homomorphisms]
-    Let $\varphi: R \to S$ be a ring homomorphism. Let $\ffa \leq R$, then the \emph{extension} of $\ffa$ along $\varphi$ is $\ffa^e = \ffa S = \langle \varphi(\ffa) \rangle \leq S$. Let $\ffb \leq S$, then the \emph{extraction} of $\ffb$ along $\varphi$ is $\ffa^c = \varphi^{-1}(\ffb) \leq R$.
+\begin{example}
+    Let $R = \bbF_2[X,Y]$, $\ffa = \langle X,Y \rangle$, $\ffb_1 = \langle X,X^2,XY,Y^2 \rangle$, $\ffb_2 = \langle X+Y,X^2,XY,Y^2 \rangle$, and $\ffb_3 = \langle Y,X^2,XY,Y^2 \rangle$. Then $\ffa = \ffb_1 \cup \ffb_2 \cup \ffb_3$, but $\ffa \supsetneq \ffb_i$ for any $i = 1,2,3$. \\
+    $\frac{\bbF_2[X,Y]}{\langle X^2,XY,Y^2 \rangle} \geq \langle \overline X, \overline Y \rangle \cong \bbF_2^2$. Let $\ffb_1 = \langle \overline X, \overline Y \rangle$, $\ffb_2 = \langle \overline X + \overline Y \rangle$ and $\ffb_3 = \langle Y \rangle$. Then $\langle \overline X,\overline Y \rangle = \ffb_1 \cup \ffb_2 \cup \ffb_2$ with $\ffb_i \subsetneq \langle \overline X,\overline Y \rangle$ for any $i = 1,2,3$.
+\end{example}
+
+\begin{definition}
+    Let $\varphi: R \to S$ be a ring homomorphism. Let $\ffa \leq R$ and $\ffb \leq S$. The \emph{extension} of $\ffa$ along $\varphi$ is $\ffa^e = \ffa S = \langle \varphi(\ffa) \rangle S \leq S$. The \emph{contraction} of $\ffb$ along $\varphi$ is $\ffa^c = \varphi^{-1}(\ffb) \leq R$.
 \end{definition}
 
 \begin{example}
     \begin{enumerate}
-        \item[(a)] Let $R$ be an integral domain with field of fraction $Q(R)$. Then $R \subseteq Q(R)$ with the inclusion map $\epsilon:R \to Q(R)$ given by $\varepsilon(r) = r/1$. If $0 \neq \ffa \leq R$, then $\ffa Q(R) = Q(R)$ and $0Q(R) = 0$.
+        \item[(a)] Let $R$ be an integral domain with field of fraction $Q(R)$. Then $R \subseteq Q(R)$ with the inclusion map $\epsilon:R \to Q(R)$ given by $\varepsilon(r) = r/1$. Note $0Q(R) = 0$ and for $0 \neq \ffa \leq R$, we have $\ffa Q(R) = Q(R)$.
         \item[(b)] Note $\langle X\rangle k[X] \subseteq k[X] \subseteq k[X,Y]$, $\left(\langle X \rangle k[X]\right)k[X,Y] = \langle X \rangle k[X,Y]$.
-        \item[(c)] Let $R \subseteq S$ be rings and $\varepsilon: R \xrightarrow \subseteq S$. Let $\ffb \subseteq S$, then $\varepsilon^{-1}(\ffb) = \ffb \cap R$.
-        \item[(b)]
+        \item[(c)] Let $R \subseteq S$ be rings and $\varepsilon: R \xrightarrow \subseteq S$. If $\ffb \leq S$, then $\varepsilon^{-1}(\ffb) = \ffb \cap R$.
+        \item[(d)] Let $\varepsilon : k[X] \xrightarrow{\subseteq} k[X,Y]$. Since $\langle X,Y \rangle k[X,Y] \leq k[X,Y]$, we have $\varepsilon^{-1}(\langle X,Y \rangle k[X,Y]) = \langle X,Y \rangle k[X,Y] \textstyle \bigcap k[X] = \langle X \rangle k[X]$.
     \end{enumerate}
 \end{example}
 
 \begin{proposition}
-    Let $f: R \to S$ be a ring homomorphism.
+    Let $f: R \to S$ be a ring homomorphism and $\ffb_1,\ffb_2 \leq S$.
     \begin{enumerate}[(a)]
-        \item $\ffa \subseteq f^{-1}(\ffa S)$. If $\ffa_1 \subseteq \ffb_1$, then $\ffa_1S \subseteq \ffa_2S$. $f^{-1}(\ffb)S \subseteq \ffb$. If $\ffb_1 \subseteq \ffb_2$, then $f^{-1}(\ffb_1) \subseteq f^{-1}(\ffb_2)$. If $T \subseteq R$, then $(\langle T \rangle R)S = \langle f(T) \rangle S$.
-        \item $\ffa S = f^{-1}(\ffa S)S$, $f^{-1}(\ffb) = f^{-1}(f^{-1}(\ffb)S)$.
-        \item $(\ffa_1 + \ffa_2)S = \ffa_1S + \ffa_2S$. $f^{-1}(\ffb_1) + f^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1 + \ffb_2)$, not equal in general.
-        \item $(\ffa_1 \cap \ffa_2)S \subseteq \ffa_1S \cap \ffa_2S$, $f^{-1}(\ffb_1 \cap \ffb_2) = f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$.
-        \item $(\ffa_1\ffa_2)S = (\ffa_1S)(\ffa_2S)$, $f^{-1}(\ffb_1)f^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1\ffb_2)$.
-        \item $(\ffa_1:\ffa_2)S \subseteq (\ffa_1S:\ffa_2S)$, $f^{-1}(\ffb_1:\ffb_2) \subseteq (f^{-1}(\ffb_1):f^{-1}(\ffb_2))$.
+        \item $\ffa \subseteq f^{-1}(\ffa S)$ and $f^{-1}(\ffb)S \subseteq \ffb$. If $\ffa_1 \subseteq \ffa_2$, then $\ffa_1S \subseteq \ffa_2S$. If $\ffb_1 \subseteq \ffb_2$, then $f^{-1}(\ffb_1) \subseteq f^{-1}(\ffb_2)$. If $T \subseteq R$, then $(\langle T \rangle R)S = \langle f(T) \rangle S$. \\
+            Example of $\ffa \subsetneq f^{-1}(\ffa S)$. Let $f: \bbZ \xrightarrow {\subseteq} \bbQ$ and $\ffa = 2\bbZ$. Then $f^{-1}(\ffa \bbQ) = f^{-1}(2\bbQ) = f^{-1}(\bbQ) = \bbZ \supsetneq 2\bbZ = \ffa$. \\
+            Example of $f^{-1}(\ffb)S \subsetneq \ffb$. Let $f: k[X] \xrightarrow {\subseteq }k[X,Y]$. Let $\ffb = \langle Y \rangle k[X,Y]$. Then $f^{-1}(\ffb) = 0$. So $f^{-1}(\ffb)k[X,Y] = 0 \subsetneq \langle Y \rangle k[X,Y] = \ffb$.
+        \item $\ffa S = f^{-1}(\ffa S)S$ and $f^{-1}(\ffb) = f^{-1}(f^{-1}(\ffb)S)$.
+        \item $(\ffa_1 + \ffa_2)S = \ffa_1S + \ffa_2S$ and $f^{-1}(\ffb_1) + f^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1 + \ffb_2)$.
+        \item $(\ffa_1 \cap \ffa_2)S \subseteq \ffa_1S \cap \ffa_2S$ and $f^{-1}(\ffb_1 \cap \ffb_2) = f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$. Example of $(\ffa_1 \cap \ffa_2)S \subsetneq \ffa_1S \cap \ffa_2S$. let $f: k[X,Y] \to k[X,Y]/\langle X,Y \rangle^2$, $\ffa_1 = \langle x \rangle R$, $\ffa_2 = \langle X+Y^2 \rangle$, then $\ffa_1 \cap \ffa_2 = \langle X(X+Y^2) \rangle = \langle X^2 + X - Y^2\rangle$. $\ffa_1 S = \langle \overbar X \rangle S$, $\ffa_2 S = \langle \overbar{X+Y^2} \rangle S = \langle \overbar X \rangle S$. $(\ffa_1 \cap \ffa_2)S = \langle \overbar{X^2+XY^2} \rangle = 0 \subseteq \langle \overline X \rangle S = \ffa_1 S \cap \ffa_2 S$.
+        \item $(\ffa_1\ffa_2)S = (\ffa_1S)(\ffa_2S)$ and $f^{-1}(\ffb_1)f^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1\ffb_2)$. Example of $f^{-1}(\ffb_1)f^{-1}(\ffb_2) \subsetneq f^{-1}(\ffb_1\ffb_2) \subseteq f^{-1}(\ffb_1 \cap \ffb_2) = f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$. Let $f: k[X] \to k[X]/(X(X-1)) = k[X]/(X^2-X) \cong k \times k$ by CRT. In $k \times k$, $(1,0) = (1,0)^2$. Let $\ffb_1 = \langle \overbar X \rangle S = \ffb_2$. Then $\ffb_1 \ffb_2 = \langle \overline X^2 \rangle S = \langle \overline X \rangle S = \ffb_1$. So $f^{-1}(\ffb_1) = f^{-1}(\ffb_2) = f^{-1}(\ffb_1 \ffb_2) = f^{-1}(\langle \overbar X \rangle) = \langle X \rangle R \neq \langle X^2 \rangle R = f^{-1}(\ffb_1)f^{-1}(\ffb_2)$.
+        \item $(\ffa_1:\ffa_2)S \subseteq (\ffa_1S:\ffa_2S)$ and $f^{-1}(\ffb_1:\ffb_2) \subseteq (f^{-1}(\ffb_1):f^{-1}(\ffb_2))$. Example of $(\ffa_1:\ffa_2)S \subsetneq (\ffa_1S : \ffa_2 S)$. Let $f: k[X] \to k[X]/\langle X \rangle \cong k$. Let $\ffa_1 = \langle X^2 \rangle$ and $\ffa_2 = \langle X \rangle$. Then $(\ffa_1:\ffa_2)S = (\langle X^2 \rangle: \langle X \rangle)S = \langle X \rangle S$. But note $\ffa_1 S = 0 = \ffa_2 S$, so $(\ffa_1 S: \ffa_2 S) = (0:0) = S$.
         \item $\operatorname{rad}(\ffa)S \subseteq \operatorname{rad}(\ffa S)$, $f^{-1}(\operatorname{rad}(\ffb)) = \operatorname{rad}(f^{-1}(\ffb))$.
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
     \begin{enumerate}[(a)]
-        \item LHS gen. over $S$ by $f(\langle T \rangle R)$, $f(\sum_i^{\text{finite}}t_ir_i) = \sum_i^{\text{finite}} f(t_i)f(r_i) \in \langle f(T) \rangle S$. gen of RHS is $f(t) = f(t \cdot 1)$ gen. of LHS.
+        \item 
+            Note for any $a \in \ffa$, $f(a) \in f(\ffa) \subseteq \langle f(\ffa) \rangle S = \ffa S$, i.e., $a \in f^{-1}(\ffa S)$. \\
+            To show $\langle f(f^{-1}(\ffb)) \rangle S = f^{-1}(\ffb)S \subseteq \ffb$, it suffices to show $\langle f(f^{-1}(\ffb)) \rangle \subseteq \ffb$, then it is equivalent to show $f(f^{-1}(\ffb)) \subseteq \ffb$, which is true. \\
+                 LHS gen. over $S$ by $f(\langle T \rangle R)$, $f(\sum_i^{\text{finite}}t_ir_i) = \sum_i^{\text{finite}} f(t_i)f(r_i) \in \langle f(T) \rangle S$. gen of RHS is $f(t) = f(t \cdot 1)$ gen. of LHS.
         \item 
             \begin{itemize}
                 \item 
@@ -742,7 +753,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, and $S_\lambda \subs
 Let $A$ be a CRW1.
 
 \begin{definition}
-    $A \llbracket X \rrbracket = $
+    $A \llbracket X \rrbracket = \{f = \sum_{i=0}^\infty a_i \mid a_iX^i \in A,\fa i\}$.
 \end{definition}
 
 \begin{example}
@@ -754,9 +765,13 @@ Let $A$ be a CRW1.
 \end{theorem}
 
 \begin{proposition}
+    Let $f = \sum_{i=0}^\infty a_iX^i$.
     \begin{enumerate}[(a)]
-        \item 
-        \item
+        \item $f$ is a unit in $A \llbracket X \rrbracket$ iff $a_0 \in A^\times$.
+        \item If $\varphi: A \to B$ is a ring homomorphism, then there exists a well-defined ring homomorphism $\varphi\llbracket X \rrbracket: A\llbracket X \rrbracket \to B\llbracket X \rrbracket$ taking $\sum_{i=0}^\infty \alpha_iX^i$ to $\sum_{i=0}^\infty \varphi(\alpha_i)X^i$ and $\ker(\varphi)\llbracket X \rrbracket = \ker(\varphi \llbracket X \rrbracket) \leq A\llbracket X \rrbracket$.
+        \item For any $\ffa \leq A$, $\ffa \cdot A \llbracket X \rrbracket \subseteq \ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ and $\frac{A \llbracket X \rrbracket}{\ffa \llbracket X \rrbracket} \cong \frac{A}{\ffa}[X]$. In addition, $\ffa \cdot A\llbracket X \rrbracket = \ffa \llbracket X \rrbracket$ when $\ffa$ is finitely generated. 
+        \item Let $\ffa \leq A$. $\langle X,\ffa \rangle A\llbracket X \rrbracket = X \cdot A \llbracket X \rrbracket + \ffa \cdot A \llbracket X \rrbracket = XA \llbracket X \rrbracket + \ffa \llbracket X \rrbracket = \{\sum_{i=0}^\infty b_iX^i \mid b_0 \in \ffa, b_i \in A,\fa i \in \bbN\} \leq A \llbracket X \rrbracket$ and $\frac{A \llbracket X \rrbracket}{\langle X,\ffa \rangle A \llbracket X \rrbracket} \cong \frac{A}{\ffa}$. In particular, if $\ffa = 0$, then $\langle X \rangle A \llbracket X \rrbracket = \{\sum_{i=1}^\infty b_ix_i \mid b_i \in A, \fa i \in \bbN \} \cong A$ and $\frac{A\llbracket X \rrbracket}{\langle X \rangle A \llbracket X \rrbracket} \cong A$. 
+        \item If $f$ is nilpotent, then $a_i$ is nilpotent for any $i$. Converse holds if $ = \langle a_0,a_1,a_2,\cdots \rangle$ is finitely generated. $\operatorname{Nil}(A) \cdot A \llbracket X \rrbracket \subseteq \operatorname{Nil}(A \llbracket X \rrbracket) \subseteq \operatorname{Nil}(A) \llbracket X \rrbracket$.
     \end{enumerate}
 \end{proposition}
 
@@ -764,7 +779,16 @@ Let $A$ be a CRW1.
     \begin{enumerate}[(a)]
         \item 
         \item
+        \item 
+        \item 
+            \begin{center}
+                \begin{tikzcd}
+                \end{tikzcd}
+            \end{center}
+            Check $\pi$ and $\pi^{-1}$. \\
+            In general, $\ker(\tau \circ \pi)$.
+        \item 
+            Assume $f$ is nilpotent. Then $0 = f^n = a_0^n + \cdots $ for some $n \in \bbN$. So $a_0$ is nilpotent. Since $f,a_0 \in \operatorname{Nil}(A \llbracket X \rrbracket)$, $\sum_{i=1}^\infty a_iX^i = f-a_0 \in \operatorname{Nil}(A \llbracket X \rrbracket)$.
     \end{enumerate}
 \end{proof}
-
 
