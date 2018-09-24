@@ -2,7 +2,7 @@
 
 \section{Rings and Ring Homomorphisms}
 
-Let $R$ be a CRW1.
+Let $R$ be a commutative ring with identity.
 
 \begin{fact}
     $R = 0$ iff $1_R = 0_R$.
@@ -479,7 +479,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, and $S_\lambda \subs
         \item $\ffa^n = \{\sum_{i}^{\text{finite}}a_{i1} \cdots a_{in} \mid a_{ij} \in \ffa, \fa i, \fa j = 1,\cdots,n\}$.
         \item If $\ffa = \langle S \rangle$, then $\ffa^n = \langle s_1 \cdots s_n \mid s_i \in S, \fa i = 1,\cdots,n\rangle$.
         \item 
-            If $\ffa = \langle x_1,\cdots,x_m \rangle$, then $\ffa^n = \langle x_{i_1} \cdots x_{i_n} \mid i_j = 1,\cdots,m, \fa j = 1,\cdots,n \rangle$.
+            If $\ffa = \langle x_1,\cdots,x_m \rangle$, then $\ffa^n = \langle x_{i_1} \cdots x_{i_n} \mid i_j \in \{1,\cdots,m\}, \fa j = 1,\cdots,n \rangle$.
     \end{enumerate}
 \end{fact}
 
@@ -855,3 +855,54 @@ Let $A$ be a CRW1.
     \end{enumerate}
 \end{proof}
 
+\section{Exercises}
+
+Let $R_1,R_2,\cdots$ be CRW1$\neq 0$.
+
+\begin{exer}
+    The product $R_1 \times R_2$ is a CRW1$\neq 0$ where the operations and identities are defined component-wise: $(a_1,a_2) + (b_1,b_2) = (a_1+b_1,a_2+b_2)$ and $(a_1,a_2)(b_1,b_2) = (a_1b_1,a_2b_2)$ with $0_{R_1 \times R_2} = (0_{R_1},0_{R_2})$ and $1_{R_1 \times R_2} = (1_{R_1},1_{R_2})$. 
+    \begin{enumerate}[(a)]
+        \item Prove that if $\ffa_1 \leq R_1$ and $\ffa_2 \leq R_2$, then use the 1IT to show that $\ffa_1 \times \ffa_2 \leq R_1 \times R_2$ and $(R_1 \times R_2)/(\ffa_1 \times \ffa_2) \cong (R_1/\ffa_1) \times (R_2/\ffa_2)$.
+        \item Prove that $R_1 \times R_2$ is not an integral domain. Conclude that if $\ffa_1 \lneq R_1$ and $\ffa_2 \lneq R_2$, then $(R_1/\ffa_1) \times (R_2/\ffa_2)$ is not an integral domain. 
+        \item Prove that $\{\ffa \leq R_1 \times R_2\} = \{\ffa_1 \times \ffa_2 \mid \ffa_1 \leq R_1,\ \ffa_2 \leq R_2\}$.
+        \item Prove that $\operatorname{Spec}(R_1 \times R_2)$ is the disjoint union of the sets $\{\ffp_1 \times R_2 \mid \ffp_1 \in \operatorname{Spec}(R_1)\}$ and $\{R_2 \times \ffp_2 \mid \ffp_2 \in \operatorname{Spec}(R_2)\}$.
+        \item State and prove a characterization of the maximal ideals of $R_1 \times R_2$ as in part (d). In particular, conclude that $R_1 \times R_2$ is not local.
+    \end{enumerate}
+\end{exer}
+
+\begin{proof}
+    \begin{enumerate}[(a)]
+        \item Define $\phi: R_1 \times R_2 \to (R_1/\ffa_1) \times (R_2/\ffa_2)$ by $\phi(r_1,r_2) = (r_1+\ffa_1,r_2+\ffa_2)$. Let $(r_1,r_2),(s_1,s_2) \in R_1 \times R_2$. Then $\phi((r_1,r_2)+(s_1,s_2)) = \phi(r_1+s_1,r_2+s_2) = (r_1+s_1+\ffa_1,r_2+s_2+\ffa_2) = (r_1+\ffa_1,r_2+\ffa_2) + (s_1+\ffa_1,s_2+\ffa_2) = \phi(r_1,r_2) + \phi(s_1,s_2)$ and it is similar for the multiplication. So $\phi$ is a ring homomorphism. Note $(r_1,r_2) \in \ker(\varphi)$ iff $\phi(r_1,r_2) = 0$ iff $(r_1+\ffa,r_2+\ffa) = (\ffa_1,\ffa_2)$ iff $r_1 \in \ffa_1$ and $r_2 \in \ffa_2$. So $\ker(\varphi) = \ffa_1 \times \ffa_2$. Then our result follows from the 1IT.
+        \item Let $(0_{R_1},1_{R_2}),(1_{R_1},0_{R_2}) \in R_1 \times R_2$. Since $R_1 \neq 0 \neq R_2$, $(0_{R_1},1_{R_2}) \neq (0_{R_1},0_{R_2}) \neq  (1_{R_1},0_{R_2})$, but $(0_{R_1},1_{R_2}) \times (1_{R_1},0_{R_2}) = (0_{R_1},0_{R_2}) = 0_{R_1 \times R_2}$. So $R_1 \times R_2$ is not an integral domain. \\
+            Since $\ffa_1 \lneq R_2$ and $\ffa_2 \lneq R_2$, $\ffa_1 \times \ffa_2 \lneq R_1 \times R_2$ . Suppose $(R_1 \times \ffa_1) \times (R_2/\ffa_2)$ is an integral domain. Then by (a), $(R_1 \times R_2)/(\ffa_1 \times \ffa_2)$ is an integral domain. Also, since $(R_1 \times R_2)/(\ffa_1 \times \ffa_2) \neq 0$, we have $R_1 \times R_2$ is an integral domain, a contradiction.
+        \item ``$\supseteq$''. Follow from (a). ``$\subseteq$''. Let $\ffa = I \times J \leq R_1 \times R_2$, where $I \subseteq R_1$ and $J \subseteq R_2$. Then $(r_1i,r_2j) = (r_1,r_2)(i,j) \in I \times J$ for any $(r_1,r_2) \in R_1 \times R_2$ and $(i,j) \in I \times J$, i.e., for any $r_1 \in R_1,r_2 \in R_2,i \in I,j \in J$, we have $r_1i \in I$ and $r_2j \in J$. So $I \leq R_1$ and $J \leq R_2$.
+        \item Let $\ffp_1 \in \operatorname{Spec}(R_1)$. Then by (a), $(R_1 \times R_2)/(\ffp_1 \times R_2) \cong R_1/\ffp_1 \times R_2/R_2 \cong R_1/\ffp_1$. So $\ffp_1 \times R_2 \in \operatorname{Spec}(R_1 \times R_2)$. Similarly, if $\ffp_2 \in \operatorname{Spec}(R_2)$, then $R_1 \times \ffp_2 \in \operatorname{Spec}(R_1 \times R_2)$. \\
+            On the other hand, let $I \times J \leq \operatorname{Spec}(R_1 \times R_2)$. Then by (c), $I \leq R_1$ and $J \leq R_2$. Suppose $I \lneq R_1$ and $J \lneq R_2$. Then by (b), $R_1/I \times R_2/I \cong (R_1 \times R_2)/(I \times J)$ is not an integral domain. So $I \times J \not \in \operatorname{Spec}(R_1 \times R_2)$. Hence $I = R_1$ or $J = R_2$. When $I = R_1$, we have $(R_1 \times R_2)/(I \times J) \cong R_2/J$, since $I \times J \in \operatorname{Spec}(R_1 \times R_2)$, $J \in \operatorname{Spec}(R_2)$. Similarly, when $J = R_2$, we have $I \in \operatorname{Spec}(R_1)$. Besides, we know prime ideal of a ring are always proper, so it is the disjoint union.
+        \item $\operatorname{Jac}(R_1 \times R_2)$ is the disjoint union of the sets $\{\ffm_1 \times R_2 \mid \ffm_1 \in \operatorname{Jac}(R_1)\}$ and $\{R_2 \times \ffm_2 \mid \ffm_2 \in \operatorname{Jac}(R_2)\}$. \\
+        Let $\ffm_1 \in \operatorname{Jac}(R_1)$. Then by (a), $(R_1 \times R_2)/(\ffm_1 \times R_2) \cong R_1/\ffm_1 \times R_2/R_2 \cong R_1/\ffm_1$. So $\ffm_1 \times R_2 \in \operatorname{Jac}(R_1 \times R_2)$. Similarly, if $\ffm_2 \in \operatorname{Jac}(R_2)$, then $R_1 \times \ffm_2 \in \operatorname{Jac}(R_1 \times R_2)$. \\
+            On the other hand, let $I \times J \leq \operatorname{Jac}(R_1 \times R_2)$. Then by (c), $I \leq R_1$ and $J \leq R_2$. Suppose $I \lneq R_1$ and $J \lneq R_2$. Then by (b), $R_1/I \times R_2/I \cong (R_1 \times R_2)/(I \times J)$ is not an integral domain. So $I \times J \not \in \operatorname{Jac}(R_1 \times R_2)$. Hence $I = R_1$ or $J = R_2$. When $I = R_1$, we have $(R_1 \times R_2)/(I \times J) \cong R_2/J$, since $I \times J \in \operatorname{Jac}(R_1 \times R_2)$, $J \in \operatorname{Jac}(R_2)$. Similarly, when $J = R_2$, we have $I \in \operatorname{Jac}(R_1)$. Besides, we know maimal ideal of a ring are always proper, so it is the disjoint union. \\
+            Since $R_1$ is a CRW1$\neq 0$, $\operatorname{Jac}(R_1) \neq \emptyset$ and then there exists $\ffm_1 \in \operatorname{Jac}(R_1)$. So $\ffm_1 \times R_2 \in \operatorname{Jac}(R_1 \times R_2)$. Similarly, we have $R_1 \times \ffm_2 \in \operatorname{Jac}(R_1 \times R_2)$ , where $\ffm_2 \in \operatorname{Jac}(R_2)$.
+    \end{enumerate}
+\end{proof}
+
+\begin{exer}
+    Repeat previous Exercise for each product $\prod_{i=1}^n R_i = R_1 \times \cdots \times R_n$. 
+\end{exer}
+
+\begin{exer}
+    One might suspect that previous Exercise extends to the infinite product $\prod_{i=1}^\infty R_i = R_1 \times R_2 \times \cdots$. However, some parts fail to extend. Indeed, consider the set 
+    \[\bigoplus_{i=1}^\infty R_i = \left\{(a_1,a_2,\cdots) \in \prod_{i=1}^\infty R_i \mathrel{\bigg |} a_i = 0 \text{ for }i \gg 0 \right\}.\]
+    \begin{enumerate}[(a)]
+        \item Prove that the subset $\bigoplus_{i=1}^\infty R_i \subseteq \prod_{i=1}^\infty R_i$ is a proper, non-maximal ideal that is not contained in any maximal ideal of the form $R_1 \times \cdots \times R_{n-1} \times \ffm_n \times R_{n+1} \times \cdots$. Thus, there must be maximal ideals that are not of this form.
+        \item Challenge exercise: Explicitly describe a maximal ideal containing $\bigoplus_{i=1}^\infty R_i$ for your favarite choices of $R_i$, e.g., in the ring $\bbF_2 \times \bbF_2 \times \cdots$.
+    \end{enumerate}
+\end{exer}
+
+\begin{proof}
+    \begin{enumerate}[(a)]
+        \item Since $(1_{R_1},1_{R_2},\cdots) \in \prod_{i=1}^\infty R_i$, but $(1_{R_1},1_{R_2},\cdots) \not \in \bigoplus_{i=1}^\infty R_i$, $\bigoplus_{i=1}^\infty R_i \subsetneq \prod_{i=1}^\infty R_i$. \\
+            Since $(0_{R_1},0_{R_2},\cdots) \in \bigoplus_{i=1}^\infty R_i$, $\bigoplus_{i=1}^\infty R_i \neq \emptyset$. Let $(a_1,a_2,\cdots),(b_1,b_2,\cdots) \in \bigoplus_{i=1}^\infty R_i$. Then there exists $k \in \bbN$ such that $a_i = 0 = b_i$ for any $i \geq k$. So $a_i+b_i = 0$ for $i \gg 0$. Similarly, $\bigoplus_{i=1}^\infty R_i$ is closed under multiplication by elements of $\prod_{i=1}^n R_i$. Hence $\bigoplus_{i=1}^\infty R_i \leq \prod_{i=1}^\infty R_i$. \\
+            To show $\bigoplus_{i=1}^\infty R_i \not \in \operatorname{Jac}(\prod_{i=1}^\infty R_i)$, it is enough to show $\prod_{i=1}^\infty R_i/\bigoplus_{i=1}^\infty R_i$ is not a field. Let $(\overline 1,\overline 0,\overline 1,\overline 0,\cdots) \in \prod_{i=1}^\infty R_i/\bigoplus_{i=1}^\infty R_i$. Suppose there exists $(\overline a_1,\overline a_2,\overline a_3,\overline a_4,\cdots)$ such that $(\overline 1,\overline 0,\overline 1,\overline 0,\cdots)(\overline a_1,\overline a_2,\overline a_3,\overline a_4,\cdots) = (\overline 1,\overline 1,\overline 1,\overline 1,\cdots)$, i.e., $(\overline a_1,\overline 0,\overline a_3,\overline 0,\cdots) = (\overline 1,\overline 1,\overline 1,\overline 1,\cdots)$, i.e., $(1-a_1,1,1-a_3,1,\cdots) \in \bigoplus_{i=1}^\infty R_i$, a contradiction. \\
+            Suppose $\bigoplus_{i=1}^\infty R_i \subseteq R_1 \times \cdots \times R_{n-1} \times \ffm_n \times R_{n+1} \times \cdots$ for some $n \in \bbN$ and $\ffm_n \in \operatorname{Jac}(R_n)$. Consider $(1,\cdots,\mathpunct{\underset{\mathclap{\substack{\ n^{\text{th}} \\ \textstyle }}}{1}},0,0,\cdots) \in \bigoplus_{i=1}^\infty R_i$. Since $1 \not \in \ffm$, $(1,\cdots,\mathpunct{\underset{\mathclap{\substack{\ n^{\text{th}} \\ \textstyle }}}{1}},0,0,\cdots) \not \in R_1 \times \cdots \times R_{n-1} \times \ffm_n \times R_{n+1} \times \cdots$, a contradiction.
+    \end{enumerate}
+\end{proof}
