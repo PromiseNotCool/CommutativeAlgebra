@@ -1,11 +1,16 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
-\usepackage{amssymb,enumerate}
-\usepackage{amsthm,stmaryrd}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\setlist[enumerate,1]{label=(\alph*), wide, labelwidth=!, labelindent=0pt}
+
+\usepackage{amsthm}
 \usepackage[all]{xy}
 \usepackage{hyperref}
 
 \usepackage{listings}
+\usepackage{stmaryrd}
 
 \usepackage{upgreek}
 \usepackage{extarrows}
@@ -41,6 +46,9 @@
 
 \newcommand{\bsb}{\boldsymbol {b}}
 \newcommand{\bsx}{\boldsymbol {x}}
+
+\usepackage[symbol]{footmisc}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 \newcommand{\overbar}[1]{\mkern 1.0mu\overline{\mkern-1.0mu#1\mkern-1.0mu}\mkern 1.0mu}
 
@@ -124,7 +132,9 @@
 
 \usepackage{bbold}
 \newcommand{\idca}{\mathbb{1}}
+
 \theoremstyle{plain}
+
 \newtheorem{theorem}{Theorem}[chapter]
 
 \theoremstyle{definition}
