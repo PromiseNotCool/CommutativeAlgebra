@@ -1,9 +1,10 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{verbatim}
 \usepackage{enumitem}
-
 \setlist[enumerate,1]{label=(\alph*), wide, labelwidth=!, labelindent=0pt}
+\setlist[enumerate,2]{label=(\arabic*), wide, labelwidth=!, labelindent=5pt}
 
 \usepackage{amsthm}
 \usepackage[all]{xy}
@@ -32,6 +33,12 @@
 %\newtheorem{exer}{Exercise} 
 
 \newcommand{\myrightleftarrows}[1]{\mathrel{\substack{\xrightarrow{#1} \\[-.9ex] \xleftarrow{#1}}}}
+
+\def\smallunderbrace#1{\mathop{\vtop{\m@th\ialign{##\crcr
+   $\hfil\displaystyle{#1}\hfil$\crcr
+   \noalign{\kern3\p@\nointerlineskip}%
+   \tiny\upbracefill\crcr\noalign{\kern3\p@}}}}\limits}
+
 
 \usepackage{arydshln}
 \usepackage{leftidx}

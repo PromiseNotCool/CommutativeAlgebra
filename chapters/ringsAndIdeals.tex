@@ -18,7 +18,7 @@ Let $R$ be a commutative ring with identity.
 \end{fact}
 
 \begin{definition}
-    A \emph{homomorphism of commutative rings with identity} is a function $\phi: R \to S$ with $R$ and $S$ commutative rings with identity, such that 
+    A \emph{homomorphism of commutative rings with identity} is a function $\phi: R \to S$ with $R$ and $S$ commutative rings with identity, such that for all $r,r' \in R$,
     \begin{enumerate}
         \item $\phi(r+r') = \phi(r) + \phi(r')$,
         \item $\phi(rr') = \phi(r) \phi(r')$,
@@ -50,7 +50,7 @@ Let $R$ be a commutative ring with identity.
 \begin{example}
     Subring test: need $\emptyset \neq S \subseteq R$, $S$ is closed under $+,\cdot,-$ and $1_R \in S$. \par
     If $S$ is not closed under $-$, then fail. Let $\bbN_0 = \{0,1,2,\cdots\} \subseteq \bbZ$ not a subring. \par
-    If $1_R \not \in S$, then fail. $R = \bbF_3 \times \bbF_3 \supseteq \{(a,a) \mid a \in \bbF_3\} =: S$. Then $S$ is a subring of $R$. Although $S_1 := \{(a,0) \mid a \in \bbF_3\} \cong \bbF_3 \cong \{(0,a) \mid a \in \bbF_3\} =: S_2$ are rings but not subrings of $R$ since $1_R = (1,1) \not \in S_1$ and $1_R = (1,1) \not \in S_2$. 
+    If $1_R \not \in S$, then fail. Let $R = \bbF_3 \times \bbF_3 \supseteq \{(a,a) \mid a \in \bbF_3\} =: S$. Then $S$ is a subring of $R$. Although $S_1 := \{(a,0) \mid a \in \bbF_3\} \cong \bbF_3 \cong \{(0,a) \mid a \in \bbF_3\} =: S_2$ are rings but not subrings of $R$ since $1_R = (1,1) \not \in S_1$ and $1_R = (1,1) \not \in S_2$. 
 \end{example}
 
 \begin{fact}
@@ -61,21 +61,21 @@ Let $R$ be a commutative ring with identity.
 \addcontentsline{toc}{section}{Ideals and Generators}
 
 \begin{definition}
-    An \emph{ideal} of $R$ is a non-empty subset $\ffa \subseteq R$ and a subgroup under addition such that for any $r \in R$ and any $a \in \ffa$, $ra \in \ffa$. \par
+    An \emph{ideal} of $R$ is a non-empty subset $\ffa \subseteq R$, an additive subgroup such that for any $r \in R$ and any $a \in \ffa$, $ra \in \ffa$, i.e., closed under scalar multiplication. \par
     An ideal $\ffa \leq R$ is \emph{prime} if $\ffa \neq R$ and for any $a,b \in R$, if $a,b \not \in \ffa$, then $ab \not \in \ffa$, i.e., if $ab \in \ffa$, then $a \in \ffa$ or $b \in \ffa$. \par
     An ideal $\ffa \leq R$ is \emph{maximal} if $\ffa \neq R$ and for any ideal $\ffb \leq R$, if $\ffa \subseteq \ffb \subseteq R$, then either $\ffa = \ffb$ or $\ffb = R$.
 \end{definition}
 
 \begin{fact}[Ideal test]
-    If $\ffa \neq \emptyset$ and $\ffa$ is closed under $\cdot$, then for any $a \in \ffa$, $-a = (-1_R)a \in \ffa$, also, since $\ffa$ is closed under $+$, it is automatically closed under $-$. \par
+    If $\ffa \neq \emptyset$ and $\ffa$ is closed under scalar multiplication $\cdot$, then for any $a \in \ffa$, $-a = (-1_R)a \in \ffa$, also, since $\ffa$ is closed under $+$, it is automatically closed under $-$. \par
     Thus, A subset $\ffa \subseteq R$ is an ideal if and only if $\ffa \neq \emptyset$ and $\ffa$ is closed under $+$ and scalar multiplication $\cdot$. 
 \end{fact}
 
 \begin{example}
     \begin{enumerate}
         \item 
-            Let $R = \bbZ$, then ideals of $R$ are $n\bbZ = \{nm \mid m \in \bbZ\}$, where $n \in \bbZ$. \\
-            $n\bbZ$ is prime if and only if $n = 0$ or $\abs n$ is prime. \\
+            Let $R = \bbZ$, then ideals of $R$ are of the form $n\bbZ = \{nm \mid m \in \bbZ\}$, where $n \in \bbZ$. \par 
+            $n\bbZ$ is prime if and only if $n = 0$ or $\abs n$ is prime. \par
             $n\bbZ$ is maximal if and only if $\abs n$ is prime.
         \item 
             If $I_\lambda \leq R$ for any $\lambda \in \Lambda$, then $\bigcap_{\lambda \in \Lambda} I_\lambda \leq R$.
@@ -87,12 +87,13 @@ Let $R$ be a commutative ring with identity.
             \end{align*}
             In particular, for any $r \in R$, $\langle r \rangle = \langle r \rangle R = (r) = (r)R = rR = Rr = \{ar \mid a \in R\} = \bigcap_{r \in I \leq R}I$.
         \item 
-            If $A \subseteq R$, then $\langle A \rangle = \bigcap_{A \subseteq I \leq R}I$ and $\langle A \rangle = RAR = AR = RA = \{\sum_{a \in A}^{\text{finite}} r_a a \mid r_a \in R, \fa a \in \ffa\}$.
+            If $A \subseteq R$, then $\langle A \rangle = \bigcap_{A \subseteq I \leq R}I$ and 
+            \[\langle A \rangle = RAR = AR = RA = \left\{\sum_{a \in A}^{\text{finite}} r_a a \mathrel{\bigg |} r_a \in R, \fa a \in \ffa\right\}\].
     \end{enumerate}
 \end{example}
 
 \begin{fact}
-    For any $r_1,\cdots,r_m \in R$, $\langle r_1,\cdots,r_m \rangle$ is the smallest ideal of $R$ containing $r_1,\cdots,r_m$, i.e., for any $\ffa \leq R$, $r_1,\cdots,r_m \in \ffa$ if and only if $\langle r_1,\cdots,r_m \rangle \subseteq \ffa$. Similarly, $A \subseteq \ffa$ if and only if $\langle A \rangle \subseteq \ffa$. For example, if $A \leq R$, then $A = \langle A \rangle$.
+    For any $r_1,\cdots,r_m \in R$, $\langle r_1,\cdots,r_m \rangle$ is the smallest ideal of $R$ containing $r_1,\cdots,r_m$, i.e., for any $\ffa \leq R$, $r_1,\cdots,r_m \in \ffa$ if and only if $\langle r_1,\cdots,r_m \rangle \subseteq \ffa$. Similarly, $A \subseteq \ffa$ if and only if $\langle A \rangle \subseteq \ffa$, e.g., if $A \leq R$, then $A = \langle A \rangle$.
 \end{fact}
 
 \begin{construction}
@@ -116,8 +117,9 @@ Let $R$ be a commutative ring with identity.
     \begin{enumerate}
         \item $\ffa$ is prime if and only if $R/\ffa$ is an integral domain.
         \item $\ffa$ is maximal if and only if $R/\ffa$ is a field.
-        \item If $R$ is a field, then it is an integral domain. So if $\ffa$ is maximal, then $\ffa$ is prime.
+        \item If $R$ is a field, then it is an integral domain. 
     \end{enumerate}
+    So if $\ffa$ is maximal, then $\ffa$ is prime.
 \end{fact}
 
 \begin{fact}[Ideal correspondence for quotients]
@@ -130,6 +132,7 @@ Let $R$ be a commutative ring with identity.
         \{\text{primes ideals of } R/\ffa\} &\rightleftarrows \{\text{prime ideals }\ffp \leq R \mid \ffa \subseteq \ffp\} \\
         \{\text{maximal ideals of } R/\ffa\} &\rightleftarrows \{\text{maximal ideals }\ffm \leq R \mid \ffa \subseteq \ffm\}
     \end{align*}
+    \par
     In both $R$ and $R/\ffa$, maximal ideals are a subset of prime ideals and prime ideals are a subset of ideals. \par
     Claim. $\frac{R/\ffa}{J/\ffa} \cong \frac{R}{J}$.
     \begin{center}
@@ -138,7 +141,7 @@ Let $R$ be a commutative ring with identity.
             R/J \arrow[rru,dashed,hook,two heads,"\ex !\ \overbar \phi"']
         \end{tikzcd}
     \end{center}
-    It is straightforward to show that $J = \ker(\tau \circ p)$. Note $\overbar \phi(\overbar r) = \overbar{\overbar r}$, i.e., $\overbar \phi(r + J) = (r+\ffa) + J/\ffa = (\tau \circ p)(r)$. Then the first isomorphism theorem says the map $\overbar \phi$ is a ring isomorphism.
+    It is straightforward to show that $J = \ker(\tau \circ p)$. By Construction 1.13, $\overbar \phi(\overbar r) = (\tau \circ p)(r) = \tau(\overbar r)= \overbar{\overbar r}$, i.e., $\overbar \phi(r + J) = (r+\ffa) + J/\ffa$. Then the first isomorphism theorem says the map $\overbar \phi$ is a ring isomorphism.
 \end{fact}
 
 \begin{notation*}
@@ -156,6 +159,7 @@ Let $R$ be a commutative ring with identity.
             \frac{R}{\phi^{-1}(\ffq)} \arrow[rru,dashed,hook,"\ex !\ \overbar {\pi \circ \phi}"']
         \end{tikzcd}
     \end{center}
+    \par
     Let $\ffq \in \operatorname{Spec}(S)$. Then $S/\ffq$ is an integral domain. Also, since $R/\ker(\pi \circ \phi) \cong \im(\pi \circ \phi) \subseteq S/\ffq$, we have $R/\ker(\pi \circ \phi)$ is an integral domain and then $\ker(\pi \circ \phi)$ is prime. Observe $\phi^{-1}(\ffq) = \ker(\pi \circ \phi)$ is then prime, i.e., $\phi^{-1}(\ffq) \in \operatorname{Spec}(R)$. Thus, $\phi$ induces a well-defined map $\phi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$.
     \end{fact}
 
@@ -166,7 +170,8 @@ Let $R$ be a commutative ring with identity.
 \begin{fact}
     \begin{enumerate}
         \item 
-            If $R \neq 0$, then $R$ has a maximal ideal $\ffm$. So $R$ has a prime ideal. Moreover, for any $\ffa \lneq R$, there exists a maximal ideal $\ffm \supseteq \ffa$. In particular, $\operatorname{V}(\ffa) = \{\ffp \in \operatorname{Spec}(R) \mid \ffp \supseteq \ffa\} \neq \emptyset$. One generally proves the second statement first, then derives the first statement as the special case $\ffa = 0$. Next, we show how to derive the second statement from the first one.
+            Let $R \neq 0$. Then $R$ has a maximal ideal $\ffm$ and so $R$ has a prime ideal. Moreover, for any $\ffa \lneq R$, there exists a maximal ideal $\ffm \supseteq \ffa$. In particular, $\operatorname{V}(\ffa) = \{\ffp \in \operatorname{Spec}(R) \mid \ffp \supseteq \ffa\} \neq \emptyset$. \par
+            One generally proves the second statement first, then derives the first statement as the special case $\ffa = 0$. Next, we show how to derive the second statement from the first one.
         \item 
             Let $\ffa \lneq R$. Then $0 \neq R/\ffa$ is a commutative ring with identity. So $R/\ffa$ has a maximal ideal and by Fact 1.15, it is of the form $\ffm/\ffa$, where $\ffm$ is a maximal ideal of $R$ containing $\ffa$.
     \end{enumerate}
@@ -185,7 +190,7 @@ Let $R$ be a commutative ring with identity.
         \item Any field is local with the maximal ideal $(0)$.
         \item Let $n \geq 1$ and $p$ be prime in $\bbZ$. Note $0 \neq \bbZ/\langle p^n \rangle$ has a maximal ideal $\ffm = \langle p \rangle/\langle p^n \rangle$, where $\langle p \rangle$ is a maxiaml ideal of $R$ containing $\langle p^n \rangle$. Assume there is $\ffm_1 \leq R$ maximal such that $\ffm_1 \supseteq \langle p^n \rangle$. Then $\ffm_1$ is prime, so $p \in \ffm_1$ and hence $\langle p \rangle \subseteq \ffm_1$. Since $\langle p \rangle$ is prime in $\bbZ$ and $\bbZ$ is a PID, $\langle p \rangle$ is maximal. So $\langle p \rangle = \ffm_1$. Thus, $\langle p \rangle$ is the unique maximal ideal containing $\langle p^n \rangle$ and so $\bbZ/\langle p^n \rangle$ is local. Similarly, we can show $\langle p \rangle$ is the unique prime ideal containing $\langle p^n \rangle$, so $\operatorname{Spec}(\bbZ/\langle p^n \rangle) = \left\{\langle p \rangle/\langle p^n \rangle\right\}$. 
         \item Let $k$ be a field. As in part (b), we see that $R = k[X]/\langle X^n \rangle$ is local with $\ffm = \langle X \rangle / \langle X^n \rangle$. In fact, $\operatorname{Spec}(R) = \{\langle X \rangle/\langle X^n \rangle\}$.
-        \item Similarly, let $k$ be a field and $R = \frac{k[X_1,\cdots,X_d]}{\langle X_1^{a_1}, \cdots, X_d^{a_d}\rangle}$, where $a_i \geq 1$ for any $i = 1,\cdots,d$. Then $R$ is local with $\ffm = \langle X_1,\cdots,X_d\rangle/\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle$. In fact, $\operatorname{Spec}(R) = \left\{\frac{\langle X_1,\cdots,X_d\rangle}{\langle X_1^{a_1}, \cdots, X_d^{a_d}\rangle}\right\}$.
+        \item Similarly, let $k$ be a field and $R = \frac{k[X_1,\cdots,X_d]}{\langle X_1^{a_1}, \cdots, X_d^{a_d}\rangle}$, where $a_i \geq 1$ for each $i = 1,\cdots,d$. Then $R$ is local with $\ffm = \langle X_1,\cdots,X_d\rangle/\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle$. In fact, $\operatorname{Spec}(R) = \left\{\frac{\langle X_1,\cdots,X_d\rangle}{\langle X_1^{a_1}, \cdots, X_d^{a_d}\rangle}\right\}$.
     \end{enumerate}
 \end{example}
 
@@ -198,7 +203,7 @@ Let $R$ be a commutative ring with identity.
 \end{notation}
 
 \begin{proposition}
-    The following are equivalent.
+    The followings are equivalent.
     \begin{enumerate}
         \item $R$ is local.
         \item $R \setminus R^\times \lneq R$.
@@ -212,7 +217,7 @@ Let $R$ be a commutative ring with identity.
     Claim. $\ffm = R \setminus R^\times$. It suffices to show $R \setminus \ffm = R^\times$. ``$\supseteq$''. Let $u \in R^\times$. Then $\langle u \rangle = R$ and so $u \not \in \ffm \lneq R$, i.e., $u \in R \setminus \ffm$. Hence $R^\times \subseteq R \setminus \ffm$. ``$\subseteq$''. Let $x \in R \setminus R^\times$. Then $\langle x \rangle \lneq R$. Since $\ffm$ is the unique maximal ideal in $R$, $\langle x \rangle \subseteq \ffm$, i.e., $x \in \ffm$. Thus, $R \setminus R^\times \subseteq \ffm$, i.e., $R \setminus \ffm \subseteq R^\times$. \\
     ``(ii)$\Rightarrow$(iii)''. Assume $R \setminus R^\times \lneq R$. Set $\ffa = R \setminus R^\times$. Then $R \setminus \ffa = R^\times$. \\
     ``(iii)$\Rightarrow$(i)''. Let $\ffa \lneq R$ such that $R \setminus \ffa \subseteq R^\times $. \par
-    Claim. $\ffa = R \setminus R^\times$. Clearly $\ffa \supseteq R \setminus R^\times$. On the other hand (OTOH), let $a \in \ffa \lneq R$, then $a \not \in R^\times$ since $\ffa \lneq R$, so $a \in R \setminus R^\times$ and hence $\ffa \subseteq R \setminus R^\times$. Thus, $\ffa = R \setminus R^\times$. \par
+    Claim. $\ffa = R \setminus R^\times$. Clearly $\ffa \supseteq R \setminus R^\times$. On the other hand, let $a \in \ffa \lneq R$, then $a \not \in R^\times$ since $\ffa \lneq R$, so $a \in R \setminus R^\times$ and hence $\ffa \subseteq R \setminus R^\times$. Thus, $\ffa = R \setminus R^\times$. \par
     Let $\ffn \lneq R$ be maximal and $y \in \ffn$. Then $y \not \in R^\times$. So $y \in R \setminus R^\times = \ffa$. Thus, $\ffn \subseteq \ffa \lneq R$. Since $\ffn$ is maximal, $\ffn = \ffa$. Thus, $\ffa$ is the unique maximal ideal in $R$ and so $R$ is local.
 \end{proof}
 
@@ -232,7 +237,7 @@ Let $R$ be a commutative ring with identity.
 \end{definition}
 
 \begin{example}
-    In $\bbZ/\langle p^n \rangle$, $\overbar p$ is nilpotent. It is similar in $k[x]/\langle x^n \rangle$ and $k[x_1,\cdots,x_n]/\langle x_1^{a_1},\cdots,x_d^{a_d}\rangle$, where $k$ is a field.
+    In $\bbZ/\langle p^n \rangle$, $\overbar p$ is nilpotent. It is similar in $k[X]/\langle X^n \rangle$ and $\frac{k[X_1,\cdots,X_n]}{\langle X_1^{a_1},\cdots,X_d^{a_d}\rangle}$, where $k$ is a field, $n \geq 1$ and $a_1\cdots,a_d \geq 1$.
 \end{example}
 
 \begin{proposition}
@@ -250,17 +255,17 @@ Let $R$ be a commutative ring with identity.
         \item Let $\overbar x \in \operatorname{Nil}(R/\operatorname{Nil}(R))$. Then there exists $n \geq 1$ such that $\overbar {x^n} = \overbar x^n = 0$, i.e., $x^n \in \operatorname{Nil}(R)$. So there exists $m \geq 1$ such that $(x^n)^m = 0$, i.e., $x^{mn} = 0$. Thus, $x \in \operatorname{Nil}(R)$, i.e., $\overbar x = 0$.
         \item  We have $\operatorname{Nil}(R) = R$ if and only if $1 \in \operatorname{Nil}(R)$ if and only if there exists $n \geq 1$ such that $1 = 1^n = 0$ if and only if $1 = 0$ if and only if $R = 0$.
         \item ``$\subseteq$''. Let $x \in \operatorname{Nil}(R)$. Then there exists $n \geq 1$ such that $x^n = 0 \in \ffp$ for any $\ffp \in \operatorname{Spec}(R)$. So $x \in \ffp$ for any $\ffp \in \operatorname{Spec}(R)$. Thus, $x \in \bigcap_{\ffp \in \operatorname{Spec}(R)} \ffp$. \\
-            ``$\supseteq$''. Let $x \in R \setminus \operatorname{Nil}(R)$. Need to show $x \not \in \bigcap_{\ffp \in \operatorname{Spec}(R)}$. It is equivalent to show there exists $\ffp \in \operatorname{Spec}(R)$ such that $x \not \in \ffp$. Let $\Sigma = \{\ffa \leq R \mid x,x^2,x^3 \cdots \not \in \ffa\}$. Since $x \not \in \operatorname{Nil}(R)$, $x^k \neq 0$ for any $k \geq 1$. So $(0) \in \Sigma$ and then $\Sigma \neq \emptyset$. Let $\mathscr C \subseteq \Sigma$ be chain. Then we have $\ffq := \bigcup_{\ffa \in \mathscr C} \ffa \leq R$. Suppose $x^n \in \ffq$ for some $n \geq 1$. Then $x^n \in \ffa$ for some $\ffa \in \mathscr C \subseteq \Sigma$, contradicting $\ffa \in \Sigma$. So $x^n \not \in \ffq$ for any $n \geq 1$ and hence $\ffq \in \Sigma$. Hence $\ffq$ is an upper bound for $\mathscr C$ in $\Sigma$. Since the chain $\ssC \subseteq \Sigma$ is arbitrary, by Zorn's lemma, $\Sigma$ has a maximal element $I$. Claim. $I \in \operatorname{Spec}(R)$. Suppose $I = R$. Then $x \in R = I$, contradicting $I \in \Sigma$. So $I \lneq R$. Let $r,s \in R \setminus I$. Then $I \subsetneq \langle r,I \rangle \leq R$ and $I \subsetneq \langle s,I \rangle \leq R$. By the maximality of $I$ in $\Sigma$, we have $\langle r,I \rangle, \langle s,I \rangle \not \in \Sigma$. So there exists $m,n \geq 1$ such that $x^m \in \langle r,I \rangle$ and $x^n \in \langle s,I \rangle$. Then $x^m = ar+i$ for some $a \in R$ and $i \in I$, and $x^n = bs + j$ for some $b \in R$ and $j \in I$. So $x^{m+n} = x^m x^n = (ar+i)(bs+j) = abrs + (\underbrace{arj+bsi+ij}_{\in I}) \in \langle rs,I \rangle$. Hence $\langle rs, I \rangle \not\in \Sigma$. Therefore, since $I \in \Sigma$, we have $I \neq \langle rs,I \rangle$, so $rs \not \in I$. Thus, $I \in \operatorname{Spec}(R)$ such that $x \not \in I$. \qedhere
+            ``$\supseteq$''. Let $x \in R \setminus \operatorname{Nil}(R)$. Need to show $x \not \in \bigcap_{\ffp \in \operatorname{Spec}(R)}$. It is equivalent to show there exists $\ffp \in \operatorname{Spec}(R)$ such that $x \not \in \ffp$. Let $\Sigma = \{\ffa \leq R \mid x,x^2,x^3 \cdots \not \in \ffa\}$. Since $x \not \in \operatorname{Nil}(R)$, $x^k \neq 0$ for any $k \geq 1$. So $(0) \in \Sigma$ and then $\Sigma \neq \emptyset$. Let $\mathscr C \subseteq \Sigma$ be chain. Then we have $\ffq := \bigcup_{\ffa \in \mathscr C} \ffa \leq R$. Suppose $x^n \in \ffq$ for some $n \geq 1$. Then $x^n \in \ffa$ for some $\ffa \in \mathscr C \subseteq \Sigma$, contradicting $\ffa \in \Sigma$. So $x^n \not \in \ffq$ for any $n \geq 1$ and hence $\ffq \in \Sigma$. Hence $\ffq$ is an upper bound for $\mathscr C$ in $\Sigma$. Since the chain $\ssC \subseteq \Sigma$ is arbitrary, by Zorn's lemma, $\Sigma$ has a maximal element $I$. Claim. $I \in \operatorname{Spec}(R)$. Suppose $I = R$. Then $x \in R = I$, contradicting $I \in \Sigma$. So $I \lneq R$. Let $r,s \in R \setminus I$. Then $I \subsetneq \langle r,I \rangle \leq R$ and $I \subsetneq \langle s,I \rangle \leq R$. By the maximality of $I$ in $\Sigma$, we have $\langle r,I \rangle, \langle s,I \rangle \not \in \Sigma$. So there exists $m,n \geq 1$ such that $x^m \in \langle r,I \rangle$ and $x^n \in \langle s,I \rangle$. Then $x^m = ar+i$ for some $a \in R$ and $i \in I$, and $x^n = bs + j$ for some $b \in R$ and $j \in I$. So $x^{m+n} = x^m x^n = (ar+i)(bs+j) = abrs + (\smallunderbrace{arj+bsi+ij}_{\in I}) \in \langle rs,I \rangle$. Hence $\langle rs, I \rangle \not\in \Sigma$. Therefore, since $I \in \Sigma$, we have $I \neq \langle rs,I \rangle$, so $rs \not \in I$. Thus, $I \in \operatorname{Spec}(R)$ such that $x \not \in I$. \qedhere
     \end{enumerate}
 \end{proof}
 
 \begin{example*}
-    Let $k$ be a field and $R = \frac{k[X_1,\cdots,X_d]}{(X_1^{a_1},\cdots,X_d^{a_d})} \neq 0$, where $a_i \geq 1$ for any $i = 1,\cdots,d$. Then $\operatorname{Nil}(R) = \frac{\langle X_1,\cdots,X_d \rangle}{\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle}$.
+    Let $k$ be a field and $R = \frac{k[X_1,\cdots,X_d]}{(X_1^{a_1},\cdots,X_d^{a_d})} \neq 0$, where $a_i \geq 1$ for each $i = 1,\cdots,d$. Then $\operatorname{Nil}(R) = \frac{\langle X_1,\cdots,X_d \rangle}{\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle}$.
 \end{example*}
 
 \begin{proof}
-    Method 1: Since $\operatorname{Spec}(R) = \left\{\frac{\langle X_1,\cdots,X_d \rangle}{\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle}\right\}$, $\operatorname{Nil}(R) = \bigcap_{\ffp \in \operatorname{Spec}(R)} \ffp =  \frac{\langle X_1,\cdots,X_d \rangle}{\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle}$. \\
-    Method 2: Since $\overbar X_i \in \operatorname{Nil}(R) \leq R$ for each $i = 1,\cdots,d$, we have $\overbar {\langle X_1,\cdots,X_d \rangle} = \langle \overbar X_1,\cdots,\overbar X_d \rangle \subseteq \operatorname{Nil}(R) \subsetneq R$. Also, since $\overbar {\langle X_1,\cdots,X_d \rangle}$ is maximal, we have $\operatorname{Nil}(R) = \overbar {\langle X_1,\cdots,X_d \rangle}$.
+    Method 1. Since $\operatorname{Spec}(R) = \left\{\frac{\langle X_1,\cdots,X_d \rangle}{\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle}\right\}$, $\operatorname{Nil}(R) = \bigcap_{\ffp \in \operatorname{Spec}(R)} \ffp =  \frac{\langle X_1,\cdots,X_d \rangle}{\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle}$. \\
+    Method 2. Since $\overbar X_i \in \operatorname{Nil}(R) \leq R$ for each $i = 1,\cdots,d$, we have $\overbar {\langle X_1,\cdots,X_d \rangle} = \langle \overbar X_1,\cdots,\overbar X_d \rangle \subseteq \operatorname{Nil}(R) \subsetneq R$ since $R \neq 0$. Also, since $\overbar {\langle X_1,\cdots,X_d \rangle}$ is maximal, we have $\operatorname{Nil}(R) = \overbar {\langle X_1,\cdots,X_d \rangle}$.
 \end{proof}
 
 \begin{fact*}
@@ -283,7 +288,7 @@ Let $R$ be a commutative ring with identity.
 \end{proposition}
 
 \begin{proof}
-    ``$\subseteq$''. Let $x \in \ffJ(R)$. By way of contradiction (BWOC), suppose there exists $y \in R$ such that $1-xy \not \in R^\times$. Then there exists $\ffm \leq R$ maximal such that $1-xy \in \ffm$. Since $x \in \ffJ(R) \subseteq \ffm$, $xy \in \ffm$. So $1 = (1-xy) + xy \in \ffm$, a contradiction. \\
+    ``$\subseteq$''. Let $x \in \ffJ(R)$. By way of contradiction, suppose there exists $y \in R$ such that $1-xy \not \in R^\times$. Then there exists $\ffm \leq R$ maximal such that $1-xy \in \ffm$. Since $x \in \ffJ(R) \subseteq \ffm$, $xy \in \ffm$. So $1 = (1-xy) + xy \in \ffm$, a contradiction. \\
     ``$\supseteq$''. Argue by contrapositive. Let $x \in R$ such that $1-xy \in R^\times$ for any $y \in Y$. Suppose $x \not \in \ffJ(R)$. Then there exists $\ffm \leq R$ maximal such that $x \not \in \ffm$. So $\ffm \subsetneq \langle \ffm, x \rangle \subseteq R$. Hence $\langle x,\ffm \rangle = R$. Then there exists $y \in R$ and $m \in \ffm$ such that $xy+m = 1$, i.e., $1-xy = m \in \ffm$. So $1-xy \not \in R^\times$, a contradiction.
 \end{proof}
 
@@ -315,7 +320,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
     (a) and (b) are by definition.
     \begin{enumerate}
         \item [(c)]
-            Set $I = \{a+b \mid a \in \ffa,b \in \ffb\}$. Check $I$ is an ideal of $R$. For any $a \in \ffa$, $a = a + 0 \in I$ and for any $b \in \ffb$, $b = 0 + b \in I$. So $\ffa \cup \ffb \subseteq I$. By (a), $\ffa + \ffb \subseteq I$. OTOH, for any $a+b \in I$ with $a \in \ffa$ and $b \in \ffb$, $a,b \in \ffa \cup \ffb \subseteq \ffa + \ffb \leq R$. So $a + b \in \ffa + \ffb$.
+            Set $I = \{a+b \mid a \in \ffa,b \in \ffb\}$. Check $I$ is an ideal of $R$. For any $a \in \ffa$, $a = a + 0 \in I$ and for any $b \in \ffb$, $b = 0 + b \in I$. So $\ffa \cup \ffb \subseteq I$. By (a), $\ffa + \ffb \subseteq I$. On the other hand, for any $a+b \in I$ with $a \in \ffa$ and $b \in \ffb$, we have $a,b \in \ffa \cup \ffb \subseteq \ffa + \ffb \leq R$, so $a + b \in \ffa + \ffb$.
         \item[(d)] Let $I \leq R$. Note $I \supseteq \ffa \cup \ffb$ if and only if $I \supseteq \ffa,\ffb$ if and only if $I \supseteq \langle S \rangle, \langle T \rangle$ if and only if $I \supseteq S,T$ if and only if $I \supseteq S \cup T$. So $\ffa + \ffb = \bigcap_{\ffa \cup \ffb \subseteq I \leq R} I = \bigcap_{S \cup T \subseteq I \leq R} I = \langle S \cup T \rangle$.
         \item[(e)] By (d).
         \item[(f)] By (c).
@@ -344,12 +349,9 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 \begin{proof}
     \begin{enumerate} 
         \item [(d)] Since $S \subseteq T \subseteq R$, we have $\operatorname{V}(S) \supseteq \operatorname{V}(T)$ by definition.
-        \item [(a)]
-            ``$\supseteq$''. Since $S \subseteq \langle S \rangle$, $\operatorname{V}(S) \supseteq \operatorname{V}(\langle S \rangle)$ by (d). \\ 
-            ``$\subseteq$''. Let $\ffp \in \operatorname{V}(S)$. Then $\ffp \supseteq S$. So $\ffp \supseteq \langle S \rangle$ and then $\ffp \in \operatorname{V}(\langle S \rangle)$. Hence $\operatorname{V}(S) \subseteq \operatorname{V}(\langle S \rangle)$.
+        \item [(a)] $\ffp \in \operatorname{V}(S)$ if and only if $\ffp \supseteq S$ if and only if $\ffp \supseteq \langle S \rangle$ if and only if $\ffp \supseteq \operatorname{V}(\langle S \rangle)$.
         \item [(b)]
-            ``$\Rightarrow$''. Let $\ffa = R$. Then $\ffp \not \supseteq \ffa$ for any $\ffp \in \operatorname{Spec}(R)$. So $\operatorname{V}(\ffa) = \emptyset$. \\
-            ``$\Leftarrow$''. Let $\operatorname{V}(\ffa) = \emptyset$. Suppose $\ffa \neq R$, then there exists $\ffm \leq R$ maximal such that $\ffm \supseteq \ffa$. Also, since $\ffm \in \operatorname{Spec}(R)$, we have $\ffm \in \operatorname{V}(\ffa)$, contradicting $\operatorname{V}(\ffa) = \emptyset$.
+            We have $\ffa = R$ if and only if $\ffb \not \supseteq \ffa$ for any $\ffb \lneq R$ if and only if $\ffm \not \supseteq \ffa$ for any $\ffm \in \operatorname{Jac}(R)$ if and only if $\ffp \not \supseteq \ffa$ for any $\ffp \in \operatorname{Spec}(R)$ by Fact 1.14 and Fact 1.17. 
         \item[(c)] $\ffa \subseteq \operatorname{Nil}(R)$ if and only if $\ffp \supseteq \ffa$ for all $\ffp \in \operatorname{Spec}(R)$ by Proposition 1.26(d) if and only if $\operatorname{V}(\ffa) = \operatorname{Spec}(R)$. \qedhere
     \end{enumerate}
 \end{proof}
@@ -372,7 +374,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 \end{proof}
 
 \begin{remark}
-    You can define $\ffa_1 + \cdots + \ffa_n$ inductively and same properties as above hold for finite sums.
+    The sum $\ffa_1 + \cdots + \ffa_n$ is defined for $\ffa_1,\cdots,\ffa_n$ for all $n \in \bbZ_{\geq 3}$ and same properties as above hold for finite sums.
 \end{remark}
 
 \begin{definition}
@@ -396,7 +398,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 \end{fact}
 
 \subsection*{Products of Ideals}
-\addcontentsline{toc}{section}{Products of Ideals}
+\addcontentsline{toc}{subsection}{Products of Ideals}
 
 \begin{definition}
     $\ffa \ffb = \langle N \rangle = \bigcap_{N \subseteq I \leq R}R$, where $N = \{ab \mid a \in \ffa,b \in \ffb\}$. 
@@ -419,7 +421,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
         \item [(c)]
             Let $I = \{\sum_{i}^{\text{finite}} a_ib_i \mid a_i \in \ffa,b_i \in \ffb\}$. Check $I \leq R$ through $I \subseteq \ffa \ffb \subseteq I$ like Fact 1.31(c).
         \item [(f)]
-            To show $\ffa \ffb \subseteq \ffa \cap \ffb$, it suffices to show $ab \in \ffa \cap \ffb$ for any $a \in \ffa$ and $b \in \ffb$. For any $a \in \ffa \leq R$, we have $ab \in \ffa$ for any $b \in \ffb$. For any $b \in \ffb \leq R$, we have $ab \in \ffb$ for any $a \in \ffa$. So $ab \in \ffa \cap \ffb$ for any $a \in \ffa$ and $b \in \ffb$. \qedhere
+            For any $a \in \ffa \leq R$, we have $ab \in \ffa$ for any $b \in \ffb$. For any $b \in \ffb \leq R$, we have $ab \in \ffb$ for any $a \in \ffa$. So $ab \in \ffa \cap \ffb$ for any $a \in \ffa$ and $b \in \ffb$. Hence $\ffa \ffb \subseteq \ffa \cap \ffb$ by Fact 1.12. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -436,7 +438,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
     \begin{enumerate}
         \item 
             Let $\ffp \in \operatorname{Spec}(R)$. Claim. $\ffp \supseteq \ffa \ffb$ if and only if $\ffp \supseteq \ffa$ or $\ffp \supseteq \ffb$ \footnote[2]{In some texts, this is the definition of prime ideal.}. ``$\Leftarrow$''. Let $\ffp \supseteq \ffa$ or $\ffp \supseteq \ffb$. Then $\ffp = \ffp R \supseteq \ffa R \supseteq \ffa\ffb$ or $\ffp  = R  \ffp \supseteq R\ffb \supseteq \ffa\ffb$. ``$\Rightarrow$''. Let $\ffp \supseteq \ffa \ffb$. Suppose $\ffp \not \supseteq \ffa$ and $\ffp \not \supseteq \ffb$. Then there exists $a \in \ffa \setminus \ffp$ and exists $b \in \ffb \setminus \ffp$. Since $\ffp \in \operatorname{Spec}(R)$, $ab \not \in \ffp$, contradicting $ab \in \ffa \ffb \subseteq \ffp$. Hence $\ffp \supseteq \ffa \ffb$ if and only if $\ffp \supseteq \ffa$ or $\ffp \supseteq \ffb$. So $\operatorname{V}(\ffa \ffb) = \operatorname{V}(\ffa) \cup \operatorname{V}(\ffb)$. \par
-            Since $\ffa \ffb \subseteq \ffa \cap \ffb$, $\operatorname{V}(\ffa \ffb) \supseteq \operatorname{V}(\ffa \cap \ffb)$. Let $\ffp \in \operatorname{V}(\ffa \ffb)$. Then $\ffp \supseteq \ffa \ffb$. Let $x \in \ffa \cap \ffb$. Then $x \in \ffa$ and $x \in \ffb$. So $x^2 = x \cdot x \in \ffa \ffb \subseteq \ffp$. Since $\ffp$ is prime, $x \in \ffp$. So $\ffp \supseteq \ffa \cap \ffb$ and then $\ffp \in \operatorname{V}(\ffa \cap \ffb)$. Hence $\operatorname{V}(\ffa \ffb) \subseteq \operatorname{V}(\ffa \cap \ffb)$. Thus, $\operatorname{V}(\ffa \ffb) = \operatorname{V}(\ffa \cap \ffb)$.
+            Since $\ffa \ffb \subseteq \ffa \cap \ffb$, $\operatorname{V}(\ffa \ffb) \supseteq \operatorname{V}(\ffa \cap \ffb)$. Let $\ffp \in \operatorname{V}(\ffa \ffb)$. Then $\ffp \supseteq \ffa \ffb$. So $\ffp \supseteq \ffa$ or $\ffp \supseteq \ffb$. Hence $\ffp \supseteq \ffa \cap \ffb$ and then $\ffp \in \operatorname{V}(\ffa \cap \ffb)$. So $\operatorname{V}(\ffa \ffb) \subseteq \operatorname{V}(\ffa \cap \ffb)$. Thus, $\operatorname{V}(\ffa \ffb) = \operatorname{V}(\ffa \cap \ffb)\footnote[2]{Let $\ffp \in \operatorname{Spec}(R)$. Then we actually have $\ffp \supseteq \ffa \cap \ffb$ if and only if $\ffp \supseteq \ffa$ or $\ffp \supseteq \ffb$, to get $\operatorname{V}(\ffa \cap \ffb) = \operatorname{V}(\ffa) \cup \operatorname{V}(\ffb)$}$.
         \item $\operatorname{V}(\ffa) \cup \operatorname{V}(\ffb) = \operatorname{Spec}(R)$ if and only if $\operatorname{V}(\ffa \ffb) = \operatorname{Spec}(R)$ by part (a) if and only if $\ffa\ffb \subseteq \operatorname{Nil}(R)$ by Proposition 1.32(c) and similarly for $\ffa \cap \ffb$. \qedhere
     \end{enumerate}
 \end{proof}
@@ -456,9 +458,9 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
         \item [(c)]
             ``$\supseteq$''. We always have $\ffa \cap \ffb \supseteq \ffa \ffb$. \\
             ``$\subseteq$''. Assume $\ffa + \ffb = R$.  \\
-            Method 1: Note $1 = a+b$ for some $a \in \ffa$ and $b \in \ffb$. Let $x \in \ffa \cap \ffb$. Then $x \in \ffb$ and $x \in \ffa$. So $x = 1 \cdot x = (a+b)x = ax + bx = ax + xb \in \operatorname{\ffa \ffb}$. Hence $\ffa \cap \ffb \subseteq \ffa \ffb$. \\
-            Method 2: Note $\ffa \cap \ffb = R(\ffa \cap \ffb) = (\ffa + \ffb)(\ffa \cap \ffb) = \ffa(\underbrace{\ffa \cap \ffb}_{\subseteq \ffb}) + \ffb(\underbrace{\ffa \cap \ffb}_{\subseteq \ffa}) \subseteq \ffa \ffb$ by (a) and (b). \par
-            Conversely, assume $R$ is a PID and $\ffa,\ffb \neq 0$. Then $R$ is a UFD, so each reducible element has a unique factorization into multiple of irreducible elements, also, since $R$ is a PID, every irreducible element is actually prime.  Hence we can write $\ffa = p_1^{e_1} \cdots p_n^{e_n} R$ and $\ffb = p_1^{f_1} \cdots p_n^{f_n}R$ with $e_i,f_i \geq 0$ for any $i = 1,\cdots,n$, and $p_1,\cdots,p_n \in R$ are non-associate prime elements. Assume $\ffa \cap \ffb = \ffa \ffb$. Since $\ffa = \langle p_1^{e_1} \cdots p_n^{e_n} \rangle$ and $\ffb = \langle p_1^{f_1} \cdots p_n^{f_n} \rangle$, $\ffa \cap \ffb = \operatorname{lcm}(p_1^{e_1} \cdots p_n^{e_n},p_1^{f_1} \cdots p_n^{f_n})R = p_1^{\max\{e_1,f_1\}} \cdots p_n^{\max\{e_n,f_n\}}R$. By Fact 1.38(e), $\ffa\ffb = p_1^{e_1+f_1} \cdots p_n^{e_n+f_n}$. So $\max\{e_i,f_i\} = e_i + f_i$, i.e, $e_i = 0$ or $f_i = 0$ for each $i = 1,\cdots,n$. In other words, for any $\ffp \in \operatorname{Spec}(R)$, either $\ffa \not \subseteq \ffp$ or $\ffb \not \subseteq \ffp$ \footnote[2]{Let $p \in R$ be prime and $a \in R$. Then $p \mid a$ if and only if $\langle p \rangle \supseteq \langle a \rangle$. Furthermore, if $a$ has a prime factorization, $p \mid a$ if and only if $p$ occurs in the prime factorization of $a$.}. So $\operatorname{V}(\ffa) \cap \operatorname{V}(\ffb) = \emptyset$ for any $\ffp \in \operatorname{Spec}(R)$. Thus, $\ffa + \ffb = R$ by Proposition 1.33(b). \qedhere
+            Method 1. Note $1 = a+b$ for some $a \in \ffa$ and $b \in \ffb$. Let $x \in \ffa \cap \ffb$. Then $x \in \ffb$ and $x \in \ffa$. So $x = 1 \cdot x = (a+b)x = ax + bx = ax + xb \in \operatorname{\ffa \ffb}$. Hence $\ffa \cap \ffb \subseteq \ffa \ffb$. \\
+            Method 2. Note $\ffa \cap \ffb = R(\ffa \cap \ffb) = (\ffa + \ffb)(\ffa \cap \ffb) = \ffa(\smallunderbrace{\ffa \cap \ffb}_{\subseteq \ffb}) + \ffb(\smallunderbrace{\ffa \cap \ffb}_{\subseteq \ffa}) \subseteq \ffa \ffb$ by (a) and (b). \par
+            Conversely, assume $R$ is a PID and $\ffa,\ffb \neq 0$. Then $R$ is a UFD, so each reducible element has a unique factorization into multiple of irreducible elements, also, since $R$ is a PID, every irreducible element is actually prime.  Hence we can write $\ffa = p_1^{e_1} \cdots p_n^{e_n} R$ and $\ffb = p_1^{f_1} \cdots p_n^{f_n}R$ with $e_i,f_i \geq 0$ for each $i = 1,\cdots,n$, and $p_1,\cdots,p_n \in R$ are non-associate prime elements. Assume $\ffa \cap \ffb = \ffa \ffb$. Since $\ffa = \langle p_1^{e_1} \cdots p_n^{e_n} \rangle$ and $\ffb = \langle p_1^{f_1} \cdots p_n^{f_n} \rangle$, $\ffa \cap \ffb = \operatorname{lcm}(p_1^{e_1} \cdots p_n^{e_n},p_1^{f_1} \cdots p_n^{f_n})R = p_1^{\max\{e_1,f_1\}} \cdots p_n^{\max\{e_n,f_n\}}R$. By Fact 1.38(e), $\ffa\ffb = p_1^{e_1+f_1} \cdots p_n^{e_n+f_n}$. So $\max\{e_i,f_i\} = e_i + f_i$, i.e, $e_i = 0$ or $f_i = 0$ for each $i = 1,\cdots,n$. In other words, for any $\ffp \in \operatorname{Spec}(R)$, either $\ffa \not \subseteq \ffp$ or $\ffb \not \subseteq \ffp$ \footnote[2]{Let $p \in R$ be prime and $a \in R$. Then $p \mid a$ if and only if $\langle p \rangle \supseteq \langle a \rangle$. Furthermore, if $a$ has a prime factorization, then $p \mid a$ if and only if $p$ occurs in the prime factorization of $a$.}. So $\operatorname{V}(\ffa) \cap \operatorname{V}(\ffb) = \emptyset$ for any $\ffp \in \operatorname{Spec}(R)$. Thus, $\ffa + \ffb = R$ by Proposition 1.33(b). \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -467,11 +469,11 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 \end{remark}
 
 \begin{example}
-    Let $R = k[x,y]$, $\ffa = \langle x \rangle$ and $\ffb = \langle y \rangle$. Then $\ffa \cap \ffb = \langle xy \rangle = \ffa \ffb$ by the fact 1.38(e). But $\ffa + \ffb = \langle x,y \rangle \subsetneq R$. So the converse in Proposition 1.40(c) fails in general.
+    Let $R = k[x,y]$, $\ffa = \langle x \rangle$ and $\ffb = \langle y \rangle$. Then $\ffa \cap \ffb = \langle xy \rangle = \ffa \ffb$ by Fact 1.38(e). But $\ffa + \ffb = \langle x,y \rangle \subsetneq R$. So the converse in Proposition 1.40(c) fails in general.
 \end{example}
 
 \begin{definition}
-    Let $n \geq 1$. Let $\ffa^n = \underbrace{\ffa \cdots \ffa}_{n\text{ times}}$ and $\ffa^0 = R$.
+    Let $n \geq 1$. Let $\ffa^n = \smallunderbrace{\ffa \cdots \ffa}_{n\text{ times}}$ and $\ffa^0 = R$.
 \end{definition}
 
 \begin{warning}
@@ -501,24 +503,23 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 \end{proof}
 
 \begin{proposition}[Chinese Remainder Theorem]
-    Let $\ffa_1,\cdots,\ffa_n \leq R$.
     \begin{enumerate}
         \item The function $\phi: R \to (R/\ffa_1) \times \cdots \times (R/\ffa_n)$ given by $\phi(x) = (\overbar x, \cdots, \overbar x) = (x+\ffa_1,\cdots,x+\ffa_n)$ is a well-defined ring homomorphism.
-        \item If $\ffa_i + \ffa_j = R$ for distinct $i,j$ with $1 \leq i,j \leq n$, i.e., $\{\ffa_1,\cdots,\ffa_n\}$ are pairwise co-prime, then $\bigcap_{i=1}^n \ffa_i = \ffa_1 \cdots \ffa_n$ and $\ffa_i + (\bigcap_{j \neq i} \ffa_j)R = R$ for any $i = 1,\cdots,n$.
+        \item If $\ffa_i + \ffa_j = R$ for distinct $i,j$ with $1 \leq i,j \leq n$, i.e., $\{\ffa_1,\cdots,\ffa_n\}$ are pairwise co-prime, then $\bigcap_{i=1}^n \ffa_i = \ffa_1 \cdots \ffa_n$ and $\ffa_i + (\bigcap_{j \neq i} \ffa_j)R = R$ for $i = 1,\cdots,n$.
         \item $\phi$ is surjective if and only if $\ffa_i + \ffa_j = R$ for distinct $i,j$ with $1 \leq i, j \leq n$.
         \item $\ker(\phi) = \ffa_1 \cap \cdots \cap \ffa_n$.
-        \item If $\ffa_i + \ffa_j = R$ for any $1 \leq i \neq j \leq n$ and $\bigcap_{i=1}^n \ffa_i = 0$, then $R \cong (R/\ffa_1)R \cap \cdots \times (R/\ffa_n)R$.
+        \item If $\ffa_i + \ffa_j = R$ for distinct $i,j$ with $1 \leq i,j \leq n$ and $\bigcap_{i=1}^n \ffa_i = 0$, then $R \cong (R/\ffa_1) \cap \cdots \cap (R/\ffa_n)$.
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
     \begin{enumerate}
         \item [(b)]
-            Let $i \in \{1,\cdots,n\}$. To show $\ffa_i + (\bigcap_{j \neq i})R = R$. It suffices to show $\operatorname{V}(\ffa_i) \cap \left( \bigcup_{j \neq i} \operatorname{V}(\ffa_j)\right) = \operatorname{V}(\ffa_i) \cap \operatorname{V}\left(\bigcap_{j \neq i} \ffa_j\right) = \operatorname{V}(\ffa_i + \bigcap_{j \neq i} \ffa_j) = \emptyset$. Suppose $\operatorname{V}(\ffa_i) \cap \left(\bigcup_{j \neq i}\operatorname{V}(\ffa_j)\right) \neq \emptyset$. Then there exists $\ffp \in \operatorname{V}(\ffa_i) \cap \operatorname{V}(\ffa_j) = \operatorname{V}(\ffa_i + \ffa_j) = \operatorname{V}(R) = \emptyset$ for some $j \neq i$, a contradiction. \\
-            Now for $\bigcap_{i=1}^n \ffa_i = \ffa_1 \cdots \ffa_n$, prove by induction on $n$.  Base case $n = 1$: trivial. Base case $n = 2$: by Proposition 1.40(c). Induction step: assume $n \in \bbZ_{\geq 3}$ and $\bigcap_{i=1}^{n-1}\ffa_i = \ffa_1 \cdots \ffa_{n-1}$. Then $\ffa_n + \ffa_1 \cdots \ffa_{n-1} = \ffa_n + \bigcap_{j=1}^{n-1} \ffa_j = R$. So by Proposition 1.40(c), we have $\bigcap_{i=1}^n \ffa_i = (\bigcap_{i=1}^{n-1} \ffa_i) \cap \ffa_n = (\ffa_1 \cdots \ffa_{n-1}) \cap \ffa_n = (\ffa_1 \cdots \ffa_{n-1})\ffa_n = \ffa_1 \cdots \ffa_n$. 
+            Let $i \in \{1,\cdots,n\}$. To show $\ffa_i + (\bigcap_{j \neq i})R = R$. It suffices to show $\operatorname{V}(\ffa_i) \bigcap \left( \bigcup_{j \neq i} \operatorname{V}(\ffa_j)\right) = \operatorname{V}(\ffa_i) \bigcap \operatorname{V}\left(\bigcap_{j \neq i} \ffa_j\right) = \operatorname{V}(\ffa_i + \bigcap_{j \neq i} \ffa_j) = \emptyset$. Suppose $\operatorname{V}(\ffa_i) \bigcap \left(\bigcup_{j \neq i}\operatorname{V}(\ffa_j)\right) \neq \emptyset$. Then there exists $\ffp \in \operatorname{V}(\ffa_i) \cap \operatorname{V}(\ffa_j) = \operatorname{V}(\ffa_i + \ffa_j) = \operatorname{V}(R) = \emptyset$ for some $j \neq i$, a contradiction. \\
+            Now for $\bigcap_{i=1}^n \ffa_i = \ffa_1 \cdots \ffa_n$, prove by induction on $n$.  Base case $n = 1$: trivial. Base case $n = 2$: by Proposition 1.40(c). Induction step: assume $n \in \bbZ_{\geq 3}$ and $\bigcap_{i=1}^{n-1}\ffa_i = \ffa_1 \cdots \ffa_{n-1}$. Then $\ffa_n + \ffa_1 \cdots \ffa_{n-1} = \ffa_n + \bigcap_{j=1}^{n-1} \ffa_j = R$. So by Proposition 1.40(c), we have $\bigcap_{i=1}^n \ffa_i = (\bigcap_{i=1}^{n-1} \ffa_i) \bigcap \ffa_n = (\ffa_1 \cdots \ffa_{n-1}) \cap \ffa_n = (\ffa_1 \cdots \ffa_{n-1})\ffa_n = \ffa_1 \cdots \ffa_n$. 
         \item [(c)]
-            ``$\Rightarrow$''. Assume $\phi$ is surjective. In particular, there exists $x \in R$ such that $(\overbar 1,\overbar 0,\cdots,\overbar 0) = \phi(x) = (\overbar x, \overbar x, \cdots, \overbar x)$. So $x+\ffa_1 = 1+\ffa_1$ and $x+\ffa_i = 0 + \ffa_i$ for any $2 \leq i \leq n$. Hence $1-x \in \ffa_1$ and $x \in \ffa_i$ for any $2 \leq i \leq n$. Also, since $\mathpunct{\underset{\mathclap{\substack{\ \in \ffa_i \\ \textstyle }}}{(x)}} + \mathpunct{\underset{\mathclap{\substack{\ \in \ffa_1 \\ \textstyle }}}{(1-x)}} = 1$, we have $\ffa_i + \ffa_1 = R$ for any $2 \leq i \leq n$. Similarly, consider $(\overbar 0, \cdots, \overbar 0, \mathpunct{\underset{\mathclap{\substack{\ \ \ \uparrow j\text{th} \\ \textstyle }}}{\overbar 1}}, \overbar 0, \cdots, \overbar 0) \xymatrix{{}\ar@{~>}[r]&{}} \ffa_i + \ffa_j = R$ for any $1 \leq i \neq j \leq n$. \\
-            ``$\Leftarrow$''. Assume $\ffa_i + \ffa_j = R$ for distinct $i,j$ with $1 \leq i,j \leq n$. By (b), $\ffa_1 + (\bigcap_{j=2}^n \ffa_j)R = R$. So $a_1 + y = 1$ with $a_1 \in \ffa_1$ and $y \in \bigcap_{j=2}^n \ffa_j$, i.e., $1-y = a_1 \in \ffa_1$ and $y \in \ffa_j$ for any $2 \leq j \leq n$. Then $\phi(y) = (\overbar y, \overbar y, \cdots, \overbar y) = (y + \ffa_1, y + \ffa_2, \cdots, y + \ffa_n) = (1+\ffa_1,0+\ffa_2,\cdots,0+\ffa_n) = (\overbar 1,\overbar 0, \cdots, \overbar 0)$. Similarly, for any $j = 1,\cdots,n$, there exists $y_j$ such that $\phi(y_j) = (\overbar 0, \cdots, \overbar 0, \mathpunct{\underset{\mathclap{\substack{\ \ \ \uparrow j\text{th}\\ \textstyle }}}{\overbar 1}}, \overbar 0, \cdots, \overbar 0)$. Then for any $(\overbar r_1,\cdots, \overbar r_n) \in \frac{R}{\ffa_1} \times \cdots \times \frac{R}{\ffa_n}$, $(\overbar r_1,\cdots, \overbar r_n) = \sum_{j=1}^n r_j(\overbar 0, \cdots, \overbar 0, \mathpunct{\underset{\mathclap{\substack{\ \ \ \uparrow j\text{th} \\ \textstyle }}}{\overbar 1}}, \overbar 0, \cdots, \overbar 0) = \sum_{j=1}^n r_j\phi(y_j) = \phi(\sum_{j=1}^nr_jy_j)$. So $\phi$ is surjective. \qedhere
+            ``$\Rightarrow$''. Assume $\phi$ is surjective. In particular, there exists $x \in R$ such that $(\overbar 1,\overbar 0,\cdots,\overbar 0) = \phi(x) = (\overbar x, \overbar x, \cdots, \overbar x)$. So $x+\ffa_1 = 1+\ffa_1$ and $x+\ffa_i = 0 + \ffa_i$ for $i = 2,\cdots,n$. Hence $1-x \in \ffa_1$ and $x \in \ffa_i$ for $i = 2,\cdots,n$. Also, since $\mathpunct{\underset{\mathclap{\substack{\ \in \ffa_i \\ \textstyle }}}{(x)}} + \mathpunct{\underset{\mathclap{\substack{\ \in \ffa_1 \\ \textstyle }}}{(1-x)}} = 1$, we have $\ffa_i + \ffa_1 = R$ for $i = 2,\cdots, n$. Similarly, consider $(\overbar 0, \cdots, \overbar 0, \mathpunct{\underset{\mathclap{\substack{\ \ \ \uparrow j\text{th} \\ \textstyle }}}{\overbar 1}}, \overbar 0, \cdots, \overbar 0) \xymatrix{{}\ar@{~>}[r]&{}} \ffa_i + \ffa_j = R$ for distinct $i,j$ with $1 \leq i,j \leq n$. \\
+            ``$\Leftarrow$''. Assume $\ffa_i + \ffa_j = R$ for distinct $i,j$ with $1 \leq i,j \leq n$. By (b), $\ffa_1 + (\bigcap_{j=2}^n \ffa_j)R = R$. So $a_1 + y = 1$ with $a_1 \in \ffa_1$ and $y \in \bigcap_{j=2}^n \ffa_j$, i.e., $1-y = a_1 \in \ffa_1$ and $y \in \ffa_j$ for $j = 2,\cdots, n$. Then $\phi(y) = (\overbar y, \overbar y, \cdots, \overbar y) = (y + \ffa_1, y + \ffa_2, \cdots, y + \ffa_n) = (1+\ffa_1,0+\ffa_2,\cdots,0+\ffa_n) = (\overbar 1,\overbar 0, \cdots, \overbar 0)$. Similarly, for each $j = 1,\cdots,n$, there exists $y_j$ such that $\phi(y_j) = (\overbar 0, \cdots, \overbar 0, \mathpunct{\underset{\mathclap{\substack{\ \ \ \uparrow j\text{th}\\ \textstyle }}}{\overbar 1}}, \overbar 0, \cdots, \overbar 0)$. Then for any $(\overbar r_1,\cdots, \overbar r_n) \in \frac{R}{\ffa_1} \times \cdots \times \frac{R}{\ffa_n}$, $(\overbar r_1,\cdots, \overbar r_n) = \sum_{j=1}^n r_j(\overbar 0, \cdots, \overbar 0, \mathpunct{\underset{\mathclap{\substack{\ \ \ \uparrow j\text{th} \\ \textstyle }}}{\overbar 1}}, \overbar 0, \cdots, \overbar 0) = \sum_{j=1}^n r_j\phi(y_j) = \phi(\sum_{j=1}^nr_jy_j)$. So $\phi$ is surjective. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -537,12 +538,12 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
     \end{enumerate}
 \end{proof}
 
-\subsection*{Prime avoidence}
-\addcontentsline{toc}{subsection}{Prime avoidence}
-
 \begin{example*}
     The converses fail in general. Let $R = k[X,Y]$, $\ffp = \ffa_1 = \langle x \rangle$ and $\ffa_2 = \langle y \rangle$. Then $\ffa_1 \cap \ffa_2 = \langle xy \rangle \neq \langle x \rangle = \ffp = \langle x \rangle \neq  \langle xy \rangle = \ffa_1\ffa_2$.
 \end{example*}
+
+\subsection*{Prime avoidence}
+\addcontentsline{toc}{subsection}{Prime avoidence}
 
 \begin{lemma}
     Let $k$ be an infinite field, $V \neq 0$ a vector space over $k$, and $V_1,\cdots,V_n \lneq V$. Then $\bigcup_{i=1}^n V_i \subsetneq V$.
@@ -550,7 +551,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 
 \begin{proof}
     Induction on $n$. Base case $n = 1$: trivial. \\
-    Induction step: assume $n \geq 2$ and $\bigcup_{i \neq j}V_j \subsetneq V$ for $j = 1,\cdots,n$. Then there exists $0 \neq v_j \in V$ $\setminus \{\bigcup_{i \neq j}V_j\}$ for any $j = 1,\cdots,n$. BWOC, suppose $\bigcup_{i=1}^nV_i = V$. Then $v_j \in \bigcup_{i=1}^n V_i \setminus \{\bigcup_{i \neq j}V_j\} \subseteq V_j$ for $j = 1,\cdots,n$. Let $i,j$ be distinct with $1 \leq i,j \leq n$. Since $v_j \neq 0$, we have $v_i + \lambda v_j \neq v_i + \mu v_j$ for any $\lambda \neq \mu$ in $k$. Since $k$ is infinite, there exists $l$ such that $V_l$ contains two distinct elements $v_i + \lambda v_j$ and $v_i + \mu v_j$ with $0 \neq \lambda, \mu \in k$. Then $(\lambda-\mu)v_j = (v_i + \lambda v_j) - (v_i + \mu v_j) \in V_l$. Since $\lambda \neq \mu$, we have $v_j \in V_l$. Since $v_j \not \in V_k$ for any $k \neq j$ and $v_j \in V_j$, we have $l = j$. Also, since $(\lambda^{-1}-\mu^{-1})v_i = \lambda^{-1}(v_i + \lambda v_j) - \mu^{-1}(v_i + \mu v_j) \in V_l$, we have $v_i \in V_l$ and then similarly, we have $l=i$. Hence $i = l = j$, a contradiction.
+    Induction step: assume $n \geq 2$ and $\bigcup_{i \neq j}V_j \subsetneq V$ for $j = 1,\cdots,n$. Then there exists $0 \neq v_j \in V$ $\setminus \{\bigcup_{i \neq j}V_j\}$ for $j = 1,\cdots,n$. By way of contradiction, suppose $\bigcup_{i=1}^nV_i = V$. Then $v_j \in \bigcup_{i=1}^n V_i \setminus \{\bigcup_{i \neq j}V_j\} \subseteq V_j$ for $j = 1,\cdots,n$. Let $i,j$ be distinct with $1 \leq i,j \leq n$. Since $v_j \neq 0$, we have $v_i + \lambda v_j \neq v_i + \mu v_j$ for any $\lambda \neq \mu$ in $k$. Since $k$ is infinite, there exists $l$ such that $V_l$ contains two distinct elements $v_i + \lambda v_j$ and $v_i + \mu v_j$ with $0 \neq \lambda, \mu \in k$. Then $(\lambda-\mu)v_j = (v_i + \lambda v_j) - (v_i + \mu v_j) \in V_l$. Since $\lambda \neq \mu$, we have $v_j \in V_l$. Since $v_j \not \in V_k$ for any $k \neq j$ and $v_j \in V_j$, we have $l = j$. Also, since $(\lambda^{-1}-\mu^{-1})v_i = \lambda^{-1}(v_i + \lambda v_j) - \mu^{-1}(v_i + \mu v_j) \in V_l$, we have $v_i \in V_l$ and then similarly, we have $l=i$. Hence $i = l = j$, a contradiction.
 \end{proof}
 
 \begin{example}
@@ -566,7 +567,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
         \end{center}
     \par
     If $\abs k < \infty$, then the lemma fails. For example, let $V = k^2 = \bigcup_{v \in k^2} \{v\} = \bigcup_{0 \neq v \in k^2} \operatorname{span}\{v\}$ with $0 \neq \operatorname{span}(v) \lneq k^2 = V$. \par
-    The same technique shows that can't replace $V_1,\cdots,V_n$ with $V_1,V_2,\cdots,$ over $\bbQ$.
+    The same technique shows that can't replace $V_1,\cdots,V_n$ with $V_1,V_2,\cdots$ over $\bbQ$.
 \end{example}
 
 \begin{theorem}[Prime avoidence, general version]
@@ -580,9 +581,9 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 
 \begin{proof}
     \begin{enumerate}
-        \item For any $i = 1,\cdots,n$, since $\ffa \not \subseteq \ffb_i$, $\ffa \cap \ffb_i \lneq \ffa$. Also, since $\ffa$ is a $k$-vector space, by Lemma 1.48, $\ffa \cap \bigcup_{i=1}^n \ffb_i = \bigcup_{i=1}^n (\ffa \cap \ffb_i) \lneq \ffa$. So $\ffa \not \subseteq \bigcup_{i=1}^n \ffb_i$. 
+        \item For each $i = 1,\cdots,n$, since $\ffa \not \subseteq \ffb_i$, $\ffa \cap \ffb_i \lneq \ffa$. Also, since $\ffa$ is a $k$-vector space, by Lemma 1.48, $\ffa \cap \bigcup_{i=1}^n \ffb_i = \bigcup_{i=1}^n (\ffa \cap \ffb_i) \lneq \ffa$. So $\ffa \not \subseteq \bigcup_{i=1}^n \ffb_i$. 
         \item Induct on $n$. Base case $n = 1$, done. Base case $n = 2$. Let $a_i \in \ffa \setminus \ffb_i$ for $i = 1,2$. Then $a_1 + a_2 \in \ffa$. Suppose $\ffa \subseteq \ffb_1 \cup \ffb_2$. Then $a_1 + a_2 \in \ffb_1 \cup \ffb_2$, say $a_1 + a_2 \in \ffb_2$. Since $a_1 \in \ffa \subseteq \ffb_1 \cup \ffb_2$ and $a_1 \not \in \ffb_1$, $a_1 \in \ffb_2$. So $a_2 = (a_1 + a_2) - a_1 \in \ffb_2$, a contradiction. \\
-            Induction step $n \geq 3$. Let $\ffa \not \subseteq \ffb_i$ for $i = 1,\cdots,n$. Assume $\ffa \not \subseteq \bigcup_{i \neq j} \ffb_i$ for $j = 1,\cdots,n$. Then there exists $a_j \in \ffa \setminus \{\bigcup_{i \neq j} \ffb_i\}$ for $j = 1,\cdots,n$. BWOC, suppose $\ffa \subseteq \bigcup_{i=1}^n \ffb_i$. Then $a_j \in \bigcup_{i=1}^n \ffb_i \setminus \{\bigcup_{i \neq j}\ffb_i\} \subseteq \ffb_j$ for $j = 1,\cdots,n$. Note $a_1 \cdots a_{n-1} + a_n \in \ffa \subseteq \bigcup_{i=1}^n \ffb_i$. So there exists $l \in \{1,\cdots,n\}$ such that $a_1 \cdots a_{n-1} + a_n \in \ffb_l$. Suppose $l=n$. Since $a_n \in \ffb_n$, $a_1 \cdots a_{n-1} \in \ffb_n$. Since $n \geq 3$, we have $\ffb_n \in \operatorname{Spec}(R)$ and then $a_i \in \ffb_n$ for some $1 < i < n$, a contradiction. Hence we must have $l < n$. But since $a_1 \cdots a_l \cdots a_{n-1} \in \ffb_l$, we have $a_n \in \ffb_l$, a contradiction. \qedhere
+            Induction step $n \geq 3$. Let $\ffa \not \subseteq \ffb_i$ for $i = 1,\cdots,n$. Assume $\ffa \not \subseteq \bigcup_{i \neq j} \ffb_i$ for $j = 1,\cdots,n$. Then there exists $a_j \in \ffa \setminus \{\bigcup_{i \neq j} \ffb_i\}$ for $j = 1,\cdots,n$. By way of contradiction, suppose $\ffa \subseteq \bigcup_{i=1}^n \ffb_i$. Then $a_j \in \bigcup_{i=1}^n \ffb_i \setminus \{\bigcup_{i \neq j}\ffb_i\} \subseteq \ffb_j$ for $j = 1,\cdots,n$. Note $a_1 \cdots a_{n-1} + a_n \in \ffa \subseteq \bigcup_{i=1}^n \ffb_i$. So there exists $l \in \{1,\cdots,n\}$ such that $a_1 \cdots a_{n-1} + a_n \in \ffb_l$. Suppose $l=n$. Since $a_n \in \ffb_n$, $a_1 \cdots a_{n-1} \in \ffb_n$. Since $n \geq 3$, we have $\ffb_n \in \operatorname{Spec}(R)$ and then $a_i \in \ffb_n$ for some $1 < i < n$, a contradiction. Hence we must have $l < n$. But since $a_1 \cdots a_l \cdots a_{n-1} \in \ffb_l$, we have $a_n \in \ffb_l$, a contradiction. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -591,7 +592,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 \end{theorem}
 
 \begin{fact*}[Avoidence for monomial ideals] 
-    Let $A$ be commutative ring with identity$\neq 0$ and $\ffa,\ffb_1,\cdots,\ffb_n$ be monomial ideals of $A[X_1,\cdots,X_d]$. If $\ffa \subseteq \bigcup_{i=1}^n \ffb_i$, then $\ffa \subseteq \ffb_i$ for some $i \in \{1,\cdots,n\}$.
+    Let $A$ be a commutative ring with identity$\neq 0$ and $\ffa,\ffb_1,\cdots,\ffb_n$ be monomial ideals of $A[X_1,\cdots,X_d]$. If $\ffa \subseteq \bigcup_{i=1}^n \ffb_i$, then $\ffa \subseteq \ffb_i$ for some $i \in \{1,\cdots,n\}$.
 \end{fact*}
 
 \begin{proof}
@@ -600,7 +601,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 
 
 \subsection*{Colon Ideals}
-\addcontentsline{toc}{subsection}{Rings and Ring Homomorphisms}
+\addcontentsline{toc}{subsection}{Colon Ideals}
 
 \begin{definition}
     Let $S \subseteq R$. Let 
@@ -644,7 +645,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 \begin{proof}
     \begin{enumerate}
         \item[(b)]
-            Let $r \in (\ffa:\ffb)$ and $b \in \ffb$. Then $br \in \ffa$. So all generators of $(\ffa:\ffb)\ffb$ are in $\ffa$.
+            For each $r \in (\ffa:\ffb)$ and each $b \in \ffb$, we have $br \in \ffa$. It then follows from Fact 1.12.
         \item[(e)]
             ``$\supseteq$''. Since $S \subseteq \langle S \rangle$, by (c), $(\ffa:S) \supseteq (\ffa:\langle S \rangle)$. ``$\subseteq$''. Let $r \in (\ffa:S)$. Then $rs \in \ffa$ for any $s \in S$. Let $s \in \langle S \rangle$. Then $s = \sum_{i}^{\text{finite}}a_is_i$ for some $a_i \in R$ and $s_i \in S$ for each $i$. So $rs = r(\sum_i^{\text{finite}}a_is_i) = \sum_i^{\text{finite}} a_i(rs_i) \in R$. Hence $r \in (\ffa:\langle S \rangle)$.
         \item[(h)] This follows from (e) and (g).
@@ -654,7 +655,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 \end{proof}
 
 \begin{example}
-    Let $R = k[X,Y]$. It is straightforward to show the following.
+    Let $R = k[X,Y]$. It is straightforward to show the followings.
     \begin{enumerate}
         \item $(\langle XY \rangle: \langle X,Y \rangle) = (\langle XY \rangle: \{X,Y\}) = (\langle XY \rangle: X) \cap (\langle XY \rangle : Y) = \langle Y \rangle \cap \langle X \rangle = \langle XY \rangle$.
         \item $(\langle X^2,XY \rangle: \langle X,Y \rangle) = (\langle X^2,XY \rangle: \{X,Y\}) = (\langle X^2,XY \rangle:X) \cap (\langle X^2,XY \rangle: Y) = \langle X,Y \rangle$ \\
@@ -663,7 +664,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 \end{example}
 
 \subsection*{Radicals of Ideals}
-\addcontentsline{toc}{section}{Radicals of Ideals}
+\addcontentsline{toc}{subsection}{Radicals of Ideals}
 
 \begin{definition}
     The \emph{radical} of $\ffa \leq R$ is 
@@ -678,8 +679,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
     In $R = k[X,Y]$, we have
     \begin{align*}
         \operatorname{rad}(\langle X^2Y,XY^2 \rangle) &= \operatorname{m-rad}(\langle X^2Y,XY^2 \rangle) = \operatorname{m-rad}(\langle X^2Y \rangle + \langle XY^2 \rangle) \\
-                                                      &= \operatorname{m-rad}(\langle X^2Y \rangle) + \operatorname{m-rad}(\langle XY^2 \rangle) = \operatorname{m-rad}(\langle X^2Y \rangle) + \operatorname{m-rad}(\langle XY^2 \rangle) \\
-                                                      &= \langle XY \rangle + \langle XY \rangle = \langle XY \rangle.
+                                                      &= \operatorname{m-rad}(\langle X^2Y \rangle) + \operatorname{m-rad}(\langle XY^2 \rangle) = \langle XY \rangle + \langle XY \rangle = \langle XY \rangle.
     \end{align*}
 \end{example}
 
@@ -693,7 +693,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
         \item $\operatorname{rad}(\ffa) = R$ if and only if $\ffa = R$.
         \item $\operatorname{rad}(\ffa + \ffb) = \operatorname{rad}(\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb))$.
         \item $\operatorname{rad}(\ffa) = \bigcap_{\ffp \in \operatorname{V}(\ffa)} \ffp$. 
-        \item $\operatorname{rad}(\bigcap_{i=1}^n \ffp_i^{e_i}) = \bigcap_{i=1}^n \ffp_i$, where $\ffp_i \in \operatorname{Spec}(R)$ and $e_i \geq 1$ for any $i = 1,\cdots,n$.
+        \item $\operatorname{rad}(\bigcap_{i=1}^n \ffp_i^{e_i}) = \bigcap_{i=1}^n \ffp_i$, where $\ffp_i \in \operatorname{Spec}(R)$ and $e_i \geq 1$ for each $i = 1,\cdots,n$.
         \item $\ffa + \ffb = R$ if and only if $\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb) = R$. 
     \end{enumerate}
 \end{fact}
@@ -708,7 +708,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
         \item Since $\ffa + \ffb \subseteq \operatorname{rad}(\ffa) + \operatorname{rad}(\ffb)$, we have $\operatorname{rad}(\ffa + \ffb) \subseteq \operatorname{rad}(\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb))$. \\
             Let $x \in \operatorname{rad}(\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb))$. Then there exists $n \geq 1$ such that $x^n \in \operatorname{rad}(\ffa) + \operatorname{rad}(\ffb)$. So there exist $a \in \operatorname{rad}(\ffa)$ and $b \in \operatorname{rad}(\ffb)$ such that $x^n = a + b$. Then there exist $j,k \geq 1$ such that $a^j \in \ffa$ and $b^k \in \ffb$. So $x^{n(j+k)} = (x^n)^{j+k} = (a+b)^{j+k} = \sum_{l = 0}^{j+k} \binom{l}{j+k} a^lb^{j+k-l}$. Since for any $0 \leq l \leq j+k$, either $l \geq j$ or $l < j$, i.e., $l \geq j$ or $j+k-l > k$, we have $a^l \in \ffa$ when $l \geq j$, and $b^{j+k-l} \in \ffb$ when $j + k - l > n$. So $x^{n(j+k)} = 0$. Thus, $x\in \operatorname{rad}(\ffa+\ffb)$.
         \item
-            Note $\operatorname{Nil}(R/\ffa) = \bigcap_{\ffp \in \operatorname{Spec}(R/\ffa)} \ffp = \bigcap_{\ffp \in \operatorname{V}(\ffa)} \ffp/\ffa$ by 3IT/4IT. Then by (a) and the property of preimage, $\operatorname{rad}(\ffa) = \pi^{-1}(\operatorname{Nil}(R/\ffa))  = \pi^{-1}(\bigcap_{\ffp \in \operatorname{V}(\ffa)} \ffp/\ffa) = \bigcap_{\ffp \in \operatorname{V}(\ffa)} \pi^{-1}(\ffp/\ffa) = \bigcap_{\ffp \in \operatorname{V}(\ffa)} \ffp$.
+            By Fact 1.15, $\operatorname{Spec}(R/\ffa) = \{\ffp/\ffa \mid \ffp \in \operatorname{V}(\ffa)\}$. So $\operatorname{Nil}(R/\ffa) = \bigcap_{\ffp \in \operatorname{Spec}(R/\ffa)} \ffp = \bigcap_{\ffp \in \operatorname{V}(\ffa)} \ffp/\ffa$. Then by (a), $\operatorname{rad}(\ffa) = \pi^{-1}(\operatorname{Nil}(R/\ffa))  = \pi^{-1}(\bigcap_{\ffp \in \operatorname{V}(\ffa)} \ffp/\ffa) = \bigcap_{\ffp \in \operatorname{V}(\ffa)} \pi^{-1}(\ffp/\ffa) = \bigcap_{\ffp \in \operatorname{V}(\ffa)} \ffp$.
         \item Since $\ffp_i \in \operatorname{Spec}(R)$, $\ffp_i \in \operatorname{V}(\ffp_i)$ and then $\ffp_i \subseteq \operatorname{rad}(\ffp_i) = \bigcap_{\ffp \in \operatorname{V}(\ffp_i)}\ffp \subseteq \ffp_i$, i.e., $\ffp_i = \operatorname{rad}(\ffp_i)$ for each $i = 1,\cdots,n$. Then by (d), $\operatorname{rad}(\bigcap_{i=1}^n \ffp_i^{e_i}) = \bigcap_{i=1}^n \operatorname{rad}(\ffp_i^{e_i}) = \bigcap_{i=1}^n \operatorname{rad}(\ffp_i) = \bigcap_{i=1}^n \ffp_i$. 
         \item
             By (e) and (f), $\ffa + \ffb = R$ if and only if $\operatorname{rad}(\ffa + \ffb) = R$ if and only if $\operatorname{rad}(\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb)) = R$ if and only if $\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb) = R$. \qedhere
@@ -717,22 +717,23 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 
 \begin{example}
     \begin{enumerate}
-        \item[(b)] If $\operatorname{rad}(\ffa) \subseteq \operatorname{rad}(\ffb)$, we can have $\ffa \not \subseteq \ffb$. For example, in $R = \bbZ$, $\langle 2 \rangle = \operatorname{rad}(\langle 2 \rangle) = \operatorname{rad}(\langle 4 \rangle) = \langle 2 \rangle$, but $\langle 2 \rangle \not \subseteq \langle 4 \rangle$.
+        \item[(b)] Example of $\ffa \not \subseteq \ffa \ffb$ when $\operatorname{rad}(\ffa) \subseteq \operatorname{rad}(\ffb)$. Let $R = \bbZ$. Then $\langle 2 \rangle = \operatorname{rad}(\langle 2 \rangle) = \operatorname{rad}(\langle 4 \rangle) = \langle 2 \rangle$, but $\langle 2 \rangle \not \subseteq \langle 4 \rangle$.
         \item[(c)]
-            We can have $\ffa \subsetneq \operatorname{rad}(\ffa)$. For example, in $R = \bbZ$, $\langle 4 \rangle \subsetneq \langle 2 \rangle = \operatorname{rad}(\langle 4 \rangle)$.
-        \item[(d)] We can have $\operatorname{rad}(\bigcap_{i=1}^\infty \ffa_i) \neq \bigcap_{i=1}^\infty \operatorname{rad}(\ffa_i)$. For example, in $R = k[X_1,X_2,\cdots]$, let $\ffa_1 = \langle X_1 \rangle$, $\ffa_2 = \langle X_1^2,X_2^2 \rangle$, $\cdots$, $\ffa_n = \langle X_1^n,\cdots,X_n^n \rangle$, $\cdots$, then $\bigcap_{i=1}^\infty \ffa_i = 0$, so $\operatorname{rad}(\bigcap_{i=1}^\infty \ffa_i) = \operatorname{rad}(0) = 0$, but since $\langle X_i \rangle, \langle X_1,\cdots,X_n \rangle \in \operatorname{Spec}(\ffa)$ for each $i \geq 1$, then by (g), $\bigcap_{i=1}^\infty \operatorname{rad}(\ffa_i) = \bigcap_{i=1}^\infty \operatorname{rad}(\langle X_1,\cdots,X_i \rangle) = \bigcap_{i=1}^\infty \langle X_1,\cdots,X_i \rangle = \langle X_1 \rangle \neq 0$. 
-        \item[(f)] We may have $\operatorname{rad}(\ffa + \ffb) \supsetneq \operatorname{rad}(\ffa) + \operatorname{rad}(\ffb)$. For example, in $R = k[X,Y]$, let $\ffa = \langle X+Y^2 \rangle$ and $\ffb = \langle X \rangle$. Then $\ffa,\ffb \in \operatorname{Spec}(R)$. Also, since $\langle X,Y \rangle \in \operatorname{Spec}(R)$, $\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb) = \ffa + \ffb = \langle X+Y^2,X \rangle = \langle X,Y^2 \rangle \subsetneq \langle X,Y \rangle = \operatorname{rad}(\langle X,Y^2 \rangle) = \operatorname{rad}(\ffa + \ffb)$.
+            Example of $\ffa \subsetneq \operatorname{rad}(\ffa)$. Let $R = \bbZ$. Then $\langle 4 \rangle \subsetneq \langle 2 \rangle = \operatorname{rad}(\langle 4 \rangle)$.
+        \item[(d)] Example of $\operatorname{rad}(\bigcap_{i=1}^\infty \ffa_i) \neq \bigcap_{i=1}^\infty \operatorname{rad}(\ffa_i)$. Let $R = k[X_1,X_2,\cdots]$ and $\ffa_1 = \langle X_1 \rangle$, $\ffa_2 = \langle X_1^2,X_2^2 \rangle$, $\cdots$, $\ffa_n = \langle X_1^n,\cdots,X_n^n \rangle$, $\cdots$. Then $\bigcap_{i=1}^\infty \ffa_i = 0$ and so $\operatorname{rad}(\bigcap_{i=1}^\infty \ffa_i) = \operatorname{rad}(0) = 0$. But since $\langle X_i \rangle, \langle X_1,\cdots,X_i \rangle \in \operatorname{Spec}(\ffa)$ for each $i \geq 1$, by (g), we have $\bigcap_{i=1}^\infty \operatorname{rad}(\ffa_i) = \bigcap_{i=1}^\infty \operatorname{rad}(\langle X_1,\cdots,X_i \rangle) = \bigcap_{i=1}^\infty \langle X_1,\cdots,X_i \rangle = \langle X_1 \rangle \neq 0$. 
+        \item[(f)] Example of $\operatorname{rad}(\ffa + \ffb) \supsetneq \operatorname{rad}(\ffa) + \operatorname{rad}(\ffb)$. Let $R = k[X,Y]$, $\ffa = \langle X+Y^2 \rangle$ and $\ffb = \langle X \rangle$. Then $\ffa,\ffb \in \operatorname{Spec}(R)$. Also, since $\langle X,Y \rangle \in \operatorname{Spec}(R)$, $\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb) = \ffa + \ffb = \langle X+Y^2,X \rangle = \langle X,Y^2 \rangle \subsetneq \langle X,Y \rangle = \operatorname{rad}(\langle X,Y^2 \rangle) = \operatorname{rad}(\ffa + \ffb)$.
     \end{enumerate}
 \end{example}
 
 \begin{example}
     \begin{enumerate}
-        \item Let $R = \bbF_2[X,Y]$, $\ffa = \langle X,Y \rangle$, $\ffb_1 = \langle X,X^2,XY,Y^2 \rangle$, $\ffb_2 = \langle X+Y,X^2,XY,Y^2 \rangle$, and $\ffb_3 = \langle Y,X^2,XY,Y^2 \rangle$. Then $\ffa = \ffb_1 \cup \ffb_2 \cup \ffb_3$, but $\ffb_i \subsetneq \ffa$ for any $i = 1,2,3$.
+        \item Let $R = \bbF_2[X,Y]$, $\ffa = \langle X,Y \rangle$, $\ffb_1 = \langle X,X^2,XY,Y^2 \rangle$, $\ffb_2 = \langle X+Y,X^2,XY,Y^2 \rangle$, and $\ffb_3 = \langle Y,X^2,XY,Y^2 \rangle$. Then $\ffa = \ffb_1 \cup \ffb_2 \cup \ffb_3$, but $\ffb_i \subsetneq \ffa$ for each $i = 1,2,3$.
         \item $\frac{\bbF_2[X,Y]}{\langle X^2,XY,Y^2 \rangle} \geq \langle \overbar X, \overbar Y \rangle \cong \bbF_2^2$. Let $\ffb_1 = \langle \overbar X, \overbar Y \rangle$, $\ffb_2 = \langle \overbar X + \overbar Y \rangle$ and $\ffb_3 = \langle Y \rangle$. Then $\langle \overbar X,\overbar Y \rangle = \ffb_1 \cup \ffb_2 \cup \ffb_2$ with $\ffb_i \subsetneq \langle \overbar X,\overbar Y \rangle$ for any $i = 1,2,3$.
     \end{enumerate}
 \end{example}
 
-\section{Extensions and Contractions}
+\section*{Extensions and Contractions}
+\addcontentsline{toc}{section}{Extensions and Contractions}
 
 \begin{definition}
     Let $f: R \to S$ be a ring homomorphism. Let $\ffa \leq R$ and $\ffb \leq S$. The \emph{extension} of $\ffa$ along $f$ is $\ffa^e = \ffa S = \langle f(\ffa) \rangle S  = f(\ffa)S = \{\sum_i^{\text{finite}} f(a_i)s_i \mid a_i \in \ffa,\ s_i \in S, \fa i\} \leq S$. The \emph{contraction} of $\ffb$ along $f$ is $\ffb^c = f^{-1}(\ffb) \leq R$.
@@ -759,7 +760,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
         \item $(\ffa_1 \cap \ffa_2)S \subseteq \ffa_1S \cap \ffa_2S$ and $f^{-1}(\ffb_1 \cap \ffb_2) = f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$. \\
             Example of $(\ffa_1 \cap \ffa_2)S \subsetneq \ffa_1S \cap \ffa_2S$. Let $f: R = k[X,Y] \to S = k[X,Y]/\langle X,Y \rangle^2$, $\ffa_1 = \langle X \rangle R$ and $\ffa_2 = \langle X+Y^2 \rangle R$. Then $\ffa_1 \cap \ffa_2 = \langle X(X+Y^2) \rangle R = \langle X^2 + XY^2 \rangle R$, $\ffa_1 S = \langle \overbar X \rangle S$ and $\ffa_2 S = \langle \overbar{X+Y^2} \rangle S = \langle \overbar X \rangle S$. So $(\ffa_1 \cap \ffa_2)S = \langle \overbar{X^2+XY^2} \rangle S = 0 \subsetneq \langle \overbar X \rangle S = \ffa_1 S \cap \ffa_2 S$.
         \item $(\ffa_1\ffa_2)S = (\ffa_1S)(\ffa_2S)$ and $f^{-1}(\ffb_1)f^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1\ffb_2)$. \\
-            Example of $f^{-1}(\ffb_1)f^{-1}(\ffb_2) \subsetneq f^{-1}(\ffb_1\ffb_2) \subseteq f^{-1}(\ffb_1 \cap \ffb_2) = f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$. Let $f: R = k[X] \to S = k[X]/(X(X-1)) = k[X]/(X^2-X) \cong k[X]/\langle X \rangle \times k[X]/\langle X-1 \rangle \cong k \times k$ by CRT. Note in $k \times k$, $(1,0) = (1,0)^2$. Let $\ffb_1 = \langle \overbar X \rangle S = \ffb_2$. Then $\ffb_1 \ffb_2 = \langle \overbar X^2 \rangle S = \langle \overbar X \rangle S = \ffb_1$. So $f^{-1}(\ffb_1 \ffb_2) = f^{-1}(\ffb_1)  =  f^{-1}(\langle \overbar X \rangle S) = \langle X \rangle R \supsetneq \langle X^2 \rangle R = f^{-1}(\ffb_1)f^{-1}(\ffb_2)$.
+            Example of $f^{-1}(\ffb_1)f^{-1}(\ffb_2) \subsetneq f^{-1}(\ffb_1\ffb_2) \subseteq f^{-1}(\ffb_1 \cap \ffb_2) = f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$. Let $f: R = k[X] \to S = k[X]/(X(X-1)) = k[X]/(X^2-X) \cong k[X]/\langle X \rangle \times k[X]/\langle X-1 \rangle \cong k \times k$ by Chinese Remainder Theorem. Note in $k \times k$, $(1,0) = (1,0)^2$. Let $\ffb_1 = \langle \overbar X \rangle S = \ffb_2$. Then $\ffb_1 \ffb_2 = \langle \overbar X^2 \rangle S = \langle \overbar X \rangle S = \ffb_1$. So $f^{-1}(\ffb_1 \ffb_2) = f^{-1}(\ffb_1)  =  f^{-1}(\langle \overbar X \rangle S) = \langle X \rangle R \supsetneq \langle X^2 \rangle R = f^{-1}(\ffb_1)f^{-1}(\ffb_2)$.
         \item $(\ffa_1:\ffa_2)S \subseteq (\ffa_1S:\ffa_2S)$ and $f^{-1}(\ffb_1:\ffb_2) \subseteq (f^{-1}(\ffb_1):f^{-1}(\ffb_2))$. \\
             Example of $(\ffa_1:\ffa_2)S \subsetneq (\ffa_1S : \ffa_2 S)$. Let $f: R = k[X] \to S = k[X]/\langle X \rangle \cong k$. Let $\ffa_1 = \langle X^2 \rangle R$ and $\ffa_2 = \langle X \rangle R$. Then $\ffa_1 S = 0 = \ffa_2 S$ and so $(\ffa_1 S: \ffa_2 S) = (0:0) = S \supsetneq 0 = \langle X \rangle S = (\langle X^2 \rangle: \langle X \rangle)S = (\ffa_1:\ffa_2)S$. \\
             Example of $f^{-1}(\ffb_1:\ffb_2) \subsetneq (f^{-1}(\ffb_1):f^{-1}(\ffb_2))$. Let $f: R = k \xrightarrow {\subseteq} S = k[X]$, $\ffb_1 = \langle X \rangle S$ and $\ffb_2 = \langle X-1 \rangle S$. Then $(\ffb_1:\ffb_2) = (\langle X \rangle: \langle X-1 \rangle) = \langle X \rangle$, $f^{-1}(\ffb_1) = 0 = f^{-1}(\ffb_2)$. So $f^{-1}(\ffb_1:\ffb_2) = f^{-1}(\langle X \rangle) = 0 \subsetneq R = (0:0) = (f^{-1}(\ffb_1):f^{-1}(\ffb_2))$. 
@@ -771,43 +772,26 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 \begin{proof}
     \begin{enumerate}
         \item 
-            \begin{itemize}
-                \item 
-                    Note $\ffa \subseteq f^{-1}(f(\ffa)) \subseteq f^{-1}(\ffa S)$. So we have equality if and only if $f$ is bijective.
-                \item 
-                    To show $\langle f(f^{-1}(\ffb)) \rangle S = f^{-1}(\ffb)S \subseteq \ffb$, it suffices to show $\langle f(f^{-1}(\ffb)) \rangle \subseteq \ffb$, then it is equivalent to show $f(f^{-1}(\ffb)) \subseteq \ffb$, which is true. So we have equality if and only if $f$ is onto.
-                \item 
-                    The set of generators of $(\langle T \rangle R)S$ over $S$ is $\{f(\sum_i^{\text{finite}}t_ir_i) = \sum_i^{\text{finite}} f(t_i)f(r_i) \mid t_i \in T,\ r_i \in S, \fa i\} \subseteq \langle f(T) \rangle S$. The set of generators of $\langle f(T) \rangle S$ over $S$ is $\{f(t) \mid t \in T\} = \{f(t \cdot 1) \mid t \in T\}$ which is a subset of the generators of $(\langle T \rangle R)S$.
-            \end{itemize}
+            Note $\ffa \subseteq f^{-1}(f(\ffa)) \subseteq f^{-1}(\ffa S)$. So we have equality if and only if $f$ is bijective. \par
+            To show $\langle f(f^{-1}(\ffb)) \rangle S = f^{-1}(\ffb)S \subseteq \ffb$, it suffices to show $\langle f(f^{-1}(\ffb)) \rangle \subseteq \ffb$, then it is equivalent to show $f(f^{-1}(\ffb)) \subseteq \ffb$, which is true. So we have equality if and only if $f$ is onto. \par
+            The set of generators of $(\langle T \rangle R)S$ over $S$ is $\{f(\sum_i^{\text{finite}}t_ir_i) = \sum_i^{\text{finite}} f(t_i)f(r_i) \mid t_i \in T,\ r_i \in S, \fa i\} \subseteq \langle f(T) \rangle S$. The set of generators of $\langle f(T) \rangle S$ over $S$ is $\{f(t) \mid t \in T\} = \{f(t \cdot 1) \mid t \in T\}$ which is a subset of the generators of $(\langle T \rangle R)S$.
         \item 
-            \begin{itemize}
-                \item 
-                    ``$\subseteq$''. Since $\ffa \subseteq f^{-1}(\ffa S)$, $\ffa S \subseteq f^{-1}(\ffa S)S$. ``$\supseteq$''. The set of generators of $f^{-1}(\ffa S)S$ over $S$ is $\{f(x) \mid x \in f^{-1}(\ffa S)\} = f(f^{-1}(\ffa S)) \subseteq \ffa S$.
-                \item 
-                    ``$\subseteq$''. Since $\ffb \supseteq f^{-1}(\ffb)S$, $f^{-1}(\ffb) \supseteq f^{-1}(f^{-1}(\ffb)S)$. ``$\subseteq$''. Let $x \in f^{-1}(\ffb)$. Then $f(x) = f(x) \cdot 1 \in \langle f(f^{-1}\ffb) \rangle S = f^{-1}(\ffb)S$. So $x \in f^{-1}(f^{-1}(\ffb))$.
-            \end{itemize}
+            ``$\subseteq$''. Since $\ffa \subseteq f^{-1}(\ffa S)$, $\ffa S \subseteq f^{-1}(\ffa S)S$. ``$\supseteq$''. The set of generators of $f^{-1}(\ffa S)S$ over $S$ is $\{f(x) \mid x \in f^{-1}(\ffa S)\} = f(f^{-1}(\ffa S)) \subseteq \ffa S$. \par
+            ``$\subseteq$''. Since $\ffb \supseteq f^{-1}(\ffb)S$, $f^{-1}(\ffb) \supseteq f^{-1}(f^{-1}(\ffb)S)$. ``$\subseteq$''. Let $x \in f^{-1}(\ffb)$. Then $f(x) = f(x) \cdot 1 \in \langle f(f^{-1}\ffb) \rangle S = f^{-1}(\ffb)S$. So $x \in f^{-1}(f^{-1}(\ffb))$.
         \item ``$\supseteq$''. Since $\ffa_1 + \ffa_2 \supseteq \ffa_1,\ffa_2$, $(\ffa_1+\ffa_2)S \supseteq \ffa_1S,\ffa_2S$. So $(\ffa_1+\ffa_2)S \supseteq \ffa_1S + \ffa_2S$. ``$\subseteq$''. The set of generators of $(\ffa_1+\ffa_2)S$ over $S$ is $\{f(a_1+a_2) = f(a_1) + f(a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2\} \subseteq \ffa_1 S + \ffa_2 S$.         
         \item 
-            \begin{itemize}
-                \item Since $\ffa_1 \cap \ffa_2 \subseteq \ffa_1,\ffa_2$, $(\ffa_1 \cap \ffa_2)S \subseteq \ffa_1S,\ffa_2S$. So $(\ffa_1 \cap \ffa_2) S \subseteq \ffa_1 S \cap \ffa_2 S$.
-                \item $x \in f^{-1}(\ffb_1 \cap \ffb_2)$ if and only if $f(x) \in \ffb_1 \cap \ffb_2$ if and only if $f(x) \in \ffb_1,\ffb_2$ if and only if $x \in f^{-1}(\ffb_1),f^{-1}(\ffb_2)$ if and only if $x \in f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$.
-            \end{itemize}
+            Since $\ffa_1 \cap \ffa_2 \subseteq \ffa_1,\ffa_2$, $(\ffa_1 \cap \ffa_2)S \subseteq \ffa_1S,\ffa_2S$. So $(\ffa_1 \cap \ffa_2) S \subseteq \ffa_1 S \cap \ffa_2 S$. \par
+            $x \in f^{-1}(\ffb_1 \cap \ffb_2)$ if and only if $f(x) \in \ffb_1 \cap \ffb_2$ if and only if $f(x) \in \ffb_1,\ffb_2$ if and only if $x \in f^{-1}(\ffb_1),f^{-1}(\ffb_2)$ if and only if $x \in f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$.
         \item 
             ``$\subseteq$''. The set of generators of $(\ffa_1\ffa_2)S$ over $S$ is $\{f(\sum_i^{\text{finite}}\alpha_i\beta_i) = \sum_i^{\text{finite}} f(\alpha_i)f(\beta_i) \mid \alpha_i \in \ffa_1,\ \beta_i \in \ffa_2, \fa i\} \subseteq (\ffa_1S)(\ffa_2S)$. ``$\supseteq$''. $(\ffa_1S)(\ffa_2S) = (f(\ffa_1)S)(f(\ffa_2)S) = (f(\ffa_1)f(\ffa_2))S = \langle f(a_1)f(a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2 \rangle S = \langle f(a_1a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2 \rangle S \subseteq \langle f(\ffa_1\ffa_2) \rangle S = (\ffa_1\ffa_2)S$. 
         \item 
-            \begin{itemize}
-                \item 
-                    The set of generators of $(\ffa_1:\ffa_2)S$ over $S$ is $\{f(r) \mid r \in (\ffa_1:\ffa_2)\} = \{f(r) \mid r \ffa_2 \subseteq \ffa_1\} \subseteq \{f(r) \mid r f(\ffa_2) \subseteq f(\ffa_1)\} \subseteq \{s \in S \mid sf(\ffa_2) \subseteq f(\ffa_1)\} = \{s \in S \mid s f(\ffa_2)S \subseteq f(\ffa_1)S \} = \{s \in S \mid s \ffa_2 S \subseteq \ffa_1 S\} = (\ffa_1S:\ffa_2S)$.
-                \item $f^{-1}(\ffb_1:\ffb_2) = \{f^{-1}(s) \mid s \in (\ffb_1:\ffb_2)\} = \{f^{-1}(s) \mid s\ffb_2 \subseteq \ffb_1\} \subseteq \{f^{-1}(s) \mid sf^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1)\} \subseteq \{r \in R\mid rf^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1)\} = (f^{-1}(\ffb_1):f^{-1}(\ffb_2))$.
-            \end{itemize}
+            The set of generators of $(\ffa_1:\ffa_2)S$ over $S$ is $\{f(r) \mid r \in (\ffa_1:\ffa_2)\} = \{f(r) \mid r \ffa_2 \subseteq \ffa_1\} \subseteq \{f(r) \mid r f(\ffa_2) \subseteq f(\ffa_1)\} \subseteq \{s \in S \mid sf(\ffa_2) \subseteq f(\ffa_1)\} = \{s \in S \mid s f(\ffa_2)S \subseteq f(\ffa_1)S \} = \{s \in S \mid s \ffa_2 S \subseteq \ffa_1 S\} = (\ffa_1S:\ffa_2S)$. \par
+            $f^{-1}(\ffb_1:\ffb_2) = \{f^{-1}(s) \mid s \in (\ffb_1:\ffb_2)\} = \{f^{-1}(s) \mid s\ffb_2 \subseteq \ffb_1\} \subseteq \{f^{-1}(s) \mid sf^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1)\} \subseteq \{r \in R\mid rf^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1)\} = (f^{-1}(\ffb_1):f^{-1}(\ffb_2))$.
         \item 
-            \begin{itemize}
-                \item Let $s \in \operatorname{rad}(\ffa)S$. Then there exists $m \geq 1$ and $a_i \in \operatorname{rad}(\ffa)$ and $s_i \in S$ for any $i = 1,\cdots,m$ such that $s = \sum_{i=1}^m f(a_i)s_i$. Since $a_i \in \operatorname{rad}(\ffa)$, there exists $n_i \geq 1$ such that $a_i^{n_i} \in \ffa$ for each $i = 1,\cdots,m$. Let $n = n_1 + \cdots + n_m$. Then by PHP, 
-                    \[s^n = \left(\sum_{i=1}^m f(a_i)s_i\right)^n = \sum_{k_1 + \cdots + k_m = n} \frac{n!}{k_1! \cdots k_m!} \prod_{i=1}^m f(a_i^{k_i})s_i^{k_i} \subseteq f(\ffa)S = \ffa S.\]
-                    So $s \in \operatorname{rad}(\ffa S)$.
-                \item
-                    Note $x \in f^{-1}(\operatorname{rad}(\ffb))$ if and only if $f(x) \in \operatorname{rad}(\ffb)$ if and only if $f(x)^n \in \ffb$ for some $n \geq 1$ if and only if $f(x^n) \in \ffb$ for some $n \geq 1$ if and only if $x^n  \in f^{-1}(\ffb)$ for some $n \geq 1$ if and only if $x \in \operatorname{rad}(\ffb)$. \qedhere
-            \end{itemize}
+            Let $s \in \operatorname{rad}(\ffa)S$. Then there exist $m \geq 1$, $a_i \in \operatorname{rad}(\ffa)$ and $s_i \in S$ for $i = 1,\cdots,m$ such that $s = \sum_{i=1}^m f(a_i)s_i$. Since $a_i \in \operatorname{rad}(\ffa)$, there exists $n_i \geq 1$ such that $a_i^{n_i} \in \ffa$ for each $i = 1,\cdots,m$. Let $n = n_1 + \cdots + n_m$. Then by Pigeonhole Principle, 
+            \[s^n = \left(\sum_{i=1}^m f(a_i)s_i\right)^n = \sum_{k_1 + \cdots + k_m = n} \frac{n!}{k_1! \cdots k_m!} \prod_{i=1}^m f(a_i^{k_i})s_i^{k_i} \subseteq f(\ffa)S = \ffa S.\]
+            So $s \in \operatorname{rad}(\ffa S)$. \par
+            Note $x \in f^{-1}(\operatorname{rad}(\ffb))$ if and only if $f(x) \in \operatorname{rad}(\ffb)$ if and only if $f(x)^n \in \ffb$ for some $n \geq 1$ if and only if $f(x^n) \in \ffb$ for some $n \geq 1$ if and only if $x^n  \in f^{-1}(\ffb)$ for some $n \geq 1$ if and only if $x \in \operatorname{rad}(\ffb)$. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -819,12 +803,13 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
     Let $x \in \operatorname{Nil}(R)$. Then there is a $n \geq 1$ such that $x^n = 0$. Let $\eta = 1-x+x^2-\cdots+(-1)^{n-1}x^{n-1}$. Then $\eta(1+x) = 1-x^n = 1$. So $1+x \in R^\times$. Let $u \in R^\times$. Then $u^{-1}x \in \operatorname{Nil}(R)$. So $1+u^{-1}x \in R^\times$. Hence $u + x = u(1+(u^{-1}x)) \in R^\times$. 
 \end{proof}
 
-\section{Power Series Rings}
+\section*{Power Series Rings}
+\addcontentsline{toc}{section}{Power Series Rings}
 
 Let $A$ be a commutative ring with identity.
 
 \begin{definition}
-    $A \llbracket X \rrbracket = \{f = \sum_{i=0}^\infty a_iX^i \mid a_i \in A, \fa i\} \cong \prod_{i=0}^\infty A$ with addition and multiplication given by $(\sum_{i=0}^\infty a_iX^i) + (\sum_{i=0}^\infty b_iX^i) = \sum_{i=0}^\infty (a_i+b_i)X^i$ and $(\sum_{i=0}^\infty a_iX^i)(\sum_{i=0}^\infty b_iX^i) = \sum_{i=0}^\infty c_iX^i$, where $c_i = \sum_{j=0}^i a_jb_{i-j} = \sum_{p+q = i}a_pb_q$ for each $i \in \bbZ^+$. \\
+    $A \llbracket X \rrbracket = \{f = \sum_{i=0}^\infty a_iX^i \mid a_i \in A, \fa i\} \cong \prod_{i=0}^\infty A$ with addition and multiplication given by $(\sum_{i=0}^\infty a_iX^i) + (\sum_{i=0}^\infty b_iX^i) = \sum_{i=0}^\infty (a_i+b_i)X^i$ and $(\sum_{i=0}^\infty a_iX^i)(\sum_{i=0}^\infty b_iX^i) = \sum_{i=0}^\infty c_iX^i$, where $c_i = \sum_{j=0}^i a_jb_{i-j} = \sum_{p+q = i}a_pb_q$ for each $i \geq 0$. \\
     $0_{A\llbracket X \rrbracket} = 0_A = \sum_{i=0}^\infty 0_AX^i$ and $1_{A\llbracket X \rrbracket} = 1_A = 1_A + \sum_{i=0}^\infty 0_A X^i$. More generally, for any $\ffa \leq A$, $\ffa\llbracket X \rrbracket = \{\sum_{i=0}^\infty a_iX^i \mid a_i \in \ffa, \fa i\} \leq A \llbracket X \rrbracket$.
 \end{definition}
 
@@ -839,27 +824,38 @@ Let $A$ be a commutative ring with identity.
 \begin{proposition}
     Let $f = \sum_{i=0}^\infty a_iX^i$.
     \begin{enumerate}
-        \item $f$ is a unit in $A \llbracket X \rrbracket$ if and only if $a_0 \in A^\times$. 
+        \item $f \in A \llbracket X \rrbracket^\times$ if and only if $a_0 \in A^\times$. 
         \item If $\varphi: A \to B$ is a ring homomorphism, then there exists a well-defined ring homomorphism $\varphi\llbracket X \rrbracket: A\llbracket X \rrbracket \to B\llbracket X \rrbracket$ taking $\sum_{i=0}^\infty \alpha_iX^i$ to $\sum_{i=0}^\infty \varphi(\alpha_i)X^i$ and $A\llbracket X \rrbracket \geq \ker(\varphi \llbracket X \rrbracket) = \ker(\varphi)\llbracket X \rrbracket$. 
         \item For any $\ffa \leq A$, $\ffa \cdot A \llbracket X \rrbracket \subseteq \ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ and $\frac{A \llbracket X \rrbracket}{\ffa \llbracket X \rrbracket} \cong \frac{A}{\ffa}[X]$. In addition, $\ffa \cdot A\llbracket X \rrbracket = \ffa \llbracket X \rrbracket$ if $\ffa \leq A$ is finitely generated. 
-        \item Let $\ffa \leq A$. Then $\langle X,\ffa \rangle A\llbracket X \rrbracket = X \cdot A \llbracket X \rrbracket + \ffa \cdot A \llbracket X \rrbracket = XA \llbracket X \rrbracket + \ffa \llbracket X \rrbracket = \{\sum_{i=0}^\infty b_iX^i \mid b_0 \in \ffa,\ b_i \in A, \fa i \geq 1\} \leq A \llbracket X \rrbracket$ and $\frac{A \llbracket X \rrbracket}{\langle X,\ffa \rangle A \llbracket X \rrbracket} \cong \frac{A}{\ffa}$. In particular, if $\ffa = 0$, then $\langle X \rangle A \llbracket X \rrbracket = \{\sum_{i=1}^\infty b_ix_i \mid b_i \in A, \fa i \geq 1\} \leq A\llbracket X \rrbracket$ and $\frac{A\llbracket X \rrbracket}{\langle X \rangle A \llbracket X \rrbracket} \cong A$. 
-        \item If $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$, then $a_i \in \operatorname{Nil}(A)$ for any $i \in \bbZ^+$. Converse holds if $ = \langle a_0,a_1,a_2,\cdots \rangle$ is finitely generated. Also, $\operatorname{Nil}(A) \cdot A \llbracket X \rrbracket \subseteq \operatorname{Nil}(A \llbracket X \rrbracket) \subseteq \operatorname{Nil}(A) \llbracket X \rrbracket$.
+        \item Let $\ffa \leq A$. Then $\langle X,\ffa \rangle A\llbracket X \rrbracket = X \cdot A \llbracket X \rrbracket + \ffa \cdot A \llbracket X \rrbracket = XA \llbracket X \rrbracket + \ffa \llbracket X \rrbracket = \{\sum_{i=0}^\infty b_iX^i \mid b_0 \in \ffa,\ b_i \in A, \fa i \geq 1\} \leq A \llbracket X \rrbracket$ and $\frac{A \llbracket X \rrbracket}{\langle X,\ffa \rangle A \llbracket X \rrbracket} \cong \frac{A}{\ffa}$. In particular, if $\ffa = 0$, then $\langle X \rangle A \llbracket X \rrbracket = \{\sum_{i=1}^\infty b_iX_i \mid b_i \in A, \fa i \geq 1\} \leq A\llbracket X \rrbracket$ and $\frac{A\llbracket X \rrbracket}{\langle X \rangle A \llbracket X \rrbracket} \cong A$. 
+        \item If $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$, then $a_i \in \operatorname{Nil}(A)$ for any $i \geq 0$. Converse holds if $ = \langle a_0,a_1,a_2,\cdots \rangle$ is finitely generated. Also, $\operatorname{Nil}(A) \cdot A \llbracket X \rrbracket \subseteq \operatorname{Nil}(A \llbracket X \rrbracket) \subseteq \operatorname{Nil}(A) \llbracket X \rrbracket$.
+        \item $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$ if and only if $a_0 \in \operatorname{Jac}(A)$, i.e., $\operatorname{Jac}(A\llbracket X \rrbracket) = \langle \operatorname{Jac}(A),X \rangle A\llbracket X \rrbracket$. 
+        \item $A\llbracket X \rrbracket$ is an integral domain if and only if $A$ is an integral domain. Also, $A\llbracket X \rrbracket$ is never a field.
+        \item ...
+        \item $\ffa \leq A$ is maximal if and only if $\langle \ffa,X \rangle A \llbracket X \rrbracket \leq A \llbracket X \rrbracket$ is maximal.
+        \item Let $\operatorname{m-Spec}(A\llbracket X \rrbracket) = \{\text{maximal ideals of}A\llbracket X \rrbracket\} \subseteq \operatorname{Spec}(A\llbracket X \rrbracket)$. Let $\ffm \in \operatorname{m-Spec}(A\llbracket X \rrbracket)$. Then 
+            \begin{enumerate}
+                \item $\ffm \cap A = \ffn \in \operatorname{m-Spec}(A)$.
+                \item $x \in \ffm$.
+                \item $\ffm = \langle \ffn,X \rangle A\llbracket X \rrbracket$.
+            \end{enumerate}
+            Therefore, (graph).
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
     \begin{enumerate}
         \item 
-            ``$\Rightarrow$''. Let the multiplicative inverse of $f$ be $f^{-1}(X) = \sum_{i=0}^\infty b_iX^i \in A\llbracket X \rrbracket$. Then $1_A = f \cdot f^{-1} = (\sum_{i=0}^\infty a_iX^i)(\sum_{j=0}^\infty b_jX^j) = a_0b_0 + (a_0b_1 + a_1b_0)X + \cdots$. So $a_0b_0 = 1_A$ and hence $a_0 \in A^\times$. ``$\Leftarrow$''. We try find $g = \sum_{j=0}^\infty b_iX^i \in A\llbracket X \rrbracket$ such that $fg = 1$, i.e., $1 = \sum_{i=0}^\infty c_iX^i$, where $c_i = \sum_{j=0}^ia_jb_{i-j}$. If $a_0 = 1$, then $b_0 = a_0b_0 = 1$ and $\sum_{j=0}^i a_jb_{i-j} = c_i = 0$ for any $i \geq 1$. So $b_1 = -a_1$, $b_2 = -a_2+a_1^2$ and we can solve $b_n$'s inductively. If $a_0 \neq 1$, then $a_0 \in A\times $ and so $f = \sum_{i=0}^\infty a_iX^i = \sum_{i=0}^\infty a_0(a_0^{-1}a_i)X^i = a_0 \underbrace{\left(1+\sum_{i=1}^\infty (a_0^{-1}a_i)X^i\right)}_{\in A\llbracket X \rrbracket^\times} \in A\llbracket X \rrbracket^\times$.
+            ``$\Rightarrow$''. Let the multiplicative inverse of $f$ be $f^{-1}(X) = \sum_{i=0}^\infty b_iX^i \in A\llbracket X \rrbracket$. Then $1_A = f \cdot f^{-1} = (\sum_{i=0}^\infty a_iX^i)(\sum_{j=0}^\infty b_jX^j) = a_0b_0 + (a_0b_1 + a_1b_0)X + \cdots$. So $a_0b_0 = 1_A$ and hence $a_0 \in A^\times$. ``$\Leftarrow$''. We try to find $g = \sum_{j=0}^\infty b_iX^i \in A\llbracket X \rrbracket$ such that $fg = 1$, i.e., $1 = \sum_{i=0}^\infty c_iX^i$, where $c_i = \sum_{j=0}^ia_jb_{i-j}$. If $a_0 = 1$, then $b_0 = a_0b_0 = 1$ and $\sum_{j=0}^i a_jb_{i-j} = c_i = 0$ for any $i \geq 1$, i.e., $a_0b_1 + a_1b_0 = 0$, $a_0b_2 + a_1b_1 + a_2b_0= 0$, $\cdots$. So we can solve $b_n$ for each $n \geq 1$.  If $a_0 \neq 1$, then $a_0 \in A\times $ and so $f = \sum_{i=0}^\infty a_iX^i = \sum_{i=0}^\infty a_0(a_0^{-1}a_i)X^i = a_0 \smallunderbrace{\left(1+\sum_{i=1}^\infty (a_0^{-1}a_i)X^i\right)}_{\in A\llbracket X \rrbracket^\times} \in A\llbracket X \rrbracket^\times$.
         \item
             $\varphi \llbracket X \rrbracket$ is a well-defined ring homomorphism, done. Note \\
             \begin{align*}
-                \ker(\varphi \llbracket X \rrbracket) &= \left\{\sum_{i=0}^\infty \alpha_i X^i \mathrel{\bigg |} \sum_{i=0}^\infty \varphi(\alpha_i)X^i = 0 \right\} = \left\{\sum_{i=0}^\infty \alpha_i X^i \mathrel{\bigg |} \varphi(\alpha_i) = 0, \fa i \in \bbZ^+ \right\} \\
-                                                      &= \left\{\sum_{i=0}^\infty \alpha_i X^i \mathrel{\bigg |} \alpha_i \in \ker(\varphi), \fa i \in \bbZ^+ \right\} = \ker(\varphi)\llbracket X \rrbracket.
+                \ker(\varphi \llbracket X \rrbracket) &= \left\{\sum_{i=0}^\infty \alpha_i X^i \mathrel{\bigg |} \sum_{i=0}^\infty \varphi(\alpha_i)X^i = 0 \right\} = \left\{\sum_{i=0}^\infty \alpha_i X^i \mathrel{\bigg |} \varphi(\alpha_i) = 0, \fa i \geq 0\right\} \\
+                                                      &= \left\{\sum_{i=0}^\infty \alpha_i X^i \mathrel{\bigg |} \alpha_i \in \ker(\varphi), \fa i \geq 0 \right\} = \ker(\varphi)\llbracket X \rrbracket.
             \end{align*}
         \item 
-            Let $\tau: A \twoheadrightarrow A/\ffa$ be the natural projection. Then by (b), $\tau \llbracket X \rrbracket: A\llbracket X \rrbracket \to \frac{A}{\ffa}\llbracket X \rrbracket$ is a well-defined ring homomorphism with $A\llbracket X \rrbracket \geq \ker(\tau \llbracket X \rrbracket) = \ker(\tau) \llbracket X \rrbracket = \ffa \llbracket X \rrbracket$. Since $\tau$ is onto, by the 1IT, $\frac{A\llbracket X \rrbracket}{\ffa \llbracket X \rrbracket} \cong \frac{A}{\ffa}\llbracket X \rrbracket$. Since $\ffa = \ker(\tau) \subseteq \ker(\tau \llbracket X \rrbracket)$, we have $\langle \ffa \rangle A \llbracket X \rrbracket \subseteq \ker(\tau \llbracket X \rrbracket) = \ffa \llbracket X \rrbracket$. \\
-            Assume $\ffa = (\alpha_1,\cdots,\alpha_n)A$. Let $f = \sum_{i=1}^\infty a_iX^i \in \ffa \llbracket X \rrbracket$, where $a_i \in \ffa = (\alpha_1,\cdots,\alpha_n)A$ for each $i \in \bbZ^+$. Then for each $i \in \bbZ^+$, $a_i = \sum_{j=1}^n b_{ij}\alpha_j$ for some $b_{i1},\cdots,b_{in} \in A$. So $f = \sum_{i=0}^\infty a_iX^i = \sum_{i=0}^\infty \left(\sum_{j=1}^n b_{ij}\alpha_j\right)X^i = \sum_{j=1}^n \alpha_j \left(\sum_{i=0}^\infty b_{ij}X^i\right) \in \langle \ffa \rangle A\llbracket X \rrbracket$.
+            Let $\tau: A \twoheadrightarrow A/\ffa$ be the natural projection. Then by (b), $\tau \llbracket X \rrbracket: A\llbracket X \rrbracket \to \frac{A}{\ffa}\llbracket X \rrbracket$ is a well-defined ring homomorphism with $A\llbracket X \rrbracket \geq \ker(\tau \llbracket X \rrbracket) = \ker(\tau) \llbracket X \rrbracket = \ffa \llbracket X \rrbracket$. Since $\tau$ is onto, by the first isomorphism theorem, $\frac{A\llbracket X \rrbracket}{\ffa \llbracket X \rrbracket} \cong \frac{A}{\ffa}\llbracket X \rrbracket$. Since $\ffa = \ker(\tau) \subseteq \ker(\tau \llbracket X \rrbracket)$, we have $\langle \ffa \rangle A \llbracket X \rrbracket \subseteq \ker(\tau \llbracket X \rrbracket) = \ffa \llbracket X \rrbracket$. \\
+            Assume $\ffa = (\alpha_1,\cdots,\alpha_n)A$. Let $f = \sum_{i=1}^\infty a_iX^i \in \ffa \llbracket X \rrbracket$, where $a_i \in \ffa = (\alpha_1,\cdots,\alpha_n)A$ for each $i \geq 0$. Then for each $i \geq 0$, $a_i = \sum_{j=1}^n b_{ij}\alpha_j$ for some $b_{i1},\cdots,b_{in} \in A$. So $f = \sum_{i=0}^\infty a_iX^i = \sum_{i=0}^\infty \left(\sum_{j=1}^n b_{ij}\alpha_j\right)X^i = \sum_{j=1}^n \alpha_j \left(\sum_{i=0}^\infty b_{ij}X^i\right) \in \langle \ffa \rangle A\llbracket X \rrbracket$.
         \item 
             Note
             \begin{center}
@@ -875,21 +871,58 @@ Let $A$ be a commutative ring with identity.
             Let $\sum_{i=0}^\infty b_i X^i \in I$, i.e., $b_0 + X \sum_{i=0}^\infty b_{i+1}X^i \in \ffa + X A\llbracket X \rrbracket \subseteq \langle X,\ffa \rangle A\llbracket X \rrbracket$. So $I \subseteq \langle X,\ffa \rangle A\llbracket X \rrbracket$. Since $X = 0 + X$, $X \in I$. Also, since if $\sum_{i=0}^\infty b_iX^i \in \ffa \llbracket X \rrbracket \leq A \llbracket X \rrbracket$, we have $b_0 \in \ffa$ and then $\ffa \llbracket X \rrbracket \subseteq I$. Hence $\langle X \rangle A\llbracket X \rrbracket + \ffa\llbracket X \rrbracket \subseteq I$. \\
             Thus, by (c),
             \[\langle X,\ffa \rangle A\llbracket X \rrbracket \supseteq I \supseteq \langle X \rangle A\llbracket X \rrbracket + \ffa \llbracket X \rrbracket \supseteq \langle X \rangle A\llbracket X \rrbracket + \langle \ffa \rangle A\llbracket X \rrbracket = \langle X,\ffa \rangle A\llbracket X \rrbracket.\] 
-            So $\langle X,\ffa \rangle A\llbracket X \rrbracket = \langle X \rangle A \llbracket X \rrbracket + \langle \ffa \rangle A\llbracket X \rrbracket = \langle X \rangle A\llbracket X \rrbracket + \ffa \llbracket X \rrbracket = I = \ker(\tau \circ \pi)$. By the 1IT, $\frac{A\llbracket X \rrbracket}{\langle X,\ffa \rangle A \llbracket X \rrbracket} \cong \frac{A}{\ffa}$. 
+            So $\langle X,\ffa \rangle A\llbracket X \rrbracket = \langle X \rangle A \llbracket X \rrbracket + \langle \ffa \rangle A\llbracket X \rrbracket = \langle X \rangle A\llbracket X \rrbracket + \ffa \llbracket X \rrbracket = I = \ker(\tau \circ \pi)$. By the first isomorphism theorem, $\frac{A\llbracket X \rrbracket}{\langle X,\ffa \rangle A \llbracket X \rrbracket} \cong \frac{A}{\ffa}$. 
         \item 
-            Since $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$, $0 = f^n = a_0^n + \cdots $ for some $n \geq 1$. So $a_0$ is nilpotent. Since $f,a_0 \in \operatorname{Nil}(A \llbracket X \rrbracket)$, $\sum_{i=1}^\infty a_iX^i = f-a_0 \in \operatorname{Nil}(A \llbracket X \rrbracket)$. Similarly, we have $a_1$ is nilpotent. By induction, $a_i \in \operatorname{Nil}(A)$ for each $i \in \bbZ^+$. So $\operatorname{Nil}(A\llbracket X \rrbracket) \subseteq \operatorname{Nil}(A)\llbracket X \rrbracket$. Also, since $\operatorname{Nil}(A) \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A \llbracket X \rrbracket$, we have $\operatorname{Nil}(A) = \operatorname{Nil}(\operatorname{Nil}(A)) \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A\llbracket X \rrbracket$ and then $\operatorname{Nil}(A) \cdot A\llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket)$. Hence $\operatorname{Nil}(A) \cdot A\llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \subseteq \operatorname{Nil}(A)\llbracket X \rrbracket$. \\
-            Assume $a_i \in \operatorname{Nil}(A)$ for each $i \in \bbZ^+$ and $\langle a_0,a_1,\cdots \rangle$ is finitely generated. Then $\langle a_0,a_1,\cdots \rangle = \langle a_0,a_1,\cdots,a_t \rangle$ for some $t \geq 1$. So $f = \sum_{i=0}^\infty a_iX^i = \sum_{j=0}^t a_jf_j$, where $f_j \in \operatorname{Nil}(A) \cdot A \llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A\llbracket X \rrbracket$ for each $j = 0,\cdots,t$. Thus, $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$. \qedhere
+            Since $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$, $0 = f^n = a_0^n + \cdots $ for some $n \geq 1$. So $a_0$ is nilpotent. Since $f,a_0 \in \operatorname{Nil}(A \llbracket X \rrbracket)$, $\sum_{i=1}^\infty a_iX^i = f-a_0 \in \operatorname{Nil}(A \llbracket X \rrbracket)$. Similarly, we have $a_1$ is nilpotent. By induction, $a_i \in \operatorname{Nil}(A)$ for each $i \geq 0$. So $\operatorname{Nil}(A\llbracket X \rrbracket) \subseteq \operatorname{Nil}(A)\llbracket X \rrbracket$. Also, since $\operatorname{Nil}(A) \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A \llbracket X \rrbracket$, we have $\operatorname{Nil}(A) = \operatorname{Nil}(\operatorname{Nil}(A)) \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A\llbracket X \rrbracket$ and then $\operatorname{Nil}(A) \cdot A\llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket)$. Hence $\operatorname{Nil}(A) \cdot A\llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \subseteq \operatorname{Nil}(A)\llbracket X \rrbracket$. \\
+            Assume $a_i \in \operatorname{Nil}(A)$ for each $i \geq 0$ and $\langle a_0,a_1,\cdots \rangle$ is finitely generated. Then $\langle a_0,a_1,\cdots \rangle = \langle a_0,a_1,\cdots,a_t \rangle$ for some $t \geq 1$. So $f = \sum_{i=0}^\infty a_iX^i = \sum_{j=0}^t a_jf_j$, where $f_j \in \operatorname{Nil}(A) \cdot A \llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A\llbracket X \rrbracket$ for each $j = 0,\cdots,t$. Thus, $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$. 
+        \item  ``$\Rightarrow$''. Assume $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$. Then $(1-a_0a) + a_1ax + a_2ax^2 + \cdots = 1-fa \in A\llbracket X \rrbracket^\times$ for any $g \in A\llbracket X \rrbracket$. So $1-a_0a \in A\llbracket X \rrbracket^\times$ for any $a \in A$. Hence $a_0 \in \operatorname{Jac}(A)$. \\
+            ``$\Leftarrow$''. If $a_0 \in \operatorname{Jac}(A)$, then $1-a_0a \in A^\times$ for any $a \in A$. Let $g \in A\llbracket X \rrbracket$ with $g = \sum_{i=0}^\infty b_iX^i$. To show $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$. Need to show $1-fg$... $1-fg = 1-(\sum_{i=0}^\infty a_iX^i)(1-\sum_{i=0}^\infty b_iX^i) = \smallunderbrace{(1-a_0b_0)}_{\in A^\times} + \cdots$. $\operatorname{Jac}(A\llbracket X \rrbracket) = \{f \in \sum_{i=0}^\infty \mid a_0 \in \operatorname{Jac}(A)\} = \langle \operatorname{Jac}(A),X \rangle A \llbracket X \rrbracket$ by (d). 
+        \item 
+            Let $\operatorname{ord}(f) := \inf\{i \geq 0 \mid a_i \neq 0\}$. Then $\operatorname{ord}(fg) \geq \operatorname{ord}(f) + \operatorname{ord}(g)$ with equality if e.g., $A$ is an integral domain. \\
+            ``$\Leftarrow$''. \\
+            ``$\Rightarrow$''. subring not zero, so integral domain.
+        \item 
+            $\ffa \leq A$ is prime if and only if $A/\ffa$ is an integral domain if and only if $\frac{A}{\ffa}\llbracket X \rrbracket$ is an integral domain if and only if $A\llbracket X \rrbracket/\ffa \llbracket X \rrbracket$ is an integral domain by (c) if and only if $\ffa\llbracket X \rrbracket \leq A \llbracket X \rrbracket$ is prime. Similarly, $\ffa$ is prime in $A$ if and only if $\langle \ffa,X \rangle A\llbracket X \rrbracket$ is prime in $A\llbracket X \rrbracket$ by (d). ... 
+        \item Since $X \in \operatorname{Jac}(A\llbracket X \rrbracket)$ by (f), we have $X \in \ffm$ for any $\ffm \in \operatorname{m-Spec}(A\llbracket X \rrbracket)$. Prime correspondence under quotients.
+            \begin{enumerate}
+                \item 
+                \item 
+                \item Since $\langle \ffn,X \rangle \subseteq \ffm$, we have $\langle \ffn,X \rangle \subseteq \ffm$. Note by (i) and (1), $\langle \ffn,X \rangle \leq A \llbracket X \rrbracket$ are maximal. Also, since $\ffm \leq A\llbracket X \rrbracket$ is maximal, $\langle \ffn,X \rangle = \ffm$. \qedhere
+            \end{enumerate} 
+        \qedhere
     \end{enumerate}
 \end{proof}
 
-\section{Exercises}
+\begin{example}
+    \begin{enumerate}
+        \item [(c)] Since $\ffa \leq A$, we have $\ffa \llbracket X \rrbracket \supseteq \langle \ffa \rangle A \llbracket X \rrbracket$ with equality if $\ffa$ is finitely generated.... \\
+            Claim.  $f \not \in \langle a \rangle A\llbracket X \rrbracket = \langle y_1,y_2,\cdots \rangle A\llbracket X \rrbracket$. Suppose $f \in \langle y_1,y_2,\cdots \rangle A\llbracket X \rrbracket$. Then there exists $m \geq 1$ and $\sum_{j=0}^\infty b_{ij}X^j = g_i \in A\llbracket X \rrbracket$ for $i = 1,\cdots,m$ such that $\sum_{j=1}^\infty Y_jX^j = f = \sum_{i=1}^m g_iY_i = \sum_{i=1}^m (\sum_{j=0}^\infty b_{ij}X^j)Y_i = \sum_{j=0}^\infty (\sum_{i=1}^\infty b_{ij}Y_i)X^j$. For any $j$.....
+        \item [(e)]
+            ....\\
+            Claim. $f \not \in \operatorname{Nil}(A\llbracket X \rrbracket)$. $f^2 = \overbar Y_1^2 = \smallunderbrace{X^2}_{\neq 0} + \smallunderbrace{(2\overbar Y_1 \overbar Y_2)X^3}_{\neq 0} + \cdots$.
+    \end{enumerate}
+\end{example}
+
+
+
+
+
+
+
+
+
+
+
+\begin{comment}
+
+\section*{Exercises}
 
 Let $R_1,R_2,\cdots$ be commutative ring with identity$\neq 0$.
 
 \begin{exer}
     The product $R_1 \times R_2$ is a commutative ring with identity$\neq 0$ where the operations and identities are defined component-wise: $(a_1,a_2) + (b_1,b_2) = (a_1+b_1,a_2+b_2)$ and $(a_1,a_2)(b_1,b_2) = (a_1b_1,a_2b_2)$ with $0_{R_1 \times R_2} = (0_{R_1},0_{R_2})$ and $1_{R_1 \times R_2} = (1_{R_1},1_{R_2})$. 
     \begin{enumerate}
-        \item Prove that if $\ffa_1 \leq R_1$ and $\ffa_2 \leq R_2$, then use the 1IT to show that $\ffa_1 \times \ffa_2 \leq R_1 \times R_2$ and $(R_1 \times R_2)/(\ffa_1 \times \ffa_2) \cong (R_1/\ffa_1) \times (R_2/\ffa_2)$.
+        \item Prove that if $\ffa_1 \leq R_1$ and $\ffa_2 \leq R_2$, then use the first isomorphism theorem to show that $\ffa_1 \times \ffa_2 \leq R_1 \times R_2$ and $(R_1 \times R_2)/(\ffa_1 \times \ffa_2) \cong (R_1/\ffa_1) \times (R_2/\ffa_2)$.
         \item Prove that $R_1 \times R_2$ is not an integral domain. Conclude that if $\ffa_1 \lneq R_1$ and $\ffa_2 \lneq R_2$, then $(R_1/\ffa_1) \times (R_2/\ffa_2)$ is not an integral domain. 
         \item Prove that $\{\ffa \leq R_1 \times R_2\} = \{\ffa_1 \times \ffa_2 \mid \ffa_1 \leq R_1,\ \ffa_2 \leq R_2\}$.
         \item Prove that $\operatorname{Spec}(R_1 \times R_2)$ is the disjoint union of the sets $\{\ffp_1 \times R_2 \mid \ffp_1 \in \operatorname{Spec}(R_1)\}$ and $\{R_2 \times \ffp_2 \mid \ffp_2 \in \operatorname{Spec}(R_2)\}$.
@@ -899,12 +932,12 @@ Let $R_1,R_2,\cdots$ be commutative ring with identity$\neq 0$.
 
 \begin{proof}
     \begin{enumerate}
-        \item Define $\phi: R_1 \times R_2 \to (R_1/\ffa_1) \times (R_2/\ffa_2)$ by $\phi(r_1,r_2) = (r_1+\ffa_1,r_2+\ffa_2)$. Let $(r_1,r_2),(s_1,s_2) \in R_1 \times R_2$. Then $\phi((r_1,r_2)+(s_1,s_2)) = \phi(r_1+s_1,r_2+s_2) = (r_1+s_1+\ffa_1,r_2+s_2+\ffa_2) = (r_1+\ffa_1,r_2+\ffa_2) + (s_1+\ffa_1,s_2+\ffa_2) = \phi(r_1,r_2) + \phi(s_1,s_2)$ and it is similar for the multiplication. So $\phi$ is a ring homomorphism. Note $(r_1,r_2) \in \ker(\varphi)$ if and only if $\phi(r_1,r_2) = 0$ if and only if $(r_1+\ffa,r_2+\ffa) = (\ffa_1,\ffa_2)$ if and only if $r_1 \in \ffa_1$ and $r_2 \in \ffa_2$. So $\ker(\varphi) = \ffa_1 \times \ffa_2$. Then our result follows from the 1IT.
+        \item Define $\phi: R_1 \times R_2 \to (R_1/\ffa_1) \times (R_2/\ffa_2)$ by $\phi(r_1,r_2) = (r_1+\ffa_1,r_2+\ffa_2)$. Let $(r_1,r_2),(s_1,s_2) \in R_1 \times R_2$. Then $\phi((r_1,r_2)+(s_1,s_2)) = \phi(r_1+s_1,r_2+s_2) = (r_1+s_1+\ffa_1,r_2+s_2+\ffa_2) = (r_1+\ffa_1,r_2+\ffa_2) + (s_1+\ffa_1,s_2+\ffa_2) = \phi(r_1,r_2) + \phi(s_1,s_2)$ and it is similar for the multiplication. So $\phi$ is a ring homomorphism. Note $(r_1,r_2) \in \ker(\varphi)$ if and only if $\phi(r_1,r_2) = 0$ if and only if $(r_1+\ffa,r_2+\ffa) = (\ffa_1,\ffa_2)$ if and only if $r_1 \in \ffa_1$ and $r_2 \in \ffa_2$. So $\ker(\varphi) = \ffa_1 \times \ffa_2$. Then our result follows from the first isomorphism theorem.
         \item Let $(0_{R_1},1_{R_2}),(1_{R_1},0_{R_2}) \in R_1 \times R_2$. Since $R_1 \neq 0 \neq R_2$, $(0_{R_1},1_{R_2}) \neq (0_{R_1},0_{R_2}) \neq  (1_{R_1},0_{R_2})$, but $(0_{R_1},1_{R_2}) \times (1_{R_1},0_{R_2}) = (0_{R_1},0_{R_2}) = 0_{R_1 \times R_2}$. So $R_1 \times R_2$ is not an integral domain. \\
             Since $\ffa_1 \lneq R_2$ and $\ffa_2 \lneq R_2$, $\ffa_1 \times \ffa_2 \lneq R_1 \times R_2$ . Suppose $(R_1 \times \ffa_1) \times (R_2/\ffa_2)$ is an integral domain. Then by (a), $(R_1 \times R_2)/(\ffa_1 \times \ffa_2)$ is an integral domain. Also, since $(R_1 \times R_2)/(\ffa_1 \times \ffa_2) \neq 0$, we have $R_1 \times R_2$ is an integral domain, a contradiction.
         \item ``$\supseteq$''. Follow from (a). ``$\subseteq$''. Let $\ffa = I \times J \leq R_1 \times R_2$, where $I \subseteq R_1$ and $J \subseteq R_2$. Then $(r_1i,r_2j) = (r_1,r_2)(i,j) \in I \times J$ for any $(r_1,r_2) \in R_1 \times R_2$ and $(i,j) \in I \times J$, i.e., for any $r_1 \in R_1,r_2 \in R_2,i \in I,j \in J$, we have $r_1i \in I$ and $r_2j \in J$. So $I \leq R_1$ and $J \leq R_2$.
         \item Let $\ffp_1 \in \operatorname{Spec}(R_1)$. Then by (a), $(R_1 \times R_2)/(\ffp_1 \times R_2) \cong R_1/\ffp_1 \times R_2/R_2 \cong R_1/\ffp_1$. So $\ffp_1 \times R_2 \in \operatorname{Spec}(R_1 \times R_2)$. Similarly, if $\ffp_2 \in \operatorname{Spec}(R_2)$, then $R_1 \times \ffp_2 \in \operatorname{Spec}(R_1 \times R_2)$. \\
-            On the other hand, let $I \times J \leq \operatorname{Spec}(R_1 \times R_2)$. Then by (c), $I \leq R_1$ and $J \leq R_2$. Suppose $I \lneq R_1$ and $J \lneq R_2$. Then by (b), $R_1/I \times R_2/I \cong (R_1 \times R_2)/(I \times J)$ is not an integral domain. So $I \times J \not \in \operatorname{Spec}(R_1 \times R_2)$. Hence $I = R_1$ or $J = R_2$. When $I = R_1$, we have $(R_1 \times R_2)/(I \times J) \cong R_2/J$, since $I \times J \in \operatorname{Spec}(R_1 \times R_2)$, $J \in \operatorname{Spec}(R_2)$. Similarly, when $J = R_2$, we have $I \in \operatorname{Spec}(R_1)$. Besides, we know prime ideal of a ring are always proper, so it is the disjoint union.
+            On the other hand, let $I \times J \leq \operatorname{Spec}(R_1 \times R_2)$. Then by (c), $I \leq R_1$ and $J \leq R_2$. Suppose $I \lneq R_1$ and $J \lneq R_2$. Then by (b), $R_1/I \times R_2/I \cong (R_1 \times R_2)/(I \times J)$ is not an integral domain. So $I \times J \not \in \operatorname{Spec}(R_1 \times R_2)$. Hence $I = R_1$ or $J = R_2$. When $I = R_1$, we have $(R_1 \times R_2)/(I \times J) \cong R_2/J$, since $I \times J \in \operatorname{Spec}(R_1 \times R_2)$, $J \in \operatorname{Spec}(R_2)$. Similarly, when $J = R_2$, we have $I \in \operatorname{Spec}(R_1)$. Besides, we know prime ideal of a ring is always proper, so it is the disjoint union.
         \item $\operatorname{Jac}(R_1 \times R_2)$ is the disjoint union of the sets $\{\ffm_1 \times R_2 \mid \ffm_1 \in \operatorname{Jac}(R_1)\}$ and $\{R_2 \times \ffm_2 \mid \ffm_2 \in \operatorname{Jac}(R_2)\}$. \\
         Let $\ffm_1 \in \operatorname{Jac}(R_1)$. Then by (a), $(R_1 \times R_2)/(\ffm_1 \times R_2) \cong R_1/\ffm_1 \times R_2/R_2 \cong R_1/\ffm_1$. So $\ffm_1 \times R_2 \in \operatorname{Jac}(R_1 \times R_2)$. Similarly, if $\ffm_2 \in \operatorname{Jac}(R_2)$, then $R_1 \times \ffm_2 \in \operatorname{Jac}(R_1 \times R_2)$. \\
             On the other hand, let $I \times J \leq \operatorname{Jac}(R_1 \times R_2)$. Then by (c), $I \leq R_1$ and $J \leq R_2$. Suppose $I \lneq R_1$ and $J \lneq R_2$. Then by (b), $R_1/I \times R_2/I \cong (R_1 \times R_2)/(I \times J)$ is not an integral domain. So $I \times J \not \in \operatorname{Jac}(R_1 \times R_2)$. Hence $I = R_1$ or $J = R_2$. When $I = R_1$, we have $(R_1 \times R_2)/(I \times J) \cong R_2/J$, since $I \times J \in \operatorname{Jac}(R_1 \times R_2)$, $J \in \operatorname{Jac}(R_2)$. Similarly, when $J = R_2$, we have $I \in \operatorname{Jac}(R_1)$. Besides, we know maimal ideal of a ring are always proper, so it is the disjoint union. \\
@@ -933,5 +966,5 @@ Let $R_1,R_2,\cdots$ be commutative ring with identity$\neq 0$.
             Suppose $\bigoplus_{i=1}^\infty R_i \subseteq R_1 \times \cdots \times R_{n-1} \times \ffm_n \times R_{n+1} \times \cdots$ for some $n \geq 1$ and $\ffm_n \in \operatorname{Jac}(R_n)$. Consider $(1,\cdots,\mathpunct{\underset{\mathclap{\substack{\ n^{\text{th}} \\ \textstyle }}}{1}},0,0,\cdots) \in \bigoplus_{i=1}^\infty R_i$. Since $1 \not \in \ffm$, $(1,\cdots,\mathpunct{\underset{\mathclap{\substack{\ n^{\text{th}} \\ \textstyle }}}{1}},0,0,\cdots) \not \in R_1 \times \cdots \times R_{n-1} \times \ffm_n \times R_{n+1} \times \cdots$, a contradiction. \qedhere
     \end{enumerate}
 \end{proof}
-
+\end{comment}
 
