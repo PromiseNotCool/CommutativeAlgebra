@@ -1,0 +1,128 @@
+\chapter{Zariski Topology}
+
+\begin{definition}
+    For any $\epsilon > 0$ and any $x \in \bbR^n$, the \emph{open ball} centered at $x$ with radius $\epsilon$ is $B_\epsilon(x) = \{y \in \bbR^n \mathrel{\big |} \abs{x-y} < \epsilon\}$. \par 
+    A subset $U \subseteq \bbR^n$ is \emph{open} if for any $x \in U$, there exists $\epsilon > 0$ such that $B_\epsilon(x) \subseteq U$, i.e., if $U$ is the union of (possible infinitely many) open balls. e.g., if $n = 1$, $B_\epsilon(x) = (x-\epsilon,x+\epsilon)$, open interval. \par 
+    More generally, this works for any metric space.
+\end{definition}
+
+\begin{fact}
+    $\bbR^n$ and $\emptyset$ are both open. \par 
+    The set of open sets in $\bbR^n$ is closed under arbitrary union and finite intersection, i.e., if $U_x$ open for any $\lambda \in \Lambda$, then $\bigcup_{\lambda \in \Lambda} U_\lambda$ is open and if $U_i$ open for any $i = 1,\cdots,d$, then $\bigcap_{i=1}^d U_i$ is open. \par 
+    The set of open sets in $\bbR^n$ is (usually) not closed under infinite intersections: $\bigcap_{i=1}^\infty (-1/i,1/i) = \{0\}$, not open in $\bbR^n$. 
+\end{fact}
+
+\begin{definition}
+    A\emph{topology} on a non-empty set $X$ is a collection of sets $\ssT$ of subsets of $X$ ($\ssT \subseteq \llP(X)$) such that
+    \begin{enumerate}
+        \item $\emptyset, X \in \ssT$,
+        \item for any $U_\lambda \in \ssT$, $\bigcup_{\lambda \in \Lambda} U_\lambda \in \ssT$ and
+        \item for any $U_1,\cdots,U_n \in \ssT$, $\bigcap_{i=1}^n U_\lambda \in \ssT$.
+    \end{enumerate}
+    The elements of $\ssT$ are the \emph{open subsets} of $X$. \par
+    A \emph{topological space} is a set $X \neq \emptyset$ equipped with a topology $\ssT$.
+\end{definition}
+
+\begin{example}
+    The \emph{Euclidean topology} on $\bbR^n$ is the topology on $\bbR^n$ from definition 2.1. More generally, this is the metric space topology.
+\end{example}
+
+\begin{definition}
+    The \emph{Zariski topology} on $\operatorname{Spec}(R) = X$ ($R \neq 0$). The open sets are $\operatorname{Spec}(R) \setminus \operatorname{V}(S) = \{\ffp \in \operatorname{Spec}(R) \mid \ffp \not \supseteq S\}$ for $S \subseteq R$. e.g., for any $f \in R$: $X_f = \operatorname{Spec}(R) \setminus \operatorname{V}(f) = \{\ffp \in \operatorname{Spec}(R) \mid \ffp \not \ni f\}$.
+\end{definition}
+
+\begin{proposition}
+\end{proposition}
+
+\begin{example}
+
+\end{example}
+
+\begin{fact}
+    Let $X = \operatorname{Spec}(R)$. $X_0 = X \setminus \operatorname{V}(0) = \emptyset$, $X_1 = X \setminus \operatorname{V}(1) = X$.
+\end{fact}
+
+\begin{proposition}
+    In $X = \operatorname{Spec}(R)$, if $f_1,\cdots,f_n \in R$, then $X_{f_1} \cap \cdots \cap X_{f_n} = X_{f_1 \cdots f_n}$.
+\end{proposition}
+
+\begin{proof}
+    $\ffp \in X_{f_1 \cdots f_n}$ if and only if $f_1 \cdots f_n \not \in \ffp$ if and only if $f_i \not \in \ffp$ for any $i = 1,\cdots,n$ if and only if $\ffp \in \bigcap_{i=1}^n X_{f_i}$.
+\end{proof}
+
+\begin{definition}
+    If $X$ is a topological space, then a subset $Y \subseteq X$ is \emph{closed} if $X \setminus Y$ open, i.e., if and only if $Y = X \setminus U$ for some open subset $U \subseteq X$.
+\end{definition}
+
+\begin{example}
+
+\end{example}
+
+\begin{proposition}
+    Let $X \neq \emptyset$ and let $\ssY \subseteq \llP(X)$ and set $\ssV = \{X \setminus Y \mid Y \in \ssY\}$. Then $\ssY$ is a topology on $X$ if and if only $\ssV$ satisfies the following
+    \begin{enumerate}
+        \item $X_1,\emptyset \in V$,
+        \item closed under arbitrary intersections, i.e., if $V_\lambda \in \ssV$ for any $\lambda \in \Lambda$, then $\bigcap_{\lambda \in \Lambda} V_\lambda \in \ssV$,
+        \item closed under fintie union, i.e., if $V_i \in \ssV$ for any $i = 1,\cdots,n$, then $\bigcup_{i=1}^n V_i \in \ssV$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}
+        \item 
+        \item 
+        \item 
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}
+    The Zariski topology on $\operatorname{Spec}(R) = X$ is a topology.
+\end{theorem}
+
+\begin{definition}
+    A \emph{basis} for the topology $\ssT$ on a topological space $X$ is a subset $\llB \subseteq \ssT$ such that for any open set $U \subseteq X$ and any $u \in U$, there exists $B \subseteq \llB$ such that $u \in B \subseteq U$.
+\end{definition}
+
+\begin{example}
+    In the Euclidean topology, $\llB = \{B_\epsilon(x) \mid x \in \bbR^n, \epsilon > 0\}$ is a basis.
+\end{example}
+
+\begin{theorem}
+    In $X = \operatorname{Spec}(R)$, $\llB = \{X_f \mid f \in R\}$ is a basis for the Zariski topology.
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{proposition}
+    If $R$ is noetherian, then for any open set $U \subseteq X = \operatorname{Spec}(R)$, there exists $s_1,\cdots,s_n \in R$ such that $U = X_{s_1} \cup \cdots \cup X_{s_n}$, i.e., open sets are the finite union of the basic open sets.
+\end{proposition}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{definition}
+    A topological space $X$ is quasi-compact if ``every open cover of $X$ has a finite sub-cover'', i.e., for any $\{U_\lambda\} \subseteq \ssT$, if $X = \bigcup_{\lambda \in \Lambda} U_\lambda$, then there exist $\lambda_1,\cdots,\lambda_n$ such that $X = \bigcup_{i=1}^n U_{\lambda_i}$.
+\end{definition}
+
+\begin{theorem}
+    $\operatorname{Spec}(R)$ is quasi-compact.
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
+
+Q: What do the $X_f$ look like? A: $\operatorname{Spec}(R)$.
+
+\begin{proposition}
+    Let $\varphi: R \to R_f$ be the natural map.
+    \begin{align*}
+        \varphi: \operatorname{Sepc}(R) &\to \operatorname{Spec}(R) \\
+        \ffp &\mapsto \ffp.
+    \end{align*}
+\end{proposition}
+
+

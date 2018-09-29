@@ -213,10 +213,10 @@ Let $R$ be a commutative ring with identity.
 \end{proposition}
 
 \begin{proof}
-    ``(i)$\Rightarrow$(ii)''. Assume $(R,\ffm)$ is local. \par
+    ``(a)$\Rightarrow$(b)''. Assume $(R,\ffm)$ is local. \par
     Claim. $\ffm = R \setminus R^\times$. It suffices to show $R \setminus \ffm = R^\times$. ``$\supseteq$''. Let $u \in R^\times$. Then $\langle u \rangle = R$ and so $u \not \in \ffm \lneq R$, i.e., $u \in R \setminus \ffm$. Hence $R^\times \subseteq R \setminus \ffm$. ``$\subseteq$''. Let $x \in R \setminus R^\times$. Then $\langle x \rangle \lneq R$. Since $\ffm$ is the unique maximal ideal in $R$, $\langle x \rangle \subseteq \ffm$, i.e., $x \in \ffm$. Thus, $R \setminus R^\times \subseteq \ffm$, i.e., $R \setminus \ffm \subseteq R^\times$. \\
-    ``(ii)$\Rightarrow$(iii)''. Assume $R \setminus R^\times \lneq R$. Set $\ffa = R \setminus R^\times$. Then $R \setminus \ffa = R^\times$. \\
-    ``(iii)$\Rightarrow$(i)''. Let $\ffa \lneq R$ such that $R \setminus \ffa \subseteq R^\times $. \par
+    ``(b)$\Rightarrow$(c)''. Assume $R \setminus R^\times \lneq R$. Set $\ffa = R \setminus R^\times$. Then $R \setminus \ffa = R^\times$. \\
+    ``(c)$\Rightarrow$(a)''. Let $\ffa \lneq R$ such that $R \setminus \ffa \subseteq R^\times $. \par
     Claim. $\ffa = R \setminus R^\times$. Clearly $\ffa \supseteq R \setminus R^\times$. On the other hand, let $a \in \ffa \lneq R$, then $a \not \in R^\times$ since $\ffa \lneq R$, so $a \in R \setminus R^\times$ and hence $\ffa \subseteq R \setminus R^\times$. Thus, $\ffa = R \setminus R^\times$. \par
     Let $\ffn \lneq R$ be maximal and $y \in \ffn$. Then $y \not \in R^\times$. So $y \in R \setminus R^\times = \ffa$. Thus, $\ffn \subseteq \ffa \lneq R$. Since $\ffn$ is maximal, $\ffn = \ffa$. Thus, $\ffa$ is the unique maximal ideal in $R$ and so $R$ is local.
 \end{proof}
@@ -718,18 +718,20 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 
 \begin{example}
     \begin{enumerate}
-        \item[(b)] Example of $\ffa \not \subseteq \ffa \ffb$ when $\operatorname{rad}(\ffa) \subseteq \operatorname{rad}(\ffb)$. Let $R = \bbZ$. Then $\langle 2 \rangle = \operatorname{rad}(\langle 2 \rangle) = \operatorname{rad}(\langle 4 \rangle) = \langle 2 \rangle$, but $\langle 2 \rangle \not \subseteq \langle 4 \rangle$.
+        \item[(b)] Example of $\ffa \not \subseteq \ffb$ when $\operatorname{rad}(\ffa) \subseteq \operatorname{rad}(\ffb)$. Let $R = \bbZ$. Then $\operatorname{rad}(\langle 2 \rangle) = \langle 2 \rangle = \operatorname{rad}(\langle 4 \rangle)$, but $\langle 2 \rangle \not \subseteq \langle 4 \rangle$.
         \item[(c)]
             Example of $\ffa \subsetneq \operatorname{rad}(\ffa)$. Let $R = \bbZ$. Then $\langle 4 \rangle \subsetneq \langle 2 \rangle = \operatorname{rad}(\langle 4 \rangle)$.
-        \item[(d)] Example of $\operatorname{rad}(\bigcap_{i=1}^\infty \ffa_i) \neq \bigcap_{i=1}^\infty \operatorname{rad}(\ffa_i)$. Let $R = k[X_1,X_2,\cdots]$ and $\ffa_1 = \langle X_1 \rangle$, $\ffa_2 = \langle X_1^2,X_2^2 \rangle$, $\cdots$, $\ffa_n = \langle X_1^n,\cdots,X_n^n \rangle$, $\cdots$. Then $\bigcap_{i=1}^\infty \ffa_i = 0$ and so $\operatorname{rad}(\bigcap_{i=1}^\infty \ffa_i) = \operatorname{rad}(0) = 0$. But since $\langle X_i \rangle, \langle X_1,\cdots,X_i \rangle \in \operatorname{Spec}(\ffa)$ for each $i \geq 1$, by (g), we have $\bigcap_{i=1}^\infty \operatorname{rad}(\ffa_i) = \bigcap_{i=1}^\infty \operatorname{rad}(\langle X_1,\cdots,X_i \rangle) = \bigcap_{i=1}^\infty \langle X_1,\cdots,X_i \rangle = \langle X_1 \rangle \neq 0$. 
+        \item[(d)] Example of $\operatorname{rad}(\bigcap_{i=1}^\infty \ffa_i) \subsetneq \bigcap_{i=1}^\infty \operatorname{rad}(\ffa_i)$. Let $R = k[X_1,X_2,\cdots]$, $\ffa_1 = \langle X_1 \rangle$, $\ffa_2 = \langle X_1^2,X_2^2 \rangle$, $\cdots$, $\ffa_i = \langle X_1^i,\cdots,X_i^i \rangle$, $\cdots$. Since $\langle X_1,\cdots,X_i \rangle \in \operatorname{Spec}(R)$ for each $i \geq 1$, by (f) and (g), we have $\operatorname{rad}(\ffa_i) = \operatorname{rad}(\langle X_1^i,\cdots,X_i^i \rangle) = \operatorname{rad}(\langle X_1,\cdots,X_i \rangle) = \langle X_1,\cdots,X_i \rangle$ for each $i \geq 1$. So $\bigcap_{i=1}^\infty \operatorname{rad}(\ffa_i) = \bigcap_{i=1}^\infty \langle X_1,\cdots,X_i \rangle = \langle X_1 \rangle \supsetneq 0 = \operatorname{rad}(0) = \operatorname{rad}(\bigcap_{i=1}^\infty \ffa_i)$. 
         \item[(f)] Example of $\operatorname{rad}(\ffa + \ffb) \supsetneq \operatorname{rad}(\ffa) + \operatorname{rad}(\ffb)$. Let $R = k[X,Y]$, $\ffa = \langle X+Y^2 \rangle$ and $\ffb = \langle X \rangle$. Then $\ffa,\ffb \in \operatorname{Spec}(R)$. Also, since $\langle X,Y \rangle \in \operatorname{Spec}(R)$, $\operatorname{rad}(\ffa) + \operatorname{rad}(\ffb) = \ffa + \ffb = \langle X+Y^2,X \rangle = \langle X,Y^2 \rangle \subsetneq \langle X,Y \rangle = \operatorname{rad}(\langle X,Y^2 \rangle) = \operatorname{rad}(\ffa + \ffb)$.
     \end{enumerate}
 \end{example}
 
 \begin{example}
     \begin{enumerate}
-        \item Let $R = \bbF_2[X,Y]$, $\ffa = \langle X,Y \rangle$, $\ffb_1 = \langle X,X^2,XY,Y^2 \rangle$, $\ffb_2 = \langle X+Y,X^2,XY,Y^2 \rangle$, and $\ffb_3 = \langle Y,X^2,XY,Y^2 \rangle$. Then $\ffa = \ffb_1 \cup \ffb_2 \cup \ffb_3$, but $\ffb_i \subsetneq \ffa$ for each $i = 1,2,3$.
-        \item $\frac{\bbF_2[X,Y]}{\langle X^2,XY,Y^2 \rangle} \geq \langle \overbar X, \overbar Y \rangle \cong \bbF_2^2$. Let $\ffb_1 = \langle \overbar X, \overbar Y \rangle$, $\ffb_2 = \langle \overbar X + \overbar Y \rangle$ and $\ffb_3 = \langle Y \rangle$. Then $\langle \overbar X,\overbar Y \rangle = \ffb_1 \cup \ffb_2 \cup \ffb_2$ with $\ffb_i \subsetneq \langle \overbar X,\overbar Y \rangle$ for any $i = 1,2,3$.
+        \item Let $R = \bbF_2[X,Y]$, $\ffa = \langle X,Y \rangle$, $\ffb_1 = \langle X,XY,Y^2 \rangle = \langle X,X^2,XY,Y^2 \rangle$, $\ffb_2 = \langle X+Y,X^2,Y^2 \rangle = \langle X+Y,X^2,XY,Y^2 \rangle$ and $\ffb_3 = \langle Y,X^2,XY \rangle = \langle Y,X^2,XY,Y^2 \rangle$. Then $\ffa \not \subseteq \ffb_i$ for any $i = 1,2,3$. Let $f \in \ffa$. Then $f$ can be written as 
+            \[f = X g(Y) + Y h(Y) = X^2 \cdot \frac{g(Y)-g(0)}{X} + (Xg(0)+Y \cdot h(0)) + Y^2 \cdot \frac{h(Y)-h(0)}{Y} \]
+            for some $g(Y),h(Y) \in \bbF_2[Y]$. Since $g(0), h(0) \in \{0,1\}$, $f \in \ffb_1 \cup \ffb_2 \cup \ffb_3$. So $\ffa = \ffb_1 \cup \ffb_2 \cup \ffb_3$.
+        \item $\frac{\bbF_2[X,Y]}{\langle X^2,XY,Y^2 \rangle} \geq \langle \overbar X, \overbar Y \rangle \cong \bbF_2^2$. Let $\ffa = \langle \overbar X,\overbar Y \rangle$, $\ffb_1 = \langle \overbar X \rangle$, $\ffb_2 = \langle \overbar X + \overbar Y \rangle$ and $\ffb_3 = \langle \overbar Y \rangle$. Then $\ffa \not \subseteq \ffb_i$ for any $i = 1,2,3$, but $\ffa = \ffb_1 \cup \ffb_2 \cup \ffb_2$.
     \end{enumerate}
 \end{example}
 
@@ -815,7 +817,7 @@ Let $A$ be a commutative ring with identity.
 \end{definition}
 
 \begin{example}
-    $e^x = \sum_{i=0}^\infty \frac{1}{i!} x^i \in \bbR \llbracket X \rrbracket$.
+    $e^X = \sum_{i=0}^\infty \frac{1}{i!} X^i \in \bbR \llbracket X \rrbracket$.
 \end{example}
 
 \begin{theorem}
@@ -968,4 +970,6 @@ Let $R_1,R_2,\cdots$ be commutative ring with identity$\neq 0$.
     \end{enumerate}
 \end{proof}
 \end{comment}
+
+
 
