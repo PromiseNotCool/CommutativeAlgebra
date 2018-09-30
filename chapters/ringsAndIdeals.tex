@@ -284,7 +284,7 @@ Let $R$ be a commutative ring with identity.
 \end{fact}
 
 \begin{proposition}
-    $\ffJ(R) = \{x \in R \mid 1-xy \in R^\times, \fa y \in Y\}$.
+    $\ffJ(R) = \{x \in R \mid 1-xy \in R^\times, \fa y \in R\}$.
 \end{proposition}
 
 \begin{proof}
@@ -830,7 +830,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 \section*{Power Series Rings}
 \addcontentsline{toc}{section}{Power Series Rings}
 
-Let $A$ be a commutative ring with identity.
+Let $A$ be a commutative ring with identity$\neq 0$.
 
 \begin{definition}
     \[A \llbracket X \rrbracket = \{f = \sum_{i=0}^\infty a_iX^i \mid a_i \in A, \fa i \geq 0\} \cong \prod_{i=0}^\infty A\] 
@@ -848,31 +848,37 @@ Let $A$ be a commutative ring with identity.
 \begin{proposition}
     Let $f = \sum_{i=0}^\infty a_iX^i$.
     \begin{enumerate}
-        \item $f \in A \llbracket X \rrbracket^\times$ if and only if $a_0 \in A^\times$. 
+        \item $f \in A \llbracket X \rrbracket^\times$ if and only if $a_0 \in A^\times$.
         \item If $\varphi: A \to B$ is a ring homomorphism, then there exists a well-defined ring homomorphism $\varphi\llbracket X \rrbracket: A\llbracket X \rrbracket \to B\llbracket X \rrbracket$ taking $\sum_{i=0}^\infty \alpha_iX^i$ to $\sum_{i=0}^\infty \varphi(\alpha_i)X^i$ and $A\llbracket X \rrbracket \geq \ker(\varphi \llbracket X \rrbracket) = \ker(\varphi)\llbracket X \rrbracket$. 
-        \item For any $\ffa \leq A$, $\ffa \cdot A \llbracket X \rrbracket \subseteq \ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ and $\frac{A \llbracket X \rrbracket}{\ffa \llbracket X \rrbracket} \cong \frac{A}{\ffa}[X]$. In addition, if $\ffa \leq A$ is finitely generated, $\ffa \cdot A\llbracket X \rrbracket = \ffa \llbracket X \rrbracket$.
+        \item For any $\ffa \leq A$, $\ffa \cdot A \llbracket X \rrbracket \subseteq \ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ and $A \llbracket X \rrbracket / \ffa \llbracket X \rrbracket \cong \frac{A}{\ffa} \llbracket X \rrbracket$. In addition, if $\ffa \leq A$ is finitely generated, $\ffa \cdot A\llbracket X \rrbracket = \ffa \llbracket X \rrbracket$.
         \item Let $\ffa \leq A$. Then 
             \[\langle X,\ffa \rangle A\llbracket X \rrbracket = X \cdot A \llbracket X \rrbracket + \ffa \cdot A \llbracket X \rrbracket = XA \llbracket X \rrbracket + \ffa \llbracket X \rrbracket = \left\{\sum_{i=0}^\infty b_iX^i \mathrel{\bigg |} b_0 \in \ffa,\ b_i \in A, \fa i \geq 1\right\} \leq A \llbracket X \rrbracket\] 
-            and $\frac{A \llbracket X \rrbracket}{\langle X,\ffa \rangle A \llbracket X \rrbracket} \cong \frac{A}{\ffa}$. In particular, if $\ffa = 0$, then $\langle X \rangle A \llbracket X \rrbracket = \{\sum_{i=1}^\infty b_iX_i \mid b_i \in A, \fa i \geq 1\} \leq A\llbracket X \rrbracket$ and $\frac{A\llbracket X \rrbracket}{\langle X \rangle A \llbracket X \rrbracket} \cong A$. 
+            and $A \llbracket X \rrbracket / \langle X,\ffa \rangle A \llbracket X \rrbracket \cong A/\ffa$. In particular, if $\ffa = 0$, then $\langle X \rangle A \llbracket X \rrbracket = \{\sum_{i=1}^\infty b_iX_i \mid b_i \in A, \fa i \geq 1\} \leq A\llbracket X \rrbracket$ and $A\llbracket X \rrbracket / \langle X \rangle A \llbracket X \rrbracket \cong A$. 
         \item If $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$, then $a_i \in \operatorname{Nil}(A)$ for any $i \geq 0$. The converse holds if $\langle a_0,a_1,a_2,\cdots \rangle$ is finitely generated. Also, $\operatorname{Nil}(A) \cdot A \llbracket X \rrbracket \subseteq \operatorname{Nil}(A \llbracket X \rrbracket) \subseteq \operatorname{Nil}(A) \llbracket X \rrbracket$.
         \item $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$ if and only if $a_0 \in \operatorname{Jac}(A)$, i.e., $\operatorname{Jac}(A\llbracket X \rrbracket) = \langle \operatorname{Jac}(A),X \rangle A\llbracket X \rrbracket$. 
         \item $A\llbracket X \rrbracket$ is an integral domain if and only if $A$ is an integral domain. Also, $A\llbracket X \rrbracket$ is never a field.
-        \item ...
-        \item $\ffa \leq A$ is maximal if and only if $\langle \ffa,X \rangle A \llbracket X \rrbracket \leq A \llbracket X \rrbracket$ is maximal.
+        \item $\ffa \leq A$ is prime if and only if $\ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is prime if and only if $\langle \ffa,X \rangle A \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is prime. \par 
+            Let $\epsilon: A \xrightarrow {\subseteq} A\llbracket X \rrbracket$. Then $\epsilon^*: \operatorname{Spec}(A\llbracket X \rrbracket) \to \operatorname{Spec}(A)$ taking $\ffp \llbracket X \rrbracket$ to $\ker(p \circ \epsilon)$ is always onto and never 1-1, where $p$ is the natural projection from $A\llbracket X \rrbracket$ to $A\llbracket X \rrbracket/\ffp\llbracket X \rrbracket$. 
+        \item $\ffa \leq A$ is maximal if and only if $\langle \ffa,X \rangle A \llbracket X \rrbracket \leq A \llbracket X \rrbracket$ is maximal. Also, $\ffa \llbracket X \rrbracket A\llbracket X \rrbracket$ is never maximal.
         \item Let $\operatorname{m-Spec}(A\llbracket X \rrbracket) = \{\text{maximal ideals of}A\llbracket X \rrbracket\} \subseteq \operatorname{Spec}(A\llbracket X \rrbracket)$. Let $\ffm \in \operatorname{m-Spec}(A\llbracket X \rrbracket)$. Then 
             \begin{enumerate}
                 \item $\ffm \cap A = \ffn \in \operatorname{m-Spec}(A)$.
-                \item $x \in \ffm$.
+                \item $X \in \ffm$.
                 \item $\ffm = \langle \ffn,X \rangle A\llbracket X \rrbracket$.
             \end{enumerate}
-            Therefore, (graph).
+            Therefore, 
+            \begin{align*}
+                \operatorname{m-Spec}(A) &\leftrightarrows \operatorname{m_Spec}(A\llbracket X \rrbracket) \\
+                \ffn & \mapsto \langle \ffn,X \rangle A\llbracket X \rrbracket \\
+                \ffm \cap A &\mapsfrom \ffm
+            \end{align*}
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
     \begin{enumerate}
         \item 
-            ``$\Rightarrow$''. Let $f \in A\llbracket X \rrbracket^\times$ with the multiplicative inverse $f^{-1}(X) = \sum_{i=0}^\infty b_iX^i \in A\llbracket X \rrbracket$ with $b_i \in A$ for $i \geq 0$. Then $1_A = f \cdot f^{-1} = (\sum_{i=0}^\infty a_iX^i)(\sum_{j=0}^\infty b_jX^j) = a_0b_0 + (a_0b_1 + a_1b_0)X + \cdots$. So $a_0b_0 = 1_A$ and hence $a_0 \in A^\times$. \\
+            ``$\Rightarrow$''. Let $f \in A\llbracket X \rrbracket^\times$ with the multiplicative inverse $f^{-1}(X) = \sum_{i=0}^\infty b_iX^i \in A\llbracket X \rrbracket$ with $b_i \in A$ for $i \geq 0$. Then $1_A = f \cdot f^{-1} = (\sum_{i=0}^\infty a_iX^i)(\sum_{j=0}^\infty b_jX^j) = a_0b_0 + (a_0b_1 + a_1b_0)X + \cdots$. So $a_0b_0 = 1_A$ and hence $a_0 \in A^\times$. \par
             ``$\Leftarrow$''. We try to find $g = \sum_{j=0}^\infty b_iX^i \in A\llbracket X \rrbracket$ such that $fg = 1$, i.e., $1 = \sum_{i=0}^\infty (\sum_{j=0}^i a_jb_{i-j})X^i$. Then $a_0b_0 = 1$, $a_0b_1 + a_1b_0 = 0$, $a_0b_2 + a_1b_1 + a_2b_0= 0$, $\cdots$. If $a_0 = 1$, then $b_0 = a_0b_0 = 1$ and we can solve $b_n$ for each $n \geq 1$ one by one, so $g$ is the inverse of $f$ and hence $f \in A\llbracket X \rrbracket$. If $a_0 \neq 1$, since $a_0b_0 = 1$, we have $a_0 \in A^\times $ and so by definition of multiplication in $A\llbracket X \rrbracket$,
             \[f = \sum_{i=0}^\infty a_iX^i = \sum_{i=0}^\infty a_0(a_0^{-1}a_i)X^i = a_0 \smallunderbrace{\left(1+\sum_{i=1}^\infty (a_0^{-1}a_i)X^i\right)}_{\in A\llbracket X \rrbracket^\times} \in A\llbracket X \rrbracket^\times.\]
         \item
@@ -882,8 +888,8 @@ Let $A$ be a commutative ring with identity.
                                                       &= \left\{\sum_{i=0}^\infty \alpha_i X^i \mathrel{\bigg |} \alpha_i \in \ker(\varphi), \fa i \geq 0 \right\} = \ker(\varphi)\llbracket X \rrbracket.
             \end{align*}
         \item 
-            Let $\tau: A \twoheadrightarrow A/\ffa$ be the natural projection. Then by (b), $\tau \llbracket X \rrbracket: A\llbracket X \rrbracket \to \frac{A}{\ffa}\llbracket X \rrbracket$ is a well-defined ring homomorphism with $A\llbracket X \rrbracket \geq \ker(\tau \llbracket X \rrbracket) = \ker(\tau) \llbracket X \rrbracket = \ffa \llbracket X \rrbracket$. Since $\tau$ is onto, by the first isomorphism theorem, $\frac{A\llbracket X \rrbracket}{\ffa \llbracket X \rrbracket} \cong \frac{A}{\ffa}\llbracket X \rrbracket$. Since $\ffa \subseteq \ker(\tau \llbracket X \rrbracket)$, we have $\langle \ffa \rangle A \llbracket X \rrbracket \subseteq \ker(\tau \llbracket X \rrbracket) = \ffa \llbracket X \rrbracket$. \par
-            In addition, assume $\ffa = (\alpha_1,\cdots,\alpha_n)A$ for some $\alpha_1,\cdots,\alpha_n \in \ffa$. Let $f \in \ffa \llbracket X \rrbracket$. Then $a_i \in \ffa = (\alpha_1,\cdots,\alpha_n)A$ for $i \geq 0$. So for $i \geq 0$, we have $a_i = \sum_{j=1}^n b_{ij}\alpha_j$ for some $b_{i1},\cdots,b_{in} \in A$. Hence by the defitinion of addition and multiplication in $A\llbracket X \rrbracket$, 
+            Let $\tau: A \twoheadrightarrow A/\ffa$ be the natural projection. Then by (b), $\tau \llbracket X \rrbracket: A\llbracket X \rrbracket \to \frac{A}{\ffa}\llbracket X \rrbracket$ is a well-defined ring homomorphism with $A\llbracket X \rrbracket \geq \ker(\tau \llbracket X \rrbracket) = \ker(\tau) \llbracket X \rrbracket = \ffa \llbracket X \rrbracket$. Since $\tau$ is onto, by the first isomorphism theorem, $A\llbracket X \rrbracket / \ffa \llbracket X \rrbracket \cong \frac{A}{\ffa}\llbracket X \rrbracket$. Since $\ffa \subseteq \ker(\tau \llbracket X \rrbracket)$, we have $\langle \ffa \rangle A \llbracket X \rrbracket \subseteq \ker(\tau \llbracket X \rrbracket) = \ffa \llbracket X \rrbracket$. \par
+            In addition, assume $\ffa = (\alpha_1,\cdots,\alpha_n)A$ for some $\alpha_1,\cdots,\alpha_n \in \ffa$. Let $f \in \ffa \llbracket X \rrbracket$. Then $a_i \in \ffa = (\alpha_1,\cdots,\alpha_n)A$ for $i \geq 0$. So for $i \geq 0$, we have $a_i = \sum_{j=1}^n b_{ij}\alpha_j$ for some $b_{i1},\cdots,b_{in} \in A$. Hence by the definition of addition and multiplication in $A\llbracket X \rrbracket$, 
             \[f = \sum_{i=0}^\infty a_iX^i = \sum_{i=0}^\infty \left(\sum_{j=1}^n b_{ij}\alpha_j\right)X^i = \sum_{j=1}^n \left(\sum_{i=0}^\infty \alpha_jb_{ij}X^i\right) = \sum_{j=1}^n \alpha_j \left(\sum_{i=0}^\infty b_{ij}X^i\right) \in \langle \ffa \rangle A\llbracket X \rrbracket.\]
         \item 
             Note
@@ -905,24 +911,36 @@ Let $A$ be a commutative ring with identity.
             $\leq A \llbracket X \rrbracket$ with $b_0 \in \ffa$ and $b_i \in \ffa \subseteq A$ for $i \geq 1$, we have $\sum_{i=0}^\infty b_iX^i \in I$ and so $\ffa \llbracket X \rrbracket \subseteq I$. Hence $\langle X \rangle A\llbracket X \rrbracket + \ffa\llbracket X \rrbracket \subseteq I$. \par
             Thus, by (c),
             \[\langle X,\ffa \rangle A\llbracket X \rrbracket \supseteq I \supseteq \langle X \rangle A\llbracket X \rrbracket + \ffa \llbracket X \rrbracket \supseteq \langle X \rangle A\llbracket X \rrbracket + \langle \ffa \rangle A\llbracket X \rrbracket = \langle X,\ffa \rangle A\llbracket X \rrbracket.\] 
-            \par So $\langle X,\ffa \rangle A\llbracket X \rrbracket = \langle X \rangle A \llbracket X \rrbracket + \langle \ffa \rangle A\llbracket X \rrbracket = \langle X \rangle A\llbracket X \rrbracket + \ffa \llbracket X \rrbracket = I = \ker(\tau \circ \pi)$. By the first isomorphism theorem, $\frac{A\llbracket X \rrbracket}{\langle X,\ffa \rangle A \llbracket X \rrbracket} \cong \frac{A}{\ffa}$. 
+            \par So $\langle X,\ffa \rangle A\llbracket X \rrbracket = \langle X \rangle A \llbracket X \rrbracket + \langle \ffa \rangle A\llbracket X \rrbracket = \langle X \rangle A\llbracket X \rrbracket + \ffa \llbracket X \rrbracket = I = \ker(\tau \circ \pi)$. By the first isomorphism theorem, $A\llbracket X \rrbracket / \langle X,\ffa \rangle A \llbracket X \rrbracket \cong A/\ffa$. 
         \item 
             Assume $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$. Then $0 = f^n = a_0^n + Xg(X)$ for some $n \geq 1$ and $g \in A\llbracket X \rrbracket$. So $a_0^n = 0$ and then $a_0 \in \operatorname{Nil}(A) \subseteq \operatorname{Nil}(A\llbracket X \rrbracket)$. Hence $\sum_{i=1}^\infty a_iX^i = f-a_0 \in \operatorname{Nil}(A \llbracket X \rrbracket)$. Similarly, we have $a_1 \in \operatorname{Nil}(A\llbracket X \rrbracket)$. By induction, $a_i \in \operatorname{Nil}(A)$ for each $i \geq 0$. \par 
             So we can conclude $\operatorname{Nil}(A\llbracket X \rrbracket) \subseteq \operatorname{Nil}(A)\llbracket X \rrbracket$. Furthermore, since $\operatorname{Nil}(A) \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A \llbracket X \rrbracket$, we have $\operatorname{Nil}(A) = \operatorname{Nil}(\operatorname{Nil}(A)) \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A\llbracket X \rrbracket$ and then $\operatorname{Nil}(A) \cdot A\llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket)$. Thus, $\operatorname{Nil}(A) \cdot A\llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \subseteq \operatorname{Nil}(A)\llbracket X \rrbracket$. \par 
             Assume $a_i \in \operatorname{Nil}(A)$ for $i \geq 0$ and $\langle a_0,a_1,\cdots \rangle$ is finitely generated. Then $\langle a_0,a_1,\cdots \rangle = \langle a_0,a_1,\cdots,a_t \rangle$ for some $t \geq 1$. So $f = \sum_{i=0}^\infty a_iX^i = \sum_{j=0}^t a_jf_j$, where $f_j \in \operatorname{Nil}(A) \cdot A \llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A\llbracket X \rrbracket$ for each $j = 0,\cdots,t$. Thus, $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$. 
-        \item  ``$\Rightarrow$''. Assume $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$. Then $(1-a_0a) + a_1ax + a_2ax^2 + \cdots = 1-fa \in A\llbracket X \rrbracket^\times$ for any $g \in A\llbracket X \rrbracket$. So $1-a_0a \in A\llbracket X \rrbracket^\times$ for any $a \in A$. Hence $a_0 \in \operatorname{Jac}(A)$. \par 
-            ``$\Leftarrow$''. If $a_0 \in \operatorname{Jac}(A)$, then $1-a_0a \in A^\times$ for any $a \in A$. Let $g \in A\llbracket X \rrbracket$ with $g = \sum_{i=0}^\infty b_iX^i$. To show $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$. Need to show $1-fg$... $1-fg = 1-(\sum_{i=0}^\infty a_iX^i)(1-\sum_{i=0}^\infty b_iX^i) = \smallunderbrace{(1-a_0b_0)}_{\in A^\times} + \cdots$. $\operatorname{Jac}(A\llbracket X \rrbracket) = \{f \in \sum_{i=0}^\infty \mid a_0 \in \operatorname{Jac}(A)\} = \langle \operatorname{Jac}(A),X \rangle A \llbracket X \rrbracket$ by (d). 
+        \item  ``$\Rightarrow$''. Assume $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$. Then by Proposition 1.29, $1-fg \in A\llbracket X \rrbracket^\times$ for any $g \in A\llbracket X \rrbracket$. So $(1-a_0a) + a_1ax + a_2ax^2 + \cdots = 1-fa \in A\llbracket X \rrbracket^\times$ for any $a \in A$. Then by (a), $1-a_0a \in A^\times$ for any $a \in A$. Hence $a_0 \in \operatorname{Jac}(A)$ by Proposition 1.29. \par 
+            ``$\Leftarrow$''. If $a_0 \in \operatorname{Jac}(A)$, then $1-a_0a \in A^\times$ for any $a \in A$. Let $g = \sum_{i=0}^\infty b_iX^i \in A\llbracket X \rrbracket$ with $b_i \in A$ for $i \geq 0$. To show $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$. Need to show $1-fg \in A\llbracket X \rrbracket^\times$. By (a), it is equivalent to show the constant term of $1-fg$ is in $A^\times$. Note $1-fg = 1-(\sum_{i=0}^\infty a_iX^i)(\sum_{i=0}^\infty b_iX^i) = \smallunderbrace{(1-a_0b_0)}_{\in A^\times} + \cdots$. \par 
+            Thus, $\operatorname{Jac}(A\llbracket X \rrbracket) = \{\sum_{i=0}^\infty a_iX^i \mid a_0 \in \operatorname{Jac}(A)\} = \langle \operatorname{Jac}(A),X \rangle A \llbracket X \rrbracket$ by (d). 
         \item 
-            Let $\operatorname{ord}(f) := \inf\{i \geq 0 \mid a_i \neq 0\}$. Then $\operatorname{ord}(fg) \geq \operatorname{ord}(f) + \operatorname{ord}(g)$ with equality if e.g., $A$ is an integral domain. \par 
-            ``$\Leftarrow$''. \par 
-            ``$\Rightarrow$''. subring not zero, so integral domain.
+            Define $\operatorname{ord}(f) = \inf\{i \geq 0 \mid a_i \neq 0\}$. Then $\operatorname{ord}(fg) \geq \operatorname{ord}(f) + \operatorname{ord}(g)$ with equality if, e.g., $A$ is an integral domain. \par 
+            ``$\Leftarrow$''. Let $A$ be an integral domain and $f,g \neq 0$ in $A\llbracket X \rrbracket$. Then $\operatorname{ord}(f),\operatorname{ord}(g) \neq \infty$. So $\operatorname{ord}(fg) = \operatorname{ord}(f)\operatorname{ord}(g) \neq \infty$. Hence $fg \neq 0$. \par
+            ``$\Rightarrow$''. Let $A\llbracket X \rrbracket$ be an integral domain. Since $0 \neq A$ is a subring of $A\llbracket X \rrbracket$, $A$ is also an integral domain. \par
+            Since $X \in A\llbracket X \rrbracket$ and the constant term of $X$ is 0, which is not in $A^\times$, by (a), we have $X \not \in A\llbracket X \rrbracket^\times$. So $A\llbracket X \rrbracket$ is not a field.
         \item 
-            $\ffa \leq A$ is prime if and only if $A/\ffa$ is an integral domain if and only if $\frac{A}{\ffa}\llbracket X \rrbracket$ is an integral domain if and only if $A\llbracket X \rrbracket/\ffa \llbracket X \rrbracket$ is an integral domain by (c) if and only if $\ffa\llbracket X \rrbracket \leq A \llbracket X \rrbracket$ is prime. Similarly, $\ffa$ is prime in $A$ if and only if $\langle \ffa,X \rangle A\llbracket X \rrbracket$ is prime in $A\llbracket X \rrbracket$ by (d). ... 
-        \item Since $X \in \operatorname{Jac}(A\llbracket X \rrbracket)$ by (f), we have $X \in \ffm$ for any $\ffm \in \operatorname{m-Spec}(A\llbracket X \rrbracket)$. Prime correspondence under quotients.
+            Note $\ffa \leq A$ is prime if and only if $A/\ffa$ is an integral domain if and only if $\frac{A}{\ffa}\llbracket X \rrbracket$ is an integral domain by (g) if and only if $A\llbracket X \rrbracket/\ffa \llbracket X \rrbracket$ is an integral domain by (c) if and only if $\ffa\llbracket X \rrbracket \leq A \llbracket X \rrbracket$ is prime. \par 
+            Note $\ffa \leq A$ is prime if and only if $A/\ffa$ is an integral domain if and only $\frac{A\llbracket X \rrbracket}{\langle X,\ffa \rangle A\llbracket X \rrbracket}$ is an integral domain by (d) if and only if $\langle \ffa,X \rangle A\llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is prime. \par
+            Let $\ffp \in \operatorname{Spec}(A)$. By the proof of (c) and (d), $\ffp \llbracket X \rrbracket \cap A = \ffp$ and $\langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \ffp$. So $\ffp\llbracket X \rrbracket, \langle \ffp,X \rangle A\llbracket X \rrbracket \in \operatorname{Spec}(A\llbracket X \rrbracket)$ and 
+            \begin{align*}
+                \epsilon^*(\ffp \llbracket X \rrbracket) &= \ker(p \circ \epsilon) = \epsilon^{-1}(\ffp \llbracket X \rrbracket) = \ffp \llbracket X \rrbracket \cap A = \ffp \\
+                                                         &= \langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \epsilon^{-1}(\langle \ffp,X \rangle A\llbracket X \rrbracket) = \ker(p \circ \epsilon) = \epsilon^*(\langle \ffp,X \rangle A\llbracket X \rrbracket). 
+            \end{align*}
+            So $\epsilon^*$ is onto. Also, since $X \not \in \ffp \llbracket X \rrbracket$, but $X \in \langle \ffp,X \rangle \llbracket X \rrbracket$, we have $\epsilon^*$ is not 1-1.
+        \item 
+            Note $\ffa \leq A$ is maximal if and only if $A/\ffa$ is a field if and only $A\llbracket X \rrbracket / \langle X,\ffa \rangle A\llbracket X \rrbracket$ is a field by (d) if and only if $\langle \ffa,X \rangle A\llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is maximal. \par 
+            Since $\frac{A}{\ffa}\llbracket X \rrbracket$ is not a field by (g), $A\llbracket X \rrbracket / \ffa \llbracket X \rrbracket$ is not a field by (c), then $\ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is not maximal. 
+        \item 
             \begin{enumerate}
-                \item 
-                \item 
-                \item Since $\langle \ffn,X \rangle \subseteq \ffm$, we have $\langle \ffn,X \rangle \subseteq \ffm$. Note by (i) and (1), $\langle \ffn,X \rangle \leq A \llbracket X \rrbracket$ are maximal. Also, since $\ffm \leq A\llbracket X \rrbracket$ is maximal, $\langle \ffn,X \rangle = \ffm$. \qedhere
+                \item [(2)]
+                    Since $X \in \operatorname{Jac}(A\llbracket X \rrbracket)$ by (f), we have $X \in \ffm$ for any $\ffm \in \operatorname{m-Spec}(A\llbracket X \rrbracket)$. Prime correspondence under quotients.
+                \item [(3)] Since $\langle \ffn,X \rangle \subseteq \ffm$, we have $\langle \ffn,X \rangle \subseteq \ffm$. Note by (i) and (1), $\langle \ffn,X \rangle \leq A \llbracket X \rrbracket$ are maximal. Also, since $\ffm \leq A\llbracket X \rrbracket$ is maximal, $\langle \ffn,X \rangle = \ffm$. \qedhere
             \end{enumerate} 
         \qedhere
     \end{enumerate}
