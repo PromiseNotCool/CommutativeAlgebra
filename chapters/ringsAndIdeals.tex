@@ -99,7 +99,7 @@ Let $R$ be a commutative ring with identity.
 \begin{construction}
     Let $\ffa \leq R$. For any $r \in R$, $r+\ffa = \{r + a \mid a \in \ffa\} = \overbar r$. Let 
     \[R/\ffa := \{r + \ffa \mid r \in R\}.\] 
-    Then $R/\ffa$ is a commutative ring with identity with $\overbar r \pm \overbar s = \overbar {r \pm s}$, $\overbar r \overbar s = \overbar{rs}$, $0_{R/\ffa} = \overbar {0_R}$ and $1_{R/\ffa} = \overbar {1_R}$. \par
+    \par Then $R/\ffa$ is a commutative ring with identity with $\overbar r \pm \overbar s = \overbar {r \pm s}$, $\overbar r \overbar s = \overbar{rs}$, $0_{R/\ffa} = \overbar {0_R}$ and $1_{R/\ffa} = \overbar {1_R}$. \par
     Let $\pi: R \to R/\ffa$ be given by $\pi(r) = \overbar r$. Then $\pi$ is a well-defined ring epimorphism. \par 
     (UMP) For any $\phi: R \to S$ ring homomorphism, if $\phi(\ffa) = 0$, then there exists a unique ring homomorphism $\overbar \phi: R/\ffa \to S$ making the following diagram commute, where $\overbar \phi(\overbar r) = \overbar \phi (\pi(r)) = \phi(r)$. 
     \begin{center}
@@ -254,7 +254,7 @@ Let $R$ be a commutative ring with identity.
         \item Since $0 \in \operatorname{Nil}(R)$, $\operatorname{Nil}(R) \neq \emptyset$. Let $r \in R$ and $a,b \in \operatorname{Nil}(R)$. Then there exists $m,n \geq 1$ such that $a^m = 0 = b^n$. Then $(ra)^m = r^ma^m = 0$ and so $ra \in \operatorname{Nil}(R)$. By the binomial theorem, $(a+b)^{m+n} = \sum_{i=0}^{m+n} \binom {m+n} i a^i b^{m+n-i} = 0$. Since for any $0 \leq i \leq m+n$, either $i \geq m$ or $i < m$, i.e., $i \geq m$ or $m+n-i > n$, we have $a^i = 0$ when $i \geq m$, and $b^{m+n-i} = 0 $ when $m + n-i > n$. So $(a+b)^{m+n} = 0$ and thus $a+b \in \operatorname{Nil}(R)$.
         \item Let $\overbar x \in \operatorname{Nil}(R/\operatorname{Nil}(R))$. Then there exists $n \geq 1$ such that $\overbar {x^n} = \overbar x^n = 0$, i.e., $x^n \in \operatorname{Nil}(R)$. So there exists $m \geq 1$ such that $(x^n)^m = 0$, i.e., $x^{mn} = 0$. Thus, $x \in \operatorname{Nil}(R)$, i.e., $\overbar x = 0$.
         \item  We have $\operatorname{Nil}(R) = R$ if and only if $1 \in \operatorname{Nil}(R)$ if and only if there exists $n \geq 1$ such that $1 = 1^n = 0$ if and only if $1 = 0$ if and only if $R = 0$.
-        \item ``$\subseteq$''. Let $x \in \operatorname{Nil}(R)$. Then there exists $n \geq 1$ such that $x^n = 0 \in \ffp$ for any $\ffp \in \operatorname{Spec}(R)$. So $x \in \ffp$ for any $\ffp \in \operatorname{Spec}(R)$. Thus, $x \in \bigcap_{\ffp \in \operatorname{Spec}(R)} \ffp$. \\
+        \item ``$\subseteq$''. Let $x \in \operatorname{Nil}(R)$. Then there exists $n \geq 1$ such that $x^n = 0 \in \ffp$ for any $\ffp \in \operatorname{Spec}(R)$. So $x \in \ffp$ for any $\ffp \in \operatorname{Spec}(R)$. Thus, $x \in \bigcap_{\ffp \in \operatorname{Spec}(R)} \ffp$. \par
             ``$\supseteq$''. Let $x \in R \setminus \operatorname{Nil}(R)$. Need to show $x \not \in \bigcap_{\ffp \in \operatorname{Spec}(R)}$. It is equivalent to show there exists $\ffp \in \operatorname{Spec}(R)$ such that $x \not \in \ffp$. Let $\Sigma = \{\ffa \leq R \mid x,x^2,x^3 \cdots \not \in \ffa\}$. Since $x \not \in \operatorname{Nil}(R)$, $x^k \neq 0$ for any $k \geq 1$. So $(0) \in \Sigma$ and then $\Sigma \neq \emptyset$. Let $\mathscr C \subseteq \Sigma$ be chain. Then we have $\ffq := \bigcup_{\ffa \in \mathscr C} \ffa \leq R$. Suppose $x^n \in \ffq$ for some $n \geq 1$. Then $x^n \in \ffa$ for some $\ffa \in \mathscr C \subseteq \Sigma$, contradicting $\ffa \in \Sigma$. So $x^n \not \in \ffq$ for any $n \geq 1$ and hence $\ffq \in \Sigma$. Hence $\ffq$ is an upper bound for $\mathscr C$ in $\Sigma$. Since the chain $\ssC \subseteq \Sigma$ is arbitrary, by Zorn's lemma, $\Sigma$ has a maximal element $I$. Claim. $I \in \operatorname{Spec}(R)$. Suppose $I = R$. Then $x \in R = I$, contradicting $I \in \Sigma$. So $I \lneq R$. Let $r,s \in R \setminus I$. Then $I \subsetneq \langle r,I \rangle \leq R$ and $I \subsetneq \langle s,I \rangle \leq R$. By the maximality of $I$ in $\Sigma$, we have $\langle r,I \rangle, \langle s,I \rangle \not \in \Sigma$. So there exists $m,n \geq 1$ such that $x^m \in \langle r,I \rangle$ and $x^n \in \langle s,I \rangle$. Then $x^m = ar+i$ for some $a \in R$ and $i \in I$, and $x^n = bs + j$ for some $b \in R$ and $j \in I$. So $x^{m+n} = x^m x^n = (ar+i)(bs+j) = abrs + (\smallunderbrace{arj+bsi+ij}_{\in I}) \in \langle rs,I \rangle$. Hence $\langle rs, I \rangle \not\in \Sigma$. Therefore, since $I \in \Sigma$, we have $I \neq \langle rs,I \rangle$, so $rs \not \in I$. Thus, $I \in \operatorname{Spec}(R)$ such that $x \not \in I$. \qedhere
     \end{enumerate}
 \end{proof}
@@ -264,7 +264,7 @@ Let $R$ be a commutative ring with identity.
 \end{example*}
 
 \begin{proof}
-    Method 1. Since $\operatorname{Spec}(R) = \left\{\frac{\langle X_1,\cdots,X_d \rangle}{\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle}\right\}$, $\operatorname{Nil}(R) = \bigcap_{\ffp \in \operatorname{Spec}(R)} \ffp =  \frac{\langle X_1,\cdots,X_d \rangle}{\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle}$. \\
+    Method 1. Since $\operatorname{Spec}(R) = \left\{\frac{\langle X_1,\cdots,X_d \rangle}{\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle}\right\}$, $\operatorname{Nil}(R) = \bigcap_{\ffp \in \operatorname{Spec}(R)} \ffp =  \frac{\langle X_1,\cdots,X_d \rangle}{\langle X_1^{a_1},\cdots,X_d^{a_d} \rangle}$. \par
     Method 2. Since $\overbar X_i \in \operatorname{Nil}(R) \leq R$ for each $i = 1,\cdots,d$, we have $\overbar {\langle X_1,\cdots,X_d \rangle} = \langle \overbar X_1,\cdots,\overbar X_d \rangle \subseteq \operatorname{Nil}(R) \subsetneq R$ since $R \neq 0$. Also, since $\overbar {\langle X_1,\cdots,X_d \rangle}$ is maximal, we have $\operatorname{Nil}(R) = \overbar {\langle X_1,\cdots,X_d \rangle}$.
 \end{proof}
 
@@ -288,7 +288,7 @@ Let $R$ be a commutative ring with identity.
 \end{proposition}
 
 \begin{proof}
-    ``$\subseteq$''. Let $x \in \ffJ(R)$. By way of contradiction, suppose there exists $y \in R$ such that $1-xy \not \in R^\times$. Then there exists $\ffm \leq R$ maximal such that $1-xy \in \ffm$. Since $x \in \ffJ(R) \subseteq \ffm$, $xy \in \ffm$. So $1 = (1-xy) + xy \in \ffm$, a contradiction. \\
+    ``$\subseteq$''. Let $x \in \ffJ(R)$. By way of contradiction, suppose there exists $y \in R$ such that $1-xy \not \in R^\times$. Then there exists $\ffm \leq R$ maximal such that $1-xy \in \ffm$. Since $x \in \ffJ(R) \subseteq \ffm$, $xy \in \ffm$. So $1 = (1-xy) + xy \in \ffm$, a contradiction. \par
     ``$\supseteq$''. Argue by contrapositive. Let $x \in R$ such that $1-xy \in R^\times$ for any $y \in Y$. Suppose $x \not \in \ffJ(R)$. Then there exists $\ffm \leq R$ maximal such that $x \not \in \ffm$. So $\ffm \subsetneq \langle \ffm, x \rangle \subseteq R$. Hence $\langle x,\ffm \rangle = R$. Then there exists $y \in R$ and $m \in \ffm$ such that $xy+m = 1$, i.e., $1-xy = m \in \ffm$. So $1-xy \not \in R^\times$, a contradiction.
 \end{proof}
 
@@ -456,9 +456,9 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
     (a) and (b) are straightforward.
     \begin{enumerate}
         \item [(c)]
-            ``$\supseteq$''. We always have $\ffa \cap \ffb \supseteq \ffa \ffb$. \\
-            ``$\subseteq$''. Assume $\ffa + \ffb = R$.  \\
-            Method 1. Note $1 = a+b$ for some $a \in \ffa$ and $b \in \ffb$. Let $x \in \ffa \cap \ffb$. Then $x \in \ffb$ and $x \in \ffa$. So $x = 1 \cdot x = (a+b)x = ax + bx = ax + xb \in \operatorname{\ffa \ffb}$. Hence $\ffa \cap \ffb \subseteq \ffa \ffb$. \\
+            ``$\supseteq$''. We always have $\ffa \cap \ffb \supseteq \ffa \ffb$. \par 
+            ``$\subseteq$''. Assume $\ffa + \ffb = R$.  \par 
+            Method 1. Note $1 = a+b$ for some $a \in \ffa$ and $b \in \ffb$. Let $x \in \ffa \cap \ffb$. Then $x \in \ffb$ and $x \in \ffa$. So $x = 1 \cdot x = (a+b)x = ax + bx = ax + xb \in \operatorname{\ffa \ffb}$. Hence $\ffa \cap \ffb \subseteq \ffa \ffb$. \par 
             Method 2. Note $\ffa \cap \ffb = R(\ffa \cap \ffb) = (\ffa + \ffb)(\ffa \cap \ffb) = \ffa(\smallunderbrace{\ffa \cap \ffb}_{\subseteq \ffb}) + \ffb(\smallunderbrace{\ffa \cap \ffb}_{\subseteq \ffa}) \subseteq \ffa \ffb$ by (a) and (b). \par
             Conversely, assume $R$ is a PID and $\ffa,\ffb \neq 0$. Then $R$ is a UFD, so each reducible element has a unique factorization into multiple of irreducible elements, also, since $R$ is a PID, every irreducible element is actually prime.  Hence we can write $\ffa = p_1^{e_1} \cdots p_n^{e_n} R$ and $\ffb = p_1^{f_1} \cdots p_n^{f_n}R$ with $e_i,f_i \geq 0$ for each $i = 1,\cdots,n$, and $p_1,\cdots,p_n \in R$ are non-associate prime elements. Assume $\ffa \cap \ffb = \ffa \ffb$. Since $\ffa = \langle p_1^{e_1} \cdots p_n^{e_n} \rangle$ and $\ffb = \langle p_1^{f_1} \cdots p_n^{f_n} \rangle$, $\ffa \cap \ffb = \operatorname{lcm}(p_1^{e_1} \cdots p_n^{e_n},p_1^{f_1} \cdots p_n^{f_n})R = p_1^{\max\{e_1,f_1\}} \cdots p_n^{\max\{e_n,f_n\}}R$. By Fact 1.38(e), $\ffa\ffb = p_1^{e_1+f_1} \cdots p_n^{e_n+f_n}$. So $\max\{e_i,f_i\} = e_i + f_i$, i.e, $e_i = 0$ or $f_i = 0$ for each $i = 1,\cdots,n$. In other words, for any $\ffp \in \operatorname{Spec}(R)$, either $\ffa \not \subseteq \ffp$ or $\ffb \not \subseteq \ffp$ \footnote[2]{Let $p \in R$ be prime and $a \in R$. Then $p \mid a$ if and only if $\langle p \rangle \supseteq \langle a \rangle$. Furthermore, if $a$ has a prime factorization, then $p \mid a$ if and only if $p$ occurs in the prime factorization of $a$.}. So $\operatorname{V}(\ffa) \cap \operatorname{V}(\ffb) = \emptyset$ for any $\ffp \in \operatorname{Spec}(R)$. Thus, $\ffa + \ffb = R$ by Proposition 1.33(b). \qedhere
     \end{enumerate}
@@ -516,7 +516,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
     \begin{enumerate}
         \item [(b)]
             Let $i \in \{1,\cdots,n\}$. To show $\ffa_i + (\bigcap_{j \neq i}\ffa_j)R = R$, it suffices to show $\operatorname{V}(\ffa_i) \bigcap \left(\bigcup_{j \neq i} \operatorname{V}(\ffa_j)\right)$ \\ 
-            $=\operatorname{V}(\ffa_i) \bigcap \operatorname{V}\left(\bigcap_{j \neq i} \ffa_j\right) = \operatorname{V}(\ffa_i + \bigcap_{j \neq i} \ffa_j) = \emptyset$. Suppose $\operatorname{V}(\ffa_i) \bigcap \left(\bigcup_{j \neq i}\operatorname{V}(\ffa_j)\right) \neq \emptyset$. Then there exists $\ffp \in \operatorname{V}(\ffa_i) \cap \operatorname{V}(\ffa_j) = \operatorname{V}(\ffa_i + \ffa_j) = \operatorname{V}(R) = \emptyset$ for some $j \neq i$, a contradiction. \\
+            $=\operatorname{V}(\ffa_i) \bigcap \operatorname{V}\left(\bigcap_{j \neq i} \ffa_j\right) = \operatorname{V}(\ffa_i + \bigcap_{j \neq i} \ffa_j) = \emptyset$. Suppose $\operatorname{V}(\ffa_i) \bigcap \left(\bigcup_{j \neq i}\operatorname{V}(\ffa_j)\right) \neq \emptyset$. Then there exists $\ffp \in \operatorname{V}(\ffa_i) \cap \operatorname{V}(\ffa_j) = \operatorname{V}(\ffa_i + \ffa_j) = \operatorname{V}(R) = \emptyset$ for some $j \neq i$, a contradiction. \par
             Now for $\bigcap_{i=1}^n \ffa_i = \ffa_1 \cdots \ffa_n$, prove by induction on $n$. Base case $n = 1$: trivial. Base case $n = 2$: by Proposition 1.40(c). Induction step: assume $n \in \bbZ_{\geq 3}$ and $\bigcap_{i=1}^{n-1}\ffa_i = \ffa_1 \cdots \ffa_{n-1}$. Then $\ffa_n + \ffa_1 \cdots \ffa_{n-1} = \ffa_n + \bigcap_{j=1}^{n-1} \ffa_j = R$. So by Proposition 1.40(c), we have $\bigcap_{i=1}^n \ffa_i = (\bigcap_{i=1}^{n-1} \ffa_i) \bigcap \ffa_n = (\ffa_1 \cdots \ffa_{n-1}) \cap \ffa_n = (\ffa_1 \cdots \ffa_{n-1})\ffa_n = \ffa_1 \cdots \ffa_n$. 
         \item [(c)]
             ``$\Rightarrow$''. Assume $\phi$ is surjective. In particular, there exists $x \in R$ such that $(\overbar 1,\overbar 0,\cdots,\overbar 0) = \phi(x) = (\overbar x, \overbar x, \cdots, \overbar x)$. So $x+\ffa_1 = 1+\ffa_1$ and $x+\ffa_i = 0 + \ffa_i$ for $i = 2,\cdots,n$. Hence $1-x \in \ffa_1$ and $x \in \ffa_i$ for $i = 2,\cdots,n$. Also, since $\mathpunct{\underset{\mathclap{\substack{\ \in \ffa_i \\ \textstyle }}}{(x)}} + \mathpunct{\underset{\mathclap{\substack{\ \in \ffa_1 \\ \textstyle }}}{(1-x)}} = 1$, we have $\ffa_i + \ffa_1 = R$ for $i = 2,\cdots, n$. Similarly, consider $(\overbar 0, \cdots, \overbar 0, \mathpunct{\underset{\mathclap{\substack{\ \ \ \uparrow j\text{th} \\ \textstyle }}}{\overbar 1}}, \overbar 0, \cdots, \overbar 0) \xymatrix{{}\ar@{~>}[r]&{}} \ffa_i + \ffa_j = R$ for distinct $i,j$ with $1 \leq i,j \leq n$. \\
@@ -739,7 +739,10 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 \addcontentsline{toc}{section}{Extensions and Contractions}
 
 \begin{definition}
-    Let $f: R \to S$ be a ring homomorphism. Let $\ffa \leq R$ and $\ffb \leq S$. The \emph{extension} of $\ffa$ along $f$ is $\ffa^e = \ffa S = \langle f(\ffa) \rangle S  = f(\ffa)S = \{\sum_i^{\text{finite}} f(a_i)s_i \mid a_i \in \ffa,\ s_i \in S, \fa i\} \leq S$. The \emph{contraction} of $\ffb$ along $f$ is $\ffb^c = f^{-1}(\ffb) \leq R$.
+    Let $f: R \to S$ be a ring homomorphism. Let $\ffa \leq R$ and $\ffb \leq S$. The \emph{extension} of $\ffa$ along $f$ is 
+    \[\ffa^e = \ffa S = \langle f(\ffa) \rangle S  = f(\ffa)S = \{\sum_i^{\text{finite}} f(a_i)s_i \mid a_i \in \ffa,\ s_i \in S, \fa i\} \leq S.\]
+    The \emph{contraction} of $\ffb$ along $f$ is 
+    \[\ffb^c = f^{-1}(\ffb) \leq R.\]
 \end{definition}
 
 \begin{example}
@@ -777,7 +780,9 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
         \item 
             Note $\ffa \subseteq f^{-1}(f(\ffa)) \subseteq f^{-1}(f(\ffa) S) = f^{-1}(\ffa S)$. \par
             To show $\langle f(f^{-1}(\ffb)) \rangle S = f^{-1}(\ffb)S \subseteq \ffb$, it suffices to show $\langle f(f^{-1}(\ffb)) \rangle \subseteq \ffb$, then it is equivalent to show $f(f^{-1}(\ffb)) \subseteq \ffb$, which is true. \par 
-            A set of generators of $(\langle T \rangle R)S$ over $S$ is $\{f(\sum_i^{\text{finite}}t_ir_i) = \sum_i^{\text{finite}} f(t_i)f(r_i) \mid t_i \in T,\ r_i \in S, \fa i\} \subseteq \langle f(T) \rangle S$. A set of generators of $\langle f(T) \rangle S$ over $S$ is $\{f(t) \mid t \in T\} = \{f(t \cdot 1) \mid t \in T\}$ which is a subset of the generators of $(\langle T \rangle R)S$.
+            A set of generators of $(\langle T \rangle R)S$ over $S$ is 
+            \[\left\{f\left(\sum_i^{\text{finite}}t_ir_i\right) = \sum_i^{\text{finite}} f(t_i)f(r_i) \mathrel{\bigg |} t_i \in T,\ r_i \in S, \fa i\right\} \subseteq \langle f(T) \rangle S.\] 
+            \par A set of generators of $\langle f(T) \rangle S$ over $S$ is $\{f(t) \mid t \in T\} = \{f(t \cdot 1) \mid t \in T\}$ which is a subset of the generators of $(\langle T \rangle R)S$.
         \item 
             ``$\subseteq$''. By (a), $\ffa \subseteq f^{-1}(\ffa S)$, so $\ffa S \subseteq f^{-1}(\ffa S)S$. ``$\supseteq$''. A set of generators of $f^{-1}(\ffa S)S$ over $S$ is $\{f(x) \mid x \in f^{-1}(\ffa S)\} = f(f^{-1}(\ffa S)) \subseteq \ffa S$. \par
             ``$\subseteq$''. By (a), $\ffb \supseteq f^{-1}(\ffb)S$, so $f^{-1}(\ffb) \supseteq f^{-1}(f^{-1}(\ffb)S)$. ``$\subseteq$''. Let $x \in f^{-1}(\ffb)$. Then $f(x) = f(x) \cdot 1 \in \langle f(f^{-1}\ffb) \rangle S = f^{-1}(\ffb)S$. So $x \in f^{-1}(f^{-1}(\ffb)S)$.
@@ -786,10 +791,25 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
             Since $\ffa_1 \cap \ffa_2 \subseteq \ffa_1,\ffa_2$, $(\ffa_1 \cap \ffa_2)S \subseteq \ffa_1S,\ffa_2S$. So $(\ffa_1 \cap \ffa_2) S \subseteq \ffa_1 S \cap \ffa_2 S$. \par
             Note $x \in f^{-1}(\ffb_1 \cap \ffb_2)$ if and only if $f(x) \in \ffb_1 \cap \ffb_2$ if and only if $f(x) \in \ffb_1,\ffb_2$ if and only if $x \in f^{-1}(\ffb_1),f^{-1}(\ffb_2)$ if and only if $x \in f^{-1}(\ffb_1) \cap f^{-1}(\ffb_2)$.
         \item 
-            ``$\subseteq$''. A set of generators of $(\ffa_1\ffa_2)S$ over $S$ is $\{f(\sum_i^{\text{finite}}\alpha_i\beta_i) = \sum_i^{\text{finite}} f(\alpha_i)f(\beta_i) \mid \alpha_i \in \ffa_1,\ \beta_i \in \ffa_2, \fa i\} \subseteq (\ffa_1S)(\ffa_2S)$. ``$\supseteq$''. $(\ffa_1S)(\ffa_2S) = (f(\ffa_1)S)(f(\ffa_2)S) = (f(\ffa_1)f(\ffa_2))S = \langle f(a_1)f(a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2 \rangle S = \langle f(a_1a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2 \rangle S \subseteq \langle f(\ffa_1\ffa_2) \rangle S = (\ffa_1\ffa_2)S$. 
+            ``$\subseteq$''. A set of generators of $(\ffa_1\ffa_2)S$ over $S$ is 
+            \[\left\{f\left(\sum_i^{\text{finite}}\alpha_i\beta_i\right) = \sum_i^{\text{finite}} f(\alpha_i)f(\beta_i) \mathrel{\bigg |} \alpha_i \in \ffa_1,\ \beta_i \in \ffa_2, \fa i\right\} \subseteq (\ffa_1S)(\ffa_2S).\] 
+            \par
+            ``$\supseteq$''. Note 
+            \begin{align*}
+                (\ffa_1S)(\ffa_2S) &= (f(\ffa_1)S)(f(\ffa_2)S) = (f(\ffa_1)f(\ffa_2))S = \langle f(a_1)f(a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2 \rangle S \\
+                                   &= \langle f(a_1a_2) \mid a_1 \in \ffa_1,a_2 \in \ffa_2 \rangle S \subseteq \langle f(\ffa_1\ffa_2) \rangle S = (\ffa_1\ffa_2)S. 
+            \end{align*}
         \item 
-            The set of generators of $(\ffa_1:\ffa_2)S$ over $S$ is $\{f(r) \mid r \in (\ffa_1:\ffa_2)\} = \{f(r) \mid r \ffa_2 \subseteq \ffa_1\} \subseteq \{f(r) \mid r f(\ffa_2) \subseteq f(\ffa_1)\} \subseteq \{s \in S \mid sf(\ffa_2) \subseteq f(\ffa_1)\} = \{s \in S \mid s f(\ffa_2)S \subseteq f(\ffa_1)S \} = \{s \in S \mid s \ffa_2 S \subseteq \ffa_1 S\} = (\ffa_1S:\ffa_2S)$. \par
-            $f^{-1}(\ffb_1:\ffb_2) = \{f^{-1}(s) \mid s \in (\ffb_1:\ffb_2)\} = \{f^{-1}(s) \mid s\ffb_2 \subseteq \ffb_1\} \subseteq \{f^{-1}(s) \mid sf^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1)\} \subseteq \{r \in R\mid rf^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1)\} = (f^{-1}(\ffb_1):f^{-1}(\ffb_2))$.
+            A set of generators of $(\ffa_1:\ffa_2)S$ over $S$ is 
+            \begin{align*}
+                \{f(r) \mid r \in (\ffa_1:\ffa_2)\} &= \{f(r) \mid r \ffa_2 \subseteq \ffa_1\} \subseteq \{f(r) \mid r f(\ffa_2) \subseteq f(\ffa_1)\} \subseteq \{s \in S \mid sf(\ffa_2) \subseteq f(\ffa_1)\} \\
+                                                    &= \{s \in S \mid s f(\ffa_2)S \subseteq f(\ffa_1)S \} = \{s \in S \mid s \ffa_2 S \subseteq \ffa_1 S\} = (\ffa_1S:\ffa_2S).
+            \end{align*}
+            \par Note 
+            \begin{align*}
+                f^{-1}(\ffb_1:\ffb_2) &= \{f^{-1}(s) \mid s \in (\ffb_1:\ffb_2)\} = \{f^{-1}(s) \mid s\ffb_2 \subseteq \ffb_1\} \subseteq \{f^{-1}(s) \mid sf^{-1}(\ffb_2) \\
+                                      &\subseteq f^{-1}(\ffb_1)\} \subseteq \{r \in R\mid rf^{-1}(\ffb_2) \subseteq f^{-1}(\ffb_1)\} = (f^{-1}(\ffb_1):f^{-1}(\ffb_2)).
+            \end{align*}
         \item 
             Let $s \in \operatorname{rad}(\ffa)S$. Then there exist $m \geq 1$, $a_i \in \operatorname{rad}(\ffa)$ and $s_i \in S$ for $i = 1,\cdots,m$ such that $s = \sum_{i=1}^m f(a_i)s_i$. Since $a_i \in \operatorname{rad}(\ffa)$, there exists $n_i \geq 1$ such that $a_i^{n_i} \in \ffa$ for each $i = 1,\cdots,m$. Let $n = n_1 + \cdots + n_m$. Note if $k_1 + \cdots + k_m = n$ with $k_1,\cdots,k_m \geq 0$, then there exists some $i \in \{1,\cdots,m\}$ such that $k_i \geq n_i$ and so $a_i^{k_i} \in \ffa$. Hence  
             \[s^n = \left(\sum_{i=1}^m f(a_i)s_i\right)^n = \sum_{k_1 + \cdots + k_m = n} \frac{n!}{k_1! \cdots k_m!} f(a_1^{k_1} \cdots a_m^{k_m}) s_1^{k_1} \cdots s_m^{k_m} \subseteq f(\ffa)S = \ffa S.\]
@@ -813,8 +833,8 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 Let $A$ be a commutative ring with identity.
 
 \begin{definition}
-    $A \llbracket X \rrbracket = \{f = \sum_{i=0}^\infty a_iX^i \mid a_i \in A, \fa i\} \cong \prod_{i=0}^\infty A$ with addition and multiplication given by $(\sum_{i=0}^\infty a_iX^i) + (\sum_{i=0}^\infty b_iX^i) = \sum_{i=0}^\infty (a_i+b_i)X^i$ and $(\sum_{i=0}^\infty a_iX^i)(\sum_{i=0}^\infty b_iX^i) = \sum_{i=0}^\infty c_iX^i$, where $c_i = \sum_{j=0}^i a_jb_{i-j} = \sum_{p+q = i}a_pb_q$ for each $i \geq 0$. \\
-    $0_{A\llbracket X \rrbracket} = 0_A = \sum_{i=0}^\infty 0_AX^i$ and $1_{A\llbracket X \rrbracket} = 1_A = 1_A + \sum_{i=0}^\infty 0_A X^i$. More generally, for any $\ffa \leq A$, $\ffa\llbracket X \rrbracket = \{\sum_{i=0}^\infty a_iX^i \mid a_i \in \ffa, \fa i\} \leq A \llbracket X \rrbracket$.
+    \[A \llbracket X \rrbracket = \{f = \sum_{i=0}^\infty a_iX^i \mid a_i \in A, \fa i \geq 0\} \cong \prod_{i=0}^\infty A\] 
+    with addition and multiplication defined by $(\sum_{i=0}^\infty a_iX^i) + (\sum_{i=0}^\infty b_iX^i) = \sum_{i=0}^\infty (a_i+b_i)X^i$ and $(\sum_{i=0}^\infty a_iX^i)(\sum_{i=0}^\infty b_iX^i) = \sum_{i=0}^\infty c_iX^i$, where $c_i = \sum_{j=0}^i a_jb_{i-j} = \sum_{p+q = i}a_pb_q$ for each $i \geq 0$. Then $A\llbracket X \rrbracket$ is called a \emph{power series ring} with $0_{A\llbracket X \rrbracket} = 0_A = \sum_{i=0}^\infty 0_AX^i$ and $1_{A\llbracket X \rrbracket} = 1_A = 1_A + \sum_{i=0}^\infty 0_A X^i$. More generally, for any $\ffa \leq A$, $\ffa\llbracket X \rrbracket = \{\sum_{i=0}^\infty a_iX^i \mid a_i \in \ffa, \fa i \geq 0\}$.
 \end{definition}
 
 \begin{example}
@@ -822,7 +842,7 @@ Let $A$ be a commutative ring with identity.
 \end{example}
 
 \begin{theorem}
-    $A\llbracket X \rrbracket$ is a commutative ring with identity and $A$ is a subring of $A[X]$ and $A[X]$ is a subring of $A\llbracket X \rrbracket$. 
+    $A \llbracket X \rrbracket$ is a commutative ring with identity $1_A$ and $A \subseteq A[X] \subseteq A \llbracket X \rrbracket$ are subrings.
 \end{theorem}
 
 \begin{proposition}
@@ -830,9 +850,11 @@ Let $A$ be a commutative ring with identity.
     \begin{enumerate}
         \item $f \in A \llbracket X \rrbracket^\times$ if and only if $a_0 \in A^\times$. 
         \item If $\varphi: A \to B$ is a ring homomorphism, then there exists a well-defined ring homomorphism $\varphi\llbracket X \rrbracket: A\llbracket X \rrbracket \to B\llbracket X \rrbracket$ taking $\sum_{i=0}^\infty \alpha_iX^i$ to $\sum_{i=0}^\infty \varphi(\alpha_i)X^i$ and $A\llbracket X \rrbracket \geq \ker(\varphi \llbracket X \rrbracket) = \ker(\varphi)\llbracket X \rrbracket$. 
-        \item For any $\ffa \leq A$, $\ffa \cdot A \llbracket X \rrbracket \subseteq \ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ and $\frac{A \llbracket X \rrbracket}{\ffa \llbracket X \rrbracket} \cong \frac{A}{\ffa}[X]$. In addition, $\ffa \cdot A\llbracket X \rrbracket = \ffa \llbracket X \rrbracket$ if $\ffa \leq A$ is finitely generated. 
-        \item Let $\ffa \leq A$. Then $\langle X,\ffa \rangle A\llbracket X \rrbracket = X \cdot A \llbracket X \rrbracket + \ffa \cdot A \llbracket X \rrbracket = XA \llbracket X \rrbracket + \ffa \llbracket X \rrbracket = \{\sum_{i=0}^\infty b_iX^i \mid b_0 \in \ffa,\ b_i \in A, \fa i \geq 1\} \leq A \llbracket X \rrbracket$ and $\frac{A \llbracket X \rrbracket}{\langle X,\ffa \rangle A \llbracket X \rrbracket} \cong \frac{A}{\ffa}$. In particular, if $\ffa = 0$, then $\langle X \rangle A \llbracket X \rrbracket = \{\sum_{i=1}^\infty b_iX_i \mid b_i \in A, \fa i \geq 1\} \leq A\llbracket X \rrbracket$ and $\frac{A\llbracket X \rrbracket}{\langle X \rangle A \llbracket X \rrbracket} \cong A$. 
-        \item If $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$, then $a_i \in \operatorname{Nil}(A)$ for any $i \geq 0$. Converse holds if $ = \langle a_0,a_1,a_2,\cdots \rangle$ is finitely generated. Also, $\operatorname{Nil}(A) \cdot A \llbracket X \rrbracket \subseteq \operatorname{Nil}(A \llbracket X \rrbracket) \subseteq \operatorname{Nil}(A) \llbracket X \rrbracket$.
+        \item For any $\ffa \leq A$, $\ffa \cdot A \llbracket X \rrbracket \subseteq \ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ and $\frac{A \llbracket X \rrbracket}{\ffa \llbracket X \rrbracket} \cong \frac{A}{\ffa}[X]$. In addition, if $\ffa \leq A$ is finitely generated, $\ffa \cdot A\llbracket X \rrbracket = \ffa \llbracket X \rrbracket$.
+        \item Let $\ffa \leq A$. Then 
+            \[\langle X,\ffa \rangle A\llbracket X \rrbracket = X \cdot A \llbracket X \rrbracket + \ffa \cdot A \llbracket X \rrbracket = XA \llbracket X \rrbracket + \ffa \llbracket X \rrbracket = \left\{\sum_{i=0}^\infty b_iX^i \mathrel{\bigg |} b_0 \in \ffa,\ b_i \in A, \fa i \geq 1\right\} \leq A \llbracket X \rrbracket\] 
+            and $\frac{A \llbracket X \rrbracket}{\langle X,\ffa \rangle A \llbracket X \rrbracket} \cong \frac{A}{\ffa}$. In particular, if $\ffa = 0$, then $\langle X \rangle A \llbracket X \rrbracket = \{\sum_{i=1}^\infty b_iX_i \mid b_i \in A, \fa i \geq 1\} \leq A\llbracket X \rrbracket$ and $\frac{A\llbracket X \rrbracket}{\langle X \rangle A \llbracket X \rrbracket} \cong A$. 
+        \item If $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$, then $a_i \in \operatorname{Nil}(A)$ for any $i \geq 0$. The converse holds if $\langle a_0,a_1,a_2,\cdots \rangle$ is finitely generated. Also, $\operatorname{Nil}(A) \cdot A \llbracket X \rrbracket \subseteq \operatorname{Nil}(A \llbracket X \rrbracket) \subseteq \operatorname{Nil}(A) \llbracket X \rrbracket$.
         \item $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$ if and only if $a_0 \in \operatorname{Jac}(A)$, i.e., $\operatorname{Jac}(A\llbracket X \rrbracket) = \langle \operatorname{Jac}(A),X \rangle A\llbracket X \rrbracket$. 
         \item $A\llbracket X \rrbracket$ is an integral domain if and only if $A$ is an integral domain. Also, $A\llbracket X \rrbracket$ is never a field.
         \item ...
@@ -850,40 +872,49 @@ Let $A$ be a commutative ring with identity.
 \begin{proof}
     \begin{enumerate}
         \item 
-            ``$\Rightarrow$''. Let the multiplicative inverse of $f$ be $f^{-1}(X) = \sum_{i=0}^\infty b_iX^i \in A\llbracket X \rrbracket$. Then $1_A = f \cdot f^{-1} = (\sum_{i=0}^\infty a_iX^i)(\sum_{j=0}^\infty b_jX^j) = a_0b_0 + (a_0b_1 + a_1b_0)X + \cdots$. So $a_0b_0 = 1_A$ and hence $a_0 \in A^\times$. ``$\Leftarrow$''. We try to find $g = \sum_{j=0}^\infty b_iX^i \in A\llbracket X \rrbracket$ such that $fg = 1$, i.e., $1 = \sum_{i=0}^\infty c_iX^i$, where $c_i = \sum_{j=0}^ia_jb_{i-j}$. If $a_0 = 1$, then $b_0 = a_0b_0 = 1$ and $\sum_{j=0}^i a_jb_{i-j} = c_i = 0$ for any $i \geq 1$, i.e., $a_0b_1 + a_1b_0 = 0$, $a_0b_2 + a_1b_1 + a_2b_0= 0$, $\cdots$. So we can solve $b_n$ for each $n \geq 1$.  If $a_0 \neq 1$, then $a_0 \in A\times $ and so $f = \sum_{i=0}^\infty a_iX^i = \sum_{i=0}^\infty a_0(a_0^{-1}a_i)X^i = a_0 \smallunderbrace{\left(1+\sum_{i=1}^\infty (a_0^{-1}a_i)X^i\right)}_{\in A\llbracket X \rrbracket^\times} \in A\llbracket X \rrbracket^\times$.
+            ``$\Rightarrow$''. Let $f \in A\llbracket X \rrbracket^\times$ with the multiplicative inverse $f^{-1}(X) = \sum_{i=0}^\infty b_iX^i \in A\llbracket X \rrbracket$ with $b_i \in A$ for $i \geq 0$. Then $1_A = f \cdot f^{-1} = (\sum_{i=0}^\infty a_iX^i)(\sum_{j=0}^\infty b_jX^j) = a_0b_0 + (a_0b_1 + a_1b_0)X + \cdots$. So $a_0b_0 = 1_A$ and hence $a_0 \in A^\times$. \\
+            ``$\Leftarrow$''. We try to find $g = \sum_{j=0}^\infty b_iX^i \in A\llbracket X \rrbracket$ such that $fg = 1$, i.e., $1 = \sum_{i=0}^\infty (\sum_{j=0}^i a_jb_{i-j})X^i$. Then $a_0b_0 = 1$, $a_0b_1 + a_1b_0 = 0$, $a_0b_2 + a_1b_1 + a_2b_0= 0$, $\cdots$. If $a_0 = 1$, then $b_0 = a_0b_0 = 1$ and we can solve $b_n$ for each $n \geq 1$ one by one, so $g$ is the inverse of $f$ and hence $f \in A\llbracket X \rrbracket$. If $a_0 \neq 1$, since $a_0b_0 = 1$, we have $a_0 \in A^\times $ and so by definition of multiplication in $A\llbracket X \rrbracket$,
+            \[f = \sum_{i=0}^\infty a_iX^i = \sum_{i=0}^\infty a_0(a_0^{-1}a_i)X^i = a_0 \smallunderbrace{\left(1+\sum_{i=1}^\infty (a_0^{-1}a_i)X^i\right)}_{\in A\llbracket X \rrbracket^\times} \in A\llbracket X \rrbracket^\times.\]
         \item
-            $\varphi \llbracket X \rrbracket$ is a well-defined ring homomorphism, done. Note \\
+            It is straightforward to show $\varphi \llbracket X \rrbracket$ is a well-defined ring homomorphism with
             \begin{align*}
                 \ker(\varphi \llbracket X \rrbracket) &= \left\{\sum_{i=0}^\infty \alpha_i X^i \mathrel{\bigg |} \sum_{i=0}^\infty \varphi(\alpha_i)X^i = 0 \right\} = \left\{\sum_{i=0}^\infty \alpha_i X^i \mathrel{\bigg |} \varphi(\alpha_i) = 0, \fa i \geq 0\right\} \\
                                                       &= \left\{\sum_{i=0}^\infty \alpha_i X^i \mathrel{\bigg |} \alpha_i \in \ker(\varphi), \fa i \geq 0 \right\} = \ker(\varphi)\llbracket X \rrbracket.
             \end{align*}
         \item 
-            Let $\tau: A \twoheadrightarrow A/\ffa$ be the natural projection. Then by (b), $\tau \llbracket X \rrbracket: A\llbracket X \rrbracket \to \frac{A}{\ffa}\llbracket X \rrbracket$ is a well-defined ring homomorphism with $A\llbracket X \rrbracket \geq \ker(\tau \llbracket X \rrbracket) = \ker(\tau) \llbracket X \rrbracket = \ffa \llbracket X \rrbracket$. Since $\tau$ is onto, by the first isomorphism theorem, $\frac{A\llbracket X \rrbracket}{\ffa \llbracket X \rrbracket} \cong \frac{A}{\ffa}\llbracket X \rrbracket$. Since $\ffa = \ker(\tau) \subseteq \ker(\tau \llbracket X \rrbracket)$, we have $\langle \ffa \rangle A \llbracket X \rrbracket \subseteq \ker(\tau \llbracket X \rrbracket) = \ffa \llbracket X \rrbracket$. \\
-            Assume $\ffa = (\alpha_1,\cdots,\alpha_n)A$. Let $f = \sum_{i=1}^\infty a_iX^i \in \ffa \llbracket X \rrbracket$, where $a_i \in \ffa = (\alpha_1,\cdots,\alpha_n)A$ for each $i \geq 0$. Then for each $i \geq 0$, $a_i = \sum_{j=1}^n b_{ij}\alpha_j$ for some $b_{i1},\cdots,b_{in} \in A$. So $f = \sum_{i=0}^\infty a_iX^i = \sum_{i=0}^\infty \left(\sum_{j=1}^n b_{ij}\alpha_j\right)X^i = \sum_{j=1}^n \alpha_j \left(\sum_{i=0}^\infty b_{ij}X^i\right) \in \langle \ffa \rangle A\llbracket X \rrbracket$.
+            Let $\tau: A \twoheadrightarrow A/\ffa$ be the natural projection. Then by (b), $\tau \llbracket X \rrbracket: A\llbracket X \rrbracket \to \frac{A}{\ffa}\llbracket X \rrbracket$ is a well-defined ring homomorphism with $A\llbracket X \rrbracket \geq \ker(\tau \llbracket X \rrbracket) = \ker(\tau) \llbracket X \rrbracket = \ffa \llbracket X \rrbracket$. Since $\tau$ is onto, by the first isomorphism theorem, $\frac{A\llbracket X \rrbracket}{\ffa \llbracket X \rrbracket} \cong \frac{A}{\ffa}\llbracket X \rrbracket$. Since $\ffa \subseteq \ker(\tau \llbracket X \rrbracket)$, we have $\langle \ffa \rangle A \llbracket X \rrbracket \subseteq \ker(\tau \llbracket X \rrbracket) = \ffa \llbracket X \rrbracket$. \par
+            In addition, assume $\ffa = (\alpha_1,\cdots,\alpha_n)A$ for some $\alpha_1,\cdots,\alpha_n \in \ffa$. Let $f \in \ffa \llbracket X \rrbracket$. Then $a_i \in \ffa = (\alpha_1,\cdots,\alpha_n)A$ for $i \geq 0$. So for $i \geq 0$, we have $a_i = \sum_{j=1}^n b_{ij}\alpha_j$ for some $b_{i1},\cdots,b_{in} \in A$. Hence by the defitinion of addition and multiplication in $A\llbracket X \rrbracket$, 
+            \[f = \sum_{i=0}^\infty a_iX^i = \sum_{i=0}^\infty \left(\sum_{j=1}^n b_{ij}\alpha_j\right)X^i = \sum_{j=1}^n \left(\sum_{i=0}^\infty \alpha_jb_{ij}X^i\right) = \sum_{j=1}^n \alpha_j \left(\sum_{i=0}^\infty b_{ij}X^i\right) \in \langle \ffa \rangle A\llbracket X \rrbracket.\]
         \item 
             Note
             \begin{center}
                 \begin{tikzcd}
-                    A\llbracket X \rrbracket \arrow[r,"\pi"]  \arrow[d] & A \arrow[d,"\tau"] \\
+                    A\llbracket X \rrbracket \arrow[r,"\pi"]  \arrow[d,"\tau \llbracket X \rrbracket"'] & A \arrow[d,"\tau"] \\
                     \frac{A}{\ffa}\llbracket X \rrbracket \arrow[r,"\pi'"] & \frac{A}{\ffa}
                 \end{tikzcd}
             \end{center}
-            Let $\pi$ and $\pi'$ be defined by $\pi(\sum_{i=0}^\infty b_iX^i) = b_0$ and $\pi'(\sum_{i=0}^\infty \overbar b_iX^i) = \overline b_0$, respectively. \\
-            Check $\pi$ and $\pi^{-1}$ are well-defined ring epimorphisms and the diagram commutes. \\
-            Note $\ker(\pi) = \{\sum_{i=1}^\infty b_iX^i \mid b_i \in A, \fa i \geq 1\} = X\{\sum_{i=0}^\infty b_{i+1}X^i \mid b_i \in A, \fa i \geq 1\} = X \cdot A \llbracket X \rrbracket$.  \\
-            In general, $A\llbracket X \rrbracket \geq \ker(\tau \circ \pi) = \{\sum_{i=0}^\infty b_iX^i \mid b_0 \in \ffa,\ b_i \in A, \fa i \geq 1\} =: I$. \\
-            Let $\sum_{i=0}^\infty b_i X^i \in I$, i.e., $b_0 + X \sum_{i=0}^\infty b_{i+1}X^i \in \ffa + X A\llbracket X \rrbracket \subseteq \langle X,\ffa \rangle A\llbracket X \rrbracket$. So $I \subseteq \langle X,\ffa \rangle A\llbracket X \rrbracket$. Since $X = 0 + X$, $X \in I$. Also, since if $\sum_{i=0}^\infty b_iX^i \in \ffa \llbracket X \rrbracket \leq A \llbracket X \rrbracket$, we have $b_0 \in \ffa$ and then $\ffa \llbracket X \rrbracket \subseteq I$. Hence $\langle X \rangle A\llbracket X \rrbracket + \ffa\llbracket X \rrbracket \subseteq I$. \\
+            \par Let $\pi$ and $\pi'$ be defined by $\pi(\sum_{i=0}^\infty b_iX^i) = b_0$ and $\pi'(\sum_{i=0}^\infty \overbar b_iX^i) = \overline b_0$, respectively. \par 
+            It is straightforward to show $\pi$ and $\pi^{-1}$ are well-defined ring epimorphisms and the diagram commutes. \par 
+            Note 
+            \[\ker(\pi) = \left\{\sum_{i=1}^\infty b_iX^i \mathrel{\bigg |} b_i \in A, \fa i \geq 1\right\} = X\left\{\sum_{i=0}^\infty b_{i+1}X^i \mathrel{\bigg |} b_{i+1} \in A, \fa i \geq 0\right\} = X \cdot A \llbracket X \rrbracket.\]
+            \par In general, 
+            \[A\llbracket X \rrbracket \geq \ker(\tau \circ \pi) = \left\{\sum_{i=0}^\infty b_iX^i \mathrel{\bigg |} b_0 \in \ffa,\ b_i \in A, \fa i \geq 1\right\} =: I.\]
+            \par Let $\sum_{i=0}^\infty b_i X^i \in I$ with $b_0 \in \ffa$ and $b_i \in A$ for $i \geq 1$. Then $\sum_{i=0}^\infty b_iX^i = b_0 + X \sum_{i=0}^\infty b_{i+1}X^i$ \\
+            $\in \ffa + X A\llbracket X \rrbracket \subseteq \langle X,\ffa \rangle A\llbracket X \rrbracket$. So $I \subseteq \langle X,\ffa \rangle A\llbracket X \rrbracket$. \par 
+            Since $X = 0 + 1 \cdot X$ and $0 \in \ffa$ and $1\in A$, we have $X \in I \leq A\llbracket X \rrbracket$. Also, for $\sum_{i=0}^\infty b_iX^i \in \ffa \llbracket X \rrbracket$ \\
+            $\leq A \llbracket X \rrbracket$ with $b_0 \in \ffa$ and $b_i \in \ffa \subseteq A$ for $i \geq 1$, we have $\sum_{i=0}^\infty b_iX^i \in I$ and so $\ffa \llbracket X \rrbracket \subseteq I$. Hence $\langle X \rangle A\llbracket X \rrbracket + \ffa\llbracket X \rrbracket \subseteq I$. \par
             Thus, by (c),
             \[\langle X,\ffa \rangle A\llbracket X \rrbracket \supseteq I \supseteq \langle X \rangle A\llbracket X \rrbracket + \ffa \llbracket X \rrbracket \supseteq \langle X \rangle A\llbracket X \rrbracket + \langle \ffa \rangle A\llbracket X \rrbracket = \langle X,\ffa \rangle A\llbracket X \rrbracket.\] 
-            So $\langle X,\ffa \rangle A\llbracket X \rrbracket = \langle X \rangle A \llbracket X \rrbracket + \langle \ffa \rangle A\llbracket X \rrbracket = \langle X \rangle A\llbracket X \rrbracket + \ffa \llbracket X \rrbracket = I = \ker(\tau \circ \pi)$. By the first isomorphism theorem, $\frac{A\llbracket X \rrbracket}{\langle X,\ffa \rangle A \llbracket X \rrbracket} \cong \frac{A}{\ffa}$. 
+            \par So $\langle X,\ffa \rangle A\llbracket X \rrbracket = \langle X \rangle A \llbracket X \rrbracket + \langle \ffa \rangle A\llbracket X \rrbracket = \langle X \rangle A\llbracket X \rrbracket + \ffa \llbracket X \rrbracket = I = \ker(\tau \circ \pi)$. By the first isomorphism theorem, $\frac{A\llbracket X \rrbracket}{\langle X,\ffa \rangle A \llbracket X \rrbracket} \cong \frac{A}{\ffa}$. 
         \item 
-            Since $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$, $0 = f^n = a_0^n + \cdots $ for some $n \geq 1$. So $a_0$ is nilpotent. Since $f,a_0 \in \operatorname{Nil}(A \llbracket X \rrbracket)$, $\sum_{i=1}^\infty a_iX^i = f-a_0 \in \operatorname{Nil}(A \llbracket X \rrbracket)$. Similarly, we have $a_1$ is nilpotent. By induction, $a_i \in \operatorname{Nil}(A)$ for each $i \geq 0$. So $\operatorname{Nil}(A\llbracket X \rrbracket) \subseteq \operatorname{Nil}(A)\llbracket X \rrbracket$. Also, since $\operatorname{Nil}(A) \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A \llbracket X \rrbracket$, we have $\operatorname{Nil}(A) = \operatorname{Nil}(\operatorname{Nil}(A)) \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A\llbracket X \rrbracket$ and then $\operatorname{Nil}(A) \cdot A\llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket)$. Hence $\operatorname{Nil}(A) \cdot A\llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \subseteq \operatorname{Nil}(A)\llbracket X \rrbracket$. \\
-            Assume $a_i \in \operatorname{Nil}(A)$ for each $i \geq 0$ and $\langle a_0,a_1,\cdots \rangle$ is finitely generated. Then $\langle a_0,a_1,\cdots \rangle = \langle a_0,a_1,\cdots,a_t \rangle$ for some $t \geq 1$. So $f = \sum_{i=0}^\infty a_iX^i = \sum_{j=0}^t a_jf_j$, where $f_j \in \operatorname{Nil}(A) \cdot A \llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A\llbracket X \rrbracket$ for each $j = 0,\cdots,t$. Thus, $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$. 
-        \item  ``$\Rightarrow$''. Assume $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$. Then $(1-a_0a) + a_1ax + a_2ax^2 + \cdots = 1-fa \in A\llbracket X \rrbracket^\times$ for any $g \in A\llbracket X \rrbracket$. So $1-a_0a \in A\llbracket X \rrbracket^\times$ for any $a \in A$. Hence $a_0 \in \operatorname{Jac}(A)$. \\
+            Assume $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$. Then $0 = f^n = a_0^n + Xg(X)$ for some $n \geq 1$ and $g \in A\llbracket X \rrbracket$. So $a_0^n = 0$ and then $a_0 \in \operatorname{Nil}(A) \subseteq \operatorname{Nil}(A\llbracket X \rrbracket)$. Hence $\sum_{i=1}^\infty a_iX^i = f-a_0 \in \operatorname{Nil}(A \llbracket X \rrbracket)$. Similarly, we have $a_1 \in \operatorname{Nil}(A\llbracket X \rrbracket)$. By induction, $a_i \in \operatorname{Nil}(A)$ for each $i \geq 0$. \par 
+            So we can conclude $\operatorname{Nil}(A\llbracket X \rrbracket) \subseteq \operatorname{Nil}(A)\llbracket X \rrbracket$. Furthermore, since $\operatorname{Nil}(A) \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A \llbracket X \rrbracket$, we have $\operatorname{Nil}(A) = \operatorname{Nil}(\operatorname{Nil}(A)) \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A\llbracket X \rrbracket$ and then $\operatorname{Nil}(A) \cdot A\llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket)$. Thus, $\operatorname{Nil}(A) \cdot A\llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \subseteq \operatorname{Nil}(A)\llbracket X \rrbracket$. \par 
+            Assume $a_i \in \operatorname{Nil}(A)$ for $i \geq 0$ and $\langle a_0,a_1,\cdots \rangle$ is finitely generated. Then $\langle a_0,a_1,\cdots \rangle = \langle a_0,a_1,\cdots,a_t \rangle$ for some $t \geq 1$. So $f = \sum_{i=0}^\infty a_iX^i = \sum_{j=0}^t a_jf_j$, where $f_j \in \operatorname{Nil}(A) \cdot A \llbracket X \rrbracket \subseteq \operatorname{Nil}(A\llbracket X \rrbracket) \leq A\llbracket X \rrbracket$ for each $j = 0,\cdots,t$. Thus, $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$. 
+        \item  ``$\Rightarrow$''. Assume $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$. Then $(1-a_0a) + a_1ax + a_2ax^2 + \cdots = 1-fa \in A\llbracket X \rrbracket^\times$ for any $g \in A\llbracket X \rrbracket$. So $1-a_0a \in A\llbracket X \rrbracket^\times$ for any $a \in A$. Hence $a_0 \in \operatorname{Jac}(A)$. \par 
             ``$\Leftarrow$''. If $a_0 \in \operatorname{Jac}(A)$, then $1-a_0a \in A^\times$ for any $a \in A$. Let $g \in A\llbracket X \rrbracket$ with $g = \sum_{i=0}^\infty b_iX^i$. To show $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$. Need to show $1-fg$... $1-fg = 1-(\sum_{i=0}^\infty a_iX^i)(1-\sum_{i=0}^\infty b_iX^i) = \smallunderbrace{(1-a_0b_0)}_{\in A^\times} + \cdots$. $\operatorname{Jac}(A\llbracket X \rrbracket) = \{f \in \sum_{i=0}^\infty \mid a_0 \in \operatorname{Jac}(A)\} = \langle \operatorname{Jac}(A),X \rangle A \llbracket X \rrbracket$ by (d). 
         \item 
-            Let $\operatorname{ord}(f) := \inf\{i \geq 0 \mid a_i \neq 0\}$. Then $\operatorname{ord}(fg) \geq \operatorname{ord}(f) + \operatorname{ord}(g)$ with equality if e.g., $A$ is an integral domain. \\
-            ``$\Leftarrow$''. \\
+            Let $\operatorname{ord}(f) := \inf\{i \geq 0 \mid a_i \neq 0\}$. Then $\operatorname{ord}(fg) \geq \operatorname{ord}(f) + \operatorname{ord}(g)$ with equality if e.g., $A$ is an integral domain. \par 
+            ``$\Leftarrow$''. \par 
             ``$\Rightarrow$''. subring not zero, so integral domain.
         \item 
             $\ffa \leq A$ is prime if and only if $A/\ffa$ is an integral domain if and only if $\frac{A}{\ffa}\llbracket X \rrbracket$ is an integral domain if and only if $A\llbracket X \rrbracket/\ffa \llbracket X \rrbracket$ is an integral domain by (c) if and only if $\ffa\llbracket X \rrbracket \leq A \llbracket X \rrbracket$ is prime. Similarly, $\ffa$ is prime in $A$ if and only if $\langle \ffa,X \rangle A\llbracket X \rrbracket$ is prime in $A\llbracket X \rrbracket$ by (d). ... 
