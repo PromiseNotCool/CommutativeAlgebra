@@ -973,13 +973,26 @@ Let $A$ be a commutative ring with identity$\neq 0$.
 
 \begin{example}
     \begin{enumerate}
-        \item [(c)] Since $\ffa \leq A$, we have $\ffa \llbracket X \rrbracket \supseteq \langle \ffa \rangle A \llbracket X \rrbracket$ with equality if $\ffa$ is finitely generated.... \\
-            Claim.  $f \not \in \langle a \rangle A\llbracket X \rrbracket = \langle y_1,y_2,\cdots \rangle A\llbracket X \rrbracket$. Suppose $f \in \langle y_1,y_2,\cdots \rangle A\llbracket X \rrbracket$. Then there exists $m \geq 1$ and $\sum_{j=0}^\infty b_{ij}X^j = g_i \in A\llbracket X \rrbracket$ for $i = 1,\cdots,m$ such that $\sum_{j=1}^\infty Y_jX^j = f = \sum_{i=1}^m g_iY_i = \sum_{i=1}^m (\sum_{j=0}^\infty b_{ij}X^j)Y_i = \sum_{j=0}^\infty (\sum_{i=1}^\infty b_{ij}Y_i)X^j$. For any $j$.....
+        \item [(c)] Example of $\langle \ffa \rangle A\llbracket X \rrbracket \subsetneq \ffa\llbracket X \rrbracket$ for some $\ffa \leq A$. Let $A = k[Y_1,Y_2,Y_3,\cdots]$ and $\ffa = \langle Y_1,Y_2,Y_3,\cdots \rangle A$. Let $f = \sum_{i=1}^\infty Y_iX^i \in \ffa \llbracket X \rrbracket$.
+            Claim. $f \not \in \langle \ffa \rangle A\llbracket X \rrbracket = \langle Y_1,Y_2,\cdots \rangle A\llbracket X \rrbracket$. Suppose $f \in \langle Y_1,Y_2,\cdots \rangle A\llbracket X \rrbracket$. Then there exists $m \geq 1$ and $\sum_{j=0}^\infty b_{ij}X^j = g_i \in A\llbracket X \rrbracket$ for $i = 1,\cdots,m$ such that $\sum_{j=1}^\infty Y_jX^j = f = \sum_{i=1}^m g_iY_i = \sum_{i=1}^m (\sum_{j=0}^\infty b_{ij}X^j)Y_i = \sum_{j=0}^\infty (\sum_{i=1}^m b_{ij}Y_i)X^j$. So for any $j \geq 1$, we have $Y_j = \sum_{i=1}^m b_{ij}Y_i \in \langle Y_1,\cdots,Y_m \rangle A$. Then $Y_{m+1} \in \langle Y_1,\cdots,Y_m \rangle A$, a contradiction.
         \item [(e)]
-            ....\\
-            Claim. $f \not \in \operatorname{Nil}(A\llbracket X \rrbracket)$. $f^2 = \overbar Y_1^2 = \smallunderbrace{X^2}_{\neq 0} + \smallunderbrace{(2\overbar Y_1 \overbar Y_2)X^3}_{\neq 0} + \cdots$.
+            Example of $f \not \in \operatorname{Nil}(A\llbracket X \rrbracket)$ when $a_i \in \operatorname{Nil}(A)$ for any $i \geq 0$. Let $A = \frac{\bbQ[Y_1,Y_2,Y_3,\cdots]}{\langle Y_1^2,Y_2^3,Y_3^4,\cdots \rangle}$, $a_0 = 0$ and $a_i = \overbar Y_i$ for $i \geq 0$. Then $a_i^{i+1} = \overbar{Y_i^{i+1}} = 0$ and so $a_i \in \operatorname{Nil}(A)$. Claim. $f \not \in \operatorname{Nil}(A\llbracket X \rrbracket)$. Note $f^2 = (\sum_{i=1}^\infty \overbar Y_i X^i)^2 = \smallunderbrace{\overbar Y_1^2 X^2}_{= 0} + \smallunderbrace{(2\overbar Y_1 \overbar Y_2)X^3}_{\neq 0} + \cdots$, $f^3 = (\sum_{i=1}^\infty \overbar Y_i X^i)^3 = \smallunderbrace{\overbar Y_1^3 X^3}_{= 0} + \smallunderbrace{(2\overbar Y_1 \overbar Y_3 + \overbar {Y_2^2})X^4}_{\neq 0} + \cdots$, and inductively, we find $f^n$ has lots of non-zero coefficients for any $n \geq 1$.
     \end{enumerate}
 \end{example}
+
+\begin{definition}
+    \[A\llbracket X,Y \rrbracket = A\llbracket X \rrbracket A\llbracket Y \rrbracket,\]
+    and for $d \geq 2$,
+    \[A\llbracket X_1,\cdots,X_d \rrbracket = A \llbracket X_1,\cdots,X_{d-1} \rrbracket \llbracket X_d \rrbracket.\]
+\end{definition}
+
+\begin{fact}
+    $A\llbracket X_1,\cdots,X_d \rrbracket = \{\sum_{\underline n \in \bbN_0^d} a_{\underline n} \underline X^{\underline n} \mid a_{\underline n} \in A\}$ for $d \geq 1$, where $\underline X^{\underline n} = X_1^{n_1} \cdots X_d^{n_d}$ and $\underline n = (n_1,\cdots,n_d) \in \bbN_0^d$.
+\end{fact}
+
+\begin{warning}
+    The operations on $A\llbracket X_1,X_2,X_3,\cdots \rrbracket$ are ambiguous.
+\end{warning}
 
 
 
