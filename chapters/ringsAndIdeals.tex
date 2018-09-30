@@ -351,7 +351,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
         \item [(d)] Since $S \subseteq T \subseteq R$, we have $\operatorname{V}(S) \supseteq \operatorname{V}(T)$ by definition.
         \item [(a)] $\ffp \in \operatorname{V}(S)$ if and only if $\ffp \supseteq S$ if and only if $\ffp \supseteq \langle S \rangle$ if and only if $\ffp \supseteq \operatorname{V}(\langle S \rangle)$.
         \item [(b)]
-            We have $\ffa = R$ if and only if $\ffb \not \supseteq \ffa$ for any $\ffb \lneq R$ if and only if $\ffm \not \supseteq \ffa$ for any $\ffm \in \operatorname{Jac}(R)$ if and only if $\ffp \not \supseteq \ffa$ for any $\ffp \in \operatorname{Spec}(R)$ by Fact 1.14 and Fact 1.17. 
+            We have $\ffa = R$ if and only if $\ffb \not \supseteq \ffa$ for any $\ffb \lneq R$ if and only if $\ffm \not \supseteq \ffa$ for any $\ffm \leq R$ maximal if and only if $\ffp \not \supseteq \ffa$ for any $\ffp \in \operatorname{Spec}(R)$ by Fact 1.14 and Fact 1.17. 
         \item[(c)] $\ffa \subseteq \operatorname{Nil}(R)$ if and only if $\ffp \supseteq \ffa$ for all $\ffp \in \operatorname{Spec}(R)$ by Proposition 1.26(d) if and only if $\operatorname{V}(\ffa) = \operatorname{Spec}(R)$. \qedhere
     \end{enumerate}
 \end{proof}
@@ -855,20 +855,20 @@ Let $A$ be a commutative ring with identity$\neq 0$.
             \[\langle X,\ffa \rangle A\llbracket X \rrbracket = X \cdot A \llbracket X \rrbracket + \ffa \cdot A \llbracket X \rrbracket = XA \llbracket X \rrbracket + \ffa \llbracket X \rrbracket = \left\{\sum_{i=0}^\infty b_iX^i \mathrel{\bigg |} b_0 \in \ffa,\ b_i \in A, \fa i \geq 1\right\} \leq A \llbracket X \rrbracket\] 
             and $A \llbracket X \rrbracket / \langle X,\ffa \rangle A \llbracket X \rrbracket \cong A/\ffa$. In particular, if $\ffa = 0$, then $\langle X \rangle A \llbracket X \rrbracket = \{\sum_{i=1}^\infty b_iX_i \mid b_i \in A, \fa i \geq 1\} \leq A\llbracket X \rrbracket$ and $A\llbracket X \rrbracket / \langle X \rangle A \llbracket X \rrbracket \cong A$. 
         \item If $f \in \operatorname{Nil}(A\llbracket X \rrbracket)$, then $a_i \in \operatorname{Nil}(A)$ for any $i \geq 0$. The converse holds if $\langle a_0,a_1,a_2,\cdots \rangle$ is finitely generated. Also, $\operatorname{Nil}(A) \cdot A \llbracket X \rrbracket \subseteq \operatorname{Nil}(A \llbracket X \rrbracket) \subseteq \operatorname{Nil}(A) \llbracket X \rrbracket$.
-        \item $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$ if and only if $a_0 \in \operatorname{Jac}(A)$, i.e., $\operatorname{Jac}(A\llbracket X \rrbracket) = \langle \operatorname{Jac}(A),X \rangle A\llbracket X \rrbracket$. 
+        \item $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$ if and only if $a_0 \in \operatorname{Jac}(A)$. Also, $\operatorname{Jac}(A\llbracket X \rrbracket) = \langle \operatorname{Jac}(A),X \rangle A\llbracket X \rrbracket$. 
         \item $A\llbracket X \rrbracket$ is an integral domain if and only if $A$ is an integral domain. Also, $A\llbracket X \rrbracket$ is never a field.
         \item $\ffa \leq A$ is prime if and only if $\ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is prime if and only if $\langle \ffa,X \rangle A \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is prime. \par 
-            Let $\epsilon: A \xrightarrow {\subseteq} A\llbracket X \rrbracket$. Then $\epsilon^*: \operatorname{Spec}(A\llbracket X \rrbracket) \to \operatorname{Spec}(A)$ taking $\ffp \llbracket X \rrbracket$ to $\ker(p \circ \epsilon)$ is always onto and never 1-1, where $p$ is the natural projection from $A\llbracket X \rrbracket$ to $A\llbracket X \rrbracket/\ffp\llbracket X \rrbracket$. 
-        \item $\ffa \leq A$ is maximal if and only if $\langle \ffa,X \rangle A \llbracket X \rrbracket \leq A \llbracket X \rrbracket$ is maximal. Also, $\ffa \llbracket X \rrbracket A\llbracket X \rrbracket$ is never maximal.
+            Let $\epsilon: A \xrightarrow {\subseteq} A\llbracket X \rrbracket$. Then $\epsilon^*: \operatorname{Spec}(A\llbracket X \rrbracket) \to \operatorname{Spec}(A)$ taking $\ffp \llbracket X \rrbracket$ to $\ker(p \circ \epsilon)$ is always onto and never 1-1.
+        \item $\ffa \leq A$ is maximal if and only if $\langle \ffa,X \rangle A \llbracket X \rrbracket \leq A \llbracket X \rrbracket$ is maximal. Also, $\ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is never maximal.
         \item Let $\operatorname{m-Spec}(A\llbracket X \rrbracket) = \{\text{maximal ideals of}A\llbracket X \rrbracket\} \subseteq \operatorname{Spec}(A\llbracket X \rrbracket)$. Let $\ffm \in \operatorname{m-Spec}(A\llbracket X \rrbracket)$. Then 
             \begin{enumerate}
-                \item $\ffm \cap A = \ffn \in \operatorname{m-Spec}(A)$.
-                \item $X \in \ffm$.
-                \item $\ffm = \langle \ffn,X \rangle A\llbracket X \rrbracket$.
+                \item $\ffm \cap A \in \operatorname{m-Spec}(A)$,
+                \item $X \in \ffm$,
+                \item $\ffm = \langle \ffm \cap A,X \rangle A\llbracket X \rrbracket$.
             \end{enumerate}
-            Therefore, 
+            \par Therefore,
             \begin{align*}
-                \operatorname{m-Spec}(A) &\leftrightarrows \operatorname{m_Spec}(A\llbracket X \rrbracket) \\
+                \operatorname{m-Spec}(A) &\mathrel{\mathop{\rightleftarrows}^{\mathrm{\Lambda}}_{\mathrm{\epsilon^*}}} \operatorname{m-Spec}(A\llbracket X \rrbracket)  \\
                 \ffn & \mapsto \langle \ffn,X \rangle A\llbracket X \rrbracket \\
                 \ffm \cap A &\mapsfrom \ffm
             \end{align*}
@@ -927,21 +927,46 @@ Let $A$ be a commutative ring with identity$\neq 0$.
         \item 
             Note $\ffa \leq A$ is prime if and only if $A/\ffa$ is an integral domain if and only if $\frac{A}{\ffa}\llbracket X \rrbracket$ is an integral domain by (g) if and only if $A\llbracket X \rrbracket/\ffa \llbracket X \rrbracket$ is an integral domain by (c) if and only if $\ffa\llbracket X \rrbracket \leq A \llbracket X \rrbracket$ is prime. \par 
             Note $\ffa \leq A$ is prime if and only if $A/\ffa$ is an integral domain if and only $\frac{A\llbracket X \rrbracket}{\langle X,\ffa \rangle A\llbracket X \rrbracket}$ is an integral domain by (d) if and only if $\langle \ffa,X \rangle A\llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is prime. \par
-            Let $\ffp \in \operatorname{Spec}(A)$. By the proof of (c) and (d), $\ffp \llbracket X \rrbracket \cap A = \ffp$ and $\langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \ffp$. So $\ffp\llbracket X \rrbracket, \langle \ffp,X \rangle A\llbracket X \rrbracket \in \operatorname{Spec}(A\llbracket X \rrbracket)$ and 
+            Let $\ffp \in \operatorname{Spec}(A)$. Then $\ffp\llbracket X \rrbracket, \langle \ffp,X \rangle A\llbracket X \rrbracket \in \operatorname{Spec}(A\llbracket X \rrbracket)$. Consider the following commutative diagrams.
+            \[
+                \begin{tikzcd}
+                    A \arrow[r,"\epsilon"] \arrow[d] & A \llbracket X \rrbracket \arrow[r,two heads, "p_1"] & \frac{A \llbracket X \rrbracket}{\ffp\llbracket X \rrbracket} \\
+                    \frac{A}{\epsilon^{-1}(\ffp \llbracket X \rrbracket)} \arrow[rru,dashed,hook,"\ex !\ \overbar {p_1 \circ \epsilon}"']
+                \end{tikzcd}
+                \quad
+                \begin{tikzcd}
+                    A \arrow[r,"\epsilon"] \arrow[d] & A \llbracket X \rrbracket \arrow[r,two heads, "p_2"] & \frac{A \llbracket X \rrbracket}{\langle \ffp,X \rangle\llbracket X \rrbracket} \\
+                    \frac{A}{\epsilon^{-1}(\langle \ffp,X \rangle \llbracket X \rrbracket)} \arrow[rru,dashed,hook,"\ex !\ \overbar {p_2 \circ \epsilon}"']
+                \end{tikzcd}
+            \]
+            \par By the proof of (c) and (d), we have $\ffp \llbracket X \rrbracket \cap A = \ffp$ and $\langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \ffp$. So
             \begin{align*}
-                \epsilon^*(\ffp \llbracket X \rrbracket) &= \ker(p \circ \epsilon) = \epsilon^{-1}(\ffp \llbracket X \rrbracket) = \ffp \llbracket X \rrbracket \cap A = \ffp \\
-                                                         &= \langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \epsilon^{-1}(\langle \ffp,X \rangle A\llbracket X \rrbracket) = \ker(p \circ \epsilon) = \epsilon^*(\langle \ffp,X \rangle A\llbracket X \rrbracket). 
+                \epsilon^*(\ffp \llbracket X \rrbracket) &= \ker(p_1 \circ \epsilon) = \epsilon^{-1}(\ffp \llbracket X \rrbracket) = \ffp \llbracket X \rrbracket \cap A = \ffp \\
+                                                         &= \langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \epsilon^{-1}(\langle \ffp,X \rangle A\llbracket X \rrbracket) = \ker(p_2 \circ \epsilon) = \epsilon^*(\langle \ffp,X \rangle A\llbracket X \rrbracket). 
             \end{align*}
-            So $\epsilon^*$ is onto. Also, since $X \not \in \ffp \llbracket X \rrbracket$, but $X \in \langle \ffp,X \rangle \llbracket X \rrbracket$, we have $\epsilon^*$ is not 1-1.
+            Thus, $\epsilon^*$ is onto. Also, since $X \not \in \ffp \llbracket X \rrbracket$, but $X \in \langle \ffp,X \rangle \llbracket X \rrbracket$, we have $\ffp\llbracket X \rrbracket \neq \langle \ffp,X \rangle A\llbracket X \rrbracket$$\epsilon^*$ and then $\epsilon^*$ is not 1-1.
         \item 
             Note $\ffa \leq A$ is maximal if and only if $A/\ffa$ is a field if and only $A\llbracket X \rrbracket / \langle X,\ffa \rangle A\llbracket X \rrbracket$ is a field by (d) if and only if $\langle \ffa,X \rangle A\llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is maximal. \par 
             Since $\frac{A}{\ffa}\llbracket X \rrbracket$ is not a field by (g), $A\llbracket X \rrbracket / \ffa \llbracket X \rrbracket$ is not a field by (c), then $\ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is not maximal. 
         \item 
             \begin{enumerate}
                 \item [(2)]
-                    Since $X \in \operatorname{Jac}(A\llbracket X \rrbracket)$ by (f), we have $X \in \ffm$ for any $\ffm \in \operatorname{m-Spec}(A\llbracket X \rrbracket)$. Prime correspondence under quotients.
-                \item [(3)] Since $\langle \ffn,X \rangle \subseteq \ffm$, we have $\langle \ffn,X \rangle \subseteq \ffm$. Note by (i) and (1), $\langle \ffn,X \rangle \leq A \llbracket X \rrbracket$ are maximal. Also, since $\ffm \leq A\llbracket X \rrbracket$ is maximal, $\langle \ffn,X \rangle = \ffm$. \qedhere
+                    Since $X \in \operatorname{Jac}(A\llbracket X \rrbracket)$ by (f), and $\ffm \in \operatorname{m-Spec}(A\llbracket X \rrbracket)$, we have $X \in \ffm$. 
+                \item [(1)]
+                    By prime correspondence under quotients, we have $\ffm$ corresponds to a maximal ideal in $A\llbracket X \rrbracket/\langle X \rangle A \llbracket X \rrbracket \cong A$ by (d).
+                    \begin{alignat*}{2}
+                        A\llbracket X \rrbracket &\xrightarrow{\pi} A\llbracket X \rrbracket/\langle X \rangle A\llbracket X \rrbracket &&\xrightarrow \cong A \\
+                        \ffm &\leadsto \ffm/\langle X \rangle A\llbracket X \rrbracket &&\leadsto \ffn
+                    \end{alignat*}
+                    Define $\tau: A\llbracket X \rrbracket \to A$ by $\tau(f) = f(0)$. Then we can find $\ffn \in \operatorname{m-Spec}(A)$ such that $\ffm = \tau^{-1}(\ffn)$. So 
+                    \[\ffm \cap A = \epsilon^{-1}(\ffm) = \epsilon^{-1}(\tau^{-1} \ffn) = (\tau \circ \epsilon)^{-1}(\ffn) = \operatorname{id}_A^{-1}(\ffn) = \ffn \in \operatorname{m-Spec}(A).\]
+                \item [(3)] Since $\ffm \cap A, \langle X \rangle \subseteq \ffm$, we have $\langle \ffm \cap A,X \rangle \subseteq \ffm$. Since $\ffm \leq A\llbracket X \rrbracket$ is maximal, and by (i) and (1), $\langle \ffm \cap A,X \rangle \leq A \llbracket X \rrbracket$ are maximal, we have $\langle \ffm \cap A,X \rangle = \ffm$.
             \end{enumerate} 
+            \par Note $\epsilon^*(\operatorname{m-Spec}(A\llbracket X \rrbracket) \subseteq \operatorname{m-Spec}(A)$ since by the proof of (1), $\epsilon^*(\ffm) = \epsilon^{-1}(\ffm) \in \operatorname{m-Spec}(A)$. \par 
+            Note $\Lambda (\operatorname{m-Spec}(A)) \subseteq \operatorname{m-Spec}(A\llbracket X \rrbracket)$ since by (i), $\Lambda(\ffn) = \langle \ffn,X \rangle A\llbracket X \rrbracket \in \operatorname{Spec}(A\llbracket X \rrbracket)$ for any $\ffn \in \operatorname{Spec}(A)$. \par 
+            Note $\Lambda(\epsilon^*(\ffm)) = \Lambda (\epsilon^{-1}(\ffm)) = \Lambda (\ffm \cap A) = \langle \ffm \cap A,X \rangle A\llbracket X \rrbracket = \ffm$ by (3). \par 
+            Note $\epsilon^*(\Lambda(\ffn)) = \epsilon^*(\langle \ffn,X \rangle A\llbracket X \rrbracket)= \epsilon^{-1}(\langle \ffn,X \rangle A\llbracket X \rrbracket) = \langle \ffn,X \rangle \cap A = \ffn$ by the proof of (c) for any $\ffn \leq \operatorname{m-Spec}(A)$. \par 
+            Therefore, we have a 1-1 correspondence between $\operatorname{m-Spec}(A\llbracket X \rrbracket)$ and $\operatorname{m-Spec}(A)$.
         \qedhere
     \end{enumerate}
 \end{proof}
