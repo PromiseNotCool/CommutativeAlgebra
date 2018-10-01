@@ -927,23 +927,12 @@ Let $A$ be a commutative ring with identity$\neq 0$.
         \item 
             Note $\ffa \leq A$ is prime if and only if $A/\ffa$ is an integral domain if and only if $\frac{A}{\ffa}\llbracket X \rrbracket$ is an integral domain by (g) if and only if $A\llbracket X \rrbracket/\ffa \llbracket X \rrbracket$ is an integral domain by (c) if and only if $\ffa\llbracket X \rrbracket \leq A \llbracket X \rrbracket$ is prime. \par 
             Note $\ffa \leq A$ is prime if and only if $A/\ffa$ is an integral domain if and only $\frac{A\llbracket X \rrbracket}{\langle X,\ffa \rangle A\llbracket X \rrbracket}$ is an integral domain by (d) if and only if $\langle \ffa,X \rangle A\llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is prime. \par
-            Let $\ffp \in \operatorname{Spec}(A)$. Then $\ffp\llbracket X \rrbracket, \langle \ffp,X \rangle A\llbracket X \rrbracket \in \operatorname{Spec}(A\llbracket X \rrbracket)$. Consider the following commutative diagrams.
-            \[
-                \begin{tikzcd}
-                    A \arrow[r,"\epsilon"] \arrow[d] & A \llbracket X \rrbracket \arrow[r,two heads, "p_1"] & \frac{A \llbracket X \rrbracket}{\ffp\llbracket X \rrbracket} \\
-                    \frac{A}{\epsilon^{-1}(\ffp \llbracket X \rrbracket)} \arrow[rru,dashed,hook,"\ex !\ \overbar {p_1 \circ \epsilon}"']
-                \end{tikzcd}
-                \quad
-                \begin{tikzcd}
-                    A \arrow[r,"\epsilon"] \arrow[d] & A \llbracket X \rrbracket \arrow[r,two heads, "p_2"] & \frac{A \llbracket X \rrbracket}{\langle \ffp,X \rangle\llbracket X \rrbracket} \\
-                    \frac{A}{\epsilon^{-1}(\langle \ffp,X \rangle \llbracket X \rrbracket)} \arrow[rru,dashed,hook,"\ex !\ \overbar {p_2 \circ \epsilon}"']
-                \end{tikzcd}
-            \]
-            \par By the proof of (c) and (d), we have $\ffp \llbracket X \rrbracket \cap A = \ffp$ and $\langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \ffp$. So
+            Let $\ffp \in \operatorname{Spec}(A)$. Then $\ffp\llbracket X \rrbracket, \langle \ffp,X \rangle A\llbracket X \rrbracket \in \operatorname{Spec}(A\llbracket X \rrbracket)$. \par 
+            By the proof of (c) and (d), we have $\ffp \llbracket X \rrbracket \cap A = \ffp$ and $\langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \ffp$. So by Fact 1.16,
             \begin{align*}
                 \epsilon^*(\ffp \llbracket X \rrbracket) & = \epsilon^{-1}(\ffp \llbracket X \rrbracket) = \ffp \llbracket X \rrbracket \cap A = \ffp = \langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \epsilon^{-1}(\langle \ffp,X \rangle A\llbracket X \rrbracket) = \epsilon^*(\langle \ffp,X \rangle A\llbracket X \rrbracket). 
             \end{align*}
-            Thus, $\epsilon^*$ is onto. Also, since $X \not \in \ffp \llbracket X \rrbracket$, but $X \in \langle \ffp,X \rangle \llbracket X \rrbracket$, we have $\ffp\llbracket X \rrbracket \neq \langle \ffp,X \rangle A\llbracket X \rrbracket$$\epsilon^*$ and then $\epsilon^*$ is not 1-1.
+            Thus, $\epsilon^*$ is onto. Also, since $X \not \in \ffp \llbracket X \rrbracket$, but $X \in \langle \ffp,X \rangle \llbracket X \rrbracket$, we have $\ffp\llbracket X \rrbracket \neq \langle \ffp,X \rangle A\llbracket X \rrbracket$ and then $\epsilon^*$ is not 1-1.
         \item 
             Note $\ffa \leq A$ is maximal if and only if $A/\ffa$ is a field if and only $A\llbracket X \rrbracket / \langle X,\ffa \rangle A\llbracket X \rrbracket$ is a field by (d) if and only if $\langle \ffa,X \rangle A\llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is maximal. \par 
             Since $\frac{A}{\ffa}\llbracket X \rrbracket$ is not a field by (g), $A\llbracket X \rrbracket / \ffa \llbracket X \rrbracket$ is not a field by (c), then $\ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is not maximal. 
@@ -972,10 +961,10 @@ Let $A$ be a commutative ring with identity$\neq 0$.
 
 \begin{example}
     \begin{enumerate}
-        \item [(c)] Example of $\langle \ffa \rangle A\llbracket X \rrbracket \subsetneq \ffa\llbracket X \rrbracket$ for some $\ffa \leq A$. Let $A = k[Y_1,Y_2,Y_3,\cdots]$ and $\ffa = \langle Y_1,Y_2,Y_3,\cdots \rangle A$. Let $f = \sum_{i=1}^\infty Y_iX^i \in \ffa \llbracket X \rrbracket$.
-            Claim. $f \not \in \langle \ffa \rangle A\llbracket X \rrbracket = \langle Y_1,Y_2,\cdots \rangle A\llbracket X \rrbracket$. Suppose $f \in \langle Y_1,Y_2,\cdots \rangle A\llbracket X \rrbracket$. Then there exists $m \geq 1$ and $\sum_{j=0}^\infty b_{ij}X^j = g_i \in A\llbracket X \rrbracket$ for $i = 1,\cdots,m$ such that $\sum_{j=1}^\infty Y_jX^j = f = \sum_{i=1}^m g_iY_i = \sum_{i=1}^m (\sum_{j=0}^\infty b_{ij}X^j)Y_i = \sum_{j=0}^\infty (\sum_{i=1}^m b_{ij}Y_i)X^j$. So for any $j \geq 1$, we have $Y_j = \sum_{i=1}^m b_{ij}Y_i \in \langle Y_1,\cdots,Y_m \rangle A$. Then $Y_{m+1} \in \langle Y_1,\cdots,Y_m \rangle A$, a contradiction.
+        \item [(c)] Example of $\langle \ffa \rangle A\llbracket X \rrbracket \subsetneq \ffa\llbracket X \rrbracket$ for some $\ffa \leq A$. Let $A = k[Y_1,Y_2,Y_3,\cdots]$ and $\ffa = \langle Y_1,Y_2,Y_3,\cdots \rangle A$. Let $f = \sum_{i=1}^\infty Y_iX^i \in \ffa \llbracket X \rrbracket$. Claim. $f \not \in \langle \ffa \rangle A\llbracket X \rrbracket = \langle Y_1,Y_2,\cdots \rangle A\llbracket X \rrbracket$. Suppose $f \in \langle Y_1,Y_2,\cdots \rangle A\llbracket X \rrbracket$. Then there exists $m \geq 1$ and $\sum_{j=0}^\infty b_{ij}X^j = g_i \in A\llbracket X \rrbracket$ for $i = 1,\cdots,m$ such that $\sum_{j=1}^\infty Y_jX^j = f = \sum_{i=1}^m g_iY_i = \sum_{i=1}^m (\sum_{j=0}^\infty b_{ij}X^j)Y_i = \sum_{j=0}^\infty (\sum_{i=1}^m b_{ij}Y_i)X^j$. So for any $j \geq 1$, we have $Y_j = \sum_{i=1}^m b_{ij}Y_i \in \langle Y_1,\cdots,Y_m \rangle A$. Then $Y_{m+1} \in \langle Y_1,\cdots,Y_m \rangle A$, a contradiction.
         \item [(e)]
-            Example of $f \not \in \operatorname{Nil}(A\llbracket X \rrbracket)$ when $a_i \in \operatorname{Nil}(A)$ for any $i \geq 0$. Let $A = \frac{\bbQ[Y_1,Y_2,Y_3,\cdots]}{\langle Y_1^2,Y_2^3,Y_3^4,\cdots \rangle}$, $a_0 = 0$ and $a_i = \overbar Y_i$ for $i \geq 0$. Then $a_i^{i+1} = \overbar{Y_i^{i+1}} = 0$ and so $a_i \in \operatorname{Nil}(A)$. Claim. $f \not \in \operatorname{Nil}(A\llbracket X \rrbracket)$. Note $f^2 = (\sum_{i=1}^\infty \overbar Y_i X^i)^2 = \smallunderbrace{\overbar Y_1^2 X^2}_{= 0} + \smallunderbrace{(2\overbar Y_1 \overbar Y_2)X^3}_{\neq 0} + \cdots$, $f^3 = (\sum_{i=1}^\infty \overbar Y_i X^i)^3 = \smallunderbrace{\overbar Y_1^3 X^3}_{= 0} + \smallunderbrace{(2\overbar Y_1 \overbar Y_3 + \overbar {Y_2^2})X^4}_{\neq 0} + \cdots$, and inductively, we find $f^n$ has lots of non-zero coefficients for any $n \geq 1$.
+            Example of $f \not \in \operatorname{Nil}(A\llbracket X \rrbracket)$ when $a_i \in \operatorname{Nil}(A)$ for any $i \geq 0$. Let $A = \frac{\bbQ[Y_1,Y_2,Y_3,\cdots]}{\langle Y_1^2,Y_2^3,Y_3^4,\cdots,Y_i^{i+1},\cdots \rangle}$, $a_0 = 0 \in \operatorname{Nil}(A)$ and $a_i = \overbar Y_i$ for $i \geq 1$. Then $a_i^{i+1} = \overbar{Y_i^{i+1}} = 0$ and so $a_i \in \operatorname{Nil}(A)$ for $i \geq 1$. \par 
+            Claim. $f \not \in \operatorname{Nil}(A\llbracket X \rrbracket)$. Note $f^2 = (\sum_{i=1}^\infty \overbar Y_i X^i)^2 = \smallunderbrace{\overbar Y_1^2 X^2}_{= 0} + \smallunderbrace{(2\overbar Y_1 \overbar Y_2)X^3}_{\neq 0} + \cdots$, $f^3 = (\sum_{i=1}^\infty \overbar Y_i X^i)^3 = \smallunderbrace{\overbar Y_1^3 X^3}_{= 0} + \smallunderbrace{(2\overbar Y_1 \overbar Y_3 + \overbar {Y_2^2})X^4}_{\neq 0} + \cdots$, and inductively, we find $f^n$ has lots of non-zero coefficients for any $n \geq 1$.
     \end{enumerate}
 \end{example}
 
