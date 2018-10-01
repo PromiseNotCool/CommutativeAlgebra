@@ -160,7 +160,7 @@ Let $R$ be a commutative ring with identity.
         \end{tikzcd}
     \end{center}
     \par
-    Let $\ffq \in \operatorname{Spec}(S)$. Then $S/\ffq$ is an integral domain. Also, since $R/\ker(\pi \circ \phi) \cong \im(\pi \circ \phi) \subseteq S/\ffq$, we have $R/\ker(\pi \circ \phi)$ is an integral domain and then $\ker(\pi \circ \phi)$ is prime. Observe $\phi^{-1}(\ffq) = \ker(\pi \circ \phi)$ is then prime, i.e., $\phi^{-1}(\ffq) \in \operatorname{Spec}(R)$. Thus, $\phi$ induces a well-defined map $\phi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$.
+    Let $\ffq \in \operatorname{Spec}(S)$. Then $S/\ffq$ is an integral domain. Also, since $R/\ker(\pi \circ \phi) \cong \im(\pi \circ \phi) \subseteq S/\ffq$, we have $R/\ker(\pi \circ \phi)$ is an integral domain and then $\ker(\pi \circ \phi)$ is prime. Observe $\phi^{-1}(\ffq) = \ker(\pi \circ \phi)$ is then prime, i.e., $\phi^{-1}(\ffq) \in \operatorname{Spec}(R)$. Thus, $\phi$ induces a well-defined map $\phi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$ given by $\phi^*(\ffq) = \phi^{-1}(\ffq)$.
     \end{fact}
 
 \begin{example*}
@@ -941,8 +941,7 @@ Let $A$ be a commutative ring with identity$\neq 0$.
             \]
             \par By the proof of (c) and (d), we have $\ffp \llbracket X \rrbracket \cap A = \ffp$ and $\langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \ffp$. So
             \begin{align*}
-                \epsilon^*(\ffp \llbracket X \rrbracket) &= \ker(p_1 \circ \epsilon) = \epsilon^{-1}(\ffp \llbracket X \rrbracket) = \ffp \llbracket X \rrbracket \cap A = \ffp \\
-                                                         &= \langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \epsilon^{-1}(\langle \ffp,X \rangle A\llbracket X \rrbracket) = \ker(p_2 \circ \epsilon) = \epsilon^*(\langle \ffp,X \rangle A\llbracket X \rrbracket). 
+                \epsilon^*(\ffp \llbracket X \rrbracket) & = \epsilon^{-1}(\ffp \llbracket X \rrbracket) = \ffp \llbracket X \rrbracket \cap A = \ffp = \langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \epsilon^{-1}(\langle \ffp,X \rangle A\llbracket X \rrbracket) = \epsilon^*(\langle \ffp,X \rangle A\llbracket X \rrbracket). 
             \end{align*}
             Thus, $\epsilon^*$ is onto. Also, since $X \not \in \ffp \llbracket X \rrbracket$, but $X \in \langle \ffp,X \rangle \llbracket X \rrbracket$, we have $\ffp\llbracket X \rrbracket \neq \langle \ffp,X \rangle A\llbracket X \rrbracket$$\epsilon^*$ and then $\epsilon^*$ is not 1-1.
         \item 

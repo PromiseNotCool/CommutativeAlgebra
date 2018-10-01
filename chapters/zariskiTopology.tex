@@ -1,25 +1,26 @@
 \chapter{Zariski Topology}
 
 \begin{definition}
-    For any $\epsilon > 0$ and any $x \in \bbR^n$, the \emph{open ball} centered at $x$ with radius $\epsilon$ is $B_\epsilon(x) = \{y \in \bbR^n \mathrel{\big |} \abs{x-y} < \epsilon\}$. \par 
-    A subset $U \subseteq \bbR^n$ is \emph{open} if for any $x \in U$, there exists $\epsilon > 0$ such that $B_\epsilon(x) \subseteq U$, i.e., if $U$ is the union of (possible infinitely many) open balls. e.g., if $n = 1$, $B_\epsilon(x) = (x-\epsilon,x+\epsilon)$, open interval. \par 
+    For any $\epsilon > 0$ and any $x \in \bbR^n$, the \emph{open ball} centered at $x$ with radius $\epsilon$ is 
+    \[B_\epsilon(x) = \{y \in \bbR^n \mathrel{\big |} \abs{x-y} < \epsilon\}.\]
+    A subset $U \subseteq \bbR^n$ is \emph{open} if for any $x \in U$, there exists $\epsilon > 0$ such that $B_\epsilon(x) \subseteq U$, i.e., if $U$ is the union of (possible infinitely many) open balls. e.g., if $n = 1$, $B_\epsilon(x) = (x-\epsilon,x+\epsilon)$ is an open interval. \par 
     More generally, this works for any metric space.
 \end{definition}
 
 \begin{fact}
     $\bbR^n$ and $\emptyset$ are both open. \par 
-    The set of open sets in $\bbR^n$ is closed under arbitrary union and finite intersection, i.e., if $U_x$ open for any $\lambda \in \Lambda$, then $\bigcup_{\lambda \in \Lambda} U_\lambda$ is open and if $U_i$ open for any $i = 1,\cdots,d$, then $\bigcap_{i=1}^d U_i$ is open. \par 
-    The set of open sets in $\bbR^n$ is (usually) not closed under infinite intersections: $\bigcap_{i=1}^\infty (-1/i,1/i) = \{0\}$, not open in $\bbR^n$. 
+    The set of open sets in $\bbR^n$ is closed under arbitrary union and finite intersection, i.e., if $U_\lambda$ is open for any $\lambda \in \Lambda$, then $\bigcup_{\lambda \in \Lambda} U_\lambda$ is open, and if $U_i$ open for any $i = 1,\cdots,d$, then $\bigcap_{i=1}^d U_i$ is open. \par 
+    The set of open sets in $\bbR^n$ is (usually) not closed under infinite intersections, e.g., $\bigcap_{i=1}^\infty (-1/i,1/i) = \{0\}$, not open in $\bbR^n$. 
 \end{fact}
 
 \begin{definition}
     A\emph{topology} on a non-empty set $X$ is a collection of sets $\ssT$ of subsets of $X$ ($\ssT \subseteq \llP(X)$) such that
     \begin{enumerate}
         \item $\emptyset, X \in \ssT$,
-        \item for any $U_\lambda \in \ssT$, $\bigcup_{\lambda \in \Lambda} U_\lambda \in \ssT$ and
-        \item for any $U_1,\cdots,U_n \in \ssT$, $\bigcap_{i=1}^n U_\lambda \in \ssT$.
+        \item for any $U_\lambda\}_{\lambda \in \Lambda} \subseteq \ssT$, $\bigcup_{\lambda \in \Lambda} U_\lambda \in \ssT$ and
+        \item for any $n \geq 1$ and $U_1,\cdots,U_n \in \ssT$, $\bigcap_{i=1}^n U_\lambda \in \ssT$.
     \end{enumerate}
-    The elements of $\ssT$ are the \emph{open subsets} of $X$. \par
+    \par The elements of $\ssT$ are the \emph{open subsets} of $X$. \par
     A \emph{topological space} is a set $X \neq \emptyset$ equipped with a topology $\ssT$.
 \end{definition}
 
@@ -28,18 +29,25 @@
 \end{example}
 
 \begin{definition}
-    The \emph{Zariski topology} on $\operatorname{Spec}(R) = X$ ($R \neq 0$). The open sets are $\operatorname{Spec}(R) \setminus \operatorname{V}(S) = \{\ffp \in \operatorname{Spec}(R) \mid \ffp \not \supseteq S\}$ for $S \subseteq R$. e.g., for any $f \in R$: $X_f = \operatorname{Spec}(R) \setminus \operatorname{V}(f) = \{\ffp \in \operatorname{Spec}(R) \mid \ffp \not \ni f\}$.
+    The \emph{Zariski topology} on $\operatorname{Spec}(R) = X$ ($R \neq 0$). The open sets are 
+    \[\operatorname{Spec}(R) \setminus \operatorname{V}(S) = \{\ffp \in \operatorname{Spec}(R) \mid S \not \subseteq \ffp\}\] 
+    where $S \subseteq R$. e.g., for any $f \in R$: $X_f = \operatorname{Spec}(R) \setminus \operatorname{V}(f) = \{\ffp \in \operatorname{Spec}(R) \mid f \not \in \ffp\}$.
 \end{definition}
 
 \begin{proposition}
+    If $S \subseteq R$, then $\operatorname{V}(S) = \operatorname{V}(\langle S \rangle)$ and so $\operatorname{Spec}(R) \setminus \operatorname{V}(S) = \operatorname{Spec}(R) \setminus \operatorname{V}(\langle S \rangle)$. In other words, the open sets are exactly the sets $\operatorname{Spec}(R) \setminus \operatorname{V}(\ffa)$, where $\ffa \leq R$.
 \end{proposition}
 
-\begin{example}
+\begin{notation*}
+    $\ssZ = \{\operatorname{Spec}(R) \setminus \operatorname{V}(S) \mid S \subseteq R\} = \{\operatorname{Spec}(R) \setminus \operatorname{V}(\ffa) \mid \ffa \leq R\}$.
+\end{notation*}
 
+\begin{example}
+    Compute the Zariski open sets $\ssZ$ of $\operatorname{Spec}(\bbZ) = X$. Since $\bbZ$ is a principal ideal domain, $\ssZ = \{\operatorname{Spec}(\bbZ) \setminus \operatorname{V}(m) \mid m \geq 0\}$. Since $\operatorname{V}(0) = \operatorname{Spec}(\bbZ)$, $X_0 = \operatorname{Spec}(\bbZ) \setminus \operatorname{V}(0) = \emptyset$, and since $\operatorname{V}(1) = \emptyset$, $X_1 = \operatorname{Spec}(\bbZ) \setminus \operatorname{V}(1) = \operatorname{Spec}(\bbZ)$. For $m \geq 2$, write $m = p_1^{e_1} \cdots p_n^{e_n}$ with $p_1,\cdots,p_n$ are distinct primes and $e_1,\cdots,e_n \geq 1$, then $\operatorname{V}(m) = \{\langle p_1 \rangle, \cdots, \langle p_n \rangle\}$ and so $X_m = \operatorname{Spec}(\bbZ) \setminus \operatorname{V}(m) = X \setminus \{\langle p_1 \rangle,\cdots, \langle p_n \rangle\}$. Note these are all the open sets. In particular, $\ffp = \{0\}$ is in every non-empty open set.
 \end{example}
 
 \begin{fact}
-    Let $X = \operatorname{Spec}(R)$. $X_0 = X \setminus \operatorname{V}(0) = \emptyset$, $X_1 = X \setminus \operatorname{V}(1) = X$.
+    Let $X = \operatorname{Spec}(R)$. Then $X_0 = X \setminus \operatorname{V}(0) = \emptyset$ and $X_1 = X \setminus \operatorname{V}(1) = X$.
 \end{fact}
 
 \begin{proposition}
@@ -47,7 +55,7 @@
 \end{proposition}
 
 \begin{proof}
-    $\ffp \in X_{f_1 \cdots f_n}$ if and only if $f_1 \cdots f_n \not \in \ffp$ if and only if $f_i \not \in \ffp$ for any $i = 1,\cdots,n$ if and only if $\ffp \in \bigcap_{i=1}^n X_{f_i}$.
+    $\ffp \in X_{f_1 \cdots f_n}$ if and only if $f_1 \cdots f_n \not \in \ffp$ if and only if $f_i \not \in \ffp$ for any $i = 1,\cdots,n$ if and only if $\ffp \in X_{f_i}$ for any $i = 1,\cdots,n$ if and only if $\ffp \in \bigcap_{i=1}^n X_{f_i}$.
 \end{proof}
 
 \begin{definition}
@@ -55,29 +63,35 @@
 \end{definition}
 
 \begin{example}
-
+    In $\operatorname{Spec}(R) = X$, the closed sets are the sets of the form $\operatorname{V}(S) \subseteq \operatorname{Spec}(R)$, i.e., the sets $\operatorname{V}(\ffa) \subseteq \operatorname{Spec}(R)$ such that $\ffa \leq R$.
 \end{example}
 
 \begin{proposition}
-    Let $X \neq \emptyset$ and let $\ssY \subseteq \llP(X)$ and set $\ssV = \{X \setminus Y \mid Y \in \ssY\}$. Then $\ssY$ is a topology on $X$ if and if only $\ssV$ satisfies the following
+    Let $X$ be a non-empty set, $\ssY \subseteq \llP(X)$ and $\ssV = \{X \setminus Y \mid Y \in \ssY\}$. Then $\ssY$ is a topology on $X$ if and if only $\ssV$ satisfies the following.
     \begin{enumerate}
-        \item $X_1,\emptyset \in V$,
-        \item closed under arbitrary intersections, i.e., if $V_\lambda \in \ssV$ for any $\lambda \in \Lambda$, then $\bigcap_{\lambda \in \Lambda} V_\lambda \in \ssV$,
-        \item closed under fintie union, i.e., if $V_i \in \ssV$ for any $i = 1,\cdots,n$, then $\bigcup_{i=1}^n V_i \in \ssV$.
+        \item $X,\emptyset \in \ssV$,
+        \item closed under arbitrary intersections, i.e., for any $\{V_\lambda\}_{\lambda \in \Lambda} \subseteq \ssV$, then $\bigcap_{\lambda \in \Lambda} V_\lambda \in \ssV$,
+        \item closed under fintie unions, i.e., for any $n \geq 1$ and $V_1,\cdots,V_n \in \ssV$, $\bigcup_{i=1}^n V_i \in \ssV$.
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
-    \begin{enumerate}
-        \item 
-        \item 
-        \item 
-    \end{enumerate}
+    It follows from $X \setminus \emptyset = \emptyset$, $X \setminus X = \emptyset$ and $\bigcap_{\lambda \in \Lambda} (X \setminus U_\lambda) = X \setminus (\bigcup_{\lambda \in \Lambda} U_\lambda)$.
 \end{proof}
 
 \begin{theorem}
     The Zariski topology on $\operatorname{Spec}(R) = X$ is a topology.
 \end{theorem}
+
+\begin{proof}
+    Note $\ssZ = \{\operatorname{Spec}(R) \setminus \operatorname{V}(\ffa) \mid \ffa \leq R\} \subseteq X$. Let $\ssV = \{X \setminus Z \mid Z \in \ssZ\} = \{\operatorname{V}(\ffa) \mid \ffa \leq R\}$.
+    \begin{enumerate}
+        \item $X = \operatorname{V}(0) \in \ssV$ and $\emptyset = \operatorname{V}(1) \in \ssV$,
+        \item For $\ffa_\lambda \leq \ffa$ for any $\lambda \in \Lambda$, $\bigcap_{\lambda \in \Lambda} \operatorname{V}(\ffa_\lambda) = \operatorname{V}(\sum_{\lambda \in \Lambda} \ffa_\lambda) \in \ssV$ by Fact 1.36.
+        \item For any $n \geq 1$ and $\ffa_1,\cdots,\ffa_n \leq R$, $\bigcup_{i=1}^n \operatorname{V}(\ffa_i) = \operatorname{V}(\bigcap_{i=1}^n \ffa_i) \in \ssV$ by Proposition 1.39(a). \qedhere
+    \end{enumerate}
+    So by Proposition 2.12, the Zariski topology on $\operatorname{Spec}(R) = X$ is a topology.
+\end{proof}
 
 \begin{definition}
     A \emph{basis} for the topology $\ssT$ on a topological space $X$ is a subset $\llB \subseteq \ssT$ such that for any open set $U \subseteq X$ and any $u \in U$, there exists $B \subseteq \llB$ such that $u \in B \subseteq U$.
@@ -92,19 +106,19 @@
 \end{theorem}
 
 \begin{proof}
-
+    It suffices to show $X \setminus \operatorname{V}(S) = \bigcup_{s \in S}X_s$ for any $S \subseteq R$. Note $\ffp \in X \setminus \operatorname{V}(S)$ if and only if $S \not \subseteq \ffp$ if and only if there exists $s \in S$ such that $s \not \in \ffp$ if and only if there exists $s \in S$ such that $\ffp \in X_s$ if and only if $\ffp \in \bigcup_{s \in S}X_S$.
 \end{proof}
 
 \begin{proposition}
-    If $R$ is noetherian, then for any open set $U \subseteq X = \operatorname{Spec}(R)$, there exists $s_1,\cdots,s_n \in R$ such that $U = X_{s_1} \cup \cdots \cup X_{s_n}$, i.e., open sets are the finite union of the basic open sets.
+    If $R$ is noetherian, then for any open subset $U \subseteq X = \operatorname{Spec}(R)$, there exists $s_1,\cdots,s_n \in R$ such that $U = X_{s_1} \cup \cdots \cup X_{s_n}$, i.e., open sets are the finite union of the basis open sets.
 \end{proposition}
 
 \begin{proof}
-
+    Wtite $U = X \setminus \operatorname{V}(\ffa)$ for some $\ffa \leq R$. Since $R$ is noetherian, $\ffa = \langle s_1,\cdots,s_n \rangle$ for some $s_1,\cdots,s_n \in \ffa$. Then $U = X \setminus \operatorname{V}(\langle s_1,\cdots,s_n \rangle) = X \setminus \operatorname{V}(s_1,\cdots,s_n) = \bigcup_{i=1}^n X_{s_i}$ by Theorem 2.16.
 \end{proof}
 
 \begin{definition}
-    A topological space $X$ is quasi-compact if ``every open cover of $X$ has a finite sub-cover'', i.e., for any $\{U_\lambda\} \subseteq \ssT$, if $X = \bigcup_{\lambda \in \Lambda} U_\lambda$, then there exist $\lambda_1,\cdots,\lambda_n$ such that $X = \bigcup_{i=1}^n U_{\lambda_i}$.
+    A topological space $X$ is quasi-compact if ``every open cover of $X$ has a finite sub-cover'', i.e., for any $\{U_\lambda\}_{\lambda \in \Lambda} \subseteq \ssT$, if $X = \bigcup_{\lambda \in \Lambda} U_\lambda$, then there exist $\lambda_1,\cdots,\lambda_n \in \Lambda$ such that $X = \bigcup_{i=1}^n U_{\lambda_i}$.
 \end{definition}
 
 \begin{theorem}
@@ -112,17 +126,19 @@
 \end{theorem}
 
 \begin{proof}
-
+    Since each open set $U_\lambda$ can be written as a union of $X_f$'s with $f \in R$, without loss of generality, assmue $X = \bigcup_{\lambda \in \Lambda} X_{f_\lambda} = X \setminus \operatorname{V}(\bigcup_{\lambda \in \Lambda}f_{\lambda})$ by Theorem 2.16. Then by Proposition 1.32(a), $\operatorname{V}(\langle \bigcup_{\lambda \in \Lambda}f_{\lambda} \rangle) = \operatorname{V}(\bigcup_{\lambda \in \Lambda}f_{\lambda}) = \emptyset$. So by Proposition 1.32(b), $\langle \bigcup_{\lambda \in \Lambda}f_{\lambda} \rangle = R \ni 1$. Then $1 = g_{\lambda_1} f_{\lambda_1} + \cdots + g_{\lambda_n}f_{\lambda_n}$ for some $n \in \bbN$, $\lambda_1,\cdots,\lambda_n \in \Lambda$ and $g_{\lambda_1},\cdots,g_{\lambda_n} \in R$. So $\langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle = R$. Then by Proposition 1.32(b), $\operatorname{V}(f_{\lambda_1},\cdots,f_{\lambda_n}) = \emptyset$. Thus, by Theorem 2.16, $X = X \setminus \operatorname{V}(f_{\lambda_1},\cdots,f_{\lambda_n}) = X_{f_{\lambda_1}} \cup \cdots \cup X_{f_{\lambda_n}}$.
 \end{proof}
 
-Q: What do the $X_f$ look like? A: $\operatorname{Spec}(R)$.
+\begin{remark}
+    Q: What do the $X_f$ look like? A: $\operatorname{Spec}(R)$.
+\end{remark}
 
 \begin{proposition}
-    Let $\varphi: R \to R_f$ be the natural map.
-    \begin{align*}
-        \varphi: \operatorname{Sepc}(R) &\to \operatorname{Spec}(R) \\
-        \ffp &\mapsto \ffp.
-    \end{align*}
+    Let $\varphi: R \to R_f$ be the natural map and $\varphi^*: \operatorname{Sepc}(R_f) \to \operatorname{Spec}(R)$ be given by $\varphi^*(\ffp) = \varphi^{-1}(\ffp)$.
+    \begin{enumerate}
+        \item For any $\ffp \in \operatorname{Spec}(R_f)$, $\varphi^*(\ffp) \in X_f$.
+        \item The induced map $\varphi_f^*: \operatorname{Spec}(R_f) \to X_f$ with restrict codomain is 1-1 and onto.
+    \end{enumerate}
 \end{proposition}
 
 
