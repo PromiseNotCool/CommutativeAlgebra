@@ -141,7 +141,7 @@ Let $R$ be a commutative ring with identity.
             R/J \arrow[rru,dashed,hook,two heads,"\ex !\ \overbar \phi"']
         \end{tikzcd}
     \end{center}
-    It is straightforward to show that $J = \ker(\tau \circ p)$. By Construction 1.13, $\overbar \phi(\overbar r) = (\tau \circ p)(r) = \tau(\overbar r)= \overbar{\overbar r}$, i.e., $\overbar \phi(r + J) = (r+\ffa) + J/\ffa$. Then the first isomorphism theorem says the map $\overbar \phi$ is a ring isomorphism.
+    It is straightforward to show that $J = \ker(\tau \circ p)$. Then The first isomorphism theorem says the map $\overbar \phi$ is a ring isomorphism. Note $\overbar \phi(\overbar r) = (\tau \circ p)(r) = \tau(\overbar r)= \overbar{\overbar r}$, i.e., $\overbar \phi(r + J) = (r+\ffa) + J/\ffa$. 
 \end{fact}
 
 \begin{notation*}
@@ -559,13 +559,13 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
     If $k = \bbR$ and $V = \bbR^2$, then the lemma says that $\bbR^2$ is not a finite union of lines through the origin, which is straightforward to show.
     \begin{center}
         \begin{tikzpicture}
-          \draw[->] (-1,0) -- (1,0) node[right] {$X$};
-          \draw[->] (0,-1) -- (0,1) node[above] {$Y$};
-          \draw[line width=0.25mm] (-0.4,-0.6) -- (0.4,0.6);
-          \draw[line width=0.25mm] (-0.6,-0.4) -- (0.6,0.4);
-          \draw[line width=0.25mm] (-0.5,0.5) -- (0.5,-0.5);
+            \draw[->] (-1,0) -- (1,0) node[right] {$X$};
+            \draw[->] (0,-1) -- (0,1) node[above] {$Y$};
+            \draw[line width=0.25mm] (-0.4,-0.6) -- (0.4,0.6);
+            \draw[line width=0.25mm] (-0.6,-0.4) -- (0.6,0.4);
+            \draw[line width=0.25mm] (-0.5,0.5) -- (0.5,-0.5);
         \end{tikzpicture}
-        \end{center}
+    \end{center}
     \par
     If $\abs k < \infty$, then the lemma fails. For example, let $V = k^2 = \bigcup_{v \in k^2} \{v\} = \bigcup_{0 \neq v \in k^2} \operatorname{span}\{v\}$ with $0 \neq \operatorname{span}(v) \lneq k^2 = V$. \par
     The same technique shows that can't replace $V_1,\cdots,V_n$ with $V_1,V_2,\cdots$ over $\bbQ$.
@@ -951,7 +951,7 @@ Let $A$ be a commutative ring with identity$\neq 0$.
                         \ffm &\leadsto \ffm/\langle X \rangle A\llbracket X \rrbracket &&\leadsto \ffn
                     \end{alignat*}
                     Define $\tau: A\llbracket X \rrbracket \to A$ by $\tau(f) = f(0)$. Then we can find $\ffn \in \operatorname{m-Spec}(A)$ such that $\ffm = \tau^{-1}(\ffn)$. So 
-                    \[\ffm \cap A = \epsilon^{-1}(\ffm) = \epsilon^{-1}(\tau^{-1} \ffn) = (\tau \circ \epsilon)^{-1}(\ffn) = \operatorname{id}_A^{-1}(\ffn) = \ffn \in \operatorname{m-Spec}(A).\]
+                    \[\ffm \cap A = \epsilon^{-1}(\ffm) = \epsilon^{-1}(\tau^{-1} (\ffn)) = (\tau \circ \epsilon)^{-1}(\ffn) = \operatorname{id}_A^{-1}(\ffn) = \ffn \in \operatorname{m-Spec}(A).\]
                 \item [(3)] Since $\ffm \cap A, \langle X \rangle \subseteq \ffm$, we have $\langle \ffm \cap A,X \rangle \subseteq \ffm$. Since $\ffm \leq A\llbracket X \rrbracket$ is maximal, and by (i) and (1), $\langle \ffm \cap A,X \rangle \leq A \llbracket X \rrbracket$ are maximal, we have $\langle \ffm \cap A,X \rangle = \ffm$.
             \end{enumerate} 
             \par Note $\epsilon^*(\operatorname{m-Spec}(A\llbracket X \rrbracket) \subseteq \operatorname{m-Spec}(A)$ since by the proof of (1), $\epsilon^*(\ffm) = \epsilon^{-1}(\ffm) \in \operatorname{m-Spec}(A)$. \par 
