@@ -158,7 +158,7 @@
     Zariski topology in $\bbA^d$. Let $S \subseteq \bbA^d$ and $f \in k[\underline X]$. Closed set: $\operatorname{V}(S) = \operatorname{V}(\langle S \rangle) \subseteq \bbA^d$. Open sets: $\bbA^d \setminus \operatorname{V}(S)$. Basic open sets: $\bbA^d \setminus \operatorname{V}(f)$. \par 
     Let $T \subseteq k[\underline X]$ be fixed and $\operatorname{V}(T) \subseteq \bbA^d$. Zariski topology: closed sets $\operatorname{V}(S) \cap \operatorname{V}(T)$, open sets: $(\bbA^d \setminus \operatorname{V}(S)) \cap \operatorname{V}(T)$ since $\bbA^d \setminus \operatorname{V}(S)$ is open, basic open sets: $(\bbA^d \setminus \operatorname{V}(f)) \cap \operatorname{V}(T)$.
     \begin{align*}
-        \bbA^d &\hookrightarrow \operatorname{m-Spec}(k[\underline X]) \subseteq \operatorname{Spec}(k[\unerline X]) \\
+        \bbA^d &\hookrightarrow \operatorname{m-Spec}(k[\underline X]) \subseteq \operatorname{Spec}(k[\underline X]) \\
         \underline a &\mapsto (X_1-a_1,\cdots,X_d-a_d), 
     \end{align*}
     where $(X_1-a_1)$ is the kernel of the map $k[\underline X] \to k$ given by $f \mapsto f(\underline a)$. \par 
@@ -203,7 +203,7 @@ noindent Set up: $R \ni f$. $X = \operatorname{Spec}(R) \supseteq X_f = X \setmi
 
 \begin{proposition}
     Let $\varphi: \to R_f$ and $\varphi_f^*: \operatorname{Spec}(R_f) = Z \to X_f$. 
-    \begin{enumerate}[(a)]
+    \begin{enumerate}
         \item 
             $(\varphi_f^*)^{-1}(\operatorname{V}(\ffa) \cap X_f) = \operatorname{V}(\ffa_f)$. 
         \item
@@ -214,10 +214,10 @@ noindent Set up: $R \ni f$. $X = \operatorname{Spec}(R) \supseteq X_f = X \setmi
 \end{proposition}
 
 \begin{proof}
-    \begin{enumerate}[(a)]
+    \begin{enumerate}
         \item Let $\ffp \in \operatorname{Spec}(R_f) = Z$. Then $\ffp \in (\varphi_f^*)^{-1}(\operatorname{V}(\ffa) \cap X_f)$ iff $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in \operatorname{V}(\ffa) \cap X_f$ iff $\ffa \subseteq \varphi^{-1}(\ffp)$ and $f \not \in \varphi^{-1}(\ffp)$ iff $\ffa_f = \ffa R_f \subseteq \varphi^{-1}(\ffp)R_f = \ffp$ iff $\ffp \in \operatorname{V}(\ffa_f)$.
         \item etc.
-        \item etc.
+        \item etc. \qedhere
     \end{enumerate}
 \end{proof}
 
