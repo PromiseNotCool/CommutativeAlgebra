@@ -130,7 +130,7 @@
 \end{proof}
 
 \begin{remark}
-    Q: What do the $X_f$ look like? A: $\operatorname{Spec}(R)$.
+    Question: What do the $X_f$ look like? Answer: $\operatorname{Spec}(R)$.
 \end{remark}
 
 \begin{proposition}
@@ -166,7 +166,7 @@
     Grothenick: there exists more geometric data in $\operatorname{Spec}(R)$. \par 
     $V = \operatorname{V}(T) = \operatorname{V}(\ffb)$, where $\ffb = \langle T \rangle \leq k[\underline X]$. \par 
     $\operatorname{rad}(I) \geq \operatorname{I}(V) = \{f \in k[\underline X] \mid f(\underline a) = 0,\fa \underline a \in V\} = \text{``vanishing ideal of $V$''} \leq k[\underline X]$. \par 
-    \emph{Hilbert Nullstellensatz}: If $k = \overline k$, then $\operatorname{rad}(\ffq) = \operatorname{I}(V)$. \\
+    Hilbert Nullstellensatz: If $k = \overline k$, then $\operatorname{rad}(\ffq) = \operatorname{I}(V)$. \\
     \emph{Coordinate ring of $V$}: $k[V] = k[\underline X]/\operatorname{I}(V)$, which is also known as \emph{ring of regular functions on $V$}. Note $\overbar X_i \in k[\underline X]/\operatorname{I}(V)$, $\overbar (\underline a) = \underline a_i$, $i^{\text{th}}$ coordinate function. Let $\overbar f \in k[\underline X]/\operatorname{I}(V) \leadsto$: $\overbar f: V \to k$ given by $\overline a \mapsto f(\underline a)$, which is well-defined because of $\operatorname{I}(V)$. $....$
 \end{remark}
 
@@ -175,7 +175,7 @@ noindent Set up: $R \ni f$. $X = \operatorname{Spec}(R) \supseteq X_f = X \setmi
 \section*{Subspaces}
 
 \begin{proposition}
-    Let $X$ be a topological space with $\ssT$ and let $Y \subseteq X$. Define $\ssT_y = \{U \cap Y \mid U \in \ssT\}$. Then $\ssT_y$ is a topology on $Y$, called the \emph{subspace topology}.
+    Let $X$ be a topological space with $\ssT$ and let $Y \subseteq X$. Define $\ssT_Y = \{U \cap Y \mid U \in \ssT\}$. Then $\ssT_Y$ is a topology on $Y$, called the \emph{subspace topology}.
 \end{proposition}
 
 \begin{proof}
@@ -195,9 +195,9 @@ noindent Set up: $R \ni f$. $X = \operatorname{Spec}(R) \supseteq X_f = X \setmi
 \begin{corollary}
     Subspace topology on $X_f \subseteq X = \operatorname{Spec}(R)$ has 
     \begin{enumerate}
-        \item closed sets: $\operatorname{V}(\ffa) \cap X_f$.
-        \item open sets: $(X \setminus \operatorname{V}(\ffa))\cap X_f$.
-        \item basic open sets: $X_g \cap X_f = X_{fg}$.
+        \item closed sets: $\{\operatorname{V}(\ffa) \cap X_f \mid \ffa \leq R\}$.
+        \item open sets: $\{(X \setminus \operatorname{V}(\ffa))\cap X_f \mid \ffa \leq R\}$.
+        \item basic open sets: $\{X_g \cap X_f = X_{fg} \mid g \in R\}$.
     \end{enumerate}
 \end{corollary}
 
@@ -223,6 +223,8 @@ noindent Set up: $R \ni f$. $X = \operatorname{Spec}(R) \supseteq X_f = X \setmi
 
 \section{Continuous functions and homeomorphisms}
 
+$R_f = \{\frac{r}{f^n} \mid r \in R, n \geq 0\}$.
+
 \begin{definition}
     Let $f: X \to Y$ be a function between topological spaces. Then $f$ is \emph{continuous} if for any $U \in \ssT_Y$, $f^{-1}(U) \in \ssT_x$. \par 
     ``Inverse image of arbitrary open set in $Y$ is open in $X$''. 
@@ -233,5 +235,61 @@ noindent Set up: $R \ni f$. $X = \operatorname{Spec}(R) \supseteq X_f = X \setmi
 \end{fact}
 
 \begin{theorem}
-
+    Let $f \in R$, $\varphi: R \to R_f$ and $\varphi^*: \operatorname{Spec}(R_f) \to \operatorname{Spec}(R)$. Then  $\varphi^*(\operatorname{Spec}(R_f)) \subseteq X_f$ ``principal topology''. Restrict codomain, $\varphi_f^*: \operatorname{Spec}(R_f) \to X_f$ is 1-1 and onto. $\varphi_f^*$ and $(\varphi_f^*)^{-1}$ is continuous. 
 \end{theorem}
+
+\begin{proof}
+    By Proposition 2.24, we have $\varphi_f^*$ is continuous or by Lemma 2.30. \par 
+    Need to show $(\varphi_f^*)^{-1}$ is continuous. Claim. For any $I \leq R_f$, if $\ffa = \varphi^{-1}(I) \leq R$, then $\ffa_f = \ffa R_f = I$. ``$\subseteq$''. $\ffa_f = \varphi^{-1}(I)R_f \subseteq I$ by 1.68?. ``$\supseteq$''. $i \in I \subseteq R_f$, $i = \frac{r}{f^n} \in R$. $\varphi(r) = \frac{r}{1} = r\frac{r}{f^n} \in I $. So $r \in \varphi^{-1}(I) = \ffa$. Then $\frac{r}{1} \in \ffa R_f$. So $\frac{r}{f^n} = \frac{1}{f^n} \frac{r}{1} \in R_f$. \par 
+    Need to show $\smallunderbrace{((\varphi_f^*)^{-1})^{-1}}_{R_f^*}(\smallunderbrace{\text{closed}}_{\subseteq \operatorname{Spec}(R_f)}$) is closed. Need to show for any $I \leq R_f$: $\varphi_f^*(\operatorname{V}(\ffa R_f)) = \varphi_f^*(\operatorname{V}(I))$ is closed. Need to show $\varphi_f^*(\operatorname{V}(\ffa R_f)) = \operatorname{V}(\ffa) \cap X_f$, which follows from prime correspondence.
+\end{proof}
+
+\begin{example}
+    Let $k$ be a field and $R = k\llbracket X \rrbracket$. Fact: $\operatorname{Spec}(R) = \{0,\langle X \rangle\}$. Let $R \xrightarrow \varphi S = k \times Q(R)$ given by $\sum_{i=1}^{\text{finite}} a_iX^i \mapsto (a_0,\frac{\sum_{i=1}^{\text{finite}} a_iX^i}{1})$. $\operatorname{Spec}(S) = \{0 \times Q(R), k \times 0\}$. $\varphi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$. graph. However, the inverse $(\varphi^*)^{-1}$ is not continuous. Closed ses of $\operatorname{Spec}(R)$ are $\operatorname{V}(1) = R$, $\operatorname{V}(0) = \operatorname{Spec}(R)$ and $\operatorname{V}(X) = \{\langle X \rangle\}$. Closed sets of $\operatorname{Spec}(S)$ are $\operatorname{V}(1,1) = \emptyset, \operatorname{V}(0,0) = \operatorname{Spec}(S)$, $\operatorname{V}(0,1) = \{0 \times Q(R)\}$ and $\operatorname{V}(1,0) = \{k \times 0\}$. $((\varphi_f^*)^{-1})^{-1}$ (closed) not closed? $\varphi^*(\{k \times 0\}) = \{0\}$ not closed.
+\end{example}
+
+\begin{corollary}
+    $X_f$ is quasi-compact.
+\end{corollary}
+
+\begin{proof}
+    It follows from $X_f$ is homeomorphic to $\operatorname{Spec}(R_f)$.
+\end{proof}
+
+\begin{example}
+    $U \subseteq \operatorname{Spec}(R) = X$ may not be quasi-compact. Let $R = k[X_1,X_2,X_3,\cdots]$. Let $U = X \setminus \operatorname{V}(X_1,X_2,X_3,\cdots) = \bigcup_{i=1}^\infty (X \setminus \operatorname{V}(X_i)) \neq \bigcup_{i=1}^n (X \setminus \operatorname{V}(X_i)) = X \setminus \operatorname{V}(X_1,\cdots,X_n)$. Need to show $\operatorname{V}(X_1,X_2,X_3,\cdots) \neq \operatorname{V}(X_1,X_2,\cdots,X_n)$. ``$\subseteq$''. It is clear. ``$\not \supseteq$''. Let $\ffp = \langle X_1,\cdots,X_n \rangle \in \operatorname{V}(X_1,\cdots,X_n)$, but $\ffp \not \in \operatorname{V}(X_1,X_2,\cdots)$.
+\end{example}
+
+\begin{fact}
+    If $R$ is noetherian and $U \subseteq X = \operatorname{Spec}(R)$ is open, then $U$ is quasi-compact. 
+\end{fact}
+
+\begin{proof}
+    Let $U = \bigcup_{\lambda \in \Lambda}U_\lambda$. Since $U_\lambda$ is open in $U$, $U_\lambda = U \cap \bigcup_{\lambda \in \Lambda}U_\lambda$ is an open cover,... open $\subseteq \widetilde U_\lambda \subseteq X$. So $U_\lambda = \widetilde U_\lambda \cap U$ is open. Use the fact that $X_f$'s form a basis to assume without losss of generality $U_\lambda = X_{f_\lambda}$ for some $f_\lambda \in R$. \par 
+    $U = U_{\lambda \in \Lambda} X_{f_\lambda} = U_\lambda (X \setminus \operatorname{V}(f_\lambda)) = X \setminus \operatorname{V}(\langle f_\lambda \mid \lambda \in \Lambda \rangle)$..... \par 
+\end{proof}
+
+\begin{lemma}
+    Let $f: X \to Y$ be a continuous function between two topological spaces. if $f(X) \subseteq Z \subseteq Y$, then restrict the codomain, $f_Z: X \to Z$ and gives $Z$ the subspace topology, then $f_Z$ is continuous.
+\end{lemma}
+
+\begin{proof}
+    If $U \subseteq Z$ is open, then $U = Z \cap \widetilde U$ for some $\widetilde U \subseteq Y$ open. $f(X) \subseteq Z$. So $f_Z^{-1}(U) = f^{-1}(Z \cap \widetilde U) = f^{-1}(\widetilde U)$ open in $X$ since $f$ is continuous.
+\end{proof}
+
+\begin{theorem}
+    Let...
+    \begin{enumerate}
+        \item
+        \item 
+    \end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+    \begin{enumerate}
+        \item 
+        \item 
+        \item 
+        \item 
+    \end{enumerate}
+\end{corollary}
