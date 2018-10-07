@@ -17,7 +17,7 @@
     A\emph{topology} on a non-empty set $X$ is a collection of sets $\ssT$ of subsets of $X$ ($\ssT \subseteq \llP(X)$) such that
     \begin{enumerate}
         \item $\emptyset, X \in \ssT$,
-        \item for any $U_\lambda\}_{\lambda \in \Lambda} \subseteq \ssT$, $\bigcup_{\lambda \in \Lambda} U_\lambda \in \ssT$ and
+        \item for any $\{U_\lambda\}_{\lambda \in \Lambda} \subseteq \ssT$, $\bigcup_{\lambda \in \Lambda} U_\lambda \in \ssT$ and
         \item for any $n \geq 1$ and $U_1,\cdots,U_n \in \ssT$, $\bigcap_{i=1}^n U_\lambda \in \ssT$.
     \end{enumerate}
     \par The elements of $\ssT$ are the \emph{open subsets} of $X$. \par
@@ -63,7 +63,7 @@
 \end{definition}
 
 \begin{example}
-    In $\operatorname{Spec}(R) = X$, the closed sets are the sets of the form $\operatorname{V}(S) \subseteq \operatorname{Spec}(R)$, i.e., the sets $\operatorname{V}(\ffa) \subseteq \operatorname{Spec}(R)$ such that $\ffa \leq R$.
+    In $\operatorname{Spec}(R) = X$, the closed sets are the sets of the form $\operatorname{V}(S) \subseteq \operatorname{Spec}(R)$ with $S \subseteq R$, i.e., the sets $\operatorname{V}(\ffa) \subseteq \operatorname{Spec}(R)$ such that $\ffa \leq R$.
 \end{example}
 
 \begin{proposition}
@@ -118,7 +118,7 @@
 \end{proof}
 
 \begin{definition}
-    A topological space $X$ is quasi-compact if ``every open cover of $X$ has a finite sub-cover'', i.e., for any $\{U_\lambda\}_{\lambda \in \Lambda} \subseteq \ssT$, if $X = \bigcup_{\lambda \in \Lambda} U_\lambda$, then there exist $\lambda_1,\cdots,\lambda_n \in \Lambda$ such that $X = \bigcup_{i=1}^n U_{\lambda_i}$.
+    A topological space $X$ is \emph{quasi-compact} if ``every open cover of $X$ has a finite sub-cover'', i.e., for any $\{U_\lambda\}_{\lambda \in \Lambda} \subseteq \ssT$, if $X = \bigcup_{\lambda \in \Lambda} U_\lambda$, then there exist $\lambda_1,\cdots,\lambda_n \in \Lambda$ such that $X = \bigcup_{i=1}^n U_{\lambda_i}$.
 \end{definition}
 
 \begin{theorem}
@@ -133,77 +133,110 @@
     Question: What do the $X_f$ look like? Answer: $\operatorname{Spec}(R)$.
 \end{remark}
 
+\begin{remark}[Construction: Classical algebraic geometry]
+    Geometry: Let $k$ be a field, and usually $k = \bbR$ or $\bbC$. \emph{$d$-dimensional affine space:} $\bbA^d_k = \bbA^d = k^d$. \par 
+    Let $\underline a = (a_1,\cdots,a_d) \in \bbA^d$ and $S \subseteq k[\underline X] = k[X_1,\cdots,X_d]$. Define
+    \[\operatorname{V}(S) := \{\underline a \in \bbA^d \mid f(\underline a) = 0,\fa f \in S\} =: \text{``zero locus of $S$''} \subseteq \bbA^d,\] 
+    e.g., $\operatorname{V}(X^2+Y^2+Z^2-1) = \text{``unit sphere''} \subseteq \bbA^3_\bbR = \bbR^3$. \par 
+    Zariski topology on $\bbA^d$. Closed sets: $\operatorname{V}(S) = \operatorname{V}(\langle S \rangle) \subseteq \bbA^d$ with $S \subseteq k[\underline X]$. Open sets: $\bbA^d \setminus \operatorname{V}(S)$ with $S \subseteq k[\underline X]$. Basic open sets: $\bbA^d \setminus \operatorname{V}(f)$ with $f \in k[\underline X]$. \par 
+    Let $T \subseteq k[\underline X]$ be fixed. Zariski topology on $\operatorname{V}(T)$. Closed sets: $\operatorname{V}(S) \cap \operatorname{V}(T)$ with $S \subseteq k[\underline X]$. Open sets: $(\smallunderbrace{\bbA^d \setminus \operatorname{V}(S)}_{\text{open in $\bbA^d$}}) \cap \operatorname{V}(T)$ with $S \subseteq k[\underline X]$.  Basic open sets: $(\bbA^d \setminus \operatorname{V}(f)) \cap \operatorname{V}(T)$ with $f \in k[\underline X]$. \par 
+    We have 
+    \begin{align*}
+        \varphi: \bbA^d &\hookrightarrow \operatorname{m-Spec}(k[\underline X]) \subseteq \operatorname{Spec}(k[\underline X]) \\
+        \underline a &\mapsto (X_1-a_1,\cdots,X_d-a_d) = \ker(\operatorname{eval}_{\underline a}), 
+    \end{align*}
+    where $\operatorname{eval}_{\underline a}: k[\underline X] \twoheadrightarrow k$ given by $f \mapsto f(\underline a)$. \par 
+    Hilbert's Nullstellensatz: If $k = \overline k$, then $\operatorname{V}(\ffb) \neq \emptyset$ for any $\ffb \lneq k[\underline X]$. Let $\ffm \in \operatorname{m-Spec}(k[\underline X])$. Then $\ffm \lneq k[\underline X]$ and so $\operatorname{V}(\ffm) \neq \emptyset$. So there exists $\underline a \in \operatorname{V}(\ffm)$ such that $f(\underline a) = 0$ for any $f \in \ffm \subseteq k[\underline X]$. Hence $\ffm \subseteq \ker(\operatorname{eval}_{\underline a}) = (X_1-a_1,\cdots,X_d-a_d)$. Also, since $\ffm \leq k[\underline X]$ is maximal, $\ffm = (X_1-a_1,\cdots,X_d-a_d)$. Thus, the above map $\varphi$ is onto. \par 
+    Grothenick: there exists more geometric data in $\operatorname{Spec}(k[\underline X])$. \par 
+    Let $V = \operatorname{V}(T) = \operatorname{V}(\ffb)$, where $\ffb = \langle T \rangle \leq k[\underline X]$. Then
+    \[\operatorname{rad}(\ffb) \leq \operatorname{I}(V) := \{f \in k[\underline X] \mid f(\underline a) = 0,\fa \underline a \in V\} = \text{``vanishing ideal of $V$''} \leq k[\underline X].\]
+    \par Hilbert Nullstellensatz: If $k = \overline k$, then $\operatorname{rad}(\ffb) = \operatorname{I}(V)$. \par
+    \emph{Coordinate ring of $V$}: $k[V] = k[\underline X]/\operatorname{I}(V)$, also known as \emph{ring of regular functions on $V$}. \par 
+    For $i = 1,\cdots,d$, $\overbar X_i \in k[\underline X]/\operatorname{I}(V)$ and $\overbar X_i(\underline a) = \underline a_i$,$i^{\text{th}}$ coordinate function. Let 
+    \begin{align*}
+        k[V] = k[\underline X]/\operatorname{I}(V) \ni \overbar f \longsquiggly \overbar f: V &\to k  \\
+        \underline a &\mapsto f(\underline a). 
+    \end{align*}
+    Let $\overbar f = \overbar g$. Then $f-g \in \operatorname{I}(V)$. So $f(\underline a)-g(\underline a) = (f-g)(\underline a) = 0$ for any $\underline a \in V$, i.e., $f(\underline a) = g(\underline a)$. Hence it is well-defined. We have 
+    \begin{align*}
+        \overbar \varphi: V &\hookrightarrow \operatorname{m-Spec}(k[V]) \subseteq \operatorname{Spec}(k[V]) \\
+        \underline a &\mapsto \frac{(X_1-a_1,\cdots,X_d-a_d)}{\operatorname{I}(V)}. 
+    \end{align*}
+    \par Hilbert Nullstellensatz: If $k = \overbar k$, then similarly, $\overbar \varphi$ is onto. \par 
+    Grothenick: there exists more geometric data in $\operatorname{Spec}(k[V])$. 
+\end{remark}
+
+\noindent Set up: $R \ni f$, $X = \operatorname{Spec}(R) \supseteq X_f = X \setminus \operatorname{V}(f) = \{\ffp \in \operatorname{Spec}(R) \mid f \not \in \ffp\}$.
+
+\begin{recall*}
+    Let $S = \{1,f,f^2,\cdots\}$. We have the localization
+    $R_f = S^{-1}R = \{\frac{r}{f^n} \mid r \in R, n \geq 0\}$.
+\end{recall*}
+
 \begin{proposition}
-    Let $\varphi: R \to R_f$ be the natural map and $\varphi^*: \operatorname{Sepc}(R_f) \to \operatorname{Spec}(R)$ be given by $\varphi^*(\ffp) = \varphi^{-1}(\ffp)$.
+    Let $\varphi: R \to R_f$ be given by $\varphi(g) = \frac{g}{1}$ and $\varphi^*: \operatorname{Sepc}(R_f) \to \operatorname{Spec}(R) = X$ be given by $\varphi^*(\ffp) = \varphi^{-1}(\ffp)$.
     \begin{enumerate}
-        \item For any $\ffp \in \operatorname{Spec}(R_f)$, $\varphi^*(\ffp) \in X_f$.
+        \item $\varphi^*(\ffp) \in X_f$ for any $\ffp \in \operatorname{Spec}(R_f)$. 
         \item Restrict codomain, the induced map $\varphi_f^*: \operatorname{Spec}(R_f) \to X_f$ is 1-1 and onto.
     \end{enumerate}
-    Slogan: $\operatorname{Spec}(R) = X_f$ ``open affine subsets''.
+    Slogan: $\operatorname{Spec}(R_f) = X_f$ ``open affine subsets''.
 \end{proposition}
 
 \begin{proof}
-    Prime correspondence.
+    \begin{enumerate}
+        \item Let $\ffp \in \operatorname{Sepc}(R_f)$. We've seen $\varphi^*(\ffp) = \varphi^{-1}(\ffp) \in \operatorname{Spec}(R)$ through Fact 1.16. Note $f \not \in \varphi^{-1}(\ffp) = \varphi^*(\ffp)$, otherwise, $R_f^\times \ni \frac{f}{1} = \varphi(f) \in \varphi(\varphi^{-1}(\ffp) \subseteq \ffp \in \operatorname{Spec}(R_f)$, a contradiction. 
+        \item 
+            Let $\ffp \in X_f$. Then $\ffp_f := \ffp R_f = \{\frac{x}{f^n} \mid x \in \ffp, n \geq 0\} \leq R_f$. Since $1 \not \in \ffp$, $\frac{1}{1} \not \in \ffp_f$ and then $\ffp_f \lneq R_f$. Let $\frac{x}{f^n},\frac{y}{f^m} \in R_f$ with $x,y \in R$ and $n,m \geq 0$ such that $\frac{xy}{f^{n+m}} = \frac{x}{f^n} \frac{y}{f^m} \in \ffp_f$ and so $xy \in \ffp$. Since $\ffp \in \operatorname{Spec}(R)$, $x \in \ffp$ or $y \in \ffp$. So $\frac{x}{f^n} \in \ffp_f$ or $\frac{y}{f^m} \in \ffp_f$. Hence $\ffp_f \in \operatorname{Spec}(R_f)$. Note $\frac{x}{1} = \varphi(x) \in \ffp_f$ if and only if $x \in \ffp$. So $\varphi_f^*(\ffp_f) = \varphi^{-1}(\ffp_f) = \ffp$. Thus, $\varphi_f^*$ is onto. \par 
+            Let $\ffp, \ffq \in \operatorname{Spec}(R_f)$ such that $\varphi^{-1}(\ffp) = \varphi^*_f(\ffp) = \varphi_f^*(\ffq) = \varphi^{-1}(\ffq)$. Let $\frac{x}{f^n} \in \ffp$ with $x \in \ffp$ and $n \geq 0$. Then $\varphi(x) = \frac{x}{1} \in \ffp$ and so $x \in \varphi^{-1}(\ffp) = \varphi^{-1}(\ffq)$. So $\frac{x}{1} = \varphi(x) \in \ffq$ and then $\frac{x}{f^n} \in \ffq$. Hence $\ffp \subseteq \ffq$. By symmetry, $\ffq \subseteq \ffp$. Thus, $\varphi_f^*$ is 1-1.
+    \end{enumerate}
+    Or use prime avoidence under localization directly. 
     \begin{align*}
         X_f = \{\ffp \in \operatorname{Spec}(R) \mid f \not \in \ffp\} & \rightleftarrows \operatorname{Spec}(R_f). \\
-        \ffp &\mapsto \ffp_f = \ffp R_f \\
-        \varphi^*(\ffp) = \varphi^{-1}(\ffp) = \text{``$\ffp \cap R$''} &\mapsfrom \ffp.
+        \ffp &\mapsto \ffp_f \\ 
+        \varphi^*(\ffp) = \varphi^{-1}(\ffp) = \text{``$\ffp \cap R$''} &\mapsfrom \ffp. \qedhere
     \end{align*}
+
+
 \end{proof}
-
-\begin{remark}[Construction: Classical algebraic geometry]
-    Geometry: let $k$ be a field. $k = \bbR$ or $\bbC$. \par 
-    \emph{$d$-dimensional affine space} $\bbA^d_k = \bbA^n = k^d \ni \underline a = (a_1,\cdots,a_n)$. \par 
-    Let $S \subseteq k[\underline X] \subseteq k[X_1,\cdots,X_d]$. $\operatorname{V}(S) = \{\underline a \in \bbA^d \mid f(\underline a) = 0,\fa f \in S\} = \text{``zero locus of $S$''} \subseteq \bbA^d$. e.g., $\operatorname{V}(X^2+Y^2+Z^2-1) = \text{``unit sphere''} \subseteq \bbA^3_\bbR = \bbR^3$. \par 
-    Zariski topology in $\bbA^d$. Let $S \subseteq \bbA^d$ and $f \in k[\underline X]$. Closed set: $\operatorname{V}(S) = \operatorname{V}(\langle S \rangle) \subseteq \bbA^d$. Open sets: $\bbA^d \setminus \operatorname{V}(S)$. Basic open sets: $\bbA^d \setminus \operatorname{V}(f)$. \par 
-    Let $T \subseteq k[\underline X]$ be fixed and $\operatorname{V}(T) \subseteq \bbA^d$. Zariski topology: closed sets $\operatorname{V}(S) \cap \operatorname{V}(T)$, open sets: $(\bbA^d \setminus \operatorname{V}(S)) \cap \operatorname{V}(T)$ since $\bbA^d \setminus \operatorname{V}(S)$ is open, basic open sets: $(\bbA^d \setminus \operatorname{V}(f)) \cap \operatorname{V}(T)$.
-    \begin{align*}
-        \bbA^d &\hookrightarrow \operatorname{m-Spec}(k[\underline X]) \subseteq \operatorname{Spec}(k[\underline X]) \\
-        \underline a &\mapsto (X_1-a_1,\cdots,X_d-a_d), 
-    \end{align*}
-    where $(X_1-a_1)$ is the kernel of the map $k[\underline X] \to k$ given by $f \mapsto f(\underline a)$. \par 
-    Hilbert's Nullstellensatz. If $k = \overline k$, then this map is onto. \par 
-    Grothenick: there exists more geometric data in $\operatorname{Spec}(R)$. \par 
-    $V = \operatorname{V}(T) = \operatorname{V}(\ffb)$, where $\ffb = \langle T \rangle \leq k[\underline X]$. \par 
-    $\operatorname{rad}(I) \geq \operatorname{I}(V) = \{f \in k[\underline X] \mid f(\underline a) = 0,\fa \underline a \in V\} = \text{``vanishing ideal of $V$''} \leq k[\underline X]$. \par 
-    Hilbert Nullstellensatz: If $k = \overline k$, then $\operatorname{rad}(\ffq) = \operatorname{I}(V)$. \\
-    \emph{Coordinate ring of $V$}: $k[V] = k[\underline X]/\operatorname{I}(V)$, which is also known as \emph{ring of regular functions on $V$}. Note $\overbar X_i \in k[\underline X]/\operatorname{I}(V)$, $\overbar (\underline a) = \underline a_i$, $i^{\text{th}}$ coordinate function. Let $\overbar f \in k[\underline X]/\operatorname{I}(V) \leadsto$: $\overbar f: V \to k$ given by $\overline a \mapsto f(\underline a)$, which is well-defined because of $\operatorname{I}(V)$. $....$
-\end{remark}
-
-\noindent Set up: $R \ni f$. $X = \operatorname{Spec}(R) \supseteq X_f = X \setminus \operatorname{V}(f) = \{\ffp \mid f \not \in \ffp\}$.
 
 \section*{Subspaces}
 \addcontentsline{toc}{section}{Subspaces}
 
 \begin{proposition}
-    Let $X$ be a topological space with $\ssT$ and let $Y \subseteq X$. Define $\ssT_Y = \{U \cap Y \mid U \in \ssT\}$. Then $\ssT_Y$ is a topology on $Y$, called the \emph{subspace topology}.
+    Let $X$ be a topological space with a topology $\ssT$ and $Y \subseteq X$. Define $\ssT_Y = \{U \cap Y \mid U \in \ssT\}$. Then $\ssT_Y$ is a topology on $Y$, called the \emph{subspace topology}.
 \end{proposition}
 
 \begin{proof}
-    $Y = X \cap Y \in \ssT_Y$ since $X \subseteq X$ is open. $\emptyset = \emptyset \cap Y  \in \ssT_y$ since $\emptyset \subseteq X$ is open, etc. 
+    $Y = X \cap Y \in \ssT_Y$ since $X \subseteq X$ is open. $\emptyset = \emptyset \cap Y  \in \ssT_y$ since $\emptyset \subseteq X$ is open. Let $\{U_\lambda \cap Y \mid U_\lambda \in \ssT\}_{\lambda \in \Lambda} \subseteq \ssT_Y$. Since $\ssT$ is a topology on $X$, $\bigcup_{\lambda \in \Lambda} U_\lambda \subseteq \ssT$. So $\bigcup_{\lambda \in \Lambda} (U_\lambda \cap Y) = (\bigcup_{\lambda \in \Lambda}U_\lambda) \cap Y \in \ssT_Y$. Let $U_1 \cap Y,\cdots,U_n \cap Y \in \ssT_Y$. Similarly, we have $\bigcap_{i=1}^n (U_\lambda \cap Y) \in \ssT_Y$. 
 \end{proof}
 
-\noindent Observe: closed subsets of $Y$ are $V \cap Y$, where $V \subseteq X$ is closed.
+\begin{remark}
+    The closed subsets of $Y$ are $V \cap Y$, where $V \subseteq X$ is closed since 
+    \begin{align*}
+        \{Y \setminus (U \cap Y) \mid U \in \ssT\} &= \{Y \cap (U \cap Y)^c \mid U \in \ssT\} = \{(U^c \cup Y^c) \cap Y \mid U \in \ssT\} \\
+                                                   &= \{(U^c \cap Y) \cup (Y^c \cap Y) \mid U \in \ssT\} = \{U^c \cap Y \mid U \in \ssT\}.
+    \end{align*}
+\end{remark}
 
 \begin{proposition}
     If $\llB$ is a basis for $\ssT$, then $\llB_Y = \{\llB \cap Y \mid B \in \llB\}$ is a basis for $\ssT_Y$.
 \end{proposition}
 
 \begin{proof}
-    open subset of $Y$ is $U \cap Y = \bigcup_\lambda (B_\lambda \cap Y)$ since $\bigcup_\lambda B_\lambda = U \in \ssT$.
+    Let $U \cap Y$ with $U \in \ssT$ be an open set in $\ssT_Y$. Since $\llB$ is a basis of $\ssT$, $U = \bigcup_{\lambda \in \Lambda_U} B_\lambda$ for some $\{B_\lambda\}_{\lambda \in \Lambda_U} \subseteq \llB$. So $U \cap Y = \bigcup_{\lambda \in \Lambda_U} (B_\lambda \cap Y)$. 
 \end{proof}
 
 \begin{corollary}
     Subspace topology on $X_f \subseteq X = \operatorname{Spec}(R)$ has 
     \begin{enumerate}
-        \item closed sets: $\{\operatorname{V}(\ffa) \cap X_f \mid \ffa \leq R\}$.
-        \item open sets: $\{(X \setminus \operatorname{V}(\ffa))\cap X_f \mid \ffa \leq R\}$.
+        \item closed sets: $\{\operatorname{V}(\ffa) \cap X_f \mid \ffa \leq R\}$,
+        \item open sets: $\{(X \setminus \operatorname{V}(\ffa))\cap X_f \mid \ffa \leq R\}$,
         \item basic open sets: $\{X_g \cap X_f = X_{fg} \mid g \in R\}$.
     \end{enumerate}
 \end{corollary}
 
 \begin{proposition}
-    Let $\varphi: \to R_f$ and $\varphi_f^*: \operatorname{Spec}(R_f) = Z \to X_f$. 
+    Let $\ffa \leq R$, $\varphi: R \to R_f$ and $\varphi_f^*: \operatorname{Spec}(R_f) =: Z \to X_f$ as in Proposition 2.20. 
     \begin{enumerate}
         \item 
             $(\varphi_f^*)^{-1}(\operatorname{V}(\ffa) \cap X_f) = \operatorname{V}(\ffa_f)$. 
@@ -216,7 +249,7 @@
 
 \begin{proof}
     \begin{enumerate}
-        \item Let $\ffp \in \operatorname{Spec}(R_f) = Z$. Then $\ffp \in (\varphi_f^*)^{-1}(\operatorname{V}(\ffa) \cap X_f)$ iff $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in \operatorname{V}(\ffa) \cap X_f$ iff $\ffa \subseteq \varphi^{-1}(\ffp)$ and $f \not \in \varphi^{-1}(\ffp)$ iff $\ffa_f = \ffa R_f \subseteq \varphi^{-1}(\ffp)R_f = \ffp$ iff $\ffp \in \operatorname{V}(\ffa_f)$.
+        \item Let $\ffp \in \operatorname{Spec}(R_f)$. Then $\ffp \in (\varphi_f^*)^{-1}(\operatorname{V}(\ffa) \cap X_f)$ if and only if $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in \operatorname{V}(\ffa) \cap X_f$ if and only if $\varphi^{-1}(\ffp) \in \operatorname{V}(\ffa)$ by Proposition 2.20 if and only if $\ffa \subseteq \varphi^{-1}(\ffp)$ if and only if $\ffa_f = \ffa R_f \subseteq \varphi^{-1}(\ffp)R_f = \ffp$ \footnote[2]{Let $\varphi_f^*(\ffp) = \varphi^{-1}(\ffp) =: \ffq \in X_f$. By the proof of Proposition 2.20(a), $\varphi_f^*(\ffq_f) = \ffq$. Also, since $\varphi_f^*$ is 1-1, $\varphi^{-1}(\ffp) R_f = \ffq R_f = \ffq_f = \ffp$.} if and only if $\ffp \in \operatorname{V}(\ffa_f)$.
         \item etc.
         \item etc. \qedhere
     \end{enumerate}
@@ -224,8 +257,6 @@
 
 \section*{Continuous functions and homeomorphisms}
 \addcontentsline{toc}{section}{Continuous functions and homeomorphisms}
-
-$R_f = \{\frac{r}{f^n} \mid r \in R, n \geq 0\}$.
 
 \begin{definition}
     Let $f: X \to Y$ be a function between topological spaces. Then $f$ is \emph{continuous} if for any $U \in \ssT_Y$, $f^{-1}(U) \in \ssT_x$. \par 
