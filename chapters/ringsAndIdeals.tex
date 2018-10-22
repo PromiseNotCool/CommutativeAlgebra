@@ -850,7 +850,7 @@ Let $A$ be a nonzero commutative ring with identity.
 \end{theorem}
 
 \begin{proposition}
-    Let $f = \sum_{i=0}^\infty a_iX^i$.
+    Let $f(X) = \sum_{i=0}^\infty a_iX^i$ with $a_i \in A$ for $i \geq 0$.
     \begin{enumerate}
         \item $f \in A \llbracket X \rrbracket^\times$ if and only if $a_0 \in A^\times$.
         \item If $\varphi: A \to B$ is a ring homomorphism, then there exists a well-defined ring homomorphism $\varphi\llbracket X \rrbracket: A\llbracket X \rrbracket \to B\llbracket X \rrbracket$ taking $\sum_{i=0}^\infty \alpha_iX^i$ to $\sum_{i=0}^\infty \varphi(\alpha_i)X^i$ and $A\llbracket X \rrbracket \geq \ker(\varphi \llbracket X \rrbracket) = \ker(\varphi)\llbracket X \rrbracket$. 
@@ -862,7 +862,7 @@ Let $A$ be a nonzero commutative ring with identity.
         \item $f \in \operatorname{Jac}(A\llbracket X \rrbracket)$ if and only if $a_0 \in \operatorname{Jac}(A)$. Also, $\operatorname{Jac}(A\llbracket X \rrbracket) = \langle \operatorname{Jac}(A),X \rangle A\llbracket X \rrbracket$. 
         \item $A\llbracket X \rrbracket$ is an integral domain if and only if $A$ is an integral domain. Also, $A\llbracket X \rrbracket$ is never a field.
         \item $\ffa \leq A$ is prime if and only if $\ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is prime if and only if $\langle \ffa,X \rangle A \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is prime. \par 
-            Let $\epsilon: A \xrightarrow {\subseteq} A\llbracket X \rrbracket$. Then $\epsilon^*: \operatorname{Spec}(A\llbracket X \rrbracket) \to \operatorname{Spec}(A)$ taking $\ffp \llbracket X \rrbracket$ to $\ker(p \circ \epsilon)$ is always onto and never 1-1.
+            Let $\epsilon: A \xrightarrow {\subseteq} A\llbracket X \rrbracket$. Then $\epsilon^*: \operatorname{Spec}(A\llbracket X \rrbracket) \to \operatorname{Spec}(A)$ taking $\ffp \llbracket X \rrbracket$ to $\epsilon^{-1}(\ffp\llbracket X \rrbracket)$ is always onto and never 1-1.
         \item $\ffa \leq A$ is maximal if and only if $\langle \ffa,X \rangle A \llbracket X \rrbracket \leq A \llbracket X \rrbracket$ is maximal. Also, $\ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is never maximal.
         \item Let $\operatorname{m-Spec}(A\llbracket X \rrbracket) = \{\text{maximal ideals of}A\llbracket X \rrbracket\} \subseteq \operatorname{Spec}(A\llbracket X \rrbracket)$. Let $\ffm \in \operatorname{m-Spec}(A\llbracket X \rrbracket)$. Then 
             \begin{enumerate}
@@ -934,7 +934,7 @@ Let $A$ be a nonzero commutative ring with identity.
             Let $\ffp \in \operatorname{Spec}(A)$. Then $\ffp\llbracket X \rrbracket, \langle \ffp,X \rangle A\llbracket X \rrbracket \in \operatorname{Spec}(A\llbracket X \rrbracket)$. \par 
             By the proof of (c) and (d), we have $\ffp \llbracket X \rrbracket \cap A = \ffp$ and $\langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \ffp$. So by Fact 1.16,
             \begin{align*}
-                \epsilon^*(\ffp \llbracket X \rrbracket) & = \epsilon^{-1}(\ffp \llbracket X \rrbracket) = \ffp \llbracket X \rrbracket \cap A = \ffp = \langle \ffp,A \rangle A\llbracket X \rrbracket \cap A = \epsilon^{-1}(\langle \ffp,X \rangle A\llbracket X \rrbracket) = \epsilon^*(\langle \ffp,X \rangle A\llbracket X \rrbracket). 
+                \epsilon^*(\ffp \llbracket X \rrbracket) & = \epsilon^{-1}(\ffp \llbracket X \rrbracket) = \ffp \llbracket X \rrbracket \cap A = \ffp = (\langle \ffp,A \rangle A\llbracket X \rrbracket) \cap A = \epsilon^{-1}(\langle \ffp,X \rangle A\llbracket X \rrbracket) = \epsilon^*(\langle \ffp,X \rangle A\llbracket X \rrbracket). 
             \end{align*}
             Thus, $\epsilon^*$ is onto. Also, since $X \not \in \ffp \llbracket X \rrbracket$, but $X \in \langle \ffp,X \rangle \llbracket X \rrbracket$, we have $\ffp\llbracket X \rrbracket \neq \langle \ffp,X \rangle A\llbracket X \rrbracket$ and then $\epsilon^*$ is not 1-1.
         \item 

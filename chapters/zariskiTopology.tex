@@ -32,7 +32,7 @@ Let $R$ be a commutative ring with identity$\neq 0$.
 
 \begin{definition}
     The \emph{Zariski topology} on $\operatorname{Spec}(R) = X$ ($R \neq 0$). The open sets are 
-    \[\operatorname{Spec}(R) \setminus \operatorname{V}(S) = \{\ffp \in \operatorname{Spec}(R) \mid S \not \subseteq \ffp\}\] 
+    \[\operatorname{Spec}(R) \setminus \operatorname{V}(S) = \{\ffp \in \operatorname{Spec}(R) \mid S \not \subseteq \ffp\},\] 
     where $S \subseteq R$. e.g., for any $f \in R$: $X_f = \operatorname{Spec}(R) \setminus \operatorname{V}(f) = \{\ffp \in \operatorname{Spec}(R) \mid f \not \in \ffp\}$.
 \end{definition}
 
@@ -191,7 +191,7 @@ Let $R$ be a commutative ring with identity$\neq 0$.
             Let $\ffp \in X_f$. Then $\ffp_f := \ffp R_f = \{\frac{x}{f^n} \mid x \in \ffp, n \geq 0\} \leq R_f$. Since $1 \not \in \ffp$, $\frac{1}{1} \not \in \ffp_f$ and then $\ffp_f \lneq R_f$. Let $\frac{x}{f^n},\frac{y}{f^m} \in R_f$ with $x,y \in R$ and $n,m \geq 0$ such that $\frac{xy}{f^{n+m}} = \frac{x}{f^n} \frac{y}{f^m} \in \ffp_f$ and so $xy \in \ffp$. Since $\ffp \in \operatorname{Spec}(R)$, $x \in \ffp$ or $y \in \ffp$. So $\frac{x}{f^n} \in \ffp_f$ or $\frac{y}{f^m} \in \ffp_f$. Hence $\ffp_f \in \operatorname{Spec}(R_f)$. Note $\frac{x}{1} = \varphi(x) \in \ffp_f$ if and only if $x \in \ffp$. So $\varphi_f^*(\ffp_f) = \varphi^{-1}(\ffp_f) = \ffp$. Thus, $\varphi_f^*$ is onto. \par 
             Let $\ffp, \ffq \in \operatorname{Spec}(R_f)$ such that $\varphi^{-1}(\ffp) = \varphi^*_f(\ffp) = \varphi_f^*(\ffq) = \varphi^{-1}(\ffq)$. Let $\frac{x}{f^n} \in \ffp$ with $x \in \ffp$ and $n \geq 0$. Then $\varphi(x) = \frac{x}{1} \in \ffp$ and so $x \in \varphi^{-1}(\ffp) = \varphi^{-1}(\ffq)$. So $\frac{x}{1} = \varphi(x) \in \ffq$ and then $\frac{x}{f^n} \in \ffq$. Hence $\ffp \subseteq \ffq$. By symmetry, $\ffq \subseteq \ffp$. Thus, $\varphi_f^*$ is 1-1.
     \end{enumerate}
-    Or use prime avoidence under localization directly. 
+    Or use prime correspondence under localization directly. 
     \begin{align*}
         X_f = \{\ffp \in \operatorname{Spec}(R) \mid f \not \in \ffp\} & \rightleftarrows \operatorname{Spec}(R_f) \\
         \ffp &\mapsto \ffp_f \\ 
@@ -264,85 +264,105 @@ Let $R$ be a commutative ring with identity$\neq 0$.
 Let $X \neq \emptyset$ be a topological space. 
 
 \begin{definition}
-    Let $f: X \to Y$ be a function between topological spaces. Then $f$ is \emph{continuous} if for any $U \in \ssT_Y$, $f^{-1}(U) \in \ssT_x$. \par 
-    ``Inverse image of arbitrary open set in $Y$ is open in $X$''. 
+    Let $f: X \to Y$ be a function between topological spaces. Then $f$ is \emph{continuous} if for any $U \in \ssT_Y$, $f^{-1}(U) \in \ssT_X$. ``Inverse image of arbitrary open set in $Y$ is open in $X$''. 
 \end{definition}
 
 \begin{fact}
-    To show $f$ is continuous, it is equivalent to show $f^{-1}(\text{arbitrary closed sets of $Y$})$ is closed in $X$, equivalent to showing $f^{-1}(\text{basic open subsets of $Y$})$ is open in $X$.
+    To show $f$ is continuous, it is equivalent to showing $f^{-1}(\text{arbitrary closed sets of $Y$})$ is closed in $X$, equivalent to showing $f^{-1}(\text{basic open subsets of $Y$})$ is open in $X$.
 \end{fact}
 
 \begin{theorem}
-    Let $f \in R$, $\varphi: R \to R_f$ and $\varphi^*: \operatorname{Spec}(R_f) \to \operatorname{Spec}(R)$. Then  $\varphi^*(\operatorname{Spec}(R_f)) \subseteq X_f$ ``principal topology''. Restrict codomain, $\varphi_f^*: \operatorname{Spec}(R_f) \to X_f$ is 1-1 and onto. Moreover, $\varphi_f^*$ and $(\varphi_f^*)^{-1}$ is continuous. 
+    Let $\varphi: R \to S$ be a ring homomorphism, then $\varphi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$ is continuous. 
 \end{theorem}
 
 \begin{proof}
-    By Proposition 2.24, we have $\varphi_f^*$ is continuous or by Lemma 2.30. \par 
-    Need to show $(\varphi_f^*)^{-1}$ is continuous. Claim. For any $I \leq R_f$, if $\ffa = \varphi^{-1}(I) \leq R$, then $\ffa_f = \ffa R_f = I$. ``$\subseteq$''. $\ffa_f = \varphi^{-1}(I)R_f \subseteq I$ by 1.68?. ``$\supseteq$''. $i \in I \subseteq R_f$, $i = \frac{r}{f^n} \in R$. $\varphi(r) = \frac{r}{1} = r\frac{r}{f^n} \in I $. So $r \in \varphi^{-1}(I) = \ffa$. Then $\frac{r}{1} \in \ffa R_f$. So $\frac{r}{f^n} = \frac{1}{f^n} \frac{r}{1} \in R_f$. \par 
-    Need to show $\smallunderbrace{((\varphi_f^*)^{-1})^{-1}}_{R_f^*}(\smallunderbrace{\text{closed}}_{\subseteq \operatorname{Spec}(R_f)}$) is closed. Need to show for any $I \leq R_f$: $\varphi_f^*(\operatorname{V}(\ffa R_f)) = \varphi_f^*(\operatorname{V}(I))$ is closed. Need to show $\varphi_f^*(\operatorname{V}(\ffa R_f)) = \operatorname{V}(\ffa) \cap X_f$, which follows from prime correspondence.
+    Let $\ffa \leq R$ and $\ffp \in \operatorname{Spec}(R)$. Then $\ffp \in (\varphi^*)^{-1}(\operatorname{V}(\ffa))$ if and only if $\varphi^*(\ffp) \in \operatorname{V}(\ffa)$ if and only if $\varphi^{-1}(\ffp) = \varphi^*(\ffp) \supseteq \ffa$ if and only if $\ffp \supseteq \varphi(\varphi^{-1}(\ffp)) \supseteq \varphi(\ffa)$ if and only if $\ffp \in \operatorname{V}(\ffa S)$.
 \end{proof}
 
-\begin{example}
-    Let $k$ be a field and $R = k\llbracket X \rrbracket$. Fact: $\operatorname{Spec}(R) = \{0,\langle X \rangle\}$. Let $R \xrightarrow \varphi S = k \times Q(R)$ given by $\sum_{i=1}^{\text{finite}} a_iX^i \mapsto (a_0,\frac{\sum_{i=1}^{\text{finite}} a_iX^i}{1})$. $\operatorname{Spec}(S) = \{0 \times Q(R), k \times 0\}$. $\varphi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$. graph. However, the inverse $(\varphi^*)^{-1}$ is not continuous. Closed ses of $\operatorname{Spec}(R)$ are $\operatorname{V}(1) = R$, $\operatorname{V}(0) = \operatorname{Spec}(R)$ and $\operatorname{V}(X) = \{\langle X \rangle\}$. Closed sets of $\operatorname{Spec}(S)$ are $\operatorname{V}(1,1) = \emptyset, \operatorname{V}(0,0) = \operatorname{Spec}(S)$, $\operatorname{V}(0,1) = \{0 \times Q(R)\}$ and $\operatorname{V}(1,0) = \{k \times 0\}$. $((\varphi_f^*)^{-1})^{-1}$ (closed) not closed? $\varphi^*(\{k \times 0\}) = \{0\}$ not closed.
-\end{example}
+\begin{theorem}
+    Let $f \in R$, $\varphi: R \to R_f$ and $\varphi^*: \operatorname{Spec}(R_f) \to \operatorname{Spec}(R)$. Then  $\varphi^*(\operatorname{Spec}(R_f)) = X_f$ ``principal open set''. Restrict codomain, $\varphi_f^*: \operatorname{Spec}(R_f) \to X_f$ is 1-1 and onto. Moreover, $\varphi_f^*$ and $(\varphi_f^*)^{-1}$ is continuous. ``homeomorphism''. 
+\end{theorem}
+
+\begin{proof}
+    By Proposition 2.24, we have $\varphi_f^*$ is continuous or by Theorem 2.27 and Lemma 2.30. \par 
+    Let $I \leq R_f$. Claim. Then $I = \varphi^{-1}(I)R_f$. ``$\supseteq$''. By 1.63(a). ``$\subseteq$''. Let $i \in I$. Then $i = \frac{r}{f^n} \in I$ for some $r \in R$ and $n \geq 0$. So $\varphi(r) = \frac{r}{1} = \frac{f^n}{1} \cdot \frac{r}{f^n} \in I $. Then $r \in \varphi^{-1}(I)$. So, $\frac{r}{f^n} = \frac{1}{f^n} \cdot \frac{r}{1} \in \varphi^{-1}(I) R_f$. \par 
+    Since $\varphi_f^*$ is a bijection, $((\varphi_f^*)^{-1})^{-1}(\operatorname{V}(I)) = \varphi_f^*(\operatorname{V}(I)) = \varphi_f^*(\operatorname{V}(\varphi^{-1}(I)R_f) = \operatorname{V}(\varphi^{-1}(I)) \cap X_f$ by Proposition 2.24(a). 
+\end{proof}
+
+\begin{example*}
+    Let $k$ be a field and $R = k\llbracket X \rrbracket$. Claim. $\operatorname{Spec}(R) = \{0,\langle X \rangle\}$. Let $0 \neq f(X) = \sum_{i=0}^\infty a_iX^i$ with $a_i \in k$ for $i \geq 0$. Let $m = \min \{i \geq 0 \mid a_i \neq 0\}$. Then $f(X) = X^m(\sum_{i=0}^{\infty}r_{m+i}X^{i})$. Since $a_m \in k^\times$, we have $\sum_{i=0}^{\infty}r_{m+i}X^{i} \in R^\times$. So every $0 \neq f \in R$ is of the form $uX^m$ for some $m \geq 0$ and $u \in R^\times$. Hence if $0 \neq I \leq R$, $I = \langle X^m \rangle$, where $m = \min\{j \geq 0 \mid X^j \in I\}$. Thus, if $0 \neq \ffp \in \operatorname{Spec}(R)$, then $\ffp = \langle X \rangle$. \par 
+    Let $\varphi: R \to S = k \times Q(R)$ be given by $\sum_{i=1}^{\text{finite}} a_iX^i \mapsto (a_0,\frac{\sum_{i=1}^{\text{finite}} a_iX^i}{1})$. Note $\varphi$ is a ring homomorphism and $\operatorname{Spec}(S) = \{k \times 0, 0 \times Q(R)\}$. We have the continuous function $\varphi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$  sending $k \times 0$ to $0$ and $0 \times Q(R)$ to $\langle X \rangle$ is 1-1 and onto. \par 
+    Closed sets of $\operatorname{Spec}(S)$ are $\operatorname{V}(1,1) = \emptyset, \operatorname{V}(0,0) = \operatorname{Spec}(S)$, $\operatorname{V}(0,1) = \{0 \times Q(R)\}$ and $\operatorname{V}(1,0) = \{k \times 0\}$. Closed ses of $\operatorname{Spec}(R)$ are $\operatorname{V}(1) = \emptyset$, $\operatorname{V}(0) = \operatorname{Spec}(R)$ and $\operatorname{V}(X) = \{\langle X \rangle\}$. Since $\varphi^*$ is a bijection, we have $((\varphi^*)^{-1})^{-1}(\{k \times 0\}) = \varphi^*(\{k \times 0\}) = \{0\}$ is not closed in $\operatorname{Spec}(R)$. So $(\varphi^*)^{-1}$ is not continuous. 
+\end{example*}
 
 \begin{corollary}
     $X_f$ is quasi-compact.
 \end{corollary}
 
 \begin{proof}
-    It follows from $X_f$ is homeomorphic to $\operatorname{Spec}(R_f)$.
+    It follows from $X_f$ is homeomorphic to $\operatorname{Spec}(R_f)$ and $\operatorname{Spec}(R_f)$ is quasi-compact.
 \end{proof}
 
-\begin{example}
-    $U \subseteq \operatorname{Spec}(R) = X$ may not be quasi-compact. Let $R = k[X_1,X_2,X_3,\cdots]$. Let $U = X \setminus \operatorname{V}(X_1,X_2,X_3,\cdots) = \bigcup_{i=1}^\infty (X \setminus \operatorname{V}(X_i)) \neq \bigcup_{i=1}^n (X \setminus \operatorname{V}(X_i)) = X \setminus \operatorname{V}(X_1,\cdots,X_n)$. Need to show $\operatorname{V}(X_1,X_2,X_3,\cdots) \neq \operatorname{V}(X_1,X_2,\cdots,X_n)$. ``$\subseteq$''. It is clear. ``$\not \supseteq$''. Let $\ffp = \langle X_1,\cdots,X_n \rangle \in \operatorname{V}(X_1,\cdots,X_n)$, but $\ffp \not \in \operatorname{V}(X_1,X_2,\cdots)$.
-\end{example}
+\begin{example*}
+    $U \subseteq \operatorname{Spec}(R) = X$ may not be quasi-compact. Let $R = k[X_1,X_2,X_3,\cdots]$. Let $U = X \setminus \operatorname{V}(X_1,X_2,X_3,\cdots) = X \setminus \bigcap_{i=1}^{\infty} \operatorname{V}(X_i) = \bigcup_{i=1}^\infty (X \setminus \operatorname{V}(X_i))$ by Fact 1.36(a). \par 
+    Let $n \geq 1$. Claim. $\operatorname{V}(X_1,X_2,X_3,\cdots) \neq \operatorname{V}(X_1,X_2,\cdots,X_n)$. ``$\subseteq$''. It is clear. ``$\not \supseteq$''. Let $\ffp = \langle X_1,\cdots,X_n \rangle \in \operatorname{V}(X_1,\cdots,X_n)$, but $\ffp \not \in \operatorname{V}(X_1,X_2,\cdots)$ since $\langle X_1,X_2,\cdots \rangle\ni X_{n+1} \not \in \ffp$. \par 
+    So $U \neq X \setminus \operatorname{V}(X_1,\cdots,X_n) = X \setminus \bigcap_{i=1}^{n} \operatorname{V}(X_i) = \bigcup_{i=1}^n (X \setminus \operatorname{V}(X_i))$ for $n \geq 1$. 
+\end{example*}
 
-\begin{fact}
+\begin{fact*}
     If $R$ is noetherian and $U \subseteq X = \operatorname{Spec}(R)$ is open, then $U$ is quasi-compact. 
-\end{fact}
+\end{fact*}
 
 \begin{proof}
-    Let $U = \bigcup_{\lambda \in \Lambda}U_\lambda$. Since $U_\lambda$ is open in $U$, $U_\lambda = U \cap \bigcup_{\lambda \in \Lambda}U_\lambda$ is an open cover,... open $\subseteq \widetilde U_\lambda \subseteq X$. So $U_\lambda = \widetilde U_\lambda \cap U$ is open. Use the fact that $X_f$'s form a basis to assume without losss of generality $U_\lambda = X_{f_\lambda}$ for some $f_\lambda \in R$. \par 
-    $U = U_{\lambda \in \Lambda} X_{f_\lambda} = U_\lambda (X \setminus \operatorname{V}(f_\lambda)) = X \setminus \operatorname{V}(\langle f_\lambda \mid \lambda \in \Lambda \rangle)$..... \par 
+    Let $U = \bigcup_{\lambda \in \Lambda}U_\lambda$ be an open cover with $U_\lambda$ open in $X$ for $\lambda \in \Lambda$. Then $U_\lambda = U_\lambda \cap U$ for $\lambda \in \Lambda$. Use the fact that $X_f$'s form a basis to assume without losss of generality $U_\lambda = X_{f_\lambda}$ for some $f_\lambda \in R$ for $\lambda \in \Lambda$. Then $U = \bigcup_{\lambda \in \Lambda} X_{f_\lambda} = \bigcup_\lambda (X \setminus \operatorname{V}(f_\lambda)) = X \setminus \operatorname{V}(\langle f_\lambda \mid \lambda \in \Lambda \rangle)$. Since $R$ is noetherian, there exist $f_{\lambda_1},\cdots,f_{\lambda_n} \in R$ such that $\langle f_\lambda \mid \lambda \in \Lambda \rangle = \langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle$. So $U = X \setminus \operatorname{V}(\langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle) = \bigcup_{i=1}^n X_{f_{\lambda_i}}$. 
 \end{proof}
 
 \begin{lemma}
-    Let $f: X \to Y$ be a continuous function between two topological spaces. if $f(X) \subseteq Z \subseteq Y$, then restrict the codomain, $f_Z: X \to Z$ and gives $Z$ the subspace topology, then $f_Z$ is continuous.
+    Let $f: X \to Y$ be a continuous function between two topological spaces. If $f(X) \subseteq Z \subseteq Y$, then consider the natural map $f_Z: X \to Z$ and give $Z$ the subspace topology, we have $f_Z$ is continuous.
 \end{lemma}
 
 \begin{proof}
-    If $U \subseteq Z$ is open, then $U = Z \cap \widetilde U$ for some $\widetilde U \subseteq Y$ open. $f(X) \subseteq Z$. So $f_Z^{-1}(U) = f^{-1}(Z \cap \widetilde U) = f^{-1}(\widetilde U)$ open in $X$ since $f$ is continuous.
+    Let $U \subseteq Z$ be open. Since $Z$ has the subspace topology, $U = Z \cap \widetilde U$ for some $\widetilde U \subseteq Y$ open. Since $f(X) \subseteq Z$, $f_Z^{-1}(U) = f^{-1}(Z \cap \widetilde U) = f^{-1}(Z) \cap f^{-1}(U) = f^{-1}(\widetilde U)$ is open in $X$ since $f$ is continuous.
 \end{proof}
 
 \begin{theorem}
-    Let...
+    Let $\ffb \leq R$, $\pi: R \to R/\ffb$ be the natural surjection and consider $\pi^*: \operatorname{Spec}(R/\ffb) \to \operatorname{Spec}(R)$.
     \begin{enumerate}
-        \item
-        \item 
+        \item $\pi^*(\operatorname{Spec}(R/\ffb)) = \operatorname{V}(\ffb)$.
+        \item Restrict the codomain, then $\pi_\ffb^*: \operatorname{Spec}(R/\ffb) \to \operatorname{V}(\ffb)$ is continuous, 1-1 and onto, and $(\pi_\ffb^*)^{-1}$ is continuous. ``homeomorphism''.
     \end{enumerate}
 \end{theorem}
 
+\begin{proof}
+    By prime correspondence, 
+    \begin{align*}
+        \operatorname{Spec}(R/\ffb) &\leftrightarrows \operatorname{V}(\ffb) \\
+        \ffp/\ffb &\mapsfrom \ffp \supseteq \ffb \\
+        \ffp &\mapsto \pi^{-1}(\ffp) = \pi^*(\ffp).
+    \end{align*}
+    So $\pi^*(\operatorname{Spec}(R/\ffb)) = \operatorname{V}(\ffb)$, and $\pi_\ffb^*$ is 1-1 and onto. By Theorem 2.27 and Lemma 2.30, $\pi_\ffb^*$ is continuous. Let $\ffb \subseteq \ffa \leq R$. Then by prime correspondence, $((\pi_\ffb^*)^{-1})^{-1}(\operatorname{V}(\ffa/\ffb)) = \pi_\ffb^*(\operatorname{V}(\ffa/\ffb)) = \operatorname{V}(\ffa) \cap \operatorname{V}(\ffb) = \operatorname{V}(\ffa)$. So $(\pi_\ffb^*)^{-1}$ is continuous.
+\end{proof}
+
 \begin{corollary}
-    \begin{enumerate}
-        \item 
-        \item 
-        \item 
-        \item 
-    \end{enumerate}
+    $\operatorname{V}(\ffb)$ is quasi-compact for for $\ffb \leq R$.
 \end{corollary}
 
 \begin{definition}
-    $X$ is \emph{irreducible} if for any pair of open subsets $U_1,U_2 \subseteq X$, if $U_1,U_1 \neq \emptyset$, then $U_1 \cup U_2 \neq \emptyset$.
+    $X$ is \emph{irreducible} if for any pair of open subsets $U_1,U_2 \subseteq X$, if $U_1,U_1 \neq \emptyset$, then $U_1 \cup U_2 \neq \emptyset$. \par 
+    $X$ is \emph{reducible} if it is not irreducible, i.e., if and only if there exist non-empty open subsets $U_1,U_2 \subseteq X$ such that $U_1 \cap U_2 = \emptyset$.
 \end{definition}
 
 \begin{example}
     If $R$ is an integral domain, then $X = \operatorname{Spec}(R)$ is irreducible.
 \end{example}
 
-\begin{definition}[2.33+]
-    A subset $Y \subseteq X$ with subspace topology is an irreducible subset if it is reduced as topological space.
-\end{definition}
+\begin{proof}
+    Let $\emptyset \neq U \subseteq X$ be open. Then $\emptyset \neq U = X \setminus \operatorname{V}(\ffa)$ for some $\ffa \leq R$. So $\operatorname{V}(\ffa) \neq X = \operatorname{Spec}(R)$. Hence $\ffa \neq \langle 0 \rangle$ and so $\langle 0 \rangle \not \in \operatorname{V}(\ffa)$. Also, since $R$ is an integral domain, $\langle 0 \rangle \in X$. So $\langle 0 \rangle \in U$. Thus, by definition, $X$ is irreducible.
+\end{proof}
+
+\begin{definition*}[2.33+]
+    A subset $\emptyset \neq Y \subseteq X$ with subspace topology is an irreducible subset if it is reduced as topological space. Equivalently, $\emptyset \neq Y \subseteq X$ is \emph{irreducible} if for any closed subsets $V,W \subseteq Y$ (subspace topology) if $Y = V \cup W$, then $Y = V$ or $Y = W$.
+\end{definition*}
 
 \begin{corollary}
     If $\ffq \subset \operatorname{Spec}(R)$, then $\operatorname{V}(\ffq) \subseteq \operatorname{Spec}(R)$ is irreducible.
@@ -396,7 +416,7 @@ Let $X \neq \emptyset$ be a topological space.
         \item If $Y \subseteq X$ is irreducible, then $\overbar Y \subseteq X$ is irreducible.
         \item If $\ssC$ is a chain of irreducible subsets of $X$, then $\bigcup_{Y \in \ssC}Y$ is irreducible.
         \item For any irreducible $Y \subseteq X$, there exists a maximal irreducible subseteq $Z \subseteq X$ such that $Y \subseteq Z$.
-        \item $X$ is the union of its maximal irreducible subsets.
+        \item $X$ is the union of its maximal irreducible subsets and each maximal irreducible subset of $X$ is closed. ``irreducible components of $X$''.
     \end{enumerate}
 \end{proposition}
 
@@ -432,5 +452,50 @@ Let $X \neq \emptyset$ be a topological space.
 
 \end{proof}
 
+\begin{proposition}
+    Let $R$ be a nonzero commutative ring with identity and $X = \operatorname{Spec}(R)$.
+    \begin{enumerate}
+        \item $V \subseteq X$ is closed and irreducible if and only if $V = \operatorname{V}(\ffp)$ for some $\ffp \in \operatorname{Spec}(R)$.
+        \item The irreducible components of $X$ are $\operatorname{V}(\ffp)$, where $\ffp \in \operatorname{Min}(\operatorname{Spec}(R)) = \operatorname{Min}(R)$.
+    \end{enumerate}
+\end{proposition}
 
+\begin{proof}
+    Let $I,J,K \leq R$. $(\operatorname{V}(I) \cap \operatorname{V}(K)) \cup (\operatorname{V}(J) \cap \operatorname{V}(K)) = \operatorname{V}(I+K) \cup \operatorname{V}(J+K) = \operatorname{V}((I+K)(J+K))$.
+    \begin{enumerate}
+        \item ``$\Leftarrow$''. Let $\ffp \in \operatorname{Spec}(R)$. Need to show $V(\ffp)$ is irreducible. Suppose $\operatorname{V}(\ffp) = V \cup W$ such that $V,W \subseteq \operatorname{V}(\ffp)$ are closed. So there exist ideals $\ffa,\ffb$ such that... \\
+            ``$\Rightarrow$''. Assume $V \subseteq X$ is closed and irreducible. Then there exists $\ffa \leq R$ such that $\operatorname{V}(\ffa) = V$. Set $r = \operatorname{rad}(\ffa)$. Then $r = \operatorname{rad}(\ffa) = \operatorname{I}(\operatorname{V}(\ffa)) = \operatorname{I}(V)$. So $\operatorname{V}(r) = \operatorname{V}(\operatorname{I}(V)) = V = \operatorname{V}(\ffa)$. .....
+        \item Let $V$ be an irreducible component of $X = \operatorname{Spec}(R)$,...
+    \end{enumerate}
+\end{proof}
 
+\begin{corollary}
+    \begin{enumerate}
+        \item $\operatorname{Min}(R) \neq \emptyset$.
+        \item For any $\ffq \in \operatorname{Spec}(R)$, there exists $\ffp \in \operatorname{Min}(R)$ such that $\ffp \leq \ffq$.
+    \end{enumerate}
+\end{corollary}
+
+\begin{proof}
+    \begin{enumerate}
+        \item 
+        \item Let $\ffq \in \operatorname{Spec}(R)$. Then $\operatorname{V}(\ffq) \subseteq \operatorname{Spec}(R)$ are closed and irreducible by ....Since $\operatorname{V}(\ffq)$ is irreducible, $\operatorname{V}(\ffq)$ is contained in a maximal irreducible subset, i.e., $\operatorname{V}(\ffq) \subseteq \operatorname{V}(\ffp)$ for some .....
+    \end{enumerate}
+\end{proof}
+
+\begin{proposition}
+    Let $\ffp \in \operatorname{Spec}(R)$.
+    \begin{enumerate}
+        \item $\{\ffp\} = \operatorname{V}(\ffp)$.
+        \item $\{\ffp\} = \{\ffp\}$ if and only if $\ffp \in \operatorname{m-Spec}(R)$. ``closed points are maximal''.
+        \item If $R$ is an integral domain, then $\{0\} = \operatorname{V}(0) = \operatorname{Spec}(R)$. 0 is the ``the generic point''.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    Continuous functions and homeomorphisms\begin{enumerate}
+        \item 
+        \item 
+        \item 
+    \end{enumerate}
+\end{proof}

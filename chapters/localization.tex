@@ -1,0 +1,133 @@
+\chapter{Localization}
+
+\begin{recall}
+    A subset $U \subseteq R$ is ``multiplicative closed'' if for any $u,v \in U$: $uv \in U$, and $1 \in U$. 
+\end{recall}
+
+\begin{example}
+    \begin{enumerate}
+        \item If $f \in R$, then $\{1,f,f^2,\cdots\} \subseteq R$ is multiplicative closed.
+        \item $R^\times \subseteq R$ is multiplicative closed.
+        \item $R \setminus \ffp$ is multiplicative closed for $\ffp \in \operatorname{Spec}(R)$.
+        \item $1 + \ffa$ is multiplicative closed for $\ffa \leq R$.
+    \end{enumerate}
+\end{example}
+
+\begin{recall}
+    For $U \subseteq R$ multiplicative closed, $U^{-1}R = \{\frac{r}{u} \mid r \in R \text{ and }u \in U\}$, where $\frac{r}{u} = \frac{r'}{u'}$ if and only if there exists $u'' \in U$ such that $u''(ru'-r'u) = 0$, i.e., $\frac{u''r}{u''u} = \frac{r'}{u'}$, formally, $\frac{r}{u}$ is the equivalence class under an equivalence relation. \par 
+    $U^{-1}$ is a commutative ring with identity.... 
+\end{recall}
+
+\begin{notation}
+    \begin{enumerate}
+        \item If $U = \{1,f,f^2,\cdots\}$, write $U^{-1}R = R_f$.
+        \item If $U = R \setminus \ffp$ for some $\ffp \in \operatorname{Spec}(R)$, write $U^{-1}R = R_\ffp$.
+        \item If $U \subseteq R$ is multiplicative closed, write $U^{-1}R = R_U = R[U^{-1}]$.
+    \end{enumerate}
+\end{notation}
+
+\begin{recall}
+\end{recall}
+
+\begin{proposition}
+    Let $\varphi: R \to S$ be a ring homomorphism and $U \subseteq R$ multiplicative closed.
+    \begin{enumerate}
+        \item $\varphi(U) \subseteq S$ is multiplicative closed and $\varphi(U)^{-1} = U^{-1}S$.
+        \item There is a ring homomorphism: $U^{-1}\varphi: U^{-1}R \to U^{-1}S$ given by $U^{-1}\varphi(r/u) = \varphi(r)/\varphi(u)$.
+            \begin{center}
+                \begin{tikzcd}
+                    R \arrow[r,"\psi"] \arrow[d,"\varphi"] & U^{-1}R \arrow[d,"U^{-1}\varphi"]\\
+                    S \arrow[r,"\rho"] & U^{-1}S = \varphi(U)^{-1}S
+                \end{tikzcd}
+            \end{center}
+        \item If $\varphi$ is onto, then $U^{-1}\varphi$ is onto.
+        \item If $\varphi$ is 1-1, then $U^{-1}\varphi$ is 1-1.
+        \item If $\alpha: S \to T$ is a ring homomorphism, then $U^{-1}(\alpha \circ \varphi) = (\varphi(U)^{-1}\alpha) \circ (U^{-1}\varphi)$. 
+            \begin{center}
+                \begin{tikzcd}
+                \end{tikzcd}
+            \end{center}
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}
+        \item [(b)] 
+            Let $\frac{r}{u} = \frac{r'}{u'}$. Then there exists $u'' \in U$ such that $u''(ur'-u'r) = 0$. So there exists $u'' \in U$ such that $\varphi(u'')(\varphi(u)\varphi(r') - \varphi(u')\varphi(r)) = 0$. Hence $\frac{\varphi(r)}{\varphi(u)} = \frac{\varphi(r')}{\varphi(u')}$ and so $U^{-1}\varphi$ is well-defined. \par 
+            Ring homomorphism: \par 
+        \item [(c)]
+            Assume $\varphi$ is onto. Let $\frac{s}{\varphi(u)} \in U^{-1}S$. Then there exists $r \in R$ such that $\varphi(r) = s$. Since $U^{-1}\varphi(\frac{r}{u}) = \frac{\varphi(r)}{\varphi(u)} = \frac{s}{\varphi(u)}$. $U^{-1}\varphi$ is onto.
+        \item[(d)] Assume $\varphi$ is 1-1.
+        \item[(e)] .
+    \end{enumerate}
+\end{proof}
+
+\noindent Let $\ffa,\ffb \leq R$.
+
+\begin{definition}
+    and $U \subseteq R$ be multiplicative closed. Define relation ``$\sim$'' on $U \times \ffa$: $(u,a) \sim (u',a')$ if and only if there exists $u'' \in U$ such that $u''(u'a - ua') = 0$.
+\end{definition}
+
+\begin{fact}
+    This is an equivalence relation.
+\end{fact}
+
+\begin{notation}
+    $U^{-1}\ffa = \{\text{equivalence classes from $U \times \ffa$ under $\sim$}\}$ and $a/u$ or $\frac{a}{u}$ with $a \in \ffa$ and $u \in U$ are its elements.
+\end{notation}
+
+\begin{proposition}
+    \begin{enumerate}
+        \item The map $i: U^{-1}\ffa \to U^{-1}R$ given by $i(a/u) = a/u$ is well-defined and 1-1. Identify $U^{-1}\ffa$ with $\im(i) \subseteq U^{-1}R$. So write $U^{-1}\ffa \subseteq U^{-1}R$. \par 
+            \textbf{Warning.} $\frac{r}{u} \in U^{-1}R$ such that $r/u \in U^{-1}\ffa$ may have $r \not \in \ffa$.
+        \item 
+        \item 
+        \item 
+        \item 
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}
+        \item 
+        \item 
+        \item 
+        \item 
+    \end{enumerate}
+\end{proof}
+
+\begin{proposition}
+    \begin{enumerate}
+        \item $U^{-1}(\ffa + \ffb) = (U^{-1}\ffa) + (U^{-1}\ffb)$.
+        \item $U^{-1}(\ffa \cap \ffb) = (U^{-1}\ffa) \cap (U^{-1}\ffb)$.
+        \item $U^{-1}(\ffa \ffb) = (U^{-1}\ffa) (U^{-1}\ffb)$.
+        \item $\operatorname{rad}(U^{-1}\ffa) = U^{-1} \operatorname{rad}(\ffa)$.
+        \item $\operatorname{Nil}(U^{-1}R) = U^{-1}\operatorname{Nil}(R)$.
+        \item $(U^{-1}\ffb:U^{-1}\ffa) = U^{-1}(\ffb:\ffa)$ if $\ffa$ is finitely generated.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}
+        \item $U^{-1}(\ffa+\ffb) = (\ffa+\ffb)U^{-1}R = (\ffa U^{-1}R) + (\ffb U^{-1}R) = (U^{-1}\ffa) + (U^{-1}\ffb)$.
+        \item $U^{-1}(\ffa \cap \ffb) \subseteq$
+        \item 
+        \item 
+        \item 
+        \item 
+    \end{enumerate}
+\end{proof}
+
+\begin{proposition}
+    Let $\psi: R \to U^{-1}R$.
+    \begin{enumerate}
+        \item For any $I \leq U^{-1}R$, there exists $\ffa \leq R$ such that $I = U^{-1}\ffa$. (See proof of theorem 2.28 with $\ffa = \psi^{-1}(I)$).
+        \item If $\ffa \leq R$, then $\psi^{-1}(U^{-1}\ffa) =\{r \in R \mid \ex v \in U \text{ s.t. }v r \leq R\} = \bigcup_{v \in U} (\ffa:v)$.
+        \item $U^{-1}\ffa$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+\end{proposition}
+
+
