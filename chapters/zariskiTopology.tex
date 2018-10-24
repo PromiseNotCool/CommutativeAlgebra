@@ -441,9 +441,9 @@ Let $X \neq \emptyset$ be a topological space.
     \begin{enumerate}
         \item Let $Y \subseteq X$ be irreducible. Let $V_1,V_2 \subseteq \overbar Y$ be both closed. Assume $\overbar Y = V_1 \cup V_2$. Let $i \in \{1,2\}$. Since $V_i$ is closed in $\overbar Y$ and $\overbar Y$ has subspace topology, there exists $\widetilde V_i \subseteq X$ closed in $X$ such that $V_i = \widetilde V_i \cap \overbar Y$. Set $V_i' = \widetilde V_i \cap Y = (\widetilde V_i \cap \overbar Y) \cap Y = V_i \cap Y$. Then $\overbar Y = V_1 \cup V_2 = (\widetilde V_1 \cap \overbar Y) \cup (\widetilde V_2 \cap \overbar Y) = (\widetilde V_1 \cup \widetilde V_2) \cap \overbar Y$. So $Y \subseteq \overbar Y \subseteq \widetilde V_1 \cup \widetilde V_2$. Hence $Y = (\widetilde V_1 \cup \widetilde V_2) \cap Y= (\widetilde V_1 \cap Y) \cup (\widetilde V_2 \cap Y) = V_1' \cup V_2'$. Since $Y$ is irreducible, $Y = V_1'$ or $V_2'$. Say $Y = V_1' = V_1 \cap Y$. Then $Y \subseteq V_1 \subseteq \widetilde V_1$. Since $\widetilde V_1$ is closed in $X$, $\overbar Y \subseteq \widetilde V_1$. So $\overbar Y = \widetilde V_1 \cap \overbar Y = V_1$. 
         \item 
-            Let $\llC$ be a chain of irreducible subsets of $X$ and $Z: = \bigcup_{Y \in \llC}Y$. Let $V_1,V_2 \subsetneq Z$ be closed. Then there exist $x_1 \in Z \setminus V_1$ and $x_2 \in Z \setminus V_2$. So there exists $Y_1,Y_2 \in \llC$ such that $x_1 \in Y_1$ and $x_2 \in Y_2$. Since $\llC$ is a chain, $Y_1 \subseteq Y_2$ or $Y_2 \subseteq Y_1$, say $Y_2 \subseteq Y_1$. So $x_1 \in Y_1 \setminus V_1$ and $x_2 \in Y_1 \setminus V_2$. Hence $V_1 \cap Y_1 \subsetneq Y_1$ and $V_2 \cap Y_1 \subsetneq Y_1$. Since $V_1,V_2$ are closed in $Z$ and $Y_1 \subseteq Z$ has subspace topology \footnote[2]{Let $Z \subseteq X$ have a subspace topology. If $Y \subseteq Z$, then the topology that $Y$ inherits as a subspace of $Z$ is the same as the topology that $Y$ inherits as a subspace of $X$}, $V_1 \cap Y_1$ and $V_2 \cap Y_2$ are closed in $Y_1$. Also, since $Y_1$ is irreducible, we have $(V_1 \cap Y_1) \cup (V_2 \cap Y_1) \subsetneq Y_1$. So $Y_1 \not \subseteq V_1 \cup V_2$. Also, since $Y_1 \subseteq Z$, $Z \not \subseteq V_1 \cup V_2$. Thus, $V_1 \cup V_2 \subsetneq Z$.
+            Let $\llC$ be a chain of irreducible subsets of $X$ and $Z: = \bigcup_{Y \in \llC}Y$. Let $V_1,V_2 \subsetneq Z$ be closed. Then there exist $x_1 \in Z \setminus V_1$ and $x_2 \in Z \setminus V_2$. So there exists $Y_1,Y_2 \in \llC$ such that $x_1 \in Y_1$ and $x_2 \in Y_2$. Since $\llC$ is a chain, $Y_1 \subseteq Y_2$ or $Y_2 \subseteq Y_1$, say $Y_2 \subseteq Y_1$. So $x_1 \in Y_1 \setminus V_1$ and $x_2 \in Y_1 \setminus V_2$. Hence $V_1 \cap Y_1 \subsetneq Y_1$ and $V_2 \cap Y_1 \subsetneq Y_1$. Since $V_1,V_2$ are closed in $Z$ and $Y_1 \subseteq Z$ has subspace topology \footnote[2]{Let $Z \subseteq X$ have a subspace topology. If $Y \subseteq Z$, then the topology that $Y$ inherits as a subspace of $Z$ is the same as the topology that $Y$ inherits as a subspace of $X$}, $V_1 \cap Y_1$ and $V_2 \cap Y_1$ are closed in $Y_1$. Also, since $Y_1$ is irreducible, we have $(V_1 \cap Y_1) \cup (V_2 \cap Y_1) \subsetneq Y_1$. So $Y_1 \not \subseteq V_1 \cup V_2$. Also, since $Y_1 \subseteq Z$, $Z \not \subseteq V_1 \cup V_2$. Thus, $V_1 \cup V_2 \subsetneq Z$.
         \item Let $Y \subseteq X$ be irreducible. Set $\Sigma = \{\text{irreducible subsets }Z \subseteq X \mid Y \subseteq Z\}$. Since $Y \in \Sigma$, $\Sigma \neq \emptyset$. From (b), Zorn' lemma applies. So $\Sigma$ has a maximal element.
-    \item Let $\llM$ be the set of the maximal irreducible subsets of $X$. Claim. $X = M$. ``$\supseteq$''. It is straightforward. ``$\subseteq$''. Let $x \in X$, then $\{x\} \subseteq X$ is irreducible. By (c), there exists a maximal irreducible subset $Z \subseteq X$ such that $\{x\} \subseteq Z$. By (a), $\overbar Z$ is irreducible. Also, since $Z \subseteq \overbar Z$ and $Z$ is maximal irreducible, we have $Z = \overbar Z$, i.e., $Z$ is closed. \qedhere
+    \item Let $\llM$ be the union of the maximal irreducible subsets of $X$. Claim. $X = M$. ``$\supseteq$''. It is straightforward. ``$\subseteq$''. Let $x \in X$, then $\{x\} \subseteq X$ is irreducible. By (c), there exists a maximal irreducible subset $Z \subseteq X$ such that $\{x\} \subseteq Z$. By (a), $\overbar Z$ is irreducible. Also, since $Z \subseteq \overbar Z$ and $Z$ is maximal irreducible, we have $Z = \overbar Z$, i.e., $Z$ is closed. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -452,26 +452,7 @@ Let $X \neq \emptyset$ be a topological space.
 \end{definition}
 
 \begin{proposition}
-    \begin{enumerate}
-        \item Let $V \subseteq X = \operatorname{Spec}(R)$ be closed. Then $V$ is irreducible if and only if $V = \operatorname{V}(\ffp)$ for some $\ffp \in \operatorname{Spec}(R)$.
-        \item The irreducible components of $X = \operatorname{Spec}(R)$ are the subsets $\operatorname{V}(\ffp)$ such that $\ffp \in \operatorname{Min}(R) = \operatorname{Min}(\operatorname{Spec}(R))$.
-    \end{enumerate}
-\end{proposition}
-
-\begin{example}
-    Let $R = \frac{k[X,Y,Z]}{(\langle XY,YZ,XZ)}$, where $k$ is a field. Then $\langle XY,YZ,XZ \rangle = \langle X,Y \rangle \cap \langle X,Z \rangle \cap \langle Y,Z \rangle$ and $\operatorname{Min}(R) = \{\langle \overbar X,\overbar Y \rangle, \langle \overbar X,\overbar Z \rangle, \langle \overbar Y, \overbar Z \rangle\}$. The irreducible components of $\operatorname{Spec}(R)$ are $\operatorname{V}(\langle \overbar X,\overbar Y \rangle)$, $\operatorname{V}(\langle \overbar X, \overbar Z \rangle)$ and $\operatorname{V}(\langle \overbar Y,\overbar Z \rangle)$.
-\end{example}
-
-\begin{corollary}
-    $R$ has a minimal prime, i.e., $\operatorname{Min}(\operatorname{Spec}(R)) \neq \emptyset$.
-\end{corollary}
-
-\begin{proof}
-    $X = \operatorname{Spec}(R)$
-\end{proof}
-
-\begin{proposition}
-    Let $R$ be a nonzero commutative ring with identity and $X = \operatorname{Spec}(R)$.
+    Let $X = \operatorname{Spec}(R)$.
     \begin{enumerate}
         \item $V \subseteq X$ is closed and irreducible if and only if $V = \operatorname{V}(\ffp)$ for some $\ffp \in \operatorname{Spec}(R)$.
         \item The irreducible components of $X$ are $\operatorname{V}(\ffp)$, where $\ffp \in \operatorname{Min}(\operatorname{Spec}(R)) = \operatorname{Min}(R)$.
@@ -479,41 +460,52 @@ Let $X \neq \emptyset$ be a topological space.
 \end{proposition}
 
 \begin{proof}
-    Let $I,J,K \leq R$. $(\operatorname{V}(I) \cap \operatorname{V}(K)) \cup (\operatorname{V}(J) \cap \operatorname{V}(K)) = \operatorname{V}(I+K) \cup \operatorname{V}(J+K) = \operatorname{V}((I+K)(J+K))$.
     \begin{enumerate}
-        \item ``$\Leftarrow$''. Let $\ffp \in \operatorname{Spec}(R)$. Need to show $V(\ffp)$ is irreducible. Suppose $\operatorname{V}(\ffp) = V \cup W$ such that $V,W \subseteq \operatorname{V}(\ffp)$ are closed. So there exist ideals $\ffa,\ffb$ such that... \\
-            ``$\Rightarrow$''. Assume $V \subseteq X$ is closed and irreducible. Then there exists $\ffa \leq R$ such that $\operatorname{V}(\ffa) = V$. Set $r = \operatorname{rad}(\ffa)$. Then $r = \operatorname{rad}(\ffa) = \operatorname{I}(\operatorname{V}(\ffa)) = \operatorname{I}(V)$. So $\operatorname{V}(r) = \operatorname{V}(\operatorname{I}(V)) = V = \operatorname{V}(\ffa)$. .....
-        \item Let $V$ be an irreducible component of $X = \operatorname{Spec}(R)$,... \qedhere
+        \item ``$\Leftarrow$''. Let $\ffp \in \operatorname{Spec}(R)$. Let $V,W \subseteq \operatorname{V}(\ffp)$ be closed such that $\operatorname{V}(\ffp) = V \cup W$. Then $V = \operatorname{V}(\ffa) \cap \operatorname{V}(\ffp)$ and $W = \operatorname{V}(\ffb) \cap \operatorname{V}(\ffp)$ for some $\ffa,\ffb \leq R$. Since $\ffp \in \operatorname{Spec}(R)$, $\ffp \in \operatorname{V}(\ffp) = V \cup W = (\operatorname{V}(\ffa) \cap \operatorname{V}(\ffp)) \cup (\operatorname{V}(\ffb) \cap \operatorname{V}(\ffp)) = \operatorname{V}(\ffa + \ffb) \cup \operatorname{V}(\ffb + \ffp)= \operatorname{V}(\ffa + \ffp)(\ffb+\ffp))$. So $\ffp \supseteq (\ffa + \ffp)(\ffb + \ffp)$. Since $\ffp \in \operatorname{Spec}(R)$, $\ffp \supseteq \ffa + \ffp \supseteq \ffa$ or $\ffp \supseteq \ffb + \ffp \supseteq \ffb$. So $\operatorname{V}(\ffp) \subseteq \operatorname{V}(\ffa)$ or $\operatorname{V}(\ffp) \subseteq \operatorname{V}(\ffb)$. Then $V \subseteq \operatorname{V}(\ffp) \subseteq \operatorname{V}(\ffa) \cap \operatorname{V}(\ffp) = V$ or $W \subseteq \operatorname{V}(\ffp) \subseteq \operatorname{V}(\ffb) \cap \operatorname{V}(\ffp) = W$. So $\operatorname{V}(\ffp) = V$ or $\operatorname{V}(\ffp) = W$. \par 
+        ``$\Rightarrow$''. Assume $V \subseteq X$ is closed and irreducible. Then $\emptyset \neq V = \operatorname{V}(\ffa) = \operatorname{V}(\operatorname{rad}(\ffa)) $ for some $\ffa \leq R$. So $\ffr := \operatorname{rad}(\ffa) \lneq R$ by Proposition 1.32(b). Let $x,y \in R$ such that $xy \in \ffr$. Then $\ffr^2 \subseteq (xR+\ffr)(yR+\ffr) \subseteq \ffr$. So $\operatorname{V}(\ffr) = \operatorname{V}(\ffr^2) \supseteq \operatorname{V}((xR+\ffr)(yR+\ffr)) \supseteq \operatorname{V}(\ffr)$. Hence $V = \operatorname{V}(\ffr) = \operatorname{V}((xR + \ffr)(yR+\ffr)) = (\operatorname{V}(xR) \cap \operatorname{V}(\ffr)) \cup (\operatorname{V}(yR) \cap \operatorname{V}(\ffr)) = (\operatorname{V}(xR) \cap V) \cup (\operatorname{V}(yR) \cap V)$ similarly. Also, since $\operatorname{V}(xR) \cap V$ and $\operatorname{V}(xR) \cap V$ are closed in $V$ and $V$ is irreducible, we have $\operatorname{V}(\ffr) = \operatorname{V}(xR) \cap V \subseteq \operatorname{V}(xR)$ or $\operatorname{V}(\ffr) = \operatorname{V}(yR) \cap V \subseteq \operatorname{V}(yR)$. Then $x \in xR \subseteq \operatorname{rad}(xR) = \bigcap_{\ffp \in \operatorname{V}(xR)} \ffp \subseteq \bigcap_{\ffp \in \operatorname{V}(\ffr)} \ffp = \operatorname{rad}(\ffr) = \ffr$ by Fact 1.58(c) and (g) or $y \in \ffr$ similarly. So $\operatorname{rad}(\ffa) = \ffr \in \operatorname{Spec}(R)$.
+    \item Let $V$ be an irreducible component of $X = \operatorname{Spec}(R)$. Then $V$ is closed and maximal irreducible. So by (a), $V = \operatorname{V}(\ffp)$ for some $\ffp \in \operatorname{Spec}(R)$. Let $\ffq \in \operatorname{Spec}(R)$ such that $\ffq \subseteq \ffp$. Then $\operatorname{V}(\ffq) \supseteq \operatorname{V}(\ffp) = V$. By (a), $\operatorname{V}(\ffq)$ is closed and irreducible. So by the maximality of $V$, $\operatorname{V}(\ffq) = \operatorname{V}(\ffp)$. So $\ffq \supseteq \ffp$.
     \end{enumerate}
 \end{proof}
+
+\begin{example}
+    Let $R = \frac{k[X,Y,Z]}{(\langle XY,YZ,XZ)}$, where $k$ is a field. Then 
+    \begin{align*}
+        \langle XY,YZ,XZ \rangle &= \langle X,YZ,XZ \rangle \cap \langle Y,YZ,XZ \rangle = \langle X,YZ \rangle \cap \langle Y,XZ \rangle \\
+        &= \langle X,Y \rangle \cap \langle X,Z \rangle \cap \langle Y,X \rangle \cap \langle Y,Z \rangle = \langle X,Y \rangle \cap \langle X,Z \rangle \cap \langle Y,Z \rangle,
+    \end{align*}
+    and $\operatorname{Min}(R) = \{\langle \overbar X,\overbar Y \rangle, \langle \overbar X,\overbar Z \rangle, \langle \overbar Y, \overbar Z \rangle\}$. So the irreducible components of $\operatorname{Spec}(R)$ are $\operatorname{V}(\langle \overbar X,\overbar Y \rangle)$, $\operatorname{V}(\langle \overbar X, \overbar Z \rangle)$ and $\operatorname{V}(\langle \overbar Y,\overbar Z \rangle)$.
+\end{example}
 
 \begin{corollary}
     \begin{enumerate}
         \item $\operatorname{Min}(R) \neq \emptyset$.
-        \item For any $\ffq \in \operatorname{Spec}(R)$, there exists $\ffp \in \operatorname{Min}(R)$ such that $\ffp \leq \ffq$.
+        \item For any $\ffq \in \operatorname{Spec}(R)$, there exists $\ffp \in \operatorname{Min}(R)$ such that $\ffp \subseteq \ffq$.
     \end{enumerate}
 \end{corollary}
 
 \begin{proof}
     \begin{enumerate}
-        \item 
-        \item Let $\ffq \in \operatorname{Spec}(R)$. Then $\operatorname{V}(\ffq) \subseteq \operatorname{Spec}(R)$ are closed and irreducible by ....Since $\operatorname{V}(\ffq)$ is irreducible, $\operatorname{V}(\ffq)$ is contained in a maximal irreducible subset, i.e., $\operatorname{V}(\ffq) \subseteq \operatorname{V}(\ffp)$ for some .....
+        \item Since $\operatorname{Spec}(R) \neq \emptyset$, by Proposition 2.42(b), $\operatorname{Min}(R) \neq \emptyset$.
+        \item Let $\ffq \in \operatorname{Spec}(R)$. Then $\operatorname{V}(\ffq) \subseteq \operatorname{Spec}(R)$ are closed and irreducible by Proposition 2.42(a). So there exists a (closed) maximal irreducible subset $Z \subseteq \operatorname{Spec}(R)$ such that $\operatorname{V}(\ffq) \subseteq Z$ by Proposition 2.40(d). Then $\operatorname{V}(\ffq) \subseteq Z = \operatorname{V}(\ffp)$ for some $\ffp \in \operatorname{Min}(R)$ by Proposition 2.42(b). So $\ffp \subseteq \ffq$. \qedhere
     \end{enumerate}
 \end{proof}
 
 \begin{proposition}
     Let $\ffp \in \operatorname{Spec}(R)$.
     \begin{enumerate}
-        \item $\{\ffp\} = \operatorname{V}(\ffp)$.
-        \item $\{\ffp\} = \{\ffp\}$ if and only if $\ffp \in \operatorname{m-Spec}(R)$. ``closed points are maximal''.
-        \item If $R$ is an integral domain, then $\{0\} = \operatorname{V}(0) = \operatorname{Spec}(R)$. 0 is the ``the generic point''.
+        \item $\overbar {\{\ffp\}} = \operatorname{V}(\ffp)$.
+        \item $\overbar {\{\ffp\}} = \{\ffp\}$ if and only if $\ffp \in \operatorname{m-Spec}(R)$. ``closed points are maximal''.
+        \item If $R$ is an integral domain, then $\overbar {\{0\}} = \operatorname{V}(0) = \operatorname{Spec}(R)$. 0 is the ``the generic point''.
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
-    Continuous functions and homeomorphisms\begin{enumerate}
+    \begin{enumerate}
         \item 
+            Then one point set $\{\ffp\}$ is clearly irreducible. Then $\overbar {\{\ffp\}}$ is also irreducible by Proposition 2.40(a). So $\overbar {\{\ffp\}} = \operatorname{V}(\ffa)$ for some $\ffa \leq R$. Hence $\ffa \subseteq \ffp$. So $\operatorname{V}(\ffp) \subseteq \operatorname{V}(\ffa) = \overbar {\{\ffp\}}$. Since $\overbar {\{\ffp\}}$ is the smallest closed subset containing $\ffp$, we have $\overbar {\{\ffp\}} = \operatorname{V}(\ffp)$.
         \item 
-        \item 
+            ``$\Rightarrow$''. Assume $\overbar{\{\ffp\}} = \{\ffp\}$. Since $\ffp \neq R$, there exists $\ffm \in \operatorname{m-Spec}(R)$ such that $\ffm \supseteq \ffp$. Then $\ffm \subseteq \operatorname{V}(\ffm) \subseteq \operatorname{V}(\ffp) = \overbar {\{\ffp\}} = \{\ffp\}$ by (a). So by the maximality of $\ffm$, we have $\ffp = \ffm$. \par 
+            ``$\Leftarrow$''. Assume $\ffp \in \operatorname{m-Spec}(R)$. Then by (a), $\overbar {\{\ffp\}} = \operatorname{V}(\ffp) = \{\ffp\}$. 
+        \item It follows from (a).
     \end{enumerate}
 \end{proof}
