@@ -1,6 +1,6 @@
 \chapter{Zariski Topology}
 
-Let $R$ be a commutative ring with identity$\neq 0$. 
+Let $R$ be a nonzero commutative ring with identity. 
 
 \begin{definition}
     For any $\epsilon > 0$ and any $x \in \bbR^n$, the \emph{open ball} centered at $x$ with radius $\epsilon$ is 
@@ -16,7 +16,7 @@ Let $R$ be a commutative ring with identity$\neq 0$.
 \end{fact}
 
 \begin{definition}
-    A\emph{topology} on a non-empty set $X$ is a collection of sets $\ssT$ of subsets of $X$ ($\ssT \subseteq \llP(X)$) such that
+    A \emph{topology} on a non-empty set $X$ is a collection of sets $\ssT$ of subsets of $X$ ($\ssT \subseteq \llP(X)$) such that
     \begin{enumerate}
         \item $\emptyset, X \in \ssT$,
         \item for any $\{U_\lambda\}_{\lambda \in \Lambda} \subseteq \ssT$, $\bigcup_{\lambda \in \Lambda} U_\lambda \in \ssT$ and
@@ -45,7 +45,7 @@ Let $R$ be a commutative ring with identity$\neq 0$.
 \end{notation*}
 
 \begin{example}
-    Compute the Zariski open sets $\ssZ$ of $\operatorname{Spec}(\bbZ) = X$. Since $\bbZ$ is a principal ideal domain, $\ssZ = \{\operatorname{Spec}(\bbZ) \setminus \operatorname{V}(m) \mid m \geq 0\}$. Since $\operatorname{V}(0) = \operatorname{Spec}(\bbZ)$, $X_0 = \operatorname{Spec}(\bbZ) \setminus \operatorname{V}(0) = \emptyset$, and since $\operatorname{V}(1) = \emptyset$, $X_1 = \operatorname{Spec}(\bbZ) \setminus \operatorname{V}(1) = \operatorname{Spec}(\bbZ)$. For $m \geq 2$, write $m = p_1^{e_1} \cdots p_n^{e_n}$ with $p_1,\cdots,p_n$ are distinct primes and $e_1,\cdots,e_n \geq 1$, then $\operatorname{V}(m) = \{\langle p_1 \rangle, \cdots, \langle p_n \rangle\}$ and so $X_m = \operatorname{Spec}(\bbZ) \setminus \operatorname{V}(m) = X \setminus \{\langle p_1 \rangle,\cdots, \langle p_n \rangle\}$. Note these are all the open sets. In particular, $\ffp = \{0\}$ is in every non-empty open set.
+    Compute the Zariski open sets $\ssZ$ of $\operatorname{Spec}(\bbZ) = X$. Since $\bbZ$ is a principal ideal domain, $\ssZ = \{\operatorname{Spec}(\bbZ) \setminus \operatorname{V}(m) \mid m \geq 0\}$. Since $\operatorname{V}(0) = \operatorname{Spec}(\bbZ)$, $X_0 = \operatorname{Spec}(\bbZ) \setminus \operatorname{V}(0) = \emptyset$, and since $\operatorname{V}(1) = \emptyset$, $X_1 = \operatorname{Spec}(\bbZ) \setminus \operatorname{V}(1) = \operatorname{Spec}(\bbZ)$. For $m \geq 2$, write $m = p_1^{e_1} \cdots p_n^{e_n}$ with $p_1,\cdots,p_n$ are distinct primes and $e_1,\cdots,e_n \geq 1$, then $\operatorname{V}(m) = \{\langle p_1 \rangle, \cdots, \langle p_n \rangle\}$ and so $X_m = \operatorname{Spec}(\bbZ) \setminus \operatorname{V}(m) = X \setminus \{\langle p_1 \rangle,\cdots, \langle p_n \rangle\}$. Note these are all the open sets. In particular, $\ffp = \{0\}$ is in every non-empty open set of $X$.
 \end{example}
 
 \begin{fact}
@@ -149,7 +149,7 @@ Let $R$ be a commutative ring with identity$\neq 0$.
     \end{align*}
     where $\operatorname{eval}_{\underline a}: k[\underline X] \twoheadrightarrow k$ given by $f \mapsto f(\underline a)$. \par 
     Hilbert's Nullstellensatz: If $k = \overline k$, then $\operatorname{V}(\ffb) \neq \emptyset$ for any $\ffb \lneq k[\underline X]$. Let $\ffm \in \operatorname{m-Spec}(k[\underline X])$. Then $\ffm \lneq k[\underline X]$ and so $\operatorname{V}(\ffm) \neq \emptyset$. So there exists $\underline a \in \operatorname{V}(\ffm)$ such that $f(\underline a) = 0$ for $f \in \ffm \subseteq k[\underline X]$. Hence $\ffm \subseteq \ker(\operatorname{eval}_{\underline a}) = (X_1-a_1,\cdots,X_d-a_d)$. Also, since $\ffm \leq k[\underline X]$ is maximal, $\ffm = (X_1-a_1,\cdots,X_d-a_d)$. Thus, the above map $\varphi$ is onto. \par 
-    Grothenick: there exists more geometric data in $\operatorname{Spec}(k[\underline X])$. \par 
+    Grothendieck: there exists more geometric data in $\operatorname{Spec}(k[\underline X])$. \par 
     Let $V = \operatorname{V}(T) = \operatorname{V}(\ffb)$, where $\ffb = \langle T \rangle \leq k[\underline X]$. Then
     \[\operatorname{rad}(\ffb) \leq \operatorname{I}(V) := \{f \in k[\underline X] \mid f(\underline a) = 0,\fa \underline a \in V\} = \text{``vanishing ideal of $V$''} \leq k[\underline X].\]
     \par Hilbert Nullstellensatz: If $k = \overline k$, then $\operatorname{rad}(\ffb) = \operatorname{I}(V)$. \par
@@ -229,13 +229,22 @@ Let $R$ be a commutative ring with identity$\neq 0$.
 \end{proof}
 
 \begin{corollary}
-    Subspace topology on $X_f \subseteq X = \operatorname{Spec}(R)$ has 
+    Let $f \in R$. Subspace topology on $X_f \subseteq X = \operatorname{Spec}(R)$ has 
     \begin{enumerate}
-        \item closed sets: $\{\operatorname{V}(\ffa) \cap X_f \mid \ffa \leq R\}$,
-        \item open sets: $\{(X \setminus \operatorname{V}(\ffa))\cap X_f \mid \ffa \leq R\}$,
-        \item basic open sets: $\{X_g \cap X_f = X_{fg} \mid g \in R\}$.
+        \item closed sets: $\operatorname{V}(\ffa) \cap X_f = \{\ffp \in \operatorname{Spec}(R) \mid \ffa \subseteq \ffp \not \ni f\}$, where $\ffa \leq R$;
+        \item open sets: $(X \setminus \operatorname{V}(\ffa)) \cap X_f = \{\ffp \in \operatorname{Spec}(R) \mid \ffa \not \subseteq \ffp \not \ni f\}$, where $\ffa \leq R$;
+        \item basic open sets: $X_g \cap X_f = X_{fg}$, where $g \in R$.
     \end{enumerate}
 \end{corollary}
+
+\begin{remark}
+    Let $\ffa \leq R$. Subspace topology on $\operatorname{V}(\ffa) \subseteq X = \operatorname{Spec}(R)$ has 
+    \begin{enumerate}
+        \item closed sets: $\operatorname{V}(\ffb) \cap \operatorname{V}(\ffa) = \{\ffp \in \operatorname{Spec}(R) \mid \ffb + \ffa \subseteq \ffp\}$, where $\ffb \leq R$;
+        \item open sets: $(X \setminus \operatorname{V}(\ffb)) \cap \operatorname{V}(\ffa) = \{\ffp \in \operatorname{Spec}(R) \mid \ffb \not \subseteq \ffp \supseteq \ffa\}$, where $\ffb \leq R$;
+        \item basic open sets: $X_g \cap \operatorname{V}(\ffa)$, where $g \in R$.
+    \end{enumerate}
+\end{remark}
 
 \begin{proposition}
     Let $\ffa \leq R$, $\varphi: R \to R_f$ and $\varphi_f^*: \operatorname{Spec}(R_f) =: Z \to X_f$ as in Proposition 2.20. 
@@ -254,7 +263,7 @@ Let $R$ be a commutative ring with identity$\neq 0$.
         \item Let $\ffp \in \operatorname{Spec}(R_f)$. $\ffp \in (\varphi_f^*)^{-1}(\operatorname{V}(\ffa) \cap X_f)$ if and only if $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in \operatorname{V}(\ffa) \cap X_f$ if and only if $\varphi^{-1}(\ffp) \in \operatorname{V}(\ffa)$ if and only if $\ffa \subseteq \varphi^{-1}(\ffp)$ if and only if $\ffa_f = \ffa R_f \subseteq \varphi^{-1}(\ffp)R_f = \ffp$ \footnote[2]{Let $\varphi_f^*(\ffp) = \varphi^{-1}(\ffp) =: \ffq \in X_f$. By the proof of Proposition 2.20(a), $\varphi_f^*(\ffq_f) = \ffq$. Also, since $\varphi_f^*$ is 1-1, $\varphi^{-1}(\ffp) R_f = \ffq R_f = \ffq_f = \ffp$.} if and only if $\ffp \in \operatorname{V}(\ffa_f)$.
         \item Let $\ffp \in \operatorname{Spec}(R_f)$. $\ffp \in (\varphi_f^*)^{-1}((X \setminus \operatorname{V}(\ffa)) \cap X_f)$ if and only if $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in (X \setminus \operatorname{V}(\ffa)) \cap X_f$ if and only if $\varphi^{-1}(\ffp) \in X \setminus \operatorname{V}(\ffa)$ if and only if $\ffp \in \operatorname{Spec}(R_f) \setminus \operatorname{V}(\ffa_f)$ by the proof of (a).
         \item Method 1. By (a), we have $(\varphi^*_f)^{-1}(X_g \cap X_f) = (\varphi^*_f)^{-1}((X \setminus \operatorname{V}(g)) \cap X_f) = \operatorname{Spec}(R_f) \setminus V((g)_f) = \{\ffp_f \mid \ffp \in \operatorname{Spec}(R), \ffp_f \not \supseteq (g)_f\} = \{\ffp_f \mid g \not \in \ffp \in \operatorname{Spec}(R)\} = \{\ffp_f \mid \ffp \in X_g\}$. \par 
-            Method 2. Let $\ffp \in \operatorname{Spec}(R_f)$. Then $\ffp \in (\varphi_f^*)^{-1}(X_g \cap X_f)$ if and only if $\varphi_f^*(\ffp) \in X_g \cap X_f$ if and only if $\varphi_f^*(\ffp) \in X_g$ if and only if $\ffp \in \{\ffq_f \mid \ffq \in X_g\}$.
+            Method 2. Let $\ffp \in \operatorname{Spec}(R_f)$. Then $\ffp \in (\varphi_f^*)^{-1}(X_g \cap X_f)$ if and only if $\varphi_f^*(\ffp) \in X_g \cap X_f$ if and only if $\varphi_f^*(\ffp) \in X_g$ if and only if $\ffp \in \{\ffq_f \mid \ffq \in X_g\}$. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -266,6 +275,10 @@ Let $X \neq \emptyset$ be a topological space.
 \begin{definition}
     Let $f: X \to Y$ be a function between topological spaces. Then $f$ is \emph{continuous} if for any $U \in \ssT_Y$, $f^{-1}(U) \in \ssT_X$. ``Inverse image of arbitrary open set in $Y$ is open in $X$''. 
 \end{definition}
+
+\begin{remark}
+    Let $Y \subseteq X$. The subspace topology $\ssT_Y$ is the smallest topology on $Y$ such that $Y \xhookrightarrow \subseteq X$ is continuous. \par 
+\end{remark}
 
 \begin{fact}
     To show $f$ is continuous, it is equivalent to showing $f^{-1}(\text{arbitrary closed sets of $Y$})$ is closed in $X$, equivalent to showing $f^{-1}(\text{basic open subsets of $Y$})$ is open in $X$.
@@ -280,7 +293,7 @@ Let $X \neq \emptyset$ be a topological space.
 \end{proof}
 
 \begin{theorem}
-    Let $f \in R$, $\varphi: R \to R_f$ and $\varphi^*: \operatorname{Spec}(R_f) \to \operatorname{Spec}(R)$. Then  $\varphi^*(\operatorname{Spec}(R_f)) = X_f$ ``principal open set''. Restrict codomain, $\varphi_f^*: \operatorname{Spec}(R_f) \to X_f$ is 1-1 and onto. Moreover, $\varphi_f^*$ and $(\varphi_f^*)^{-1}$ is continuous. ``homeomorphism''. 
+    Let $f \in R$, $\varphi: R \to R_f$ and $\varphi^*: \operatorname{Spec}(R_f) \to \operatorname{Spec}(R)$. Then  $\varphi^*(\operatorname{Spec}(R_f)) = X_f$ ``principal open set''. Restrict codomain, $\varphi_f^*: \operatorname{Spec}(R_f) \to X_f$ is 1-1 and onto. Moreover, give the codomain subspace topology, $\varphi_f^*$ and $(\varphi_f^*)^{-1}$ is continuous. ``homeomorphism''. 
 \end{theorem}
 
 \begin{proof}
@@ -290,7 +303,7 @@ Let $X \neq \emptyset$ be a topological space.
 \end{proof}
 
 \begin{example*}
-    Let $k$ be a field and $R = k\llbracket X \rrbracket$. Claim. $\operatorname{Spec}(R) = \{0,\langle X \rangle\}$. Let $0 \neq f(X) = \sum_{i=0}^\infty a_iX^i$ with $a_i \in k$ for $i \geq 0$. Let $m = \min \{i \geq 0 \mid a_i \neq 0\}$. Then $f(X) = X^m(\sum_{i=0}^{\infty}r_{m+i}X^{i})$. Since $a_m \in k^\times$, we have $\sum_{i=0}^{\infty}r_{m+i}X^{i} \in R^\times$. So every $0 \neq f \in R$ is of the form $uX^m$ for some $m \geq 0$ and $u \in R^\times$. Hence if $0 \neq I \leq R$, $I = \langle X^m \rangle$, where $m = \min\{j \geq 0 \mid X^j \in I\}$. Thus, if $0 \neq \ffp \in \operatorname{Spec}(R)$, then $\ffp = \langle X \rangle$. \par 
+    Let $k$ be a field and $R = k\llbracket X \rrbracket$. Claim. $\operatorname{Spec}(R) = \{0,\langle X \rangle\}$. Let $0 \neq f = \sum_{i=0}^\infty a_iX^i$ with $a_i \in k$ for $i \geq 0$. Let $m = \min \{i \geq 0 \mid a_i \neq 0\}$. Then $f(X) = X^m(\sum_{i=0}^{\infty}r_{m+i}X^{i})$. Since $a_m \in k^\times$, we have $\sum_{i=0}^{\infty}r_{m+i}X^{i} \in R^\times$. So every $0 \neq f \in R$ is of the form $uX^m$ for some $m \geq 0$ and $u \in R^\times$. Hence if $0 \neq I \leq R$, $I = \langle X^m \rangle$, where $m = \min\{j \geq 0 \mid X^j \in I\}$. Thus, if $0 \neq \ffp \in \operatorname{Spec}(R)$, then $\ffp = \langle X \rangle$. \par 
     Let $\varphi: R \to S = k \times Q(R)$ be given by $\sum_{i=1}^{\text{finite}} a_iX^i \mapsto (a_0,\frac{\sum_{i=1}^{\text{finite}} a_iX^i}{1})$. Note $\varphi$ is a ring homomorphism and $\operatorname{Spec}(S) = \{k \times 0, 0 \times Q(R)\}$. We have the continuous function $\varphi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$  sending $k \times 0$ to $0$ and $0 \times Q(R)$ to $\langle X \rangle$ is 1-1 and onto. \par 
     Closed sets of $\operatorname{Spec}(S)$ are $\operatorname{V}(1,1) = \emptyset, \operatorname{V}(0,0) = \operatorname{Spec}(S)$, $\operatorname{V}(0,1) = \{0 \times Q(R)\}$ and $\operatorname{V}(1,0) = \{k \times 0\}$. Closed ses of $\operatorname{Spec}(R)$ are $\operatorname{V}(1) = \emptyset$, $\operatorname{V}(0) = \operatorname{Spec}(R)$ and $\operatorname{V}(X) = \{\langle X \rangle\}$. Since $\varphi^*$ is a bijection, we have $((\varphi^*)^{-1})^{-1}(\{k \times 0\}) = \varphi^*(\{k \times 0\}) = \{0\}$ is not closed in $\operatorname{Spec}(R)$. So $(\varphi^*)^{-1}$ is not continuous. 
 \end{example*}
@@ -314,7 +327,7 @@ Let $X \neq \emptyset$ be a topological space.
 \end{fact*}
 
 \begin{proof}
-    Let $U = \bigcup_{\lambda \in \Lambda}U_\lambda$ be an open cover with $U_\lambda$ open in $X$ for $\lambda \in \Lambda$. Then $U_\lambda = U_\lambda \cap U$ for $\lambda \in \Lambda$. Use the fact that $X_f$'s form a basis to assume without losss of generality $U_\lambda = X_{f_\lambda}$ for some $f_\lambda \in R$ for $\lambda \in \Lambda$. Then $U = \bigcup_{\lambda \in \Lambda} X_{f_\lambda} = \bigcup_\lambda (X \setminus \operatorname{V}(f_\lambda)) = X \setminus \operatorname{V}(\langle f_\lambda \mid \lambda \in \Lambda \rangle)$. Since $R$ is noetherian, there exist $f_{\lambda_1},\cdots,f_{\lambda_n} \in R$ such that $\langle f_\lambda \mid \lambda \in \Lambda \rangle = \langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle$. So $U = X \setminus \operatorname{V}(\langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle) = \bigcup_{i=1}^n X_{f_{\lambda_i}}$. 
+    Let $U = \bigcup_{\lambda \in \Lambda}U_\lambda$ be an open cover with $U_\lambda$ open in $X$ for $\lambda \in \Lambda$. Use the fact that $X_f$'s form a basis to assume without losss of generality $U_\lambda = X_{f_\lambda}$ for some $f_\lambda \in R$ for $\lambda \in \Lambda$. Then $U = \bigcup_{\lambda \in \Lambda} X_{f_\lambda} = \bigcup_\lambda (X \setminus \operatorname{V}(f_\lambda)) = X \setminus \operatorname{V}(\langle f_\lambda \mid \lambda \in \Lambda \rangle)$. Since $R$ is noetherian, there exist $f_{\lambda_1},\cdots,f_{\lambda_n} \in R$ such that $\langle f_\lambda \mid \lambda \in \Lambda \rangle = \langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle$. So $U = X \setminus \operatorname{V}(\langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle) = \bigcup_{i=1}^n X_{f_{\lambda_i}}$. 
 \end{proof}
 
 \begin{lemma}
@@ -329,7 +342,7 @@ Let $X \neq \emptyset$ be a topological space.
     Let $\ffb \leq R$, $\pi: R \to R/\ffb$ be the natural surjection and consider $\pi^*: \operatorname{Spec}(R/\ffb) \to \operatorname{Spec}(R)$.
     \begin{enumerate}
         \item $\pi^*(\operatorname{Spec}(R/\ffb)) = \operatorname{V}(\ffb)$.
-        \item Restrict the codomain, then $\pi_\ffb^*: \operatorname{Spec}(R/\ffb) \to \operatorname{V}(\ffb)$ is continuous, 1-1 and onto, and $(\pi_\ffb^*)^{-1}$ is continuous. ``homeomorphism''.
+        \item Give the codomain subspace topology and restrict the codomain, then $\pi_\ffb^*: \operatorname{Spec}(R/\ffb) \to \operatorname{V}(\ffb)$ is continuous, 1-1 and onto, and $(\pi_\ffb^*)^{-1}$ is continuous. ``homeomorphism''.
     \end{enumerate}
 \end{theorem}
 
@@ -347,9 +360,9 @@ Let $X \neq \emptyset$ be a topological space.
     $\operatorname{V}(\ffb)$ is quasi-compact for for $\ffb \leq R$.
 \end{corollary}
 
-\begin{definition}
-    $X$ is \emph{irreducible} if for any pair of open subsets $U_1,U_2 \subseteq X$, if $U_1,U_1 \neq \emptyset$, then $U_1 \cup U_2 \neq \emptyset$. \par 
-    $X$ is \emph{reducible} if it is not irreducible, i.e., if and only if there exist non-empty open subsets $U_1,U_2 \subseteq X$ such that $U_1 \cap U_2 = \emptyset$.
+\begin{definition}\label{defOfIrreducibilityInTopologicalSpace}
+    $X$ is \emph{irreducible} if for any pair of open subsets $U_1,U_2 \subseteq X$, if $U_1,U_1 \neq \emptyset$, then $U_1 \cap U_2 \neq \emptyset$. \par 
+    $X$ is \emph{reducible} if it is not irreducible, i.e., if and only if there exist $\emptyset \neq U_1,U_2 \subseteq X$ open such that $U_1 \cap U_2 = \emptyset$.
 \end{definition}
 
 \begin{example}
@@ -360,88 +373,93 @@ Let $X \neq \emptyset$ be a topological space.
     Let $\emptyset \neq U \subseteq X$ be open. Then $\emptyset \neq U = X \setminus \operatorname{V}(\ffa)$ for some $\ffa \leq R$. So $\operatorname{V}(\ffa) \neq X = \operatorname{Spec}(R)$. Hence $\ffa \neq \langle 0 \rangle$ and so $\langle 0 \rangle \not \in \operatorname{V}(\ffa)$. Also, since $R$ is an integral domain, $\langle 0 \rangle \in X$. So $\langle 0 \rangle \in U$. Thus, by definition, $X$ is irreducible.
 \end{proof}
 
-\begin{definition*}[2.33+]
-    A subset $\emptyset \neq Y \subseteq X$ with subspace topology is an irreducible subset if it is reduced as topological space. Equivalently, $\emptyset \neq Y \subseteq X$ is \emph{irreducible} if for any closed subsets $V,W \subseteq Y$ (subspace topology) if $Y = V \cup W$, then $Y = V$ or $Y = W$.
-\end{definition*}
+\begin{customdefinition}{\ref{defOfIrreducibilityInTopologicalSpace}+}
+    A subset $\emptyset \neq Y \subseteq X$ with subspace topology is an \emph{irreducible subset} if it is irreducible as topological space. Equivalently, $\emptyset \neq Y \subseteq X$ with subspace topology is \emph{irreducible} if for any closed subsets $V,W \subseteq Y$ (subspace topology) if $Y = V \cup W$, then $Y = V$ or $Y = W$.
+\end{customdefinition}
 
 \begin{corollary}
-    If $\ffq \subset \operatorname{Spec}(R)$, then $\operatorname{V}(\ffq) \subseteq \operatorname{Spec}(R)$ is irreducible.
+    If $\ffq \in \operatorname{Spec}(R)$, then $\operatorname{V}(\ffq) \subseteq \operatorname{Spec}(R)$ is irreducible.
 \end{corollary}
 
 \begin{proof}
-
+    Since $\ffq \in \operatorname{Spec}(R)$, $R/\ffq$ is an integral domain. So $\operatorname{V}(R/\ffq)$ is irreducible by Example 2.34. Since $\operatorname{V}(\ffq)$ is homeomorphic to $\operatorname{Spec}(R/\ffq)$ by Theorem 2.31, we have $\operatorname{V}(\ffq)$ is irreducible.
 \end{proof}
 
 \begin{definition}
-    Let $Y \subseteq X$. The \emph{closure} of $X$ of $Y$ in $X$ is 
+    Let $Y \subseteq X$. The \emph{closure} of $Y$ in $X$ is 
     \[\overbar Y = \bigcap_{\substack{Y \subseteq V \subseteq X \\ V \text{ closed}}}V.\]
 \end{definition}
 
 \begin{fact}
-    If $Y \subseteq X$, then $\overbar Y$ is the (unique) smallest closed subset of $X$ containing $Y$. If $V \subseteq X$ is closed, then $\overbar Y \subseteq V$ if and only if $Y \subseteq V$.
+    If $Y \subseteq X$, then $\overbar Y$ is the (unique) smallest closed subset of $X$ containing $Y$. \par 
+    If $V \subseteq X$ is closed, then $\overbar Y \subseteq V$ if and only if $Y \subseteq V$.
 \end{fact}
 
 \begin{example*}
-    Let $X = \operatorname{Spec}(\bbZ)$. Zariski topology is almost the ``cofinite topology''.  Open sets are $X,\emptyset, \{X \setminus \{p_1,\cdots,p_n\} \mid n \geq 1, p_i \neq 0,\fa i = 1,\cdots,n\}$.
+    Let $X = \operatorname{Spec}(\bbZ)$. Zariski topology is almost the ``cofinite topology''.  Open sets are $X,\emptyset$ and $\{X \setminus \{p_1\bbZ,\cdots,p_n\bbZ\} \mid n \geq 1, 0 \neq p_i \text{ is prime},\fa i = 1,\cdots,n\}$.
 \end{example*}
 
 \begin{lemma}
     The followings are equivalent.
     \begin{enumerate}
         \item $X$ is irreducible.
-        \item For any closed sets $V_1,V_2 \subsetneq V$, $V_1 \cup U_2 \subsetneq V$.
+        \item For any closed sets $V_1,V_2 \subsetneq X$, $V_1 \cup U_2 \subsetneq X$.
         \item For any open set $U \subseteq X$, if $U \neq \emptyset$, then $\overbar U = X$. \par 
-            ``Nonempty open sets are dense''.
+            ``Non-empty open sets are dense''.
     \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-
+    ``(a)$\Leftrightarrow$(b)''. By Definition 2.33. \par 
+    ``(b)$\Rightarrow$(c)''. Assume (b). Let $\emptyset \neq U \subseteq X$ be open. Suppose $V_1 := \overbar U \neq X$. Let $V_2 := X \setminus U$. Then $V_1,V_2$ are closed in $X$. So $X = U \cup (X \setminus U) \subseteq \overbar U \cup (X \setminus U) = V_1 \cup V_2 \subsetneq X$ by assumption, a contradiction. \par 
+    ``(c)$\Rightarrow$(a)''. By contrapositive. Assume $X$ is reducible. Then there exist $\emptyset \neq U_1,U_2 \subseteq X$ open such that $U_1 \cap U_2 = \emptyset$. So $U_1 \subseteq X \setminus U_2 \subsetneq X$. Also, since $X \setminus U_2$ is closed, $\overbar U_1 \subseteq X \setminus U_2 \subsetneq X$
 \end{proof}
 
-\begin{lemma}
+\begin{customdefinition}{\ref{defOfIrreducibilityInTopologicalSpace}++}
     $X$ is irreducible if and only if for any closed sets $V_1,V_2 \subsetneq X$, $V_1 \cup V_2 \neq X$.
-\end{lemma}
+\end{customdefinition}
 
 \begin{proposition}
-    $X = \operatorname{Spec}(R)$ is irreducible if and only if $\operatorname{Nil}(R) \subseteq \operatorname{Spec}(R)$. 
+    $X = \operatorname{Spec}(R)$ is irreducible if and only if $\operatorname{Nil}(R) \in \operatorname{Spec}(R)$. 
 \end{proposition}
 
 \begin{proof}
-
+    ``$\Leftarrow$''. Assume $\operatorname{Nil}(R) \in \operatorname{Spec}(R)$. By proposition 1.32(c), $\operatorname{V}(\operatorname{Nil}(R)) = \operatorname{Spec}(R)$. Then by Corollary 2.35, $\operatorname{Spec}(R) = \operatorname{V}(\operatorname{Nil}(R))$ is irreducible. \par 
+    ``$\Rightarrow$''. Assume $X = \operatorname{Spec}(R)$ is irreducible. Since $R \neq 0$, $\operatorname{Nil}(R) \neq R$ by Proposition 1.26(b). Let $a,b \in R$ such that $ab \in \operatorname{Nil}(R)$. Then $\operatorname{V}(a) \cup \operatorname{V}(b) = \operatorname{V}(ab) = \operatorname{Spec}(R)$. Since $\operatorname{Spec}(R)$ is irreducible, $\operatorname{V}(a) = \operatorname{Spec}(R)$ or $\operatorname{V}(b) = \operatorname{Spec}(R)$. So $a \in \operatorname{Nil}(R)$ or $b \in \operatorname{Nil}(R)$.
 \end{proof}
 
 \begin{proposition}
     \begin{enumerate}
-        \item If $Y \subseteq X$ is irreducible, then $\overbar Y \subseteq X$ is irreducible.
-        \item If $\ssC$ is a chain of irreducible subsets of $X$, then $\bigcup_{Y \in \ssC}Y$ is irreducible.
-        \item For any irreducible $Y \subseteq X$, there exists a maximal irreducible subseteq $Z \subseteq X$ such that $Y \subseteq Z$.
-        \item $X$ is the union of its maximal irreducible subsets and each maximal irreducible subset of $X$ is closed. ``irreducible components of $X$''.
+        \item If $Y \subseteq X$ is irreducible, then $\overbar Y \subseteq X$ with subspace topology is irreducible.
+        \item If $\ssC$ is a chain of irreducible subsets of $X$, then $\bigcup_{Y \in \ssC}Y$ with subspace topology is irreducible.
+        \item For any irreducible $Y \subseteq X$, there exists a maximal irreducible subset $Z \subseteq X$ such that $Y \subseteq Z$.
+        \item $X$ is the union of its maximal irreducible subsets and the maximal irreducible subsets of $X$ are all closed. ``irreducible components of $X$''.
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
     \begin{enumerate}
-        \item Let $Y \subseteq X$ is irreducible. Let $V_1,V_2 \subseteq \overbar Y$ be both closed. Assume $\overbar Y = V_1 \cup V_2$. Need to show $\overbar Y = V_1$ or $Y = V_2$. Let $i \in \{1,2\}$. Since $V_i$ is closed in $\overbar Y$, there exists $\widetilde V_i \subseteq X$ closed in $X$ such that $V_i = \overbar Y \cap \widetilde V_i$ closed in $Y$. Set $V_i' = \widetilde V_i \cap Y = (\widetilde V_i \cap \overbar Y) \cap Y = V_i \cap Y$. Then $\overbar Y = V_1 \cup V_2 = (\widetilde V_1 \cap \bar Y) \cup (\widetilde V_2 \cap \overbar Y) = (\widetilde V_1 \cup \widetilde V_2) \cap \overbar Y$. So $\widetilde V_1 \cup \widetilde V_2 \supseteq \overbar Y \supseteq Y$. Hence $Y = V_1 \cup V_2$....
+        \item Let $Y \subseteq X$ be irreducible. Let $V_1,V_2 \subseteq \overbar Y$ be both closed. Assume $\overbar Y = V_1 \cup V_2$. Let $i \in \{1,2\}$. Since $V_i$ is closed in $\overbar Y$ and $\overbar Y$ has subspace topology, there exists $\widetilde V_i \subseteq X$ closed in $X$ such that $V_i = \widetilde V_i \cap \overbar Y$. Set $V_i' = \widetilde V_i \cap Y = (\widetilde V_i \cap \overbar Y) \cap Y = V_i \cap Y$. Then $\overbar Y = V_1 \cup V_2 = (\widetilde V_1 \cap \overbar Y) \cup (\widetilde V_2 \cap \overbar Y) = (\widetilde V_1 \cup \widetilde V_2) \cap \overbar Y$. So $Y \subseteq \overbar Y \subseteq \widetilde V_1 \cup \widetilde V_2$. Hence $Y = (\widetilde V_1 \cup \widetilde V_2) \cap Y= (\widetilde V_1 \cap Y) \cup (\widetilde V_2 \cap Y) = V_1' \cup V_2'$. Since $Y$ is irreducible, $Y = V_1'$ or $V_2'$. Say $Y = V_1' = V_1 \cap Y$. Then $Y \subseteq V_1 \subseteq \widetilde V_1$. Since $\widetilde V_1$ is closed in $X$, $\overbar Y \subseteq \widetilde V_1$. So $\overbar Y = \widetilde V_1 \cap \overbar Y = V_1$. 
         \item 
-        \item 
-        \item 
+            Let $\llC$ be a chain of irreducible subsets of $X$ and $Z: = \bigcup_{Y \in \llC}Y$. Let $V_1,V_2 \subsetneq Z$ be closed. Then there exist $x_1 \in Z \setminus V_1$ and $x_2 \in Z \setminus V_2$. So there exists $Y_1,Y_2 \in \llC$ such that $x_1 \in Y_1$ and $x_2 \in Y_2$. Since $\llC$ is a chain, $Y_1 \subseteq Y_2$ or $Y_2 \subseteq Y_1$, say $Y_2 \subseteq Y_1$. So $x_1 \in Y_1 \setminus V_1$ and $x_2 \in Y_1 \setminus V_2$. Hence $V_1 \cap Y_1 \subsetneq Y_1$ and $V_2 \cap Y_1 \subsetneq Y_1$. Since $V_1,V_2$ are closed in $Z$ and $Y_1 \subseteq Z$ has subspace topology \footnote[2]{Let $Z \subseteq X$ have a subspace topology. If $Y \subseteq Z$, then the topology that $Y$ inherits as a subspace of $Z$ is the same as the topology that $Y$ inherits as a subspace of $X$}, $V_1 \cap Y_1$ and $V_2 \cap Y_2$ are closed in $Y_1$. Also, since $Y_1$ is irreducible, we have $(V_1 \cap Y_1) \cup (V_2 \cap Y_1) \subsetneq Y_1$. So $Y_1 \not \subseteq V_1 \cup V_2$. Also, since $Y_1 \subseteq Z$, $Z \not \subseteq V_1 \cup V_2$. Thus, $V_1 \cup V_2 \subsetneq Z$.
+        \item Let $Y \subseteq X$ be irreducible. Set $\Sigma = \{\text{irreducible subsets }Z \subseteq X \mid Y \subseteq Z\}$. Since $Y \in \Sigma$, $\Sigma \neq \emptyset$. From (b), Zorn' lemma applies. So $\Sigma$ has a maximal element.
+    \item Let $\llM$ be the set of the maximal irreducible subsets of $X$. Claim. $X = M$. ``$\supseteq$''. It is straightforward. ``$\subseteq$''. Let $x \in X$, then $\{x\} \subseteq X$ is irreducible. By (c), there exists a maximal irreducible subset $Z \subseteq X$ such that $\{x\} \subseteq Z$. By (a), $\overbar Z$ is irreducible. Also, since $Z \subseteq \overbar Z$ and $Z$ is maximal irreducible, we have $Z = \overbar Z$, i.e., $Z$ is closed. \qedhere
     \end{enumerate}
 \end{proof}
 
 \begin{definition}
-    The maximal irreducible subsets of $X$ are the \emph{irreducible components} of $R$.
+    The maximal irreducible subsets of $X$ are the \emph{irreducible components} of $X$.
 \end{definition}
 
 \begin{proposition}
     \begin{enumerate}
-        \item If $V \subseteq X = \operatorname{Spec}(R)$ closed, then $V$ is irreducible if and only if $V = \operatorname{V}(\ffp)$ for some $\ffp \in \operatorname{Spec}(R)$.
+        \item Let $V \subseteq X = \operatorname{Spec}(R)$ be closed. Then $V$ is irreducible if and only if $V = \operatorname{V}(\ffp)$ for some $\ffp \in \operatorname{Spec}(R)$.
         \item The irreducible components of $X = \operatorname{Spec}(R)$ are the subsets $\operatorname{V}(\ffp)$ such that $\ffp \in \operatorname{Min}(R) = \operatorname{Min}(\operatorname{Spec}(R))$.
     \end{enumerate}
 \end{proposition}
 
 \begin{example}
-
+    Let $R = \frac{k[X,Y,Z]}{(\langle XY,YZ,XZ)}$, where $k$ is a field. Then $\langle XY,YZ,XZ \rangle = \langle X,Y \rangle \cap \langle X,Z \rangle \cap \langle Y,Z \rangle$ and $\operatorname{Min}(R) = \{\langle \overbar X,\overbar Y \rangle, \langle \overbar X,\overbar Z \rangle, \langle \overbar Y, \overbar Z \rangle\}$. The irreducible components of $\operatorname{Spec}(R)$ are $\operatorname{V}(\langle \overbar X,\overbar Y \rangle)$, $\operatorname{V}(\langle \overbar X, \overbar Z \rangle)$ and $\operatorname{V}(\langle \overbar Y,\overbar Z \rangle)$.
 \end{example}
 
 \begin{corollary}
@@ -449,7 +467,7 @@ Let $X \neq \emptyset$ be a topological space.
 \end{corollary}
 
 \begin{proof}
-
+    $X = \operatorname{Spec}(R)$
 \end{proof}
 
 \begin{proposition}
@@ -465,7 +483,7 @@ Let $X \neq \emptyset$ be a topological space.
     \begin{enumerate}
         \item ``$\Leftarrow$''. Let $\ffp \in \operatorname{Spec}(R)$. Need to show $V(\ffp)$ is irreducible. Suppose $\operatorname{V}(\ffp) = V \cup W$ such that $V,W \subseteq \operatorname{V}(\ffp)$ are closed. So there exist ideals $\ffa,\ffb$ such that... \\
             ``$\Rightarrow$''. Assume $V \subseteq X$ is closed and irreducible. Then there exists $\ffa \leq R$ such that $\operatorname{V}(\ffa) = V$. Set $r = \operatorname{rad}(\ffa)$. Then $r = \operatorname{rad}(\ffa) = \operatorname{I}(\operatorname{V}(\ffa)) = \operatorname{I}(V)$. So $\operatorname{V}(r) = \operatorname{V}(\operatorname{I}(V)) = V = \operatorname{V}(\ffa)$. .....
-        \item Let $V$ be an irreducible component of $X = \operatorname{Spec}(R)$,...
+        \item Let $V$ be an irreducible component of $X = \operatorname{Spec}(R)$,... \qedhere
     \end{enumerate}
 \end{proof}
 
