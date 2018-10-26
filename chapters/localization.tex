@@ -1,12 +1,12 @@
 \chapter{Localization}
 
 \begin{recall}
-    A subset $U \subseteq R$ is ``multiplicative closed'' if for any $u,v \in U$: $uv \in U$, and $1 \in U$. 
+    A subset $U \subseteq R$ is ``multiplicative closed'' if $1 \in U$ and for $u,v \in U$: $uv \in U$, 
 \end{recall}
 
 \begin{example}
     \begin{enumerate}
-        \item If $f \in R$, then $\{1,f,f^2,\cdots\} \subseteq R$ is multiplicative closed.
+        \item $\{1,f,f^2,\cdots\} \subseteq R$ is multiplicative closed for $f \in R$.
         \item $R^\times \subseteq R$ is multiplicative closed.
         \item $R \setminus \ffp$ is multiplicative closed for $\ffp \in \operatorname{Spec}(R)$.
         \item $1 + \ffa$ is multiplicative closed for $\ffa \leq R$.
@@ -15,7 +15,7 @@
 
 \begin{recall}
     For $U \subseteq R$ multiplicative closed, $U^{-1}R = \{\frac{r}{u} \mid r \in R \text{ and }u \in U\}$, where $\frac{r}{u} = \frac{r'}{u'}$ if and only if there exists $u'' \in U$ such that $u''(ru'-r'u) = 0$, i.e., $\frac{u''r}{u''u} = \frac{r'}{u'}$, formally, $\frac{r}{u}$ is the equivalence class under an equivalence relation. \par 
-    $U^{-1}$ is a commutative ring with identity.... 
+    $U^{-1}R$ is a commutative ring with identity.... 
 \end{recall}
 
 \begin{notation}
@@ -226,7 +226,65 @@ Q: If $\ffp \in \operatorname{Spec}(R)$ such that $\ffp \cap U = \emptyset$, the
 
 Q: Let $\varphi: R \to S$ be a ring homomorphism, $\ffp \in \operatorname{Spec}(R)$ and $\varphi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$.
 \begin{enumerate}
-    \item When is $\varphi \in \im(\varphi^*)$?, i.e., when does there exist $\ffp \in \operatorname{Spec}(R)$ such that $\ffp  = \varphi^{-1}(\ffq)$.
-    \item How many elements are in $(\varphi^*)^{-1}(\ffp) \equiv \operatorname{Spec}(\llF(\ffp))$?
+    \item When is $\ffp \in \im(\varphi^*)$?, i.e., when does there exist $\ffq \in \operatorname{Spec}(R)$ such that $\ffp  = \varphi^{-1}(\ffq)$.
+    \item What does $(\varphi^*)^{-1}(\ffp) = \{\ffq \in \operatorname{Spec}(S) \mid \varphi^*(\ffq) = \ffp\}$ look like? In general, $f: Y \to X$ is a (continuous) function and $x \in X$, then $f^{-1}(x) = \{y \in Y \mid f(y) = x\} = \text{fibre over $x$ w.r.t. $f$}$.
 \end{enumerate}
+
+\begin{construction}
+    graph. has a well-defined map at the bottom in the middle.
+    graph.
+\end{construction}
+
+\begin{theorem}
+    The following are equivalent.
+    \begin{enumerate}
+        \item $\ffp \in \im(\varphi^*)$, i.e., $(\varphi^*)^{-1}(\ffp) \neq \emptyset$.
+        \item $\ffp = \varphi^{-1}(\ffp S)$, where $\ffp S$ is not necessarily prime.
+        \item $\varphi \cdot U^{-1}(S) \neq U^{-1}(S)$, i.e., $\llF(\ffp) = U^{-1}S/\ffp U^{-1}(S) \neq \emptyset$.
+    \end{enumerate}
+    Moreover, the map $\theta: \operatorname{Spec}(\llF(\ffp)) \to (\varphi^*)^{-1}(\ffp)$ given by $\theta(Q) = \varphi^{-1}(\pi^{-1}(Q)$ is a well-defined bijection.
+\end{theorem}
+
+\begin{proof}
+    ``(i)$\Rightarrow$(ii)''. Assume there exists $\ffq \in \operatorname{Spec}(S)$ such that $\ffp = \varphi^*(\ffq) = \varphi^{-1}(\ffq) = \varphi^{-1}(\varphi^{-1}(\ffq)S) = \varphi^{-1}(\ffp S)$. \par 
+    ``(ii)$\Rightarrow$(iii)''. Assume $\varphi = \varphi^{-1}(\ffp S)$. Then $\ffp \cdot U^{-1}(S) = \ffp S \cdot U^{-1}(S) = \ffp S \cdot \varphi(U)^{-1}S$. Recall $\ffa \leq S$: $\ffa \cap \varphi(U)^{-1}S = \varphi(U)^{-1}S$ if and only if $\ffa \cap \varphi(U) \neq \emptyset$. To show $\ffp S \cdot \varphi(U)^{-1}S \neq \varphi(U)^{-1}S$, we need to show $\ffp S \cap \varphi(U) = \emptyset$. Suppose $\varphi(u) \in \ffp S \cap \varphi(U)$. Then $u \in \smallunderbrace{\varphi^{-1}(\ffp S)}_{\ffp} \cap \smallunderbrace U_{R \setminus \ffp} = \emptyset$. \par 
+    ``(iii)$\Rightarrow$(i) and well-definedness of $\theta$''.... \par 
+    $\theta$ is 1-1? $\theta = \text{restriction of $\varphi^* \circ \pi^{*}$}$. \par 
+    $\theta$ is onto?
+\end{proof}
+
+\begin{proposition}
+    If $\varphi:R \to S$ is a ring homomorphism and $(R,\ffm)$ is local, then $\llF(\ffm) \cong S/\ffm S$.
+\end{proposition}
+
+\begin{proof}
+    $U = R \setminus \ffm \subseteq R^\times$. $U^{-1}(-) \cong -$, e.g., $U^{-1}S/\ffm U^{-1}S \cong S/\ffm S$.
+\end{proof}
+
+\begin{definition}
+    \begin{enumerate}
+        \item If $(R,\ffm)$ is local, then $\llF(\ffm) \cong S/\ffm S$ is the \emph{closed fibre} of $\varphi$ (fibre over unique closed point of $\operatorname{Spec}(R)$).
+        \item 
+            If $R$ is an integral domain, then $\llF(0)$ is the \emph{generic fibre} of $\varphi$ (fibre over the generic point of $R$).
+    \end{enumerate}
+\end{definition}
+
+\begin{example}
+    \begin{enumerate}
+        \item $\varphi: R \xhookrightarrow \subseteq R[X_1,\cdots,R_d]$
+            \begin{enumerate}
+                \item $(R,\ffm)$ is local. $\llF(\ffm) \cong $.
+                \item $\ffp \in \operatorname{Spec}(R)$.
+            \end{enumerate}
+        \item 
+            \begin{enumerate}
+                \item
+            \end{enumerate}
+        \item
+            \begin{enumerate}
+                \item 
+                \item 
+            \end{enumerate}
+    \end{enumerate}
+\end{example}
 
