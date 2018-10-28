@@ -100,10 +100,11 @@
                 \draw[->] (R) to node {$\varphi$} (S);
                 \draw[->] (R) to node [swap]{$\alpha \circ \varphi$} (T);
                 \draw[->] (S) to node {$\alpha$} (T);
-                \draw[->] (R) to node {} (UR);
+                \draw[->] (R) to node {$\psi$} (UR);
                 \draw[->] (T) to node {} (UT);
                 \draw[->] (UR) to node {$U^{-1}\varphi$} (US);
                 \draw[->] (US) to node {} (UT);
+                \node (zzz)[node distance=0.8cm, below of=US] {$\varphi(U)^{-1} \alpha$};
                 \draw[->,name path=line 1] (S) to node {} (US);
                 \path[name path=line 2] (UR) to node {} (UT);
                 % find intersection of first and second line
@@ -129,22 +130,20 @@
 \begin{proof}
     \begin{enumerate}
         \item [(b)] 
-            Let $\frac{r}{u} = \frac{r'}{u'} \in U^{-1}R$. Then there exists $u'' \in U$ such that $u''(ur'-u'r) = 0$. So there exists $\varphi(u'') \in \varphi(U)$ such that $\varphi(u'')(\varphi(r)\varphi(u') - \varphi(r')\varphi(u)) = 0$. Hence $\frac{\varphi(r)}{\varphi(u)} = \frac{\varphi(r')}{\varphi(u')} \in U^{-1}S$ and so $U^{-1}\varphi$ is well-defined. \par 
+            Let $\frac{r}{u} = \frac{r'}{u'} \in U^{-1}R$. Then there exists $u'' \in U$ such that $u''(ur'-u'r) = 0$. So there exists $\varphi(u'') \in \varphi(U)$ such that $\varphi(u'')(\varphi(r)\varphi(u') - \varphi(r')\varphi(u)) = 0$. Hence $\frac{\varphi(r)}{\varphi(u)} = \frac{\varphi(r')}{\varphi(u')} \in U^{-1}S$. \par  
             Since $U^{-1}\varphi(\frac{r}{u} + \frac{s}{v}) = U^{-1}\varphi(\frac{rv+su}{uv}) = \frac{\varphi(rv+su)}{\varphi(uv)} = \frac{\varphi(r)\varphi(v)+\varphi(s)\varphi(u)}{\varphi(u)\varphi(v)} = \frac{\varphi(r)}{\varphi(u)}+\frac{\varphi(s)}{\varphi(v)} = U^{-1}\varphi(\frac{r}{u})+U^{-1}(\varphi)(\frac{s}{v})$ and $U^{-1}(\varphi)(\frac{r}{u} \cdot\frac{s}{v}) = U^{-1}\varphi(\frac{rs}{uv}) = \frac{\varphi(rs)}{\varphi(uv)} =\frac{\varphi(r)}{\varphi(u)} \cdot \frac{\varphi(s)}{\varphi(v)} = U^{-1}\varphi(\frac{r}{u})U^{-1}\varphi(\frac{s}{v})$ for $\frac{r}{u},\frac{s}{v} \in U^{-1}R$, we have $U^{-1}\varphi$ is a ring homomorphism. 
         \item [(c)]
             Assume $\varphi$ is onto. Let $\frac{s}{\varphi(u)} \in U^{-1}S$. Then there exists $r \in R$ such that $\varphi(r) = s$. Since $U^{-1}\varphi(\frac{r}{u}) = \frac{\varphi(r)}{\varphi(u)} = \frac{s}{\varphi(u)}$, we have $U^{-1}\varphi$ is onto.
-        \item[(d)] Assume $\varphi$ is 1-1. Then $\frac{r}{u} \in \ker(U^{-1}\varphi)$ if and only if $0 = U^{-1}\varphi(\frac{r}{u}) = \frac{\varphi(r)}{\varphi(u)}$ if and only if there exists $u'' \in U$ such that $\varphi(u'')\varphi(r) = 0 = \varphi(u''r)$ if and only if there exists $u'' \in U$ such that $u''r = 0$ if and only if $\frac{r}{u} = 0$ in $U^{-1}R$.
+        \item[(d)] Assume $\varphi$ is 1-1. Let $\frac{r}{u} \in U^{-1}R$. Then $\frac{r}{u} \in \ker(U^{-1}\varphi)$ if and only if $0 = U^{-1}\varphi(\frac{r}{u}) = \frac{\varphi(r)}{\varphi(u)}$ if and only if there exists $u'' \in U$ such that $\varphi(u'')\varphi(r) = 0 = \varphi(u''r)$ if and only if there exists $u'' \in U$ such that $u''r = 0$ if and only if $\frac{r}{u} = 0$ in $U^{-1}R$. Also, by (b) we have $U^{-1}\varphi$ is 1-1.
         \item[(e)]
             Since $\varphi:R \to S$ and $\alpha: S \to T$ are ring homomorphisms, $\alpha \circ \varphi$ is a ring homomorphism. Since $\alpha(\varphi(U)) \subseteq T$ is multiplicatively closed by (a), $\varphi(U)^{-1}\alpha$ is well-defined. 
-        \begin{center}
+        \[
             \begin{tikzpicture}[auto]
                 \node (UR) {$U^{-1}R$};
                 \node (UT)[node distance=3cm, below of=UR] {$(\alpha \circ \varphi)(U)^{-1}T$};
                 \node (XXX)[node distance=1.5cm, below of=UR] {};
                 \node (US)[node distance=5cm, right of=XXX] {$\varphi(U)^{-1}S$};
                 \node (UT2)[node distance=2.5cm, right of=UT] {$\alpha (\varphi(U))^{-1}T$};
-
-
                 \draw[->] (UR) to node {$U^{-1}(\alpha \circ \varphi)$} (UT);
                 \draw[->] (UR) to node {$U^{-1}\varphi$} (US);
                 \draw[->] (US) to node [swap]{$\varphi(U)^{-1}\alpha$} (UT2);
@@ -155,16 +154,55 @@
                 \draw[|->, bend left] (ur) to node {} (us);
                 \draw[|->] (us) to node [swap]{} (ut2);
                 \draw[|->, bend right=60] (ur) to node {} (ut); 
-                \node (equal) [node distance=1.3cm, right of=ut] {$=$};
-            \end{tikzpicture}
-        \end{center} 
-    \qedhere
+                \node (equal) [node distance=1.3cm, right of=ut] {$=$}; 
+            \end{tikzpicture} \qedhere
+        \]
     \end{enumerate}
 \end{proof}
 
 \begin{proposition}
-    $\im(U^{-1}\varphi) \cong U^{-1} \im(\varphi)$.
+    Let $\varphi:R \to S$ be a ring homomorphism and $\varphi(U) \subseteq S$ is multiplicatively closed. Then $\im(U^{-1}\varphi) \cong U^{-1} \im(\varphi)$.
 \end{proposition}
+
+\begin{proof}
+    By Proposition 3.6(e), $\im(U^{-1}\varphi) = \im((\pi(U)^{-1}i) \circ U^{-1}\pi)$. Since $\pi$ is onto, $U^{-1}(\pi)$ is onto by Proposition 3.6(c). So $\im(U^{-1}\varphi) = \im((\pi(U)^{-1}i))$. Since $\pi$ is 1-1, $\pi(U)^{-1}i$ is 1-1 by Proposition 3.6(d). Hence by the first isomorphism theorem, $U^{-1}\im(\varphi) \cong \im(\pi(U)^{-1}i) = \im(U^{-1}\varphi)$.
+    \begin{center}
+        \begin{tikzpicture}[node distance = 1.5cm, auto]
+            \node (Im) {$\im(\varphi)$};
+            \node (UIm)[node distance=3cm, right of=Im] {$U^{-1}\im(\varphi)$};
+            \node (R)[above of=Im, left of=Im] {$R$};
+            \node (S)[below of=Im, left of=Im] {$S$};
+            \node (UR)[above of=Im, right of=Im] {$U^{-1}R$};
+            \node (US)[below of=Im, right of=Im] {$U^{-1}S$};
+            \draw[->] (R) to node {$\pi$} (Im);
+            \draw[->] (R) to node [swap]{$\varphi$} (S);
+            \draw[->] (Im) to node {$i$} (S);
+            \draw[->] (R) to node {$\psi$} (UR);
+            \draw[->] (S) to node {} (US);
+            \draw[->] (UR) to node {$U^{-1}\pi$} (UIm);
+            \draw[->] (UIm) to node {} (US);
+            \node (zzz)[node distance=0.85cm, below of=UIm] {$\pi(U)^{-1}i$};
+            \node (www)[node distance=0.8cm, below of=UR] {};
+            \node [node distance=0.55cm, left of=www] {$U^{-1}\varphi$};
+            \draw[->,name path=line 1] (Im) to node {} (UIm);
+            \path[name path=line 2] (UR) to node {} (US);
+            % find intersection of first and second line
+            \path [name intersections={of = line 1 and line 2}];
+            \coordinate (P)  at (intersection-1);
+            % path a circle around this intersection for the arc
+            \path[name path=circle] (P) circle(1.mm);
+            % find intersections of second line and circle
+            \path [name intersections={of = circle and line 2}];
+            \coordinate (I1)  at (intersection-1);
+            \coordinate (I2)  at (intersection-2);
+            % draw normal line segments
+            \draw (UR) -- (I1);
+            \draw[->] (I2) -- (US);
+            % draw arc at intersection
+            \tkzDrawArc[color=black](P,I1)(I2);
+        \end{tikzpicture}
+    \end{center}
+\end{proof}
 
 \noindent Let $\ffa,\ffb \leq R$.
 
@@ -177,26 +215,32 @@
 \end{fact}
 
 \begin{notation}
-    $U^{-1}\ffa = \{\text{equivalence classes from $U \times \ffa$ under $\sim$}\}$ and $a/u$ or $\frac{a}{u}$ with $a \in \ffa$ and $u \in U$ are its elements.
+    $U^{-1}\ffa = \{\text{equivalence classes from $U \times \ffa$ under $\sim$}\}$, and $a/u$ or $\frac{a}{u}$ with $a \in \ffa$ and $u \in U$ are its elements.
 \end{notation}
 
 \begin{proposition}
     \begin{enumerate}
-        \item The map $i: U^{-1}\ffa \to U^{-1}R$ given by $i(a/u) = a/u$ is well-defined and 1-1. Identify $U^{-1}\ffa$ with $\im(i) \subseteq U^{-1}R$. So write $U^{-1}\ffa \subseteq U^{-1}R$. \par 
-            \textbf{Warning.} $\frac{r}{u} \in U^{-1}R$ such that $r/u \in U^{-1}\ffa$ may have $r \not \in \ffa$.
-        \item 
-        \item 
-        \item 
-        \item 
+        \item The map $i: U^{-1}\ffa \to U^{-1}R$ given by $i(a/u) = a/u$ is well-defined and 1-1. Identify $U^{-1}\ffa$ with $\im(i) \subseteq U^{-1}R$, so write $U^{-1}\ffa \subseteq U^{-1}R$. \\
+            \textbf{Warning.} $\frac{r}{u} \in U^{-1}R$ such that $\frac{r}{u} \in U^{-1}\ffa$ may have $r \not \in \ffa$.
+        \item If $\frac{r}{u} \in U^{-1}R$, then $\frac{r}{u} \in U^{-1}\ffa$ if and only if there exists $v \in U$ such that $vr \in \ffa$. 
+        \item Let $\pi: R \to \frac{R}{\ffa}$ be the natural surjection. Then $U^{-1}\ffa = \ker(U^{-1} \pi) \leq U^{-1}R$ and $U^{-1}R/U^{-1}\ffa \cong U^{-1}\frac{R}{\ffa}$.
+        \item More generally, if $\varphi: R \to S$ is a ring homomorphism, then $U^{-1} \ker(\varphi) = \ker(U^{-1}\varphi) \leq U^{-1}R$ such that $\im(U^{-1}\varphi) \cong U^{-1}R/U^{-1}\ker(\varphi)$.
+        \item $U^{-1}\ffa = \ffa \cdot U^{-1}R$, extension of $\ffa$ along $\psi: R \to U^{-1}R$.
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
     \begin{enumerate}
+        \item By the definition of ``$\sim$'', $i$ is well-defined. \par 
+            Let $\frac{a}{u} \in U^{-1}\ffa$. Then $\frac{a}{u} \in \ker(i)$ if and only if $i(\frac{a}{u})=0$ in $U^{-1}R$ if and only if there exists $v \in U$ such that $va = 0$ in $R$ if and only if there exists $v \in U$ such that $va = 0$ in $\ffa$ if and only if $\frac{a}{u} = \frac{va}{vu} = \frac{0}{vu} = 0$ in $U^{-1}\ffa$. Also, since $i$ is a ring homomorphism, $i$ is 1-1.
+        \item ``$\Rightarrow$''. Since $\frac{r}{u} \in U^{-1}\ffa$, $\frac{r}{u} = \frac{a}{u}$ for some $a \in \ffa$ in $U^{-1}R$. So there exists $u'' \in U$ such that $u''u'r = u''ua \in \ffa$. Let $v = u''u$. Then $vr \in \ffa$. \par 
+            ``$\Leftarrow$''. Note $\frac{r}{u} = \frac{vr}{vu} \in U^{-1}\ffa$ since $vr \in \ffa$.
+        \item By (d).
+        \item Let $\frac{r}{u} \in U^{-1}R$. Then $\frac{r}{u} \in U^{-1}\ker(\varphi)$ if and only if there exists $v \in U$ such that $vr \in \ker(\varphi)$ by (a) if and only if there exists $\varphi(v) \in \varphi(U)$ such that $\varphi(vr) = 0 = \varphi(v)\varphi(r)$ if and only if $U^{-1}\varphi(\frac{r}{u}) = \frac{\varphi(r)}{\varphi(u)} = 0$ in $U^{-1}S = \varphi(U)^{-1}S$ if and only if $\frac{r}{u} \in \ker(U^{-1}\varphi)$. \par 
+            By the first isomorphism theorem, $\im(U^{-1}\varphi) \cong U^{-1}R/\ker(U^{-1}\varphi) \cong U^{-1}R/U^{-1}\ker(\varphi)$.  
         \item 
-        \item 
-        \item 
-        \item 
+            ``$\supseteq$''. It follows from $\ffa \cdot U^{-1}R$ is generated by $\psi(a) = \frac{a}{1} \in U^{-1}\ffa$. \par 
+            ``$\subseteq$''. Let $\frac{a}{u} \in U^{-1}\ffa$. Then $\frac{a}{u} = \frac{a}{1} \cdot \frac{1}{u} = \psi(a) \cdot \frac{1}{u} \in \ffa \cdot U^{-1}R$. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -205,34 +249,42 @@
         \item $U^{-1}(\ffa + \ffb) = (U^{-1}\ffa) + (U^{-1}\ffb)$.
         \item $U^{-1}(\ffa \cap \ffb) = (U^{-1}\ffa) \cap (U^{-1}\ffb)$.
         \item $U^{-1}(\ffa \ffb) = (U^{-1}\ffa) (U^{-1}\ffb)$.
-        \item $\operatorname{rad}(U^{-1}\ffa) = U^{-1} \operatorname{rad}(\ffa)$.
-        \item $\operatorname{Nil}(U^{-1}R) = U^{-1}\operatorname{Nil}(R)$.
-        \item $(U^{-1}\ffb:U^{-1}\ffa) = U^{-1}(\ffb:\ffa)$ if $\ffa$ is finitely generated.
+        \item $U^{-1} \operatorname{rad}(\ffa) = \operatorname{rad}(U^{-1}\ffa)$.
+        \item $U^{-1}\operatorname{Nil}(R) = \operatorname{Nil}(U^{-1}R)$.
+        \item $U^{-1}(\ffb:\ffa) = (U^{-1}\ffb:U^{-1}\ffa)$  if $\ffa$ is finitely generated.
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
     \begin{enumerate}
-        \item $U^{-1}(\ffa+\ffb) = (\ffa+\ffb)U^{-1}R = (\ffa U^{-1}R) + (\ffb U^{-1}R) = (U^{-1}\ffa) + (U^{-1}\ffb)$.
-        \item $U^{-1}(\ffa \cap \ffb) \subseteq$
-        \item 
-        \item 
-        \item 
-        \item 
+        \item By Proposition 3.11(e) and 1.63(c), we have $U^{-1}(\ffa+\ffb) = (\ffa+\ffb) \cdot U^{-1}R = (\ffa \cdot U^{-1}R) + (\ffb \cdot U^{-1}R) = (U^{-1}\ffa) + (U^{-1}\ffb)$.
+        \item ``$\subseteq$''. By Proposition 3.11(e) and 1.63(d), $U^{-1}(\ffa \cap \ffb) = (\ffa \cap \ffb) \cdot U^{-1}R \subseteq (\ffa \cdot U^{-1}R) \cap (\ffb \cdot U^{-1}R) = (U^{-1}\ffa) \cap (U^{-1}\ffb)$. \par 
+            ``$\supseteq$''. Let $\frac{r}{u} \in U^{-1}R$ such that $\frac{r}{u} \in (U^{-1}\ffa) \cap (U^{-1}\ffb)$. Then there exist $v,w \in U$ such that $vr \in \ffa$ and $wr \in \ffb$ by Proposition 3.11(b). So $(vw)r \in \ffa \cap \ffb$. Also, since $vw \in U$, $\frac{r}{u} \in U^{-1}(\ffa \cap \ffb)$ by Proposition 3.11(b). 
+        \item By Proposition 3.11(e) and 1.63(e), we have $U^{-1}(\ffa\ffb) = (\ffa\ffb) \cdot U^{-1}R = (\ffa \cdot U^{-1}R)(\ffb \cdot U^{-1}R) = (U^{-1}\ffa)(U^{-1}\ffb)$.
+        \item ``$\subseteq$''. By Proposition 3.11(e) and 1.63(g), $U^{-1} \operatorname{rad}(\ffa) = \operatorname{rad}(\ffa) \cdot U^{-1}R \subseteq \operatorname{rad}(\ffa \cdot U^{-1}R) = \operatorname{rad}(U^{-1}\ffa)$. \par 
+            ``$\supseteq$''. Let $\frac{r}{u} \in \operatorname{rad}(U^{-1}\ffa)$. Then $\frac{r^{n}}{u^{n}} = (\frac{r}{u})^{n} \in U^{-1}\ffa$ for some $n \geq 1$. So there exists $v \in U$ such that $vr^{n} \in \ffa$. Hence $(vr)^{n} = v^{n-1} \cdot vr^{n} \in \ffa$. So $vr \in \operatorname{rad}(\ffa)$. Thus, $\frac{r}{u} \in U^{-1} \operatorname{rad}(\ffa)$.
+        \item Special case of (d) with $\ffa = 0$. 
+        \item ``$\subseteq$''. By Proposition 3.11(e) and 1.63(f), $U^{-1}(\ffb:\ffa) = (\ffb:\ffa) \cdot U^{-1}R \subseteq (\ffb \cdot U^{-1}R: \ffa \cdot U^{-1}R) = (U^{-1}\ffb:U^{-1}\ffa)$. \par 
+            ``$\supseteq$''. Let $\frac{r}{u} \in (U^{-1}\ffb:U^{-1}\ffa)$. Since $\ffa$ is finitely generated, $\ffa = \langle a_{1},\cdots,a_{n} \rangle R$ for some $n \geq 1$ and $a_{1},\cdots,a_{n} \in R$. Then $U^{-1}\ffa = \langle \frac{a_{1}}{1},\cdots,\frac{a_{n}}{1} \rangle U^{-1}R$. Since $\frac{r}{u} \in (U^{-1}\ffb:U^{-1}\ffa)$, $\frac{ra_{i}}{u} = \frac{r}{u} \frac{a_{i}}{1} \in U^{-1}\ffb$ for $i = 1,\cdots,n$. So there exists $v_{i} \in U$ such that $v_{i} ra_{i} \in \ffb$ for $i = 1,\cdots,n$. Let $v = v_{1} \cdots v_{n} \in U$. Then $(vr)a_{i} \in \ffb$ for $i = 1,\cdots,n$. So $vr \in (\ffb:\ffa)$. Thus, $\frac{r}{u} \in U^{-1}(\ffb:\ffa)$.
     \end{enumerate}
 \end{proof}
 
 \begin{proposition}
     Let $\psi: R \to U^{-1}R$.
     \begin{enumerate}
-        \item For any $I \leq U^{-1}R$, there exists $\ffa \leq R$ such that $I = U^{-1}\ffa$. (See proof of theorem 2.28 with $\ffa = \psi^{-1}(I)$).
+        \item For $I \leq U^{-1}R$, there exists $\ffa \leq R$ such that $I = U^{-1}\ffa$. (See proof of theorem 2.28 with $\ffa = \psi^{-1}(I)$).
         \item If $\ffa \leq R$, then $\psi^{-1}(U^{-1}\ffa) =\{r \in R \mid \ex v \in U \text{ s.t. }v r \leq R\} = \bigcup_{v \in U} (\ffa:v)$.
-        \item $U^{-1}\ffa$.
+        \item $U^{-1}\ffa = U^{-1}R$ if and only if $U \cap \ffa \neq \emptyset$.
     \end{enumerate}
 \end{proposition}
 
-\begin{proposition}
-\end{proposition}
+\begin{proof}
+    \begin{enumerate}
+        \item [(c)]
+            ``$\Rightarrow$''. Assume $U^{-1}\ffa = U^{-1}R$. Then $\frac{1}{1} \in U^{-1}\ffa$. So there exists $v \in U$ such that $v = v \cdot 1 \in \ffa$. Then $v \in U \cap \ffa$. So $U \cap \ffa \neq \emptyset$. \par 
+            ``$\Leftarrow$''. Let $x \in U \cap \ffa$. Then $\frac{1}{1} = \frac{x}{x} \in U^{-1}\ffa$. So $U^{-1}\ffa = U^{-1}R$.
+    \end{enumerate}
+\end{proof}
 
 \begin{corollary}
     Let $\ffp \in \operatorname{Spec}(R)$. $R/\ffp$ is an integral domain with $Q(R/\ffp)$ the field of fraction, $R_\ffp$ is local with maximal ideal $\ffp_\ffp$ and $R_\ffp/\ffp_\ffp$ is a field. Then $Q(R/\ffp) \xleftarrow \cong R_\ffp/\ffp_\ffp$ given by $\overbar r / \overbar u \mapsfrom \overbar {r/u}$.

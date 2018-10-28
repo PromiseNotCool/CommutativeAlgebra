@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  27 OCT 2018 15:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  27 OCT 2018 19:21
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1417,7 +1417,7 @@ No auxiliary output files.
 Package TikZ externalization: calling \geometry{driver=none} during externaliza
 tion.
 
-No file figures/1-figure0.aux.
+No file chapters/figures/1-figure0.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
@@ -1549,7 +1549,7 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 LaTeX Warning: Reference `defOfMultiplicativelyClosedSet' on page 1 undefined o
 n input line 35.
 
-\openout5 = `figures/1-figure0.dpth'.
+\openout5 = `chapters/figures/1-figure0.dpth'.
 
 [1
 
@@ -1563,12 +1563,12 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.102             \end{tikzpicture}
-                                    
+l.84                 \end{tikzpicture}
+                                       
 Here is how much of TeX's memory you used:
  48857 strings out of 492649
- 1065681 string characters out of 6129622
- 1319375 words of memory out of 5000000
+ 1065735 string characters out of 6129622
+ 1319456 words of memory out of 5000000
  51881 multiletter control sequences out of 15000+600000
  545507 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
