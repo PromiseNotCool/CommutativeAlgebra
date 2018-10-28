@@ -192,16 +192,19 @@ Let $R$ be a nonzero commutative ring with identity.
     \begin{enumerate}
         \item Let $\ffp \in \operatorname{Sepc}(R_f)$. Then $\varphi^*(\ffp) = \varphi^{-1}(\ffp) \in \operatorname{Spec}(R)$ by Fact 1.16. Note $f \not \in \varphi^*(\ffp) = \varphi^{-1}(\ffp)$, otherwise, $R_f^\times \ni \frac{f}{1} = \varphi(f) \in \varphi(\varphi^{-1}(\ffp) \subseteq \ffp \in \operatorname{Spec}(R_f)$, a contradiction. 
         \item 
-            Let $\ffp \in X_f$. Then $\ffp_f := \ffp R_f = \{\frac{x}{f^n} \mid x \in \ffp, n \geq 0\} \leq R_f$. Since $f^n \not \in \ffp$ for $n \geq 0$, $\frac{1}{1} \not \in \ffp_f$ and then $\ffp_f \lneq R_f$. Let $\frac{x}{f^n},\frac{y}{f^m} \in R_f$ with $x,y \in R$ and $n,m \geq 0$ such that $\frac{xy}{f^{n+m}} = \frac{x}{f^n} \frac{y}{f^m} \in \ffp_f$ and so $xy \in \ffp$. Since $\ffp \in \operatorname{Spec}(R)$, $x \in \ffp$ or $y \in \ffp$. So $\frac{x}{f^n} \in \ffp_f$ or $\frac{y}{f^m} \in \ffp_f$. Hence $\ffp_f \in \operatorname{Spec}(R_f)$. Note $\frac{x}{1} = \varphi(x) \in \ffp_f$ if and only if $x \in \ffp$. So $\varphi_f^*(\ffp_f) = \varphi^{-1}(\ffp_f) = \ffp$. Thus, $\varphi_f^*$ is onto. \par 
-            Let $\ffp, \ffq \in \operatorname{Spec}(R_f)$ such that $\varphi^{-1}(\ffp) = \varphi^*_f(\ffp) = \varphi_f^*(\ffq) = \varphi^{-1}(\ffq)$. Let $\frac{x}{f^n} \in \ffp$ with $x \in \ffp$ and $n \geq 0$. Then $\varphi(x) = \frac{x}{1} = \frac{x}{f^n} \cdot \frac{f^n}{1} \in \ffp$ and so $x \in \varphi^{-1}(\ffp) = \varphi^{-1}(\ffq)$. So $\frac{x}{1} = \varphi(x) \in \ffq$ and then $\frac{x}{f^n} = \frac{x}{1} \cdot \frac{1}{f^n} \in \ffq$. Hence $\ffp \subseteq \ffq$. By symmetry, $\ffq \subseteq \ffp$. Thus, $\varphi_f^*$ is 1-1.
+            Let $\ffp \in X_f$. Since $\ffp \in \operatorname{Spec}(R)$,
+            \begin{align*}
+                \ffp_f &:= \ffp R_f = \left\{\sum_{i}^{\text{finite}} \varphi(p_{i}) \cdot y_{i} \mathrel{\bigg |} p_{i} \in \ffp,y_{i} \in R_{f}, \fa i\right\} = \left\{\sum_{i}^{\text{finite}} \frac{p_{i}}{1} \cdot \frac{r_{i}}{f^{n_{i}}} \mathrel{\bigg |} p_{i} \in \ffp, r_{i} \in R_{f}, n_{i} \geq 0,\fa i\right\} \\
+                &= \left\{\frac{\sum_{i=1}^{\text{finite}}p_{i} \cdot r_{i} \cdot f^{\sum_{j \neq i}^{\text{finite}}n_{j}}}{f^{\sum_{i=1}^{\text{finite}} n_{i}}} \mathrel{\bigg |} p_{i} \in \ffp, r_{i} \in R, n_{i} \geq 0, \fa i\right\} = \left\{ \frac{p}{f^{n}} \mathrel{\Big |} p \in \ffp,n \geq 0\right\} \leq R_f.
+            \end{align*}
+            Since $f^n \not \in \ffp$ for $n \geq 0$, $\frac{1}{1} \not \in \ffp_f$. So $\ffp_f \lneq R_f$. Let $\frac{x}{f^n},\frac{y}{f^m} \in R_f$ with $x,y \in R$ and $n,m \geq 0$ such that $\frac{xy}{f^{n+m}} = \frac{x}{f^n} \frac{y}{f^m} \in \ffp_f$ and so $xy \in \ffp$. Since $\ffp \in \operatorname{Spec}(R)$, $x \in \ffp$ or $y \in \ffp$. So $\frac{x}{f^n} \in \ffp_f$ or $\frac{y}{f^m} \in \ffp_f$. Hence $\ffp_f \in \operatorname{Spec}(R_f)$. \par 
+            On the other hand, by (a), $\varphi^{*}(\ffp) \in X_{f}$ for $\ffp \in \operatorname{Spec}(R_{f})$. Thus, we have the 1-1 correspondence:
+            \begin{align*}
+                X_f = \{\ffp \in \operatorname{Spec}(R) \mid f \not \in \ffp\} & \rightleftarrows \operatorname{Spec}(R_f) \\
+                \ffp &\mapsto \ffp_f \\ 
+                \varphi^*(\ffp) = \varphi^{-1}(\ffp) = \text{``$\ffp \cap R$''} &\mapsfrom \ffp. \qedhere
+            \end{align*}
     \end{enumerate}
-    Or use prime correspondence under localization directly. 
-    \begin{align*}
-        X_f = \{\ffp \in \operatorname{Spec}(R) \mid f \not \in \ffp\} & \rightleftarrows \operatorname{Spec}(R_f) \\
-        \ffp &\mapsto \ffp_f \\ 
-        \varphi^*(\ffp) = \varphi^{-1}(\ffp) = \text{``$\ffp \cap R$''} &\mapsfrom \ffp. \qedhere
-    \end{align*}
-
 \end{proof}
 
 \section*{Subspaces}

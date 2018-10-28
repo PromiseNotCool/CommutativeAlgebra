@@ -18,7 +18,7 @@ Let $R$ be a commutative ring with identity.
 \end{fact}
 
 \begin{definition}
-    A \emph{homomorphism of commutative rings with identity} is a function $\phi: R \to S$ with $R$ and $S$ commutative rings with identity, such that for all $r,r' \in R$,
+    A \emph{(unital) homomorphism of commutative rings with identity} is a function $\phi: R \to S$ with $R$ and $S$ commutative rings with identity, such that for all $r,r' \in R$,
     \begin{enumerate}
         \item $\phi(r+r') = \phi(r) + \phi(r')$,
         \item $\phi(rr') = \phi(r) \phi(r')$,
@@ -784,7 +784,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 
 \begin{definition}
     Let $f: R \to S$ be a ring homomorphism. Let $\ffa \leq R$ and $\ffb \leq S$. The \emph{extension} of $\ffa$ along $f$ is 
-    \[\ffa^e = \ffa S = \langle f(\ffa) \rangle S  = f(\ffa)S = \{\sum_i^{\text{finite}} f(a_i)s_i \mid a_i \in \ffa,\ s_i \in S, \fa i\} \leq S.\]
+    \[\ffa^e = \ffa S = \langle f(\ffa) \rangle S  = f(\ffa)S = \left\{\sum_i^{\text{finite}} f(a_i)s_i \mathrel{\Big |} a_i \in \ffa,\ s_i \in S, \fa i \right\} \leq S.\]
     The \emph{contraction} of $\ffb$ along $f$ is 
     \[\ffb^c = f^{-1}(\ffb) \leq R.\]
 \end{definition}

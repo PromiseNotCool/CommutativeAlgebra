@@ -15,7 +15,7 @@
 
 \begin{recall} \label{defOfMultiplicativelyClosedSet}
     For $U \subseteq R$ multiplicatively closed, $U^{-1}R = \{\frac{r}{u} \mid r \in R, u \in U\}$, where $\frac{r}{u} = \frac{r'}{u'}$ if and only if there exists $u'' \in U$ such that $u''(ru'-r'u) = 0$, i.e., $\frac{u''r}{u''u} = \frac{r'}{u'}$, formally, $\frac{r}{u}$ is the equivalence class under an equivalence relation. \par 
-    $U^{-1}R$ is a nonzero commutative ring with identity. $\frac{r}{u} + \frac{s}{v} = \frac{rv+su}{uv}$ and $\frac{r}{u} \frac{s}{v} = \frac{rs}{uv}$ for $\frac{r}{u},\frac{s}{v} \in U^{-1}(R)$. \par 
+    $U^{-1}R$ is a nonzero commutative ring with identity with $\frac{r}{u} + \frac{s}{v} = \frac{rv+su}{uv}$ and $\frac{r}{u} \frac{s}{v} = \frac{rs}{uv}$ for $\frac{r}{u},\frac{s}{v} \in U^{-1}(R)$. \par 
     $0_{U^{-1}(R)} = \frac{0_R}{1_R} = \frac{0}{u}$ and $1_{U^{-1}R} = \frac{1_{R}}{1_{R}} = \frac{u}{u}$ for all $u \in U$. \par 
     $\frac{r}{u} = 0$ if and only if there exists $u'' \in U$ such that $u''r = 0$. \par 
     $\psi: R \to U^{-1}R$ given by $\psi(r) = \frac{r}{1}$ is a well-defined ring homomorphism.
@@ -131,7 +131,7 @@
     \begin{enumerate}
         \item [(b)] 
             Let $\frac{r}{u} = \frac{r'}{u'} \in U^{-1}R$. Then there exists $u'' \in U$ such that $u''(ur'-u'r) = 0$. So there exists $\varphi(u'') \in \varphi(U)$ such that $\varphi(u'')(\varphi(r)\varphi(u') - \varphi(r')\varphi(u)) = 0$. Hence $\frac{\varphi(r)}{\varphi(u)} = \frac{\varphi(r')}{\varphi(u')} \in U^{-1}S$. \par  
-            Since $U^{-1}\varphi(\frac{r}{u} + \frac{s}{v}) = U^{-1}\varphi(\frac{rv+su}{uv}) = \frac{\varphi(rv+su)}{\varphi(uv)} = \frac{\varphi(r)\varphi(v)+\varphi(s)\varphi(u)}{\varphi(u)\varphi(v)} = \frac{\varphi(r)}{\varphi(u)}+\frac{\varphi(s)}{\varphi(v)} = U^{-1}\varphi(\frac{r}{u})+U^{-1}(\varphi)(\frac{s}{v})$ and $U^{-1}(\varphi)(\frac{r}{u} \cdot\frac{s}{v}) = U^{-1}\varphi(\frac{rs}{uv}) = \frac{\varphi(rs)}{\varphi(uv)} =\frac{\varphi(r)}{\varphi(u)} \cdot \frac{\varphi(s)}{\varphi(v)} = U^{-1}\varphi(\frac{r}{u})U^{-1}\varphi(\frac{s}{v})$ for $\frac{r}{u},\frac{s}{v} \in U^{-1}R$, we have $U^{-1}\varphi$ is a ring homomorphism. 
+            Since $U^{-1}\varphi(\frac{r}{u} + \frac{s}{v}) = U^{-1}\varphi(\frac{rv+su}{uv}) = \frac{\varphi(rv+su)}{\varphi(uv)} = \frac{\varphi(r)\varphi(v)+\varphi(s)\varphi(u)}{\varphi(u)\varphi(v)} = \frac{\varphi(r)}{\varphi(u)}+\frac{\varphi(s)}{\varphi(v)} = U^{-1}\varphi(\frac{r}{u})+U^{-1}(\varphi)(\frac{s}{v})$ and similarly, $U^{-1}(\varphi)(\frac{r}{u} \cdot\frac{s}{v}) = U^{-1}\varphi(\frac{r}{u})U^{-1}\varphi(\frac{s}{v})$ for $\frac{r}{u},\frac{s}{v} \in U^{-1}R$, we have $U^{-1}\varphi$ is a ring homomorphism. 
         \item [(c)]
             Assume $\varphi$ is onto. Let $\frac{s}{\varphi(u)} \in U^{-1}S$. Then there exists $r \in R$ such that $\varphi(r) = s$. Since $U^{-1}\varphi(\frac{r}{u}) = \frac{\varphi(r)}{\varphi(u)} = \frac{s}{\varphi(u)}$, we have $U^{-1}\varphi$ is onto.
         \item[(d)] Assume $\varphi$ is 1-1. Let $\frac{r}{u} \in U^{-1}R$. Then $\frac{r}{u} \in \ker(U^{-1}\varphi)$ if and only if $0 = U^{-1}\varphi(\frac{r}{u}) = \frac{\varphi(r)}{\varphi(u)}$ if and only if there exists $u'' \in U$ such that $\varphi(u'')\varphi(r) = 0 = \varphi(u''r)$ if and only if there exists $u'' \in U$ such that $u''r = 0$ if and only if $\frac{r}{u} = 0$ in $U^{-1}R$. Also, by (b) we have $U^{-1}\varphi$ is 1-1.
@@ -265,7 +265,7 @@
             ``$\supseteq$''. Let $\frac{r}{u} \in \operatorname{rad}(U^{-1}\ffa)$. Then $\frac{r^{n}}{u^{n}} = (\frac{r}{u})^{n} \in U^{-1}\ffa$ for some $n \geq 1$. So there exists $v \in U$ such that $vr^{n} \in \ffa$. Hence $(vr)^{n} = v^{n-1} \cdot vr^{n} \in \ffa$. So $vr \in \operatorname{rad}(\ffa)$. Thus, $\frac{r}{u} \in U^{-1} \operatorname{rad}(\ffa)$.
         \item Special case of (d) with $\ffa = 0$. 
         \item ``$\subseteq$''. By Proposition 3.11(e) and 1.63(f), $U^{-1}(\ffb:\ffa) = (\ffb:\ffa) \cdot U^{-1}R \subseteq (\ffb \cdot U^{-1}R: \ffa \cdot U^{-1}R) = (U^{-1}\ffb:U^{-1}\ffa)$. \par 
-            ``$\supseteq$''. Let $\frac{r}{u} \in (U^{-1}\ffb:U^{-1}\ffa)$. Since $\ffa$ is finitely generated, $\ffa = \langle a_{1},\cdots,a_{n} \rangle R$ for some $n \geq 1$ and $a_{1},\cdots,a_{n} \in R$. Then $U^{-1}\ffa = \langle \frac{a_{1}}{1},\cdots,\frac{a_{n}}{1} \rangle U^{-1}R$. Since $\frac{r}{u} \in (U^{-1}\ffb:U^{-1}\ffa)$, $\frac{ra_{i}}{u} = \frac{r}{u} \frac{a_{i}}{1} \in U^{-1}\ffb$ for $i = 1,\cdots,n$. So there exists $v_{i} \in U$ such that $v_{i} ra_{i} \in \ffb$ for $i = 1,\cdots,n$. Let $v = v_{1} \cdots v_{n} \in U$. Then $(vr)a_{i} \in \ffb$ for $i = 1,\cdots,n$. So $vr \in (\ffb:\ffa)$. Thus, $\frac{r}{u} \in U^{-1}(\ffb:\ffa)$.
+            ``$\supseteq$''. Let $\frac{r}{u} \in (U^{-1}\ffb:U^{-1}\ffa)$. Since $\ffa$ is finitely generated, $\ffa = \langle a_{1},\cdots,a_{n} \rangle R$ for some $n \geq 1$ and $a_{1},\cdots,a_{n} \in R$. Then $U^{-1}\ffa = \langle \frac{a_{1}}{1},\cdots,\frac{a_{n}}{1} \rangle U^{-1}R$. Since $\frac{r}{u} \in (U^{-1}\ffb:U^{-1}\ffa)$, $\frac{ra_{i}}{u} = \frac{r}{u} \frac{a_{i}}{1} \in U^{-1}\ffb$ for $i = 1,\cdots,n$. So there exists $v_{i} \in U$ such that $v_{i} ra_{i} \in \ffb$ for $i = 1,\cdots,n$. Let $v = v_{1} \cdots v_{n} \in U$. Then $(vr)a_{i} \in \ffb$ for $i = 1,\cdots,n$. So $vr \in (\ffb:\ffa)$. Thus, $\frac{r}{u} \in U^{-1}(\ffb:\ffa)$.\qedhere
     \end{enumerate}
 \end{proof}
 
@@ -273,21 +273,25 @@
     Let $\psi: R \to U^{-1}R$.
     \begin{enumerate}
         \item For $I \leq U^{-1}R$, there exists $\ffa \leq R$ such that $I = U^{-1}\ffa$. (See proof of theorem 2.28 with $\ffa = \psi^{-1}(I)$).
-        \item If $\ffa \leq R$, then $\psi^{-1}(U^{-1}\ffa) =\{r \in R \mid \ex v \in U \text{ s.t. }v r \leq R\} = \bigcup_{v \in U} (\ffa:v)$.
+        \item If $\ffa \leq R$, then $\psi^{-1}(U^{-1}\ffa) =\{r \in R \mid \ex v \in U \text{ s.t. }v r \in \ffa\} = \bigcup_{v \in U} (\ffa:v)$.
         \item $U^{-1}\ffa = U^{-1}R$ if and only if $U \cap \ffa \neq \emptyset$.
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
     \begin{enumerate}
-        \item [(c)]
+        \item Let $\ffa = \psi^{-1}(I)$. Claim. $I = U^{-1} \ffa$. \par 
+            ``$\supseteq$''. $U^{-1}\ffa = \ffa \cdot U^{-1}R = \psi^{-1}(I) \cdot U^{-1}R \subseteq I$ by Proposition 1.63(a). \par 
+            ``$\subseteq$''. Let $i \in I$. Then $i = \frac{r}{u}$ for some $r \in R$ and $u \in U$. Since $\psi(r) = \frac{r}{1} = \frac{r}{u} \cdot \frac{u}{1} \in I$, we have $r \in \psi^{-1}(I)$. So $i = \frac{r}{u} = \frac{r}{1} \cdot \frac{1}{u} = \psi(r) \cdot \frac{1}{u} \in \psi^{-1}(I) \cdot U^{-1}R = \ffa \cdot U^{-1}R = U^{-1}\ffa$.
+        \item  By Proposition 3.11(b) and the definition of colon ideal.
+        \item
             ``$\Rightarrow$''. Assume $U^{-1}\ffa = U^{-1}R$. Then $\frac{1}{1} \in U^{-1}\ffa$. So there exists $v \in U$ such that $v = v \cdot 1 \in \ffa$. Then $v \in U \cap \ffa$. So $U \cap \ffa \neq \emptyset$. \par 
-            ``$\Leftarrow$''. Let $x \in U \cap \ffa$. Then $\frac{1}{1} = \frac{x}{x} \in U^{-1}\ffa$. So $U^{-1}\ffa = U^{-1}R$.
+            ``$\Leftarrow$''. Let $x \in U \cap \ffa$. Then $\frac{1}{1} = \frac{x}{x} \in U^{-1}\ffa$. So $U^{-1}\ffa = U^{-1}R$. \qedhere
     \end{enumerate}
 \end{proof}
 
 \begin{corollary}
-    Let $\ffp \in \operatorname{Spec}(R)$. $R/\ffp$ is an integral domain with $Q(R/\ffp)$ the field of fraction, $R_\ffp$ is local with maximal ideal $\ffp_\ffp$ and $R_\ffp/\ffp_\ffp$ is a field. Then $Q(R/\ffp) \xleftarrow \cong R_\ffp/\ffp_\ffp$ given by $\overbar r / \overbar u \mapsfrom \overbar {r/u}$.
+    Let $\ffp \in \operatorname{Spec}(R)$ and $Q(R/\ffp)$ be the field of fraction. Then $R_\ffp$ is local with maximal ideal $\ffp_\ffp$, and $Q(R/\ffp) \xleftarrow \cong R_\ffp/\ffp_\ffp$ given by $\overbar r / \overbar u \mapsfrom \overbar {r/u}$.
 \end{corollary}
 
 \begin{proof}
