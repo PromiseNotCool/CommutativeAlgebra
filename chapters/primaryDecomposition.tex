@@ -22,3 +22,123 @@
             \]
     \end{enumerate}
 \end{discussion}
+
+\begin{theorem}
+    Let $R$ be a noetherian integral domain. Let $a \in R \setminus \{R^{\times} \cup 0\}$.
+    \begin{enumerate}
+        \item $a$ has an irreducible factorization in $R$.
+        \item There exist irreducible $b_1,\cdots,b_n \in R$ such that $a = b_1 \cdots b_n$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}
+        \item Let $\Sigma = \{\langle b \rangle \neq R : b \mid a\} \ni \langle a \rangle$. Since $R$ is noetherian, $\Sigma$ has a maximal element $\langle b \rangle$. Claim. $\langle b \rangle$ is irreducible. Note $b \neq 0$ since $a \neq 0$ and $b \mid a$, and $b \not \in R^{\times}$ since $\langle b \rangle \neq R$. Suppose $b = cd$ for some $c,d \in R \setminus R^{\times}$. Since $c \mid b \mid a$, we have $c \mid a$. Also, since $c \not \in R^{\times}$, $c \in \Sigma$. Since $\langle b \rangle \subseteq \langle c \rangle \subseteq R$, $\langle b \rangle$ is maximal and $c \not \in R^{\times}$, $\langle cd \rangle = \langle b \rangle = \langle c \rangle$. Since $R$ is an integral domain, $d \in R^{\times}$, a contradiction.
+        \item \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{definition}
+    If $R$ satisfies the conclusion of Theorem 4.2(b), then $R$ is \emph {atomic}.
+\end{definition}
+
+\begin{example}
+    $\bbZ_6$: $3^{2} = 3$, $2^{2} = 4$, $2^{3} = 2$.
+\end{example}
+
+\begin{lemma}[Nakayamas Lemma]
+    Let $I,J \leq R$ such that $I \subseteq \operatorname{Jac}(R)$ and $J$ is finitely generated. If $J = IJ$, then $J = 0$.
+\end{lemma}
+
+\begin{proof}
+\end{proof}
+
+\begin{lemma}
+    Let $(R,\ffm)$ be local and $0 \neq b = cd$ with $b,c,d \in R$ such that $\langle b \rangle = \langle c \rangle$. Then $d \in R^{\times}$.
+\end{lemma}
+
+\begin{proof}
+\end{proof}
+
+\begin{theorem}
+    Let $(R,\ffm)$ be local, noetherian, and $a \in R \setminus \{R^{\times} \cup 0\}$. 
+    \begin{enumerate}
+        \item $a$ has an irreducible factor in $R$.
+        \item $a = b_1 \cdots b_n$ for some irreducible elements $b_1,\cdots,b_n \in R$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\end{proof}
+
+\begin{discussion}
+    Let $R$ be noetherian (local or domain) and $a \in R \setminus \{R^{\times} \cup 0\}$ with irreducible factorization. ...
+\end{discussion}
+
+\begin{example}
+\end{example}
+
+\begin{definition}
+    An ideal $\ffq \lneq R$ is \emph{primary} if $xy \in \ffq$ with $x,y \in R$, then $x \in \operatorname{rad}(\ffq)$ or $y \in \operatorname{rad}(\ffq)$, i.e., if $\overbar{x} \overbar{y} = 0$ with $\overbar{x}, \overbar{y} \in R/\ffq$, then $\overbar{x} \in \operatorname{Nil}(R/\ffq)$ or $\overbar{y} \in \operatorname{Nil}(R/\ffq)$. 
+\end{definition}
+
+\begin{example}
+    \begin{enumerate}
+        \item 
+        \item
+        \item 
+        \item 
+    \end{enumerate}
+\end{example}
+
+\begin{proof}
+    \begin{enumerate}
+        \item [(b)]
+        \item [(c)]
+        \item [(d)]
+    \end{enumerate}
+\end{proof}
+
+\begin{example}
+    \begin{enumerate}
+        \item If $R$ is a UFD and $p \in R$ is prime, then $\langle p^{n} \rangle$ is primary.
+        \item If $x \in R$ is irreducible, $\langle x \rangle$ may not be primary.
+        \item Let $R = k[X_1,\cdots,X_d]$. Then $I = \langle X_{i_1}^{e_1}, \cdots ,X_{i_n}^{e_n} \rangle$ with $e_i \geq 1$ for $i = 1,\cdots,n$ and $J = \langle X_{1}^{e_1},\cdots,X_d^{e_d},f_1,\cdots,f_n \rangle \lneq R$ both are primary....
+        \item Let $R = k[X,Y,Z]$. Then neither of $\langle X^{2},XY\rangle$ and $\langle \rangle$.
+    \end{enumerate}
+\end{example}
+
+\begin{proof}
+    \begin{enumerate}
+        \item 
+            Let $x,y \in R$ such that $xy \in \langle p^{n} \rangle$. If $y \in \operatorname{rad}(\langle p^{n} \rangle) = \langle p \rangle$, then done. \par 
+            Assume $y \not \in \langle p \rangle$. Then $p \nmid y$. Since $xy \in \langle p^{n} \rangle$, $p^{n} \mid xy$. Since $xy$ has a unique factorization, $p$ is irreducible and $p \nmid y$, we have $p^{n} \mid x$. So $x \in \langle p^{n} \rangle$.
+        \item Let $R = \frac{k\llbracket X,Y,Z \rrbracket}{\langle X^{2}-YZ \rangle}$ and $x := \overbar{X} \in R$. Then $x$ is irreducible...
+        
+    \end{enumerate}
+\end{proof}
+
+\begin{definition}
+    $\ffa \leq R$ is \emph{reducible} if $\ffa \neq R$ and there exist $I,J \leq R$ such that $\ffa = I \cap J$ and $I \neq \ffa \neq J$. \par 
+    $\ffa \leq R$ is \emph{irreducible} if it is not reducible, i.e., for $I,J \leq R$, if $\ffa = I \cap J$, then $\ffa = I$ or $\ffa = J$.
+\end{definition}
+
+\begin{example}
+\end{example}
+
+\begin{proposition}
+    Let $R$ be noetherian If $\ffa \leq R$ is irreducible, then $\ffa$ is primary.
+\end{proposition}
+
+\begin{definition}
+    Let $\ffa \lneq R$. A \emph{primary decomposition} of $\ffa$ is $\ffa = \bigcap_{i=1}^{n} J_i$ such that $\ffa = \bigcap_{i=1}^{n}$ with $J_i$ is primary for $i = 1,\cdots,n$.
+\end{definition}
+
+\begin{theorem}[Noether]
+    Assume $R$ is noetherian and $\ffa \lneq R$. Then $\ffa$ has a primary decomposition.
+\end{theorem}
+
+
+
+
+

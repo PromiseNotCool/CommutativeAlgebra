@@ -156,7 +156,7 @@ Let $R$ be a commutative ring with identity.
             \node (rj)[node distance=0.8cm, left of=Rj, below of=Rj] {$\overbar r$};
             \node (raj)[node distance=0.8cm, above of=Raj,right of=Raj] {$\overbar{\overbar r}$};
             \node (xxx)[node distance=1.4cm, right of=raj] {$=(r+\ffa)+J/\ffa$};
-            \draw[->] (R) to node {$\phi$} (Ra);
+            \draw[->] (R) to node {$p$} (Ra);
             \draw[->] (R) to node {$\pi$} (Rj);
             \draw[|->] (Ra) to node {$\tau$} (Raj);
             \draw[->,dashed] (Rj) to node [swap]{$\ex !\ \overbar \phi$} (Raj);
@@ -1021,13 +1021,13 @@ Let $A$ be a nonzero commutative ring with identity.
         \item [(c)] Example of $\langle \ffa \rangle A\llbracket X \rrbracket \subsetneq \ffa\llbracket X \rrbracket$ for some $\ffa \leq A$. Let $A = k[Y_1,Y_2,Y_3,\cdots]$ and $\ffa = \langle Y_1,Y_2,Y_3,\cdots \rangle A$. Let $f = \sum_{i=1}^\infty Y_iX^i \in \ffa \llbracket X \rrbracket$. Claim. $f \not \in \langle \ffa \rangle A\llbracket X \rrbracket = \langle Y_1,Y_2,\cdots \rangle A\llbracket X \rrbracket$. Suppose $f \in \langle Y_1,Y_2,\cdots \rangle A\llbracket X \rrbracket$. Then there exists $m \geq 1$ and $\sum_{j=0}^\infty b_{ij}X^j = g_i \in A\llbracket X \rrbracket$ for $i = 1,\cdots,m$ such that $\sum_{j=1}^\infty Y_jX^j = f = \sum_{i=1}^m g_iY_i = \sum_{i=1}^m (\sum_{j=0}^\infty b_{ij}X^j)Y_i = \sum_{j=0}^\infty (\sum_{i=1}^m b_{ij}Y_i)X^j$. So for $j \geq 1$, we have $Y_j = \sum_{i=1}^m b_{ij}Y_i \in \langle Y_1,\cdots,Y_m \rangle A$. Then $Y_{m+1} \in \langle Y_1,\cdots,Y_m \rangle A$, a contradiction.
         \item [(e)]
             Example of $f \not \in \operatorname{Nil}(A\llbracket X \rrbracket)$ when $a_i \in \operatorname{Nil}(A)$ for $i \geq 0$. Let $A = \frac{\bbQ[Y_1,Y_2,Y_3,\cdots]}{\langle Y_1^2,Y_2^3,Y_3^4,\cdots,Y_i^{i+1},\cdots \rangle}$ and $a_0 = 0 \in \operatorname{Nil}(A)$ and $a_i = \overbar Y_i$ for $i \geq 1$. Then $a_i^{i+1} = \overbar{Y_i^{i+1}} = 0$ and so $a_i \in \operatorname{Nil}(A)$ for $i \geq 1$. \par 
-            Claim. $f \not \in \operatorname{Nil}(A\llbracket X \rrbracket)$. Note $f^2 = (\sum_{i=1}^\infty \overbar Y_i X^i)^2 = \smallunderbrace{\overbar Y_1^2 X^2}_{= 0} + \smallunderbrace{(2\overbar Y_1 \overbar Y_2)X^3}_{\neq 0} + \cdots$, and $f^3 = (\sum_{i=1}^\infty \overbar Y_i X^i)^3 = \smallunderbrace{\overbar Y_1^3 X^3}_{= 0} + \smallunderbrace{(2\overbar Y_1 \overbar Y_3 + \overbar {Y_2^2})X^4}_{\neq 0} + \cdots$, and inductively, we find $f^n$ has lots of non-zero coefficients for $n \geq 1$.
+            Claim. $f \not \in \operatorname{Nil}(A\llbracket X \rrbracket)$. Note $f^2 = (\sum_{i=1}^\infty \overbar Y_i X^i)^2 = \smallunderbrace{\overbar Y_1^2 X^2}_{= 0} + \smallunderbrace{(2\overbar Y_1 \overbar Y_2)X^3}_{\neq 0} + \cdots$, and $f^3 = (\sum_{i=1}^\infty \overbar Y_i X^i)^3 = \smallunderbrace{\overbar Y_1^3 X^3}_{= 0} + \smallunderbrace{(2\overbar Y_1 \overbar Y_3 + \overbar {Y_2^2})X^4}_{\neq 0} + \cdots$, and inductively, we find $f^n$ has lots of nonzero coefficients for $n \geq 1$.
     \end{enumerate}
 \end{example}
 
 \begin{definition}
     Define
-    \[A\llbracket X,Y \rrbracket = A\llbracket X \rrbracket A\llbracket Y \rrbracket,\]
+    \[A\llbracket X,Y \rrbracket = A\llbracket X \rrbracket \llbracket Y \rrbracket,\]
     and for $d \geq 2$,
     \[A\llbracket X_1,\cdots,X_d \rrbracket = A \llbracket X_1,\cdots,X_{d-1} \rrbracket \llbracket X_d \rrbracket.\]
 \end{definition}
@@ -1041,14 +1041,72 @@ Let $A$ be a nonzero commutative ring with identity.
 \end{warning}
 
 
+\section*{U.F.D.}
+\addcontentsline{toc}{section}{U.F.D.}
 
+Let $k$ be a field.
 
+\begin{definition}
+    An integral domain is a U.F.D. if it is \emph{atomic} (every nonzero nonunit of $R$ can be factored into irreducibles) and given two irreducible factorizations $\alpha_1 \cdots \alpha_n = \beta_1 \cdots \beta_n$,
+    \begin{enumerate}
+        \item $n = m$,
+        \item there exists $\sigma \in S_n$ such that $\alpha_i = u_i \beta_{\sigma(i)}$ with $u_i \in R^{\times}$ for $i = 1,\cdots,n$.
+    \end{enumerate}
+\end{definition}
 
+\begin{example}
+    Examples of UFDs: $k$, $\bbZ$, $\bbZ[i]$, $\bbZ[\frac{-1+\sqrt {-3}}{2}],\bbZ[\frac{-1+\sqrt{-19}}{2}]$, $k[X]$, $k\llbracket X \rrbracket$, $k[X_1,\cdots,X_n]$, $k\llbracket X_1,\cdots,X_n \rrbracket $ and $k\llbracket \{X_i\}_{i \in I} \rrbracket$.
+\end{example}
 
+\begin{definition}
+    We say $x \in R$ is \emph{irreducible} if $x = ab$, then $a$ or $b$ is a unit.
+\end{definition}
 
+\begin{definition}
+    We say $x \in R$ is \emph{prime} if $x$ is a nonunit and $x \mid a$ or $x \mid b$ whenever $x \mid ab$.
+\end{definition}
 
+\begin{example}
+    Examples of non-UFDs:
+    \begin{enumerate}
+        \item 
+            $\bbZ[\sqrt{-5}] = \{m+n\sqrt{-5} \mid m,n \in \bbZ\}$, where $6 = (2)(3) = (1+\sqrt {-5})(1-\sqrt{-5})$.
+        \item
+            $k[X^{2},X^{3}] = \{a_0+a_2X^{2}+a_3X^{3}+a_4X^{4}+\cdots + a_nx^{n} \mid n \geq 0, a_i \in k,\fa i = 0,2,3,\cdots,n\}$, where $X^{6} = X^{2} \cdot X^{2} \cdot X^{2} = X^{3} \cdot X^{3}$ with $X^{2}$ and $X^{3}$ irreducible here.
+    \end{enumerate}
+\end{example}
 
+\begin{definition}
+    An integral domain $R$ is a UFD if every nonzero nonunit element is a product of primes.
+\end{definition}
 
+\begin{theorem}
+    If $R$ is a UFD, then so is 
+    \begin{enumerate}
+        \item $R[\{X_i\}_{i \in I}]$,
+        \item $R_U$, where $0 \not \in U \subseteq R$ is multiplicatively closed.
+    \end{enumerate}
+\end{theorem}
+
+\begin{fact}
+    If $R$ is a UFD, it is integrally closed.
+\end{fact}
+
+\begin{theorem}
+    Let $R$ be an integral domain. Then $R$ is a UFD if and only if every nonzero prime ideal contains some nonzeo prime element.
+\end{theorem}
+
+\begin{theorem}
+    If $R$ is a PID, then $R\llbracket X \rrbracket$ is a UFD.
+\end{theorem}
+
+\begin{example}
+    There exists some UFDs $R$ such that $R\llbracket X \rrbracket $ is not a UFD.
+\end{example}
+
+\begin{question}
+    If $R\llbracket X \rrbracket$ is a UFD, is $R\llbracket X,Y \rrbracket$ a UFD? 
+\end{question}
 
 \begin{comment}
 
@@ -1105,5 +1163,86 @@ Let $R_1,R_2,\cdots$ be nonzero commutative rings with identity.
 \end{proof}
 \end{comment}
 
+\begin{example}
+    We have $\bbQ[X] = \bbQ + X\bbQ[X]$. Let 
+    \[R = \bbZ + X \bbQ[X] = \{n + q_1x + \cdots + q_kX^{n} \mid n \in \bbZ, k \geq 1, q_i \in \bbQ,\fa i = 1,\cdots,k\}.\]
+    Then $x \in R$ cannot be factored into irreducibles since $x = 13 \cdot \frac{x}{13} = 3 \cdot 13 \cdot \frac{x}{39} = 3^{n} \cdot 13^{m} \cdot \frac{x}{3^{n}13^{m}}$ for $n,m \geq 0$.
+\end{example}
+
+\begin{example}
+    Let $R = k[X_1,X_2,X_3\cdots,\frac{X_1}{X_2},\frac{X_1}{X_2^{2}},\frac{X_1}{X_2^{3}},\cdots,\frac{X_2}{X_3},\frac{X_2}{X_3^{2}},\cdots,\cdots,\frac{X_n}{X_{n+1}},\frac{X_n}{X_{n+1}^{2}},\cdots]$. Let $\ffm$ be the maximal ideal $(X_1,X_2,X_3,\cdots,\frac{X_n}{X_{n+1}},\frac{X_n}{X_{n+1}^{2}},\cdots)$ of $R$. Then $R_\ffm$ has no irreducible elements and is not a field.
+\end{example}
+
+\begin{example}
+    We have $\bbQ[X]/(X^{2}-2) \cong \bbQ(\sqrt 2)$. Let $\overbar{\bbQ} = \bbQ(\{\alpha \mid f \in \bbQ[X] \text{ irreducible}, f(\alpha) = 0\})$, i.e., $\overbar{\bbQ}$ is the algebraic closure of $\bbQ$. Let $\overbar{\bbZ} = \{\alpha \in \overbar{\bbQ} \mid g \in \bbZ[X] \text{ monic},g(\alpha) = 0\}$. Let $\alpha \in \overbar{Z}$ and suppose $\alpha$ is irreducible. Then there exists $n \geq 1$ and $a_i \in \bbZ$ for $i=0,\cdots,n-1$ such that $\alpha$ is a root of $x^{n} + a_{n-1}x^{n-1} + \cdots + a_0$. Consider $x^{2n} + a_{n-1}x^{2n-2} + \cdots + a_0$ has a root $\beta \in \overbar{\bbZ}$ such that $\beta^{2} = \alpha$.
+\end{example}
 
 
+\subsection*{Generalization of U.F.D.}
+\addcontentsline{toc}{subsection}{Generalization of U.F.D.}
+
+Let $R$ be an integral domain.
+
+\begin{definition}
+    We say $R$ is an HFD (\emph{half-factorial}) if $R$ is atomic and given $\alpha_1 \cdots \alpha_n = \beta_1 \cdots \beta_m$ irreducible factorizations, then $n = m$.
+\end{definition}
+
+\begin{example}
+    $\bbZ[\sqrt {-5}]$ is an HFD. $\bbZ[\sqrt{-14}] = \{a+b\sqrt{-14} \mid a,b \in \bbZ\}$ is not a HFD since $81 = 3 \cdot 3 \cdot 3 \cdot 3 = (5+2\sqrt{-14})(5-2\sqrt{-14})$.
+\end{example}
+
+\begin{definition}
+    $R$ is a FFD (\emph{finite factorial}) if $R$ is atomic and every nonzero nonunit has only finitely many factorizations (up to units).
+\end{definition}
+
+\begin{example}
+    Any ring of algebraic integers is a FFD.
+\end{example}
+
+\begin{definition}
+    $R$ is a BFD (\emph{bounded}) if $R$ is atomic and for all nonzeo nonunit, there exists a bound on the length of irreducible factorizations. 
+\end{definition}
+
+\begin{definition}
+    $R$ is ACCP (\emph{ascending chain condition on principal ideals}) if $(a_1) \subseteq (a_2) \subseteq (a_3) \subseteq \cdots$ stabilizes.
+\end{definition}
+
+\begin{proposition}
+    We have 
+    \begin{center}
+        \begin{tikzpicture}[node distance = 1.0cm, auto]
+            \node (UFD) {UFD};
+            \node (HFD)[right of=UFD,above of=UFD] {HFD};
+            \node (FFD)[right of=UFD,below of=UFD] {FFD};
+            \node (BFD)[right of=HFD,below of=HFD] {BFD};
+            \node (ACCP)[right of=BFD,node distance=1.8cm] {ACCP};
+            \node (atomic)[right of=ACCP,node distance=1.9cm] {atomic};
+            \draw[->,double] (UFD) to node {} (HFD);
+            \draw[->,double] (UFD) to node {} (FFD);
+            \draw[->,double] (FFD) to node {} (BFD);
+            \draw[->,double] (HFD) to node {} (BFD);
+            \draw[->,double] (BFD) to node {} (ACCP);
+            \draw[->,double] (ACCP) to node {} (atomic);
+        \end{tikzpicture}
+    \end{center}
+\end{proposition}
+
+\begin{example}
+    In $\bbQ+X\bbR\llbracket X \rrbracket$, $X^{2}$ has uncountable many factorizations all of which have length 2, for example,  $X^{2} = X \cdot X = (\pi X)(\frac{X}{\pi})$, 
+\end{example}
+
+\begin{fact}
+    If $R$ is a FFD, BFD, ACCP, so is $R[X]$.
+\end{fact}
+
+\begin{fact}
+    If $R$ is atomic, then $R[X]$ is not necessarily atomic.
+\end{fact}
+
+\begin{fact}
+    If $R$ is not an integral domain, there is an example of a ring $R$ with no irreducibles such that $R[X]$ is atomic.
+\end{fact}
+
+\begin{example}
+    Consider factorization only in a monoid $\langle 0,2,3,4,5,6 \rangle$, $2,3$ are irreducibles. $\langle \frac{1}{2 \cdot 3}, \frac{1}{2^{2} \cdot 5}, \frac{1}{2^{3} \cdot 7},\cdots,\frac{1}{2^{n}p_n}, \cdots \rangle$ is atomic but not ACCP.
+\end{example}

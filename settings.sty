@@ -132,13 +132,7 @@
 \newcommand{\ass}{\operatorname{Ass}}
 \newcommand{\ann}{\operatorname{Ann}}
 
-%number theory
 \newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
-%\newcommand{\gcd}{\operatorname{gcd}}
-%\newcommand{\disc}{\operatorname{disc}}
-%complex analysis
-%\newcommand{\Re}{\operatorname{Re}}
-
 
 \usepackage{bbold}
 \newcommand{\idca}{\mathbb{1}}
@@ -166,7 +160,8 @@
 \newtheorem{recall}[theorem]{Recall}
 \newtheorem*{recall*}{Recall}
 \newtheorem*{fact*}{Fact}
-\newtheorem{question}{Question}
+\newtheorem{question}[theorem]{Question}
+\newtheorem*{question*}{Question}
 \newtheorem{questions}{Questions}
 \newtheorem{problem}{Problem}
 \newtheorem{disc}{Remark}
@@ -259,6 +254,5 @@
 \makeatletter
 \def\BState{\State\hskip-\ALG@thistlm}
 \makeatother
-
 
 \newcommand{\longsquiggly}{\xymatrix{{}\ar@{~>}[r]&{}}}

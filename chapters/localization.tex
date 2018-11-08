@@ -291,11 +291,18 @@
 \end{proof}
 
 \begin{corollary}
-    Let $\ffp \in \operatorname{Spec}(R)$ and $Q(R/\ffp)$ be the field of fraction. Then $R_\ffp$ is local with maximal ideal $\ffp_\ffp$, and $Q(R/\ffp) \xleftarrow \cong R_\ffp/\ffp_\ffp$ given by $\overbar r / \overbar u \mapsfrom \overbar {r/u}$.
+    Let $\ffp \in \operatorname{Spec}(R)$ and $Q(R/\ffp)$ be the field of fraction. Then $R_\ffp = U^{-1}R$ is local with maximal ideal $\ffp_\ffp := \ffp R_{\ffp} = U^{-1}\ffp$, and $Q(R/\ffp) \xleftarrow \cong R_\ffp/\ffp_\ffp$ given by $\overbar r / \overbar u \mapsfrom \overbar {r/u}$.
 \end{corollary}
 
-\begin{proof}
-    Special case of previous result with $U = R \setminus \ffp$. Let $\tau: R \to R/\ffp$ be the natural projection. Then $R/\ffp = U^{-1}R/U^{-1}\ffp \cong U^{-1}(R/\ffp) = \tau(u)^{-1}(R/\ffp) = Q(R/\ffp)$.
+\begin{proof} 
+    Since $U = R \setminus \ffp$, $U \cap \ffp = \emptyset$. So by Proposition 3.13(c),
+    \begin{align*}
+        \ffp_\ffp &:= \ffp R_\ffp = \left\{\sum_{i}^{\text{finite}} \psi(p_{i}) \cdot y_{i} \mathrel{\bigg |} p_{i} \in \ffp,y_{i} \in R_{\ffp}, \fa i\right\} = \left\{\sum_{i}^{\text{finite}} \frac{p_{i}}{1} \cdot \frac{r_{i}}{u_{i}} \mathrel{\bigg |} p_{i} \in \ffp, r_{i} \in R, u_{i} \in U, \fa i\right\} \\
+        &= \left\{\frac{\sum_{i=1}^{\text{finite}}p_{i} \cdot r_{i} \cdot \prod_{j \neq i}^{\text{finite}}u_{j}}{\prod_{i=1}^{\text{finite}}u_{i}} \mathrel{\bigg |} p_{i} \in \ffp, r_{i} \in R, u_{i} \in U, \fa i\right\} = \left\{ \frac{p}{u} \mathrel{\Big |} p \in \ffp, u \in U\right\} = U^{-1} \ffp \lneq R_\ffp.
+    \end{align*}
+    Let $\frac{r}{u},\frac{s}{v} \in R_\ffp$ with $r,s \in R$ and $u,v \in U$ such that $\frac{rs}{uv} = \frac{r}{u} \cdot \frac{s}{v} \in \ffp_\ffp$ and so $rs \in \ffp$. Since $\ffp \in \operatorname{Spec}(R)$, we have $r \in \ffp$ or $s \in \ffp$. So $\frac{r}{u} \in \ffp_{\ffp}$ or $\frac{s}{v} \in \ffp_\ffp$. Hence $\ffp_\ffp \in \operatorname{Spec}(R_\ffp)$. \par 
+    Let $I \leq R_{\ffp}$ with $I \not \subseteq \ffp_{\ffp}$. Then there exists $\frac{r}{u} \in I$ with $r,u \in R \setminus \ffp = U$. So $\frac{u}{r} \in R_{\ffp}$. Hence $\frac{1}{1} = \frac{ur}{ru} = \frac{r}{u} \cdot \frac{u}{r} \in I$, i.e., $I = R_{\ffp}$. Thus, $(R_{\ffp},\ffp_{\ffp})$ is local. \par
+    Special case of previous result with $U = R \setminus \ffp$. Let $\tau: R \to R/\ffp$ be the natural projection. Then by Proposition 3.11(c), $R_{\ffp}/\ffp_{\ffp} = U^{-1}R/U^{-1}\ffp \cong U^{-1} \frac{R}{\ffp} := \tau(U)^{-1} \frac{R}{\ffp} = Q(R/\ffp)$.
 \end{proof}
 
 \begin{corollary}
