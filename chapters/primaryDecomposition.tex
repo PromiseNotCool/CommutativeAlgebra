@@ -138,7 +138,90 @@
     Assume $R$ is noetherian and $\ffa \lneq R$. Then $\ffa$ has a primary decomposition.
 \end{theorem}
 
+\begin{proposition}
+    If $\ffq \lneq R$ is primary, then $\operatorname{rad}(\ffq) \in \operatorname{Spec}(R)$. In particular, $\operatorname{rad}(\ffq)$ is the unique smallest prime ideal of $R$ containing $\ffq$.
+\end{proposition}
 
+\begin{proof}
+    Since $\ffq \neq R$, $\operatorname{rad}(\ffq) \neq R$. Let $x,y \in R$ such that $xy \in \operatorname{rad}(\ffq)$. Then $x^{m}y^{m} = (xy)^{m} \in \ffq$ for some $m \geq 1$. Since $\ffq$ is primary, $x^{m} \in \operatorname{rad}(\ffq)$ or $y^{m} \in \operatorname{rad}(\ffq)$. So $x \in \operatorname{rad}(\operatorname{rad}(\ffq)) = \operatorname{rad}(\ffq)$ or $y \in \operatorname{rad}(\ffq)$.
+\end{proof}
 
+\begin{definition}
+    If $\ffq \lneq R$ is primary and $\ffp = \operatorname{rad}(\ffq)$, then $\ffq$ is $\ffp$-\emph{primary}.
+\end{definition}
 
+\begin{example}
+    \begin{enumerate}
+        \item Let $\ffp \in \bbZ$ be prime. Then $\ffq = \langle  p^{n} \rangle$ is primary for $n \geq 1$ and $\operatorname{rad}(\ffq) = \langle p  \rangle \in \operatorname{Spec}(\bbZ)$. 
+        \item 
+            If $\ffm \in \operatorname{m-Spec}(R)$ and $\ffm^{n} \subseteq \ffp \subseteq \ffm$, then $\operatorname{rad}(\ffq) = \ffm \in \operatorname{Spec}(R)$.
+        \item Let $R = k[X_1,\cdots,X_n]$ and $\ffq = \langle X_{i_1}^{e_{1}},\cdots,X_{i_n}^{e_{n}} \rangle$ with $e_i \geq 1$ for $i=1,\cdots,n$, then $\operatorname{rad}(\ffq) = \langle X_{i_1},\cdots,X_{i_n} \rangle \in \operatorname{Spec}(R)$.
+    \end{enumerate}
+\end{example}
 
+\begin{proof}
+
+\end{proof}
+
+\begin{proposition}
+    Let $\ffq_1,\cdots,\ffq_n \lneq R$ be $\ffp$-primary. Then $\bigcap_{i=1}^{n} \ffq_i$ is $\ffp$-primary.
+\end{proposition}
+
+\begin{proof}
+    Induct on $n$. The base case $n = 2$ is the important case....
+\end{proof}
+
+\begin{definition}
+    A primary decomposition $\ffa = \bigcap_{i=1}^{n}\ffq_i$ is \emph{minimal} if 
+    \begin{enumerate}
+        \item $\operatorname{rad}(\ffq_i) \neq \operatorname{rad}(\ffq_j)$ for $1 \leq i,j \leq n$ with $i \neq j$,
+        \item 
+    \end{enumerate}
+\end{definition}
+
+\begin{example}
+    \begin{enumerate}
+        \item 
+        \item 
+    \end{enumerate}
+\end{example}
+
+\begin{remark}
+    Notice: minimal primary decomposition is not necessarily unique up to re-ordering.
+\end{remark}
+
+\begin{definition}
+    Let $\ffa = \bigcap_{i=1}^{n} \ffq_i$ be minimal primary decomposition such that $\operatorname{rad}(\ffq_i) = \ffp_i$ for $i = 1,\cdots,n$.
+    \begin{enumerate}
+        \item The \emph{associated primes} of $\ffa$ are $\ffp_1,\cdots,\ffp_n$. Write it as $\operatorname{Ass}(\ffa) = \{\ffp_1,\cdots,\ffp_n\}$.
+        \item The \emph{minimal primes} of $\ffa$ are the minimal elements of $\{\ffp_1,\cdots,\ffp_n\}$ w.r.t. $\subseteq$. Write it as $\operatorname{Min}(\ffa) = \operatorname{Min}\{\ffp_1,\cdots,\ffp_n\}$.
+        \item 
+        \item 
+    \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+\end{proposition}
+
+\begin{proof}
+\end{proof}
+
+\begin{proposition}
+    Let $\ffa \lneq R$ with minimal primary decomposition $\ffa = \bigcap_{i=1}^{n} \ffq_i$ with $\ffp_i = \operatorname{rad}(\ffp_i)$ for $i = 1,\cdots,n$. Re-order the $\ffq_i$'s such that if necessary to assume without loss of generality, $\operatorname{Min}(\ffq) = \{\ffp_1,\cdots,\ffp_m\}$. Then the irreducible components of $\operatorname{V}(\ffa)$ are $\operatorname{V}(\ffp_1),\cdots,\operatorname{V}(\ffp_m)$.
+\end{proposition}
+
+\begin{proof}
+\end{proof}
+
+\begin{proposition}
+    Let $\ffq \lneq R$ be $\ffp$-primary and $x \in R$. Then 
+    \[
+        (\ffq:x) = \left\{
+            \begin{array}{ll}
+                R &\text{if }x \in \ffq \\
+                \ffq &\text{if }x \not \in \ffp \\
+                \ffp\text{-primary} &\text{if }x \not \in \ffq \\
+            \end{array}
+        \right..
+    \]
+\end{proposition}
