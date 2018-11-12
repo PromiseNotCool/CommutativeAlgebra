@@ -1,4 +1,3 @@
-
 \chapter{Localization}
 
 \begin{recall}
@@ -113,7 +112,7 @@
                 \coordinate (P)  at (intersection-1);
 
                 % path a circle around this intersection for the arc
-                \path[name path=circle] (P) circle(1.mm);
+                \path[name path=circle] (P) circle(1.0mm);
                 % find intersections of second line and circle
                 \path [name intersections={of = circle and line 2}];
                 \coordinate (I1)  at (intersection-1);
@@ -191,7 +190,7 @@
             \path [name intersections={of = line 1 and line 2}];
             \coordinate (P)  at (intersection-1);
             % path a circle around this intersection for the arc
-            \path[name path=circle] (P) circle(1.mm);
+            \path[name path=circle] (P) circle(1.0mm);
             % find intersections of second line and circle
             \path [name intersections={of = circle and line 2}];
             \coordinate (I1)  at (intersection-1);
@@ -323,7 +322,7 @@
 \end{example*}
 
 \begin{question*}
-    If $\ffp \in \operatorname{Spec}(R)$ such that $\ffp \cap U = \emptyset$, then $U^{-1}\ffp \in \operatorname{Spec}(U^{-1}R)$ by Proposition 3.13(c) and Proposition 3.11(b). What does $(U^{-1}R)_{U^{-1}\ffp}$ look like?
+    Let $\ffp \in \operatorname{Spec}(R)$. If $\ffp \cap U = \emptyset$, then $U^{-1}\ffp \in \operatorname{Spec}(U^{-1}R)$\footnote[2]{The converse is also true by prime correspondence for localization.} by Proposition 3.13(c) and Proposition 3.11(b). What does $(U^{-1}R)_{U^{-1}\ffp}$ look like?
 \end{question*}
 
 \begin{lemma}
@@ -420,7 +419,7 @@
                 \operatorname{Q}(R) &\cong U^{-1}R \cong \frac{U^{-1}R}{U^{-1}\langle \overbar{XY,YZ,ZW,XW} \rangle} \cong \frac{U^{-1}R}{(U^{-1}\langle \overbar{X},\overbar{Z} \rangle) \cap (U^{-1}\langle \overbar{Y},\overbar{W} \rangle)} \\
                 &\cong \frac{U^{-1}R}{U^{-1} \langle \overbar{X}, \overbar{Z} \rangle} \times \frac{U^{-1}R}{U^{-1} \langle \overbar{Y}, \overbar{W} \rangle} \cong U^{-1}\frac{R}{\langle \overbar{X}, \overbar{Z} \rangle} \times U^{-1} \frac{R}{\langle \overbar{Y}, \overbar{W} \rangle}.
             \end{align*}
-            Since $\frac{U^{-1}R}{U^{-1}\langle \overbar{X}, \overbar{Z}\rangle}, \frac{U^{-1}R}{U^{-1}\langle \overbar{Y}, \overbar{W} \rangle}$ is already a field, $\operatorname{Q}(R) \cong \operatorname{Q}(R/\langle \overbar{X}, \overbar{Z} \rangle) \times Q(R/\langle \overbar{Y}, \overbar{W} \rangle) \cong \operatorname{Q}(k[Y,W]) \times \operatorname{Q}(k[X,Z]) \cong k(X,Z) \times k(Y,W)$ by (a).
+            Since $\frac{U^{-1}R}{U^{-1}\langle \overbar{X}, \overbar{Z}\rangle}, \frac{U^{-1}R}{U^{-1}\langle \overbar{Y}, \overbar{W} \rangle}$ is already a field, $\operatorname{Q}(R) \cong \operatorname{Q}(R/\langle \overbar{X}, \overbar{Z} \rangle) \times \operatorname{Q}(R/\langle \overbar{Y}, \overbar{W} \rangle) \cong \operatorname{Q}(k[Y,W]) \times \operatorname{Q}(k[X,Z]) \cong k(X,Z) \times k(Y,W)$ by (a).
     \end{enumerate}
 \end{example*}
 
@@ -442,34 +441,133 @@
 \end{question}
 
 \begin{construction}
-    graph. has a well-defined map at the bottom in the middle.
-    graph.
+    Let $\ffp \in \operatorname{Spec}(R)$ and $U = R \setminus \ffp$. 
+    \begin{center}
+        \begin{tikzpicture}[node distance=2.5cm,auto]
+            \node (R) {$R$}; 
+            \node[right of=R] (S) {$S$}; 
+            \node[below of=R,node distance=1.5cm] (UR) {$U^{-1}R$}; 
+            \node[below of=S,node distance=1.5cm] (US) {$U^{-1}S$}; 
+            \node[below of=UR,node distance=1.5cm] (URpUR) {$\frac{U^{-1}R}{U^{-1}\ffp U^{-1}R}$}; 
+            \node[below of=US,node distance=1.5cm] (USpUS) {$\frac{U^{-1}S}{\ffp \cdot U^{-1}S}$}; 
+            \draw[->] (R) to node {$\varphi$} (S);
+            \draw[->] (R) to node {$\psi$} (UR);
+            \draw[->] (S) to node {$\rho$} (US);
+            \draw[->] (UR) to node {$U^{-1}\varphi$} (US);
+            \draw[->] (UR) to node {$\tau$} (URpUR);
+            \draw[->] (US) to node {$\pi$} (USpUS);
+            \draw[->] (URpUR) to node {$\overbar{U^{-1}\varphi}$} (USpUS);
+            \node[left of=UR,node distance=0.98cm] (xxx) {$R_\ffp=$}; 
+            \node[left of=URpUR,node distance=2.08cm] (yyy) {$Q(R/\ffp) \cong \frac{R_\ffp}{\ffp_\ffp}=$}; 
+            \node[right of=USpUS,node distance=2.45cm] (zzz) {$=\frac{U^{-1}S}{\ffp S \cdot U^{-1}S}=\frac{U^{-1}S}{U^{-1}\ffp \cdot U^{-1}S}$}; 
+            \node[below of=USpUS,node distance=0.9cm] (uuu) {$\llF(\ffp)$};
+            \node[right of=uuu,node distance=2cm] (vvv) {$ = \frac{S_\ffp}{\ffp \cdot S_\ffp} = \frac{U^{-1}S}{\varphi(U)^{-1}(\ffp S)}$};
+            \node[right of=US,node distance=1.45cm] (www) {$=\varphi(U)^{-1}S$}; 
+            \draw[double equal sign distance] (USpUS) to node{} (uuu);
+        \end{tikzpicture}
+    \end{center}
+    Note $\ffp \cdot U^{-1}S$ is the extension of $\ffp$ along $\rho \circ \varphi$, $\ffp S \cdot U^{-1}S$ is the extension of $\ffp S$ along $\rho$, and $U^{-1}\ffp \cdot U^{-1}S$ is the extension of $U^{-1}\ffp$ along $U^{-1}\varphi$. \par 
+    $\llF(\ffp)$ is fibre over $\ffp$ w.r.t. $\varphi$.
+    \begin{center}
+        \begin{tikzpicture}[node distance=1cm,auto]
+            \node (R) {$R$};
+            \node[right of=R,node distance=6cm] (S) {$S$};
+            \node[left of=R,below of=R] (UR) {$U^{-1}R$};
+            \node[right of=R,below of=R,node distance = 2cm] (Rp) {$\frac{R}{\ffp}$};
+            \node[right of=S,below of=S,node distance = 2cm] (SpS) {$\frac{S}{\ffp \cdot S}$};
+            \node[left of=S,below of=S] (US) {$U^{-1}S$};
+            \node[left of=Rp,below of=Rp] (URpUR) {$\frac{U^{-1}R}{\ffp \cdot U^{-1}R}$};
+            \node[left of=Rp,below of=SpS] (USpUS) {$\frac{U^{-1}S}{\ffp \cdot U^{-1}S}$};
+            \node[below of=US,node distance=0.5cm] (ttt) {$\pi$};
+            \draw[->] (R) to node {$\varphi$} (S);
+            \draw[->] (R) to node [swap]{$\psi$} (UR);
+            \draw[->] (S) to node {$\rho$} (US);
+            \draw[->] (S) to node {} (SpS);
+            \draw[->] (UR) to node {$\tau$} (URpUR);
+            \draw[->] (Rp) to node {} (URpUR);
+            \draw[->] (SpS) to node {} (USpUS);
+            \draw[->] (URpUR) to node {$\overbar{U^{-1}\varphi}$} (USpUS);
+            \draw[->,name path=line 1] (UR) to node {$U^{-1}\varphi$} (US);
+            \path[name path=line 2] (R) to node {} (Rp);
+            % find intersection of first and second line
+            \path [name intersections={of = line 1 and line 2}];
+            \coordinate (P)  at (intersection-1);
+
+            % path a circle around this intersection for the arc
+            \path[name path=circle] (P) circle(1.0mm);
+            % find intersections of second line and circle
+            \path [name intersections={of = circle and line 2}];
+            \coordinate (I1)  at (intersection-1);
+            \coordinate (I2)  at (intersection-2);
+            % draw normal line segments
+            \draw (R) -- (I1);
+            \draw[->] (I2) -- (Rp);
+            % draw arc at intersection
+            \tkzDrawArc[color=black](P,I1)(I2);
+            \draw[->,name path=line 1] (Rp) to node {} (SpS);
+            \path[name path=line 2] (US) to node {} (USpUS);
+            % find intersection of first and second line
+            \path [name intersections={of = line 1 and line 2}];
+            \coordinate (P)  at (intersection-1);
+
+            % path a circle around this intersection for the arc
+            \path[name path=circle] (P) circle(1.0mm);
+            % find intersections of second line and circle
+            \path [name intersections={of = circle and line 2}];
+            \coordinate (I1)  at (intersection-1);
+            \coordinate (I2)  at (intersection-2);
+            % draw normal line segments
+            \draw (US) -- (I1);
+            \draw[->] (I2) -- (USpUS);
+            % draw arc at intersection
+            \tkzDrawArc[color=black](P,I1)(I2);
+        \end{tikzpicture}
+    \end{center}
 \end{construction}
 
 \begin{theorem}
-    The following are equivalent.
+    Let $\varphi: R \to S$ be a ring homomorphism, $\ffp \in \operatorname{Spec}(R)$, $\varphi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$ and $U = R \setminus \ffp$. Then the followings are equivalent.
     \begin{enumerate}
-        \item $\ffp \in \im(\varphi^*)$, i.e., $(\varphi^*)^{-1}(\ffp) \neq \emptyset$.
-        \item $\ffp = \varphi^{-1}(\ffp S)$, where $\ffp S$ is not necessarily prime.
-        \item $\varphi \cdot U^{-1}(S) \neq U^{-1}(S)$, i.e., $\llF(\ffp) = U^{-1}S/\ffp U^{-1}(S) \neq \emptyset$.
+        \item[(i)] $\ffp \in \im(\varphi^*)$, i.e., $(\varphi^*)^{-1}(\ffp) \neq \emptyset$.
+        \item[(ii)] $\ffp = \varphi^{-1}(\ffp S)$, where $\ffp S$ is not necessarily prime.
+        \item[(iii)] $\ffp \cdot U^{-1}S \neq U^{-1}S$, i.e., $\llF(\ffp) = \frac{U^{-1}S}{\ffp \cdot U^{-1}S} \neq 0$.
     \end{enumerate}
-    Moreover, the map $\theta: \operatorname{Spec}(\llF(\ffp)) \to (\varphi^*)^{-1}(\ffp)$ given by $\theta(Q) = \varphi^{-1}(\pi^{-1}(Q)$ is a well-defined bijection.
+    Moreover, the map $\theta: \operatorname{Spec}(\llF(\ffp)) \to (\varphi^*)^{-1}(\ffp) \subseteq \operatorname{Spec}(S)$ given by $\theta(Q) = \rho^{-1}(\pi^{-1}(Q))$ is a well-defined bijection.
+    \begin{center}
+        \begin{tikzpicture}[node distance=2cm,auto]
+            \node (R) {$R$}; 
+            \node[right of=R] (S) {$S$}; 
+            \node[below of=R,node distance=1.5cm] (UR) {$U^{-1}R$}; 
+            \node[below of=S,node distance=1.5cm] (US) {$U^{-1}S$}; 
+            \node[below of=UR,node distance=1.5cm] (URpUR) {$\frac{U^{-1}R}{\ffp \cdot U^{-1}R}$}; 
+            \node[below of=US,node distance=1.5cm] (USpUS) {$\frac{U^{-1}S}{\ffp \cdot U^{-1}S}$}; 
+            \draw[->] (R) to node {$\varphi$} (S);
+            \draw[->] (R) to node {$\psi$} (UR);
+            \draw[->] (S) to node {$\rho$} (US);
+            \draw[->] (UR) to node {} (US);
+            \draw[->] (UR) to node {$\tau$} (URpUR);
+            \draw[->] (US) to node {$\pi$} (USpUS);
+            \draw[->] (URpUR) to node {} (USpUS);
+        \end{tikzpicture}
+    \end{center}
+
 \end{theorem}
 
 \begin{proof}
-    ``(i)$\Rightarrow$(ii)''. Assume there exists $\ffq \in \operatorname{Spec}(S)$ such that $\ffp = \varphi^*(\ffq) = \varphi^{-1}(\ffq) = \varphi^{-1}(\varphi^{-1}(\ffq)S) = \varphi^{-1}(\ffp S)$. \par 
-    ``(ii)$\Rightarrow$(iii)''. Assume $\varphi = \varphi^{-1}(\ffp S)$. Then $\ffp \cdot U^{-1}(S) = \ffp S \cdot U^{-1}(S) = \ffp S \cdot \varphi(U)^{-1}S$. Recall $\ffa \leq S$: $\ffa \cap \varphi(U)^{-1}S = \varphi(U)^{-1}S$ if and only if $\ffa \cap \varphi(U) \neq \emptyset$. To show $\ffp S \cdot \varphi(U)^{-1}S \neq \varphi(U)^{-1}S$, we need to show $\ffp S \cap \varphi(U) = \emptyset$. Suppose $\varphi(u) \in \ffp S \cap \varphi(U)$. Then $u \in \smallunderbrace{\varphi^{-1}(\ffp S)}_{\ffp} \cap \smallunderbrace U_{R \setminus \ffp} = \emptyset$. \par 
-    ``(iii)$\Rightarrow$(i) and well-definedness of $\theta$''.... \par 
-    $\theta$ is 1-1? $\theta = \text{restriction of $\varphi^* \circ \pi^{*}$}$. \par 
-    $\theta$ is onto?
+    ``(i)$\Rightarrow$(ii)''. Assume there is $\ffq \in \operatorname{Spec}(S)$ such that $\ffp = \varphi^*(\ffq) = \varphi^{-1}(\ffq) = \varphi^{-1}(\varphi^{-1}(\ffq)S) = \varphi^{-1}(\ffp S)$ by 1.63(b). \par 
+    ``(ii)$\Rightarrow$(iii)''. Assume $\ffp = \varphi^{-1}(\ffp S)$. Then $\ffp \cdot U^{-1}(S) = \ffp S \cdot U^{-1}(S) = \ffp S \cdot \varphi(U)^{-1}S = \varphi(U)^{-1} (\ffp S)$. To show $\ffp S \cdot \varphi(U)^{-1}S \neq \varphi(U)^{-1}S$, we need to show $\ffp S \cap \varphi(U) = \emptyset$ by Proposition 3.13(c). Suppose $\varphi(u) \in \ffp S \cap \varphi(U)$ for some $u \in U$. Then $u \in \varphi^{-1}(\ffp S) = \ffp = R \setminus U$, a contradiction. \par 
+    ``(iii)$\Rightarrow$(i) and well-definedness of $\theta$''. It suffices to show $\varphi^{*}(\theta(Q)) = \ffp$, i.e., $\varphi^{-1}(\rho^{-1}(\pi^{-1}(Q))) = \ffp$ for $Q \in \operatorname{Spec}(\frac{U^{-1}S}{\ffp \cdot U^{-1}S})$. Let $\ffq := \pi^{-1}(Q) \in \operatorname{Spec}(U^{-1}S)$. Then by prime correspondence for quotients, we have $\ffp \cdot U^{-1} S \subseteq \ffq = \pi^{-1}(Q)$ and $Q = \frac{\ffq}{\ffp \cdot U^{-1}S}$. Since $\ffq \in \operatorname{Spec}(U^{-1}S)$, by prime correspondence for localization, there exists $\ffr := \rho^{-1}(\ffq) = \rho^{-1}(\pi^{-1}(Q)) \in \operatorname{Spec}(S)$ such that $\ffq = \ffr \cdot U^{-1}S = \ffr \cdot \varphi(U)^{-1}S = \varphi(U)^{-1}\ffr$ with $\ffr \cap \varphi(U) = \emptyset$. So by Proposition 1.63(a), $\ffp \subseteq \varphi^{-1}(\rho^{-1}(\ffp \cdot U^{-1}S)) \subseteq \varphi^{-1}(\rho^{-1}(\pi^{-1}(Q))) = \varphi^{-1}(\ffr)$. Suppose $\ffp \subsetneq \varphi^{-1}(\ffr)$. Then there exists $x \in \varphi^{-1}(\ffr)$ such that $x \in R \setminus \ffp = U$. So $\varphi(x) \in \ffr \cap \varphi(U) = \emptyset$, a contradiction. Thus, $\ffp = \varphi^{-1}(\ffr) = \varphi^{-1}(\rho^{-1}(\pi^{-1}(Q)))$. \par 
+    Since $\pi$ is 1-1, by prime correspondence for quotients, $\pi^{*}$ is 1-1. Since $\rho$ is 1-1, by prime correspondence for localization, $\rho^{*}$ is 1-1. So $\theta = \varphi^* \circ \pi^{*}$ is 1-1. \par 
+    Let $\ffq \in (\varphi^*)^{-1}(\ffp)$. Then $\ffq \in \operatorname{Spec}(S)$ such that $\varphi^{-1}(\ffq) = \ffp \in \operatorname{Spec}(R)$. Since $\ffp \cap U = \emptyset$, $\ffq \cap \varphi(U) \subseteq \varphi(\varphi^{-1}(\ffq)) \cap \varphi(U) \subseteq \varphi(\varphi^{-1}(\ffq) \cap U) = \varphi(\ffp \cap U) = \emptyset$. So $\ffq \cap \varphi(U) = \emptyset$. Hence $\ffq \cdot U^{-1}S = \ffq \cdot \varphi(U)^{-1}S = \varphi(U)^{-1} \ffq \in \operatorname{Spec}(U^{-1}S)$ such that $\rho^{-1}(\ffq \cdot U^{-1}S) = \ffq$. Since $\varphi^{-1}(\ffq) = \ffp$, we have $\ffp S = \varphi^{-1}(\ffq)S \subseteq \ffq$ by Proposition 1.63(a). So $\ffp \cdot U^{-1}S = \ffp S \cdot U^{-1}S \subseteq \ffq \cdot U^{-1}S$. Hence by prime correspondence for quotients, $\frac{\ffq \cdot U^{-1}S}{\ffp \cdot U^{-1}S} \in \operatorname{Spec}(\frac{U^{-1}S}{\ffp \cdot U^{-1}S})$ such that $\pi^{-1}(\frac{\ffq \cdot U^{-1}S}{\ffp \cdot U^{-1}S}) = \ffq \cdot U^{-1}S$. Thus, $\theta(\frac{\ffq \cdot U^{-1}S}{\ffp U^{-1}S}) = \rho^{-1}(\pi^{-1}(\frac{\ffq \cdot U^{-1}S}{\ffp U^{-1}S})) = \rho^{-1}(\ffq \cdot U^{-1}S) = \ffq$.
+    \qedhere
 \end{proof}
 
 \begin{proposition}
-    If $\varphi:R \to S$ is a ring homomorphism and $(R,\ffm)$ is local, then $\llF(\ffm) \cong S/\ffm S$.
+    If $\varphi:R \to S$ is a ring homomorphism and $(R,\ffm)$ is local, then $\llF(\ffm) \cong \frac{S}{\ffm \cdot S}$.
 \end{proposition}
 
 \begin{proof}
-    $U = R \setminus \ffm \subseteq R^\times$. $U^{-1}(-) \cong -$, e.g., $U^{-1}S/\ffm U^{-1}S \cong S/\ffm S$.
+    Since $(R,\ffm)$ is local, we have $U := R \setminus \ffm = R^\times$ by Proposition 1.22. So $U^{-1}(-) \cong -$, e.g., $\llF(\ffm) = \frac{U^{-1}S}{\ffm \cdot U^{-1}S} \cong \frac{S}{\ffm \cdot S}$.
 \end{proof}
 
 \begin{definition}
@@ -482,19 +580,21 @@
 
 \begin{example}
     \begin{enumerate}
-        \item $\varphi: R \xhookrightarrow \subseteq R[X_1,\cdots,R_d]$
+        \item Let $\varphi: R \xhookrightarrow \subseteq R[X_1,\cdots,R_d]$.
             \begin{enumerate}
-                \item $(R,\ffm)$ is local. $\llF(\ffm) \cong $.
-                \item $\ffp \in \operatorname{Spec}(R)$.
+                \item If $(R,\ffm)$ is local, then $\llF(\ffm) \cong \frac{R[X_1,\cdots,X_d]}{\ffm \cdot R[X_1,\cdots,X_d]} \cong \frac{R}{\ffm}[X_1,\cdots,X_d]$.
+                \item If $\ffp \in \operatorname{Spec}(R)$, then with $U = R \setminus \ffp$, we have $\llF(\ffp) = \frac{U^{-1}(R[X_1,\cdots,X_d])}{\ffp \cdot U^{-1}(R[X_1,\cdots,X_d])} \cong \frac{R_\ffp[X_1,\cdots,X_d]}{\ffp_\ffp[X_1,\cdots,X_d]} \cong Q(R/\ffp)[X_1,\cdots,X_d]$.
             \end{enumerate}
         \item 
+            Let $R \xhookrightarrow{\subseteq} R\llbracket X_1,\cdots,X_d \rrbracket$.
             \begin{enumerate}
-                \item
+                \item If $(R,\ffm)$ is local, then $\llF(\ffm) \cong \frac{R}{\ffm}\llbracket X_1,\cdots,X_d \rrbracket$ similarly.
             \end{enumerate}
         \item
+            Let $k$ be a field and $\varphi: k[X_1,\cdots,X_d] \xhookrightarrow{\subseteq} k\llbracket X_1,\cdots,X_d \rrbracket$.
             \begin{enumerate}
-                \item 
-                \item 
+                \item Let $\ffm = \langle X_1,\cdots,X_d \rangle = k[X_1,\cdots,X_d]$ be maximal. Then $\ffm \cdot k\llbracket X_1,\cdots,X_d \rrbracket = \langle X_1,\cdots,X_d \rangle \leq k\llbracket X_1,\cdots,X_d \rrbracket$. So with $U = k[X_1,\cdots,X_d] \setminus \ffm$, we have $\llF(\ffm) = \frac{U^{-1}(k\llbracket X_1,\cdots,X_d \rrbracket)}{\ffm \cdot U^{-1}(k\llbracket X_1,\cdots,X_d \rrbracket)} \cong \frac{k\llbracket X_1,\cdots,X_d \rrbracket}{\ffm \cdot k\llbracket X_1,\cdots,X_d \rrbracket} \cong \frac{k\llbracket X_1,\cdots,X_d \rrbracket}{\langle X_1,\cdots,X_d \rangle} \cong k$.
+                \item $\llF(0)$ is weired, which has chains of prime ideals of length $d-1$.
             \end{enumerate}
     \end{enumerate}
 \end{example}

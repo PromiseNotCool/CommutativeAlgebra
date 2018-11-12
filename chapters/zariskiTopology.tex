@@ -268,7 +268,7 @@ Let $R$ be a nonzero commutative ring with identity.
 
 \begin{proof}
     \begin{enumerate}
-        \item Let $\ffp \in \operatorname{Spec}(R_f)$. $\ffp \in (\varphi_f^*)^{-1}(\operatorname{V}(\ffa) \cap X_f)$ if and only if $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in \operatorname{V}(\ffa) \cap X_f$ if and only if $\varphi^{-1}(\ffp) \in \operatorname{V}(\ffa)$ if and only if $\ffa \subseteq \varphi^{-1}(\ffp)$ if and only if $\ffa_f = \ffa R_f \subseteq \varphi^{-1}(\ffp)R_f = \ffp$ \footnote[2]{Method 1: Let $\varphi_f^*(\ffp) = \varphi^{-1}(\ffp) =: \ffq \in X_f$. By the proof of Proposition 2.20(a), $\varphi_f^*(\ffq_f) = \ffq$. Also, since $\varphi_f^*$ is 1-1, $\varphi^{-1}(\ffp) R_f = \ffq R_f = \ffq_f = \ffp$. \par Method 2: Claim. $\varphi^{-1}(I)R_f = I$ for any $I \leq R_f$. ``$\subseteq$''. By 1.63(a). ``$\supseteq$''. Let $i \in I$. Then $i = \frac{r}{f^n} \in I$ for some $r \in R$ and $n \geq 0$. So $\varphi(r) = \frac{r}{1} = \frac{f^n}{1} \cdot \frac{r}{f^n} \in I$. Then $r \in \varphi^{-1}(I)$. So $i = \frac{r}{f^n} = \varphi(r) \cdot \frac{1}{f^n} \in \varphi^{-1}(I) R_f$.} if and only if $\ffp \in \operatorname{V}(\ffa_f)$.
+        \item Let $\ffp \in \operatorname{Spec}(R_f)$. $\ffp \in (\varphi_f^*)^{-1}(\operatorname{V}(\ffa) \cap X_f)$ if and only if $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in \operatorname{V}(\ffa) \cap X_f$ if and only if $\varphi^{-1}(\ffp) \in \operatorname{V}(\ffa)$ if and only if $\ffa \subseteq \varphi^{-1}(\ffp)$ if and only if $\ffa_f = \ffa R_f \subseteq \varphi^{-1}(\ffp)R_f = \ffp$\footnote[2]{Method 1: Let $\varphi_f^*(\ffp) = \varphi^{-1}(\ffp) =: \ffq \in X_f$. By the proof of Proposition 2.20(a), $\varphi_f^*(\ffq_f) = \ffq$. Also, since $\varphi_f^*$ is 1-1, $\varphi^{-1}(\ffp) R_f = \ffq R_f = \ffq_f = \ffp$. \par Method 2: Claim. $\varphi^{-1}(I)R_f = I$ for any $I \leq R_f$. ``$\subseteq$''. By 1.63(a). ``$\supseteq$''. Let $i \in I$. Then $i = \frac{r}{f^n} \in I$ for some $r \in R$ and $n \geq 0$. So $\varphi(r) = \frac{r}{1} = \frac{f^n}{1} \cdot \frac{r}{f^n} \in I$. Then $r \in \varphi^{-1}(I)$. So $i = \frac{r}{f^n} = \varphi(r) \cdot \frac{1}{f^n} \in \varphi^{-1}(I) R_f$.} if and only if $\ffp \in \operatorname{V}(\ffa_f)$.
         \item Let $\ffp \in \operatorname{Spec}(R_f)$. $\ffp \in (\varphi_f^*)^{-1}((X \setminus \operatorname{V}(\ffa)) \cap X_f)$ if and only if $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in (X \setminus \operatorname{V}(\ffa)) \cap X_f$ if and only if $\varphi^{-1}(\ffp) \in X \setminus \operatorname{V}(\ffa)$ if and only if $\ffp \in \operatorname{Spec}(R_f) \setminus \operatorname{V}(\ffa_f)$ by the proof of (a).
         \item Method 1. By (a), we have $(\varphi^*_f)^{-1}(X_g \cap X_f) = (\varphi^*_f)^{-1}((X \setminus \operatorname{V}(g)) \cap X_f) = \operatorname{Spec}(R_f) \setminus \operatorname{V}((g)_f) = \{\ffp_f \mid \ffp \in \operatorname{Spec}(R), \ffp_f \not \supseteq (g)_f\} = \{\ffp_f \mid g \not \in \ffp \in \operatorname{Spec}(R)\} = \{\ffp_f \mid \ffp \in X_g\}$. \par 
             Method 2. Let $\ffp \in \operatorname{Spec}(R_f)$. Then $\ffp \in (\varphi_f^*)^{-1}(X_g \cap X_f)$ if and only if $\varphi_f^*(\ffp) \in X_g \cap X_f$ if and only if $\varphi_f^*(\ffp) \in X_g$ if and only if $\ffp \in \{\ffq_f \mid \ffq \in X_g\}$. \qedhere
@@ -409,17 +409,17 @@ Let $X \neq \emptyset$ be a topological space.
 \begin{lemma}
     The followings are equivalent.
     \begin{enumerate}
-        \item $X$ is irreducible.
-        \item For $V_1,V_2 \subsetneq X$ closed, $V_1 \cup U_2 \subsetneq X$.
-        \item For $\emptyset \neq U \subseteq X$ open, $\overbar U = X$. \par 
+        \item[(i)] $X$ is irreducible.
+        \item[(ii)] For $V_1,V_2 \subsetneq X$ closed, $V_1 \cup U_2 \subsetneq X$.
+        \item[(iii)] For $\emptyset \neq U \subseteq X$ open, $\overbar U = X$. \par 
             ``Non-empty open sets are dense''.
     \end{enumerate}
 \end{lemma}
 
 \begin{proof}
-    ``(a)$\Leftrightarrow$(b)''. By Definition 2.33. \par 
-    ``(b)$\Rightarrow$(c)''. Assume (b). Let $\emptyset \neq U \subseteq X$ be open. Suppose $V_1 := \overbar U \neq X$. Let $V_2 := X \setminus U$. Then $V_1,V_2 \subseteq X$ are closed. So $X = U \cup (X \setminus U) \subseteq \overbar U \cup (X \setminus U) = V_1 \cup V_2 \subsetneq X$ by assumption, a contradiction. \par 
-    ``(c)$\Rightarrow$(a)''. By contrapositive. Assume $X$ is reducible. Then there exist $\emptyset \neq U_1,U_2 \subseteq X$ open such that $U_1 \cap U_2 = \emptyset$. So $U_1 \subseteq X \setminus U_2 \subsetneq X$. Also, since $X \setminus U_2$ is closed, $\overbar U_1 \subseteq X \setminus U_2 \subsetneq X$
+    ``(i)$\Leftrightarrow$(ii)''. By Definition 2.33. \par 
+    ``(ii)$\Rightarrow$(iii)''. Assume (b). Let $\emptyset \neq U \subseteq X$ be open. Suppose $V_1 := \overbar U \neq X$. Let $V_2 := X \setminus U$. Then $V_1,V_2 \subseteq X$ are closed. So $X = U \cup (X \setminus U) \subseteq \overbar U \cup (X \setminus U) = V_1 \cup V_2 \subsetneq X$ by assumption, a contradiction. \par 
+    ``(iii)$\Rightarrow$(i)''. By contrapositive. Assume $X$ is reducible. Then there exist $\emptyset \neq U_1,U_2 \subseteq X$ open such that $U_1 \cap U_2 = \emptyset$. So $U_1 \subseteq X \setminus U_2 \subsetneq X$. Also, since $X \setminus U_2$ is closed, $\overbar U_1 \subseteq X \setminus U_2 \subsetneq X$
 \end{proof}
 
 \begin{customdefinition}{\ref{defOfIrreducibilityInTopologicalSpace}++}
