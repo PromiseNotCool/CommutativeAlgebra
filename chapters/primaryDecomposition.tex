@@ -225,3 +225,110 @@
         \right..
     \]
 \end{proposition}
+
+Last time 4.30: If $\ffa \leq R$, has a minal primary decomposition $\ffa = \bigcap_{i=1}^{n}\ffq_i$ such that $\ffp_i = \operatorname{rad}(\ffq_i) \in \operatorname{Spec}(R)$, then $\{\ffp_1,\cdots,\ffp_n\} = \operatorname{Spec}(R) \cap \{\operatorname{rad}(\ffa:x) \mid x \in R\}$, i.e., independent of the decomposition. 
+
+\begin{theorem}
+    If $R$ is noetherian and $\ffa \lneq R$ with minimal primary decomposition $\ffa = \bigcap_{i=1}^{n} \ffq_i$ with $\ffp_i = \operatorname{rad}(\ffq_i)$ for $i = 1,\cdots,n$, then $\{\ffp_1,\cdots,\ffp_n\} = \operatorname{Spec}(R) \cap \{(\ffa:x) \mid x \in R\} = \operatorname{Spec}(R) \cap \{\operatorname{Ann}_R(\overbar{x}) \mid \overbar{x} \in R/\ffa\} =: \operatorname{Ass}(R/\ffa)$.
+\end{theorem}
+
+\begin{proof}
+    First equality: ``$\supseteq$''. Let $\ffp \in \operatorname{Spec}(R)$ such that $\ffp = (\ffa:x)$ for some $x \in R$. Since $\ffp \in \operatorname{Spec}(R)$, $\ffp = \operatorname{rad}(\ffp) = \operatorname{rad}(\ffa:x)$. By 4.30, $\ffp = \ffp_i$ for some $i \in \{1,\cdots,n\}$. ``$\subseteq$''. Need to show there exists $x \in R$ such that $\ffp_i = (\ffa:x)$ for all $i=1,\cdots,n$. Minimality of decomposition $\ffa$ implies $\bigcap_{j=1, j \neq i}^{n} \ffq_j \supseteq \ffa$. So there exists $x \in (\bigcap_{j=1,j \neq i}^{n} \ffq_j) \setminus \ffa$. For $x \in (\bigcap_{j=1,j \neq i}^{n}\ffq_j) \setminus \ffa$, by proof of 4.30, $\operatorname{rad}(\ffa:x) = \ffp_i$. Since $R$ is noetherian, $\ffp_i$ is finitely generated and $\operatorname{rad}(\ffq_i) = \ffp_i$, there exists $m \geq 1$ such that $\ffp_i^{m} \subseteq \ffq$....  \par  
+\end{proof}
+
+\begin{example}
+    If $R$ is not noetherian, then $\ffa \lneq R$ may not have a primary decomposition. Let $R = \llC([0,1]) = \{\text{continuous functions }f: [0,1] \to \bbR\}$ with pointwise operations. Claim: $0 \leq R$ does not have a primary decomposition.
+    \begin{enumerate}
+        \item For $a \in [0,1]$, define $\Phi_a: R \to R$ by $\Phi_a(f) = f(a)$. Then $\Phi_a$ is a well-defined ring epimorphism. So $\bbR \cong \frac{R}{\ker(\Phi_a)}$. So $\{f \in R \mid f(a) = 0\} = \ker(\Phi_a) \in \operatorname{m-Spec}(R) \subseteq \operatorname{Spec}(R)$.
+        \item $0 \not \in \operatorname{Spec}(R)$. For $a \in (0,1)$, $g_a,h_a \in R$ and $g_ah_a = 0$ but $g_a,h_a \neq 0$.
+        \item $\operatorname{Nil}(R) = 0$. Proof. Let $f \in \operatorname{Nil}(R)$. So $f^{m} = 0$ for some $m \geq 1$. Then $(f(a))^{m} = 0$ with $f(a) \in \bbR$ for all $a \in [0,1]$. So $f(a) = 0$ for all $a \in [0,1]$. Hence $f= 0$.
+        \item 
+        \item
+            ....Now suppose $0 = \bigcap_{i=1}^{n}\ffq_i$ is a primary decomposition. Assume without loss of generality that the decomposition is minimal. For $i \in \{1,\cdots,n\}$, there exists $f \in R$ such that $\operatorname{Spec}(R) \not \ni (\ffa:f) = \operatorname{rad}(0:f) = \operatorname{rad}(\ffq_i) \in \operatorname{Spec}(R)$, a contradiction. 
+        \item Note $0 = \bigcap_{a \in [0,1]} \ker(\Phi_n) = \bigcap_{a \in [0,1]} \smallunderbrace{\{f \in R \mid f(a) = 0\}}_{\in \operatorname{Spec}(R)} = \bigcap_{a \in [0,1] \cap \bbQ} \ker(\Phi_a)$ cannot be pround to a minimal decomposition.
+    \end{enumerate}
+\end{example}
+
+\begin{proposition}
+    If $\ffa \lneq R$ with minimal primary decomposition $\ffa = \bigcap_{i=1}^{n} \ffq_i$ such that $\ffp_i = \operatorname{rad}(\ffq_i)$ for $i = 1,\cdots,n$, then $D = \{x \in R \mid (\ffa:x) \neq \ffa\} = \bigcap_{i=1}^{n} \ffp_i = \bigcup_{\ffp \in \operatorname{Min}(\ffa)} \ffp$.
+\end{proposition}
+
+\begin{proof}
+    Claim $D = \bigcup_{y \not\in \ffa} \operatorname{rad}(\ffa:y)$. ``$\subseteq$''. ``$\supseteq$''.
+\end{proof}
+
+\begin{corollary}
+    If $0 \lneq R$ has a mimimal primary decomposition $0 = \bigcap_{i=1}^{n} \ffq_i$ such that $\ffp_i = \operatorname{rad}(\ffq_i)$ for $i = 1,\cdots,n$, then $\operatorname{ZD}(R) = \bigcup_{i=1}^{n} \ffp_i = \bigcup_{\ffp \in \operatorname{Ass}_R(0)}\ffp$.
+\end{corollary}
+
+summary:
+
+\begin{example}
+    Let $R = \frac{k[X,Y]}{\langle X^{2},XY \rangle} = \frac{k[X,Y]}{\langle X \rangle \cap \langle X^{2},Y \rangle}$.
+\end{example}
+
+\begin{proposition}
+    Let $\ffa \lneq R_1$ with minimal primary decomposition. $\ffa = \bigcap_{i=1}^{n} \ffq_i$ with $\ffp_i = \operatorname{rad}(\ffq_i)$ for $i = 1,\cdot,n$. Then $\operatorname{Min}(\ffq) = \operatorname{Min}\{\ffp_1,\cdots,\ffp_n\} = \operatorname{Min}(\operatorname{V}(\ffa)) = \operatorname{Min}\{\ffp \supseteq \ffa)\}$. 
+\end{proposition}
+
+\begin{proof}
+    4.28, $\operatorname{V}(\ffa) = \bigcup_{i=1}^{n} \operatorname{V}(\ffp_i)$. $\ffp_i \in \operatorname{Min}(R)$.
+\end{proof}
+
+\begin{lemma}
+    Let $U \subseteq R$ be multiplicatively closed and $\ffq \subseteq R$ be $\ffp$-primary. Let $\psi: R \to U^{-1}R$ be the natural ring homomorphism.
+    \begin{enumerate}
+        \item If $U \cap \ffp \neq \emptyset$, then $U^{-1}\ffq = U^{-1}R$.
+        \item If $U \cap \ffp = \emptyset$, then $U^{-1}\ffq \lneq U^{-1}R$ is $U^{-1}\ffp$-primary and $\psi^{-1}(U^{-1}\ffq) = \ffq$.
+    \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+    \begin{enumerate}
+        \item 
+        \item  \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}[Second uniqueness theorem]
+    Let $\ffa \lneq R$ be minimal primary decomposition $\ffa = \bigcap_{i=1}^{n} \ffq_i$ with $\ffp_i = \operatorname{rad}(\ffq_i)$ for $i = 1,\cdots,n$. 
+    \begin{enumerate}
+        \item For $\ffp_i \in \operatorname{Min}(\ffq)$: $\ffq_i = \psi^{-1}(\ffa_{\ffp_i})$, where $\psi: R \to R_{\ffp_i}$ and $U = R \setminus \ffp_i$. So $\ffq_i$ is independent of choice of minimal decomposition.
+        \item If $\Lambda = \langle \ffp_{i_1},\cdots,\ffp_{i_m} \rangle$ is an ``isolated'' subset of $\operatorname{Ass}(R) = \{\ffp_1,\cdots,\ffp_n\}$, then $\bigcap_{j=1}^{m} \ffq_{i_j} = \psi^{-1}(U^{-1}\ffa)$, where $\psi: R \to U^{-1}R$ and $U = R \setminus \{\ffp_{i_1},\cdots,\ffp_{i_n}\}$. So $\bigcap_{j=1}^{m}\ffq_{i_j}$ is independent of choice of minimal decomposition.
+    \end{enumerate}
+\end{theorem}
+
+
+\begin{proof}
+    \begin{enumerate}
+        \item 
+        \item \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{discussion}
+    If $\ffm \in \operatorname{m-Spec}(R)$, then $\ffm^{n}$ is $\ffm$-primary for $n \geq 1$ by 4.11. If $\ffp = \langle X_{i_1}, \cdots, X_{i_m} \rangle \lneq k[X_1,\cdots,X_d]$, then $\ffp^{n}$ is $\ffp$-primary for $n \geq 1$.
+    \begin{proof}
+    \end{proof}
+\end{discussion}
+
+\begin{definition}
+Let $\ffp \in \operatorname{Spec}(R)$ and $\psi: R \to R_\ffp$. Then for $n \geq 1$, the $n^{th}$ symbolic power of $\ffp$ is $\ffp^{n} = \psi^{-1}((\ffp^{n})_\ffp) = \psi^{-1}\left( \ffp_\ffp \right)^{n})$. 
+\end{definition}
+
+\begin{notation}
+    $\ffp^{n} \subseteq \ffp^{(n)}$ because by 1.63(a), $\ffp^{n} \subseteq \psi^{-1}((\ffp^{n})_\ffp) = \ffp^{(n)}$.
+\end{notation}
+
+\begin{example}
+    \begin{enumerate}
+        \item 
+            Let $\ffm \in \operatorname{m-Spec}(R)$ and $\psi: R \to R_\ffm$. By 4.37(b), $\ffm^{n} = \psi^{-1}((\ffm^{n})_\ffm) = \ffm^{(n)}$. since $\ffm^{n}$ is $\ffm$-primary and $\ffm \cap (R \setminus \ffp) = \emptyset$.
+        \item Let $k$ be a field and $\ffp = \langle X_{i_1}, \cdots, X_{i_m} \rangle \lneq k[X_1,\cdots,X_d]$. Then $\ffp^{(n)} = \ffp^{n}$ for $n \geq 1$ (same proof as in (a) since $\ffp^{n}$ is $\ffp$-primary).
+        \item Let $R = \frac{k[X,Y,Z]}{\langle XY-Z^{2} \rangle}$ and $\ffp = \langle \overbar{X}, \overbar{Z} \rangle$. $\ffp^{2} = \langle \overbar{X} \rangle \supsetneq \langle \overbar{X}^{2}, \overbar{X}\overbar{Z},\overbar{X} \overbar{Y} \rangle = \langle \overbar{X}^{2}, \overbar{X} \overbar{Z}, \overbar{Z}^{2} \rangle = \ffp^{2}$...
+    \end{enumerate}
+\end{example}
+
+\begin{proposition}
+    If $\ffp \in \operatorname{Spec}(R)$, then $\ffp^{(n)}$ is the ``$\ffp$-primary'' component of $\ffp^{n}$.
+\end{proposition}
