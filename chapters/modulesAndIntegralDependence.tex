@@ -1,0 +1,106 @@
+\chapter{Modules and Integral Dependence}
+
+\section{Modules}
+
+Let $R$ be a commutative ring with identity.
+
+\begin{definition}
+    An \emph{$R$-module} is an additive abelian group $M$ equipped with a scalar multiplication $R \times M \to M$ denoted $(r,m) \to rm$ that is unital, associative and distributive.
+    \begin{itemize}
+        \item $1m = m$ for all $m \in M$.
+        \item $s(rm) = (sr)m$ for all $r,s \in R$ and $m \in M$.
+        \item $(r+s)m = rm + sm$ for all $r,s \in R$ and $m \in M$.
+        \item $r(m+n) = rm + rn$ for all $r \in R$ and $m,n \in M$.
+    \end{itemize}
+    \quad (closure) For all $r \in R$ and $m \in M$: $rm \in M$.
+\end{definition}
+
+\begin{example}
+\end{example}
+
+\begin{definition}
+    Let $M$ be an $R$-module. Then a \emph{submodule} of $M$ is a subset $N \subseteq M$ such that $N$ is an $R$-module using the operations from $M$.
+\end{definition}
+
+\noindent Let $M$ be an $R$-module.
+
+\begin{example}
+    \begin{enumerate}
+        \item If $I \leq R$, then $I$ is a submodule of $R$.
+        \item In $R = \bbZ$, submodule = subgroup.
+        \item submodule test. $0 \neq N \subseteq M$ is a submodule of $M$ if and only if 
+        \item $M_\lambda \subseteq M$ is a submodule for $\lambda \in \Lambda$, then $\bigcap_{\lambda \in \Lambda}$ is a submodule of $M$.
+    \end{enumerate}
+\end{example}
+
+\begin{fact}
+    \begin{enumerate}
+        \item Let $Y \subseteq M$. Then $\langle Y \rangle = \{\sum_{y \in Y}^{\text{finite}} r_yy \mid r_y \in R\} = \sum_{y \in Y} \langle y \rangle$.
+        \item 
+        \item 
+    \end{enumerate}
+\end{fact}
+
+\begin{example}
+    Submodules of finitely generated $R$-modules may not be finitely generated. For example, $R := k[X_1,X_2,\cdots] = \langle 1 \rangle$ is a finitely generated $R$-module, but $\ffm = \langle X_1,\cdots,X_n \rangle \subseteq R$ is not finitely generated.
+\end{example}
+
+\section{Integral Dependence}
+
+\begin{definition}
+    Let $R \subseteq S$ be subring. An element $s \in S$ is \emph{integral} over $R$ if it satisfies a monic polynomial in $R[x]$, i.e., there exists $r_0,\cdots,r_n \in R$ such that $r_ns^{n} + r_{n-1}s^{n-1} + \cdots + r_0$.
+\end{definition}
+
+\begin{example}
+    \begin{enumerate}
+        \item Let $k \subseteq K$ be a field extension. Then $K$ is integral over $k$ if and only if $K$ is algebraic over $k$.
+        \item
+        \item 
+        \item 
+    \end{enumerate}
+\end{example}
+
+\begin{proof}
+\end{proof}
+
+\begin{definition}
+    Let $R \subseteq S$ be a subring. An \emph{intermediate subring} is a subring $T \subseteq S$ such that $R \subseteq T$. Notice
+\end{definition}
+
+\begin{fact}
+    Let $R \subseteq S$ be a subring and $y_1,\cdots,y_n \in S$.
+    \begin{enumerate}
+        \item $R[y_1,\cdots,y_n] = \{f(y_1,\cdots,y_n) \in S \mid f(y_1,\cdots,y_n) \in R[Y_1,\cdots,Y_n]\}$.
+        \item $\psi: R[Y_1,\cdots,Y_n] \to S$ given by $\psi((f(Y_1,\cdots,Y_n))) = f(y_1,\cdots,y_n)$ is a well-defined ring homomorphism, $\im(\psi) = R[y_1,\cdots,y_n]$ and $R[y_1,\cdots,y_n] \cong R[Y_1,\cdots,Y_n]/\ker(\psi)$.
+        \item For all subrings $T \subseteq S$, $R[y_1,\cdots,y_n] \subseteq T$ if and only if $R \subseteq T$ and $y_1,\cdots,y_n \in T$.
+    \end{enumerate}
+\end{fact}
+
+\begin{example}
+\end{example}
+
+\begin{proposition}
+    Let $R \subseteq S$. Then the followings are equivalent. 
+    \begin{enumerate}
+        \item[(i)] $s$ is integral over $R$.
+        \item[(ii)] $R \subseteq R[s] \subseteq S$.
+        \item[(iii)] There exists an intermediate subring as an $R$-module.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    ``(i)$\Rightarrow$(ii)''. \par 
+    ``(ii)$\Rightarrow$(iii)''. \par 
+    ``(iii)$\Rightarrow$(i)''. 
+\end{proof}
+
+\begin{theorem}
+    Let $R \subseteq S$ be a ring. Let $s_1,\cdots,s_n \in S$ be integral over $R$. Then $R[s_1,\cdots,s_n]$ is finitely generated as $R$-module.
+\end{theorem}
+
+\begin{proof}
+    Prove by induction. Since $s_1 \in S$ is integral over $R$, $R[s_1]$ is a finitely generated $R$-module. $n = 2$.
+    Since $happy$.
+\end{proof}
+
+

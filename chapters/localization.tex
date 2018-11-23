@@ -605,13 +605,13 @@ Let R be a commutative ring with identity but not a field.
     \end{enumerate}
     Moreover, the map $\theta: \operatorname{Spec}(\llF(\ffp)) \to (\varphi^*)^{-1}(\ffp) \subseteq \operatorname{Spec}(S)$ given by $\theta(Q) = \rho^{-1}(\pi^{-1}(Q))$ is a well-defined bijection, where $(\varphi^{*})^{-1}(\ffp)$ is the fibre over $\ffp$ w.r.t. $\varphi^{*}: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$.
     \begin{center}
-        \begin{tikzpicture}[node distance=2cm,auto]
+        \begin{tikzpicture}[node distance=1.6cm,auto]
             \node (R) {$R$}; 
             \node[right of=R] (S) {$S$}; 
-            \node[below of=R,node distance=1.8cm] (UR) {$U^{-1}R$}; 
-            \node[below of=S,node distance=1.8cm] (US) {$U^{-1}S$}; 
-            \node[below of=UR,node distance=1.8cm] (URpUR) {$\frac{U^{-1}R}{\ffp \cdot U^{-1}R}$}; 
-            \node[below of=US,node distance=1.8cm] (USpUS) {$\frac{U^{-1}S}{\ffp \cdot U^{-1}S}$}; 
+            \node[below of=R,node distance=1.3cm] (UR) {$U^{-1}R$}; 
+            \node[below of=S,node distance=1.3cm] (US) {$U^{-1}S$}; 
+            \node[below of=UR,node distance=1.3cm] (URpUR) {$\frac{U^{-1}R}{\ffp \cdot U^{-1}R}$}; 
+            \node[below of=US,node distance=1.3cm] (USpUS) {$\frac{U^{-1}S}{\ffp \cdot U^{-1}S}$}; 
             \draw[->] (R) to node {$\varphi$} (S);
             \draw[->] (R) to node {$\psi$} (UR);
             \draw[->] (S) to node {$\rho$} (US);

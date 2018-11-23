@@ -135,26 +135,26 @@ Let $R$ be a nonzero commutative ring with identity.
     What do the $X_f$ look like? Answer: $\operatorname{Spec}(R)$.
 \end{question*}
 
-\begin{remark}[Construction: Classical algebraic geometry]
-    Geometry: Let $k$ be a field, usually $k = \bbR$ or $\bbC$. \emph{$d$-dimensional affine space:} $\bbA^d_k = \bbA^d = k^d$. \par 
+\begin{construction*}[Classical algebraic geometry]
+    Geometry: Let $k$ be a field, usually $k = \bbR$ or $\bbC$. Define \emph{$d$-dimensional affine space:} $\bbA^d_k = \bbA^d = k^d$. \par 
     Let $\underline a = (a_1,\cdots,a_d) \in \bbA^d$ and $S \subseteq k[\underline X] = k[X_1,\cdots,X_d]$. Define
-    \[\operatorname{V}(S) := \{\underline a \in \bbA^d \mid f(\underline a) = 0,\fa f \in S\} =: \text{``zero locus of $S$''} \subseteq \bbA^d,\] 
+    \[\operatorname{V}(S) := \{\underline a \in \bbA^d \mid f(\underline a) = 0,\fa f \in S\} =: \text{``zero locus of $S$''} \subseteq \bbA^d.\] 
     e.g., $\operatorname{V}(X^2+Y^2+Z^2-1) = \text{``unit sphere''} \subseteq \bbA^3_\bbR = \bbR^3$. \par 
     Zariski topology on $\bbA^d$. Closed sets: $\operatorname{V}(S) = \operatorname{V}(\langle S \rangle) \subseteq \bbA^d$ with $S \subseteq k[\underline X]$. Open sets: $\bbA^d \setminus \operatorname{V}(S)$ with $S \subseteq k[\underline X]$. Basic open sets: $\bbA^d \setminus \operatorname{V}(f)$ with $f \in k[\underline X]$. \par 
     Let $T \subseteq k[\underline X]$ be fixed. Zariski topology on $\operatorname{V}(T)$. Closed sets: $\operatorname{V}(S) \cap \operatorname{V}(T)$ with $S \subseteq k[\underline X]$. Open sets: $(\smallunderbrace{\bbA^d \setminus \operatorname{V}(S)}_{\text{open in $\bbA^d$}}) \cap \operatorname{V}(T)$ with $S \subseteq k[\underline X]$.  Basic open sets: $(\bbA^d \setminus \operatorname{V}(f)) \cap \operatorname{V}(T)$ with $f \in k[\underline X]$. \par 
     We have 
     \begin{align*}
         \varphi: \bbA^d &\hookrightarrow \operatorname{m-Spec}(k[\underline X]) \subseteq \operatorname{Spec}(k[\underline X]) \\
-        \underline a &\mapsto (X_1-a_1,\cdots,X_d-a_d) = \ker(\operatorname{eval}_{\underline a}), 
+        \underline a &\mapsto (X_1-a_1,\cdots,X_d-a_d) = \ker(\Phi_{\underline a}), 
     \end{align*}
-    where $\operatorname{eval}_{\underline a}: k[\underline X] \twoheadrightarrow k$ is given by $f \mapsto f(\underline a)$. \par 
-    Hilbert's Nullstellensatz: If $k = \overline k$, then the zero locus $\operatorname{V}(\ffb) \neq \emptyset$ for any $\ffb \lneq k[\underline X]$. Let $\ffm \in \operatorname{m-Spec}(k[\underline X])$. Then the zero locus $\operatorname{V}(\ffm) \neq \emptyset$ and so there exists $\underline a \in \operatorname{V}(\ffm)$ such that $f(\underline a) = 0$ for all $f \in \ffm \subseteq k[\underline X]$. Hence $\ffm \subseteq \ker(\operatorname{eval}_{\underline a}) = (X_1-a_1,\cdots,X_d-a_d) \lneq k[\underline X]$. Also, since $\ffm \leq k[\underline X]$ is maximal, $\ffm = (X_1-a_1,\cdots,X_d-a_d) = \varphi(\underline a)$. So $\varphi$ is onto. Thus, $\varphi: \bbA^d \xrightarrow \cong \operatorname{m-Spec}(k[\underline X])$. \par 
+    where $\Phi_{\underline a}: k[\underline X] \twoheadrightarrow k$ is given by $f \mapsto f(\underline a)$. \par 
+    Hilbert's Nullstellensatz: If $k = \overline k$, then $\operatorname{V}(\ffb) \neq \emptyset$ for any $\ffb \lneq k[\underline X]$. Let $\ffm \in \operatorname{m-Spec}(k[\underline X])$. Then $\operatorname{V}(\ffm) \neq \emptyset$ and so there exists $\underline a \in \operatorname{V}(\ffm)$ such that $f(\underline a) = 0$ for all $f \in \ffm \subseteq k[\underline X]$. Hence $\ffm \subseteq \ker(\Phi_{\underline a}) = (X_1-a_1,\cdots,X_d-a_d) \lneq k[\underline X]$. Also, since $\ffm \leq k[\underline X]$ is maximal, $\ffm = (X_1-a_1,\cdots,X_d-a_d) = \varphi(\underline a)$. So $\varphi$ is onto. Thus, $\varphi: \bbA^d \xrightarrow \cong \operatorname{m-Spec}(k[\underline X])$. \par 
     Grothendieck: there exists more geometric data in $\operatorname{Spec}(k[\underline X])$. \par 
     Let $V = \operatorname{V}(T) = \operatorname{V}(\ffb)$, where $\ffb = \langle T \rangle \leq k[\underline X]$. Then
     \[\operatorname{rad}(\ffb) \leq \operatorname{I}(V) := \{f \in k[\underline X] \mid f(\underline a) = 0,\fa \underline a \in V\} = \text{``vanishing ideal of $V$''} \leq k[\underline X].\]
-    \par Hilbert's Nullstellensatz: If $k = \overline k$, then 
+    \par Hilbert's Nullstellensatz: If $k = \overline k$, then since $\underline a \in \operatorname{V}(\ffb)$ if and only if $\operatorname{I}(\underline a) \supseteq \operatorname{I}(\operatorname{V}(\ffb)) = \operatorname{rad}(\ffb) \supseteq \ffb$,
     \begin{align*}
-        \operatorname{rad}(\ffb) &= \operatorname{I}(V) = \operatorname{I}(\operatorname{V}(\ffb)) = \operatorname{I}\Biggl(\bigcup_{\underline a \in \operatorname{V}(\ffb)} \underline a \Biggr) = \bigcap_{\underline a \in \operatorname{V}(\ffb)} \operatorname{I}(\underline a) = \bigcap_{\underline a \in \operatorname{V}(\ffb)} \ker(\operatorname{eval}_{\underline a}) \\
+        \operatorname{rad}(\ffb) &= \operatorname{I}(V) = \operatorname{I}(\operatorname{V}(\ffb)) = \operatorname{I}\Biggl(\bigcup_{\underline a \in \operatorname{V}(\ffb)} \underline a \Biggr) = \bigcap_{\underline a \in \operatorname{V}(\ffb)} \operatorname{I}(\underline a) = \bigcap_{\underline a \in \operatorname{V}(\ffb)} \ker(\Phi_{\underline a}) \\
         &= \bigcap_{\underline a \in \operatorname{V}(\ffb)} (X_1-a_1,\cdots,X_d-a_d) = \bigcap_{\ffb \subseteq \ffm \in \operatorname{m-Spec}(k[\underline X])} \ffm.
     \end{align*}
     \emph{Coordinate ring of $V$}: $\Gamma(V) = k[\underline X]/\operatorname{I}(V)$, also known as \emph{ring of regular functions on $V$}. \par 
@@ -164,15 +164,15 @@ Let $R$ be a nonzero commutative ring with identity.
         \overbar f &\mapsto f
     \end{align*}
     Let $\overbar f = \overbar g \in \Gamma(V)$. Then $f-g \in \operatorname{I}(V)$. So for all $\underline a \in V$, we have $f(\underline a)-g(\underline a) = (f-g)(\underline a) = 0$, i.e., $f(\underline a) = g(\underline a)$. Hence $\phi$ is well-defined. It is straightforward to show $\phi$ is a ring monomorphism. Define $k[V]$ to be the set of \emph{restrictions} of at least one polynomial $f|_V: V \to k$, where $f \in k[\underline X]$. Note $\im(\phi) = k[V]$. So $\Gamma(V) \cong k[V]$. Thus, it is very common to write $k[V] = \Gamma(V)$. In actuality, people often write $f$ when they mean $\overbar f$ if there is no ambiguity. \par 
-    Let $x: = \overbar{X}$. For $i = 1,\cdots,d$, let $x_i := \overbar X_i \in \Gamma(V)$ and $x_i(\underline a) = \underline a_i$ be the $i^{\text{th}}$ \emph{coordinate function}. Note $\overbar{f(X_1,\cdots,X_n)} = f(x_1,\cdots,x_n)$ for $f \in k[\underline X]$. So $x_i$'s generate $\Gamma(V)$ as a $k$-algebra, i.e., every element of $\Gamma(V)$ can be written as a polynomial in the $x_i$'s with coefficients from $k$. Hence we denote $k[V]=k[\underline x] = k[x_1,\cdots,x_d]$. Unlike in $k[\underline X]$, there may be nontrivial relations between the $x_i$'s in $k[\underline x]$. For example, in $\bbQ[x] = \bbQ[X]/\langle X^2-2 \rangle$, we have $0 = \overbar {X^2-2} = x^{2} - 2$ in $\bbQ[x]$, i.e., $x^{2} = 2$ in $\bbQ[\underline x]$. \par 
+    Let $x: = \overbar{X} \in \Gamma(V)$. For $i = 1,\cdots,d$, let $x_i := \overbar X_i \in \Gamma(V)$ be the $i^{\text{th}}$ \emph{coordinate function} with $x_i(\underline a) = \underline a_i$. Note $\overbar{f(X_1,\cdots,X_n)} = f(x_1,\cdots,x_n)$ for $f \in k[\underline X]$. So $x_i$'s generate $\Gamma(V)$ as a $k$-algebra, i.e., every element of $\Gamma(V)$ can be written as a polynomial in the $x_i$'s with coefficients from $k$. Hence we denote $k[V]=k[\underline x] = k[x_1,\cdots,x_d]$. Unlike in $k[\underline X]$, there may be nontrivial relations between the $x_i$'s in $k[\underline x]$. For example, in $\bbQ[x] = \bbQ[X]/\langle X^2-2 \rangle$, we have $0 = \overbar {X^2-2} = x^{2} - 2$ in $\bbQ[x]$, i.e., $x^{2} = 2$ in $\bbQ[\underline x]$. \par 
     We have 
     \begin{align*}
         \overbar \varphi: V &\hookrightarrow \operatorname{m-Spec}(k[V]) \subseteq \operatorname{Spec}(k[V]) \\
-        \underline a &\mapsto \frac{(X_1-a_1,\cdots,X_d-a_d)}{\operatorname{I}(V)} = (\overbar X_1-a_1,\cdots, \overbar X_d - a_d). 
+        \underline a &\mapsto \frac{(X_1-a_1,\cdots,X_d-a_d)}{\operatorname{I}(V)} = (x_1 - a_1,\cdots, x_d - a_d). 
     \end{align*}
-    \par Hilbert's Nullstellensatz: If $k = \overbar k$, then $\overbar \varphi$ is onto, similarly. \par 
+    \par Hilbert's Nullstellensatz: If $k = \overbar k$, then similarly, $\overbar \varphi$ is onto. \par 
     Grothenick: there exists more geometric data in $\operatorname{Spec}(k[V])$. 
-\end{remark}
+\end{construction*}
 
 \noindent Set up: $R \ni f$, $X = \operatorname{Spec}(R) \supseteq X_f = X \setminus \operatorname{V}(f) = \{\ffp \in \operatorname{Spec}(R) \mid f \not \in \ffp\}$.
 
