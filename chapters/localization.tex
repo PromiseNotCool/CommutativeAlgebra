@@ -48,7 +48,7 @@ Let R be a commutative ring with identity but not a field.
             R \rar["\psi"] \drar["\varphi"'] & U^{-1}R \dar[dashed,"\ex !\ \Phi"] \\
             & S
         \end{tikzcd}
-        \ \ \ \ \ \ 
+        \ \ \ \ \ \ \ \ \ \ \ \
         \begin{tikzcd}
             R \rar["\psi"] \drar["\varphi"'] & U^{-1}R \dar["\Lambda"] \\
             & S
@@ -67,66 +67,23 @@ Let R be a commutative ring with identity but not a field.
         \item $\varphi(U) \subseteq S$ is multiplicatively closed and $\varphi(U)^{-1}S =: U^{-1}S$.
         \item There is a ring homomorphism: $U^{-1}\varphi: U^{-1}R \to U^{-1}S$ given by $U^{-1}\varphi(r/u) = \varphi(r)/\varphi(u)$.
             \begin{center}
-                \begin{tikzpicture}[node distance = 1.5cm, auto]
-                    \node (R) {$R$};
-                    \node (UR)[right of=R] {$U^{-1}R$};
-                    \node (S)[below of=R] {$S$};
-                    \node (US)[below of=UR] {$U^{-1}S$};
-                    \node (r)[node distance=0.8cm, left of=R, above of=R] {$r$};
-                    \node (ur)[node distance=0.8cm, right of=UR, above of=UR] {$\frac{r}{1}$};
-                    \node (s)[node distance=0.8cm, left of=S, below of=S] {$\varphi(r)$};
-                    \node (us)[node distance=0.8cm, right of=US, below of=US] {$\frac{\varphi(r)}{1} = \frac{\varphi(r)}{\varphi(1)}$};
-                    \draw[->] (R) to node {$\psi$} (UR);
-                    \draw[->] (R) to node [swap]{$\varphi$} (S);
-                    \draw[->] (UR) to node [swap] {$U^{-1}\varphi$} (US);
-                    \draw[->] (S) to node [swap]{$\rho$} (US);
-                    \draw[|->] (r) to node {} (ur);
-                    \draw[|->] (r) to node {} (s);
-                    \draw[|->] (s) to node {} (us);
-                    \draw[|->] (ur) to node {} (us);
-                \end{tikzpicture}
+                \begin{tikzcd}
+                    R \ar[rrr,"\psi"] \ar[ddd,swap,"\varphi"] &[-25pt] & &[-32pt] U^{-1}R \ar[ddd,"U^{-1}\varphi"] \\ [-15pt]
+                    & r \ar[r,mapsto] \ar[d,mapsto] & \frac{r}{1} \ar[d,mapsto] \\
+                    &\varphi(r) \ar[r,mapsto] & \frac{\varphi(r)}{1} \\ [-20pt]
+                    S \ar[rrr,swap,"\rho"] & & & U^{-1}S
+                \end{tikzcd}
             \end{center}
         \item If $\varphi$ is onto, $U^{-1}\varphi$ is onto.
         \item If $\varphi$ is 1-1, $U^{-1}\varphi$ is 1-1.
         \item If $\alpha: S \to T$ is a ring homomorphism, then $U^{-1}(\alpha \circ \varphi) = (\varphi(U)^{-1}\alpha) \circ (U^{-1}\varphi)$. 
-        \begin{center}
-            \begin{tikzpicture}[node distance = 1.5cm, auto]
-                \node (S) {$S$};
-                \node (US)[node distance=3cm, right of=S] {$U^{-1}S$};
-                \node (R)[above of=S, left of=S] {$R$};
-                \node (T)[below of=S, left of=S] {$T$};
-                \node (UR)[above of=S, right of=S] {$U^{-1}R$};
-                \node (UT)[below of=S, right of=S] {$\varphi(U)^{-1}T$};
-
-                \node [node distance=2cm, right of=UT] {$:=\alpha (\varphi(U))^{-1}T$};
-                \node [node distance=1.45cm, right of=US] {$:=\varphi(U)^{-1}S$};
-                \draw[->] (R) to node {$\varphi$} (S);
-                \draw[->] (R) to node [swap]{$\alpha \circ \varphi$} (T);
-                \draw[->] (S) to node {$\alpha$} (T);
-                \draw[->] (R) to node {$\psi$} (UR);
-                \draw[->] (T) to node {} (UT);
-                \draw[->] (UR) to node {$U^{-1}\varphi$} (US);
-                \draw[->] (US) to node {} (UT);
-                \node (zzz)[node distance=0.8cm, below of=US] {$\varphi(U)^{-1} \alpha$};
-                \draw[->,name path=line 1] (S) to node {} (US);
-                \path[name path=line 2] (UR) to node {} (UT);
-                % find intersection of first and second line
-                \path [name intersections={of = line 1 and line 2}];
-                \coordinate (P)  at (intersection-1);
-
-                % path a circle around this intersection for the arc
-                \path[name path=circle] (P) circle(1.0mm);
-                % find intersections of second line and circle
-                \path [name intersections={of = circle and line 2}];
-                \coordinate (I1)  at (intersection-1);
-                \coordinate (I2)  at (intersection-2);
-                % draw normal line segments
-                \draw (UR) -- (I1);
-                \draw[->] (I2) -- (UT);
-                % draw arc at intersection
-                \tkzDrawArc[color=black](P,I1)(I2);
-            \end{tikzpicture}
-        \end{center}
+            \begin{center}
+                \begin{tikzcd}
+                    R \ar[rr,"\psi"] \ar[dd,swap,"\alpha \circ \varphi"] \ar[rd,"\varphi"] & &[-10pt] U^{-1}R \ar[dd] \ar[rd,"U^{-1}\varphi"] &[-27pt] \\
+                    & S \ar[rr,crossing over] \ar[ld,"\alpha"] & & U^{-1}S \ar[ld,pos=0.3,"\varphi(U)^{-1}\alpha"] \\
+                    T \ar[rr] & & \varphi(U)^{-1}T &:= \alpha (\varphi(U))^{-1}T
+                \end{tikzcd}
+            \end{center}
     \end{enumerate}
 \end{proposition}
 
@@ -138,27 +95,17 @@ Let R be a commutative ring with identity but not a field.
             Assume $\varphi$ is onto. Let $\frac{s}{\varphi(u)} \in U^{-1}S$ with $s \in S$ and $u \in U$. Since $\varphi: R \to S$ is onto, there exists $r \in R$ such that $\varphi(r) = s$. Then $U^{-1}\varphi(\frac{r}{u}) = \frac{\varphi(r)}{\varphi(u)} = \frac{s}{\varphi(u)}$. 
         \item[(d)] Assume $\varphi$ is 1-1. Let $\frac{r}{u} \in U^{-1}R$ with $r \in R$ and $u \in U$. Then $\frac{r}{u} \in \ker(U^{-1}\varphi)$ if and only if $0 = U^{-1}\varphi(\frac{r}{u}) = \frac{\varphi(r)}{\varphi(u)}$ if and only if there exists $u'' \in U$ such that $0 = \varphi(u'')\varphi(r) = \varphi(u''r)$ if and only if there exists $u'' \in U$ such that $u''r = 0$ since $\varphi$ is 1-1 if and only if $\frac{r}{u} = 0$ in $U^{-1}R$. 
         \item[(e)] 
-            Since $\varphi:R \to S$ and $\alpha: S \to T$ are ring homomorphisms, $\alpha \circ \varphi$ is a ring homomorphism. Since $(\alpha \circ \varphi)(U) = \alpha(\varphi(U)) \subseteq T$ is multiplicatively closed by (a), we have $U^{-1}(\alpha \circ \varphi)$ and $\varphi(U)^{-1}\alpha$ are well-defined. Then by the following commutative diagram, $U^{-1}(\alpha \circ \varphi) = (\varphi(U)^{-1}\alpha) \circ (U^{-1}\varphi)$. 
+            Since $\varphi:R \to S$ and $\alpha: S \to T$ are ring homomorphisms, $\alpha \circ \varphi$ is a ring homomorphism. Since $(\alpha \circ \varphi)(U) = \alpha(\varphi(U)) \subseteq T$ is multiplicatively closed by (a), we have $U^{-1}(\alpha \circ \varphi)$ and $\varphi(U)^{-1}\alpha$ are well-defined. 
         \[
-            \begin{tikzpicture}[auto]
-                \node (UR) {$U^{-1}R$};
-                \node (UT)[node distance=3cm, below of=UR] {$(\alpha \circ \varphi)(U)^{-1}T$};
-                \node (XXX)[node distance=1.5cm, below of=UR] {};
-                \node (US)[node distance=5cm, right of=XXX] {$\varphi(U)^{-1}S$};
-                \node (UT2)[node distance=2.5cm, right of=UT] {$\alpha (\varphi(U))^{-1}T$};
-                \draw[->] (UR) to node {$U^{-1}(\alpha \circ \varphi)$} (UT);
-                \draw[->] (UR) to node {$U^{-1}\varphi$} (US);
-                \draw[->] (US) to node [swap]{$\varphi(U)^{-1}\alpha$} (UT2);
-                \node (ur) [node distance=0.8cm, above of=UR]{$\frac{r}{u}$};
-                \node (ut) [node distance=1cm, below of=UT]{$\frac{(\alpha \circ \varphi)(r)}{(\alpha \circ \varphi)(u)}$};
-                \node (ut2) [node distance=1cm, below of=UT2]{$\frac{\alpha(\varphi(r))}{\alpha(\varphi(u))}$};
-                \node (us) [node distance=1.5cm, right of=US]{$\frac{\varphi(r)}{\varphi(u)}$};
-                \draw[|->, bend left=20] (ur) to node {} (us);
-                \draw[|->] (us) to node [swap]{} (ut2);
-                \draw[|->, bend right=70] (ur) to node {} (ut); 
-                \node (equal) [node distance=1.3cm, right of=ut] {$=$}; 
-            \end{tikzpicture} \qedhere
+            \begin{tikzcd}
+                U^{-1}R \ar[ddrrrrr] \ar[dddd] &[-55pt] &[-10pt] &[-60pt] &[-30pt] &[-10pt] \\ [-10pt]
+                & \frac{r}{u} \ar[rrrd,mapsto] \arrow[dd,mapsto] \\ [-10pt]
+                & & & & \frac{\varphi(r)}{\varphi(u)} \arrow[lld,mapsto] & \varphi(U)^{-1}S \ar[lldd] \\ [-10pt]
+                & \frac{(\alpha \circ \varphi)(r)}{(\alpha \circ \varphi)(u)} \ar[r,equal] & \frac{\alpha(\varphi(r))}{\alpha(\varphi(u))} \\ [-15pt]
+                (\alpha \circ \varphi)(U)^{-1}T & & & \alpha(\varphi(U))^{-1}T 
+            \end{tikzcd} 
         \]
+        Then by the commutative diagram, $U^{-1}(\alpha \circ \varphi) = (\varphi(U)^{-1}\alpha) \circ (U^{-1}\varphi)$. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -169,40 +116,11 @@ Let R be a commutative ring with identity but not a field.
 \begin{proof}
     We have 
     \begin{center}
-        \begin{tikzpicture}[node distance = 1.6cm, auto]
-            \node (Im) {$\im(\varphi)$};
-            \node (UIm)[node distance=3cm, right of=Im] {$U^{-1}\im(\varphi)$};
-            \node (R)[above of=Im, left of=Im] {$R$};
-            \node (S)[below of=Im, left of=Im] {$S$};
-            \node (UR)[above of=Im, right of=Im] {$U^{-1}R$};
-            \node (US)[below of=Im, right of=Im] {$U^{-1}S$};
-            \draw[->] (R) to node {$\pi$} (Im);
-            \draw[->] (R) to node [swap]{$\varphi$} (S);
-            \draw[->] (Im) to node {$i$} (S);
-            \draw[->] (R) to node {$\psi$} (UR);
-            \draw[->] (S) to node {} (US);
-            \draw[->] (UR) to node {$U^{-1}\pi$} (UIm);
-            \draw[->] (UIm) to node {} (US);
-            \node (zzz)[node distance=0.85cm, below of=UIm] {$\pi(U)^{-1}i$};
-            \node (www)[node distance=0.8cm, below of=UR] {};
-            \node [node distance=0.55cm, left of=www] {$U^{-1}\varphi$};
-            \draw[->,name path=line 1] (Im) to node {} (UIm);
-            \path[name path=line 2] (UR) to node {} (US);
-            % find intersection of first and second line
-            \path [name intersections={of = line 1 and line 2}];
-            \coordinate (P)  at (intersection-1);
-            % path a circle around this intersection for the arc
-            \path[name path=circle] (P) circle(1.0mm);
-            % find intersections of second line and circle
-            \path [name intersections={of = circle and line 2}];
-            \coordinate (I1)  at (intersection-1);
-            \coordinate (I2)  at (intersection-2);
-            % draw normal line segments
-            \draw (UR) -- (I1);
-            \draw[->] (I2) -- (US);
-            % draw arc at intersection
-            \tkzDrawArc[color=black](P,I1)(I2);
-        \end{tikzpicture}
+        \begin{tikzcd}
+            R \ar[rr,"\psi"] \ar[dd,swap,"\varphi"] \ar[rd,"\pi"] & &[-10pt] U^{-1}R \ar[rd,"U^{-1}\pi"] &[-5pt] \\
+            & \im(\varphi) \ar[rr] \ar[ld,"i"] & & U^{-1}\im(\varphi) \ar[ld,"\pi(U)^{-1}i"] \\
+            S \ar[rr] & & U^{-1}S \ar[uu,crossing over,leftarrow,pos=.8,"U^{-1}\varphi"]
+        \end{tikzcd}
     \end{center}
     By Proposition 3.6(e), $\im(U^{-1}\varphi) = \im(i \circ \pi) = \im((\pi(U)^{-1}i) \circ U^{-1}\pi)$. Since $\pi$ is onto, $U^{-1}(\pi)$ is onto by Proposition 3.6(c). So $\im(U^{-1}\varphi) = \im(\pi(U)^{-1}i)$. Since $i$ is 1-1, $\pi(U)^{-1}i$ is 1-1 by Proposition 3.6(d). Hence by the first isomorphism theorem, $U^{-1}\im(\varphi) \cong \im(\pi(U)^{-1}i) = \im(U^{-1}\varphi)$.
 \end{proof}
@@ -242,15 +160,10 @@ Let R be a commutative ring with identity but not a field.
         \item Let $\frac{r}{u} \in U^{-1}R$ with $r \in R$ and $u \in U$. Then $\frac{r}{u} \in U^{-1}\ker(\varphi)$ if and only if there exists $v \in U$ such that $vr \in \ker(\varphi)$ by (b) if and only if there exists $\varphi(v) \in \varphi(U)$ such that $0 = \varphi(vr) = \varphi(v)\varphi(r)$ if and only if $U^{-1}\varphi(\frac{r}{u}) = \frac{\varphi(r)}{\varphi(u)} = 0$ in $U^{-1}S = \varphi(U)^{-1}S$ if and only if $\frac{r}{u} \in \ker(U^{-1}\varphi)$. \par 
             By the first isomorphism theorem, $\im(U^{-1}\varphi) \cong \frac{U^{-1}R}{\ker(U^{-1}\varphi)} = \frac{U^{-1}R}{U^{-1}\ker(\varphi)}$ given by $\frac{\varphi(r)}{\varphi(u)} \mapsfrom \overline{\frac{r}{u}}$.  
             \begin{center}
-                \begin{tikzpicture}[node distance=2cm,auto]
-                    \node (UR) {$U^{-1}R$};
-                    \node[right of=UR] (URK) {$\frac{U^{-1}R}{\ker(U^{-1}\varphi)}$};
-                    \node[below of=URK, node distance=1.5cm] (US) {$\im(U^{-1}\varphi)$};
-                    \node[right of=US,node distance=1.5cm] (xxx) {$\subseteq U^{-1}S$};
-                    \draw[->] (UR) to node {} (URK); 
-                    \draw[->] (UR) to node [swap] {$U^{-1}\varphi$} (US); 
-                    \draw[->,dashed] (URK) to node {} (US); 
-                \end{tikzpicture}
+                \begin{tikzcd}
+                    U^{-1}R \ar[r] \ar[rd,swap,"U^{-1}\varphi"] &\frac{U^{-1}R}{\ker(U^{-1}\varphi)} \ar[d,dashed] \\
+                        & \im(U^{-1}\varphi)
+                \end{tikzcd}
             \end{center}
         \item 
             ``$\supseteq$''. It follows from $\ffa \cdot U^{-1}R$ is generated by $\{\psi(a) = \frac{a}{1} \mid a \in \ffa\} \subseteq U^{-1}\ffa$. \par 
@@ -354,25 +267,12 @@ Let R be a commutative ring with identity but not a field.
 \begin{proof}
     We have 
     \begin{center}
-        \begin{tikzpicture}[node distance = 1.5cm, auto]
-            \node (R) {$R$};
-            \node (Rp)[right of=R,node distance = 2.5cm] {$R_\ffp$};
-            \node (UR)[below of=R] {$U^{-1}R$};
-            \node (URUp)[below of=Rp] {$(U^{-1}R)_{U^{-1}\ffp}$};
-            \node (r)[node distance=0.8cm, left of=R, above of=R] {$r$};
-            \node (rp)[node distance=0.8cm, right of=Rp, above of=Rp] {$\frac{r}{1}$};
-            \node (ur)[node distance=0.8cm, left of=UR, below of=UR] {$r/1$};
-            \node (urup)[node distance=0.8cm, right of=URUp, below of=URUp] {$\frac{r/1}{1/1}$};
-            \draw[->] (R) to node {} (Rp);
-            \draw[->] (R) to node [swap]{$\psi$} (UR);
-            \draw[->] (R) to node {$\beta$} (URUp);
-            \draw[->,dashed] (Rp) to node  {$\ex \varphi$} (URUp);
-            \draw[->] (UR) to node [swap]{$\alpha$} (URUp);
-            \draw[|->] (r) to node {} (rp);
-            \draw[|->] (r) to node {} (ur);
-            \draw[|->] (ur) to node {} (urup);
-            \draw[|->,bend left] (rp) to node {} (urup);
-        \end{tikzpicture}
+        \begin{tikzcd}
+            r \ar[rrr,mapsto] \ar[ddd,mapsto] &[-25pt] & &[-30pt] \frac{r}{1} \ar[ddd,mapsto] \\ [-18pt]
+            & R \ar[r] \ar[d,"\psi"] \ar[rd,"\beta"] & R_\ffp \ar[d,dashed,"\ex \varphi"] \\
+            &U^{-1}R \ar[r,"\alpha"] & (U^{-1}R)_{U^{-1}\ffp} \\ [-20pt]
+            r/1 \ar[rrr,mapsto] & & & \frac{r/1}{1/1}
+        \end{tikzcd}
     \end{center}
     Let $\beta = \alpha \circ \psi$. By proposition 3.5, to show $\varphi$ is a well-defined ring homomorphism, it suffices to show $\beta(R \setminus \ffp) \subseteq ((U^{-1}R)_{U^{-1}\ffp})^{\times}$ since $U \subseteq R \setminus \ffp$. Let $x \in R \setminus \ffp$. Then $\beta(x) = \frac{x/1}{1/1}$. Since $x/1 \in U^{-1}R$ and $x \not \in \ffp$, we have $x/1 \not \in U^{-1}\ffp$ by Lemma 3.16. So $\frac{x}{1}$ is an allowable denominator in $(U^{-1}R)_{U^{-1}\ffp}$. Hence $\frac{1/1}{x/1} \in (U^{-1}R)_{U^{-1}\ffp}$. Thus, $\frac{x/1}{1/1} \in ((U^{-1}R)_{U^{-1}\ffp})^{\times}$ with $(\frac{x/1}{1/1})^{-1} = \frac{1/1}{x/1}$. Besides, by Proposition 3.5, we have $\varphi(r/s) = \beta(r)/\beta(s) = \frac{r/1}{s/1}$ for $\frac{r}{s} \in R_\ffp$. \par 
     Let $\frac{r}{s} \in R_\ffp$. Then $\frac{r}{s} \in \ker(\varphi)$ if and only if $0 = \varphi(\frac{r}{s}) = \frac{r/1}{s/1} \in (U^{-1}R)_{U^{-1}\ffp}$ if and only if there exists $\frac{t}{v} \in U^{-1}R \setminus U^{-1}\ffp$ with $t \in R \setminus \ffp$ such that $\frac{tr}{v} = \frac{t}{v} \cdot \frac{r}{1} = 0$ in $U^{-1}R$ by Proposition 3.11(b) and Lemma 3.16 if and only if there exist $t \in R \setminus \ffp$ and $w \in U \subseteq R \setminus \ffp$ such that $wtr = 0$ in $R$ by Proposition 3.11(b) if and only if there exists $v' \in U \subseteq R \setminus \ffp$ such that $v'r = 0$ in $R$ since $R \setminus \ffp$ is multiplicatively closed if and only if $\frac{r}{s} = 0$ in $R_\ffp$ by Proposition 3.11(b). So $\varphi$ is 1-1. \par 
@@ -412,16 +312,10 @@ Let R be a commutative ring with identity but not a field.
         \item If $R$ is an integral domain, then $\operatorname{NZD}(R) = R \setminus \{0\}$ and $\operatorname{Q}(R) = \operatorname{NZD}(R)^{-1}(R) = (R \setminus 0)^{-1}(R) = Q(R)$. So the total ring of fractions of a domain is equal to the field of fraction. 
         \item Let $R = \frac{k[X,Y,Z,W]}{\langle XY,YZ,ZW,XW \rangle}$, not an integral domain. Let $G$ be the following graph: 
             \begin{center}
-            \begin{tikzpicture}[node distance=1cm]
-                \node (X) {$X$}; 
-                \node[right of=X] (Y) {$Y$}; 
-                \node[below of=X] (W) {$W$}; 
-                \node[right of=W] (Z) {$Z$};
-                \draw (X) -- (Y);
-                \draw (X) -- (W);
-                \draw (Y) -- (Z);
-                \draw (W) -- (Z);
-            \end{tikzpicture}
+                \begin{tikzcd}[every arrow/.append style={dash}]
+                    X \ar[r] \ar[d] & Y \ar[d] \\
+                    W \ar[r] & Z
+                \end{tikzcd}
             \end{center}
             Then the edge ideal of $G$ is $I_G = \langle XY,YZ,ZW,XW \rangle$. Let $P_V = \langle X \mid X \in V \rangle$ for $V \subseteq V(G)$. Then we have $I_G = \bigcap_{V\text{ min. v.cover}} P_V = P_{\{X,Z\}} \cap P_{\{Y,W\}} =\langle X,Z \rangle \cap \langle Y,W \rangle$. So $\operatorname{Min}(k[X,Y,Z,W]) = \{P_V \mid V\text{ min. v.cover}\} = \{\langle X,Z \rangle, \langle Y,W \rangle\}$. \par 
             Let $x= \overbar{X}$, $y = \overbar{Y}$, $z = \overbar{Z}$ and $w = \overbar{W}$. By Fact 1.15, $\operatorname{Min}(R) = \{\langle x,z \rangle, \langle y, w \rangle\}$. So $\operatorname{ZD}(R) = \bigcup_{\ffp \in \operatorname{Min}(R)}\ffp = \langle x, z\rangle \cup \langle y,w \rangle$. Then $U := \operatorname{NZD}(R) = R \setminus \{\langle x, z \rangle \cup \langle y, w\rangle\}$. \par 
@@ -495,103 +389,28 @@ Let R be a commutative ring with identity but not a field.
 \begin{construction}
     Let $U = R \setminus \ffp$. 
     \begin{center}
-        \begin{tikzpicture}[node distance=3cm,auto]
-            \node (R) {$R$}; 
-            \node[right of=R] (S) {$S$}; 
-            \node[below of=R,node distance=1.3cm] (UR) {$U^{-1}R$}; 
-            \node[below of=S,node distance=1.3cm] (US) {$U^{-1}S$}; 
-            \node[below of=UR,node distance=1.5cm] (URpUR) {$\frac{U^{-1}R}{U^{-1}\ffp U^{-1}R}$}; 
-            \node[below of=US,node distance=1.5cm] (USpUS) {$\frac{U^{-1}S}{\ffp \cdot U^{-1}S}$}; 
-            \draw[->] (R) to node {$\varphi$} (S);
-            \draw[->] (R) to node {$\psi$} (UR);
-            \draw[->] (S) to node {$\rho$} (US);
-            \draw[->] (UR) to node {$U^{-1}\varphi$} (US);
-            \draw[->] (UR) to node {$\tau$} (URpUR);
-            \draw[->] (US) to node {$\pi$} (USpUS);
-            \draw[->] (URpUR) to node {$\overbar{\pi \circ U^{-1}\varphi}$} (USpUS);
-            \node[left of=UR,node distance=0.98cm] (xxx) {$R_\ffp=$}; 
-            \node[left of=URpUR,node distance=2.08cm] (yyy) {$Q(R/\ffp) \cong \frac{R_\ffp}{\ffp_\ffp}=$}; 
-            \node[right of=USpUS,node distance=2.45cm] (zzz) {$:=\frac{U^{-1}S}{\ffp S \cdot U^{-1}S}:=\frac{U^{-1}S}{U^{-1}\ffp \cdot U^{-1}S}$}; 
-            \node[below of=USpUS,node distance=0.9cm] (uuu) {$\llF(\ffp)$};
-            \node[right of=uuu,node distance=2cm] (vvv) {$= \frac{S_\ffp}{\ffp \cdot S_\ffp} := \frac{\varphi(U)^{-1}S}{\varphi(U)^{-1}(\ffp S)}$};
-            \node[right of=US,node distance=1.45cm] (www) {$:=\varphi(U)^{-1}S$}; 
-            \draw[double equal sign distance] (USpUS) to node{} (uuu);
-        \end{tikzpicture}
+        \begin{tikzcd}
+            &[-30pt] R \ar[r,"\varphi"] \ar[d,"\psi"] &[+10pt] S \ar[d,"\rho"] &[-30pt] \\ 
+            & U^{-1}R \ar[r,"U^{-1}\varphi"] \ar[d,"\tau"] & U^{-1}S \ar[d,"\pi"] \\
+            Q(R/\ffp) \cong \frac{R_\ffp}{\ffp_\ffp}= & \frac{U^{-1}R}{U^{-1}\ffp U^{-1}R} \ar[r,"\overbar{\pi \circ U^{-1}\varphi}"] & \frac{U^{-1}S}{\ffp \cdot U^{-1}S} \ar[d,equal] & := \frac{U^{-1}S}{\ffp S \cdot U^{-1}S} := \frac{U^{-1}S}{U^{-1}\ffp \cdot U^{-1}S} \\ [-10pt]
+            & & \llF(\ffp) \arrow[r,equal] & \frac{S_\ffp}{\ffp \cdot S_\ffp} := \frac{\varphi(U)^{-1}S}{\varphi(U)^{-1}(\ffp S)} 
+        \end{tikzcd}
     \end{center}
     Note $\ffp \cdot U^{-1}S$ is the extension of $\ffp$ along $\rho \circ \varphi$, $\ffp S \cdot U^{-1}S$ is the extension of $\ffp S$ along $\rho$, and $U^{-1}\ffp \cdot U^{-1}S$ is the extension of $U^{-1}\ffp$ along $U^{-1}\varphi$. $\llF(\ffp)$ is fibre over $\ffp$ w.r.t. $\varphi$. \par 
     Let $\frac{p}{u} \in U^{-1}\ffp$ with $p \in \ffp$ and $u \in U$. Then $\pi \circ (U^{-1}\varphi)(\frac{p}{u})  = \pi(\frac{\varphi(p)}{\varphi(u)}) = 0$ in $\frac{\varphi(U)^{-1}S}{\varphi(U)^{-1}(\ffp S)}$ since $\varphi(p) \subseteq \ffp S$. So by Construction 1.13, $\overbar{\pi \circ (U^{-1}\varphi)}$ is a well-defined ring homomorphism.
     \begin{center}
-        \begin{tikzpicture}[node distance=2cm,auto]
-            \node (UR) {$U^{-1}R$};
-            \node[right of=UR] (URK) {$\frac{U^{-1}R}{U^{-1}\ffp}$};
-            \node[below of=URK, node distance=1.5cm] (Fp) {$\llF(\ffp)$};
-            \node[right of=Fp, node distance=1.45cm] (xxx) {$=\frac{\varphi(U)^{-1}S}{\varphi(U)^{-1}(\ffp S)}$};
-            \draw[->] (UR) to node {} (URK); 
-            \draw[->] (UR) to node [swap] {$\pi \circ (U^{-1}\varphi)$} (Fp); 
-            \draw[->,dashed] (URK) to node {$\overbar{\pi \circ (U^{-1}\varphi)}$} (Fp); 
-        \end{tikzpicture}
+        \begin{tikzcd}
+            U^{-1}R \ar[r] \ar[rd,swap,"\pi \circ (U^{-1}\varphi)"] & \frac{U^{-1}R}{U^{-1}\ffp} \ar[d,dashed,"\overbar{\pi \circ (U^{-1}\varphi)}"] &[-30pt] \\
+            & \llF(\ffp) & =\frac{\varphi(U)^{-1}S}{\varphi(U)^{-1}(\ffp S)}
+        \end{tikzcd}
     \end{center}
     \begin{center}
-        \begin{tikzpicture}[node distance=1.1cm,auto]
-            \node (R) {$R$};
-            \node[right of=R,node distance=6cm] (S) {$S$};
-            \node[left of=R,below of=R] (UR) {$U^{-1}R$};
-            \node[right of=R,below of=R,node distance = 2cm] (Rp) {$\frac{R}{\ffp}$};
-            \node[right of=S,below of=S,node distance = 2cm] (SpS) {$\frac{S}{\ffp S}$};
-            \node[left of=S,below of=S] (US) {$U^{-1}S$};
-            \node[left of=Rp,below of=Rp] (URpUR) {$\frac{U^{-1}R}{U^{-1}\ffp}$};
-            \node[left of=Rp,below of=SpS] (USpUS) {$\frac{\varphi(U)^{-1}S}{\varphi(U)^{-1} (\ffp S)}$};
-            \node[below of=US,node distance=0.4cm] (ttt) {};
-            \node[right of=ttt,node distance=0.75cm] (tttt) {$\pi$};
-            \draw[->] (R) to node {$\varphi$} (S);
-            \draw[->] (R) to node [swap]{$\psi$} (UR);
-            \draw[->] (S) to node {$\rho$} (US);
-            \draw[->] (S) to node {$\epsilon$} (SpS);
-            \draw[->] (UR) to node {$\tau$} (URpUR);
-            \draw[->] (Rp) to node [swap] {$\overbar{\tau \circ \psi}$} (URpUR);
-            \draw[->] (SpS) to node {} (USpUS);
-            \node[below of=SpS,node distance=0.6cm] (mmm) {};
-            \node[right of=mmm,node distance=0.2cm] (nnn) {$\overbar{\pi \circ \rho}$};
-            \node[below of=US,node distance=0.65cm] (ooo) {};
-            \node[left of=ooo,node distance=0.5cm] (ppp) {$\overbar{\epsilon \circ \varphi}$};
-            \node[below of=R,node distance=0.8cm] (qqq) {};
-            \node[right of=qqq,node distance=2.5cm] (fff) {$U^{-1}\varphi$};
-            \draw[->] (URpUR) to node {$\overbar{\pi \circ (U^{-1}\varphi)}$} (USpUS);
-            \draw[->,name path=line 1] (UR) to node {} (US);
-            \path[name path=line 2] (R) to node {} (Rp);
-            % find intersection of first and second line
-            \path [name intersections={of = line 1 and line 2}];
-            \coordinate (P)  at (intersection-1);
-
-            % path a circle around this intersection for the arc
-            \path[name path=circle] (P) circle(1.0mm);
-            % find intersections of second line and circle
-            \path [name intersections={of = circle and line 2}];
-            \coordinate (I1)  at (intersection-1);
-            \coordinate (I2)  at (intersection-2);
-            % draw normal line segments
-            \draw (R) -- (I1);
-            \draw[->] (I2) -- (Rp);
-            % draw arc at intersection
-            \tkzDrawArc[color=black](P,I1)(I2);
-            \draw[->,name path=line 1] (Rp) to node {} (SpS);
-            \path[name path=line 2] (US) to node {} (USpUS);
-            % find intersection of first and second line
-            \path [name intersections={of = line 1 and line 2}];
-            \coordinate (P)  at (intersection-1);
-
-            % path a circle around this intersection for the arc
-            \path[name path=circle] (P) circle(1.0mm);
-            % find intersections of second line and circle
-            \path [name intersections={of = circle and line 2}];
-            \coordinate (I1)  at (intersection-1);
-            \coordinate (I2)  at (intersection-2);
-            % draw normal line segments
-            \draw (US) -- (I1);
-            \draw[->] (I2) -- (USpUS);
-            % draw arc at intersection
-            \tkzDrawArc[color=black](P,I1)(I2);
-        \end{tikzpicture}
+        \begin{tikzcd}
+            &[-15pt] R \ar[rrrr,"\varphi"] \ar[ld,swap,"\psi"] \ar[rrdd] &[-25pt] &[-15pt] &[-15pt] &[-15pt] S \ar[rrdd,"\epsilon"] \ar[ld,"\rho"] &[-25pt] & [-25pt] \\ [-10pt]
+            U^{-1}R \ar[rrrr, pos=.8, "U^{-1}\varphi",crossing over] \ar[rrdd,"\tau"] & & & & U^{-1}S \ar[rrdd,pos=0.2,"\pi"] \\ [-10pt]
+            & & & \frac{R}{\ffp} \ar[rrrr,pos=0.7,crossing over,"\overbar{\epsilon \circ \varphi}"] \ar[ld,swap,"\overbar{\tau \circ \psi}"] & & & & \frac{S}{\ffp S} \ar[ld,pos=0.3,"\overbar{\pi \circ \rho}"] \\ [-15pt]
+            & & \frac{U^{-1}R}{U^{-1}\ffp} \ar[rrrr,"\overbar{\pi \circ (U^{-1}\varphi)}"] & & & & \frac{\varphi(U)^{-1}S}{\varphi(U)^{-1}(\ffp S)}
+        \end{tikzcd}
     \end{center}
     Let $\overbar{r} \in \frac{R}{\ffp}$ with $r \in R$. Then $\overbar{\pi \circ (U^{-1}\varphi)} \circ (\overbar{\tau \circ \psi})(\overbar{r}) = \overbar{\pi \circ (U^{-1}\varphi)}(\tau \circ \psi(r)) = \overbar{\pi \circ (U^{-1}\varphi)}\left(\overline{\frac{r}{1}}\right) = \pi \circ (U^{-1}\varphi)\left(\frac{r}{1}\right) = \overline{\frac{\varphi(r)}{\varphi(1)}} = \overline{\frac{\varphi(r)}{1}}$ and $\overbar{\pi \circ \rho} \circ \overbar{\epsilon \circ \varphi}(\overbar{r}) = \overbar{\pi \circ \rho}(\epsilon \circ \rho)(r) = \overbar{\pi \circ \rho}(\overbar{\phi(r)}) = \pi \circ \rho(\phi(r)) = \overline{\frac{\varphi(1)}{1}}$. So the diagram on the bottom also commutes.
 \end{construction}
@@ -605,21 +424,11 @@ Let R be a commutative ring with identity but not a field.
     \end{enumerate}
     Moreover, the map $\theta: \operatorname{Spec}(\llF(\ffp)) \to (\varphi^*)^{-1}(\ffp) \subseteq \operatorname{Spec}(S)$ given by $\theta(Q) = \rho^{-1}(\pi^{-1}(Q))$ is a well-defined bijection, where $(\varphi^{*})^{-1}(\ffp)$ is the fibre over $\ffp$ w.r.t. $\varphi^{*}: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$.
     \begin{center}
-        \begin{tikzpicture}[node distance=1.6cm,auto]
-            \node (R) {$R$}; 
-            \node[right of=R] (S) {$S$}; 
-            \node[below of=R,node distance=1.3cm] (UR) {$U^{-1}R$}; 
-            \node[below of=S,node distance=1.3cm] (US) {$U^{-1}S$}; 
-            \node[below of=UR,node distance=1.3cm] (URpUR) {$\frac{U^{-1}R}{\ffp \cdot U^{-1}R}$}; 
-            \node[below of=US,node distance=1.3cm] (USpUS) {$\frac{U^{-1}S}{\ffp \cdot U^{-1}S}$}; 
-            \draw[->] (R) to node {$\varphi$} (S);
-            \draw[->] (R) to node {$\psi$} (UR);
-            \draw[->] (S) to node {$\rho$} (US);
-            \draw[->] (UR) to node {} (US);
-            \draw[->] (UR) to node {$\tau$} (URpUR);
-            \draw[->] (US) to node {$\pi$} (USpUS);
-            \draw[->] (URpUR) to node {} (USpUS);
-        \end{tikzpicture}
+        \begin{tikzcd}
+            R \ar[r,"\varphi"] \ar[d,"\psi"] &[-5pt] S \ar[d,"\rho"] \\
+            U^{-1}R \ar[r] \ar[d,"\tau"] & U^{-1}S \ar[d,"\pi"] \\
+            \frac{U^{-1}R}{\ffp \cdot U^{-1}R} \ar[r] & \frac{U^{-1}S}{\ffp \cdot U^{-1}S}
+        \end{tikzcd}
     \end{center}
 
 \end{theorem}

@@ -1,8 +1,8 @@
 \chapter{Modules and Integral Dependence}
 
-\section{Modules}
-
 Let $R$ be a commutative ring with identity.
+
+\section{Modules}
 
 \begin{definition}
     An \emph{$R$-module} is an additive abelian group $M$ equipped with a scalar multiplication $R \times M \to M$ denoted $(r,m) \to rm$ that is unital, associative and distributive.
@@ -47,8 +47,11 @@ Let $R$ be a commutative ring with identity.
 
 \section{Integral Dependence}
 
+Let $R$ be nonzero commutative ring with identity. Let $R \subseteq S$ be subring.
+
 \begin{definition}
-    Let $R \subseteq S$ be subring. An element $s \in S$ is \emph{integral} over $R$ if it satisfies a monic polynomial in $R[x]$, i.e., there exists $r_0,\cdots,r_n \in R$ such that $r_ns^{n} + r_{n-1}s^{n-1} + \cdots + r_0$.
+     An element $s \in S$ is \emph{integral} over $R$ if there exists a monic $f \in R[x]$ such that $f(s) = 0$, i.e., there exists $r_0,\cdots,r_n \in R$ such that $r_ns^{n} + r_{n-1}s^{n-1} + \cdots + r_0$. \par 
+    If every $s \in S$ is integral over $R$, then $R \subseteq S$ is an \emph{integral extension}.
 \end{definition}
 
 \begin{example}
@@ -64,11 +67,11 @@ Let $R$ be a commutative ring with identity.
 \end{proof}
 
 \begin{definition}
-    Let $R \subseteq S$ be a subring. An \emph{intermediate subring} is a subring $T \subseteq S$ such that $R \subseteq T$. Notice
+    An \emph{intermediate subring} is a subring $T \subseteq S$ such that $R \subseteq T$. Notice
 \end{definition}
 
 \begin{fact}
-    Let $R \subseteq S$ be a subring and $y_1,\cdots,y_n \in S$.
+    Let $y_1,\cdots,y_n \in S$.
     \begin{enumerate}
         \item $R[y_1,\cdots,y_n] = \{f(y_1,\cdots,y_n) \in S \mid f(y_1,\cdots,y_n) \in R[Y_1,\cdots,Y_n]\}$.
         \item $\psi: R[Y_1,\cdots,Y_n] \to S$ given by $\psi((f(Y_1,\cdots,Y_n))) = f(y_1,\cdots,y_n)$ is a well-defined ring homomorphism, $\im(\psi) = R[y_1,\cdots,y_n]$ and $R[y_1,\cdots,y_n] \cong R[Y_1,\cdots,Y_n]/\ker(\psi)$.
@@ -80,11 +83,11 @@ Let $R$ be a commutative ring with identity.
 \end{example}
 
 \begin{proposition}
-    Let $R \subseteq S$. Then the followings are equivalent. 
+    Let $s \in S$. Then the followings are equivalent. 
     \begin{enumerate}
         \item[(i)] $s$ is integral over $R$.
-        \item[(ii)] $R \subseteq R[s] \subseteq S$.
-        \item[(iii)] There exists an intermediate subring as an $R$-module.
+        \item[(ii)] $R[s]$ is a finitely generated $R$-module.
+        \item[(iii)] There exists an intermediate subring $R \subseteq T \subseteq S$ such that $s \in T$ and $T$ is a finitely generated $R$-module.
     \end{enumerate}
 \end{proposition}
 
@@ -95,12 +98,169 @@ Let $R$ be a commutative ring with identity.
 \end{proof}
 
 \begin{theorem}
-    Let $R \subseteq S$ be a ring. Let $s_1,\cdots,s_n \in S$ be integral over $R$. Then $R[s_1,\cdots,s_n]$ is finitely generated as $R$-module.
+    Let $s_1,\cdots,s_n \in S$ be integral over $R$. Then $R[s_1,\cdots,s_n]$ is finitely generated as $R$-module.
 \end{theorem}
 
 \begin{proof}
-    Prove by induction. Since $s_1 \in S$ is integral over $R$, $R[s_1]$ is a finitely generated $R$-module. $n = 2$.
-    Since $happy$.
+    Restate: Prove by induction. Since $s_1 \in S$ is integral over $R$, $R[s_1]$ is a finitely generated $R$-module. $n = 2$. Since $happy$. \par 
+    $R \subseteq R[s_1] \subseteq R[s_1][s_2] = R[s_1,s_2] \subseteq \cdots$. Claim. give subrings $A \subseteq B \subseteq C$, if $B$ is finitely generated $A$-module and $C$ is finitely generated $B$-module, then $C$ is a finitely generated $A$-module. Assume $B = A\langle b_1,\cdots,b_m \rangle$ and $C = B\langle c_1,\cdots,c_n \rangle$. Let $\llC = A \langle b_ic_j \mid i = 1,\cdots,m, j = 1,\cdots,n\rangle$. Then $C \subseteq \llC$...
+\end{proof}
+
+\begin{theorem}
+    Set $\overbar{R} = \{s \in S \mid s \text{ is integral over }R\}$. Then $R \subseteq \overbar{R} \subseteq S$ is an intermediate subring. So for $s,s' \in R$ integral over $R$, the elements $s \pm s'$ and $ss'$ are integral over $R$.
+\end{theorem}
+
+\begin{proof}
+\end{proof}
+
+\begin{note*}
+    ...
+\end{note*}
+
+\begin{definition}
+    Let $\overbar{R} = \{s \in S \mid s \text{ is integral over }R\}$ is the \emph{integral closure} of $R$ in $S$. If $\overbar{R} = S$, then $S$ is integral over $R$. If $\overbar{R} = R$, then $R$ is \emph{integrally closed} in $S$.
+\end{definition}
+
+\begin{example}
+    \begin{enumerate}
+        \item Consider $\bbZ \subseteq \bbQ$, then $\overbar{\bbZ} = \bbZ$, so $\bbZ$ is integrally closed in $\bbQ$.
+        \item Consider $\bbZ \subseteq \bbZ[i]$, then $\overbar{\bbZ} = \bbZ[i]$. So $\bbZ[i]$ is integral over $\bbZ$.
+        \item Consider $\bbZ \subseteq \bbQ(i)$, then $\overbar{\bbZ} = \bbZ[i]$.
+    \end{enumerate}
+\end{example}
+
+\begin{definition}
+    Let $\varphi: R \to S$ be a ring homomorphism. Then $\varphi$ is \emph{integral} if $\im(\varphi) \subseteq S$ is an integral extension.
+\end{definition}
+
+\begin{theorem}
+    The followings are equivalent.
+    \begin{enumerate}
+        \item[(i)]
+            $S$ is a finitely generated $R$-module.
+        \item[(ii)]
+            $S$ is integral over $R$ and there exist $s_1,\cdots,s_n$ such that $S = R[s_1,\cdots,s_n]$.
+        \item[(iii)]
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
 \end{proof}
 
 
+\begin{corollary}
+    If $R \subseteq S$ and $S \subseteq T$ are integral extensions, then $R \subseteq T$ is an integral extension.
+\end{corollary}
+
+\begin{proof}
+\end{proof}
+
+\begin{corollary}
+    If $R \subseteq S$ is a subring and $\overbar{R}$ is an integral closure of $R$ in $S$, then $\overbar{R}$ is integrally closed in $S$ (i.e., ${\overbar{\overbar{R}}} = \overbar{R}$.)
+\end{corollary}
+
+\begin{proof}
+    Let $s \in S$ be integral over $\overbar{R}$. Then $R \subseteq \overbar{R} \subseteq \overbar{R}[s]$...
+\end{proof}
+
+\begin{proposition}
+    Let $R \subseteq S$ be an integral extension.
+    \begin{enumerate}
+        \item If $\ffb \leq S$ and $\ffa = R \cap \ffb$, then $R/\ffa \hookrightarrow S/\ffb$ given by $\overbar{r} \to \overbar{r}$ is 1-1 and integral. 
+        \item If $U \subseteq R$ is multiplicatively closed, then $U^{-1}R \subseteq U^{-1}S$ given by $\frac{r}{u} \mapsto \frac{r}{u}$ is an integral extension.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}
+        \item 
+        \item 
+    \end{enumerate}
+\end{proof}
+
+\begin{discussion}
+    Let $R \subseteq S$ be a subring and $\ffp \in \operatorname{Spec}(R)$. When does there exist $\ffq \in \operatorname{Spec}(S)$ such that $\ffp = R \cap \ffq$? i.e., when is the induced map $\operatorname{Spec}(S) \to \operatorname{Spec}(R)$ surjective? By Cohen-Seidenberg, surjection when $S$ is integral over $R$.
+\end{discussion}
+
+\begin{proposition}
+    Let $R \subseteq S$ be an integral extension. Then $R$ is a field if and only if $S$ is a field.
+\end{proposition}
+
+\begin{proof}
+    ``''. \par 
+    ``'' nonzero of $S$ translate to the nonzeroness of $R$.
+\end{proof}
+
+\begin{example}
+    Let $k$ be a field and $S = \frac{k[X]}{(X^{2})}$. Let $x = \overbar{X} \in S$. Then $x$ is integral over $k$ since $x^{2} = 0$. So $S = k[x]$ is integral over $k$. $k$ is a field but $S$ is not a field (conclusion of 5.24 fails if $S$ is not an integral domain).
+\end{example}
+
+\noindent Let $0 \neq R \subseteq S$ be an integral extension (no integral extension). (somewhere $\neq 0$).
+
+\begin{corollary}
+    Let $\ffq \in \operatorname{Spec}(S)$ and set $\ffp = R \cap \ffq$. Then $\ffp \in \operatorname{m-Spec}(R)$ if and only if $\ffq \in \operatorname{m-Spec}(S)$. 
+\end{corollary}
+
+\begin{theorem}
+    For $\ffp \in \operatorname{Spec}(R)$, there exists $\ffq \in \operatorname{Spec}(S)$ such that $\ffp = R \cap \ffq$.
+\end{theorem}
+
+\begin{proof}
+\end{proof}
+
+\begin{proposition}
+    Let $\ffq,\ffq' \in \operatorname{Spec}(S)$ such that $R \cap \ffq = R \cap \ffq'$. Then $\ffq \subseteq \ffq'$ if and only if $\ffq = \ffq'$.
+\end{proposition}
+
+\begin{proof}
+    Set $\ffp = \ffq \cap R = \ffq' \cap R$ and $U = R \setminus \ffq$. 
+    \begin{center}
+        \begin{tikzcd}
+            R \ar[rrr,"\subseteq"] \ar[ddd,"\psi"] & & & S \ar[ddd,"\rho"] \\
+            & \ffp \ar[d,mapsto] & \ffq,\ffq' \ar[l,mapsto] \ar[d,mapsto] \\
+            & \ffp_\ffp & U^{-1}\ffq, U^{-1}\ffq' \\
+            U^{-1}R \ar[rrr,"\subseteq"] & & & U^{-1}S
+        \end{tikzcd}
+    \end{center}
+\end{proof}
+
+\begin{theorem}[Going up]
+    Let $\ffp \subseteq \ffp_n$ be a chain in $\operatorname{Spec}(R)$ and $\ffq_1,\cdots,\ffq_m(m < n)$ be a chain in $\operatorname{Spec}(S)$ such that $\ffp_i = R \cap \ffq_i$ for $i = 1,\cdots,m$.
+\end{theorem}
+
+\begin{proof}
+    By induction on $n-m$. Suffices to consider the case.
+\end{proof}
+
+\begin{example}
+    \begin{enumerate}
+        \item 
+        \item $0 \leq 2\bbZ \leq \bbZ \subseteq \bbZ[X]$. 
+            \begin{align*}
+                \frac{\bbZ[X]}{(2X-1)} &\cong \bbZ_2 = \bbZ[\frac{1}{2}] \subseteq \bbQ \\
+                \overbar{X} &\mapsto \frac{1}{2}.
+            \end{align*}
+            Since $\bbZ[\frac{1}{2}]$ is an integral domain... \par 
+            This example also shows need for integral assumption in 5.27 because 
+    \end{enumerate}
+\end{example}
+
+\begin{proposition}
+    If $U \subseteq R$ be multiplicatively closed, then $U^{-1} \overbar{R} = \overbar{U^{-1}R}$. Let $\overbar{R} = \text{integral closure of $R$ in $S$}$. $U^{-1}R \subseteq U^{-1}S$ and $\overbar{U^{-1}R} = \text{integral closure of $U^{-1}R$ in $U^{-1}S$}$, then $\overbar{U^{-1}R} = U^{-1} \overbar{R}$....
+\end{proposition}
+
+\begin{proof}
+    $U^{-1} \overbar{R} \subseteq \overbar{U^{-1}R}$. Let $s/u \in \overbar{U^{-1}R} \subseteq U^{-1}S$. $0 = (\frac{s}{u})^{n} + (\frac{a_{n-1}}{v_{n-1}})(\frac{s}{u})^{n-1} + \cdots + (\frac{a}{v_1})(\frac{s}{u}) + (\frac{a}{v_0})$ in $U^{-1}S$, where $a_0,\cdots,a_{n-1} \in R$ and $v_0,\cdots,v_{n-1} \in U$. So $v_0 \cdots v_{n-1} \in U$. Multiply by $(uv)^{n}$.
+\end{proof}
+
+\begin{definition}
+    If $R$ is an integral domain, then $R$ is \emph{integrally closed} (without qualificaton) if it is integrally closed in $Q(R)$. 
+\end{definition}
+
+\begin{example}
+    \begin{enumerate}
+        \item $\bbZ$ is integrally closed.
+        \item Any UFD is integrally closed.
+        \item Let $k[X,Y] \supseteq R := k[X^{2},XY,Y^{2}] \cong \frac{k[U,V,W]}{\langle UW-V^{2} \rangle}$...
+    \end{enumerate}
+\end{example}

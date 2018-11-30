@@ -102,21 +102,13 @@ Let $R$ be a commutative ring with identity.
     \par Then $R/\ffa$ is a commutative ring with identity with $\overbar r \pm \overbar s = \overbar {r \pm s}$, $\overbar r \overbar s = \overbar{rs}$, $0_{R/\ffa} = \overbar {0_R}$ and $1_{R/\ffa} = \overbar {1_R}$. \par
     Let $\pi: R \to R/\ffa$ be given by $\pi(r) = \overbar r$. Then $\pi$ is a well-defined ring epimorphism. \par 
     (UMP) For any $\phi: R \to S$ ring homomorphism, if $\phi(\ffa) = 0$, then there exists a unique ring homomorphism $\overbar \phi: R/\ffa \to S$ making the following diagram commute. 
-    \begin{center}
-        \begin{tikzpicture}[node distance = 1.5cm, auto]
-            \node (R) {$R$};
-            \node (S)[right of=R] {$S$};
-            \node (Ra)[below of=R] {$R/\ffa$};
-            \node (r)[node distance=0.7cm, left of=R, above of=R] {$r$};
-            \node (rr)[node distance=0.7cm, right of=S, above of=S] {$\phi(r)$};
-            \node (ra)[node distance=0.7cm, left of=Ra, below of=Ra] {$\overbar r$};
-            \draw[->] (R) to node {$\phi$} (S);
-            \draw[->] (R) to node [swap]{$\pi$} (Ra);
-            \draw[->,dashed] (Ra) to node [swap]{$\ex !\ \overbar \phi$} (S);
-            \draw[|->] (r) to node {} (rr);
-            \draw[|->] (r) to node {} (ra);
-            \draw[|->,bend right=50] (ra) to node {} (rr);
-        \end{tikzpicture}
+    \begin{center} 
+        \begin{tikzcd}
+            R \ar[rrr,"\phi"] \ar[ddd,swap,"\pi"] &[-30pt] & &[-10pt] S \\ [-20pt]
+            &r \ar[r,mapsto] \ar[d,mapsto] & \phi(r) \\ 
+            &\overbar{r} \ar[ru, mapsto] \\ [-5pt]
+            R/\ffa \ar[rrruuu,dashed,swap,"\ex !\ \overbar{\phi}"]
+        \end{tikzcd}
     \end{center}
     \par
     Note $\phi(\ffa) = 0$ if and only if $\ffa \subseteq \ker(\phi)$. In particular, if $\ffa = \langle A \rangle$, then $\ffa \subseteq \ker(\phi)$ if and only if $A \subseteq \ker(\phi)$.
@@ -146,25 +138,12 @@ Let $R$ be a commutative ring with identity.
     In both $R$ and $R/\ffa$, maximal ideals are a subset of prime ideals and prime ideals are a subset of ideals. \par
     Claim. $\frac{R/\ffa}{J/\ffa} \cong \frac{R}{J}$.
     \begin{center}
-        \begin{tikzpicture}[node distance = 1.5cm, auto]
-            \node (R) {$R$};
-            \node (Ra)[right of=R] {$R/\ffa$};
-            \node (Raj)[right of=Ra] {$\frac{R/\ffa}{J/\ffa}$};
-            \node (Rj)[below of=R] {$R/J$};
-            \node (r)[node distance=0.8cm, left of=R, above of=R] {$r$};
-            \node (ra)[node distance=0.8cm, above of=Ra] {$\overbar r$};
-            \node (rj)[node distance=0.8cm, left of=Rj, below of=Rj] {$\overbar r$};
-            \node (raj)[node distance=0.8cm, above of=Raj,right of=Raj] {$\overbar{\overbar r}$};
-            \node (xxx)[node distance=1.4cm, right of=raj] {$=(r+\ffa)+J/\ffa$};
-            \draw[->] (R) to node {$p$} (Ra);
-            \draw[->] (R) to node {$\pi$} (Rj);
-            \draw[|->] (Ra) to node {$\tau$} (Raj);
-            \draw[->,dashed] (Rj) to node [swap]{$\ex !\ \overbar \phi$} (Raj);
-            \draw[|->] (r) to node {} (rj);
-            \draw[|->] (r) to node {} (ra);
-            \draw[|->] (ra) to node {} (raj);
-            \draw[|->,bend right=45] (rj) to node {} (raj);
-        \end{tikzpicture}
+        \begin{tikzcd}
+            R \ar[rr,"p"] \ar[ddd,swap,"\pi"] &[-30pt] & R/\ffa \ar[rr,"\tau"] & &[+15pt] \frac{R/\ffa}{J/\ffa} \\ [-25pt]
+            & r \ar[r,mapsto] \ar[d,mapsto] & \overbar{r} \ar[r,mapsto] & \overbar{\overbar{r}} \\
+            & \overbar{r} \ar[rru,mapsto] \\ [-18pt] 
+            R/J \ar[rrrruuu,dashed,swap,"\ex !\ \overbar{\phi}"]
+        \end{tikzcd}
     \end{center}
     \par 
     It is straightforward to show that $J = \ker(\tau \circ p)$. Then the first isomorphism theorem says the map $\overbar \phi$ is a ring isomorphism. 
@@ -180,24 +159,12 @@ Let $R$ be a commutative ring with identity.
     If $S$ is an integral domain, then so is $\im(\phi)$. Hence $\ker(\phi)$ is prime. \par
     More generally, for any $\ffb \leq S$, we have $\phi^{-1}(\ffb) = \{x \in R \mid \phi(x) \in \ffb\} \leq R$.
     \begin{center}
-        \begin{tikzpicture}[node distance = 1.5cm, auto]
-            \node (R) {$R$};
-            \node (S)[right of=R] {$S$};
-            \node (Sq)[right of=S] {$S/\ffq$};
-            \node (Rj)[below of=R] {$\frac{R}{\phi^{-1}(\ffq)}$};
-            \node (r)[node distance=0.8cm, left of=R, above of=R] {$r$};
-            \node (s)[node distance=0.8cm, above of=S] {$\phi(r)$};
-            \node (rj)[node distance=0.8cm, left of=Rj, below of=Rj] {$\overbar r$};
-            \node (sq)[node distance=0.8cm, above of=Sq,right of=Sq] {$\overbar {\phi(r)}$};
-            \draw[->] (R) to node {$\phi$} (S);
-            \draw[->] (R) to node {$p$} (Rj);
-            \draw[|->] (S) to node {$\pi$} (Sq);
-            \draw[->,dashed] (Rj) to node [swap]{$\ex !\ \overbar {\pi \circ \phi}$} (Sq);
-            \draw[|->] (r) to node {} (rj);
-            \draw[|->] (r) to node {} (s);
-            \draw[|->] (s) to node {} (sq);
-            \draw[|->,bend right=60] (rj) to node {} (sq);
-        \end{tikzpicture}
+        \begin{tikzcd}
+            R \ar[rr,"\phi"] \ar[ddd,swap,"p"] &[-35pt] & S \ar[rr,"\pi"] & &[+10pt] S/\ffq \\ [-25pt]
+            & r \ar[r,mapsto] \ar[d,mapsto] & \phi(r) \ar[r,mapsto] & \overbar{\phi(r)} \\
+            & \overbar{r} \ar[rru,mapsto] \\ [-20pt] 
+            \frac{R}{\phi^{-1}(\ffq)} \ar[rrrruuu,dashed,swap,"\ex !\ \overbar{\pi \circ \phi}"]
+        \end{tikzcd}
     \end{center}
     \par
     Let $\ffq \in \operatorname{Spec}(S)$. Then $S/\ffq$ is an integral domain. Also, since $R/\ker(\pi \circ \phi) \cong \im(\pi \circ \phi) \subseteq S/\ffq$, we have $R/\ker(\pi \circ \phi)$ is an integral domain and then $\ker(\pi \circ \phi)$ is prime. Observe $\phi^{-1}(\ffq) = \ker(\pi \circ \phi)$ is then prime, i.e., $\phi^{-1}(\ffq) \in \operatorname{Spec}(R)$. Thus, $\phi$ induces a well-defined map $\phi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$ given by $\phi^*(\ffq) = \phi^{-1}(\ffq)$.
@@ -938,24 +905,12 @@ Let $A$ be a nonzero commutative ring with identity.
         \item 
             Note
             \begin{center}
-                \begin{tikzpicture}[node distance = 1.5cm, auto]
-                    \node (AX) {$A\llbracket X \rrbracket$};
-                    \node (A)[right of=AX] {$A$};
-                    \node (AaX)[below of=AX] {$\frac{A}{\ffa}\llbracket X \rrbracket$};
-                    \node (Aa)[below of=A] {$\frac{A}{\ffa}$};
-                    \node (aX)[node distance=0.8cm, left of=AX, above of=AX] {$\sum_{i=0}^\infty b_iX^i$};
-                    \node (a)[node distance=0.8cm, right of=A, above of=A] {$b_0$};
-                    \node (aaX)[node distance=0.8cm, left of=Aax, below of=AaX] {$\sum_{i=0}^\infty \overbar b_i X^i$};
-                    \node (aa)[node distance=0.8cm, right of=Aa, below of=Aa] {$\overbar b_0$};
-                    \draw[->] (AX) to node {$\pi$} (A);
-                    \draw[->] (AX) to node {$\tau\llbracket X \rrbracket$} (AaX);
-                    \draw[->] (A) to node {$\tau$} (Aa);
-                    \draw[->] (AaX) to node [swap]{$\pi'$} (Aa);
-                    \draw[|->] (aX) to node {} (a);
-                    \draw[|->] (aX) to node {} (aaX);
-                    \draw[|->] (aaX) to node {} (aa);
-                    \draw[|->] (a) to node {} (aa);
-                \end{tikzpicture}
+                \begin{tikzcd}
+                    A\llbracket X \rrbracket \ar[rrr,"\pi"] \ar[ddd,swap,"\tau\llbracket X \rrbracket"] &[-32pt] & &[-22pt] A \ar[ddd,"\tau"] \\ [-15pt]
+                    & \sum_{i=0}^{\infty} b_iX^{i} \ar[r,mapsto] \ar[d,mapsto] & b_0 \ar[d,mapsto] \\
+                    & \sum_{i=0}^{\infty} \overbar{b}_iX^{i} \ar[r,mapsto] & \overbar{b}_0 \\ [-15pt] 
+                    \frac{A}{\ffa}\llbracket X \rrbracket \ar[rrr,swap,"\pi'"] & & & \frac{A}{\ffa}
+                \end{tikzcd}
             \end{center}
             \par It is straightforward to show $\pi$ and $\pi^{-1}$ are well-defined ring epimorphisms and the diagram commutes. \par 
             Note 
@@ -1209,22 +1164,15 @@ Let $R$ be an integral domain.
 
 \begin{proposition}
     We have 
-    \begin{center}
-        \begin{tikzpicture}[node distance = 1.0cm, auto]
-            \node (UFD) {UFD};
-            \node (HFD)[right of=UFD,above of=UFD] {HFD};
-            \node (FFD)[right of=UFD,below of=UFD] {FFD};
-            \node (BFD)[right of=HFD,below of=HFD] {BFD};
-            \node (ACCP)[right of=BFD,node distance=1.8cm] {ACCP};
-            \node (atomic)[right of=ACCP,node distance=1.9cm] {atomic};
-            \draw[->,double] (UFD) to node {} (HFD);
-            \draw[->,double] (UFD) to node {} (FFD);
-            \draw[->,double] (FFD) to node {} (BFD);
-            \draw[->,double] (HFD) to node {} (BFD);
-            \draw[->,double] (BFD) to node {} (ACCP);
-            \draw[->,double] (ACCP) to node {} (atomic);
-        \end{tikzpicture}
+    \begin{center} 
+        \begin{tikzcd}[arrows=Rightarrow]
+            & \text{HFD} \ar[rd] \\ [-15pt]
+            \text{UFD} \ar[ru] \ar[rd] & & \text{BFD} \ar[r] & \text{ACCP} \arrow[r] & \text{atomic} \\ [-15pt]
+            & \text{FFD} \ar[ru]
+        \end{tikzcd}
     \end{center}
+
+
 \end{proposition}
 
 \begin{example}

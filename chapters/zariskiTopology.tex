@@ -482,14 +482,10 @@ Let $X \neq \emptyset$ be a topological space.
     \end{align*}
     Or let $G$ be the following graph: 
     \begin{center}
-        \begin{tikzpicture}[node distance=0.8cm]
-            \node (X) {$X$}; 
-            \node[below of=X, right of=X] (Y) {$Y$}; 
-            \node[left of=X, below of=X] (Z) {$Z$}; 
-            \draw (X) -- (Y);
-            \draw (X) -- (Z);
-            \draw (Y) -- (Z);
-        \end{tikzpicture}
+        \begin{tikzcd}[every arrow/.append style={dash}]
+            &[-10pt] X \ar[rd] \ar[ld] & [-10pt] \\ [-5pt]
+            Z \ar[rr] & & Y 
+        \end{tikzcd}
     \end{center}
     Then the edge ideal of $G$ is $I_G = \langle XY,YZ,XZ \rangle$. Let $P_V = \langle X \mid X \in V \rangle$ for $V \subseteq V(G)$. Then we have $I_G = \bigcap_{V\text{ min. v.cover}} P_V = P_{\{X,Y\}} \cap P_{\{Y,Z\}} \cap P_{\{X,Z\}} = \langle X,Y \rangle \cap \langle Y,Z \rangle \cap \langle X,Z \rangle$. So $\operatorname{Min}(k[X,Y,Z]) = \{P_V \mid V \text{ min. v.cover}\} = \{\langle X,Y \rangle, \langle Y,Z \rangle, \langle X,Z \rangle\}$. By Fact 1.15, $\operatorname{Min}(R) = \{\langle \overbar{X},\overbar{Y} \rangle, \langle \overbar{Y},\overbar{Z} \rangle, \langle \overbar{X}, \overbar{Z} \rangle \}$. So the irreducible components of $\operatorname{Spec}(R)$ are $\operatorname{V}(\langle \overbar X,\overbar Y \rangle)$, $\operatorname{V}(\langle \overbar X, \overbar Z \rangle)$ and $\operatorname{V}(\langle \overbar Y,\overbar Z \rangle)$.
 \end{example}
