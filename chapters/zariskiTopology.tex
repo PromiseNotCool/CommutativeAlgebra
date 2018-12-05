@@ -3,7 +3,7 @@
 Let $R$ be a nonzero commutative ring with identity. 
 
 \begin{definition}
-    For any $\epsilon > 0$ and any $x \in \bbR^n$, the \emph{open ball} centered at $x$ with radius $\epsilon$ is 
+    For $\epsilon > 0$ and $x \in \bbR^n$, the \emph{open ball} centered at $x$ with radius $\epsilon$ is 
     \[B_\epsilon(x) = \{y \in \bbR^n \mathrel{\big |} \abs{x-y} < \epsilon\}.\]
     \par A subset $U \subseteq \bbR^n$ is \emph{open} if for any $x \in U$, there exists $\epsilon > 0$ such that $B_\epsilon(x) \subseteq U$, i.e., if $U$ is a union of (possible infinitely many) open balls. e.g., if $n = 1$, $B_\epsilon(x) = (x-\epsilon,x+\epsilon)$ is an open interval. \par 
     More generally, this works for any metric space.
@@ -458,7 +458,7 @@ Let $X \neq \emptyset$ be a topological space.
     The maximal irreducible subsets of $X$ are the \emph{irreducible components} of $X$.
 \end{definition}
 
-\begin{proposition}
+\begin{proposition}\footnote[2]{This proposition also holds for $\operatorname{V}(\ffa)$ with subspace topology and with $\operatorname{Min}(\operatorname{V}(\ffa))$.}
     Let $X = \operatorname{Spec}(R)$.
     \begin{enumerate}
         \item $V \subseteq X$ with subspace topology is closed and irreducible if and only if $V = \operatorname{V}(\ffp)$ for some $\ffp \in \operatorname{Spec}(R)$.
@@ -469,8 +469,10 @@ Let $X \neq \emptyset$ be a topological space.
 \begin{proof}
     \begin{enumerate}
         \item ``$\Leftarrow$''. Let $\ffp \in \operatorname{Spec}(R)$. Let $V,W \subseteq \operatorname{V}(\ffp)$ be closed such that $\operatorname{V}(\ffp) = V \cup W$. Then $V = \operatorname{V}(\ffa) \cap \operatorname{V}(\ffp)$ and $W = \operatorname{V}(\ffb) \cap \operatorname{V}(\ffp)$ for some $\ffa,\ffb \leq R$. Since $\ffp \in \operatorname{Spec}(R)$, $\ffp \in \operatorname{V}(\ffp) = V \cup W = (\operatorname{V}(\ffa) \cap \operatorname{V}(\ffp)) \cup (\operatorname{V}(\ffb) \cap \operatorname{V}(\ffp)) = \operatorname{V}(\ffa + \ffp) \cup \operatorname{V}(\ffb + \ffp)= \operatorname{V}(\ffa + \ffp)(\ffb+\ffp))$. So $\ffp \supseteq (\ffa + \ffp)(\ffb + \ffp)$. Since $\ffp \in \operatorname{Spec}(R)$, $\ffp \supseteq \ffa + \ffp \supseteq \ffa$ or $\ffp \supseteq \ffb + \ffp \supseteq \ffb$. So $\operatorname{V}(\ffp) \subseteq \operatorname{V}(\ffa)$ or $\operatorname{V}(\ffp) \subseteq \operatorname{V}(\ffb)$. Hence $\operatorname{V}(\ffp) = \operatorname{V}(\ffa) \cap \operatorname{V}(\ffp) = V$ or $\operatorname{V}(\ffp) = \operatorname{V}(\ffb) \cap \operatorname{V}(\ffp) = W$. \par
-        ``$\Rightarrow$''. Assume $V \subseteq X$ is closed and irreducible. Then $\emptyset \neq V = \operatorname{V}(\ffa) = \operatorname{V}(\operatorname{rad}(\ffa)) $ for some $\ffa \leq R$. So $\ffr := \operatorname{rad}(\ffa) \lneq R$. Let $x,y \in R$ such that $xy \in \ffr$. Then $\ffr^2 \subseteq (xR+\ffr)(yR+\ffr) \subseteq \ffr$. So $\operatorname{V}(\ffr) = \operatorname{V}(\ffr^2) \supseteq \operatorname{V}((xR+\ffr)(yR+\ffr)) \supseteq \operatorname{V}(\ffr)$. Hence $V = \operatorname{V}(\ffr) = \operatorname{V}((xR + \ffr)(yR+\ffr)) = (\operatorname{V}(xR) \cap \operatorname{V}(\ffr)) \cup (\operatorname{V}(yR) \cap \operatorname{V}(\ffr)) = (\operatorname{V}(xR) \cap V) \cup (\operatorname{V}(yR) \cap V)$. Also, since $\operatorname{V}(xR) \cap V$ and $\operatorname{V}(xR) \cap V$ are closed in $V$ and $V$ is irreducible, we have $\operatorname{V}(\ffr) = \operatorname{V}(xR) \cap V \subseteq \operatorname{V}(xR)$ or $\operatorname{V}(\ffr) = \operatorname{V}(yR) \cap V \subseteq \operatorname{V}(yR)$. Then $x \in xR \subseteq \operatorname{rad}(xR) = \bigcap_{\ffp \in \operatorname{V}(xR)} \ffp \subseteq \bigcap_{\ffp \in \operatorname{V}(\ffr)} \ffp = \operatorname{rad}(\ffr) = \ffr$ by Fact 1.58(c) and (g), or $y \in \ffr$ similarly. So $\operatorname{rad}(\ffa) = \ffr \in \operatorname{Spec}(R)$.
-    \item Let $V$ be an irreducible component of $X = \operatorname{Spec}(R)$. Then $V$ is closed and maximal irreducible. So by (a), $V = \operatorname{V}(\ffp)$ for some $\ffp \in \operatorname{Spec}(R)$. Let $\ffq \in \operatorname{Spec}(R)$ such that $\ffq \subseteq \ffp$. Then $\operatorname{V}(\ffq) \supseteq \operatorname{V}(\ffp) = V$. By (a), $\operatorname{V}(\ffq)$ is closed and irreducible. So by the maximality of $V$, $\operatorname{V}(\ffq) = \operatorname{V}(\ffp)$. So $\ffq \supseteq \ffp$. \qedhere
+        ``$\Rightarrow$''. Assume $V \subseteq X$ is closed and irreducible. Then $\emptyset \neq V = \operatorname{V}(\ffa) = \operatorname{V}(\operatorname{rad}(\ffa)) $ for some $\ffa \leq R$. So is suffices to show $\operatorname{rad}(\ffa) \in \operatorname{Spec}(R)$. Note $\ffr := \operatorname{rad}(\ffa) \lneq R$. \par 
+        Method 1. Let $x,y \in R$ such that $xy \in \ffr$. Then $\ffr^2 \subseteq (xR+\ffr)(yR+\ffr) \subseteq \ffr$. So $\operatorname{V}(\ffr) = \operatorname{V}(\ffr^2) \supseteq \operatorname{V}((xR+\ffr)(yR+\ffr)) \supseteq \operatorname{V}(\ffr)$. Hence $V = \operatorname{V}(\ffr) = \operatorname{V}((xR + \ffr)(yR+\ffr)) = (\operatorname{V}(xR) \cap \operatorname{V}(\ffr)) \cup (\operatorname{V}(yR) \cap \operatorname{V}(\ffr)) = (\operatorname{V}(xR) \cap V) \cup (\operatorname{V}(yR) \cap V)$. Also, since $\operatorname{V}(xR) \cap V$ and $\operatorname{V}(xR) \cap V$ are closed in $V$ and $V$ is irreducible, we have $\operatorname{V}(\ffr) = \operatorname{V}(xR) \cap V \subseteq \operatorname{V}(xR)$ or $\operatorname{V}(\ffr) = \operatorname{V}(yR) \cap V \subseteq \operatorname{V}(yR)$. Then $x \in xR \subseteq \operatorname{rad}(xR) = \bigcap_{\ffp \in \operatorname{V}(xR)} \ffp \subseteq \bigcap_{\ffp \in \operatorname{V}(\ffr)} \ffp = \operatorname{rad}(\ffr) = \ffr$ by Fact 1.58(c) and (g), or $y \in \ffr$ similarly. So $\operatorname{rad}(\ffa) = \ffr \in \operatorname{Spec}(R)$. \par 
+        Method 2. Assume $\operatorname{rad}(\ffa) \supseteq IJ$ for some $I,J \leq R$. Then $\operatorname{V}(I) \cup \operatorname{V}(J) = \operatorname{V}(IJ) \supseteq \operatorname{V}(\operatorname{rad}(\ffa)) = \operatorname{V}(\ffa)$. Since $\operatorname{V}(\ffa) = V$ is irreducible and $\operatorname{V}(\ffa) = (\operatorname{V}(\ffa) \cap \operatorname{V}(I)) \cup (\operatorname{V}(\ffa) \cap \operatorname{V}(J)) = \operatorname{V}(\ffa I) \cup \operatorname{V}(\ffa J)$, $\operatorname{V}(I) \supseteq \operatorname{V}(\ffa)$ or $\operatorname{V}(J) \supseteq \operatorname{V}(\ffa)$. So by Proposition 1.32(d), $\operatorname{rad}(\ffa) \supseteq \operatorname{rad}(I) \supseteq I$ or $\operatorname{rad}(\ffa) \supseteq \operatorname{rad}(J) \supseteq J$.
+    \item Let $V$ be an irreducible component of $X = \operatorname{Spec}(R)$. Then $V$ is closed by Proposition 2.40(c) and maximal irreducible. So by (a), $V = \operatorname{V}(\ffp)$ for some $\ffp \in \operatorname{Spec}(R)$. Let $\ffq \in \operatorname{Spec}(R)$ such that $\ffq \subseteq \ffp$. Then $\operatorname{V}(\ffq) \supseteq \operatorname{V}(\ffp) = V$. By (a), $\operatorname{V}(\ffq)$ is closed and irreducible. So by the maximality of $V$, $\operatorname{V}(\ffq) = \operatorname{V}(\ffp)$. So $\ffq = \ffp$ by Proposition 1.32(d). \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -493,14 +495,14 @@ Let $X \neq \emptyset$ be a topological space.
 \begin{corollary}
     \begin{enumerate}
         \item $\operatorname{Min}(R) \neq \emptyset$.
-        \item For any $\ffq \in \operatorname{Spec}(R)$, there exists $\ffp \in \operatorname{Min}(R)$ such that $\ffp \subseteq \ffq$.
+        \item For $\ffq \in \operatorname{Spec}(R)$, there exists $\ffp \in \operatorname{Min}(R)$ such that $\ffp \subseteq \ffq$.
     \end{enumerate}
 \end{corollary}
 
 \begin{proof}
     \begin{enumerate}
         \item Since $\operatorname{Spec}(R) \neq \emptyset$, by Proposition 2.42(b), $\operatorname{Min}(R) \neq \emptyset$.
-        \item Let $\ffq \in \operatorname{Spec}(R)$. Then $\operatorname{V}(\ffq) \subseteq \operatorname{Spec}(R)$ are closed and irreducible by Proposition 2.42(a). So there exists a (closed) maximal irreducible subset $Z \subseteq \operatorname{Spec}(R)$ such that $\operatorname{V}(\ffq) \subseteq Z$ by Proposition 2.40(c). Then $\operatorname{V}(\ffq) \subseteq Z = \operatorname{V}(\ffp)$ for some $\ffp \in \operatorname{Min}(R)$ by Proposition 2.42(b). So $\ffp \subseteq \ffq$. \qedhere
+        \item Let $\ffq \in \operatorname{Spec}(R)$. Then $\operatorname{V}(\ffq) \subseteq \operatorname{Spec}(R)$ are closed and irreducible by Proposition 2.42(a). So there exists a (closed) maximal irreducible subset $Z \subseteq \operatorname{Spec}(R)$ such that $\operatorname{V}(\ffq) \subseteq Z$ by Proposition 2.40(c). Then $\operatorname{V}(\ffq) \subseteq Z = \operatorname{V}(\ffp)$ for some $\ffp \in \operatorname{Min}(R)$ by Proposition 2.42(b). So $\ffp \subseteq \ffq$ by Proposition 1.32(d). \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -516,7 +518,7 @@ Let $X \neq \emptyset$ be a topological space.
 \begin{proof}
     \begin{enumerate}
         \item 
-            One point set $\{\ffp\}$ is clearly irreducible. Then $\overbar {\{\ffp\}}$ is also irreducible by Proposition 2.40(a). Also, since $\overbar {\ffp}$ is closed, $\overbar {\{\ffp\}} = \operatorname{V}(\ffa)$ for some $\ffa \leq R$ by Proposition 2.42(a). So $\ffa \subseteq \ffp$. Hence $\operatorname{V}(\ffp) \subseteq \operatorname{V}(\ffa) = \overbar {\{\ffp\}}$. Since $\overbar {\{\ffp\}}$ is the smallest closed subset containing $\ffp$, we have $\overbar {\{\ffp\}} = \operatorname{V}(\ffp)$.
+            One point set $\{\ffp\}$ is clearly irreducible. Then $\overbar {\{\ffp\}}$ is also irreducible by Proposition 2.40(a). Also, since $\overbar {\{\ffp}\}$ is closed, $\overbar {\{\ffp\}} = \operatorname{V}(\ffa)$ for some $\ffa \leq R$ by Proposition 2.42(a). So $\ffa \subseteq \ffp$. Hence $\operatorname{V}(\ffp) \subseteq \operatorname{V}(\ffa) = \overbar {\{\ffp\}}$. Since $\overbar {\{\ffp\}}$ is the smallest closed subset containing $\ffp$, we have $\overbar {\{\ffp\}} = \operatorname{V}(\ffp)$.
         \item 
             ``$\Rightarrow$''. Assume $\overbar{\{\ffp\}} = \{\ffp\}$. Since $\ffp \neq R$, there exists $\ffm \in \operatorname{m-Spec}(R)$ such that $\ffm \supseteq \ffp$. Then $\ffm \subseteq \operatorname{V}(\ffm) \subseteq \operatorname{V}(\ffp) = \overbar {\{\ffp\}} = \{\ffp\}$ by (a). So by the maximality of $\ffm$, we have $\ffp = \ffm$. \par 
             ``$\Leftarrow$''. Assume $\ffp \in \operatorname{m-Spec}(R)$. Then by (a), $\overbar {\{\ffp\}} = \operatorname{V}(\ffp) = \{\ffp\}$. 
