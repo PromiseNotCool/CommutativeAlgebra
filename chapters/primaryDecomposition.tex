@@ -51,7 +51,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{example}
 
 \begin{definition}
-    If $R$ satisfies the condition of Theorem 4.2(b), then $R$ is \emph {atomic}.
+    If $R$ satisfies the condition of Theorem 4.2(b), then $R$ is \emph{atomic}.
 \end{definition}
 
 \begin{lemma}[Nakayama's Lemma]
@@ -240,8 +240,10 @@ Let $R$ be a nonzero commutative ring with identity.
 \begin{definition}
     Let $\ffa = \bigcap_{i=1}^{n} \ffq_i$ be a minimal primary decomposition such that $\operatorname{rad}(\ffq_i) = \ffp_i$ for $i = 1,\cdots,n$.
     \begin{enumerate}
-        \item The \emph{associated primes} of $\ffa$ are $\ffp_1,\cdots,\ffp_n$. Write it as $\operatorname{Ass}_R(\ffa) = \{\ffp_1,\cdots,\ffp_n\}$.
-        \item The \emph{minimal (associated) primes} of $\ffa$ are the minimal elements of $\{\ffp_1,\cdots,\ffp_n\}$ w.r.t. $\subseteq$. Write it as $\operatorname{Min}(\ffa) = \min\{\operatorname{Ass}_R(\ffa))\} = \min\{\ffp_1,\cdots,\ffp_n\}$.
+        \item The \emph{associated primes} of $\ffa$ are $\ffp_1,\cdots,\ffp_n$. Write it as 
+            \[\operatorname{Ass}_R(\ffa) = \{\ffp_1,\cdots,\ffp_n\}.\]
+        \item The \emph{minimal (associated) primes} of $\ffa$ are the minimal elements of $\{\ffp_1,\cdots,\ffp_n\}$ w.r.t. $\subseteq$. Write it as 
+            \[\operatorname{Min}(\ffa) = \min\{\operatorname{Ass}_R(\ffa))\} = \min\{\ffp_1,\cdots,\ffp_n\}.\]
     \item The \emph{embedded primes} of $\ffa$ are the non-minimal associated primes of $\ffa$, i.e., $\operatorname{Ass}_R(\ffa) \setminus \operatorname{Min}(\ffa)$.
     \end{enumerate}
 \end{definition}
@@ -471,7 +473,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{example}
 
 \begin{definition}
-    Let $\ffp \in \operatorname{Spec}(R)$ and $\psi: R \to R_\ffp$. Then for $n \geq 1$, the $n^{th}$ \emph{symbolic power} of $\ffp$ is $\ffp^{(n)} = \psi^{-1}((\ffp^{n})_\ffp) = \psi^{-1}\left( \ffp_\ffp \right)^{n})$. 
+    Let $\ffp \in \operatorname{Spec}(R)$ and $\psi: R \to R_\ffp$. Then for $n \geq 1$, the $n^{th}$ \emph{symbolic power} of $\ffp$ is \[\ffp^{(n)} = \psi^{-1}((\ffp^{n})_\ffp) = \psi^{-1}\left( \ffp_\ffp \right)^{n}).\] 
 \end{definition}
 
 \begin{note}
@@ -500,5 +502,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{example}
 
 \begin{definition}[Calculus content]
-    Let $R = \bbC[X_1,\cdots,X_d]$ and $\ffp \in \operatorname{Spec}(R)$ (Zariski). $\ffp^{(2)} = \{f \mid f \in \ffp, \frac{\partial f}{ \partial x_i} \in \ffp,\fa i = 1,\cdots,d\}$, $\ffp^{(n)} = \{f \in \ffp \mid \frac{\partial^{i} f}{\partial \underline x} \in \ffp, \text{ all partials of order } i = 1,\cdots,n-1\}$.
+    Let $R = \bbC[X_1,\cdots,X_d]$ and $\ffp \in \operatorname{Spec}(R)$ (Zariski). 
+    \[\ffp^{(2)} = \left\{f \mathrel{\Big |} f \in \ffp, \frac{\partial f}{ \partial x_i} \in \ffp,\fa i = 1,\cdots,d\right\},\] 
+    \[\ffp^{(n)} = \left\{f \in \ffp \mathrel{\Big |} \frac{\partial^{i} f}{\partial \underline x} \in \ffp, \text{ all partials of order } i = 1,\cdots,n-1\right\}.\]
 \end{definition}
