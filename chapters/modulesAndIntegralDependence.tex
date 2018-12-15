@@ -116,7 +116,7 @@ Let $R$ be a nonzero commutative ring with identity. Let $R \subseteq S$ be a su
 \begin{proof}
     ``(i)$\Rightarrow$(ii)''. Assume $s^{n} + r_{n-1} s^{n-1} + \cdots + r_0 = 0$ for some $n \geq 1$ and $r_0,\cdots,r_{n-1} \in R$. Claim. $R[s] = R\langle 1,s,\cdots,s^{n-1} \rangle$. ``$\supseteq$''. It is straightforward. ``$\subseteq$''. It suffices to show $s^{m} \in R\langle 1,s,\cdots,s^{n-1} \rangle$ for $m = n,n+1,\cdots$. Use induction on $m$. Base case: $s^{n} = -\sum_{i=0}^{n-1} r_is^{i} \in R\langle 1,s,\cdots,s^{n-1} \rangle$. Inductive step: asssume $m \geq n+1$ and $s^{k} \in R\langle 1,s,\cdots,s^{n-1} \rangle$ for $0 \leq k \leq m-1$. Then $s^{m} = \sum_{i=0}^{n-1}r_is^{i+m-n} \in R\langle s^{m-n},\cdots,s^{m-1}\rangle \subseteq R\langle 1,s,\cdots,s^{n-1} \rangle$ by inductive hypothesis. \par 
     ``(ii)$\Rightarrow$(iii)''. Use $T = R[s]$. \par 
-    ``(iii)$\Rightarrow$(i)''. Assume $T = R\langle y_1,\cdots,y_n \rangle$ for some $y_1,\cdots,y_n \in T$. Since $T$ is a subring containing $R$ and $y_1,\cdots,y_n$, $R[y_1,\cdots,y_n] \subseteq T$ by Fact 5.11(c). So $T = R\langle y_1,\cdots,y_n \rangle \subseteq R[y_1,\cdots,y_n] \subseteq T$, i.e., $R\langle y_1,\cdots,y_n \rangle = T$. For $j = 1,\cdots,n$, since $s \in T$, $sy_j \in T$ and then $\sum_{i=1}^{n}\delta_{ij} sy_i = sy_j = \sum_{i=1}^{n}a_{ij}y_i$, i.e., $\sum_{i=1}^{n} (\delta_{ij}s - a_{ij}) y_i = 0$ for some $a_{1j},\cdots,a_{nj} \in R$. Let $B = (\delta_{ij}s-a_{ij}) \in T^{n \times n}$. Then $B \vec y = 0$. So $(\det(B)\delta_{ij})\vec y = \operatorname{adj}(B)B \vec y = 0$, i.e., $\det(B)y_j = 0$ for $j = 1,\cdots,n$. Since $1 \in T$, there exists $c_1,\cdots,c_n \in R$ such that $1 = \sum_{j=1}^{n}c_jy_j$. So $\det(\delta_{ij}s-a_{ij}) = \det(B) \cdot 1 = \det(B)\sum_{j=1}^{n}c_jy_j = \sum_{j=1}^{n} c_j\det(B)y_j = 0$, i.e., 
+    ``(iii)$\Rightarrow$(i)''. Assume $T = R\langle y_1,\cdots,y_n \rangle$ for some $y_1,\cdots,y_n \in T$. For $j = 1,\cdots,n$, since $s \in T$, we have $sy_j \in T$ and then $\sum_{i=1}^{n}\delta_{ij} sy_i = sy_j = \sum_{i=1}^{n}a_{ij}y_i$, i.e., $\sum_{i=1}^{n} (\delta_{ij}s - a_{ij}) y_i = 0$ for some $a_{1j},\cdots,a_{nj} \in R$. Let $B = (\delta_{ij}s-a_{ij}) \in T^{n \times n}$. Then $B \vec y = 0$. So $(\det(B)\delta_{ij})\vec y = \operatorname{adj}(B)B \vec y = 0$, i.e., $\det(B)y_j = 0$ for $j = 1,\cdots,n$. Since $1 \in T$, there exists $c_1,\cdots,c_n \in R$ such that $1 = \sum_{j=1}^{n}c_jy_j$. So $\det(\delta_{ij}s-a_{ij}) = \det(B) \cdot 1 = \det(B)\sum_{j=1}^{n}c_jy_j = \sum_{j=1}^{n} c_j\det(B)y_j = 0$, i.e., 
     \[0 = \det(\delta_{ij}s-a_{ij}) = 
         \abs{\begin{array}{cccc}
                 s-a_{11}& -a_{12} & \cdots & -a_{1n} \\
@@ -132,7 +132,7 @@ Let $R$ be a nonzero commutative ring with identity. Let $R \subseteq S$ be a su
 \end{theorem}
 
 \begin{proof}
-    Claim. given subrings $A \subseteq B \subseteq C$, if $B$ is finitely generated $A$-module and $C$ is finitely generated $B$-module, then $C$ is a finitely generated $A$-module. Assume $B = A\langle b_1,\cdots,b_m \rangle$ and $C = B\langle c_1,\cdots,c_n \rangle$. It suffices to show $C = A \langle b_ic_j \mid i = 1,\cdots,m, j = 1,\cdots,n\rangle$. ``$\supseteq$''. It is straightforward. ``$\subseteq$''. Let $c \in C$. Then $c = \sum_{j=1}^{n} \beta_jc_j$ for some $\beta_1,\cdots,\beta_n \in B$. Note for $j = 1,\cdots,n$, $\beta_j = \sum_{i=1}^{m} \alpha_{ij}b_i$ for some $\alpha_{1j},\cdots,\alpha_{mj} \in A$. So $c = \sum_{j=1}^{n}(\sum_{i=1}^{m}\alpha_{ij}b_i)c_j = \sum_{i=1}^{m} \alpha_{ij}b_ic_j$. Since $s_1$ is integral over $R$, by Proposition 5.13, $R[s_1]$ is a finitely generated $R$-module. Since $s_2$ is integeral over $R$, clearly $s_2$ is integeral over $R[s_1]$ and then $R[s_1,s_2] = R[s_1][s_2]$ is a finitely generated $R[s_1]$-module. So $R[s_1,s_2]$ is a finitely generated $R$-module. Continuing in this fashion, we have $R[s_1,\cdots,s_n]$ is a finitely generated $R$-module.
+    Claim. given subrings $A \subseteq B \subseteq C$, if $B$ is finitely generated $A$-module and $C$ is finitely generated $B$-module, then $C$ is a finitely generated $A$-module. Assume $B = A\langle b_1,\cdots,b_m \rangle$ and $C = B\langle c_1,\cdots,c_n \rangle$. It suffices to show $C = A \langle b_ic_j \mid i = 1,\cdots,m, j = 1,\cdots,n\rangle$. ``$\supseteq$''. It is straightforward. ``$\subseteq$''. Let $c \in C$. Then $c = \sum_{j=1}^{n} \beta_jc_j$ for some $\beta_1,\cdots,\beta_n \in B$. Note for $j = 1,\cdots,n$, $\beta_j = \sum_{i=1}^{m} \alpha_{ij}b_i$ for some $\alpha_{1j},\cdots,\alpha_{mj} \in A$. So $c = \sum_{j=1}^{n}(\sum_{i=1}^{m}\alpha_{ij}b_i)c_j = \sum_{i=1}^{m} \alpha_{ij}b_ic_j$. Since $s_1$ is integral over $R$, by Proposition 5.13, $R[s_1]$ is a finitely generated $R$-module. Since $s_2$ is integral over $R$, clearly $s_2$ is integral over $R[s_1]$ and then $R[s_1,s_2] = R[s_1][s_2]$ is a finitely generated $R[s_1]$-module. So $R[s_1,s_2]$ is a finitely generated $R$-module. Continuing in this fashion, we have $R[s_1,\cdots,s_n]$ is a finitely generated $R$-module.
 \end{proof}
 
 \begin{theorem}
@@ -206,46 +206,68 @@ Let $R$ be a nonzero commutative ring with identity. Let $R \subseteq S$ be a su
 \begin{proposition}
     Let $R \subseteq S$ be an integral extension.
     \begin{enumerate}
-        \item If $\ffb \leq S$ and $\ffa = R \cap \ffb$, then $R/\ffa \hookrightarrow S/\ffb$ given by $r+\ffa \mapsto r+\ffq$ is 1-1 and integral. 
+        \item If $\ffb \leq S$ and $\ffa = R \cap \ffb$, then $R/\ffa \to S/\ffb$ given by $r+\ffa \mapsto r+\ffq$ is 1-1 and integral. 
         \item If $U \subseteq R$ is multiplicatively closed, then $U^{-1}R \subseteq U^{-1}S$ given by $\frac{r}{u} \mapsto \frac{r}{u}$ is an integral extension.
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
     \begin{enumerate}
-        \item 
-        \item 
+        \item Consider
+            \begin{center}
+                \begin{tikzcd}
+                    &[-20pt] R \ar[r,"\subseteq"] \ar[r,swap,"p"] \ar[d,"\tau"] \ar[rd,swap,"\rho"] & S \ar[d,"\pi"] &[-20pt] \\
+                    & R/\ffa \ar[r,dashed,swap,hook,"\ex !\ \overbar{\rho}"] & S/\ffb \\ [-20pt]
+                    \overbar{r} \ar[rrr,mapsto] & & & \rho(r) = \overbar{r}
+                \end{tikzcd}
+            \end{center}
+            \par Note $\ker(\rho) = \ker(\pi) \cap R = \ffb \cap R = \ffa$. Then by the first isomorphism, $R/\ffa \cong \im(\rho) \subseteq S/\ffb$. \par 
+            Let $\overbar{s} \in S/\ffb$. Then $s$ is integral over $R$ since $S$ is integral over $R$. So $s$ satisfies $X^{n} + \sum_{i=0}^{n-1}a_iX^{i}$ for some $a_0,\cdots,a_{n-1} \in R$. Hence $\overbar{s}$ satisfies $X^{n} + \sum_{i=0}^{n-1} \overbar{a}_iX^{i}$ for some $\overbar{a}_0,\cdots,\overbar{a}_{n-1} \in S/\ffb = \im(\overbar{\rho})$.
+        \item Let $\frac{s}{u} \in U^{-1}S$ with $s \in S$ and $u \in U$. Then $s$ is integral over $R$. So $s^{n} + a_{n-1}s^{n-1} + \cdots + a_1s + a_0$ for some $a_0,a_1,\cdots,a_{n-1} \in R$. Hence $0 = \frac{s^{n}+a_{n-1}s^{n-1} + \cdots + a_1s + a_0}{u^{n}} = (\frac{s}{u})^{n} + (\frac{a_{n-1}}{u})(\frac{s}{u})^{n-1} + \cdots + (\frac{a_1}{u^{n-1}})(\frac{s}{u}) + (\frac{a_0}{u^{n}})$ for some $\frac{a_0}{u^{n}},\frac{a_1}{u^{n-1}},\cdots,\frac{a_{n-1}}{u} \in U^{-1}R$. \qedhere
     \end{enumerate}
 \end{proof}
 
 \begin{discussion}
-    Let $\ffp \in \operatorname{Spec}(R)$. When does there exist $\ffq \in \operatorname{Spec}(S)$ such that $\ffp = R \cap \ffq$? i.e., when is the induced map $\operatorname{Spec}(S) \to \operatorname{Spec}(R)$ surjective? By Cohen-Seidenberg, surjection when $S$ is integral over $R$.
+    Let $\ffp \in \operatorname{Spec}(R)$. When does there exist $\ffq \in \operatorname{Spec}(S)$ such that $\ffp = R \cap \ffq$? i.e., when is the induced map $\operatorname{Spec}(S) \to \operatorname{Spec}(R)$ surjective? By Cohen-Seidenberg, it is a surjection when $S$ is integral over $R$.
 \end{discussion}
 
 \begin{proposition}
-    Let $R \subseteq S$ be an integral extension. Then $R$ is a field if and only if $S$ is a field.
+    Let $S$ be an integral domain and $R \subseteq S$ be an integral extension. Then $R$ is a field if and only if $S$ is a field.
 \end{proposition}
 
 \begin{proof}
-    ``''. \par 
-    ``'' nonzero of $S$ translate to the nonzeroness of $R$.
+    ``$\Rightarrow$''. Assume $R$ is a field. Let $0 \neq s \in S$. Then $s$ is integral over $R$ since $S$ is integral over $R$. Let $n := \min\{\deg(f) \mid f \in R[X] \text{ is monic and }f(s) =0\}$. Then $s^{n} + a_{n-1}s^{n-1} + \cdots + a_1s + a_0 = 0$ for some $a_0,a_1,\cdots,a_{n-1} \in R$. Suppose $a_0 = 0$. Then $s(s^{n-1} + \cdots + a_1) = 0$. Since $s \neq 0$ and $S$ is an integral domain, $s^{n-1} + \cdots +a_1 = 0$, contradicting the minimality of $n$. So $a_0 \neq 0$. Since $R$ is a field, $a_0 \in R^{\times} \subseteq S^{\times}$. Hence $s(s^{n-1} + \cdots + a_1) = -a_0 \in S^{\times}$. Thus, $s \in S^{\times}$. \par 
+    ``$\Leftarrow$''. Assume $S$ is a field and let $0 \neq r \in R \subseteq S$. Then $r^{-1} \in S$. So $s$ is integral over $R$ since $S$ is integral over $R$. Then $r^{n-1}[(r^{-1})^{n} + a_{n-1}(r^{-1})^{n-1} + \cdots + a_1(r^{-1}) + a_0] = 0$ for some $a_0,a_1,\cdots,a_{n-1} \in R$. So $r^{-1} + \smallunderbrace{a_{n-1} + \cdots + a_1r^{n-1} + a_0r^{n-1}}_{\in R} = 0$. Hence $r^{-1} \in R$.
 \end{proof}
 
-\begin{example}
-    Let $k$ be a field and $S = \frac{k[X]}{(X^{2})}$. Let $x = \overbar{X} \in S$. Then $x$ is integral over $k$ since $x^{2} = 0$. So $S = k[x]$ is integral over $k$. $k$ is a field but $S$ is not a field (conclusion of 5.24 fails if $S$ is not an integral domain).
-\end{example}
+\begin{example*}
+    Conclusion of Proposition 5.24 fails if $S$ is not an integral domain. Let $R := k$ be a field and $S = \frac{k[X]}{(X^{2})}$. Let $x = \overbar{X} \in S$. Then $x$ is integral over $k$ since $x^{2} = 0$. So $S = k[x]$ is integral over $k$. Thus, $R$ is a field but $S$ is not a field.  
+\end{example*}
 
-\noindent Let $0 \neq R \subseteq S$ be an integral extension (no integral extension). (somewhere $\neq 0$).
+\noindent Let $0 \neq R \subseteq S$ be an integral extension.
 
 \begin{corollary}
-    Let $\ffq \in \operatorname{Spec}(S)$ and set $\ffp = R \cap \ffq$. Then $\ffp \in \operatorname{m-Spec}(R)$ if and only if $\ffq \in \operatorname{m-Spec}(S)$. 
+    Let $\ffq \in \operatorname{Spec}(S)$ and $\ffp = R \cap \ffq$. Then $\ffp \in \operatorname{m-Spec}(R)$ if and only if $\ffq \in \operatorname{m-Spec}(S)$. 
 \end{corollary}
 
+\begin{proof}
+    Note $R/\ffp = R/(R \cap \ffq) \subseteq S/\ffq$ is an integral extension by Proposition 5.22(a). Since $S/\ffq$ is an integral domain, by Proposition 5.24, $R/\ffp$ is a field if and only if $S/\ffq$ is a field.
+\end{proof}
+
 \begin{theorem}
-    For $\ffp \in \operatorname{Spec}(R)$, there exists $\ffq \in \operatorname{Spec}(S)$ such that $\ffp = R \cap \ffq$.
+    $\operatorname{Spec}(S) \to \operatorname{Spec}(R)$ given by $\ffq \mapsto R \cap \ffq$ is a surjection, i.e., for $\ffp \in \operatorname{Spec}(R)$, there exists $\ffq \in \operatorname{Spec}(S)$ such that $\ffp = R \cap \ffq$.
 \end{theorem}
 
 \begin{proof}
+    Let $U = R \setminus \ffp$. Note 
+    \begin{center}
+        \begin{tikzcd}
+            &[-29pt] \ffp &[-30pt] &[-30pt] R \ar[r,"\subseteq"] \ar[d,"\psi"] & S \ar[d,"\rho"] &[-20pt] \\
+            & & R_\ffp= & U^{-1}R \ar[r,"\subseteq"] & U^{-1}S \\ [-20pt]
+            \ffp_\ffp= & R_\ffp \cap Q \ar[uu,mapsto] & & & & Q \ar[mapsto,llll]
+        \end{tikzcd}
+    \end{center}
+    Since $R \subseteq S$ is an integral extension, $U^{-1}R \subseteq U^{-1}S$ is an integral extension. Since $0 \neq R \subseteq S$, $0 \neq U^{-1}R \subseteq U^{-1}S$. So there exists $Q \in \operatorname{m-Spec}(U^{-1}S)$. By Corollary 5.25, $R_\ffp \cap Q \in \operatorname{m-Spec}(R_\ffp) = \{\ffp_\ffp\}$ by Corollary 3.14. Since $U \cap \ffp = \emptyset$, $\ffp \cdot U^{-1}(U^{-1}R) = \ffp \cdot U^{-1}R \neq U^{-1}R = U^{-1}(U^{-1}R)$ by Proposition 3.13. So by Theorem 3.24, $\ffp = \psi^{-1}(\ffp \cdot U^{-1}R) = \psi^{-1}(\ffp_\ffp) = \psi^{-1}(R_\ffp \cap Q) = R \cap \rho^{-1}(Q)$. Let $\ffq := \rho^{-1}(Q)$. Since $Q \in \operatorname{Spec}(U^{-1}S)$, $\ffq = \rho^{-1}(Q) \in \operatorname{Spec}(S)$ by Fact 1.16.
 \end{proof}
 
 \begin{proposition}
@@ -253,85 +275,102 @@ Let $R$ be a nonzero commutative ring with identity. Let $R \subseteq S$ be a su
 \end{proposition}
 
 \begin{proof}
-    Set $\ffp = \ffq \cap R = \ffq' \cap R$ and $U = R \setminus \ffq$. 
+    Let $\ffp = \ffq \cap R = \ffq' \cap R \in \operatorname{Spec}(R)$ and $U = R \setminus \ffp$. By prime correspondence for localization, $\operatorname{Spec}(U^{-1}S) \leftrightarrow \{\gamma \in \operatorname{Spec}(S) \mid U \cap \gamma = \emptyset\} = \{\gamma \in \operatorname{Spec}(S) \mid R \cap \gamma \subseteq \ffp\}$ given by $U^{-1}\gamma \mapsfrom \gamma$. So $U^{-1}\ffq,U^{-1}\ffq' \in \operatorname{Spec}(U^{-1}S)$. Hence by Theorem 5.26 and Proposition 1.63(a), $\ffp_\ffp = \ffp R_\ffp = \psi^{-1}(R_\ffp \cap U^{-1}\ffq) \ffp_\ffp \subseteq R_\ffp \cap U^{-1}\ffq \subseteq R_\ffp \cap U^{-1}\ffq' = U^{-1}\ffp \cap U^{-1}\ffq' = U^{-1}(\ffp \cap \ffq')$ by Proposition 3.12(b). Since $(\ffp \cap \ffq') \cap U \subseteq \ffp \cap U = \emptyset$ and $\ffp \cap \ffq' = (\ffq' \cap R) \cap \ffq' = \ffq' \cap R \in \operatorname{Spec}(R)$, by prime correspondence for localization, we have $U^{-1}(\ffp \cap \ffq') \in \operatorname{Spec}(U^{-1}R)$. So $U^{-1}(\ffp \cap \ffq') \subseteq \ffp_\ffp$. Hence $R_\ffp \cap U^{-1} \ffq = R_\ffp \cap U^{-1}\ffq' = \ffp_\ffp \in \operatorname{m-Spec}(R_\ffp)$. 
     \begin{center}
         \begin{tikzcd}
-            R \ar[rrr,"\subseteq"] \ar[ddd,"\psi"] & & & S \ar[ddd,"\rho"] \\
-            & \ffp \ar[d,mapsto] & \ffq,\ffq' \ar[l,mapsto] \ar[d,mapsto] \\
-            & \ffp_\ffp & U^{-1}\ffq, U^{-1}\ffq' \\
-            U^{-1}R \ar[rrr,"\subseteq"] & & & U^{-1}S
+            &[-29pt] R \ar[rrr,"\subseteq"] \ar[ddd,swap,"\psi"] &[-25pt] & &[-30pt] S \ar[ddd,"\rho"] \\ [-20pt]
+            & & \ffp \ar[d,mapsto] & \ffq,\ffq' \ar[l,mapsto] \ar[d,mapsto] \\
+            & & \ffp_\ffp & U^{-1}\ffq, U^{-1}\ffq' \\ [-20pt]
+            R_\ffp= & U^{-1}R \ar[rrr,swap,"\subseteq"] & & & U^{-1}S
         \end{tikzcd}
     \end{center}
+    \par Since $\ffq,\ffq' \in \operatorname{Spec}(R)$, $U^{-1}\ffq,U^{-1}\ffq' \in \operatorname{Spec}(R_\ffp)$. Also, $R_\ffp = U^{-1}R \subseteq U^{-1}S$ is an integral extension since $R \subseteq S$ is an integral extension. So by Corollary 5.25, $U^{-1}\ffq,U^{-1}\ffq' \in \operatorname{m-Spec}(U^{-1}S)$. Also, since $U^{-1}\ffq \subseteq U^{-1}\ffq'$, $U^{-1}\ffq = U^{-1}\ffq'$. Thus, $\ffq = \ffq'$ by the prime correspondence for localization.
 \end{proof}
 
 \begin{theorem}[Going up]
-    Let $\ffp \subseteq \ffp_n$ be a chain in $\operatorname{Spec}(R)$ and $\ffq_1,\cdots,\ffq_m(m < n)$ be a chain in $\operatorname{Spec}(S)$ such that $\ffp_i = R \cap \ffq_i$ for $i = 1,\cdots,m$.
+    Let $\ffp_1 \subseteq \cdots \subseteq \ffp_n$ be a chain in $\operatorname{Spec}(R)$ and $\ffq_1 \subseteq \cdots \subseteq \ffq_m$ be a chain in $\operatorname{Spec}(S)$ with $m < n$ such that $\ffp_i = R \cap \ffq_i$ for $i = 1,\cdots,m$. Then there exists a chain $\ffq_\ffm \subseteq \cdots \subseteq \ffq_n$ in $\operatorname{Spec}(S)$ such that $R \cap \ffq_i = \ffp_i$ for $i = 1,\cdots,n$.
 \end{theorem}
 
 \begin{proof}
-    By induction on $n-m$. Suffices to consider the case.
+    By induction on $n-m$. It suffices to consider the case $n = 2$ and $m = 1$. Need to find $\ffq_2 \in \operatorname{V}(\ffq_1) \subseteq \operatorname{Spec}(S)$ such that $\ffq_2 \cap R = \ffp_2$. Consider
+    \begin{center}
+        \begin{tikzcd}
+            \ffp_2 &[-33pt] & &[-33pt] \ffq_2 \ar[mapsto,lll] \\ [-17pt]
+            & R \ar[r,swap,"\subseteq"] \ar[d,"\pi"] & S \ar[d,swap,"\tau"] \\
+            & R/\ffp_1\ar[r,"\subseteq"] & S/\ffq_1 \\ [-17pt]
+            \ffp_2/\ffp_1 \ar[uuu,mapsto] & & & \ffq_2/\ffq_1 \ar[uuu,mapsto] \ar[lll,mapsto] 
+        \end{tikzcd}
+    \end{center}
+    Since $R \subseteq S$ is an integral extension, $\ffp_1 \in \operatorname{Spec}(R)$, $\ffq_1 \in \operatorname{Spec}(S)$ and $\ffp_1 = R \cap \ffq_q$, by Proposition 5.22(a), $R/\ffp_1 \subseteq S/\ffq_1$ is an integral extension. Note $\ffp_2/\ffp_1 \in \operatorname{Spec}(R/\ffp_1)$ by prime correspondence for quotients. So there exists $\ffq_2/\ffq_1 \in \operatorname{Spec}(S/\ffq_1)$ such that $(R/\ffp_1) \cap (\ffq_2/\ffq_1) = \ffp_2/\ffp_1$ by Theorem 5.26 and prime correspondence for quotients. Hence $(R \cap \ffq_2)/\ffp_1 = \ffp_2/\ffp_1 \in \operatorname{Spec}(R/\ffp_1)$. Thus, $R \cap \ffq_2 = \ffp_2$ by prime correspondence for quotients.
 \end{proof}
 
 \begin{example}
+    Integral assumption is crucial.
     \begin{enumerate}
-        \item 
-        \item $0 \leq 2\bbZ \leq \bbZ \subseteq \bbZ[X]$. 
-            \begin{align*}
-                \frac{\bbZ[X]}{(2X-1)} &\cong \bbZ_2 = \bbZ[\frac{1}{2}] \subseteq \bbQ \\
-                \overbar{X} &\mapsto \frac{1}{2}.
-            \end{align*}
-            Since $\bbZ[\frac{1}{2}]$ is an integral domain... \par 
-            This example also shows need for integral assumption in 5.27 because 
+        \item $\bbZ \subseteq \bbQ$. Let $0 \subseteq 2\bbZ$ be a chain in $\operatorname{Spec}(\bbZ)$ and $0$ be a (unique) chain in $\operatorname{Spec}(\bbQ) = \{0\}$.
+        \item $\bbZ \subseteq \bbZ[X]$. Let $0 \subseteq 2\bbZ$ be a chain in $\operatorname{Spec}(\bbZ)$ and $\langle 2X-1 \rangle$ be a chain in $\operatorname{Spec}(\bbZ[X])$ since $\frac{\bbZ[X]}{(2X-1)} \cong \bbZ_2 = \bbZ[\frac{1}{2}] \subseteq \bbQ$ given by $\overbar{X} \mapsto \frac{1}{2}$ and $\bbZ[\frac{1}{2}]$ is an integral domain. Suppose there exists $Q \in \operatorname{Spec}(\bbZ[X])$ such that $\langle 2X-1 \rangle \subseteq Q$ and $\bbZ \cap Q = 2\bbZ$. Then $2,2x-1 \in Q$. So $1 \in Q$, i.e., $Q = \bbZ[X]$, a contradiction. \par
+            This example also shows need for integral assumption in Proposition 5.27 because 
+            \begin{enumerate}
+                \item 
+                    $0,\langle 2X-1 \rangle \in \operatorname{Spec}(\bbZ[X])$ and $\bbZ \cap 0 = 0 = \bbZ \cap \langle 2X-1 \rangle$, but $0 \subsetneq \langle 2X-1 \rangle$;
+                \item $\langle 2 \rangle, \langle 2,X \rangle \in \operatorname{Spec}(\bbZ[X])$ and $\bbZ \cap \langle 2 \rangle = 2\bbZ = \bbZ \cap \langle 2,X \rangle$, but $\langle 2 \rangle \subsetneq \langle 2,X \rangle$.
+            \end{enumerate}
     \end{enumerate}
 \end{example}
 
 \begin{proposition}
-    If $U \subseteq R$ be multiplicatively closed, then $U^{-1} \overbar{R} = \overbar{U^{-1}R}$. Let $\overbar{R} = \text{integral closure of $R$ in $S$}$. $U^{-1}R \subseteq U^{-1}S$ and $\overbar{U^{-1}R} = \text{integral closure of $U^{-1}R$ in $U^{-1}S$}$, then $\overbar{U^{-1}R} = U^{-1} \overbar{R}$....
+    Let $U \subseteq R$ be multiplicatively closed. Let $\overbar{R}$ be integral closure of $R$ in $S$ and $\overbar{U^{-1}R}$ be integral closure of $U^{-1}R$ in $U^{-1}S$. Then $\overbar{U^{-1}R} = U^{-1} \overbar{R}$.
 \end{proposition}
 
 \begin{proof}
-    $U^{-1} \overbar{R} \subseteq \overbar{U^{-1}R}$. Let $s/u \in \overbar{U^{-1}R} \subseteq U^{-1}S$. $0 = (\frac{s}{u})^{n} + (\frac{a_{n-1}}{v_{n-1}})(\frac{s}{u})^{n-1} + \cdots + (\frac{a}{v_1})(\frac{s}{u}) + (\frac{a}{v_0})$ in $U^{-1}S$, where $a_0,\cdots,a_{n-1} \in R$ and $v_0,\cdots,v_{n-1} \in U$. So $v_0 \cdots v_{n-1} \in U$. Multiply by $(uv)^{n}$.
+    ``$\supseteq$''. Since $R \subseteq \overbar{R} \subseteq S$ with $R \subseteq \overbar{R}$ integral, we have $U^{-1}R \subseteq U^{-1}\overbar{R} \subseteq U^{-1}S$ with $U^{-1}R \subseteq U^{-1}\overbar{R}$ integral by Proposition 5.22(b). So $U^{-1} \overbar{R} \subseteq \overbar{U^{-1}R}$. \par 
+    ``$\subseteq$''. Let $\frac{s}{u} \in \overbar{U^{-1}R} \subseteq U^{-1}S$. Then $0 = (\frac{s}{u})^{n} + (\frac{a_{n-1}}{v_{n-1}})(\frac{s}{u})^{n-1} + \cdots + (\frac{a_1}{v_1})(\frac{s}{u}) + (\frac{a_0}{v_0})$ in $U^{-1}S$ for some $a_0,\cdots,a_{n-1} \in R$ and $v_0,\cdots,v_{n-1} \in U$. Let $v := v_0 \cdots v_{n-1} \in U$. Multiply by $(uv)^{n}$, $0 = (vs)^{n} + (\smallunderbrace{u\frac{v}{v_{n-1}}a_{n-1}}_{b_{n-1} \in R})(vs)^{n-1} + \cdots + (\smallunderbrace{u^{n-1} \frac{v^{n-1}}{v_1}a_1}_{b_1 \in R})(vs) + (\smallunderbrace{u^{n}\frac{v^{n}}{v_0}a_0}_{b_0 \in R})$. So there exists $w \in U \subseteq R$ such that $0 = w \cdot 0 = w^n \cdot 0 = (wvs)^{n} + (\smallunderbrace{wb_{n-1}}_{\in R})(wvs)^{n-1} + \cdots + (\smallunderbrace{w^{n-1}b_1}_{\in R})(wvs) + (\smallunderbrace{w^{n}b_0}_{\in R})$. So $wvs \in \overbar{R}$. Thus, $\frac{s}{u} = \frac{wvs}{wvu} \in U^{-1}\overbar{R}$.
 \end{proof}
 
 \begin{definition}
-    If $R$ is an integral domain, then $R$ is \emph{integrally closed} (without qualification) if it is integrally closed in $Q(R)$. 
+    If $R$ is an integral domain, then $R$ is \emph{integrally closed} if it is integrally closed in field of fraction $Q(R)$. 
 \end{definition}
 
 \begin{example}
     \begin{enumerate}
         \item $\bbZ$ is integrally closed.
         \item Any UFD is integrally closed.
-        \item Let $k[X,Y] \supseteq R := k[X^{2},XY,Y^{2}] \cong \frac{k[U,V,W]}{\langle UW-V^{2} \rangle}$...
+        \item Let $R := k[X^{2},XY,Y^{2}] \subseteq k[X,Y]$. Then $R$ is not a UFD since $X^{2}Y^{2} = (XY)(XY)$ with $X^{2},Y^{2},XY$ irreducible in $R$. \par 
+            Note $Q(R) = k(X,Y) = Q(k[X,Y])$. Since $X,Y$ satisfies $Z^{2}-X^{2},Z^{2}-Y^{2} \in R[Z]$, respectively, we have $X,Y$ are integral over $R$. Also, since $k$ is integral over $R$, $R \subseteq k[X,Y]$ is integral. Since $k[X,Y]$ is a UFD, $k[X,Y]$ is integrally closed by (b). Hence $R$ is integrally closed by Corollary 5.20. \par 
+            Claim. $R \cong \frac{k[U,V,W]}{\langle V^{2}-UW \rangle}$. Let $\varphi: k[U,V,W] \to k[X,Y]$ be a ring homomorphism given by $U \mapsto X^{2}$, $V \mapsto XY$ and $W \mapsto Y^{2}$. Then $\im(\varphi) = k[X^{2},XY,Y^{2}]$ and $\langle V^{2}-UW \rangle \subseteq \ker(\varphi)$. Let $f \in \ker(\varphi)$. Then by the division algorithm, $f = (V^{2}-UW)q + r$ for some $q,r \in k[U,W][V]$ and $\deg(r) < 2$ in $k[U,W][V]$. So $\varphi(r) = 0$.  Since $\varphi(f) = 0$ and $\varphi$ is a ring homomorphism, $((XY)^{2}-X^{2}Y^{2})\varphi(q) + \varphi(r)=0$, i.e., $\varphi(r) = 0$. Note $r = aV+b$ for some $a,b\in k[U,W]$. So $a(X^{2},Y^{2})XY + b(X^{2},Y^{2}) = 0$. Hence $a= 0 = b$, i.e., $r = 0$. So $f \in \langle V^{2}-UW \rangle$. 
     \end{enumerate}
 \end{example}
 
-\begin{example}
-    (Q: $R \subseteq S$ integral and $S$ is noetherian, R is not necessarily noetherian). Let $\overbar{\bbQ} \subseteq \bbC$ algebraic closure, $R := \bbQ + X \overbar{\bbQ}[X] \subseteq \bbQ[X] =: S$. Note $\bbQ$ is not noetherian since $[\overbar{\bbQ}:\bbQ] = \infty$ and $R \subseteq S$ is an integral extension since $\overbar{\bbQ}$ is algebraically over $\bbQ$.
-\end{example}
+\begin{example*}
+    If $S$ is noetherian, then $R$ is not necessarily noetherian. Let $\overbar{\bbQ} \subseteq \bbC$ be the algebraic closure and $R := \bbQ + X \overbar{\bbQ}[X] \subseteq \overbar{\bbQ}[X] =: S$. Note $R \subseteq S$ is an integral extension since $\overbar{\bbQ}$ is algebraic over $\bbQ$ and $X \in R$, and $R$ is not noetherian since $[\overbar{\bbQ}:\bbQ] = \infty$.
+\end{example*}
 
 \begin{lemma}
     If $R$ is an integral domain, then $R = \bigcap_{\ffm \in \operatorname{m-Spec}(R)} R_\ffm \subseteq Q(R)$. 
 \end{lemma}
 
 \begin{proof}
-    Since $R \subseteq R_\ffm$ for $\ffm \in \operatorname{m-Spec}(R)$, $R \subseteq \bigcap_{\ffm \in \operatorname{m-Spec}(R)}R_\ffm$. Let $x \in \bigcap_{\ffm \in \operatorname{m-Spec}(R)}R_\ffm$. Let $I = \{r \in R \mid rx \in R\} = (R:_Rx) \leq R$. By localization chapter, $I_\ffm = (R:_Rx)_\ffm = (R_\ffm:_{R_\ffm}x) = R_\ffm$ for $\ffm \in \operatorname{m-Spec}(R)$. So $I \neq \ffm$ for $\ffm \in \operatorname{m-Spec}(R)$. Hence $I = R$, i.e., $1 \in I = (R:_Rx)$. Thus, $x = 1 \cdot x \in R$. ($R_\ffm$ maximal localization.)
+    ``$\subseteq$''. Since $R$ is an integral domain, $R \subseteq R_\ffm \subseteq Q(R)$ for $\ffm \in \operatorname{m-Spec}(R)$. So $R \subseteq \bigcap_{\ffm \in \operatorname{m-Spec}(R)}R_\ffm \subseteq Q(R)$. \par 
+    ``$\supseteq$''. Let $x \in \bigcap_{\ffm \in \operatorname{m-Spec}(R)}R_\ffm$. Let $I = \{r \in R \mid rx \in R\} =: (R:_Rx) \leq R$. By Proposition 3.12(f), $I_\ffm = (R:_Rx)_\ffm = (R_\ffm:_{R_\ffm}x) = R_\ffm$ for $\ffm \in \operatorname{m-Spec}(R)$. So $I \cap (R \setminus \ffm) \neq \emptyset$, i.e., $I \not\subseteq \ffm$ for $\ffm \in \operatorname{m-Spec}(R)$. Hence $I = R$, i.e., $1 \in I = (R:_Rx)$. Thus, $x = 1 \cdot x \in R$. 
 \end{proof}
-
-\begin{recall*}
-    An integral domain $R$ is \emph{integrally closed} if it is integral closed in $Q(R)$.
-\end{recall*}
 
 \begin{proposition}[being integrally closed is a ``local condition'']
     Let $R$ be an integral domain. Then the followings are equivalent.
     \begin{enumerate}
         \item[(i)] $R$ is integrally closed.
-        \item[(ii)] 
-        \item[(iii)]
+        \item[(ii)] $U^{-1}R$ is integral closed for multiplicatively closed $U \subseteq R$ with $0 \not \in U$.
+        \item[(iii)] $R_\ffp$ is integral closed for $\ffp \in \operatorname{Spec}(R)$.
+        \item[(iv)] $R_\ffm$ is integral closed for $\ffm \in \operatorname{m-Spec}(R)$.
     \end{enumerate}
 \end{proposition}
 
+\begin{proof}
+    ``(i)$\Rightarrow$(ii)''. Assume $R$ is integrally closed and $U \subseteq R$ are multiplicatively closed with $0 \not \in U$. Since $U \subseteq R$ are multiplicatively closed, $R$ is integral domain and $0 \not\in U$, we have $U \subseteq \operatorname{NZD}(R)$. So $R \subseteq U^{-1}R \subseteq Q(R) =: S$ are subrings. By Proposition 5.30, $\overbar{U^{-1}R} = U^{-1} \overbar{R} = U^{-1}R$ since $R$ is integral closed in $Q(R)$. So $U^{-1}R$ is integrally closed in $U^{-1}S = Q(R)$. Fact: If $R \subseteq U^{-1}R \subseteq Q(R)$ are subrings, then $Q(U^{-1}R) = Q(R)$. Thus, $U^{-1}R$ is integrally closed. \par 
+    ``(iv)$\Rightarrow$(i)''. Assume $R_\ffm$ is integrally closed in $Q(R_\ffm) = Q(R)$ for $\ffm \in \operatorname{m-Spec}(R)$. Let $x \in \overbar{R}$. Then $x \in Q(R) = Q(R_\ffm)$ and $x$ is integral over $R \subseteq R_\ffm$ for $\ffm \in \operatorname{m-Spec}(R)$. So $x \in \overbar{R_\ffm} = R_\ffm$ for $\ffm \in \operatorname{m-Spec}(R)$. Since $R$ is an integral domain, by Lemma 5.33, $x \in \bigcap_{\ffm \in \operatorname{m-Spec}(R)}R_\ffm = R$.
+\end{proof}
+
 \begin{definition}
-    Let $\ffa \leq R \subseteq S$. $s \in S$ is \emph{integral over $\ffa$} if $s$ satisfies $f(X) = X^{n} + a_{n-1}X^{n-1} + \cdots + a_0$ for some $n \geq 1$ and $a_0,\cdots,a_{n-1} \in \ffa$. \par 
+    Let $\ffa \leq R$. $s \in S$ is \emph{integral over $\ffa$} if $s$ satisfies $f(X) = X^{n} + a_{n-1}X^{n-1} + \cdots + a_0$ for some $n \geq 1$ and $a_0,\cdots,a_{n-1} \in \ffa$. \par 
     The \emph{integral closure} of $\ffa$ in $S$ is 
     \[\overbar{\ffa} = \{s \in S \mid s \text{ is integral over $\ffa$}\}.\]
 \end{definition}
@@ -341,25 +380,102 @@ Let $R$ be a nonzero commutative ring with identity. Let $R \subseteq S$ be a su
 \end{warning}
 
 \begin{lemma}
-    Let $\ffa \leq R \subseteq S$ and let $\overbar{R}$ be the integral closure of $R$ in $S$: $\ffa \leq R \subseteq \overbar{R} \subseteq S$. Then $\overbar{\ffa} = \operatorname{rad}(\ffa \overbar{R})$. So $\overbar{\ffa}$ is closed under sums and products.
+    Let $\ffa \leq R $ and $\overbar{R}$ be the integral closure of $R$ in $S$. Then $\overbar{\ffa} = \operatorname{rad}(\ffa \overbar{R}) \leq \overbar{R}$. So $\overbar{\ffa}$ is closed under sums and products.
 \end{lemma}
 
+\begin{proof}
+    ``$\subseteq$''. Let $s \in \overbar{\ffa}$. Then $s^{n} + a_{n-1}s^{n-1} + \cdots + a_0 = 0$ for some $n \geq 1$ and $a_0,\cdots,a_{n-1} \in \ffa$. So $s^{n} = -(a_{n-1}s^{n-1} + \cdots + a_0) \in \ffa \overbar{R}$. Hence $s \in \operatorname{rad}(\ffa \overbar{R})$. \par 
+    ``$\supseteq$''. Let $t \in \operatorname{rad}(\ffa \overbar{R})$. Then $t^{n} \in \ffa \overbar{R}$ for some $n \geq 1$. So $t^{n} = \sum_{i=1}^{m} \alpha_is_i$ for some $m \geq 1$, $\alpha_1,\cdots,\alpha_m \in \ffa$ and $s_1,\cdots,s_m \in \overbar{R}$. Set $T = R[s_1,\cdots,s_m] \subseteq \overbar{R} \subseteq S$. Then $t^{n} \in \ffa T$. So $t^{n}T \subseteq \ffa T$. Since $s_1,\cdots,s_m$ is integral over $R$, $T$ is a finitely generated $R$-module by Theorem 5.19. By determinant trick as in the proof of Proposition 5.13, we have $t^{n}$ is integral over $\ffa$. So $(t^{n})^{l} + b_{l-1}(t^{n})^{l-1} + \cdots + b_0 = 0$ for some $l \geq 1$ and $b_0,\cdots,b_{l-1} \in \ffa$. Hence $t$ is integral over $\ffa$.
+\end{proof}
+
 \begin{proposition}
-    Let $R \subseteq S$ be a subring such that $S$ is an integral domain. Assume $R$ is integrally closed in $Q(R)$ and let $s \in R$ be integral over $\ffa \leq R$, say $s$ satisfies $f(X) = X^{n} + a_{n-1}X^{n-1} + \cdots + a_0 \in R[X]$ for some $a_0,\cdots,a_{n-1} \in \ffa$. Then $s$ is algebraic over $Q(R) =: K$. ......
+    Let $R$ be integrally closed and $S$ be an integral domain. Let $s \in S$ is integral over $\ffa \leq R$. Then $s$ is algebraic over $Q(R) =: K$. Let $g(X) = X^{m} + c_{m-1}X^{m-1} + \cdots + c_0 \in K[X]$ be the minimal polynomial of $s$ over $K$. Then $c_0,\cdots,c_{m-1} \in \operatorname{rad}(\ffa)$.
 \end{proposition}
 
+\begin{proof}
+    Let $s_1:=s,s_2,\cdots,s_m$ be the roots of $g(X)$ in some algebraic closure of $K$. Then $g(s_i) = 0$ for $i = 1,\cdots,m$. Since $s$ is integral over $\ffa$, $s$ satisfies some monic $f \in \ffa[X] \subseteq Q(R)[X] = K[X]$. Also, since $g$ is the minimal polynomial of $s$ over $K$, there exists $h \in K[X]$ such that $f = hg$. So $f(s_i) = h(s_i)g(s_i)$ for $i = 1,\cdots,m$. So $s_i$ is integral over $\ffa$ for $i = 1,\cdots,m$ since $f \in \ffa[X]$. Note $g(X) = (X-s_1) \cdots (X-s_m)$. So $c_j$ is a sum or product of $s_1,\cdots,s_m$ for $j = 0,\cdots,m-1$. Hence by Lemma 5.37, $c_j$ is integral over $\ffa$ for $j = 0,\cdots,m-1$. Let $\overbar{\ffa},\overbar{R}$ be the integral closure of $\ffa,R$ in $K$, respectively. Since $c_0,\cdots,c_{m-1} \in K$, by Lemma 5.37, $c_j \in \overbar{\ffa} = \operatorname{rad}(\ffa \overbar{R}) = \operatorname{rad}(\ffa R) = \operatorname{rad}(\ffa)$.
+\end{proof}
+
 \begin{theorem}[Going down theorem]
-    Let $R \subseteq S$ be an integral extension such that $S$ is an integral domain and $R$ is an integrally closed in $\operatorname{Q}(R)$. Let $\ffp_1 \supseteq \ffp_2 \supseteq \cdots \supseteq \ffp_n$ be a chain in $\operatorname{Spec}(R)$ and $\ffq_1 \supseteq \ffq_2 \supseteq \cdots \supseteq \ffq_m$ ($m < n$) be a chain in $\operatorname{Spec}(S)$ such that $\ffq_i \cap R = \ffp_i$ for $i = 1,\cdots,m$. Then there exists a chain $\ffq_m \supseteq \ffq_{m+1} \supseteq \cdots \supseteq \ffq_n$ in $\operatorname{Spec}(S)$ such that $\ffq_i \cap R = \ffp_i$ for $i = 1,\cdots,n$. 
+     Let $R$ be integrally closed and $S$ be an integral domain. Let $\ffp_1 \supseteq \ffp_2 \supseteq \cdots \supseteq \ffp_n$ be a chain in $\operatorname{Spec}(R)$ and $\ffq_1 \supseteq \ffq_2 \supseteq \cdots \supseteq \ffq_m$ ($m < n$) be a chain in $\operatorname{Spec}(S)$ such that $\ffq_i \cap R = \ffp_i$ for $i = 1,\cdots,m$. Then there exists a chain $\ffq_m \supseteq \ffq_{m+1} \supseteq \cdots \supseteq \ffq_n$ in $\operatorname{Spec}(S)$ such that $\ffq_i \cap R = \ffp_i$ for $i = 1,\cdots,n$. 
 \end{theorem}
 
 \begin{proof}
-    As in the going up, assume without loss of generality that $m = 1$ and $n = 2$. 
+    As in the going up, assume without loss of generality that $m = 1$ and $n = 2$. Let $\ffp \supseteq \ffp'$ be a chain in $\operatorname{Spec}(R)$ and $\ffq \in \operatorname{Spec}(S)$ such that $\ffq \cap R = \ffp$.
+    Consider
     \begin{center}
         \begin{tikzcd}
-            R \ar[rrr,"\subseteq"] \ar[dd] & & & S \ar[dd] \\
-            & R \ar[r,mapsto] & SSS \\
-            R_\ffp \ar[rrr,dashed,"\ex !"] & & & S_\ffq 
+            R \ar[rrr,"\subseteq"] \ar[dd] &[-25pt] & &[-25pt] S \ar[dd] \\
+            & r/u \ar[r,mapsto] & r/u \\ [-20pt]
+            R_\ffp \ar[rrr,dashed,swap,"\ex \phi"] & & & S_\ffq 
         \end{tikzcd}
     \end{center}
+    By Proposition 3.6(d), $\phi$ is well-defined and 1-1 since $R \subseteq S$ is 1-1. \par 
+    To show there exists $\ffq \supseteq \ffq' \ni \operatorname{Spec}(S)$ such that $\ffq' \cap R = \ffp'$, it is equivalent to show there exists $Q' \in \operatorname{Spec}(S_\ffq)$ such that $Q' \cap R = \ffp'$, where $Q' \cap S = \ffq'$ and $Q' = \ffq'S_\ffq$ by prime correspondence for localization since $\ffq' \cap R = (Q' \cap S) \cap R = Q' \cap R = \ffp'$ and $Q' \cap R  = (\ffq'S_\ffq) \cap R = \ffq' \cap R = \ffp'$. Since $S$ is an integral domain, $R \setminus \ffq \subseteq \operatorname{NZD}(S)$. So $S \xrightarrow{\subseteq} S_\ffq$ is 1-1. Also, since $R \xrightarrow{\subseteq} S$ is 1-1, we have $R \xrightarrow{\subseteq} S_\ffq$ is 1-1. Since $Q' \in \operatorname{Spec}(S_\ffq)$ and $Q' \cap R = \ffp'$, by Theorem 3.24, it is equivalent to show $(\ffp'S_\ffq) \cap R = \ffp'$. \par 
+    ``$\supseteq$''. By 1.63(a). \par
+    ``$\subseteq$''. Let $0 \neq x \in (\ffp'S_\ffq) \cap R$. Then $x \in \ffp'S_\ffq = \ffp' (S \setminus \ffq)^{-1}S = (S \setminus \ffq)^{-1} (\ffp'S)$. So $x = \frac{s}{v}$ for some $s \in \ffp'S$ and $v \in S \setminus \ffq$. Since $R \subseteq S$ is integral, $\overbar{R} = S$, where $\overbar{R}$ is the integral closure of $R$ in $S$. So $s \in \ffp'S \subseteq \operatorname{rad}(\ffp'S) = \operatorname{rad}(\ffp'\overbar{R}) = \overbar{\ffp'}$ by Lemma 5.37. Hence $s \in S$ is integral over $\ffp'$. Let $g(X) = X^{r} + u_{r-1}X^{r-1} + \cdots + u_0 \in Q(R)[X]$ be the minimal polynomial of $s$ over $Q(R)$. Then by Proposition 5.38, $u_i \in \operatorname{rad}(\ffp') = \ffp'$ for $i = 0,\cdots,r-1$. Since $0 \neq x = \frac{s}{v}$ and $R$ is an integral domain, $v = sx^{-1}$ with $x^{-1} \in Q(R)$. Note $v$ satisfies $X^{r} + \smallunderbrace{\frac{u_{r-1}}{x}}_{t_{r-1}} X^{r-1} + \smallunderbrace{\frac{u_{r-2}}{x^{2}}}_{t_{r-2}}X^{r-2} + \cdots + \smallunderbrace{\frac{u_0}{x^{r}}}_{t_0} \in Q(R)[X]$, which is a minimal polynomial for $v$ over $Q(R)$ since if $v$ satisfies a smaller degree polynomial over $Q(R)$, then so does $S$. Let $t_i = \frac{u_i}{x^{r-i}} \in Q(R)$, then $u_i = t_ix^{r-i} \in \ffp'$ for $i = 0,\cdots,r-1$. Since $v \in S$ is integral over $R$, by Proposition 5.38, we have $t_0,\cdots,t_{r-1} \in \operatorname{rad}(\langle 1 \rangle R) = R$. Suppose $x \not\in \ffp'$. Since $\ffp' \in \operatorname{Spec}(R)$, $t_i \in \ffp'$ for $i = 0,\cdots,r-1$. So $v^{r} = -(t_{r-1}v^{r-1} + t_{r-2}v^{r-2} + \cdots + t_0) \in \ffp'S \subseteq \ffp S = (\ffq \cap R)S \subseteq \ffq S = \ffq \in \operatorname{Spec}(S)$. Hence $v \in \ffq$, a contradiction. Thus, $x \in \ffp'$.
 \end{proof}
 
+\begin{theorem}[Noether normalization]
+    Let $k$ be a field and $k \subseteq R$ be a subring. Assume $R = k[x_1,\cdots,x_n]$. 
+    \begin{enumerate}
+        \item There exist an intermediate subring $k \subseteq S \subseteq R$ and $y_1,\cdots,y_d \in R$ such that $S = k[y_1,\cdots,y_d] \cong k[Y_1,\cdots,Y_d]$, which is a polynomial ring, such that $d \leq n$ and $R$ is integral over $S$. So $R = S[x_1,\cdots,x_n]$ is a finitely generated $S$-module. Moreover, $y_i$ is a polynomial in $x_i$'s with coefficients in $k$ for $i = 1,\cdots,d$. 
+        \item If $\abs k = \infty$, then we can take some $d$ and $y_i = \sum_{j=1}^{n} a_{ij}x_j$ for some $a_{i1},\cdots,a_{in} \in k$ for $i = 1,\cdots,d$. \par
+    \end{enumerate}
+    (In fact, $d=$ Krull dimension of $R$.)
+\end{theorem}
+
+\begin{proof} 
+    \textbf{Definition.} Let $z_1,\cdots,z_m \in R$ and $k[Z_1,\cdots,Z_m]$ be a polynomial ring. Consider the ring homomorphism $k[Z_1,\cdots,Z_m] \overset n \twoheadrightarrow k[z_1,\cdots,z_m]$ given by $F \mapsto F(z_1,\cdots,z_m)$. $z_1,\cdots,z_m$ is \emph{algebraically independent} over $k$ if $n$ is 1-1, i.e., $n$ is an isomorphism. (No polynomial relations between the $z_i$'s.) \par 
+    Structure of proof: induct on $n$. Base case $n = 0$: $R = k$ ($S = k$). Base case $n = 1$: $R = k[x] \overset n \twoheadleftarrow k[X]$. If $n$ is 1-1, then $S = R$. If $n$ is not 1-1, then $x$ satisfies some monic $F \in k[X]$, so $x$ is integral over $k$, hence $S = k \subseteq R = k[x]$ with $d = 0$ and $S \subseteq R$ an integral extension. \par 
+    Inductive step: Assume $n > 1$ and the result is true for rings of form $k[z_1,\cdots,z_{n-1}]$. By inductive hypothesis and Corollary 5.20, it suffices to show $R$ is integral over $k[w_1,\cdots,w_{n-1}]$ for some $w_1,\cdots,w_{n-1} \in R$. If $x_1,\cdots,x_n$ are algebraically independent over $k$, then use $S = R = k[x_1,\cdots,x_n] \xleftarrow[\cong]{n}  k[X_1,\cdots,X_n]$. Assume without loss of generality $x_1,\cdots,x_n$ are not algebraically independent over $k$. Consider $k[X_1,\cdots,X_n] \overset n \twoheadrightarrow k[x_1,\cdots,x_n]$. Then there exists $0 \neq F \in k[X_1,\cdots,X_n]$ such that $n(F) = 0$. Let $e = \deg(F)$ and  write $F = F_0 + F_1 + \cdots + F_e$, where $F_i$ is homogeneous of degree $i$ for $i= 0,\cdots,e$. 
+    \begin{enumerate}
+        \item[(b)] Assume $\abs k = \infty$. Then $F_e(X_1,\cdots,X_{n-1},1) \neq 0$. Since $\abs k = \infty$, $F_e(\lambda_1,\cdots,\lambda_n,1) \neq 0$ for some $\lambda_1,\cdots,\lambda_n \in k$. Look at $k[w_1,\cdots,w_{n-1},x_n]$. For $\underline b = (b_1,\cdots,b_n) \in \bbZ_{\geq 0}^{n}$, $(w_1+\lambda_1 x_n)^{b_1} \cdots (w_{n-1} + \lambda_{n-1}x_n)^{b_{n-1}} \cdot x_n^{b_n} = \lambda_1^{b_1} \cdots \lambda_{n-1}^{b_{n-1}} x_n^{\abs {\underline b}} + \text{lower degree terms in $x_n$}$, where $\abs{\underline b} = b_1 + \cdots + b_n$. Note $F_i(w_1+\lambda_1x_n,\cdots,w_{n-1}+\lambda_{n-1}x_n,x_n) = \sum_{\abs{\underline b} = i} a_{\underline b} (\lambda_1^{b_1} \cdots \lambda_{n-1}^{b_{n-1}} \cdot 1^{b_n})x_n^{i} + \text{lower degree terms in $x_n$} = F_i(\lambda_1,\cdots,\lambda_{n-1},1)x_n^{i} + \text{lower degree terms in $x_n$}$ for $i = 0,\cdots,e$. \par 
+            Let $G(w_1,\cdots,w_{n-1},x_n) = F(w_1+\lambda_1x_n,\cdots,w_{n-1}+\lambda_{n-1}x_n,x_n) = F_e(\lambda_1,\cdots,\lambda_{n-1},1)x_n^{e} + \text{lower degree terms in $x_n$}$. Let $w_i := x_i-\lambda_ix_n$ for $i = 1,\cdots,n$. Then $G(w_1,\cdots,w_{n-1},x_n) = F(x_1-\lambda_1x_n+\lambda_1x_n,\cdots,x_{n-1}-\lambda_{n-1}x_n + \lambda_{n-1}x_n,x_n) = F(x_1,\cdots,x_{n-1},x_n) = n(F) = 0$. Since $F_e(\lambda_1,\cdots,\lambda_n,1) \neq 0$, $x_n$ satisfies $\frac{G(w_1,\cdots,w_{n-1},x_n)}{F_e(\lambda_1,\cdots,\lambda_n,1)} = x_n^{e} + \text{lower degree terms in $x_n$}$. So $x_n$ is integral over $k[w_1,\cdots,w_{n-1}]$. Hence $R = k[x_1,\cdots,x_{n-1},x_n] = k[x_1-\lambda x_n,\cdots,x_{n-1}-\lambda_{n-1}x_n,x_n] = k[w_1,\cdots,w_{n-1}][x_n]$ is integral over $k[w_1,\cdots,w_{n-1}]$ by Theorem 5.19. \par 
+            Let $w_n = x_n$. Re-order $w_i$'s such that $w_1,\cdots,w_d$ are algebraically independent over $k$ and $w_1,\cdots,w_d,w_s$ are algebraically dependent over $k$ for $s = d+1,\cdots,n$. Set $y_i = w_i$ for $i = 1,\cdots,d$.
+        \item[(a)]   
+            Look at $k[w_1,\cdots,w_{n-1},x_n]$. Let $e_n = 1$. For $\underline b = (b_1,\cdots,b_n) \in \bbZ_{\geq 0}^{n}$ and $e_1,\cdots,e_{n-1} \gg 1$, $(w_1+x_n^{e_n})^{b_1} \cdots (w_{n-1} + x_n^{e_{n-1}})^{b_{n-1}} \cdot x_n^{b_n} = x_n^{\sum_{i=1}^{n}e_ib_i} + \text{lower degree terms in $x_n$}$. Write $F = \sum_{j=1}^{m} a_j \underline x^{\underline b_j}$ for some $m \geq 1$ and distinct $\underline x^{b_j} = x_1^{b_{j_1}} \cdots x_n^{b_{j_n}}$ such that $a_j \neq 0$ for $j = 1,\cdots,m$. Let $A_i = \max\{b_{1i},\cdots,b_{mi}\} - \min\{b_{1i},\cdots,b_{mi}\}$ for $i = 1,\cdots,n$. Choose $e_{i-1} > A_ie_i + \cdots + A_ne_n$ for $i = 2,\cdots,n$. Then we can re-order $\underline b_1,\cdots,\underline b_m$ such that $\sum_{i=1}^{n}e_ib_{1_i} > \sum_{i=1}^{n} e_ib_{2_i} > \cdots > \sum_{i}e_ib_{m_i}$. \par 
+            Write $G(w_1,\cdots,w_{n-1},x_n) = F(w_1+x_n^{e_1},\cdots,w_{n-1}+x_n^{e_n-1},x_n) = a_1x_n^{\sum_{i=1}^{n}e_ib_{1i}}+\,$lower degree terms in $x_n$. Let $w_i := x_i-x_n^{e_i}$ for $i = 1,\cdots,n$. Then $G(w_1,\cdots,w_{n-1},x_n) = F(x_1,\cdots,x_{n-1},x_n) = n(F) = 0$. Since $a_1 \neq 0$, $x_n$ satisfies $\frac{G(w_1,\cdots,w_{n-1},x_n)}{a_1} = x_n^{\sum_{i=1}^{n}e_ib_{1_i}} + \text{ lower degree terms in $x_n$}$. So $x_n$ is integral over $k[w_1,\cdots,w_{n-1}]$. Hence $R = k[x_1,\cdots,x_{n-1},x_n] = k[x_1-x_n^{e_1},\cdots,x_{n-1}-x_{n}^{e_n},x_n] = k[w_1,\cdots,w_{n-1}][x_n]$ is integral over $k[w_1,\cdots,w_{n-1}]$ by Theorem 5.19. \par 
+            Let $w_n = x_n$. Re-order $w_i$'s such that $w_1,\cdots,w_d$ are algebraically independent over $k$ and $w_1,\cdots,w_d,w_s$ are algebraically dependent over $k$ for $s = d+1,\cdots,n$. Set $y_i = w_i$ for $i = 1,\cdots,d$. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}[Hilbert Nullstellensatz, version 1]
+    Let $k \subseteq K$ be a subfield and assume $K = k[x_1,\cdots,x_n]$ for some $x_1,\cdots,x_n \in K$.
+    \begin{enumerate}
+        \item $K$ is algebraic over $k$ and $[K:k] < \infty$.
+        \item If $k$ is algebraically closed, then $K = k$.
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}
+        \item Let $k \subseteq S \subseteq K$ be a Noether normalization of $k \subseteq K$. Then there exists $y_1,\cdots,y_d \in K$ such that $S = k[y_1,\cdots,y_d] = k[Y_1,\cdots,Y_d] \subseteq K$ and $K$ is integral over $k[Y_1,\cdots,Y_d] = S$. Since $K$ is a field, by Proposition 5.24, $k[Y_1,\cdots,Y_d]$ is a field. So $d = 0$. Then $S = k$. So $K = k[x_1,\cdots,x_n]$ is integral over $k$. Hence $K$ is a finitely $k$-module by Theorem 5.19, i.e., $K$ is a finite-dimensional vector space over $k$.
+        \item Since $k$ is algebraically closed, there is no proper algebraic extensions. So $K = k$. \qedhere
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}[Hilbert Nullstellensatz, version 2]
+    Let $k$ be an algebraically closed field, $R = k[X_1,\cdots,X_n]$ and $\ffm \in \operatorname{m-Spec}(R)$. Then there exists $\underline a \in k^{n}$ such that $\ffm = \langle X_1-a_1,\cdots,X_n-a_n \rangle$.
+\end{theorem}
+
+\begin{proof}
+    Set $K = R/\ffm = k[x_1,\cdots,x_n] \hookleftarrow k$, where $x_i = \overbar{X_i} \in R/\ffm$ for $i = 1,\cdots,n$. Since $k$ is algebraically closed and $k \hookrightarrow K$ is a subfield, by Hilbert Nullstellensatz, version 1(b), $k \hookrightarrow k[x_1,\cdots,x_n] = R/\ffm$ is onto. Since $x_i \in R/\ffm$, there exists $a_i \in k$ such that $a_i \mapsto x_i$ for $i = 1,\cdots,n$. Then $x_i - a_i = 0$ in $R/\ffm$, i.e., $X_i - a_i \in \ffm$ for $i = 1,\cdots,n$. So $\ffm \supseteq \langle X_1-a_1,\cdots,X_n-a_n \rangle$. Since $\ffm,\langle X_1-a_1,\cdots,X_n-a_n \rangle \in \operatorname{m-Spec}(R)$, $\ffm = \langle X_1-a_1,\cdots,X_n-a_n \rangle$.
+\end{proof}
+
+\begin{theorem}[Hilbert Nullstellensatz, version 3]
+    Let $k$ be an algebraically closed field. Let $\ffa \lneq R = k[X_1,\cdots,X_n]$ and $Z = \operatorname{Z}(\ffa) = \{\underline a \in k^{n} \mid F(\underline a) = 0, \fa F \in \ffa\}$.
+\end{theorem}
+
+\begin{proof}
+    Since $\ffa \neq R$, there exists $\ffm \in \operatorname{m-Spec}(R)$ such that $\ffa \subseteq \ffm$. By Hilbert Nullstellensatz, version 2, there exists $\underline a \in k^{n}$ such that $\ffa \subseteq \ffm = \langle X_1-a_1,\cdots,X_n-a_n \rangle$. Let $F \in \ffa \subseteq \ffm$. Then $F = \sum_{i=1}^{n} g_i(X_i-a_i)$ for some $g_1,\cdots,g_n \in R$. So $F(\underline a) = \sum_{i=1}^{n} g_i(\underline a)(a_i - a_i) = 0$. Thus, $\underline a \in \operatorname{Z}(\ffa)$.
+\end{proof}
+
+\begin{theorem}[Hilbert Nullstellensatz, version 4]
+    Let $k$ be an algebraically closed field. Let $\ffa \lneq R = k[X_1,\cdots,X_n]$ and $Z = \operatorname{Z}(\ffa)$. Let $I = \operatorname{I}(Z) = \{F \in R \mid F(\underline a) = 0, \fa \underline a \in Z\} \leq R$. Then $I = \operatorname{rad}(\ffa)$.
+\end{theorem}
+
+\begin{proof}
+    ``$\supseteq$''.  By definition of $Z$ and $\operatorname{I}(Z)$, we have $\ffa \subseteq \operatorname{I}(Z) = I$. So $\operatorname{rad}(\ffa) \subseteq \operatorname{rad}(I) = I$. \par 
+    ``$\subseteq$''. Let $F \in R \setminus \operatorname{rad}(\ffa)$. Need to show $F \not \in I$. Note $F \not \in \operatorname{rad}(I) = \bigcap_{\ffp \in \operatorname{V}(\ffa)} \ffp$. So there exists $\ffp \in \operatorname{V}(\ffa)$ such that $F \not\in \ffp$. Set $\overbar{R} = R/\ffp = k[x_1,\cdots,x_n]$, an integral domain, where $x_i = \overbar{X_i} \in R/\ffp$ for $i = 1,\cdots,n$. Since $F \not\in \ffp$, $f := \overbar{F} \neq 0$ in $\overbar{R}$. Then $0 \neq \overbar{R} \subseteq \overbar{R}_f = \overbar{R}[1/f] = k[x_1,\cdots,x_n,1/f]$. So there exists $\ffm \in \operatorname{m-Spec}(\overbar{R}_f)$. Consider $k \hookrightarrow \overbar{R}_f/\ffm = k[\overbar{x_1},\cdots,\overbar{x_n},\overbar{1/f}]$, where $\overbar{1/f} \neq 0$ in $\overbar{R}_f/\ffm$ since $1/f \in \overbar{R_f}^{\times}$. Since $k$ is algebraically closed and $k \hookrightarrow \overbar{R}_f/\ffm$ is a subfield, by Hilbert Nullstellensatz, version 1(b), $k \hookrightarrow \overbar{R}_f/\ffm$ is onto. Since $\overbar{x_i} \in \overbar{R}_f/\ffm$, there exists $a_i \in k$ such that $a_i \mapsto \overbar{x_i}$ for $i = 1,\cdots,n$. Since $\ffa \subseteq \ffp$, $\ffa \cdot \overbar{R} = 0$. So $\ffa \cdot \overbar{R}_f/\ffm = 0$. Then $G(\underline a) = \overbar{g}(\overbar{x_1},\cdots,\overbar{x_n}) = \overbar{g} = 0$ in $\overbar{R}_f/\ffm$ for all $G \in \ffa$. So $\underline a \in \operatorname{Z}(\ffa) = Z$. Also, since $F(\underline a) = \overbar{f}(\overbar{x_1},\cdots,\overbar{x_n}) = \overbar{f} \neq 0$ in $\overbar{R}_f/\ffm$, we have $F \not\in \operatorname{I}(Z) = I$.
+\end{proof}

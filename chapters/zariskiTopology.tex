@@ -164,7 +164,7 @@ Let $R$ be a nonzero commutative ring with identity.
         \overbar f &\mapsto f
     \end{align*}
     Let $\overbar f = \overbar g \in \Gamma(V)$. Then $f-g \in \operatorname{I}(V)$. So for all $\underline a \in V$, we have $f(\underline a)-g(\underline a) = (f-g)(\underline a) = 0$, i.e., $f(\underline a) = g(\underline a)$. Hence $\phi$ is well-defined. It is straightforward to show $\phi$ is a ring monomorphism. Define $k[V]$ to be the set of \emph{restrictions} of at least one polynomial $f|_V: V \to k$, where $f \in k[\underline X]$. Note $\im(\phi) = k[V]$. So $\Gamma(V) \cong k[V]$. Thus, it is very common to write $k[V] = \Gamma(V)$. In actuality, people often write $f$ when they mean $\overbar f$ if there is no ambiguity. \par 
-    Let $x: = \overbar{X} \in \Gamma(V)$. For $i = 1,\cdots,d$, let $x_i := \overbar X_i \in \Gamma(V)$ be the $i^{\text{th}}$ \emph{coordinate function} with $x_i(\underline a) = \underline a_i$. Note $\overbar{f(X_1,\cdots,X_n)} = f(x_1,\cdots,x_n)$ for $f \in k[\underline X]$. So $x_i$'s generate $\Gamma(V)$ as a $k$-algebra, i.e., every element of $\Gamma(V)$ can be written as a polynomial in the $x_i$'s with coefficients from $k$. Hence we denote $k[V]=k[\underline x] = k[x_1,\cdots,x_d]$. Unlike in $k[\underline X]$, there may be nontrivial relations between the $x_i$'s in $k[\underline x]$. For example, in $\bbQ[x] = \bbQ[X]/\langle X^2-2 \rangle$, we have $0 = \overbar {X^2-2} = x^{2} - 2$ in $\bbQ[x]$, i.e., $x^{2} = 2$ in $\bbQ[\underline x]$. \par 
+    Let $x: = \overbar{X} \in \Gamma(V)$. Let $x_i := \overbar X_i \in \Gamma(V)$ be the $i^{\text{th}}$ \emph{coordinate function} with $x_i(\underline a) = \underline a_i$ for $i = 1,\cdots,d$. Note $\overbar{f(X_1,\cdots,X_n)} = f(x_1,\cdots,x_n)$ for $f \in k[\underline X]$. So $x_i$'s generate $\Gamma(V)$ as a $k$-algebra, i.e., every element of $\Gamma(V)$ can be written as a polynomial in the $x_i$'s with coefficients from $k$. Hence we denote $k[V]=k[\underline x] = k[x_1,\cdots,x_d]$. Unlike in $k[\underline X]$, there may be nontrivial relations between the $x_i$'s in $k[\underline x]$. For example, in $\bbQ[x] = \bbQ[X]/\langle X^2-2 \rangle$, we have $0 = \overbar {X^2-2} = x^{2} - 2$ in $\bbQ[x]$, i.e., $x^{2} = 2$ in $\bbQ[\underline x]$. \par 
     We have 
     \begin{align*}
         \overbar \varphi: V &\hookrightarrow \operatorname{m-Spec}(k[V]) \subseteq \operatorname{Spec}(k[V]) \\
@@ -177,8 +177,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \noindent Set up: $R \ni f$, $X = \operatorname{Spec}(R) \supseteq X_f = X \setminus \operatorname{V}(f) = \{\ffp \in \operatorname{Spec}(R) \mid f \not \in \ffp\}$.
 
 \begin{recall*}
-    Let $S = \{1,f,f^2,\cdots\}$. We have the localization
-    $R_f = S^{-1}R = \{\frac{r}{f^n} \mid r \in R, n \geq 0\}$.
+    Let $S = \{1,f,f^2,\cdots\}$. We have $R_f = S^{-1}R = \{\frac{r}{f^n} \mid r \in R, n \geq 0\} = R[1/f]$.
 \end{recall*}
 
 \begin{proposition}

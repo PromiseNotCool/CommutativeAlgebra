@@ -1,0 +1,64 @@
+\chapter{Appendix}
+
+Let $R$ be a commutative ring with identity and $k$ be a field. 
+
+\section{Hilbert–Samuel multiplicity}
+
+\begin{question}
+    What is the Hilbert-Samuel multiplicity? 
+\end{question}
+
+\begin{example}
+    Let $R = k[X,Y,Z]$ and $\ffm = (X,Y,Z)$. Then $l(R/\ffm) = 1$ and $l(R/\ffm^{2}) = l(\frac{k[X,Y,Z]}{X^{2},XY,XZ,Y^{2},YZ,Z^{2}}) = 4$ with $R/\ffm^{2} \cong k \oplus kX \oplus kY \oplus kZ$ as $k$-vector space.
+\end{example}
+
+\begin{theorem}
+    Let $R = k[X_1,\cdots,X_d]$ and $\ffm = (X_1,\cdots,X_d)$. Then $l(R/\ffm^{t}) = \#$ monomials of degree  $< t = \binom {d + (t-1)}{t-1} = \binom {d+(t-1)}{d}$ for $t \geq 1$.
+\end{theorem}
+
+\begin{definition}
+    Let $(R,\ffm)$ be a local ring and $I$ be an $m$-primary ideal. Definethe \emph{Hilbert-Samuel multiplicity} of $I$ on $R$ to be $a$, where $\frac{a}{(\dim R)!}$ is the leading coefficient of the Hilbert-Samuel polynomial.
+\end{definition}
+
+\begin{definition}
+    \[e(I,R) = (\dim R)! \lim_{t \to \infty} \frac{l(R/I^{t})}{t^{\dim R}}.\]
+\end{definition}
+
+\begin{example}
+    Let $R = k[X,Y]$, $I = (X^{2},XY,Y^{2})$ and $\ffm = (X,Y)$. Then $l(R/l^{t}) = l(R/\ffm^{2t}) = \binom {2t+1}{2t-1} = t(2t+1)$. So $l(R/I) = 3$, $l(R/I^{2}) = 10$ and $l(R/I^{4}) = 36$. Note $e(I,R) = 2! \lim_{t \to \infty} \frac{t(2t+1)}{t^{2}} = 4$.
+\end{example}
+
+\begin{fact}
+    Let $R = k[X_1,\cdots,X_d]$ and $\ffm = (X_1,\cdots,X_d)$. Then $e(\ffm,R) = 1$.
+\end{fact}
+
+\begin{proof}
+    $e(\ffm,R) = (d!) \lim_{t \to \infty} \frac{\binom{d+(t-1)}{t-1}}{t^{d}} = d! \lim_{t \to \infty} \frac{\frac{t \cdots (t+d-1)}{d!}}{t^{d}} = 1$.
+\end{proof}
+
+\begin{fact}
+    The Hilbert-Samuel multiplicity only sees the top dimension part of $R$. Let $R = \frac{\bbR[X,Y,Z]}{(X,Y) \cap (Z)} = \frac{\bbR[X,Y,Z]}{(XZ,YZ)}$. Let $z = \overbar{Z} \in R$. Then $R/(z) \cong \bbR[X,Y]$. So $e(\ffm,R/(z)) = 1$ with $\ffm = (X,Y)$.
+\end{fact}
+
+\begin{definition}
+    Let $I \leq R$. Define $\overbar{I}$ be the \emph{integral closure} of $I$ by 
+    \[\overbar{I} = \{r \in R \mid r^{n} + a_1r^{n-1} + \cdots + a_n = 0 \text{ for some $n \geq 1$ and $a_i \in I^{i}$}, \fa i = 1,\cdots,n\}.\]
+\end{definition}
+
+\begin{example}
+    Let $R = k[X,Y]$. Then $XY$ is integral over $(X^{2},Y^{2})$ since $(XY)^{2} + 0 + (-X^{2}Y^{2}) = 0$.
+\end{example}
+
+\begin{fact}
+    If $\overbar{I} = \overbar{J}$, then $e(I,R) = e(J,R)$.
+\end{fact}
+
+\begin{fact}
+    If $I = (f_1,\cdots,f_d) \leq R$, $\operatorname{rad}(I) = \ffm \in \operatorname{m-Spec}(R)$ and $\dim R = d$, then $e(\langle f_1^{t_1},\cdots,f_d^{t_d} \rangle,R) = t_1 \cdots t_d \cdot e(\langle f_1,\cdots,f_d \rangle,R)$.
+\end{fact}
+
+\begin{example}
+    Let $R = k[X,Y]$, $I = (X^{2},XY,Y^{2})$ and $\ffm = (X,Y)$. Then the integral closure $\overbar{I} = \overbar{(X^{2},XY,Y^{2})} = \overbar{(X^{2},Y^{2})}$. So by Fact 6.11 $e(I,R) = e(\langle X^{2},Y^{2} \rangle) = 2 \cdot 2 \cdot e(\ffm,R) = 4$ by Fact 6.12.
+\end{example}
+
+
