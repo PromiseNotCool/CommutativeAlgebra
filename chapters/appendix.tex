@@ -2,7 +2,8 @@
 
 Let $R$ be a commutative ring with identity and $k$ be a field. 
 
-\section{Hilbert–Samuel multiplicity}
+\section*{Hilbert–Samuel multiplicity}
+\addcontentsline{toc}{section}{Hilbert–Samuel multiplicity}
 
 \begin{question}
     What is the Hilbert-Samuel multiplicity? 
@@ -17,7 +18,7 @@ Let $R$ be a commutative ring with identity and $k$ be a field.
 \end{theorem}
 
 \begin{definition}
-    Let $(R,\ffm)$ be a local ring and $I$ be an $m$-primary ideal. Definethe \emph{Hilbert-Samuel multiplicity} of $I$ on $R$ to be $a$, where $\frac{a}{(\dim R)!}$ is the leading coefficient of the Hilbert-Samuel polynomial.
+    Let $(R,\ffm)$ be a local ring and $I$ be an $\ffm$-primary ideal. Define the \emph{Hilbert-Samuel multiplicity} of $I$ on $R$ to be $a$, where $\frac{a}{(\dim R)!}$ is the leading coefficient of the Hilbert-Samuel polynomial.
 \end{definition}
 
 \begin{definition}
@@ -25,7 +26,7 @@ Let $R$ be a commutative ring with identity and $k$ be a field.
 \end{definition}
 
 \begin{example}
-    Let $R = k[X,Y]$, $I = (X^{2},XY,Y^{2})$ and $\ffm = (X,Y)$. Then $l(R/l^{t}) = l(R/\ffm^{2t}) = \binom {2t+1}{2t-1} = t(2t+1)$. So $l(R/I) = 3$, $l(R/I^{2}) = 10$ and $l(R/I^{4}) = 36$. Note $e(I,R) = 2! \lim_{t \to \infty} \frac{t(2t+1)}{t^{2}} = 4$.
+    Let $R = k[X,Y]$, $I = (X^{2},XY,Y^{2})$ and $\ffm = (X,Y)$. Then by Theorem 6.3, $l(R/l^{t}) = l(R/\ffm^{2t}) = \binom {2t+1}{2t-1} = t(2t+1)$ for $t \geq 1$. Note $e(I,R) = 2! \lim_{t \to \infty} \frac{t(2t+1)}{t^{2}} = 4$.
 \end{example}
 
 \begin{fact}
@@ -37,7 +38,7 @@ Let $R$ be a commutative ring with identity and $k$ be a field.
 \end{proof}
 
 \begin{fact}
-    The Hilbert-Samuel multiplicity only sees the top dimension part of $R$. Let $R = \frac{\bbR[X,Y,Z]}{(X,Y) \cap (Z)} = \frac{\bbR[X,Y,Z]}{(XZ,YZ)}$. Let $z = \overbar{Z} \in R$. Then $R/(z) \cong \bbR[X,Y]$. So $e(\ffm,R/(z)) = 1$ with $\ffm = (X,Y)$.
+    The Hilbert-Samuel multiplicity only sees the top dimension part of $R$. Let $R = \frac{\bbR[X,Y,Z]}{(X,Y) \cap (Z)} = \frac{\bbR[X,Y,Z]}{(XZ,YZ)}$. Let $z = \overbar{Z} \in R$, then $R/(z) \cong \bbR[X,Y]$, so $e(\ffm,R/(z)) = 1$, where $\ffm = (X,Y)$.
 \end{fact}
 
 \begin{definition}
@@ -58,7 +59,7 @@ Let $R$ be a commutative ring with identity and $k$ be a field.
 \end{fact}
 
 \begin{example}
-    Let $R = k[X,Y]$, $I = (X^{2},XY,Y^{2})$ and $\ffm = (X,Y)$. Then the integral closure $\overbar{I} = \overbar{(X^{2},XY,Y^{2})} = \overbar{(X^{2},Y^{2})}$. So by Fact 6.11 $e(I,R) = e(\langle X^{2},Y^{2} \rangle) = 2 \cdot 2 \cdot e(\ffm,R) = 4$ by Fact 6.12.
+    Let $R = k[X,Y]$, $I = (X^{2},XY,Y^{2})$ and $\ffm = (X,Y)$. Then $\operatorname{rad}(I) = (X,Y) = \ffm$. Since the integral closure $\overbar{I} = \overbar{(X^{2},XY,Y^{2})} = \overbar{(X^{2},Y^{2})}$ by Example 6.10, then by Fact 6.11, $e(I,R) = e(\langle X^{2},Y^{2} \rangle, R) = 2 \cdot 2 \cdot e(\ffm,R) = 4$ by Fact 6.12.
 \end{example}
 
 
