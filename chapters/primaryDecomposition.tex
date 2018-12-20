@@ -185,7 +185,7 @@ Let $R$ be a nonzero commutative ring with identity.
 
 \begin{proof}
     \begin{enumerate}
-        \item[(c)] ``$\Leftarrow$''. Assume $\operatorname{rad}(J_i) = \operatorname{rad}(J_j)$ for $1 \leq i,j \leq n$. Let $xy \in \ffa$ with $x,y \in R$. If $y \in \operatorname{rad}(\ffa)$, done. Assume $y \not \in \operatorname{rad}(\ffa)\footnote[2]{Try not to assume $x \not \in \ffa$.} = \operatorname{rad}(\bigcap_{i=1}^{n} J_i) = \bigcap_{i=1}^{n} \operatorname{rad}(J_i) = \operatorname{rad}(J_i)$ for $i = 1,\cdots,n$ by Fact 1.58(d). Since $R$ is noetherian and $J_i$ is irreducible, $J_i$ is primary for $i = 1,\cdots,n$. Also, since $xy \in \ffa \subseteq J_i$ for $i = 1,\cdots,n$, we have $x \in J_i$ for $i = 1,\cdots,n$. So $x \in \bigcap_{i=1}^{n} J_i = \ffa$. \par
+        \item[(c)] ``$\Leftarrow$''. Assume $\operatorname{rad}(J_i) = \operatorname{rad}(J_j)$ for $1 \leq i,j \leq n$. Let $xy \in \ffa$ with $x,y \in R$. If $y \in \operatorname{rad}(\ffa)$, done. Assume $y \not \in \operatorname{rad}(\ffa)\footnote[2]{Not try to assume $x \not \in \ffa$.} = \operatorname{rad}(\bigcap_{i=1}^{n} J_i) = \bigcap_{i=1}^{n} \operatorname{rad}(J_i) = \operatorname{rad}(J_i)$ for $i = 1,\cdots,n$ by Fact 1.58(d). Since $R$ is noetherian and $J_i$ is irreducible, $J_i$ is primary for $i = 1,\cdots,n$. Also, since $xy \in \ffa \subseteq J_i$ for $i = 1,\cdots,n$, we have $x \in J_i$ for $i = 1,\cdots,n$. So $x \in \bigcap_{i=1}^{n} J_i = \ffa$. \par
         ``$\Rightarrow$''. Assume $\ffa$ is primary. Induct on $n$. The base case $n = 2$ is the important case. Suppose $\operatorname{rad}(J_1) \neq \operatorname{rad}(J_2)$. Then we have there exist $a \in \operatorname{rad}(J_1) \setminus \operatorname{rad}(J_2)$ and $b \in \operatorname{rad}(J_2) \setminus \operatorname{rad}(J_1)$. So $a,b \not \in \operatorname{rad}(J_1) \cap \operatorname{rad}(J_2) = \operatorname{rad}(J_1 \cap J_2) = \operatorname{rad}(\ffa)$ and $ab \in \operatorname{rad}(J_1) \cap \operatorname{rad}(J_2) = \operatorname{rad}(\ffa)$, contradicting $\operatorname{rad}(\ffa) \in \operatorname{Spec}(R)$ by Proposition 4.19. \qedhere
     \end{enumerate}
 \end{proof}
@@ -399,7 +399,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{corollary}
 
 \begin{summary}
-    Let $R$ be noetherian and $\ffa = 0$. Then $\operatorname{ZD}(R) = \bigcup_{i=1}^{n} \ffp_i = \bigcup_{\ffp \in \operatorname{Ass}_R(0)}\ffp = \bigcup_{\ffp \in \operatorname{Ass}_R(\ffa) \setminus \operatorname{Min}(\ffa)} \ffp$. (Use with prime avoidence to get useful information about ideals and $\operatorname{NZD}(R)$). \par 
+    Let $R$ be noetherian and $\ffa = 0$. Then $\operatorname{ZD}(R) = \bigcup_{i=1}^{n} \ffp_i = \bigcup_{\ffp \in \operatorname{Ass}_R(0)}\ffp = \bigcup_{\ffp \in \operatorname{Ass}_R(\ffa) \setminus \operatorname{Min}(\ffa)} \ffp$. (Use with prime avoidence to get useful information about ideals and $\operatorname{NZD}(R)$.) \par 
     $\operatorname{Nil}(R) = \operatorname{rad}(0) = \operatorname{rad}(\bigcap_{i=1}^{n}\ffq_i) = \bigcap_{i=1}^{n} \ffp_i = \bigcap_{\ffp \in \operatorname{Min}(0)} \ffp$.
 \end{summary}
 
