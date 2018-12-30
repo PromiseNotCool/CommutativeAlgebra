@@ -279,7 +279,7 @@ Let $R$ be a nonzero commutative ring with identity. Let $R \subseteq S$ be a su
 \end{proposition}
 
 \begin{proof}
-    Let $\ffp = \ffq \cap R = \ffq' \cap R \in \operatorname{Spec}(R)$ by Fact 1.16. Let $U = R \setminus \ffp$. By prime correspondence for localization, $\operatorname{Spec}(U^{-1}S) \leftrightarrow \{\gamma \in \operatorname{Spec}(S) \mid \gamma \cap (R\setminus \ffp) = \emptyset\} = \{\gamma \in \operatorname{Spec}(S) \mid \gamma \cap R \subseteq \ffp\}$ given by $U^{-1}\gamma \mapsfrom \gamma$. So $U^{-1}\ffq,U^{-1}\ffq' \in \operatorname{Spec}(U^{-1}S)$. 
+    Let $\ffp = \ffq \cap R = \ffq' \cap R \in \operatorname{Spec}(R)$ by Fact 1.16. Let $U = R \setminus \ffp$. By prime correspondence for localization, $\operatorname{Spec}(U^{-1}S) \leftrightarrow \{\gamma \in \operatorname{Spec}(S) \mid \gamma \cap (R\setminus \ffp) = \emptyset\} = \{\gamma \in \operatorname{Spec}(S) \mid \gamma \cap R \subseteq \ffp\}$ given by $U^{-1}\gamma \mapsfrom \gamma$. So $U^{-1}\ffq,U^{-1}\ffq' \in \operatorname{Spec}(U^{-1}S)$. Hence $U^{-1}\ffq \cap R_\ffp, U^{-1}\ffq' \cap R_\ffq \in \operatorname{Spec}(R)$.
     \begin{center}
         \begin{tikzcd}
             \ffp \ar[ddd,mapsto] &[-25pt] & &[-40pt] \ffq,\ffq' \ar[lll,mapsto] \ar[ddd,mapsto] \\ [-20pt]
@@ -288,7 +288,7 @@ Let $R$ be a nonzero commutative ring with identity. Let $R \subseteq S$ be a su
             \ffp_\ffp & & & U^{-1}\ffq, U^{-1}\ffq' 
         \end{tikzcd}
     \end{center}
-    Since $U^{-1}\ffq, U^{-1}\ffq' \supseteq U^{-1}\ffp = \ffp_\ffp$ and $R_\ffp \supsetneq \ffp_\ffp$, we have $U^{-1}\ffq \cap R_\ffp, U^{-1}\ffq' \cap R_\ffp \supsetneq \ffp_\ffp \in \operatorname{m-Spec}(R_\ffp)$. So $U^{-1}\ffq \cap R_\ffp = \ffp_\ffp = U^{-1}\ffq' \cap R_\ffp$.\footnote[2]{$U^{-1}\ffq \cap R_\ffp = U^{-1}\ffq \cap U^{-1}R = U^{-1}(\ffq \cap R) = U^{-1}\ffp = \ffp_\ffp = U^{-1}\ffp = U^{-1}(\ffq' \cap R) = U^{-1}\ffq' \cap U^{-1}R = U^{-1}\ffq' \cap R_\ffp$.} Since $R \subseteq S$ is an integral extension, $U^{-1}R \subseteq U^{-1}S$ is an integral extension by Proposition 5.22(b). So by Corollary 5.25, $U^{-1}\ffq,U^{-1}\ffq' \in \operatorname{m-Spec}(U^{-1}S)$. Also, since $U^{-1}\ffq \subseteq U^{-1}\ffq'$, $U^{-1}\ffq = U^{-1}\ffq'$. Thus, $\ffq = \ffq'$ by the prime correspondence for localization.
+    Since $U^{-1}\ffq, U^{-1}\ffq' \supseteq U^{-1}\ffp = \ffp_\ffp$ and $R_\ffp \supseteq \ffp_\ffp$, we have $U^{-1}\ffq \cap R_\ffp, U^{-1}\ffq' \cap R_\ffp \supseteq \ffp_\ffp \in \operatorname{m-Spec}(R_\ffp)$. So $U^{-1}\ffq \cap R_\ffp = \ffp_\ffp = U^{-1}\ffq' \cap R_\ffp$.\footnote[2]{$U^{-1}\ffq \cap R_\ffp = U^{-1}\ffq \cap U^{-1}R = U^{-1}(\ffq \cap R) = U^{-1}\ffp = \ffp_\ffp = U^{-1}\ffp = U^{-1}(\ffq' \cap R) = U^{-1}\ffq' \cap U^{-1}R = U^{-1}\ffq' \cap R_\ffp$.} Since $R \subseteq S$ is an integral extension, $U^{-1}R \subseteq U^{-1}S$ is an integral extension by Proposition 5.22(b). So by Corollary 5.25, $U^{-1}\ffq,U^{-1}\ffq' \in \operatorname{m-Spec}(U^{-1}S)$. Also, since $U^{-1}\ffq \subseteq U^{-1}\ffq'$, $U^{-1}\ffq = U^{-1}\ffq'$. Thus, $\ffq = \ffq'$ by the prime correspondence for localization.
 \end{proof}
 
 \begin{theorem}[Going up theorem]
