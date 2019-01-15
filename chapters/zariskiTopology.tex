@@ -108,7 +108,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{theorem}
 
 \begin{proof}
-    It suffices to show $X \setminus \operatorname{V}(S) = \bigcup_{s \in S}X_s$ for any $S \subseteq R$. Note $\ffp \in X \setminus \operatorname{V}(S)$ if and only if $S \not \subseteq \ffp$ if and only if there exists $s \in S$ such that $s \not \in \ffp$ if and only if there exists $s \in S$ such that $\ffp \in X_s$ if and only if $\ffp \in \bigcup_{s \in S}X_s$.
+    It suffices to show $X \setminus \operatorname{V}(S) = \bigcup_{s \in S}X_s$ for $S \subseteq R$. Note $\ffp \in X \setminus \operatorname{V}(S)$ if and only if $S \not \subseteq \ffp$ if and only if there exists $s \in S$ such that $s \not \in \ffp$ if and only if there exists $s \in S$ such that $\ffp \in X_s$ if and only if $\ffp \in \bigcup_{s \in S}X_s$.
 \end{proof}
 
 \begin{proposition}
@@ -148,7 +148,7 @@ Let $R$ be a nonzero commutative ring with identity.
         \underline a &\mapsto (X_1-a_1,\cdots,X_d-a_d) = \ker(\Phi_{\underline a}), 
     \end{align*}
     where $\Phi_{\underline a}: k[\underline X] \twoheadrightarrow k$ is given by $f \mapsto f(\underline a)$. \par 
-    Hilbert's Nullstellensatz: If $k = \overline k$, then $\operatorname{V}(\ffb) \neq \emptyset$ for any $\ffb \lneq k[\underline X]$. Let $\ffm \in \operatorname{m-Spec}(k[\underline X])$. Then $\operatorname{V}(\ffm) \neq \emptyset$ and so there exists $\underline a \in \operatorname{V}(\ffm)$ such that $f(\underline a) = 0$ for all $f \in \ffm \subseteq k[\underline X]$. Hence $\ffm \subseteq \ker(\Phi_{\underline a}) = (X_1-a_1,\cdots,X_d-a_d) \lneq k[\underline X]$. Also, since $\ffm \leq k[\underline X]$ is maximal, $\ffm = (X_1-a_1,\cdots,X_d-a_d) = \varphi(\underline a)$. So $\varphi$ is onto. Thus, $\varphi: \bbA^d \xrightarrow \cong \operatorname{m-Spec}(k[\underline X])$. \par 
+    Hilbert's Nullstellensatz: If $k = \overline k$, then $\operatorname{V}(\ffb) \neq \emptyset$ for $\ffb \lneq k[\underline X]$. Let $\ffm \in \operatorname{m-Spec}(k[\underline X])$. Then $\operatorname{V}(\ffm) \neq \emptyset$ and so there exists $\underline a \in \operatorname{V}(\ffm)$ such that $f(\underline a) = 0$ for all $f \in \ffm \subseteq k[\underline X]$. Hence $\ffm \subseteq \ker(\Phi_{\underline a}) = (X_1-a_1,\cdots,X_d-a_d) \lneq k[\underline X]$. Also, since $\ffm \leq k[\underline X]$ is maximal, $\ffm = (X_1-a_1,\cdots,X_d-a_d) = \varphi(\underline a)$. So $\varphi$ is onto. Thus, $\varphi: \bbA^d \xrightarrow \cong \operatorname{m-Spec}(k[\underline X])$. \par 
     Grothendieck: there exists more geometric data in $\operatorname{Spec}(k[\underline X])$. \par 
     Let $V = \operatorname{V}(T) = \operatorname{V}(\ffb)$, where $\ffb = \langle T \rangle \leq k[\underline X]$. Then
     \[\operatorname{rad}(\ffb) \leq \operatorname{I}(V) := \{f \in k[\underline X] \mid f(\underline a) = 0,\fa \underline a \in V\} = \text{``vanishing ideal of $V$''} \leq k[\underline X].\]
@@ -183,7 +183,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \begin{proposition}
     Define $\varphi: R \to R_f$ by $\varphi(g) = \frac{g}{1}$ and $\varphi^*: \operatorname{Sepc}(R_f) \to \operatorname{Spec}(R) = X$ by $\varphi^*(\ffq) = \varphi^{-1}(\ffq)$.
     \begin{enumerate}
-        \item $\varphi^*(\ffq) \in X_f$ for any $\ffq \in \operatorname{Spec}(R_f)$. 
+        \item $\varphi^*(\ffq) \in X_f$ for $\ffq \in \operatorname{Spec}(R_f)$. 
         \item Restrict codomain, the induced map $\varphi_f^*: \operatorname{Spec}(R_f) \to X_f$ is 1-1 and onto.
     \end{enumerate}
     Slogan: $\operatorname{Spec}(R_f) = X_f$ ``open affine subsets''.
@@ -267,7 +267,7 @@ Let $R$ be a nonzero commutative ring with identity.
 
 \begin{proof}
     \begin{enumerate}
-        \item Let $\ffp \in \operatorname{Spec}(R_f)$. $\ffp \in (\varphi_f^*)^{-1}(\operatorname{V}(\ffa) \cap X_f)$ if and only if $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in \operatorname{V}(\ffa) \cap X_f$ if and only if $\varphi^{-1}(\ffp) \in \operatorname{V}(\ffa)$ if and only if $\ffa \subseteq \varphi^{-1}(\ffp)$ if and only if $\ffa_f = \ffa R_f \subseteq \varphi^{-1}(\ffp)R_f = \ffp$\footnote[2]{Method 1: Let $\varphi_f^*(\ffp) = \varphi^{-1}(\ffp) =: \ffq \in X_f$. By the proof of Proposition 2.20(a), $\varphi_f^*(\ffq_f) = \ffq$. Also, since $\varphi_f^*$ is 1-1, $\varphi^{-1}(\ffp) R_f = \ffq R_f = \ffq_f = \ffp$. \par Method 2: Claim. $\varphi^{-1}(I)R_f = I$ for any $I \leq R_f$. ``$\subseteq$''. By 1.63(a). ``$\supseteq$''. Let $i \in I$. Then $i = \frac{r}{f^n} \in I$ for some $r \in R$ and $n \geq 0$. So $\varphi(r) = \frac{r}{1} = \frac{f^n}{1} \cdot \frac{r}{f^n} \in I$. Then $r \in \varphi^{-1}(I)$. So $i = \frac{r}{f^n} = \varphi(r) \cdot \frac{1}{f^n} \in \varphi^{-1}(I) R_f$.} if and only if $\ffp \in \operatorname{V}(\ffa_f)$.
+        \item Let $\ffp \in \operatorname{Spec}(R_f)$. $\ffp \in (\varphi_f^*)^{-1}(\operatorname{V}(\ffa) \cap X_f)$ if and only if $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in \operatorname{V}(\ffa) \cap X_f$ if and only if $\varphi^{-1}(\ffp) \in \operatorname{V}(\ffa)$ if and only if $\ffa \subseteq \varphi^{-1}(\ffp)$ if and only if $\ffa_f = \ffa R_f \subseteq \varphi^{-1}(\ffp)R_f = \ffp$\footnote[2]{Method 1: Let $\varphi_f^*(\ffp) = \varphi^{-1}(\ffp) =: \ffq \in X_f$. By the proof of Proposition 2.20(a), $\varphi_f^*(\ffq_f) = \ffq$. Also, since $\varphi_f^*$ is 1-1, $\varphi^{-1}(\ffp) R_f = \ffq R_f = \ffq_f = \ffp$. \par Method 2: Claim. $\varphi^{-1}(I)R_f = I$ for $I \leq R_f$. ``$\subseteq$''. By 1.63(a). ``$\supseteq$''. Let $i \in I$. Then $i = \frac{r}{f^n} \in I$ for some $r \in R$ and $n \geq 0$. So $\varphi(r) = \frac{r}{1} = \frac{f^n}{1} \cdot \frac{r}{f^n} \in I$. Then $r \in \varphi^{-1}(I)$. So $i = \frac{r}{f^n} = \varphi(r) \cdot \frac{1}{f^n} \in \varphi^{-1}(I) R_f$.} if and only if $\ffp \in \operatorname{V}(\ffa_f)$.
         \item Let $\ffp \in \operatorname{Spec}(R_f)$. $\ffp \in (\varphi_f^*)^{-1}((X \setminus \operatorname{V}(\ffa)) \cap X_f)$ if and only if $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in (X \setminus \operatorname{V}(\ffa)) \cap X_f$ if and only if $\varphi^{-1}(\ffp) \in X \setminus \operatorname{V}(\ffa)$ if and only if $\ffp \in \operatorname{Spec}(R_f) \setminus \operatorname{V}(\ffa_f)$ by the proof of (a).
         \item Method 1. By (a), we have $(\varphi^*_f)^{-1}(X_g \cap X_f) = (\varphi^*_f)^{-1}((X \setminus \operatorname{V}(g)) \cap X_f) = \operatorname{Spec}(R_f) \setminus \operatorname{V}((g)_f) = \{\ffp_f \mid \ffp \in \operatorname{Spec}(R), \ffp_f \not \supseteq (g)_f\} = \{\ffp_f \mid g \not \in \ffp \in \operatorname{Spec}(R)\} = \{\ffp_f \mid \ffp \in X_g\}$. \par 
             Method 2. Let $\ffp \in \operatorname{Spec}(R_f)$. Then $\ffp \in (\varphi_f^*)^{-1}(X_g \cap X_f)$ if and only if $\varphi_f^*(\ffp) \in X_g \cap X_f$ if and only if $\varphi_f^*(\ffp) \in X_g$ if and only if $\ffp \in \{\ffq_f \mid \ffq \in X_g\}$. \qedhere
@@ -280,7 +280,7 @@ Let $R$ be a nonzero commutative ring with identity.
 Let $X \neq \emptyset$ be a topological space. 
 
 \begin{definition}
-    Let $f: X \to Y$ be a function between topological spaces. Then $f$ is \emph{continuous} if for any $U \in \ssT_Y$, $f^{-1}(U) \in \ssT_X$. ``Inverse image of arbitrary open set in $Y$ is open in $X$''. 
+    Let $f: X \to Y$ be a function between topological spaces. Then $f$ is \emph{continuous} if $f^{-1}(U) \in \ssT_X$ for $U \in \ssT_Y$. ``Inverse image of arbitrary open set in $Y$ is open in $X$''. 
 \end{definition}
 
 \begin{remark}
