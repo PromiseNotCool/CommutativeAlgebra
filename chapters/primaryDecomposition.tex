@@ -314,69 +314,42 @@ Let $R$ be a nonzero commutative ring with identity.
     \begin{enumerate}
         \item For $a \in [0,1]$, define $\Phi_a: R \to \bbR$ by $\Phi_a(f) = f(a)$. Then $\Phi_a$ is a well-defined ring epimorphism. So $\frac{R}{\ker(\Phi_a)} \cong \bbR$. Hence $\{f \in R \mid f(a) = 0\} = \ker(\Phi_a) \in \operatorname{m-Spec}(R) \subseteq \operatorname{Spec}(R)$.
         \item Claim. $0 \not \in \operatorname{Spec}(R)$. For $a \in (0,1)$, there exist $g_a,h_a \in R$ such that $g_ah_a = 0$ but $g_a,h_a \neq 0$.
+            
             \begin{center}
                 \begin{tikzpicture}
-                    \coordinate (O) at (0,0);
-                    \coordinate (X1) at (1,0);
-                    \coordinate (Y1) at (0,1);
-                    \coordinate (a) at (0.6,0);
-                    \coordinate (X) at (1.5,0);
-                    \coordinate (Y) at (0,1.5);
-                    % ++ means adding extra distance
-                    \draw (X1) node[below] {$1$} -- ++(0, 3pt);
-                    \draw (a) node[below] {$a$} -- ++(0, 3pt);
-                    \draw (Y1) node[left] {$1$} -- ++(3pt,0);
-                    \draw[->] (O) -- (X) node[right] {$X$}; 
-                    \draw[->] (O) -- (Y) node [above] {$Y$}; 
-                    \draw[line width=0.35mm,color=blue] (a) -- (X1);
-                    \draw[line width=0.35mm,color=blue] (Y1) -- node[right] {$g_a$} (a);
+                    \tkzInit[xmax=1,ymax=1,xmin=0,ymin=0]
+                    \tkzAxeX[label=$X$]
+                    \tkzAxeY[label=$Y$]
+                    \draw (0.6,0) node[below] {$a$} -- ++(0, 3pt);
+                    \draw[line width=0.5mm,color=blue] (0.6,0) -- (1,0);
+                    \draw[line width=0.5mm,color=blue] (0,1) -- node[right] {$g_a$} (0.6,0);
                 \end{tikzpicture}
                 \ \ \ \ \ \ \ \ \ \ \ \
                 \begin{tikzpicture}
-                    \coordinate (O) at (0,0);
-                    \coordinate (X1) at (1,0);
-                    \coordinate (Y1) at (0,1);
-                    \coordinate (Y2) at (1,1);
-                    \coordinate (a) at (0.6,0);
-                    \coordinate (X) at (1.5,0);
-                    \coordinate (Y) at (0,1.5);
-                    % ++ means adding extra distance
-                    \draw (X1) node[below] {$1$} -- ++(0, 3pt);
-                    \draw (a) node[below] {$a$} -- ++(0, 3pt);
-                    \draw (Y1) node[left] {$1$} -- ++(3pt,0);
-                    \draw[->] (O) -- (X) node[right] {$X$}; 
-                    \draw[->] (O) -- (Y) node [above] {$Y$}; 
-                    \draw[line width=0.35mm,color=red] (O) -- (a);
-                    \draw[line width=0.35mm,color=red] (a) -- node[left] {$h_a$} (Y2);
+                    \tkzInit[xmax=1,ymax=1,xmin=0,ymin=0]
+                    \tkzAxeX[label=$X$]
+                    \tkzAxeY[label=$Y$]
+                    \draw (0.6,0) node[below] {$a$} -- ++(0, 3pt);
+                    \draw[line width=0.5mm,color=red] (0,0) -- (0.6,0);
+                    \draw[line width=0.5mm,color=red] (0.6,0) -- node[left] {$h_a$} (1,1);
                 \end{tikzpicture}
             \end{center}
         \item Claim. $\operatorname{Nil}(R) = 0$. Let $f \in \operatorname{Nil}(R)$. Then $f^{m} = 0$ for some $m \geq 1$, i.e., $(f(a))^{m} = 0$ for $a \in [0,1]$. Since $f([0,1]) \subseteq \bbR$ and $\bbR$ is an integral domain, $f(a) = 0$ for $a \in [0,1]$, i.e., $f= 0$.
         \item Claim. $(0:f) = \operatorname{rad}(0:f)$ for $f \in R$. ``$\subseteq$''. Done. ``$\supseteq$''. Let $g \in \operatorname{rad}(0:f)$. Then $g^{m} \cdot f = 0$ for some $m \geq 1$. So $g^{m}f^{m} = 0$. Hence $gf \in \operatorname{Nil}(R) = 0$ by (c), i.e., $g \in (0:f)$. 
         \item Claim. $(0:f) \not \in \operatorname{Spec}(R)$ for $f \in R$. Suppose $(0:f) \in \operatorname{Spec}(R)$. Then $(0:f) \neq R$, i.e., $f \neq 0$. So there exists $y \in [0,1]$ such that $f(y) \neq 0$. Since $f$ is continuous, there exists $y \in (0,1)$ such that $f(y) \neq 0$. Let $0 < x < y$. Then $g_xh_x = 0 \in (0:f) \in \operatorname{Spec}(R)$. 
             \begin{center}
-                \begin{tikzpicture}
-                    \coordinate (O) at (0,0);
-                    \coordinate (X1) at (2,0);
-                    \coordinate (Y1) at (0,2);
-                    \coordinate (Y2) at (2,2);
-                    \coordinate (Y3) at (1.2,0);
-                    \coordinate (Y4) at (0,2/3);
-                    \coordinate (a) at (0.8,0);
-                    \coordinate (X) at (2.5,0);
-                    \coordinate (Y) at (0,2.5);
-                    % ++ means adding extra distance
-                    \draw (X1) node[below] {$1$} -- ++(0, 3pt);
-                    \draw (a) node[below] {$x$} -- ++(0, 3pt);
-                    \draw (Y3) node[below] {$y$} -- ++(0, 3pt);
-                    \draw (Y1) node[left] {$1$} -- ++(3pt,0);
-                    \draw (Y4) node[left] {$f(y)$} -- ++(3pt,0);
-                    \draw[->] (O) -- (X) node[right] {$X$}; 
-                    \draw[->] (O) -- (Y) node [above] {$Y$}; 
-                    \draw[line width=0.5mm,color = blue] (a) -- (X1);
-                    \draw[line width=0.5mm,color=blue] (Y1) -- node[right] {$g_x$} (a);
-                    \draw[line width=0.5mm,color = red] (O) -- (a);
-                    \draw[line width=0.5mm,color=red] (a) -- node[right] {$h_x$} (Y2);
-                    \draw[red,fill=red] (1.2,2/3) circle (.5ex);
+                \begin{tikzpicture}[x=2cm,y=2cm]
+                    \tkzInit[xmax=1,ymax=1,xmin=0,ymin=0]
+                    \tkzAxeX[label=$X$]
+                    \tkzAxeY[label=$Y$]
+                    \draw (0.4,0) node[below] {$x$} -- ++(0, 3pt);
+                    \draw[line width=0.5mm,color = blue] (0.4,0) -- (1,0);
+                    \draw[line width=0.5mm,color=blue] (0,1) -- node[right] {$g_x$} (0.4,0);
+                    \draw[line width=0.5mm,color = red] (0,0) -- (0.4,0);
+                    \draw[line width=0.5mm,color=red] (0.4,0) -- node[right] {$h_x$} (1,1);
+                    \draw (0,1/3) node[left] {$f(y)$} -- ++(3pt,0);
+                    \draw (0.6,0) node[below] {$y$} -- ++(0, 3pt);
+                    \draw[red,fill=red] (0.6,1/3) circle (.5ex);
                 \end{tikzpicture}
             \end{center}
             So $g_x \in (0:f)$ or $h_x \in (0:f)$, i.e., $g_xf = 0$ or $h_xf =  0$. Since $h_x(y)f(y) > 0$, $h_xf \neq 0$. So $g_xf = 0$. Also, since $g_x(a) \neq 0$ for $0 < a < x < y$, we have $f(a) = 0$ for $0 < a < x < y$. Since $x \in (0,y)$ is arbitrary, $f(a) = 0$ for $0 < a < y$. Since $f$ is continuous, $f(y) = \lim_{a \to y^{-}}f(a) = 0$, a contradiction. \par 
