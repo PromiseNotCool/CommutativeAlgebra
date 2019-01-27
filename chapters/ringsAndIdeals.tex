@@ -556,7 +556,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 \addcontentsline{toc}{subsection}{Prime avoidence}
 
 \begin{lemma}
-    Let $k$ be an infinite field, $V \neq 0$ a vector space over $k$, and $V_1,\cdots,V_n \lneq V$. Then $\bigcup_{i=1}^n V_i \subsetneq V$.
+    Let $k$ be an infinite field, $0 \neq V$ a vector space over $k$, and $V_1,\cdots,V_n \lneq V$. Then $\bigcup_{i=1}^n V_i \subsetneq V$.
 \end{lemma}
 
 \begin{proof}
@@ -576,7 +576,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
         \end{tikzpicture}
     \end{center}
     \par
-    If $\abs k < \infty$, then the lemma fails. For example, $V = k^2 = \bigcup_{v \in k^2} \{v\} = \bigcup_{0 \neq v \in k^2} \operatorname{span}\{v\}$ with $0 \neq \operatorname{span}(v) \lneq k^2 = V$. \par
+    If $\abs k < \infty$, then the lemma fails. For example, $V = k^2 = \bigcup_{v \in k^2} \{v\} = \bigcup_{0 \neq v \in k^2} \operatorname{span}\{v\}$ but $0 \neq \operatorname{span}(v) \lneq k^2 = V$ for $0 \neq v \in k^{2}$. \par
     The same technique shows that can't replace $V_1,\cdots,V_n$ with $V_1,V_2,\cdots$ over $\bbQ$.
 \end{example}
 
@@ -737,7 +737,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
 
 \begin{example}
     \begin{enumerate}
-        \item Let $R = \bbF_2[X,Y]$, $\ffa = \langle X,Y \rangle$, $\ffb_1 = \langle X,XY,Y^2 \rangle = \langle X,X^2,XY,Y^2 \rangle$, $\ffb_2 = \langle X+Y,X^2,Y^2 \rangle = \langle X+Y,X^2,XY,Y^2 \rangle$ and $\ffb_3 = \langle Y,X^2,XY \rangle = \langle Y,X^2,XY,Y^2 \rangle$. Then $\ffa \not \subseteq \ffb_i$ for $i = 1,2,3$. Let $f \in \ffa$. Then $f$ can be written as 
+        \item Let $R = \bbF_2[X,Y]$, $\ffa = \langle X,Y \rangle$, $\ffb_1 = \langle X,XY,Y^2 \rangle = \langle X,X^2,XY,Y^2 \rangle$, $\ffb_2 = \langle X+Y,X^2,XY,Y^2 \rangle$ and $\ffb_3 = \langle Y,X^2,XY \rangle = \langle Y,X^2,XY,Y^2 \rangle$. Then $\ffa \not \subseteq \ffb_i$ for $i = 1,2,3$. Let $f \in \ffa$. Then $f$ can be written as 
             \begin{align*}
                 f &= X g(X) + X^2\alpha(X,Y) + XY\gamma(X,Y) + +Y^2\beta(X,Y) + Yh(Y) \\
                   &= X^2 \cdot \frac{g(X)-g(0)}{X} + (Xg(0)+Yh(0)) + Y^2 \cdot \frac{h(Y)-h(0)}{Y} \\
