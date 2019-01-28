@@ -65,7 +65,7 @@ Let R be a commutative ring with identity but not a field.
 \begin{proposition}
     \begin{enumerate}
         \item $\varphi(U) \subseteq S$ is multiplicatively closed and $\varphi(U)^{-1}S =: U^{-1}S$.
-        \item There is a ring homomorphism: $U^{-1}\varphi: U^{-1}R \to U^{-1}S$ given by $U^{-1}\varphi(r/u) = \varphi(r)/\varphi(u)$.
+        \item There is a unique ring homomorphism $U^{-1}\varphi: U^{-1}R \to U^{-1}S$ given by $U^{-1}\varphi(r/u) = \varphi(r)/\varphi(u)$.
             \begin{center}
                 \begin{tikzcd}
                     R \ar[rrr,"\psi"] \ar[ddd,swap,"\varphi"] &[-25pt] & &[-32pt] U^{-1}R \ar[ddd,"U^{-1}\varphi"] \\ [-15pt]
@@ -90,7 +90,8 @@ Let R be a commutative ring with identity but not a field.
 \begin{proof}
     \begin{enumerate}
         \item [(b)] 
-            Let $\frac{r}{u} = \frac{r'}{u'} \in U^{-1}R$. Then there exists $u'' \in U$ such that $u''(ru'-r'u) = 0$. So there exists $\varphi(u'') \in \varphi(U)$ such that $\varphi(u'')(\varphi(r)\varphi(u') - \varphi(r')\varphi(u)) = 0$. Hence $\frac{\varphi(r)}{\varphi(u)} = \frac{\varphi(r')}{\varphi(u')} \in U^{-1}S$. So $U^{-1}\varphi$ is well-defined. Since $U^{-1}\varphi(\frac{r}{u} + \frac{s}{v}) = U^{-1}\varphi(\frac{rv+su}{uv}) = \frac{\varphi(rv+su)}{\varphi(uv)} = \frac{\varphi(r)\varphi(v)+\varphi(s)\varphi(u)}{\varphi(u)\varphi(v)} = \frac{\varphi(r)}{\varphi(u)}+\frac{\varphi(s)}{\varphi(v)} = U^{-1}\varphi(\frac{r}{u})+U^{-1}(\varphi)(\frac{s}{v})$ and similarly, $U^{-1}(\varphi)(\frac{r}{u} \cdot\frac{s}{v}) = U^{-1}\varphi(\frac{r}{u})U^{-1}\varphi(\frac{s}{v})$ for $\frac{r}{u},\frac{s}{v} \in U^{-1}R$. 
+            Let $\frac{r}{u} = \frac{r'}{u'} \in U^{-1}R$. Then there exists $u'' \in U$ such that $u''(ru'-r'u) = 0$. So there exists $\varphi(u'') \in \varphi(U)$ such that $\varphi(u'')(\varphi(r)\varphi(u') - \varphi(r')\varphi(u)) = 0$. Hence $\frac{\varphi(r)}{\varphi(u)} = \frac{\varphi(r')}{\varphi(u')} \in U^{-1}S$. So $U^{-1}\varphi$ is well-defined. Since $U^{-1}\varphi(\frac{r}{u} + \frac{s}{v}) = U^{-1}\varphi(\frac{rv+su}{uv}) = \frac{\varphi(rv+su)}{\varphi(uv)} = \frac{\varphi(r)\varphi(v)+\varphi(s)\varphi(u)}{\varphi(u)\varphi(v)} = \frac{\varphi(r)}{\varphi(u)}+\frac{\varphi(s)}{\varphi(v)} = U^{-1}\varphi(\frac{r}{u})+U^{-1}(\varphi)(\frac{s}{v})$ and similarly, $U^{-1}(\varphi)(\frac{r}{u} \cdot\frac{s}{v}) = U^{-1}\varphi(\frac{r}{u})U^{-1}\varphi(\frac{s}{v})$ for $\frac{r}{u},\frac{s}{v} \in U^{-1}R$. \par 
+            Since $\varphi(U) \subseteq S$ is multiplicatively closed, by Recall 3.3$+\epsilon$, $\rho(\varphi(U)) \subseteq ((\varphi(U))^{-1}S)^{\times} = (U^{-1}S)^{\times}$. Then the uniqueness follows from Proposition 3.5. 
         \item [(c)]
             Assume $\varphi$ is onto. Let $\frac{s}{\varphi(u)} \in U^{-1}S$ with $s \in S$ and $u \in U$. Since $\varphi: R \to S$ is onto, there exists $r \in R$ such that $\varphi(r) = s$. Then $U^{-1}\varphi(\frac{r}{u}) = \frac{\varphi(r)}{\varphi(u)} = \frac{s}{\varphi(u)}$. 
         \item[(d)] Assume $\varphi$ is 1-1. Let $\frac{r}{u} \in U^{-1}R$ with $r \in R$ and $u \in U$. Then $\frac{r}{u} \in \ker(U^{-1}\varphi)$ if and only if $0 = U^{-1}\varphi(\frac{r}{u}) = \frac{\varphi(r)}{\varphi(u)}$ if and only if there exists $u'' \in U$ such that $0 = \varphi(u'')\varphi(r) = \varphi(u''r)$ if and only if there exists $u'' \in U$ such that $u''r = 0$ since $\varphi$ is 1-1 if and only if $\frac{r}{u} = 0$ in $U^{-1}R$. 
