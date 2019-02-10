@@ -128,8 +128,8 @@ Let $R$ be a commutative ring with identity.
     Let $\ffa \leq R$ and $\pi: R \to R/\ffa$ be the canonical ring epimorphism. 
     \begin{align*}
         \{\text{ideals }I \leq R/\ffa\} &\rightleftarrows \{\text{ideals }J \leq R \mid \ffa \subseteq J\} \\
-        I &\mapsto \pi^{-1}(I) = \{r \in R \mid r + \ffa \in I\} \\
-        J/\ffa &\mapsfrom J \\
+        I &\mapsto \pi^{-1}(I) = \{r \in R \mid r + \ffa \in I\} \supseteq \pi^{-1}(0) = \ffa  \\
+        J/\ffa &\mapsfrom J \supseteq \ffa \\
     \{\text{ideals } I \leq R/\ffa\} &\rightleftarrows \{\text{ideals }J \leq R \mid \ffa \subseteq J\} \\
         \{\text{primes ideals of } R/\ffa\} &\rightleftarrows \{\text{prime ideals }\ffp \leq R \mid \ffa \subseteq \ffp\} \\
         \{\text{maximal ideals of } R/\ffa\} &\rightleftarrows \{\text{maximal ideals }\ffm \leq R \mid \ffa \subseteq \ffm\}.
@@ -537,14 +537,17 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
     Let $\ffa_1,\cdots,\ffa_n \leq R$ and $\ffp \in \operatorname{Spec}(R)$.
     \begin{enumerate}
         \item If $\ffp = \ffa_1 \cdots \ffa_n$, then $\ffp = \ffa_i$ for some $i \in \{1,\cdots,n\}$.
+        \item If $\ffp \supseteq \ffa_1 \cap \cdots \cap \ffa_n$, then $\ffp \supseteq \ffa_i$ for some $i \in \{1,\cdots,n\}$.
         \item If $\ffp = \ffa_1 \cap \cdots \cap \ffa_n$, then $\ffp = \ffa_i$ for some $i \in \{1,\cdots,n\}$.
     \end{enumerate}
 \end{proposition}
 
 \begin{proof}
     \begin{enumerate}
-        \item [(b)] Assume $\ffp = \ffa_1 \cap \cdots \cap \ffa_n \supseteq \ffa_1 \cdots \ffa_n$. Since $\ffp \in \operatorname{Spec}(R)$, there exists some $i \in \{1,\cdots,n\}$ such that $\ffp \supseteq \ffa_i$. Then $\ffa_i \subseteq \ffp = \ffa_1 \cap \cdots \cap \ffa_n \subseteq \ffa_i$. So $\ffp = \ffa_i$. 
-        \item[(a)] It is proved similarly. \qedhere
+        \item [(b)] Assume $\ffp = \ffa_1 \cap \cdots \cap \ffa_n \supseteq \ffa_1 \cdots \ffa_n$. Since $\ffp \in \operatorname{Spec}(R)$, there exists some $i \in \{1,\cdots,n\}$ such that $\ffp \supseteq \ffa_i$. 
+        \item[(c)]
+            By (b), there exists $i \in \{1,\cdots,n\}$ such that $\ffa_i \subseteq \ffp = \ffa_1 \cap \cdots \cap \ffa_n \subseteq \ffa_i$. So $\ffp = \ffa_i$. 
+        \item[(a)] It can be proved similarly. \qedhere
     \end{enumerate}
 \end{proof}
 
