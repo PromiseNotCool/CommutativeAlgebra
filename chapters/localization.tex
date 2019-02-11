@@ -201,7 +201,7 @@ Let R be a commutative ring with identity but not a field.
     \begin{enumerate}
         \item For $I \leq U^{-1}R$, there exists $\ffa \leq R$ such that $I = U^{-1}\ffa$, i.e., every ideal of $U^{-1}R$ is an extension of an ideal of $R$ along $\psi$.
         \item If $\ffa \leq R$, then $\psi^{-1}(U^{-1}\ffa) =\{r \in R \mid \ex v \in U \text{ s.t. }v r \in \ffa\} = \bigcup_{v \in U} (\ffa:v)$.
-        \item $U^{-1}\ffa = U^{-1}R$ if and only if $U \cap \ffa \neq \emptyset$.
+        \item $U^{-1} \frac{R}{\ffa} = 0$ if and only if $\frac{U^{-1}R}{U^{-1}\ffa} = 0$ if and only if $U^{-1}\ffa = U^{-1}R$ if and only if $U \cap \ffa \neq \emptyset$.
     \end{enumerate}
 \end{proposition}
 
@@ -213,7 +213,7 @@ Let R be a commutative ring with identity but not a field.
         \item  
             Let $r \in R$. Then $r \in \psi^{-1}(U^{-1}\ffa)$ if and only if $\frac{r}{1} = \psi(r) \in U^{-1}\ffa$ if and only if $vr \in \ffa$ for some $v \in U$ by Proposition 3.11(b) if and only if $r \in (\ffa:v)$ for some $v \in U$ if and only if $r \in \bigcup_{v \in U}(\ffa:v)$. 
         \item
-            Note $U^{-1}\ffa = U^{-1}R$ if and only if $\frac{1}{1} \in U^{-1}\ffa$ if and only if $1 \in \psi^{-1}(U^{-1}\ffa) = \bigcup_{v \in U}(\ffa:v)$ if and only if $U \cap \ffa \neq \emptyset$ by (b). \qedhere
+            By Proposition 3.11(c), $U^{-1} \frac{R}{\ffa} = 0$ if and only if $\frac{U^{-1}R}{U^{-1}\ffa} = 0$. Note $U^{-1}\ffa = U^{-1}R$ if and only if $\frac{1}{1} \in U^{-1}\ffa$ if and only if $1 \in \psi^{-1}(U^{-1}\ffa) = \bigcup_{v \in U}(\ffa:v)$ if and only if $U \cap \ffa \neq \emptyset$ by (b). \qedhere
     \end{enumerate}
 \end{proof}
 
