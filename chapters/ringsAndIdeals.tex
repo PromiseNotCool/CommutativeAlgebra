@@ -1,9 +1,9 @@
 \chapter{Rings and Ideals}
 
+Let $R$ be a commutative ring with identity.
+
 \section*{Rings and Ring Homomorphisms}
 \addcontentsline{toc}{section}{Rings and Ring Homomorphisms}
-
-Let $R$ be a commutative ring with identity.
 
 \begin{fact}
     $R = 0$ if and only if $1_R = 0_R$.
@@ -240,8 +240,8 @@ Let $R$ be a commutative ring with identity.
 \addcontentsline{toc}{section}{The Nilradical}
 
 \begin{definition}
-    $x \in R$ is \emph{nilpotent} if there exists $n \geq 1$ such that $x^n = 0$. Then \emph{nilradical} of $R$ is 
-    \[\operatorname{Nil}(R) = \operatorname{N}(R) = \ffN_R = \ffN = \{\text{nilpotent elements of }R\}.\]
+    $x \in R$ is \emph{nilpotent} if there exists $n \geq 1$ such that $x^n = 0$. The \emph{nilradical} of $R$ is 
+    \[\operatorname{Nil}(R) = \operatorname{N}(R) = \ffN_R = \ffN = \{\text{nilpotent elements of }R\}\footnote[2]{$\operatorname{Nil}(R) \subseteq \operatorname{ZD}(R)$, but not conversely.}.\]
 \end{definition}
 
 \begin{example}
@@ -251,7 +251,7 @@ Let $R$ be a commutative ring with identity.
 \begin{proposition}
     \begin{enumerate}
         \item $\operatorname{Nil}(R) \leq R$.
-        \item $\operatorname{Nil}(R/\operatorname{Nil}(R)) = 0$.
+        \item $\operatorname{Nil}(R/\operatorname{Nil}(R)) = \{0\}$.
         \item $\operatorname{Nil}(R) = R$ if and only if $R = 0$.
         \item $\operatorname{Nil}(R) = \bigcap_{\ffp \in \operatorname{Spec}(R)}\ffp$.
     \end{enumerate}
@@ -447,7 +447,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
     \begin{enumerate}
         \item 
             Let $\ffp \in \operatorname{Spec}(R)$. Claim. $\ffp \supseteq \ffa \ffb$ if and only if $\ffp \supseteq \ffa$ or $\ffp \supseteq \ffb$\footnote[1]{In some texts, this is the definition of prime ideal.}. ``$\Leftarrow$''. Let $\ffp \supseteq \ffa$ or $\ffp \supseteq \ffb$. Then $\ffp = \ffp R \supseteq \ffa R \supseteq \ffa\ffb$ or $\ffp  = R  \ffp \supseteq R\ffb \supseteq \ffa\ffb$. ``$\Rightarrow$''. Let $\ffp \supseteq \ffa \ffb$. Suppose $\ffp \not \supseteq \ffa$ and $\ffp \not \supseteq \ffb$. Then there exists $a \in \ffa \setminus \ffp$ and exists $b \in \ffb \setminus \ffp$. Since $\ffp \in \operatorname{Spec}(R)$, $ab \not \in \ffp$, contradicting $ab \in \ffa \ffb \subseteq \ffp$. Hence $\ffp \supseteq \ffa \ffb$ if and only if $\ffp \supseteq \ffa$ or $\ffp \supseteq \ffb$. So $\operatorname{V}(\ffa \ffb) = \operatorname{V}(\ffa) \cup \operatorname{V}(\ffb)$. \par
-            Since $\ffa \ffb \subseteq \ffa \cap \ffb$, $\operatorname{V}(\ffa \ffb) \supseteq \operatorname{V}(\ffa \cap \ffb)$. Let $\ffp \in \operatorname{V}(\ffa \ffb)$. Then $\ffp \supseteq \ffa \ffb$. So $\ffp \supseteq \ffa$ or $\ffp \supseteq \ffb$. Hence $\ffp \supseteq \ffa \cap \ffb$ and then $\ffp \in \operatorname{V}(\ffa \cap \ffb)$. So $\operatorname{V}(\ffa \ffb) \subseteq \operatorname{V}(\ffa \cap \ffb)$. Thus, $\operatorname{V}(\ffa \ffb) = \operatorname{V}(\ffa \cap \ffb)\footnote[2]{Let $\ffp \in \operatorname{Spec}(R)$. Then we actually have $\ffp \supseteq \ffa \cap \ffb$ if and only if $\ffp \supseteq \ffa$ or $\ffp \supseteq \ffb$, to get $\operatorname{V}(\ffa \cap \ffb) = \operatorname{V}(\ffa) \cup \operatorname{V}(\ffb)$.}$.
+            Since $\ffa \ffb \subseteq \ffa \cap \ffb$, $\operatorname{V}(\ffa \ffb) \supseteq \operatorname{V}(\ffa \cap \ffb)$. Let $\ffp \in \operatorname{V}(\ffa \ffb)$. Then $\ffp \supseteq \ffa \ffb$. So $\ffp \supseteq \ffa$ or $\ffp \supseteq \ffb$. Hence $\ffp \supseteq \ffa \cap \ffb$ and then $\ffp \in \operatorname{V}(\ffa \cap \ffb)$. So $\operatorname{V}(\ffa \ffb) \subseteq \operatorname{V}(\ffa \cap \ffb)$. Thus, $\operatorname{V}(\ffa \ffb) = \operatorname{V}(\ffa \cap \ffb)\footnote[2]{Let $\ffp \in \operatorname{Spec}(R)$. Then by (f), $\ffp \supseteq \ffa \cap \ffb \supseteq \ffa\ffb$ if and only if $\ffp \supseteq \ffa$ or $\ffp \supseteq \ffb$, to get $\operatorname{V}(\ffa \cap \ffb) = \operatorname{V}(\ffa) \cup \operatorname{V}(\ffb)$.}$.
         \item $\operatorname{V}(\ffa) \cup \operatorname{V}(\ffb) = \operatorname{Spec}(R)$ if and only if $\operatorname{V}(\ffa \ffb) = \operatorname{Spec}(R)$ by part (a) if and only if $\ffa\ffb \subseteq \operatorname{Nil}(R)$ by Proposition 1.32(c) and similarly for $\ffa \cap \ffb$. \qedhere
     \end{enumerate}
 \end{proof}
@@ -456,7 +456,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\cdots,\ffa_n \leq R$, $S_\lambda \subseteq
     \begin{enumerate}
         \item $\ffa \ffb = \ffb \ffa$ and $(\ffa \ffb)\ffc = \ffa(\ffb\ffc)$.
         \item $\ffa(\ffb + \ffc) = \ffa \ffb + \ffa \ffc$.
-        \item If $\ffa + \ffb = R$, i.e., $\ffa$ and $\ffb$ are ``coprime'' or ``co-maximal'', then $\ffa \cap \ffb = \ffa \ffb$. \\
+        \item $\ffa \cap \ffb = \ffa \ffb$ if $\ffa + \ffb = R$, i.e., $\ffa$ and $\ffb$ are ``coprime'' or ``co-maximal''. \par 
             The converse holds if $R$ is a PID and $\ffa,\ffb \neq 0$.
     \end{enumerate}
 \end{proposition}
