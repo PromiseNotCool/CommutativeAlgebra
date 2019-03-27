@@ -32,24 +32,24 @@ Let $R$ be a nonzero commutative ring with identity.
 
 \begin{definition}
     The \emph{Zariski topology} on $\operatorname{Spec}(R) = X$ has open sets 
-    \[\{\operatorname{Spec}(R) \setminus \operatorname{V}(S) \mid S \subseteq R\} = \{\ffp \in \operatorname{Spec}(R) \mid \ffp \not \supseteq S \subseteq R\}.\] 
-    For example, $X_f := \operatorname{Spec}(R) \setminus \operatorname{V}(\{f\}) = \{\ffp \in \operatorname{Spec}(R) \mid f \not \in \ffp\}$ is open in $X$ for $f \in R$.
+    \[\{\operatorname{Spec}(R) \smallsetminus \operatorname{V}(S) \mid S \subseteq R\} = \{\ffp \in \operatorname{Spec}(R) \mid \ffp \not \supseteq S \subseteq R\}.\] 
+    For example, $X_f := \operatorname{Spec}(R) \smallsetminus \operatorname{V}(\{f\}) = \{\ffp \in \operatorname{Spec}(R) \mid f \not \in \ffp\}$ is open in $X$ for $f \in R$.
 \end{definition}
 
 \begin{proposition}
-    If $S \subseteq R$, then $\operatorname{V}(S) = \operatorname{V}(\langle S \rangle)$ and so $\operatorname{Spec}(R) \setminus \operatorname{V}(S) = \operatorname{Spec}(R) \setminus \operatorname{V}(\langle S \rangle)$. In other words, the open sets are exactly the sets $\{\operatorname{Spec}(R) \setminus \operatorname{V}(\ffa) \mid \ffa \leq R\}$. 
+    If $S \subseteq R$, then $\operatorname{V}(S) = \operatorname{V}(\langle S \rangle)$ and so $\operatorname{Spec}(R) \smallsetminus \operatorname{V}(S) = \operatorname{Spec}(R) \smallsetminus \operatorname{V}(\langle S \rangle)$. In other words, the open sets are exactly the sets $\{\operatorname{Spec}(R) \smallsetminus \operatorname{V}(\ffa) \mid \ffa \leq R\}$. 
 \end{proposition}
 
 \begin{notation*}
-    Denote the Zariski open sets $\ssZ = \{\operatorname{Spec}(R) \setminus \operatorname{V}(S) \mid S \subseteq R\} = \{\operatorname{Spec}(R) \setminus \operatorname{V}(\ffa) \mid \ffa \leq R\}$.
+    Denote the Zariski open sets $\ssZ = \{\operatorname{Spec}(R) \smallsetminus \operatorname{V}(S) \mid S \subseteq R\} = \{\operatorname{Spec}(R) \smallsetminus \operatorname{V}(\ffa) \mid \ffa \leq R\}$.
 \end{notation*}
 
 \begin{example}
-    Compute $\ssZ$ of $\operatorname{Spec}(\bbZ) = X$. Since $\bbZ$ is a P.I.D., $\ssZ = \{\operatorname{Spec}(\bbZ) \setminus \operatorname{V}(m) \mid m \geq 0\}$. Since $\operatorname{V}(0) = \operatorname{Spec}(\bbZ)$, $X_0 = \operatorname{Spec}(\bbZ) \setminus \operatorname{V}(0) = \emptyset$, and since $\operatorname{V}(1) = \emptyset$, $X_1 = \operatorname{Spec}(\bbZ) \setminus \operatorname{V}(1) = \operatorname{Spec}(\bbZ)$. For $m \geq 2$, write $m = p_1^{e_1} \cdots p_n^{e_n}$ with $p_1,\cdots,p_n$ distinct primes and $e_1,\cdots,e_n \geq 1$, then $\operatorname{V}(m) = \{\langle p_1 \rangle, \cdots, \langle p_n \rangle\}$ and so $X_m = \operatorname{Spec}(\bbZ) \setminus \operatorname{V}(m) = X \setminus \{\langle p_1 \rangle,\cdots, \langle p_n \rangle\}$. Note $\ssZ = \bigcup_{m=0}^\infty X_m$. In particular, $\ffp = \{0\} \in \bigcap_{m=1}^\infty X_m$, i.e., $\ffp = \{0\}$ is in every non-empty open set of $X$.
+    Compute $\ssZ$ of $\operatorname{Spec}(\bbZ) = X$. Since $\bbZ$ is a P.I.D., $\ssZ = \{\operatorname{Spec}(\bbZ) \smallsetminus \operatorname{V}(m) \mid m \geq 0\}$. Since $\operatorname{V}(0) = \operatorname{Spec}(\bbZ)$, $X_0 = \operatorname{Spec}(\bbZ) \smallsetminus \operatorname{V}(0) = \emptyset$, and since $\operatorname{V}(1) = \emptyset$, $X_1 = \operatorname{Spec}(\bbZ) \smallsetminus \operatorname{V}(1) = \operatorname{Spec}(\bbZ)$. For $m \geq 2$, write $m = p_1^{e_1} \cdots p_n^{e_n}$ with $p_1,\cdots,p_n$ distinct primes and $e_1,\cdots,e_n \geq 1$, then $\operatorname{V}(m) = \{\langle p_1 \rangle, \cdots, \langle p_n \rangle\}$ and so $X_m = \operatorname{Spec}(\bbZ) \smallsetminus \operatorname{V}(m) = X \smallsetminus \{\langle p_1 \rangle,\cdots, \langle p_n \rangle\}$. Note $\ssZ = \bigcup_{m=0}^\infty X_m$. In particular, $\ffp = \{0\} \in \bigcap_{m=1}^\infty X_m$, i.e., $\ffp = \{0\}$ is in every non-empty open set of $X$.
 \end{example}
 
 \begin{fact}
-    Let $X = \operatorname{Spec}(R)$. Then $X_0 = X \setminus \operatorname{V}(0) = \emptyset$ and $X_1 = X \setminus \operatorname{V}(1) = X$.
+    Let $X = \operatorname{Spec}(R)$. Then $X_0 = X \smallsetminus \operatorname{V}(0) = \emptyset$ and $X_1 = X \smallsetminus \operatorname{V}(1) = X$.
 \end{fact}
 
 \begin{proposition}
@@ -61,7 +61,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{proof}
 
 \begin{definition}
-    If $X$ is a topological space, then $Y \subseteq X$ is \emph{closed} if $X \setminus Y$ open, i.e., if and only if $Y = X \setminus U$ for some open subset $U \subseteq X$.
+    If $X$ is a topological space, then $Y \subseteq X$ is \emph{closed} if $X \smallsetminus Y$ open, i.e., if and only if $Y = X \smallsetminus U$ for some open subset $U \subseteq X$.
 \end{definition}
 
 \begin{example}
@@ -69,7 +69,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{example}
 
 \begin{proposition}
-    Let $X$ be a non-empty set, $\ssY \subseteq \llP(X)$ and $\ssV = \{X \setminus Y \mid Y \in \ssY\}$. Then $\ssY$ is a topology on $X$ if and if only $\ssV$ satisfies the followings.
+    Let $X$ be a non-empty set, $\ssY \subseteq \llP(X)$ and $\ssV = \{X \smallsetminus Y \mid Y \in \ssY\}$. Then $\ssY$ is a topology on $X$ if and if only $\ssV$ satisfies the followings.
     \begin{enumerate}
         \item $X,\emptyset \in \ssV$,
         \item closed under arbitrary intersections, i.e., for any $\{V_\lambda\}_{\lambda \in \Lambda} \subseteq \ssV$, then $\bigcap_{\lambda \in \Lambda} V_\lambda \in \ssV$,
@@ -78,7 +78,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{proposition}
 
 \begin{proof}
-    It follows from $X \setminus \emptyset = \emptyset$, $X \setminus X = \emptyset$ and $\bigcap_{\lambda \in \Lambda} (X \setminus U_\lambda) = X \setminus (\bigcup_{\lambda \in \Lambda} U_\lambda)$.
+    It follows from $X \smallsetminus \emptyset = \emptyset$, $X \smallsetminus X = \emptyset$ and $\bigcap_{\lambda \in \Lambda} (X \smallsetminus U_\lambda) = X \smallsetminus (\bigcup_{\lambda \in \Lambda} U_\lambda)$.
 \end{proof}
 
 \begin{theorem}
@@ -86,7 +86,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{theorem}
 
 \begin{proof}
-    Note $\ssZ = \{\operatorname{Spec}(R) \setminus \operatorname{V}(\ffa) \mid \ffa \leq R\}$. Let $\ssV = \{X \setminus Z \mid Z \in \ssZ\} = \{\operatorname{V}(\ffa) \mid \ffa \leq R\}$. 
+    Note $\ssZ = \{\operatorname{Spec}(R) \smallsetminus \operatorname{V}(\ffa) \mid \ffa \leq R\}$. Let $\ssV = \{X \smallsetminus Z \mid Z \in \ssZ\} = \{\operatorname{V}(\ffa) \mid \ffa \leq R\}$. 
     \begin{enumerate}
         \item $X = \operatorname{V}(0) \in \ssV$ and $\emptyset = \operatorname{V}(1) \in \ssV$,
         \item For $\ffa_\lambda \leq \ffa$ for any $\lambda \in \Lambda$, $\bigcap_{\lambda \in \Lambda} \operatorname{V}(\ffa_\lambda) = \operatorname{V}(\sum_{\lambda \in \Lambda} \ffa_\lambda) \in \ssV$ by Fact 1.36.
@@ -108,7 +108,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{theorem}
 
 \begin{proof}
-    It suffices to show $X \setminus \operatorname{V}(S) = \bigcup_{s \in S}X_s$ for $S \subseteq R$. Note $\ffp \in X \setminus \operatorname{V}(S)$ if and only if $S \not \subseteq \ffp$ if and only if there exists $s \in S$ such that $s \not \in \ffp$ if and only if there exists $s \in S$ such that $\ffp \in X_s$ if and only if $\ffp \in \bigcup_{s \in S}X_s$.
+    It suffices to show $X \smallsetminus \operatorname{V}(S) = \bigcup_{s \in S}X_s$ for $S \subseteq R$. Note $\ffp \in X \smallsetminus \operatorname{V}(S)$ if and only if $S \not \subseteq \ffp$ if and only if there exists $s \in S$ such that $s \not \in \ffp$ if and only if there exists $s \in S$ such that $\ffp \in X_s$ if and only if $\ffp \in \bigcup_{s \in S}X_s$.
 \end{proof}
 
 \begin{proposition}
@@ -116,7 +116,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{proposition}
 
 \begin{proof}
-    Write $U = X \setminus \operatorname{V}(\ffa)$ for some $\ffa \leq R$. Since $R$ is noetherian, $\ffa = \langle s_1,\cdots,s_n \rangle$ for some $n \geq 1$ and $s_1,\cdots,s_n \in \ffa$. Then $U = X \setminus \operatorname{V}(\langle s_1,\cdots,s_n \rangle) = X \setminus \operatorname{V}(s_1,\cdots,s_n) = \bigcup_{i=1}^n X_{s_i}$ by the proof of Theorem 2.16.
+    Write $U = X \smallsetminus \operatorname{V}(\ffa)$ for some $\ffa \leq R$. Since $R$ is noetherian, $\ffa = \langle s_1,\cdots,s_n \rangle$ for some $n \geq 1$ and $s_1,\cdots,s_n \in \ffa$. Then $U = X \smallsetminus \operatorname{V}(\langle s_1,\cdots,s_n \rangle) = X \smallsetminus \operatorname{V}(s_1,\cdots,s_n) = \bigcup_{i=1}^n X_{s_i}$ by the proof of Theorem 2.16.
 \end{proof}
 
 \begin{definition}
@@ -128,7 +128,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{theorem}
 
 \begin{proof}
-    Since each open set $U_\lambda$ can be written as a union of $X_f$'s with $f \in R$, without loss of generality, assmue $X = \bigcup_{\lambda \in \Lambda} X_{f_\lambda} = X \setminus \operatorname{V}(\bigcup_{\lambda \in \Lambda}f_{\lambda})$ by the proof of Theorem 2.16. Then $\emptyset = \operatorname{V}(\bigcup_{\lambda \in \Lambda}f_{\lambda}) = \operatorname{V}(\langle \bigcup_{\lambda \in \Lambda}f_{\lambda} \rangle)$. So by Proposition 1.32(b), $\langle \bigcup_{\lambda \in \Lambda}f_{\lambda} \rangle = R \ni 1$. Then $1 = g_{\lambda_1} f_{\lambda_1} + \cdots + g_{\lambda_n}f_{\lambda_n}$ for some $n \geq 1$, $\lambda_1,\cdots,\lambda_n \in \Lambda$ and $g_{\lambda_1},\cdots,g_{\lambda_n} \in R$. So $\langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle = R$. Then $\operatorname{V}(f_{\lambda_1},\cdots,f_{\lambda_n}) = \operatorname{V}(\langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle) = \operatorname{V}(R) = \emptyset$. Thus, $X = X \setminus \emptyset = X \setminus \operatorname{V}(f_{\lambda_1},\cdots,f_{\lambda_n}) = X_{f_{\lambda_1}} \cup \cdots \cup X_{f_{\lambda_n}}$.
+    Since each open set $U_\lambda$ can be written as a union of $X_f$'s with $f \in R$, without loss of generality, assmue $X = \bigcup_{\lambda \in \Lambda} X_{f_\lambda} = X \smallsetminus \operatorname{V}(\bigcup_{\lambda \in \Lambda}f_{\lambda})$ by the proof of Theorem 2.16. Then $\emptyset = \operatorname{V}(\bigcup_{\lambda \in \Lambda}f_{\lambda}) = \operatorname{V}(\langle \bigcup_{\lambda \in \Lambda}f_{\lambda} \rangle)$. So by Proposition 1.32(b), $\langle \bigcup_{\lambda \in \Lambda}f_{\lambda} \rangle = R \ni 1$. Then $1 = g_{\lambda_1} f_{\lambda_1} + \cdots + g_{\lambda_n}f_{\lambda_n}$ for some $n \geq 1$, $\lambda_1,\cdots,\lambda_n \in \Lambda$ and $g_{\lambda_1},\cdots,g_{\lambda_n} \in R$. So $\langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle = R$. Then $\operatorname{V}(f_{\lambda_1},\cdots,f_{\lambda_n}) = \operatorname{V}(\langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle) = \operatorname{V}(R) = \emptyset$. Thus, $X = X \smallsetminus \emptyset = X \smallsetminus \operatorname{V}(f_{\lambda_1},\cdots,f_{\lambda_n}) = X_{f_{\lambda_1}} \cup \cdots \cup X_{f_{\lambda_n}}$.
 \end{proof}
 
 \begin{question*}
@@ -140,8 +140,8 @@ Let $R$ be a nonzero commutative ring with identity.
     Let $\underline a = (a_1,\cdots,a_d) \in \bbA^d$ and $S \subseteq k[\underline X] = k[X_1,\cdots,X_d]$. Define
     \[\operatorname{V}(S) := \{\underline a \in \bbA^d \mid f(\underline a) = 0,\fa f \in S\} =: \text{``zero locus of $S$''} \subseteq \bbA^d.\] 
     e.g., $\operatorname{V}(X^2+Y^2+Z^2-1) = \text{``unit sphere''} \subseteq \bbA^3_\bbR = \bbR^3$. \par 
-    Zariski topology on $\bbA^d$. Closed sets: $\operatorname{V}(S) = \operatorname{V}(\langle S \rangle) \subseteq \bbA^d$ with $S \subseteq k[\underline X]$. Open sets: $\bbA^d \setminus \operatorname{V}(S)$ with $S \subseteq k[\underline X]$. Basic open sets: $\bbA^d \setminus \operatorname{V}(f)$ with $f \in k[\underline X]$. \par 
-    Let $T \subseteq k[\underline X]$ be fixed. Zariski topology on $\operatorname{V}(T)$. Closed sets: $\operatorname{V}(S) \cap \operatorname{V}(T)$ with $S \subseteq k[\underline X]$. Open sets: $(\smallunderbrace{\bbA^d \setminus \operatorname{V}(S)}_{\text{open in $\bbA^d$}}) \cap \operatorname{V}(T)$ with $S \subseteq k[\underline X]$.  Basic open sets: $(\bbA^d \setminus \operatorname{V}(f)) \cap \operatorname{V}(T)$ with $f \in k[\underline X]$. \par 
+    Zariski topology on $\bbA^d$. Closed sets: $\operatorname{V}(S) = \operatorname{V}(\langle S \rangle) \subseteq \bbA^d$ with $S \subseteq k[\underline X]$. Open sets: $\bbA^d \smallsetminus \operatorname{V}(S)$ with $S \subseteq k[\underline X]$. Basic open sets: $\bbA^d \smallsetminus \operatorname{V}(f)$ with $f \in k[\underline X]$. \par 
+    Let $T \subseteq k[\underline X]$ be fixed. Zariski topology on $\operatorname{V}(T)$. Closed sets: $\operatorname{V}(S) \cap \operatorname{V}(T)$ with $S \subseteq k[\underline X]$. Open sets: $(\smallunderbrace{\bbA^d \smallsetminus \operatorname{V}(S)}_{\text{open in $\bbA^d$}}) \cap \operatorname{V}(T)$ with $S \subseteq k[\underline X]$.  Basic open sets: $(\bbA^d \smallsetminus \operatorname{V}(f)) \cap \operatorname{V}(T)$ with $f \in k[\underline X]$. \par 
     We have 
     \begin{align*}
         \varphi: \bbA^d &\hookrightarrow \operatorname{m-Spec}(k[\underline X]) \subseteq \operatorname{Spec}(k[\underline X]) \\
@@ -174,7 +174,7 @@ Let $R$ be a nonzero commutative ring with identity.
     Grothenick: there exists more geometric data in $\operatorname{Spec}(k[V])$. 
 \end{construction*}
 
-\noindent Set up: $R \ni f$, $X = \operatorname{Spec}(R) \supseteq X_f = X \setminus \operatorname{V}(f) = \{\ffp \in \operatorname{Spec}(R) \mid f \not \in \ffp\}$.
+\noindent Set up: $R \ni f$, $X = \operatorname{Spec}(R) \supseteq X_f = X \smallsetminus \operatorname{V}(f) = \{\ffp \in \operatorname{Spec}(R) \mid f \not \in \ffp\}$.
 
 \begin{recall*}
     Let $S = \{1,f,f^2,\cdots\}$. We have $R_f = S^{-1}R = \{\frac{r}{f^n} \mid r \in R, n \geq 0\} = R[1/f]$.
@@ -222,7 +222,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \begin{remark}
     The closed subsets of $Y$ are $\{V \cap Y \mid V \subseteq X \text{ is closed}\}$ since 
     \begin{align*}
-        \{Y \setminus (U \cap Y) \mid U \in \ssT\} &= \{Y \cap (U \cap Y)^c \mid U \in \ssT\} = \{(U^c \cup Y^c) \cap Y \mid U \in \ssT\} \\
+        \{Y \smallsetminus (U \cap Y) \mid U \in \ssT\} &= \{Y \cap (U \cap Y)^c \mid U \in \ssT\} = \{(U^c \cup Y^c) \cap Y \mid U \in \ssT\} \\
                                                    &= \{(U^c \cap Y) \cup (Y^c \cap Y) \mid U \in \ssT\} = \{U^c \cap Y \mid U \in \ssT\}.
     \end{align*}
 \end{remark}
@@ -239,7 +239,7 @@ Let $R$ be a nonzero commutative ring with identity.
     Let $f \in R$. Subspace topology on $X_f \subseteq X = \operatorname{Spec}(R)$ has 
     \begin{enumerate}
         \item closed sets: $\operatorname{V}(\ffa) \cap X_f = \{\ffp \in \operatorname{Spec}(R) \mid \ffa \subseteq \ffp \not \ni f\}$, where $\ffa \leq R$;
-        \item open sets: $(X \setminus \operatorname{V}(\ffa)) \cap X_f = \{\ffp \in \operatorname{Spec}(R) \mid \ffa \not \subseteq \ffp \not \ni f\}$, where $\ffa \leq R$;
+        \item open sets: $(X \smallsetminus \operatorname{V}(\ffa)) \cap X_f = \{\ffp \in \operatorname{Spec}(R) \mid \ffa \not \subseteq \ffp \not \ni f\}$, where $\ffa \leq R$;
         \item basic open sets: $X_g \cap X_f = X_{fg}$, where $g \in R$.
     \end{enumerate}
 \end{corollary}
@@ -248,7 +248,7 @@ Let $R$ be a nonzero commutative ring with identity.
     Let $\ffa \leq R$. Subspace topology on $\operatorname{V}(\ffa) \subseteq X = \operatorname{Spec}(R)$ has 
     \begin{enumerate}
         \item closed sets: $\operatorname{V}(\ffb) \cap \operatorname{V}(\ffa) = \{\ffp \in \operatorname{Spec}(R) \mid \ffb + \ffa \subseteq \ffp\}$, where $\ffb \leq R$;
-        \item open sets: $(X \setminus \operatorname{V}(\ffb)) \cap \operatorname{V}(\ffa) = \{\ffp \in \operatorname{Spec}(R) \mid \ffb \not \subseteq \ffp \supseteq \ffa\}$, where $\ffb \leq R$;
+        \item open sets: $(X \smallsetminus \operatorname{V}(\ffb)) \cap \operatorname{V}(\ffa) = \{\ffp \in \operatorname{Spec}(R) \mid \ffb \not \subseteq \ffp \supseteq \ffa\}$, where $\ffb \leq R$;
         \item basic open sets: $X_g \cap \operatorname{V}(\ffa)$, where $g \in R$.
     \end{enumerate}
 \end{remark}
@@ -259,7 +259,7 @@ Let $R$ be a nonzero commutative ring with identity.
         \item 
             $(\varphi_f^*)^{-1}(\operatorname{V}(\ffa) \cap X_f) = \operatorname{V}(\ffa_f)$. 
         \item
-            $(\varphi_f^*)^{-1}((X \setminus \operatorname{V}(\ffa)) \cap X_f) = \operatorname{Spec}(R_f) \setminus \operatorname{V}(\ffa_f)$.
+            $(\varphi_f^*)^{-1}((X \smallsetminus \operatorname{V}(\ffa)) \cap X_f) = \operatorname{Spec}(R_f) \smallsetminus \operatorname{V}(\ffa_f)$.
         \item 
             $(\varphi_f^*)^{-1}(X_g \cap X_f) = Z_{g|1}$ for $g \in R$.
     \end{enumerate}
@@ -268,8 +268,8 @@ Let $R$ be a nonzero commutative ring with identity.
 \begin{proof}
     \begin{enumerate}
         \item Let $\ffp \in \operatorname{Spec}(R_f)$. $\ffp \in (\varphi_f^*)^{-1}(\operatorname{V}(\ffa) \cap X_f)$ if and only if $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in \operatorname{V}(\ffa) \cap X_f$ if and only if $\varphi^{-1}(\ffp) \in \operatorname{V}(\ffa)$ if and only if $\ffa \subseteq \varphi^{-1}(\ffp)$ if and only if $\ffa_f = \ffa R_f \subseteq \varphi^{-1}(\ffp)R_f = \ffp$\footnote[2]{Method 1: Let $\varphi_f^*(\ffp) = \varphi^{-1}(\ffp) =: \ffq \in X_f$. By the proof of Proposition 2.20(a), $\varphi_f^*(\ffq_f) = \ffq$. Also, since $\varphi_f^*$ is 1-1, $\varphi^{-1}(\ffp) R_f = \ffq R_f = \ffq_f = \ffp$. \par Method 2: Claim. $\varphi^{-1}(I)R_f = I$ for $I \leq R_f$. ``$\subseteq$''. By 1.63(a). ``$\supseteq$''. Let $i \in I$. Then $i = \frac{r}{f^n} \in I$ for some $r \in R$ and $n \geq 0$. So $\varphi(r) = \frac{r}{1} = \frac{f^n}{1} \cdot \frac{r}{f^n} \in I$. Then $r \in \varphi^{-1}(I)$. So $i = \frac{r}{f^n} = \varphi(r) \cdot \frac{1}{f^n} \in \varphi^{-1}(I) R_f$.} if and only if $\ffp \in \operatorname{V}(\ffa_f)$.
-        \item Let $\ffp \in \operatorname{Spec}(R_f)$. $\ffp \in (\varphi_f^*)^{-1}((X \setminus \operatorname{V}(\ffa)) \cap X_f)$ if and only if $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in (X \setminus \operatorname{V}(\ffa)) \cap X_f$ if and only if $\varphi^{-1}(\ffp) \in X \setminus \operatorname{V}(\ffa)$ if and only if $\ffp \in \operatorname{Spec}(R_f) \setminus \operatorname{V}(\ffa_f)$ by the proof of (a).
-        \item Method 1. By (a), we have $(\varphi^*_f)^{-1}(X_g \cap X_f) = (\varphi^*_f)^{-1}((X \setminus \operatorname{V}(g)) \cap X_f) = \operatorname{Spec}(R_f) \setminus \operatorname{V}((g)_f) = \{\ffp_f \mid \ffp \in \operatorname{Spec}(R), \ffp_f \not \supseteq (g)_f\} = \{\ffp_f \mid g \not \in \ffp \in \operatorname{Spec}(R)\} = \{\ffp_f \mid \ffp \in X_g\}$. \par 
+        \item Let $\ffp \in \operatorname{Spec}(R_f)$. $\ffp \in (\varphi_f^*)^{-1}((X \smallsetminus \operatorname{V}(\ffa)) \cap X_f)$ if and only if $\varphi^{-1}(\ffp) = \varphi_f^*(\ffp) \in (X \smallsetminus \operatorname{V}(\ffa)) \cap X_f$ if and only if $\varphi^{-1}(\ffp) \in X \smallsetminus \operatorname{V}(\ffa)$ if and only if $\ffp \in \operatorname{Spec}(R_f) \smallsetminus \operatorname{V}(\ffa_f)$ by the proof of (a).
+        \item Method 1. By (a), we have $(\varphi^*_f)^{-1}(X_g \cap X_f) = (\varphi^*_f)^{-1}((X \smallsetminus \operatorname{V}(g)) \cap X_f) = \operatorname{Spec}(R_f) \smallsetminus \operatorname{V}((g)_f) = \{\ffp_f \mid \ffp \in \operatorname{Spec}(R), \ffp_f \not \supseteq (g)_f\} = \{\ffp_f \mid g \not \in \ffp \in \operatorname{Spec}(R)\} = \{\ffp_f \mid \ffp \in X_g\}$. \par 
             Method 2. Let $\ffp \in \operatorname{Spec}(R_f)$. Then $\ffp \in (\varphi_f^*)^{-1}(X_g \cap X_f)$ if and only if $\varphi_f^*(\ffp) \in X_g \cap X_f$ if and only if $\varphi_f^*(\ffp) \in X_g$ if and only if $\ffp \in \{\ffq_f \mid \ffq \in X_g\}$. \qedhere
     \end{enumerate}
 \end{proof}
@@ -323,9 +323,9 @@ Let $X \neq \emptyset$ be a topological space.
 \end{proof}
 
 \begin{example*}
-    $U \subseteq \operatorname{Spec}(R) = X$ may not be quasi-compact. Let $R = k[X_1,X_2,X_3,\cdots]$. Let $U = X \setminus \operatorname{V}(X_1,X_2,X_3,\cdots) = X \setminus \bigcap_{i=1}^{\infty} \operatorname{V}(X_i) = \bigcup_{i=1}^\infty (X \setminus \operatorname{V}(X_i))$ by Fact 1.36(a). \par 
+    $U \subseteq \operatorname{Spec}(R) = X$ may not be quasi-compact. Let $R = k[X_1,X_2,X_3,\cdots]$. Let $U = X \smallsetminus \operatorname{V}(X_1,X_2,X_3,\cdots) = X \smallsetminus \bigcap_{i=1}^{\infty} \operatorname{V}(X_i) = \bigcup_{i=1}^\infty (X \smallsetminus \operatorname{V}(X_i))$ by Fact 1.36(a). \par 
     Let $n \geq 1$. Claim. $\operatorname{V}(X_1,X_2,X_3,\cdots) \neq \operatorname{V}(X_1,X_2,\cdots,X_n)$. ``$\subseteq$''. It is straightforward. ``$\not \supseteq$''. Let $\ffp = \langle X_1,\cdots,X_n \rangle \in \operatorname{V}(X_1,\cdots,X_n)$. Then $\ffp \not \in \operatorname{V}(X_1,X_2,\cdots)$ since $\langle X_1,X_2,\cdots \rangle\ni X_{n+1} \not \in \ffp$. \par 
-    So $U = X \setminus \operatorname{V}(X_1,X_2,X_3,\cdots) \neq X \setminus \operatorname{V}(X_1,\cdots,X_n) = X \setminus \bigcap_{i=1}^{n} \operatorname{V}(X_i) = \bigcup_{i=1}^n (X \setminus \operatorname{V}(X_i))$ for $n \geq 1$. 
+    So $U = X \smallsetminus \operatorname{V}(X_1,X_2,X_3,\cdots) \neq X \smallsetminus \operatorname{V}(X_1,\cdots,X_n) = X \smallsetminus \bigcap_{i=1}^{n} \operatorname{V}(X_i) = \bigcup_{i=1}^n (X \smallsetminus \operatorname{V}(X_i))$ for $n \geq 1$. 
 \end{example*}
 
 \begin{fact*}
@@ -333,7 +333,7 @@ Let $X \neq \emptyset$ be a topological space.
 \end{fact*}
 
 \begin{proof}
-    Let $U = \bigcup_{\lambda \in \Lambda}U_\lambda$ be an open cover with $U_\lambda$ open in $X$ for $\lambda \in \Lambda$. Use the fact that $X_f$'s form a basis to assume without losss of generality $U_\lambda = X_{f_\lambda}$ for some $f_\lambda \in R$ for $\lambda \in \Lambda$. Then $U = \bigcup_{\lambda \in \Lambda} X_{f_\lambda} = \bigcup_{\lambda \in \Lambda} (X \setminus \operatorname{V}(f_\lambda)) = X \setminus \operatorname{V}(\langle f_\lambda \mid \lambda \in \Lambda \rangle)$. Since $R$ is noetherian, there exist $f_{\lambda_1},\cdots,f_{\lambda_n} \in R$ such that $\langle f_\lambda \mid \lambda \in \Lambda \rangle = \langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle$. So $U = X \setminus \operatorname{V}(\langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle) = \bigcup_{i=1}^n X_{f_{\lambda_i}}$. 
+    Let $U = \bigcup_{\lambda \in \Lambda}U_\lambda$ be an open cover with $U_\lambda$ open in $X$ for $\lambda \in \Lambda$. Use the fact that $X_f$'s form a basis to assume without losss of generality $U_\lambda = X_{f_\lambda}$ for some $f_\lambda \in R$ for $\lambda \in \Lambda$. Then $U = \bigcup_{\lambda \in \Lambda} X_{f_\lambda} = \bigcup_{\lambda \in \Lambda} (X \smallsetminus \operatorname{V}(f_\lambda)) = X \smallsetminus \operatorname{V}(\langle f_\lambda \mid \lambda \in \Lambda \rangle)$. Since $R$ is noetherian, there exist $f_{\lambda_1},\cdots,f_{\lambda_n} \in R$ such that $\langle f_\lambda \mid \lambda \in \Lambda \rangle = \langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle$. So $U = X \smallsetminus \operatorname{V}(\langle f_{\lambda_1},\cdots,f_{\lambda_n} \rangle) = \bigcup_{i=1}^n X_{f_{\lambda_i}}$. 
 \end{proof}
 
 \begin{lemma}
@@ -376,7 +376,7 @@ Let $X \neq \emptyset$ be a topological space.
 \end{example}
 
 \begin{proof}
-    Let $\emptyset \neq U \subseteq X$ be open. Then $\emptyset \neq U = X \setminus \operatorname{V}(\ffa)$ for some $\ffa \leq R$. So $\operatorname{V}(\ffa) \neq X = \operatorname{Spec}(R)$. Hence $\ffa \neq \langle 0 \rangle$ and so $\langle 0 \rangle \not \in \operatorname{V}(\ffa)$. Also, since $R$ is an integral domain, $\langle 0 \rangle \in X$. So $\langle 0 \rangle \in U$. 
+    Let $\emptyset \neq U \subseteq X$ be open. Then $\emptyset \neq U = X \smallsetminus \operatorname{V}(\ffa)$ for some $\ffa \leq R$. So $\operatorname{V}(\ffa) \neq X = \operatorname{Spec}(R)$. Hence $\ffa \neq \langle 0 \rangle$ and so $\langle 0 \rangle \not \in \operatorname{V}(\ffa)$. Also, since $R$ is an integral domain, $\langle 0 \rangle \in X$. So $\langle 0 \rangle \in U$. 
 \end{proof}
 
 \begin{customdefinition}{\ref{defOfIrreducibilityInTopologicalSpace}+}
@@ -402,7 +402,7 @@ Let $X \neq \emptyset$ be a topological space.
 \end{fact}
 
 \begin{example*}
-    In $X = \operatorname{Spec}(\bbZ)$, Zariski topology is almost the ``cofinite topology'', open sets are $X,\emptyset$ and $\{X \setminus \{p_1\bbZ,\cdots,p_n\bbZ\} \mid n \geq 1, 0 \neq p_i \text{ is prime},\fa i = 1,\cdots,n\}$.
+    In $X = \operatorname{Spec}(\bbZ)$, Zariski topology is almost the ``cofinite topology'', open sets are $X,\emptyset$ and $\{X \smallsetminus \{p_1\bbZ,\cdots,p_n\bbZ\} \mid n \geq 1, 0 \neq p_i \text{ is prime},\fa i = 1,\cdots,n\}$.
 \end{example*}
 
 \begin{lemma}
@@ -417,8 +417,8 @@ Let $X \neq \emptyset$ be a topological space.
 
 \begin{proof}
     ``(i)$\Leftrightarrow$(ii)''. By Definition 2.33. \par 
-    ``(ii)$\Rightarrow$(iii)''. Assume (b). Let $\emptyset \neq U \subseteq X$ be open. Suppose $V_1 := \overbar U \neq X$. Let $V_2 := X \setminus U$. Then $V_1,V_2 \subseteq X$ are closed. So $X = U \cup (X \setminus U) \subseteq \overbar U \cup (X \setminus U) = V_1 \cup V_2 \subsetneq X$ by assumption, a contradiction. \par 
-    ``(iii)$\Rightarrow$(i)''. By contrapositive. Assume $X$ is reducible. Then there exist $\emptyset \neq U_1,U_2 \subseteq X$ open such that $U_1 \cap U_2 = \emptyset$. So $U_1 \subseteq X \setminus U_2 \subsetneq X$. Also, since $X \setminus U_2$ is closed, $\overbar U_1 \subseteq X \setminus U_2 \subsetneq X$
+    ``(ii)$\Rightarrow$(iii)''. Assume (b). Let $\emptyset \neq U \subseteq X$ be open. Suppose $V_1 := \overbar U \neq X$. Let $V_2 := X \smallsetminus U$. Then $V_1,V_2 \subseteq X$ are closed. So $X = U \cup (X \smallsetminus U) \subseteq \overbar U \cup (X \smallsetminus U) = V_1 \cup V_2 \subsetneq X$ by assumption, a contradiction. \par 
+    ``(iii)$\Rightarrow$(i)''. By contrapositive. Assume $X$ is reducible. Then there exist $\emptyset \neq U_1,U_2 \subseteq X$ open such that $U_1 \cap U_2 = \emptyset$. So $U_1 \subseteq X \smallsetminus U_2 \subsetneq X$. Also, since $X \smallsetminus U_2$ is closed, $\overbar U_1 \subseteq X \smallsetminus U_2 \subsetneq X$
 \end{proof}
 
 \begin{customdefinition}{\ref{defOfIrreducibilityInTopologicalSpace}++}
@@ -447,7 +447,7 @@ Let $X \neq \emptyset$ be a topological space.
     \begin{enumerate}
         \item Assume $Y \subseteq X$ is irreducible. Let $\overbar Y = V_1 \cup V_2$ with $V_1,V_2 \subseteq \overbar Y$ closed. Let $i \in \{1,2\}$. Since $V_i$ is closed in $\overbar Y$ and $\overbar Y$ has subspace topology, there exists $\widetilde V_i \subseteq X$ closed in $X$ such that $V_i = \widetilde V_i \cap \overbar Y$. Set $V_i' = \widetilde V_i \cap Y = (\widetilde V_i \cap \overbar Y) \cap Y = V_i \cap Y$. Since $V_i$ is closed in $\overbar Y$, $V_i' = V_i \cap Y$ is closed in $Y$\footnote[2]{Let $Z \subseteq X$ have a subspace topology. If $Y \subseteq Z$, then the topology that $Y$ inherits as a subspace of $Z$ is the same as the topology that $Y$ inherits as a subspace of $X$}. Then $\overbar Y = V_1 \cup V_2 = (\widetilde V_1 \cap \overbar Y) \cup (\widetilde V_2 \cap \overbar Y) = (\widetilde V_1 \cup \widetilde V_2) \cap \overbar Y$. So $Y \subseteq \overbar Y \subseteq \widetilde V_1 \cup \widetilde V_2$. Hence $Y = (\widetilde V_1 \cup \widetilde V_2) \cap Y= (\widetilde V_1 \cap Y) \cup (\widetilde V_2 \cap Y) = V_1' \cup V_2'$. Since $Y$ is irreducible, $Y = V_1'$ or $V_2'$. Say $Y = V_1' = V_1 \cap Y$. Then $Y \subseteq V_1 \subseteq \widetilde V_1$. Since $\widetilde V_1 \subseteq X$ is closed, $\overbar Y \subseteq \widetilde V_1$. Thus, $\overbar Y = \widetilde V_1 \cap \overbar Y = V_1$. 
         \item 
-            Let $\llC$ be a chain of irreducible subsets of $X$ and $Z: = \bigcup_{Y \in \llC}Y$. Let $V_1,V_2 \subsetneq Z$ be closed. Then there exist $x_1 \in Z \setminus V_1$ and $x_2 \in Z \setminus V_2$. So there exist $Y_1,Y_2 \in \llC$ such that $x_1 \in Y_1$ and $x_2 \in Y_2$. Since $\llC$ is a chain, $Y_1 \subseteq Y_2$ or $Y_2 \subseteq Y_1$. Say $Y_2 \subseteq Y_1$, then $x_1 \in Y_1 \setminus V_1$ and $x_2 \in Y_1 \setminus V_2$. So $V_1 \cap Y_1 \subsetneq Y_1$ and $V_2 \cap Y_1 \subsetneq Y_1$. Since $V_1,V_2$ are closed in $Z$, $V_1 \cap Y_1$ and $V_2 \cap Y_1$ are closed in $Y_1$ similar to (a). Also, since $Y_1$ is irreducible, we have $(V_1 \cap Y_1) \cup (V_2 \cap Y_1) \subsetneq Y_1$. So $Y_1 \not \subseteq V_1 \cup V_2$. Also, since $Y_1 \subseteq Z$, $Z \not \subseteq V_1 \cup V_2$. Thus, $V_1 \cup V_2 \subsetneq Z$.
+            Let $\llC$ be a chain of irreducible subsets of $X$ and $Z: = \bigcup_{Y \in \llC}Y$. Let $V_1,V_2 \subsetneq Z$ be closed. Then there exist $x_1 \in Z \smallsetminus V_1$ and $x_2 \in Z \smallsetminus V_2$. So there exist $Y_1,Y_2 \in \llC$ such that $x_1 \in Y_1$ and $x_2 \in Y_2$. Since $\llC$ is a chain, $Y_1 \subseteq Y_2$ or $Y_2 \subseteq Y_1$. Say $Y_2 \subseteq Y_1$, then $x_1 \in Y_1 \smallsetminus V_1$ and $x_2 \in Y_1 \smallsetminus V_2$. So $V_1 \cap Y_1 \subsetneq Y_1$ and $V_2 \cap Y_1 \subsetneq Y_1$. Since $V_1,V_2$ are closed in $Z$, $V_1 \cap Y_1$ and $V_2 \cap Y_1$ are closed in $Y_1$ similar to (a). Also, since $Y_1$ is irreducible, we have $(V_1 \cap Y_1) \cup (V_2 \cap Y_1) \subsetneq Y_1$. So $Y_1 \not \subseteq V_1 \cup V_2$. Also, since $Y_1 \subseteq Z$, $Z \not \subseteq V_1 \cup V_2$. Thus, $V_1 \cup V_2 \subsetneq Z$.
         \item Let $Y \subseteq X$ be irreducible. Set $\Sigma = \{\text{irreducible subsets }Z \subseteq X \mid Y \subseteq Z\}$. Since $Y \in \Sigma$, $\Sigma \neq \emptyset$. From (b), Zorn' lemma applies. So $\Sigma$ has a maximal element.
     \item Let $\llM$ be the union of the maximal irreducible subsets of $X$. Claim. $X = M$. ``$\supseteq$''. It is straightforward. ``$\subseteq$''. Let $x \in X$, then $\{x\} \subseteq X$ is irreducible. By (c), there exists a maximal irreducible subset $Z \subseteq X$ such that $\{x\} \subseteq Z$. By (a), $\overbar Z$ is irreducible. Also, since $Z \subseteq \overbar Z$ and $Z$ is maximal irreducible, we have $Z = \overbar Z$, i.e., $Z$ is closed. \qedhere
     \end{enumerate}

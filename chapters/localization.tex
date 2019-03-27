@@ -10,7 +10,7 @@ Let R be a commutative ring with identity but not a field.
     \begin{enumerate}
         \item $\{1,f,f^2,\cdots\} \subseteq R$ is multiplicatively closed for $f \in R$.
         \item $R^\times \subseteq R$ is multiplicatively closed.
-        \item $R \setminus \ffp \subseteq R$ is multiplicatively closed for $\ffp \in \operatorname{Spec}(R)$.
+        \item $R \smallsetminus \ffp \subseteq R$ is multiplicatively closed for $\ffp \in \operatorname{Spec}(R)$.
         \item $1 + \ffa \subseteq R$ is multiplicatively closed for $\ffa \leq R$.
     \end{enumerate}
 \end{example}
@@ -28,7 +28,7 @@ Let R be a commutative ring with identity but not a field.
 \begin{notation}
     \begin{enumerate}
         \item If $U = \{1,f,f^2,\cdots\}$, write $U^{-1}R = R_f$.
-        \item If $U = R \setminus \ffp$ for some $\ffp \in \operatorname{Spec}(R)$, write $U^{-1}R = R_\ffp$.
+        \item If $U = R \smallsetminus \ffp$ for some $\ffp \in \operatorname{Spec}(R)$, write $U^{-1}R = R_\ffp$.
         \item If $U \subseteq R$ is multiplicatively closed, write $U^{-1}R = R_U = R[U^{-1}]$.
     \end{enumerate}
 \end{notation}
@@ -261,7 +261,7 @@ Let R be a commutative ring with identity but not a field.
     Let $U \cap \ffp = \emptyset$. Then $U^{-1}\ffp \in \operatorname{Spec}(U^{-1}R)$ and 
     \begin{align*}
         (U^{-1}R)_{U^{-1}\ffp} &\xrightarrow \cong R_\ffp \\
-        \frac{r/1}{s/1} &\mapsfrom r/s \ s \in R \setminus \ffp 
+        \frac{r/1}{s/1} &\mapsfrom r/s \ s \in R \smallsetminus \ffp 
     \end{align*}
 \end{proposition}
 
@@ -275,9 +275,9 @@ Let R be a commutative ring with identity but not a field.
             r/1 \ar[rrr,mapsto] & & & \frac{r/1}{1/1}
         \end{tikzcd}
     \end{center}
-    Let $\beta = \alpha \circ \psi$. By proposition 3.5, to show $\varphi$ is a well-defined ring homomorphism, it suffices to show $\beta(R \setminus \ffp) \subseteq ((U^{-1}R)_{U^{-1}\ffp})^{\times}$ since $U \subseteq R \setminus \ffp$. Let $x \in R \setminus \ffp$. Then $\beta(x) = \frac{x/1}{1/1}$. Since $x/1 \in U^{-1}R$ and $x \not \in \ffp$, we have $x/1 \not \in U^{-1}\ffp$ by Lemma 3.16. So $\frac{x}{1}$ is an allowable denominator in $(U^{-1}R)_{U^{-1}\ffp}$. Hence $\frac{1/1}{x/1} \in (U^{-1}R)_{U^{-1}\ffp}$. Thus, $\frac{x/1}{1/1} \in ((U^{-1}R)_{U^{-1}\ffp})^{\times}$ with $(\frac{x/1}{1/1})^{-1} = \frac{1/1}{x/1}$. Besides, by Proposition 3.5, we have $\varphi(r/s) = \beta(r)/\beta(s) = \frac{r/1}{s/1}$ for $\frac{r}{s} \in R_\ffp$. \par 
-    Let $\frac{r}{s} \in R_\ffp$. Then $\frac{r}{s} \in \ker(\varphi)$ if and only if $0 = \varphi(\frac{r}{s}) = \frac{r/1}{s/1} \in (U^{-1}R)_{U^{-1}\ffp}$ if and only if there exists $\frac{t}{v} \in U^{-1}R \setminus U^{-1}\ffp$ with $t \in R \setminus \ffp$ such that $\frac{tr}{v} = \frac{t}{v} \cdot \frac{r}{1} = 0$ in $U^{-1}R$ by Proposition 3.11(b) and Lemma 3.16 if and only if there exist $t \in R \setminus \ffp$ and $w \in U \subseteq R \setminus \ffp$ such that $wtr = 0$ in $R$ by Proposition 3.11(b) if and only if there exists $v' \in U \subseteq R \setminus \ffp$ such that $v'r = 0$ in $R$ since $R \setminus \ffp$ is multiplicatively closed if and only if $\frac{r}{s} = 0$ in $R_\ffp$ by Proposition 3.11(b). So $\varphi$ is 1-1. \par 
-    Let $\frac{r/u}{s/v} \in (U^{-1}R)_{U^{-1}\ffp}$ with $r \in R$, $u,v \in U \subseteq R \setminus \ffp$ and $s \in R \setminus \ffp$. Then $us \in R \setminus \ffp$ since $R \setminus \ffp$ is multiplicatively closed. So $\frac{vr}{us} \in R_\ffp$. Also, since $\varphi(\frac{vr}{us}) = \frac{\beta(vr)}{\beta(us)} = \frac{vr/1}{us/1} = \frac{uv/1 \cdot r/u}{uv/1 \cdot s/v} = \frac{r/u}{s/v}$, we have $\varphi$ is onto. 
+    Let $\beta = \alpha \circ \psi$. By proposition 3.5, to show $\varphi$ is a well-defined ring homomorphism, it suffices to show $\beta(R \smallsetminus \ffp) \subseteq ((U^{-1}R)_{U^{-1}\ffp})^{\times}$ since $U \subseteq R \smallsetminus \ffp$. Let $x \in R \smallsetminus \ffp$. Then $\beta(x) = \frac{x/1}{1/1}$. Since $x/1 \in U^{-1}R$ and $x \not \in \ffp$, we have $x/1 \not \in U^{-1}\ffp$ by Lemma 3.16. So $\frac{x}{1}$ is an allowable denominator in $(U^{-1}R)_{U^{-1}\ffp}$. Hence $\frac{1/1}{x/1} \in (U^{-1}R)_{U^{-1}\ffp}$. Thus, $\frac{x/1}{1/1} \in ((U^{-1}R)_{U^{-1}\ffp})^{\times}$ with $(\frac{x/1}{1/1})^{-1} = \frac{1/1}{x/1}$. Besides, by Proposition 3.5, we have $\varphi(r/s) = \beta(r)/\beta(s) = \frac{r/1}{s/1}$ for $\frac{r}{s} \in R_\ffp$. \par 
+    Let $\frac{r}{s} \in R_\ffp$. Then $\frac{r}{s} \in \ker(\varphi)$ if and only if $0 = \varphi(\frac{r}{s}) = \frac{r/1}{s/1} \in (U^{-1}R)_{U^{-1}\ffp}$ if and only if there exists $\frac{t}{v} \in U^{-1}R \smallsetminus U^{-1}\ffp$ with $t \in R \smallsetminus \ffp$ such that $\frac{tr}{v} = \frac{t}{v} \cdot \frac{r}{1} = 0$ in $U^{-1}R$ by Proposition 3.11(b) and Lemma 3.16 if and only if there exist $t \in R \smallsetminus \ffp$ and $w \in U \subseteq R \smallsetminus \ffp$ such that $wtr = 0$ in $R$ by Proposition 3.11(b) if and only if there exists $v' \in U \subseteq R \smallsetminus \ffp$ such that $v'r = 0$ in $R$ since $R \smallsetminus \ffp$ is multiplicatively closed if and only if $\frac{r}{s} = 0$ in $R_\ffp$ by Proposition 3.11(b). So $\varphi$ is 1-1. \par 
+    Let $\frac{r/u}{s/v} \in (U^{-1}R)_{U^{-1}\ffp}$ with $r \in R$, $u,v \in U \subseteq R \smallsetminus \ffp$ and $s \in R \smallsetminus \ffp$. Then $us \in R \smallsetminus \ffp$ since $R \smallsetminus \ffp$ is multiplicatively closed. So $\frac{vr}{us} \in R_\ffp$. Also, since $\varphi(\frac{vr}{us}) = \frac{\beta(vr)}{\beta(us)} = \frac{vr/1}{us/1} = \frac{uv/1 \cdot r/u}{uv/1 \cdot s/v} = \frac{r/u}{s/v}$, we have $\varphi$ is onto. 
 \end{proof}
 
 \begin{corollary}
@@ -285,12 +285,12 @@ Let R be a commutative ring with identity but not a field.
 \end{corollary}
 
 \begin{proof}
-    Take $U = R \setminus \ffq$ in Proposition 3.17.
+    Take $U = R \smallsetminus \ffq$ in Proposition 3.17.
 \end{proof}
 
 \begin{example*}
     \begin{enumerate}
-        \item Let $0 \neq p \in \bbZ$ be prime. Then $(0) \subseteq (p) \subsetneq \bbZ$ and $\bbZ_{(p)}$ is a domain. So by Corollary 3.18, $Q(\bbZ_{(p)}) = (\bbZ_{(p)})_{(0)_{(p)}} \cong \bbZ_{(0)} = Q(\bbZ) = \bbQ$. 
+        \item Let $0 \neq p \in \bbZ$ be prime. Then $(0) \subseteq (p) \subsetneq \bbZ$ and $\bbZ_{(p)} = \{\frac{m}{n} \in \bbQ \mid (n,p) = 1\}$ is a domain. So by Corollary 3.18, $Q(\bbZ_{(p)}) = (\bbZ_{(p)})_{(0)_{(p)}} \cong \bbZ_{(0)} = Q(\bbZ) = \bbQ$. 
         \item Let $R$ be a domain and $0 \not \in U$. Then $U^{-1}R$ is a domain and $\ffp := (0) \in \operatorname{Spec}(R)$. So $Q(U^{-1}R) = (U^{-1}R)_{U^{-1}(0)} \cong R_{(0)} = Q(R)$ by Proposition 3.17. In fact, the map $Q(U^{-1}R) \xleftarrow \cong Q(R)$ is given by $\frac{r/1}{s/1} \mapsfrom r/s$.
     \end{enumerate}
 \end{example*}
@@ -311,17 +311,17 @@ Let R be a commutative ring with identity but not a field.
 
 \begin{example*}
     \begin{enumerate}
-        \item If $R$ is an integral domain, then $\operatorname{NZD}(R) = R \setminus \{0\}$ and $\operatorname{Q}(R) = \operatorname{NZD}(R)^{-1}(R) = (R \setminus 0)^{-1}(R) = Q(R)$. So the total ring of fractions of a domain is equal to the field of fraction. 
+        \item If $R$ is an integral domain, then $\operatorname{NZD}(R) = R \smallsetminus \{0\}$ and $\operatorname{Q}(R) = \operatorname{NZD}(R)^{-1}(R) = (R \smallsetminus 0)^{-1}(R) = Q(R)$. So the total ring of fractions of a domain is equal to the field of fraction. 
         \item Let $R = \frac{k[X,Y,Z,W]}{\langle XY,YZ,ZW,XW \rangle}$, not an integral domain. 
-            Let $x= \overbar{X}$, $y = \overbar{Y}$, $z = \overbar{Z}$ and $w = \overbar{W}$. Since $\langle 0 \rangle R = \langle x,z \rangle \cap \langle y,w \rangle$ is a minimal primary decomposition, $\operatorname{Ass}_R(0) = \{\langle x,z \rangle, \langle y, w \rangle\}$. So $\operatorname{ZD}(R) = \bigcup_{\ffp \in \operatorname{Ass}_R(0)}\ffp = \langle x, z\rangle \cup \langle y,w \rangle$ by Corollary 4.34. Then $U := \operatorname{NZD}(R) = R \setminus \{\langle x, z \rangle \cup \langle y, w\rangle\}$. \par 
-            By prime correspondence for localization, $\operatorname{Spec}(\operatorname{Q}(R)) = \{U^{-1}\ffp \mid \ffp \in \operatorname{Spec}(R), \ffp \cap U = \emptyset\} = \{U^{-1}\langle x,z \rangle, U^{-1}\langle y,w \rangle\}$. Let $\ffp_1 = U^{-1}\langle x,z \rangle$ and $\ffp_2 = U^{-1} \langle y,w \rangle$. Then by Proposition 3.12(b), $\ffp_1 \cap \ffp_2 = U^{-1}(\langle x,z \rangle \cap \langle y,w \rangle) = U^{-1} \langle xy,yz,zw,xw \rangle = 0$. So $\operatorname{m-Spec}(U^{-1}R) = \{\ffp_1,\ffp_2\}$. Hence $\ffp_1 + \ffp_2 = U^{-1}R = \operatorname{Q}(R)$. Let $\pi_1: R \to R/\langle x, z \rangle$ and $\pi_2: R \to R/\langle y, w \rangle$ be natural surjections. Then by Chinese Remainder Theorem and Proposition 3.17 with $0 \not \in \pi_1(R \setminus \langle x, z \rangle \cup \langle y,w \rangle) = \pi_1(U)$ and $0 \not \in \pi_2(U)$,
+            Let $x= \overbar{X}$, $y = \overbar{Y}$, $z = \overbar{Z}$ and $w = \overbar{W}$. Since $\langle 0 \rangle R = \langle x,z \rangle \cap \langle y,w \rangle$ is a minimal primary decomposition, $\operatorname{Ass}_R(0) = \{\langle x,z \rangle, \langle y, w \rangle\}$. So $\operatorname{ZD}(R) = \bigcup_{\ffp \in \operatorname{Ass}_R(0)}\ffp = \langle x, z\rangle \cup \langle y,w \rangle$ by Corollary 4.34. Then $U := \operatorname{NZD}(R) = R \smallsetminus \{\langle x, z \rangle \cup \langle y, w\rangle\}$. \par 
+            By prime correspondence for localization, $\operatorname{Spec}(\operatorname{Q}(R)) = \{U^{-1}\ffp \mid \ffp \in \operatorname{Spec}(R), \ffp \cap U = \emptyset\} = \{U^{-1}\langle x,z \rangle, U^{-1}\langle y,w \rangle\}$. Let $\ffp_1 = U^{-1}\langle x,z \rangle$ and $\ffp_2 = U^{-1} \langle y,w \rangle$. Then by Proposition 3.12(b), $\ffp_1 \cap \ffp_2 = U^{-1}(\langle x,z \rangle \cap \langle y,w \rangle) = U^{-1} \langle xy,yz,zw,xw \rangle = 0$. So $\operatorname{m-Spec}(U^{-1}R) = \{\ffp_1,\ffp_2\}$. Hence $\ffp_1 + \ffp_2 = U^{-1}R = \operatorname{Q}(R)$. Let $\pi_1: R \to R/\langle x, z \rangle$ and $\pi_2: R \to R/\langle y, w \rangle$ be natural surjections. Then by Chinese Remainder Theorem and Proposition 3.17 with $0 \not \in \pi_1(R \smallsetminus \langle x, z \rangle \cup \langle y,w \rangle) = \pi_1(U)$ and $0 \not \in \pi_2(U)$,
             \begin{align*}
                 \operatorname{Q}(R) & \cong \frac{U^{-1}R}{\ffp_1} \times \frac{U^{-1}R}{\ffp_2} = Q\left(\frac{U^{-1}R}{\ffp_1}\right) \times Q\left(\frac{U^{-1}R}{\ffp_2}\right) \cong Q\left(U^{-1}\frac{R}{\langle x,z \rangle}\right) \times Q\left(U^{-1}\frac{R}{\langle y,w \rangle}\right) \\
                 &\cong \left(U^{-1}\frac{R}{\langle x,z \rangle} \right)_{U^{-1}(0)} \times \left(U^{-1}\frac{R}{\langle y,w \rangle} \right)_{U^{-1}(0)} \cong \left(\frac{R}{\langle x,z \rangle}\right)_{(0)} \times \left(\frac{R}{\langle y,w \rangle}\right)_{(0)} \\
                 &\cong Q\left(\frac{R}{\langle x,z \rangle}\right) \times Q\left(\frac{R}{\langle y,w \rangle}\right) \cong Q(k[Y,W]) \times Q(k[X,Z]) = k(Y,W) \times k(X,Z).
             \end{align*}
             \begin{comment}
-            \par Let $R_1: = \frac{R}{\langle \overbar{X}, \overbar{Z} \rangle} \cong k[Y,W]$ and $R_2 := \frac{R}{\langle \overbar{Y}, \overbar{W} \rangle} \cong k[X,Z]$. Note $R_1$ is an integral domain and $U^{-1}R_1$ is a field. By UMP, there exists a unique ring homomorphism $\overbar{\varphi}_1$ such that the following diagram commutes. Also, since $\overbar{\varphi}_1 \neq 0$ and $\operatorname{Q}(R_1)$ is a field, $\overbar{\varphi}_1$ is 1-1. Let $\frac{r}{u} \in U^{-1}R_1$ with $r \in R$ and $u \in \pi_1(U) = \pi_1(R \setminus (\langle \overbar{X},\overbar{Z} \rangle \cup \langle \overbar{Y}, \overbar{W} \rangle)) \subseteq R_1 \setminus \{0\}$. Then $\frac{r}{u} \in \operatorname{Q}(R_1)$. Since $\overbar{\varphi}_1(\frac{r}{u}) = \frac{\varphi_1(r)}{\varphi_1(u)} = \frac{r/1}{u/1} = \frac{r}{u}$, we have $\overbar{\varphi_1}$ is onto. Hence $\operatorname{Q}(R_1) \cong U^{-1}R_1$. Similarly, $\operatorname{Q}(R_2) \cong U^{-1}R_2$.
+            \par Let $R_1: = \frac{R}{\langle \overbar{X}, \overbar{Z} \rangle} \cong k[Y,W]$ and $R_2 := \frac{R}{\langle \overbar{Y}, \overbar{W} \rangle} \cong k[X,Z]$. Note $R_1$ is an integral domain and $U^{-1}R_1$ is a field. By UMP, there exists a unique ring homomorphism $\overbar{\varphi}_1$ such that the following diagram commutes. Also, since $\overbar{\varphi}_1 \neq 0$ and $\operatorname{Q}(R_1)$ is a field, $\overbar{\varphi}_1$ is 1-1. Let $\frac{r}{u} \in U^{-1}R_1$ with $r \in R$ and $u \in \pi_1(U) = \pi_1(R \smallsetminus (\langle \overbar{X},\overbar{Z} \rangle \cup \langle \overbar{Y}, \overbar{W} \rangle)) \subseteq R_1 \smallsetminus \{0\}$. Then $\frac{r}{u} \in \operatorname{Q}(R_1)$. Since $\overbar{\varphi}_1(\frac{r}{u}) = \frac{\varphi_1(r)}{\varphi_1(u)} = \frac{r/1}{u/1} = \frac{r}{u}$, we have $\overbar{\varphi_1}$ is onto. Hence $\operatorname{Q}(R_1) \cong U^{-1}R_1$. Similarly, $\operatorname{Q}(R_2) \cong U^{-1}R_2$.
              \begin{center}
                 \begin{tikzpicture}[node distance = 1.5cm, auto]
                     \node (R) {$R_1$};
@@ -382,7 +382,7 @@ Let R be a commutative ring with identity but not a field.
 \end{question}
 
 \begin{construction}
-    Let $U = R \setminus \ffp$. 
+    Let $U = R \smallsetminus \ffp$. 
     \begin{center}
         \begin{tikzcd}
             &[-30pt] R \ar[r,"\varphi"] \ar[d,"\psi"] &[+10pt] S \ar[d,"\rho"] &[-30pt] \\ 
@@ -411,7 +411,7 @@ Let R be a commutative ring with identity but not a field.
 \end{construction}
 
 \begin{theorem}
-    Let $\varphi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$ and $U = R \setminus \ffp$. Then the followings are equivalent.
+    Let $\varphi^*: \operatorname{Spec}(S) \to \operatorname{Spec}(R)$ and $U = R \smallsetminus \ffp$. Then the followings are equivalent.
     \begin{enumerate}
         \item[(i)] $\ffp \in \im(\varphi^*)$, i.e., $(\varphi^*)^{-1}(\ffp) \neq \emptyset$.
         \item[(ii)] $\ffp = \varphi^{-1}(\ffp S)$, where $\ffp S$ is not necessarily prime.
@@ -430,8 +430,8 @@ Let R be a commutative ring with identity but not a field.
 
 \begin{proof}
     ``(i)$\Rightarrow$(ii)''. Assume there is $\ffq \in \operatorname{Spec}(S)$ such that $\ffp = \varphi^{-1}(\ffq)$. Then by Proposition 1.63(b), $\ffp = \varphi^{-1}(\ffq) = \varphi^{-1}(\varphi^{-1}(\ffq)S) = \varphi^{-1}(\ffp S)$. \par 
-    ``(ii)$\Rightarrow$(iii)''. Assume $\ffp = \varphi^{-1}(\ffp S)$. Note $\ffp \cdot U^{-1}S = \ffp S \cdot U^{-1}S = \ffp S \cdot \varphi(U)^{-1}S = \varphi(U)^{-1} (\ffp S)$. To show $\varphi(U)^{-1}(\ffp S) \neq \varphi(U)^{-1}S$, it is equivalent to show $\ffp S \cap \varphi(U) = \emptyset$ by Proposition 3.13(c). Suppose $\varphi(u) \in \ffp S \cap \varphi(U)$ for some $u \in U$. Then $u \in \varphi^{-1}(\ffp S) = \ffp = R \setminus U$, a contradiction. \par 
-    ``(iii)$\Rightarrow$(i) and well-definedness of $\theta$''. It suffices to show $\varphi^{*}(\theta(Q)) = \ffp$, i.e., $\varphi^{-1}(\rho^{-1}(\pi^{-1}(Q))) = \ffp$ for $Q \in \operatorname{Spec}(\frac{U^{-1}S}{\ffp \cdot U^{-1}S})$. Let $\ffq := \pi^{-1}(Q) \in \operatorname{Spec}(U^{-1}S)$. Then by prime correspondence for quotients, we have $\ffp \cdot U^{-1} S \subseteq \pi^{-1}(Q) = \ffq$ and $Q = \frac{\ffq}{\ffp \cdot U^{-1}S}$. Since $\ffq \in \operatorname{Spec}(U^{-1}S)$, by prime correspondence for localization $\operatorname{Spec}(U^{-1}S) \xrightarrow{\rho^{-1}} \operatorname{Spec}(S)$, for $\ffr := \rho^{-1}(\ffq) = \rho^{-1}(\pi^{-1}(Q)) \in \operatorname{Spec}(S)$ with $\ffr \cap \varphi(U) = \emptyset$, we have $\ffq = \ffr \cdot U^{-1}S = \ffr \cdot \varphi(U)^{-1}S = \varphi(U)^{-1}\ffr$. So by Proposition 1.63(a), $\ffp \subseteq \varphi^{-1} \circ \rho^{-1}(\ffp \cdot U^{-1}S) \subseteq \varphi^{-1}(\rho^{-1}(\pi^{-1}(Q))) = \varphi^{-1}(\ffr)$. Suppose $\ffp \subsetneq \varphi^{-1}(\ffr)$. Then there exists $x \in \varphi^{-1}(\ffr)$ such that $x \in R \setminus \ffp = U$. So $\varphi(x) \in \ffr \cap \varphi(U) = \emptyset$, a contradiction. Thus, $\ffp = \varphi^{-1}(\ffr) = \varphi^{-1}(\rho^{-1}(\pi^{-1}(Q)))$. \par 
+    ``(ii)$\Rightarrow$(iii)''. Assume $\ffp = \varphi^{-1}(\ffp S)$. Note $\ffp \cdot U^{-1}S = \ffp S \cdot U^{-1}S = \ffp S \cdot \varphi(U)^{-1}S = \varphi(U)^{-1} (\ffp S)$. To show $\varphi(U)^{-1}(\ffp S) \neq \varphi(U)^{-1}S$, it is equivalent to show $\ffp S \cap \varphi(U) = \emptyset$ by Proposition 3.13(c). Suppose $\varphi(u) \in \ffp S \cap \varphi(U)$ for some $u \in U$. Then $u \in \varphi^{-1}(\ffp S) = \ffp = R \smallsetminus U$, a contradiction. \par 
+    ``(iii)$\Rightarrow$(i) and well-definedness of $\theta$''. It suffices to show $\varphi^{*}(\theta(Q)) = \ffp$, i.e., $\varphi^{-1}(\rho^{-1}(\pi^{-1}(Q))) = \ffp$ for $Q \in \operatorname{Spec}(\frac{U^{-1}S}{\ffp \cdot U^{-1}S})$. Let $\ffq := \pi^{-1}(Q) \in \operatorname{Spec}(U^{-1}S)$. Then by prime correspondence for quotients, we have $\ffp \cdot U^{-1} S \subseteq \pi^{-1}(Q) = \ffq$ and $Q = \frac{\ffq}{\ffp \cdot U^{-1}S}$. Since $\ffq \in \operatorname{Spec}(U^{-1}S)$, by prime correspondence for localization $\operatorname{Spec}(U^{-1}S) \xrightarrow{\rho^{-1}} \operatorname{Spec}(S)$, for $\ffr := \rho^{-1}(\ffq) = \rho^{-1}(\pi^{-1}(Q)) \in \operatorname{Spec}(S)$ with $\ffr \cap \varphi(U) = \emptyset$, we have $\ffq = \ffr \cdot U^{-1}S = \ffr \cdot \varphi(U)^{-1}S = \varphi(U)^{-1}\ffr$. So by Proposition 1.63(a), $\ffp \subseteq \varphi^{-1} \circ \rho^{-1}(\ffp \cdot U^{-1}S) \subseteq \varphi^{-1}(\rho^{-1}(\pi^{-1}(Q))) = \varphi^{-1}(\ffr)$. Suppose $\ffp \subsetneq \varphi^{-1}(\ffr)$. Then there exists $x \in \varphi^{-1}(\ffr)$ such that $x \in R \smallsetminus \ffp = U$. So $\varphi(x) \in \ffr \cap \varphi(U) = \emptyset$, a contradiction. Thus, $\ffp = \varphi^{-1}(\ffr) = \varphi^{-1}(\rho^{-1}(\pi^{-1}(Q)))$. \par 
     By prime correspondence for quotients, $\pi^{*}$ is 1-1 and by prime correspondence for localization, $\rho^{*}$ is 1-1. Since $\theta: \operatorname{Spec}(\llF(\ffp)) \xrightarrow{\pi^{*}} \operatorname{V}(\ffp \cdot U^{-1}S) \xrightarrow{\rho^{*}|_{\text{restriction}}} (\varphi^{*})^{-1}(\ffp)$, we have $\theta$ is the restriction of $\rho^{*} \circ \pi^{*}$. So $\theta$ is 1-1. \par 
     Let $\ffq \in (\varphi^*)^{-1}(\ffp)$. Then $\ffq \in \operatorname{Spec}(S)$ such that $\varphi^{-1}(\ffq) = \ffp \in \operatorname{Spec}(R)$. Since, $\ffp \cup U = \emptyset$, $\ffq \cap \varphi(U) = \emptyset$. So $\ffq \cdot U^{-1}S = \ffq \cdot \varphi(U)^{-1}S = \varphi(U)^{-1} \ffq \in \operatorname{Spec}(U^{-1}S)$ such that $\rho^{-1}(\ffq \cdot U^{-1}S) = \ffq$. Since $\varphi^{-1}(\ffq) = \ffp$, we have $\ffp S = \varphi^{-1}(\ffq)S \subseteq \ffq$ by Proposition 1.63(a). So $\ffp \cdot U^{-1}S = \ffp S \cdot U^{-1}S \subseteq \ffq \cdot U^{-1}S$. Hence by prime correspondence for quotients, $\frac{\ffq \cdot U^{-1}S}{\ffp \cdot U^{-1}S} \in \operatorname{Spec}(\frac{U^{-1}S}{\ffp \cdot U^{-1}S})$ such that $\pi^{-1}(\frac{\ffq \cdot U^{-1}S}{\ffp \cdot U^{-1}S}) = \ffq \cdot U^{-1}S$. So $\theta(\frac{\ffq \cdot U^{-1}S}{\ffp U^{-1}S}) = \rho^{-1}(\pi^{-1}(\frac{\ffq \cdot U^{-1}S}{\ffp U^{-1}S})) = \rho^{-1}(\ffq \cdot U^{-1}S) = \ffq$. Thus, $\theta$ is onto. \qedhere
 \end{proof}
@@ -441,7 +441,7 @@ Let R be a commutative ring with identity but not a field.
 \end{proposition}
 
 \begin{proof}
-    Since $(R,\ffm)$ is local, we have $U := R \setminus \ffm = R^\times$ by Proposition 1.22. So $U^{-1}(-) \cong -$, e.g., $\llF(\ffm) = \frac{U^{-1}S}{\ffm \cdot U^{-1}S} \cong \frac{S}{\ffm \cdot S}$.
+    Since $(R,\ffm)$ is local, we have $U := R \smallsetminus \ffm = R^\times$ by Proposition 1.22. So $U^{-1}(-) \cong -$, e.g., $\llF(\ffm) = \frac{U^{-1}S}{\ffm \cdot U^{-1}S} \cong \frac{S}{\ffm \cdot S}$.
 \end{proof}
 
 \begin{definition}
@@ -458,7 +458,7 @@ Let R be a commutative ring with identity but not a field.
         \item Let $\varphi: R \xhookrightarrow \subseteq R[X_1,\cdots,R_d]$.
             \begin{enumerate}
                 \item If $(R,\ffm)$ is local, then $\llF(\ffm) \cong \frac{R[X_1,\cdots,X_d]}{\ffm \cdot R[X_1,\cdots,X_d]} = \frac{R[X_1,\cdots,X_d]}{\ffm [X_1,\cdots,X_d]} \cong \frac{R}{\ffm}[X_1,\cdots,X_d]$.
-                \item If $\ffp \in \operatorname{Spec}(R)$, then with $U = R \setminus \ffp$, we have $\llF(\ffp) = \frac{U^{-1}(R[X_1,\cdots,X_d])}{\ffp \cdot U^{-1}(R[X_1,\cdots,X_d])} \cong \frac{(U^{-1}R)[X_1,\cdots,X_n]}{(\ffp \cdot (U^{-1}R)[X_1,\cdots,X_n]} \cong \frac{R_\ffp}{\ffp_\ffp}[X_1,\cdots,X_n] \cong Q(R/\ffp)[X_1,\cdots,X_d]$ since $U^{-1}(R[X]) \cong (U^{-1}R)[X]$ given by $\frac{\sum_{i=1}^{\text{finite}}r_ix^{i}}{u} \mapsto \sum_{i=1}^{\text{finite}}\frac{r_i}{u}x^{i}$.
+                \item If $\ffp \in \operatorname{Spec}(R)$, then with $U = R \smallsetminus \ffp$, we have $\llF(\ffp) = \frac{U^{-1}(R[X_1,\cdots,X_d])}{\ffp \cdot U^{-1}(R[X_1,\cdots,X_d])} \cong \frac{(U^{-1}R)[X_1,\cdots,X_n]}{(\ffp \cdot (U^{-1}R)[X_1,\cdots,X_n]} \cong \frac{R_\ffp}{\ffp_\ffp}[X_1,\cdots,X_n] \cong Q(R/\ffp)[X_1,\cdots,X_d]$ since $U^{-1}(R[X]) \cong (U^{-1}R)[X]$ given by $\frac{\sum_{i=1}^{\text{finite}}r_ix^{i}}{u} \mapsto \sum_{i=1}^{\text{finite}}\frac{r_i}{u}x^{i}$.
             \end{enumerate}
         \item 
             Let $R \xhookrightarrow{\subseteq} R\llbracket X_1,\cdots,X_d \rrbracket$.
@@ -468,7 +468,7 @@ Let R be a commutative ring with identity but not a field.
         \item
             Let $k$ be a field and $\varphi: k[X_1,\cdots,X_d] \xhookrightarrow{\subseteq} k\llbracket X_1,\cdots,X_d \rrbracket$.
             \begin{enumerate}
-                \item Let $\ffm = \langle X_1,\cdots,X_d \rangle = k[X_1,\cdots,X_d]$ be maximal. Then $\ffm \cdot k\llbracket X_1,\cdots,X_d \rrbracket = \langle X_1,\cdots,X_d \rangle \leq k\llbracket X_1,\cdots,X_d \rrbracket$. So with $U = k[X_1,\cdots,X_d] \setminus \ffm$, we have $\llF(\ffm) = \frac{U^{-1}(k\llbracket X_1,\cdots,X_d \rrbracket)}{\ffm \cdot U^{-1}(k\llbracket X_1,\cdots,X_d \rrbracket)} \cong \frac{k\llbracket X_1,\cdots,X_d \rrbracket}{\ffm \cdot k\llbracket X_1,\cdots,X_d \rrbracket} \cong \frac{k\llbracket X_1,\cdots,X_d \rrbracket}{\langle X_1,\cdots,X_d \rangle} \cong k$ since $U^{-1}(R\llbracket X \rrbracket) \cong (U^{-1}R)\llbracket X \rrbracket $ given by $\frac{\sum_{i=1}^{\infty}r_ix^{i}}{u} \mapsto \sum_{i=1}^{\infty}\frac{r_i}{u}x^{i}$.
+                \item Let $\ffm = \langle X_1,\cdots,X_d \rangle = k[X_1,\cdots,X_d]$ be maximal. Then $\ffm \cdot k\llbracket X_1,\cdots,X_d \rrbracket = \langle X_1,\cdots,X_d \rangle \leq k\llbracket X_1,\cdots,X_d \rrbracket$. So with $U = k[X_1,\cdots,X_d] \smallsetminus \ffm$, we have $\llF(\ffm) = \frac{U^{-1}(k\llbracket X_1,\cdots,X_d \rrbracket)}{\ffm \cdot U^{-1}(k\llbracket X_1,\cdots,X_d \rrbracket)} \cong \frac{k\llbracket X_1,\cdots,X_d \rrbracket}{\ffm \cdot k\llbracket X_1,\cdots,X_d \rrbracket} \cong \frac{k\llbracket X_1,\cdots,X_d \rrbracket}{\langle X_1,\cdots,X_d \rangle} \cong k$ since $U^{-1}(R\llbracket X \rrbracket) \cong (U^{-1}R)\llbracket X \rrbracket $ given by $\frac{\sum_{i=1}^{\infty}r_ix^{i}}{u} \mapsto \sum_{i=1}^{\infty}\frac{r_i}{u}x^{i}$.
                 \item $\llF(0)$ is weired, which has chains of prime ideals of length $d-1$.
             \end{enumerate}
     \end{enumerate}
