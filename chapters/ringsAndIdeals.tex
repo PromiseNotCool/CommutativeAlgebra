@@ -150,8 +150,9 @@ Let $R$ be a commutative ring with identity.
 \end{fact}
 
 \begin{notation*}
-    $\operatorname{Spec}(R) = \{\text{primes ideals of $R$}\}$, called the \emph{prime spectrum of} $R$. \\
-    The variety determined by an ideal $\ffa \leq R$ is $\operatorname{V}(\ffa) = \{\ffp \in \operatorname{Spec}(R) \mid \ffp \supseteq \ffa\}$.
+    $\operatorname{Spec}(R) = \{\text{primes ideals of $R$}\}$, called the \emph{prime spectrum of} $R$. \par
+    The variety determined by an ideal $\ffa \leq R$ is $\operatorname{V}(\ffa) = \{\ffp \in \operatorname{Spec}(R) \mid \ffp \supseteq \ffa\}$. \par
+    $\operatorname{m-Spec}(R) = \{\text{maximal ideals of $R$}\} \subseteq \operatorname{Spec}(R)$.
 \end{notation*}
 
 \begin{fact}\label{1.16}
@@ -887,7 +888,7 @@ Let $A$ be a nonzero commutative ring with identity.
         \item $\ffa \leq A$ is prime if and only if $\ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is prime if and only if $\langle \ffa,X \rangle A \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is prime. \par 
             Let $\epsilon: A \xrightarrow {\subseteq} A\llbracket X \rrbracket$. Then $\epsilon^*: \operatorname{Spec}(A\llbracket X \rrbracket) \to \operatorname{Spec}(A)$ taking $\ffp \llbracket X \rrbracket$ to $\epsilon^{-1}(\ffp\llbracket X \rrbracket)$ is always onto and never 1-1.
         \item $\ffa \leq A$ is maximal if and only if $\langle \ffa,X \rangle A \llbracket X \rrbracket \leq A \llbracket X \rrbracket$ is maximal. Also, $\ffa \llbracket X \rrbracket \leq A\llbracket X \rrbracket$ is never maximal.
-        \item Let $\operatorname{m-Spec}(A\llbracket X \rrbracket) = \{\text{maximal ideals of}A\llbracket X \rrbracket\} \subseteq \operatorname{Spec}(A\llbracket X \rrbracket)$. Let $\ffm \in \operatorname{m-Spec}(A\llbracket X \rrbracket)$. Then 
+        \item Let $\ffm \in \operatorname{m-Spec}(A\llbracket X \rrbracket)$. Then 
             \begin{enumerate}
                 \item $\ffm \cap A \in \operatorname{m-Spec}(A)$,
                 \item $X \in \ffm$,
