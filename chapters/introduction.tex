@@ -5,23 +5,23 @@
 The study and application of commutative rings with identity.
     \begin{enumerate}
         \item Commutative algebra in calculus. We have $\llC(\bbR) = \{\text{continuous functions }\bbR \to \bbR\}$ and $\llD(\bbR) = \{\text{differentiable functions }\bbR \to \bbR\}$ are both commutative rings with identity.
-        \item Commutative algebra in graph theory. Let $G$ be a finite simple graph with vertex set $V = \{v_1,\cdots,v_d\}$. The \emph{edge ideal} of $G$ is $\operatorname{I}(G) = \langle v_iv_j \mid v_iv_j \text{ is an edge in }G \rangle \leq K[v_1,\cdots,v_d]$. 
-            \[\text{algebraic properties of $\operatorname{I}(G)$} \myrightleftarrows{\rule{0.8cm}{0cm}} \text{combinatorial properties of $G$}.\]
-        \item Commutative algebra in combinatorics.  A simplicial complex $\Delta$ on $V$. Stanley-Reisner ideal $\operatorname{J}(\Delta) \leq K[v_1,\cdots,v_d]$. 
-            \[\text{algebraic properties of $\operatorname{J}(\Delta)$} \myrightleftarrows{\rule{0.8cm}{0cm}} \text{combinatorics properties of $\Delta$}.\]
-            Let $\llP$ be a poset and $\Delta(\llP) = ``\text{order complex of $\llP$''} = \{\text{chains in $\llP$}\}$. Study $\llP$ via $\operatorname{J}(\Delta(\llP))$. 
+        \item Commutative algebra in graph theory. Let $G$ be a finite simple graph with vertex set $V = \{v_1,\ldots,v_d\}$. The \emph{edge ideal} of $G$ is $\operatorname{I}(G) = \langle v_iv_j \mid v_iv_j \text{ is an edge in }G \rangle \leq K[v_1,\ldots,v_d]$. 
+            \[\text{algebraic properties of $I(G)$} \myrightleftarrows{\rule{0.8cm}{0cm}} \text{combinatorial properties of $G$}.\]
+        \item Commutative algebra in combinatorics.  A simplicial complex $\Delta$ on $V$. Stanley-Reisner ideal $J(\Delta) \leq K[v_1,\ldots,v_d]$. 
+            \[\text{algebraic properties of $J(\Delta)$} \myrightleftarrows{\rule{0.8cm}{0cm}} \text{combinatorics properties of $\Delta$}.\]
+            Let $\llP$ be a poset and $\Delta(\llP) = ``\text{order complex of $\llP$''} = \{\text{chains in $\llP$}\}$. Study $\llP$ via $J(\Delta(\llP))$. 
         \item Commutative algebra in number theory. Number theory is the study of solutions of polynomial equations over $\bbZ$. Given an intermediate field $\bbQ \subseteq K \subseteq \bbC$, let 
             \[R = \{\alpha \in K \mid \ex \text{an monic }f \in \bbZ[x] \text{ s.t. } f(\alpha) = 0\},\] 
             then $\bbZ \subseteq R \subseteq K$ are subrings. (Chapter 5)
-        \item Commutative algebra in algebraic geometry. Algebraic geometry is the study of solution sets for systems of polynomial equations over fields. Let $k$ be a field, $f_1,\cdots,f_m \in k[X_1,\cdots,X_d]$, 
-            \[V := \operatorname{V}(f_1,\cdots,f_m) = \{\underline x \in k^d \mid f_i(\underline x) = 0,\fa i = 1,\cdots,m\},\] 
+        \item Commutative algebra in algebraic geometry. Algebraic geometry is the study of solution sets for systems of polynomial equations over fields. Let $k$ be a field, $f_1,\ldots,f_m \in k[X_1,\ldots,X_d]$, 
+            \[V := \operatorname{V}(f_1,\ldots,f_m) = \{\underline x \in k^d \mid f_i(\underline x) = 0,\fa i = 1,\ldots,m\},\] 
             where $\operatorname{V}$ is for ``variety'', and 
-            \[\operatorname{I}(V) = \{f \in k[X_1,\cdots,X_d \mid f(\underline x) = 0,\fa \underline x \in V\} \leq k[X_1,\cdots,X_d].\] 
+            \[\operatorname{I}(V) = \{f \in k[X_1,\ldots,X_d \mid f(\underline x) = 0,\fa \underline x \in V\} \leq k[X_1,\ldots,X_d].\] 
             \[\text{algebraic properties of $\operatorname{I}(V)$} \myrightleftarrows{\rule{0.8cm}{0cm}} \text{geometric properties of $V$}.\]
     \end{enumerate}
 
     Why modules? Because in number theory, $R = \{\alpha \in K \mid \ex \text{monic }f \in \bbZ[x] \text{ s.t. } f(\alpha) = 0\}$ is a subring of $K$. \par
     \textbf{Challenge-exercise:} prove this by definition. For $\alpha,\beta \in R$, note there exist $f,g \in \bbZ[X]$ monic such that $f(\alpha) = 0 = f(\beta)$, then try to prove or construct monic polynomials $s,d,p \in \bbZ[X]$ such that $s(\alpha + \beta) = 0$, $d(\alpha-\beta) = 0$ and $p(\alpha \beta) = 0$. \par
     Proof is a straightforward application of modules. \par
-    Why topology? To study geometry, need continuity. Let $V = \operatorname{V}(f_1,\cdots,f_m)$, $W = \operatorname{V}(g_1,\cdots,g_n)$ and $\phi: V \to W$. What does it mean for $\phi$ to be continuous if $k = \bbF_3$? Need a notion of open sets in $V$ and $W$.
+    Why topology? To study geometry, need continuity. Let $V = \operatorname{V}(f_1,\ldots,f_m)$, $W = \operatorname{V}(g_1,\ldots,g_n)$ and $\phi: V \to W$. What does it mean for $\phi$ to be continuous if $k = \bbF_3$? Need a notion of open sets in $V$ and $W$.
 

@@ -27,7 +27,7 @@ Let R be a commutative ring with identity but not a field.
 
 \begin{notation}\label{3.4}
     \begin{enumerate}
-        \item If $U = \{1,f,f^2,\cdots\}$, write $U^{-1}R = R_f$.
+        \item If $U = \{1,f,f^2,\cdots\}$, write $U^{-1}R = R_f$. ($R_f = 0$ for $f \in \operatorname{Nil}(R)$.
         \item If $U = R \smallsetminus \ffp$ for some $\ffp \in \operatorname{Spec}(R)$, write $U^{-1}R = R_\ffp$.
         \item If $U \subseteq R$ is multiplicatively closed, write $U^{-1}R = R_U = R[U^{-1}]$.
     \end{enumerate}
@@ -196,7 +196,7 @@ Let R be a commutative ring with identity but not a field.
             ``$\supseteq$''. Let $\frac{r}{u} \in \operatorname{rad}(U^{-1}\ffa)$ with $r \in R$ and $u \in U$. Then $\frac{r^{n}}{u^{n}} = (\frac{r}{u})^{n} \in U^{-1}\ffa$ for some $n \geq 1$. So there exists $v \in U$ such that $vr^{n} \in \ffa$ by Proposition \ref{3.11}\ref{3.11b}. Hence $(vr)^{n} = v^{n-1} \cdot vr^{n} \in \ffa$. So $vr \in \operatorname{rad}(\ffa)$. Thus, $\frac{r}{u} \in U^{-1} \operatorname{rad}(\ffa)$ by Proposition \ref{3.11}\ref{3.11b}.
         \item Special case of (d) with $\ffa = 0$. 
         \item ``$\subseteq$''. By Proposition \ref{3.11}\ref{3.11e} and \ref{1.63}\ref{1.63f}, $U^{-1}(\ffb:\ffa) = (\ffb:\ffa) \cdot U^{-1}R \subseteq (\ffb \cdot U^{-1}R: \ffa \cdot U^{-1}R) = (U^{-1}\ffb:U^{-1}\ffa)$. \par 
-            ``$\supseteq$''. Let $\frac{r}{u} \in U^{-1}R$ with $r \in R,u \in U$ such that $\frac{r}{u} \in (U^{-1}\ffb:U^{-1}\ffa)$. Since $\ffa$ is finitely generated, $\ffa = \langle a_{1},\cdots,a_{n} \rangle R$ for some $n \geq 1$ and $a_{1},\cdots,a_{n} \in R$. Then $U^{-1}\ffa = \langle \frac{a_{1}}{1},\cdots,\frac{a_{n}}{1} \rangle U^{-1}R$. Since $\frac{r}{u} \in (U^{-1}\ffb:U^{-1}\ffa)$, $\frac{ra_{i}}{u} = \frac{r}{u} \frac{a_{i}}{1} \in U^{-1}\ffb$ for $i = 1,\cdots,n$. So by Proposition \ref{3.11}\ref{3.11b}, there exists $v_{i} \in U$ such that $v_{i} ra_{i} \in \ffb$ for $i = 1,\cdots,n$. Let $v = v_{1} \cdots v_{n} \in U$. Then $(vr)a_{i} \in \ffb$ for $i = 1,\cdots,n$. So $vr \in (\ffb:\ffa)$. Thus, $\frac{r}{u} \in U^{-1}(\ffb:\ffa)$ by Proposition \ref{3.11}\ref{3.11b}. \qedhere
+            ``$\supseteq$''. Let $\frac{r}{u} \in U^{-1}R$ with $r \in R,u \in U$ such that $\frac{r}{u} \in (U^{-1}\ffb:U^{-1}\ffa)$. Since $\ffa$ is finitely generated, $\ffa = \langle a_{1},\ldots,a_{n} \rangle R$ for some $n \geq 1$ and $a_{1},\ldots,a_{n} \in R$. Then $U^{-1}\ffa = \langle \frac{a_{1}}{1},\ldots,\frac{a_{n}}{1} \rangle U^{-1}R$. Since $\frac{r}{u} \in (U^{-1}\ffb:U^{-1}\ffa)$, $\frac{ra_{i}}{u} = \frac{r}{u} \frac{a_{i}}{1} \in U^{-1}\ffb$ for $i = 1,\ldots,n$. So by Proposition \ref{3.11}\ref{3.11b}, there exists $v_{i} \in U$ such that $v_{i} ra_{i} \in \ffb$ for $i = 1,\ldots,n$. Let $v = v_{1} \cdots v_{n} \in U$. Then $(vr)a_{i} \in \ffb$ for $i = 1,\ldots,n$. So $vr \in (\ffb:\ffa)$. Thus, $\frac{r}{u} \in U^{-1}(\ffb:\ffa)$ by Proposition \ref{3.11}\ref{3.11b}. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -217,7 +217,7 @@ Let R be a commutative ring with identity but not a field.
         \item  
             Let $r \in R$. Then $r \in \psi^{-1}(U^{-1}\ffa)$ if and only if $\frac{r}{1} = \psi(r) \in U^{-1}\ffa$ if and only if $vr \in \ffa$ for some $v \in U$ by Proposition \ref{3.11}\ref{3.11b} if and only if $r \in (\ffa:v)$ for some $v \in U$ if and only if $r \in \bigcup_{v \in U}(\ffa:v)$. 
         \item
-            By Proposition \ref{3.11}\ref{3.11c}, $U^{-1} \frac{R}{\ffa} = 0$ if and only if $\frac{U^{-1}R}{U^{-1}\ffa} = 0$. Note $U^{-1}\ffa = U^{-1}R$ if and only if $\frac{1}{1} \in U^{-1}\ffa$ if and only if $1 \in \psi^{-1}(U^{-1}\ffa) = \bigcup_{v \in U}(\ffa:v)$ if and only if $U \cap \ffa \neq \emptyset$ by (b). \qedhere
+            By Proposition \ref{3.11}\ref{3.11c}, $U^{-1} \frac{R}{\ffa} = 0$ if and only if $\frac{U^{-1}R}{U^{-1}\ffa} = 0$. Note $U^{-1}\ffa = U^{-1}R$ if and only if $\frac{1}{1} \in U^{-1}\ffa$ if and only if $1 \in \psi^{-1}(U^{-1}\ffa) = \bigcup_{v \in U}(\ffa:v)$ if and only if $U \cap \ffa \neq \emptyset$ by \ref{3.13b}. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -242,7 +242,8 @@ Let R be a commutative ring with identity but not a field.
     \begin{enumerate}
         \item Let $p \in \bbZ$ be prime. Then $\langle p \rangle \in \operatorname{m-Spec}(\bbZ)$. So $\bbZ_{(p)}/(p)_{(p)} \cong \bbZ/p\bbZ = \bbF_p$.
         \item 
-            Let $a_1,\cdots,a_d \in k$. Then, similarly, $\frac{k[X_1,\cdots,X_d]_{(X_1-a_1,\cdots,X_d-a_d)}}{(X_1-a_1,\cdots,X_d-a_d)_{(X_1-a_1,\cdots,X_d-a_d)}} \cong Q(\frac{k[X_1,\cdots,X_d]}{(X_1-a_1,\cdots,X_d-a_d)}) \cong Q(k) = k$. 
+            Let $a_1,\ldots,a_d \in k$. Then, similarly, 
+            \[\frac{k[X_1,\ldots,X_d]_{(X_1-a_1,\ldots,X_d-a_d)}}{(X_1-a_1,\ldots,X_d-a_d)_{(X_1-a_1,\ldots,X_d-a_d)}} \cong Q\biggl(\frac{k[X_1,\ldots,X_d]}{(X_1-a_1,\ldots,X_d-a_d)}\biggr) \cong Q(k) = k.\] 
     \end{enumerate}
 \end{example*}
 
@@ -279,7 +280,7 @@ Let R be a commutative ring with identity but not a field.
             r/1 \ar[rrr,mapsto] & & & \frac{r/1}{1/1}
         \end{tikzcd}
     \end{center}
-    Let $\beta = \alpha \circ \psi$. By proposition 3.5, to show $\varphi$ is a well-defined ring homomorphism, it suffices to show $\beta(R \smallsetminus \ffp) \subseteq ((U^{-1}R)_{U^{-1}\ffp})^{\times}$ since $U \subseteq R \smallsetminus \ffp$. Let $x \in R \smallsetminus \ffp$. Then $\beta(x) = \frac{x/1}{1/1}$. Since $x/1 \in U^{-1}R$ and $x \not \in \ffp$, we have $x/1 \not \in U^{-1}\ffp$ by Lemma \ref{3.16}. So $\frac{x}{1}$ is an allowable denominator in $(U^{-1}R)_{U^{-1}\ffp}$. Hence $\frac{1/1}{x/1} \in (U^{-1}R)_{U^{-1}\ffp}$. Thus, $\frac{x/1}{1/1} \in ((U^{-1}R)_{U^{-1}\ffp})^{\times}$ with $(\frac{x/1}{1/1})^{-1} = \frac{1/1}{x/1}$. Besides, by Proposition \ref{3.5}, we have $\varphi(r/s) = \beta(r)/\beta(s) = \frac{r/1}{s/1}$ for $\frac{r}{s} \in R_\ffp$. \par 
+    Let $\beta = \alpha \circ \psi$. By proposition \ref{3.5}, to show $\varphi$ is a well-defined ring homomorphism, it suffices to show $\beta(R \smallsetminus \ffp) \subseteq ((U^{-1}R)_{U^{-1}\ffp})^{\times}$ since $U \subseteq R \smallsetminus \ffp$. Let $x \in R \smallsetminus \ffp$. Then $\beta(x) = \frac{x/1}{1/1}$. Since $x/1 \in U^{-1}R$ and $x \not \in \ffp$, we have $x/1 \not \in U^{-1}\ffp$ by Lemma \ref{3.16}. So $\frac{x}{1}$ is an allowable denominator in $(U^{-1}R)_{U^{-1}\ffp}$. Hence $\frac{1/1}{x/1} \in (U^{-1}R)_{U^{-1}\ffp}$. Thus, $\frac{x/1}{1/1} \in ((U^{-1}R)_{U^{-1}\ffp})^{\times}$ with $(\frac{x/1}{1/1})^{-1} = \frac{1/1}{x/1}$. Besides, by Proposition \ref{3.5}, we have $\varphi(r/s) = \beta(r)/\beta(s) = \frac{r/1}{s/1}$ for $\frac{r}{s} \in R_\ffp$. \par 
     Let $\frac{r}{s} \in R_\ffp$. Then $\frac{r}{s} \in \ker(\varphi)$ if and only if $0 = \varphi(\frac{r}{s}) = \frac{r/1}{s/1} \in (U^{-1}R)_{U^{-1}\ffp}$ if and only if there exists $\frac{t}{v} \in U^{-1}R \smallsetminus U^{-1}\ffp$ with $t \in R \smallsetminus \ffp$ such that $\frac{tr}{v} = \frac{t}{v} \cdot \frac{r}{1} = 0$ in $U^{-1}R$ by Proposition \ref{3.11}\ref{3.11b} and Lemma \ref{3.16} if and only if there exist $t \in R \smallsetminus \ffp$ and $w \in U \subseteq R \smallsetminus \ffp$ such that $wtr = 0$ in $R$ by Proposition \ref{3.11}\ref{3.11b} if and only if there exists $v' \in U \subseteq R \smallsetminus \ffp$ such that $v'r = 0$ in $R$ since $R \smallsetminus \ffp$ is multiplicatively closed if and only if $\frac{r}{s} = 0$ in $R_\ffp$ by Proposition \ref{3.11}\ref{3.11b}. So $\varphi$ is 1-1. \par 
     Let $\frac{r/u}{s/v} \in (U^{-1}R)_{U^{-1}\ffp}$ with $r \in R$, $u,v \in U \subseteq R \smallsetminus \ffp$ and $s \in R \smallsetminus \ffp$. Then $us \in R \smallsetminus \ffp$ since $R \smallsetminus \ffp$ is multiplicatively closed. So $\frac{vr}{us} \in R_\ffp$. Also, since $\varphi(\frac{vr}{us}) = \frac{\beta(vr)}{\beta(us)} = \frac{vr/1}{us/1} = \frac{uv/1 \cdot r/u}{uv/1 \cdot s/v} = \frac{r/u}{s/v}$, we have $\varphi$ is onto. 
 \end{proof}
@@ -459,20 +460,22 @@ Let R be a commutative ring with identity but not a field.
 
 \begin{example}\label{3.27}
     \begin{enumerate}
-        \item Let $\varphi: R \xhookrightarrow \subseteq R[X_1,\cdots,R_d]$.
+        \item Let $\varphi: R \xhookrightarrow \subseteq R[X_1,\ldots,R_d]$.
             \begin{enumerate}
-                \item If $(R,\ffm)$ is local, then $\llF(\ffm) \cong \frac{R[X_1,\cdots,X_d]}{\ffm \cdot R[X_1,\cdots,X_d]} = \frac{R[X_1,\cdots,X_d]}{\ffm [X_1,\cdots,X_d]} \cong \frac{R}{\ffm}[X_1,\cdots,X_d]$.
-                \item If $\ffp \in \operatorname{Spec}(R)$, then with $U = R \smallsetminus \ffp$, we have $\llF(\ffp) = \frac{U^{-1}(R[X_1,\cdots,X_d])}{\ffp \cdot U^{-1}(R[X_1,\cdots,X_d])} \cong \frac{(U^{-1}R)[X_1,\cdots,X_n]}{(\ffp \cdot (U^{-1}R)[X_1,\cdots,X_n]} \cong \frac{R_\ffp}{\ffp_\ffp}[X_1,\cdots,X_n] \cong Q(R/\ffp)[X_1,\cdots,X_d]$ since $U^{-1}(R[X]) \cong (U^{-1}R)[X]$ given by $\frac{\sum_{i=1}^{\text{finite}}r_ix^{i}}{u} \mapsto \sum_{i=1}^{\text{finite}}\frac{r_i}{u}x^{i}$.
+                \item If $(R,\ffm)$ is local, then $\llF(\ffm) \cong \frac{R[X_1,\ldots,X_d]}{\ffm \cdot R[X_1,\ldots,X_d]} = \frac{R[X_1,\ldots,X_d]}{\ffm [X_1,\ldots,X_d]} \cong \frac{R}{\ffm}[X_1,\ldots,X_d]$.
+                \item If $\ffp \in \operatorname{Spec}(R)$, then with $U = R \smallsetminus \ffp$, we have 
+                    \[\llF(\ffp) = \frac{U^{-1}(R[X_1,\ldots,X_d])}{\ffp \cdot U^{-1}(R[X_1,\ldots,X_d])} \cong \frac{(U^{-1}R)[X_1,\ldots,X_n]}{(\ffp U^{-1}R)[X_1,\ldots,X_n]} \cong \frac{R_\ffp}{\ffp_\ffp}[X_1,\ldots,X_n] \cong Q\Bigl(\frac{R}{\ffp}\Bigr)[X_1,\ldots,X_d]\]
+                        since $U^{-1}(R[X]) \cong (U^{-1}R)[X]$ defined by $\frac{\sum_{i=1}^{\text{finite}}r_ix^{i}}{u} \mapsto \sum_{i=1}^{\text{finite}}\frac{r_i}{u}x^{i}$.
             \end{enumerate}
         \item 
-            Let $R \xhookrightarrow{\subseteq} R\llbracket X_1,\cdots,X_d \rrbracket$.
+            Let $R \xhookrightarrow{\subseteq} R\llbracket X_1,\ldots,X_d \rrbracket$.
             \begin{enumerate}
-                \item If $(R,\ffm)$ is local, then $\llF(\ffm) \cong \frac{R}{\ffm}\llbracket X_1,\cdots,X_d \rrbracket$ similarly.
+                \item If $(R,\ffm)$ is local, then $\llF(\ffm) \cong \frac{R}{\ffm}\llbracket X_1,\ldots,X_d \rrbracket$ similarly.
             \end{enumerate}
         \item
-            Let $k$ be a field and $\varphi: k[X_1,\cdots,X_d] \xhookrightarrow{\subseteq} k\llbracket X_1,\cdots,X_d \rrbracket$.
+            Let $k$ be a field and $\varphi: k[X_1,\ldots,X_d] \xhookrightarrow{\subseteq} k\llbracket X_1,\ldots,X_d \rrbracket$.
             \begin{enumerate}
-                \item Let $\ffm = \langle X_1,\cdots,X_d \rangle = k[X_1,\cdots,X_d]$ be maximal. Then $\ffm \cdot k\llbracket X_1,\cdots,X_d \rrbracket = \langle X_1,\cdots,X_d \rangle \leq k\llbracket X_1,\cdots,X_d \rrbracket$. So with $U = k[X_1,\cdots,X_d] \smallsetminus \ffm$, $\llF(\ffm) = \frac{U^{-1}(k\llbracket X_1,\cdots,X_d \rrbracket)}{\ffm \cdot U^{-1}(k\llbracket X_1,\cdots,X_d \rrbracket)} \cong \frac{k\llbracket X_1,\cdots,X_d \rrbracket}{\ffm \cdot k\llbracket X_1,\cdots,X_d \rrbracket} \cong \frac{k\llbracket X_1,\cdots,X_d \rrbracket}{\langle X_1,\cdots,X_d \rangle} \cong k$ since $U^{-1}(R\llbracket X \rrbracket) \cong (U^{-1}R)\llbracket X \rrbracket $ given by $\frac{\sum_{i=1}^{\infty}r_ix^{i}}{u} \mapsto \sum_{i=1}^{\infty}\frac{r_i}{u}x^{i}$.
+                \item Let $\ffm = \langle X_1,\ldots,X_d \rangle = k[X_1,\ldots,X_d]$ be maximal. Then $\ffm \cdot k\llbracket X_1,\ldots,X_d \rrbracket = \langle X_1,\ldots,X_d \rangle \leq k\llbracket X_1,\ldots,X_d \rrbracket$. So with $U = k[X_1,\ldots,X_d] \smallsetminus \ffm$, $\llF(\ffm) = \frac{U^{-1}(k\llbracket X_1,\ldots,X_d \rrbracket)}{\ffm \cdot U^{-1}(k\llbracket X_1,\ldots,X_d \rrbracket)} \cong \frac{k\llbracket X_1,\ldots,X_d \rrbracket}{\ffm \cdot k\llbracket X_1,\ldots,X_d \rrbracket} \cong \frac{k\llbracket X_1,\ldots,X_d \rrbracket}{\langle X_1,\ldots,X_d \rangle} \cong k$ since $U^{-1}(R\llbracket X \rrbracket) \cong (U^{-1}R)\llbracket X \rrbracket $ given by $\frac{\sum_{i=1}^{\infty}r_ix^{i}}{u} \mapsto \sum_{i=1}^{\infty}\frac{r_i}{u}x^{i}$.
                 \item $\llF(0)$ is weired, which has chains of prime ideals of length $d-1$.
             \end{enumerate}
     \end{enumerate}

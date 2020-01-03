@@ -30,7 +30,7 @@ Let $R$ be a nonzero commutative ring with identity.
     Let $R$ be a noetherian integral domain and $a \in R \smallsetminus \{R^{\times} \cup 0\}$.
     \begin{enumerate}
         \item\label{4.2a} $a$ has an irreducible factor in $R$.
-        \item\label{4.2b} There exist irreducible $b_1,\cdots,b_n \in R$ such that $a = b_1 \cdots b_n$.
+        \item\label{4.2b} There exist irreducible $b_1,\ldots,b_n \in R$ such that $a = b_1 \cdots b_n$.
     \end{enumerate}
 \end{theorem}
 
@@ -59,7 +59,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{lemma}
 
 \begin{proof}
-    Let $n$ be the minimum number of generators of $J$. Suppose $n \geq 2$. Since $J$ is finitely generated, $IJ = J = \langle x_1,\cdots,x_n \rangle$ for some $x_1,\cdots,x_n \in J$. So $x_n \in IJ$ and then $x_n = \sum_{i=1}^{n}a_ix_i$ for some $a_1,\cdots,a_n \in I$, i.e., $x_n(1-a_n) = \sum_{i=1}^{n-1}a_ix_i$. Since $a_n \in I \subseteq \operatorname{Jac}(R)$, $1-a_n \in R^{\times}$ by Proposition \ref{1.29}. So $x_n \in \langle x_1,\cdots,x_{n-1} \rangle$, contradicting minimality of $n$. Hence $n = 1$ or $0$. If $n = 1$, similarly, we have $x_1(1-a_1) = 0$ for some $a_1 \in I$ with $1-a_1 \in R^{\times}$, so $x_1 = 0$, a contradiction. Thus, $n = 0$.
+    Let $n$ be the minimum number of generators of $J$. Suppose $n \geq 2$. Since $J$ is finitely generated, $IJ = J = \langle x_1,\ldots,x_n \rangle$ for some $x_1,\ldots,x_n \in J$. So $x_n \in IJ$ and then $x_n = \sum_{i=1}^{n}a_ix_i$ for some $a_1,\ldots,a_n \in I$, i.e., $x_n(1-a_n) = \sum_{i=1}^{n-1}a_ix_i$. Since $a_n \in I \subseteq \operatorname{Jac}(R)$, $1-a_n \in R^{\times}$ by Proposition \ref{1.29}. So $x_n \in \langle x_1,\ldots,x_{n-1} \rangle$, contradicting minimality of $n$. Hence $n = 1$ or $0$. If $n = 1$, similarly, we have $x_1(1-a_1) = 0$ for some $a_1 \in I$ with $1-a_1 \in R^{\times}$, so $x_1 = 0$, a contradiction. Thus, $n = 0$.
 \end{proof}
 
 \begin{lemma}\label{4.6}
@@ -74,7 +74,7 @@ Let $R$ be a nonzero commutative ring with identity.
     Let $(R,\ffm)$ be local and noetherian. Let $a \in R \smallsetminus \{R^{\times} \cup 0\}$. 
     \begin{enumerate}
         \item $a$ has an irreducible factor in $R$.
-        \item $a = b_1 \cdots b_n$ for some irreducible elements $b_1,\cdots,b_n \in R$.
+        \item $a = b_1 \cdots b_n$ for some irreducible elements $b_1,\ldots,b_n \in R$.
     \end{enumerate}
 \end{theorem}
 
@@ -118,8 +118,8 @@ Let $R$ be a nonzero commutative ring with identity.
     \begin{enumerate}
         \item\label{4.12a} If $R$ is a UFD and $p \in R$ is prime, then $\langle p^{n} \rangle$ is primary.
         \item\label{4.12b} Let $R = \frac{k\llbracket X,Y ,Z \rrbracket}{\langle X^{2}-YZ \rangle}$ and $x = \overbar{X} \in R$. Then $x$ is irreducible. Note $R/\langle x \rangle = \frac{k\llbracket X,Y,Z \rrbracket}{\langle X^{2}-YZ \rangle}/\langle x \rangle \cong \frac{k\llbracket X,Y,Z \rrbracket}{\langle X,X^{2}-YZ \rangle} = \frac{k\llbracket X,Y,Z \rrbracket}{\langle X,YZ \rangle} \cong  \frac{k\llbracket Y,Z \rrbracket}{\langle YZ \rangle}$. Let $y = \overbar{Y}, z = \overbar{Z} \in \frac{k\llbracket Y,Z \rrbracket}{\langle YZ \rangle}$. Then $yz = 0$ with $y,z \neq 0$. So $y,z \not \in (0) = \operatorname{rad}(0) = \operatorname{Nil}(R/\langle x \rangle)$. Thus, $\langle x \rangle$ is not primary.
-        \item\label{4.12c} Let $R = k[X_1,\cdots,X_d]$. Then $I = \langle X_{i_1}^{e_1}, \cdots ,X_{i_n}^{e_n} \rangle$ with $e_1,\cdots,e_n \geq 1$ is primary. \par
-            Let $J = \langle X_{1}^{e_1},\cdots,X_d^{e_d},f_1,\cdots,f_n \rangle \lneq R$ with $e_1,\cdots,e_d \geq 1$ and $f_1,\cdots,f_n \in R \smallsetminus R^{\times}$. Since $\operatorname{rad}(J) = \langle X_{1},\cdots,X_d \rangle \in \operatorname{m-Spec}(R)$, by Example \ref{4.11}\ref{4.11c}, we have $J$ is primary.
+        \item\label{4.12c} Let $R = k[X_1,\ldots,X_d]$. Then $I = \langle X_{i_1}^{e_1}, \cdots ,X_{i_n}^{e_n} \rangle$ with $e_1,\ldots,e_n \geq 1$ is primary. \par
+            Let $J = \langle X_{1}^{e_1},\ldots,X_d^{e_d},f_1,\ldots,f_n \rangle \lneq R$ with $e_1,\ldots,e_d \geq 1$ and $f_1,\ldots,f_n \in R \smallsetminus R^{\times}$. Since $\operatorname{rad}(J) = \langle X_{1},\ldots,X_d \rangle \in \operatorname{m-Spec}(R)$, by Example \ref{4.11}\ref{4.11c}, we have $J$ is primary.
         \item\label{4.12d} Let $R = k[X,Y,Z]$ and $I = \langle X^{2},XY\rangle$. Then $\operatorname{rad}(I) = \langle X \rangle$. Since $XY \in I$ with $X \not\in I$ and $Y \not\in \operatorname{rad}(I)$, $I$ is not primary. \par 
             Let $J = \langle X,YZ \rangle$. Then $R/J = \frac{k[X,Y,Z]}{\langle X,YZ \rangle} \cong \frac{k[Y,Z]}{\langle YZ \rangle}$. So similar to (b), we have $J$ is not primary.
     \end{enumerate}
@@ -128,14 +128,14 @@ Let $R$ be a nonzero commutative ring with identity.
 \begin{proof}
     \begin{enumerate}
         \item Let $xy \in \langle p^{n} \rangle$ with $x,y \in R$. If $y \in \operatorname{rad}(\langle p^{n} \rangle) = \langle p \rangle$, then done. Assume $y \not \in \langle p \rangle$. Then $p \nmid y$. Since $xy \in \langle p^{n} \rangle$, $p^{n} \mid xy$. Since $xy$ has a unique factorization and $p \nmid y$, $p^{n} \mid x$, i.e., $x \in \langle p^{n} \rangle$.
-        \item [(c)]  Assume by symmetry $I = \langle X_1^{e_1},\cdots,X_n^{e_n} \rangle$. Let $f,g \in R$ such that $fg \in I$. If $f \in I$, then done. Assume $f \not\in I$. Let $f = \sum_{i=1}^{s}a_if_i$ for some $s \geq 1$, $a_i \in R \smallsetminus \{0\}$ and $f_i \in R$ monomial for $i = 1,\cdots,s$ and $g = \sum_{i=1}^{t}b_ig_i$ for some $t \geq 1$, $b_i \in R \smallsetminus \{0\}$ and $g_i \in R$ monomial for $i = 1,\cdots,t$. Since $f \not \in I$, $f_i \not \in I$ for some $i \in \{1,\cdots,s\}$. Let $f = \tilde f + \hat f$, where $\hat f$ are all monomials in $I$ and $\tilde f$ are all monomials not in $I$. Since $\tilde f g + \hat f g \in I = fg \in I$ and $\hat f g \in I$, $\tilde f g \in I$. Use a monomial ordering, e.g. lexicographical order, asssume $f_s$ is the largest monomial occuring in $\tilde f$ and $g_t$ is the largest monomial occuring in $g$. Then $f_sg_t$ is the largest monomial occuring in $\tilde fg \in I$. So $f_sg_t \in I$. Since the monomial $f_s \not \in I$, $X_i^{e_i} \nmid f_s$ for $i = 1,\cdots,n$. So $g_t$ is not a constant in $R$ and hence $X_j \mid g_t$ for some $j \in \{1,\cdots,n\}$. Then $g_t \in \langle X_1,\cdots,X_n \rangle = \operatorname{rad}(\langle X_1^{e_1},\cdots,X_n^{e_n} \rangle) = \operatorname{rad}(I)$. So $g = \sum_{i=1}^{t-1}b_ig_i + b_tg_t$ with $b_tg_t \in \operatorname{rad}(I)$. Induct on $t$, we have $b_ig_i \in \operatorname{rad}(I)$ for all $i = 1,\cdots,t$. Thus, $g \in \operatorname{rad}(I)$. \qedhere
+        \item [(c)]  Assume by symmetry $I = \langle X_1^{e_1},\ldots,X_n^{e_n} \rangle$. Let $f,g \in R$ such that $fg \in I$. If $f \in I$, then done. Assume $f \not\in I$. Let $f = \sum_{i=1}^{s}a_if_i$ for some $s \geq 1$, $a_i \in R \smallsetminus \{0\}$ and $f_i \in R$ monomial for $i = 1,\ldots,s$ and $g = \sum_{i=1}^{t}b_ig_i$ for some $t \geq 1$, $b_i \in R \smallsetminus \{0\}$ and $g_i \in R$ monomial for $i = 1,\ldots,t$. Since $f \not \in I$, $f_i \not \in I$ for some $i \in \{1,\ldots,s\}$. Let $f = \tilde f + \hat f$, where $\hat f$ are all monomials in $I$ and $\tilde f$ are all monomials not in $I$. Since $\tilde f g + \hat f g \in I = fg \in I$ and $\hat f g \in I$, $\tilde f g \in I$. Use a monomial ordering, e.g. lexicographical order, asssume $f_s$ is the largest monomial occuring in $\tilde f$ and $g_t$ is the largest monomial occuring in $g$. Then $f_sg_t$ is the largest monomial occuring in $\tilde fg \in I$. So $f_sg_t \in I$. Since the monomial $f_s \not \in I$, $X_i^{e_i} \nmid f_s$ for $i = 1,\ldots,n$. So $g_t$ is not a constant in $R$ and hence $X_j \mid g_t$ for some $j \in \{1,\ldots,n\}$. Then $g_t \in \langle X_1,\ldots,X_n \rangle = \operatorname{rad}(\langle X_1^{e_1},\ldots,X_n^{e_n} \rangle) = \operatorname{rad}(I)$. So $g = \sum_{i=1}^{t-1}b_ig_i + b_tg_t$ with $b_tg_t \in \operatorname{rad}(I)$. Induct on $t$, we have $b_ig_i \in \operatorname{rad}(I)$ for all $i = 1,\ldots,t$. Thus, $g \in \operatorname{rad}(I)$. \qedhere
     \end{enumerate}
 \end{proof}
 
 \noindent Let $\ffa \lneq R$.
 
 \begin{definition}\label{4.13}
-    $\ffa$ is \emph{reducible} if $\ffa = I \cap J$ for some $I,J \leq R$ with $I \neq \ffa \neq J$. \par
+    $\ffa$ is \emph{reducible} if $\ffa = I \cap J$ for some $I,J \leq R$ with $I \neq \ffa$ and $J \neq \ffa$. \par
     $\ffa$ is \emph{irreducible} if it is not reducible, i.e., if $\ffa = I \cap J$ for some $I,J \leq R$, then $I = \ffa$ or $J = \ffa$.
 \end{definition}
 
@@ -165,7 +165,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{proof}
 
 \begin{definition}\label{4.16}
-    A \emph{primary decomposition} of $\ffa$ is $\ffa = \bigcap_{i=1}^{n} J_i$ such that $J_1,\cdots,J_n$ are primary. 
+    A \emph{primary decomposition} of $\ffa$ is $\ffa = \bigcap_{i=1}^{n} J_i$ such that $J_1,\ldots,J_n$ are primary. 
 \end{definition}
 
 \begin{theorem}[Noether]\label{4.17}
@@ -173,21 +173,21 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{theorem}
 
 \begin{proof}
-    It suffices to show $\ffa = \bigcap_{i=1}^{n} J_i$ for some $n \geq 1$ such that $J_i$ is irreducible for $i = 1,\cdots,n$. Suppose not. Let $\Sigma = \{\ffb \lneq R \mid \ffb \text{ does not have a irreducible decomposition}\}$. Since $\ffa \in \Sigma$, $\Sigma \neq \emptyset$. Since $R$ is noetherian, $\Sigma$ has a maximal element, say $\ffq$. Then $\ffq = I \cap J$ for some $\ffq \subsetneq I,J \leq R$. Since $\ffq$ is maximal, we have $I,J \not \in \Sigma$. So there exists $m \geq n \geq 1$ and irreducible $J_1,\cdots,J_m \lneq R$ such that $I = \bigcap_{i=1}^{n}J_i$ and $J = \bigcap_{i=n+1}^{m} J_i$. Thus, $\ffq = I \cap J = \bigcap_{i=1}^{m} J_i$, contradicting $\ffq \in \Sigma$.
+    It suffices to show $\ffa = \bigcap_{i=1}^{n} J_i$ for some $n \geq 1$ such that $J_i$ is irreducible for $i = 1,\ldots,n$. Suppose not. Let $\Sigma = \{\ffb \lneq R \mid \ffb \text{ does not have a irreducible decomposition}\}$. Since $\ffa \in \Sigma$, $\Sigma \neq \emptyset$. Since $R$ is noetherian, $\Sigma$ has a maximal element, say $\ffq$. Then $\ffq = I \cap J$ for some $\ffq \subsetneq I,J \leq R$. Since $\ffq$ is maximal, we have $I,J \not \in \Sigma$. So there exists $m \geq n \geq 1$ and irreducible $J_1,\ldots,J_m \lneq R$ such that $I = \bigcap_{i=1}^{n}J_i$ and $J = \bigcap_{i=n+1}^{m} J_i$. Thus, $\ffq = I \cap J = \bigcap_{i=1}^{m} J_i$, contradicting $\ffq \in \Sigma$.
 \end{proof}
 
 \begin{example}\label{4.18}
     We have the following examples.
     \begin{enumerate}
         \item\label{4.18a} Let $R$ be a UFD and $a \in R \smallsetminus \{R^{\times} \cup 0\}$ has a prime factorization $a = up_1^{e_1} \cdots p_n^{e_n}$ with $u \in R^{\times}$, $e_i \geq 1$ and $p_i \nmid p_j$ for $1 \leq i,j \leq n$ with $i \neq j$. Then $\langle a \rangle = \bigcap_{i=1}^{n} \langle p_i^{e_i} \rangle$, a primary decomposition by Example \ref{4.12}\ref{4.12a}. 
-        \item\label{4.18b} Let $R = k[X_1,\cdots,X_d]$ and $\ffa$ be an monomial ideal with an m-irreducible decomposition $\ffa = \bigcap_{i=1}^{n}J_i$ with $J_1,\cdots,J_n$ generated by pure power of variables. So $\ffa = \bigcap_{i=1}^{n} J_i$ is a primary decomposition by Example \ref{4.12}\ref{4.12c}. Moreover, it is an irreducible decomposition.
-        \item\label{4.18c} Let $R = k[X_1,\cdots,X_d]$ and $\ffa$ be an monomial ideal with an m-irreducible decomposition $\ffa = \bigcap_{i=1}^{n}J_i$. Then $\ffa$ is primary if and only if $\operatorname{rad}(J_i) = \operatorname{rad}(J_j)$ for $1 \leq i,j \leq n$.
+        \item\label{4.18b} Let $R = k[X_1,\ldots,X_d]$ and $\ffa$ be an monomial ideal with an m-irreducible decomposition $\ffa = \bigcap_{i=1}^{n}J_i$ with $J_1,\ldots,J_n$ generated by pure power of variables. So $\ffa = \bigcap_{i=1}^{n} J_i$ is a primary decomposition by Example \ref{4.12}\ref{4.12c}. Moreover, it is an irreducible decomposition.
+        \item\label{4.18c} Let $R = k[X_1,\ldots,X_d]$ and $\ffa$ be an monomial ideal with an m-irreducible decomposition $\ffa = \bigcap_{i=1}^{n}J_i$. Then $\ffa$ is primary if and only if $\operatorname{rad}(J_i) = \operatorname{rad}(J_j)$ for $1 \leq i,j \leq n$.
     \end{enumerate}
 \end{example}
 
 \begin{proof}
     \begin{enumerate}
-        \item[(c)] ``$\Leftarrow$''. Assume $\operatorname{rad}(J_i) = \operatorname{rad}(J_j)$ for $1 \leq i,j \leq n$. Let $xy \in \ffa$ with $x,y \in R$. If $y \in \operatorname{rad}(\ffa)$, done. Assume $y \not \in \operatorname{rad}(\ffa)\footnote[2]{Not try to assume $x \not \in \ffa$.} = \operatorname{rad}(\bigcap_{i=1}^{n} J_i) = \bigcap_{i=1}^{n} \operatorname{rad}(J_i) = \operatorname{rad}(J_i)$ for $i = 1,\cdots,n$ by Fact \ref{1.58}\ref{1.58d}. Since $R$ is noetherian and $J_i$ is irreducible, $J_i$ is primary for $i = 1,\cdots,n$. Also, since $xy \in \ffa \subseteq J_i$ for $i = 1,\cdots,n$, we have $x \in J_i$ for $i = 1,\cdots,n$. So $x \in \bigcap_{i=1}^{n} J_i = \ffa$. \par
+        \item[(c)] ``$\Leftarrow$''. Assume $\operatorname{rad}(J_i) = \operatorname{rad}(J_j)$ for $1 \leq i,j \leq n$. Let $xy \in \ffa$ with $x,y \in R$. If $y \in \operatorname{rad}(\ffa)$, done. Assume $y \not \in \operatorname{rad}(\ffa)\footnote[2]{Not try to assume $x \not \in \ffa$.} = \operatorname{rad}(\bigcap_{i=1}^{n} J_i) = \bigcap_{i=1}^{n} \operatorname{rad}(J_i) = \operatorname{rad}(J_i)$ for $i = 1,\ldots,n$ by Fact \ref{1.58}\ref{1.58d}. Since $R$ is noetherian and $J_i$ is irreducible, $J_i$ is primary for $i = 1,\ldots,n$. Also, since $xy \in \ffa \subseteq J_i$ for $i = 1,\ldots,n$, we have $x \in J_i$ for $i = 1,\ldots,n$. So $x \in \bigcap_{i=1}^{n} J_i = \ffa$. \par
             ``$\Rightarrow$''. Assume $\ffa$ is primary. Induct on $n$. The base case $n = 2$ is the important case. Suppose $\operatorname{rad}(J_1) \neq \operatorname{rad}(J_2)$. Then we have there exist $a \in \operatorname{rad}(J_1) \smallsetminus \operatorname{rad}(J_2)$ and $b \in \operatorname{rad}(J_2) \smallsetminus \operatorname{rad}(J_1)$. So $a,b \not \in \operatorname{rad}(J_1) \cap \operatorname{rad}(J_2) = \operatorname{rad}(J_1 \cap J_2) = \operatorname{rad}(\ffa)$ and $ab \in \operatorname{rad}(J_1) \cap \operatorname{rad}(J_2) = \operatorname{rad}(\ffa)$, contradicting $\operatorname{rad}(\ffa) \in \operatorname{Spec}(R)$ by Proposition \ref{4.19}. \qedhere
     \end{enumerate}
 \end{proof}
@@ -209,12 +209,12 @@ Let $R$ be a nonzero commutative ring with identity.
         \item Let $p \in \bbZ$ be prime. Then $\ffq = \langle  p^{n} \rangle$ is primary with $\operatorname{rad}(\ffq) = \langle p  \rangle \in \operatorname{Spec}(\bbZ)$ for $n \geq 1$.
         \item 
             Let $\ffm \in \operatorname{m-Spec}(R)$ and $\ffq \leq R$ such that $\ffm^{n} \subseteq \ffq \subseteq \ffm$ for some $n \geq 1$. Then $\ffq$ is primary with $\operatorname{rad}(\ffq) = \ffm \in \operatorname{Spec}(R)$ by the proof of Example \ref{4.11}\ref{4.11b}.
-        \item Let $R = k[X_1,\cdots,X_d]$ and $\ffq = \langle X_{i_1}^{e_{1}},\cdots,X_{i_n}^{e_{n}} \rangle$ with $e_1, \cdots, e_n \geq 1$. Then $\ffq$ is primary with $\operatorname{rad}(\ffq) = \langle X_{i_1},\cdots,X_{i_n} \rangle \in \operatorname{Spec}(R)$.
+        \item Let $R = k[X_1,\ldots,X_d]$ and $\ffq = \langle X_{i_1}^{e_{1}},\ldots,X_{i_n}^{e_{n}} \rangle$ with $e_1, \cdots, e_n \geq 1$. Then $\ffq$ is primary with $\operatorname{rad}(\ffq) = \langle X_{i_1},\ldots,X_{i_n} \rangle \in \operatorname{Spec}(R)$.
     \end{enumerate}
 \end{example}
 
 \begin{proposition}\label{4.22}
-    Let $\ffq_1,\cdots,\ffq_n \lneq R$ be $\ffp$-primary. Then $\bigcap_{i=1}^{n} \ffq_i$ is $\ffp$-primary.
+    Let $\ffq_1,\ldots,\ffq_n \lneq R$ be $\ffp$-primary. Then $\bigcap_{i=1}^{n} \ffq_i$ is $\ffp$-primary.
 \end{proposition}
 
 \begin{proof}
@@ -225,14 +225,14 @@ Let $R$ be a nonzero commutative ring with identity.
     A primary decomposition $\ffa = \bigcap_{i=1}^{n}\ffq_i$ is \emph{minimal} if 
     \begin{enumerate}
         \item $\operatorname{rad}(\ffq_i) \neq \operatorname{rad}(\ffq_j)$ for $1 \leq i,j \leq n$ with $i \neq j$,
-        \item $\bigcap_{i=1,i \neq j}^{n} \ffq_i \not \subseteq \ffq_j$, i.e., $\ffa \subsetneq \bigcap_{i=1, i \neq j}^{n} \ffq_i$ for $j = 1,\cdots,n$.
+        \item $\bigcap_{i=1,i \neq j}^{n} \ffq_i \not \subseteq \ffq_j$, i.e., $\ffa \subsetneq \bigcap_{i=1, i \neq j}^{n} \ffq_i$ for $j = 1,\ldots,n$.
     \end{enumerate}
 \end{definition}
 
 \begin{example}\label{4.24}
     \begin{enumerate}
         \item 
-            Let $n \in \bbZ$ and $n = p_1^{e_1} \cdots p_m^{e_m}$ such that $p_1,\cdots,p_m$ are distinct primes and $e_1,\cdots,e_m \geq 1$. Then the primary decomposition $\langle n \rangle = \bigcap_{i=1}^{m} \langle p_i^{e_i} \rangle$ is minimal.
+            Let $n \in \bbZ$ and $n = p_1^{e_1} \cdots p_m^{e_m}$ such that $p_1,\ldots,p_m$ are distinct primes and $e_1,\ldots,e_m \geq 1$. Then the primary decomposition $\langle n \rangle = \bigcap_{i=1}^{m} \langle p_i^{e_i} \rangle$ is minimal.
         \item Let $R = k[X,Y]$. Then $\langle X^{2},XY \rangle = \langle X^{2},Y \rangle \cap \langle X \rangle = \langle X^{2},XY,Y^{2} \rangle \cap \langle X \rangle$ are two minimal primary decompositions.
     \end{enumerate}
 \end{example}
@@ -240,12 +240,12 @@ Let $R$ be a nonzero commutative ring with identity.
 \noindent \textbf{Notice:} minimal primary decomposition is not necessarily unique up to re-ordering.
 
 \begin{definition}\label{4.25}
-    Let $\ffa = \bigcap_{i=1}^{n} \ffq_i$ be a minimal primary decomposition such that $\operatorname{rad}(\ffq_i) = \ffp_i$ for $i = 1,\cdots,n$.
+    Let $\ffa = \bigcap_{i=1}^{n} \ffq_i$ be a minimal primary decomposition such that $\operatorname{rad}(\ffq_i) = \ffp_i$ for $i = 1,\ldots,n$.
     \begin{enumerate}
-        \item The \emph{associated primes} of $\ffa$ are $\ffp_1,\cdots,\ffp_n$. Write it as 
-            \[\operatorname{Ass}_R(\ffa) = \{\ffp_1,\cdots,\ffp_n\}.\]
-        \item The \emph{minimal (associated) primes} of $\ffa$ are the minimal elements of $\{\ffp_1,\cdots,\ffp_n\}$ w.r.t. $\subseteq$. Write it as 
-            \[\operatorname{Min}(\ffa) = \min\{\operatorname{Ass}_R(\ffa))\} = \min\{\ffp_1,\cdots,\ffp_n\}.\]
+        \item The \emph{associated primes} of $\ffa$ are $\ffp_1,\ldots,\ffp_n$. Write it as 
+            \[\operatorname{Ass}_R(\ffa) = \{\ffp_1,\ldots,\ffp_n\}.\]
+        \item The \emph{minimal (associated) primes} of $\ffa$ are the minimal elements of $\{\ffp_1,\ldots,\ffp_n\}$ w.r.t. $\subseteq$. Write it as 
+            \[\operatorname{Min}(\ffa) = \min\{\operatorname{Ass}_R(\ffa))\} = \min\{\ffp_1,\ldots,\ffp_n\}.\]
     \item The \emph{embedded primes} of $\ffa$ are the non-minimal associated primes of $\ffa$, i.e., $\operatorname{Ass}_R(\ffa) \smallsetminus \operatorname{Min}(\ffa)$.
     \end{enumerate}
 \end{definition}
@@ -261,19 +261,19 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{proposition}
 
 \begin{proof}
-    Let $\ffa = \bigcap_{i=1}^{n} \ffq_i$ be a primary decomposition. If $\operatorname{rad}(\ffq_i) = \operatorname{rad}(\ffq_j)$ for some $i,j \in \{1,\cdots,n\}$ with $i \neq j$, then $\ffq_i \cap \ffq_j$ is $\ffp$-primary where $\ffp := \operatorname{rad}(\ffq_i)$ by Proposition \ref{4.22}, so combine $\ffq_i$ and $\ffq_j$ to get a new shorter decomposition, this process terminates in at most $n$ steps. Then without loss of generality, assume $\ffp_i = \operatorname{rad}(\ffq_i) \neq \operatorname{rad}(\ffq_j) = \ffp_j$ for $1 \leq i,j \leq n$ with $i \neq j$. If $\bigcap_{i=1,i\neq j}^{n} \ffp_i \subseteq \ffq_j$ for some $j \in \{1,\cdots,n\}$, then $\ffa = \bigcap_{i=1}^{n} \ffq_i = \bigcap_{i=1,i \neq j}^{n} \ffq_i$, so $\bigcap_{i=1,i \neq j}^{n} \ffq_i$ is a shorter decomposition, the process terminates in at most $n$ steps.
+    Let $\ffa = \bigcap_{i=1}^{n} \ffq_i$ be a primary decomposition. If $\operatorname{rad}(\ffq_i) = \operatorname{rad}(\ffq_j)$ for some $i,j \in \{1,\ldots,n\}$ with $i \neq j$, then $\ffq_i \cap \ffq_j$ is $\ffp$-primary where $\ffp := \operatorname{rad}(\ffq_i)$ by Proposition \ref{4.22}, so combine $\ffq_i$ and $\ffq_j$ to get a new shorter decomposition, this process terminates in at most $n$ steps. Then without loss of generality, assume $\ffp_i = \operatorname{rad}(\ffq_i) \neq \operatorname{rad}(\ffq_j) = \ffp_j$ for $1 \leq i,j \leq n$ with $i \neq j$. If $\bigcap_{i=1,i\neq j}^{n} \ffp_i \subseteq \ffq_j$ for some $j \in \{1,\ldots,n\}$, then $\ffa = \bigcap_{i=1}^{n} \ffq_i = \bigcap_{i=1,i \neq j}^{n} \ffq_i$, so $\bigcap_{i=1,i \neq j}^{n} \ffq_i$ is a shorter decomposition, the process terminates in at most $n$ steps.
 \end{proof}
 
-\noindent Let $\ffa = \bigcap_{i=1}^{n} \ffq_i$ be a minimal primary decomposition such that $\operatorname{rad}(\ffq_i) = \ffp_i$ for $i = 1,\cdots,n$.
+\noindent Let $\ffa = \bigcap_{i=1}^{n} \ffq_i$ be a minimal primary decomposition such that $\operatorname{rad}(\ffq_i) = \ffp_i$ for $i = 1,\ldots,n$.
 
 \begin{proposition}\label{4.28}
-    Re-order the $\ffq_i$'s if necessary to assume without loss of generality, $\operatorname{Min}(\ffa) = \{\ffp_1,\cdots,\ffp_m\}$. Then the irreducible components of $\operatorname{V}(\ffa)$ with subspace topology are $\operatorname{V}(\ffp_1),\cdots,\operatorname{V}(\ffp_m)$.
+    Re-order the $\ffq_i$'s if necessary to assume without loss of generality, $\operatorname{Min}(\ffa) = \{\ffp_1,\ldots,\ffp_m\}$. Then the irreducible components of $\operatorname{V}(\ffa)$ with subspace topology are $\operatorname{V}(\ffp_1),\ldots,\operatorname{V}(\ffp_m)$.
 \end{proposition}
 
 \begin{proof}
-    Claim. $\operatorname{Min}(\operatorname{V}(\ffa)) = \{\ffp_1,\cdots,\ffp_m\}$. Then $\operatorname{V}(\ffp_1),\cdots,\operatorname{V}(\ffp_m)$ are all maximal irreducible subset of $\operatorname{V}(\ffa)$ by Proposition \ref{2.42}. \par
-    ``$\subseteq$''. Let $\ffp \in \operatorname{Min}(\operatorname{V}(\ffa))$. Then $\ffp \supseteq \ffa = \bigcap_{i=1}^{n} \ffq_i$. So $\ffp \supseteq \operatorname{rad}(\ffa) = \operatorname{rad}(\bigcap_{i=1}^{n}\ffq_i) = \bigcap_{i=1}^{n} \operatorname{rad}(\ffq_i) = \bigcap_{i=1}^{n} \ffp_i = \bigcap_{j=1}^{m} \ffp_j$ since there exists $j_i \in \{1,\cdots,m\}$ such that $\ffp_{j_i} \subseteq \ffp_i$ for $i = m+1,\cdots,n$. Since $\ffp \in \operatorname{Spec}(R)$, $\ffp \supseteq \ffp_k \supseteq \bigcap_{j=1}^{m} \ffp_j = \operatorname{rad}(\ffa) \supseteq \ffa$ for some $k \in \{1,\cdots,m\}$. Also, since $\ffp_k \in \operatorname{Spec}(R)$ by Proposition \ref{4.19} and $\ffp \in \operatorname{Min}(\operatorname{V}(\ffa))$, we have $\ffp = \ffp_k$. \par 
-    ``$\supseteq$''. Fix $j \in \{1,\cdots,m\}$. Suppose there exists $\ffp \in \operatorname{Spec}(R)$ such that $\ffa \subseteq \ffp \subsetneq \ffp_j$. Then $\ffa R_{\ffp_j} \subseteq \ffp R_{\ffp_j} \subsetneq \ffp_jR_{\ffp_j}$ by prime correspondence for localization. For $i = 1,\cdots,m$ with $i \neq j$, since $\ffp_i \not \subseteq \ffp_j$, we have $\ffp_i \cap (R \smallsetminus \ffp_j) \neq \emptyset$ and then $\ffp_i R_{\ffp_j} = R_{\ffp_j}$ by Proposition \ref{3.13}\ref{3.13c}. So we have $\ffa R_{\ffp_j} = (R \smallsetminus \ffp_j)^{-1} \ffa = (R \smallsetminus \ffp_j)^{-1} (\bigcap_{i=1}^{m} \ffp_i) = \bigcap_{i=1}^{m} (R \smallsetminus \ffp_j)^{-1} \ffp_i = \bigcap_{i=1}^{m} \ffp_i R_{\ffp_j} = (\bigcap_{i=1,i \neq j}^{m} R_{\ffp_j}) \bigcap \ffp_jR_{\ffp_j} = \ffp_jR_{\ffp_j}$ by Proposition \ref{3.12}\ref{3.12a}, a contradiction. Thus, $\ffp_j \in \operatorname{Min}(\operatorname{V}(\ffa))$.
+    Claim. $\operatorname{Min}(\operatorname{V}(\ffa)) = \{\ffp_1,\ldots,\ffp_m\}$. Then $\operatorname{V}(\ffp_1),\ldots,\operatorname{V}(\ffp_m)$ are all maximal irreducible subset of $\operatorname{V}(\ffa)$ by Proposition \ref{2.42}. \par
+    ``$\subseteq$''. Let $\ffp \in \operatorname{Min}(\operatorname{V}(\ffa))$. Then $\ffp \supseteq \ffa = \bigcap_{i=1}^{n} \ffq_i$. So $\ffp \supseteq \operatorname{rad}(\ffa) = \operatorname{rad}(\bigcap_{i=1}^{n}\ffq_i) = \bigcap_{i=1}^{n} \operatorname{rad}(\ffq_i) = \bigcap_{i=1}^{n} \ffp_i = \bigcap_{j=1}^{m} \ffp_j$ since there exists $j_i \in \{1,\ldots,m\}$ such that $\ffp_{j_i} \subseteq \ffp_i$ for $i = m+1,\ldots,n$. Since $\ffp \in \operatorname{Spec}(R)$, $\ffp \supseteq \ffp_k \supseteq \bigcap_{j=1}^{m} \ffp_j = \operatorname{rad}(\ffa) \supseteq \ffa$ for some $k \in \{1,\ldots,m\}$. Also, since $\ffp_k \in \operatorname{Spec}(R)$ by Proposition \ref{4.19} and $\ffp \in \operatorname{Min}(\operatorname{V}(\ffa))$, we have $\ffp = \ffp_k$. \par 
+    ``$\supseteq$''. Fix $j \in \{1,\ldots,m\}$. Suppose there exists $\ffp \in \operatorname{Spec}(R)$ such that $\ffa \subseteq \ffp \subsetneq \ffp_j$. Then $\ffa R_{\ffp_j} \subseteq \ffp R_{\ffp_j} \subsetneq \ffp_jR_{\ffp_j}$ by prime correspondence for localization. For $i = 1,\ldots,m$ with $i \neq j$, since $\ffp_i \not \subseteq \ffp_j$, we have $\ffp_i \cap (R \smallsetminus \ffp_j) \neq \emptyset$ and then $\ffp_i R_{\ffp_j} = R_{\ffp_j}$ by Proposition \ref{3.13}\ref{3.13c}. So we have $\ffa R_{\ffp_j} = (R \smallsetminus \ffp_j)^{-1} \ffa = (R \smallsetminus \ffp_j)^{-1} (\bigcap_{i=1}^{m} \ffp_i) = \bigcap_{i=1}^{m} (R \smallsetminus \ffp_j)^{-1} \ffp_i = \bigcap_{i=1}^{m} \ffp_i R_{\ffp_j} = (\bigcap_{i=1,i \neq j}^{m} R_{\ffp_j}) \bigcap \ffp_jR_{\ffp_j} = \ffp_jR_{\ffp_j}$ by Proposition \ref{3.12}\ref{3.12a}, a contradiction. Thus, $\ffp_j \in \operatorname{Min}(\operatorname{V}(\ffa))$.
 \end{proof}
 
 \begin{proposition}\label{4.29}
@@ -296,21 +296,26 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{proof}
 
 \begin{proposition}\label{4.30}
-    $\operatorname{Ass}_R(\ffa) := \{\ffp_1,\cdots,\ffp_n\} = \operatorname{Spec}(R) \cap \{\operatorname{rad}(\ffa:x) \mid x \in R\}\footnote[2]{$\operatorname{Ass}_R(\ffa) = \operatorname{Spec}(R) \cap \{\operatorname{rad}(\ffa:x) \mid x \not \in \ffa\}$.}$. So $\operatorname{Ass}_R(\ffa)$ is independent of the minimal primary decomposition. 
+    \[\operatorname{Ass}_R(\ffa) := \{\ffp_1,\ldots,\ffp_n\} = \operatorname{Spec}(R) \cap \{\operatorname{rad}(\ffa:x) \mid x \in R\}\footnote[2]{$\operatorname{Ass}_R(\ffa) = \operatorname{Spec}(R) \cap \{\operatorname{rad}(\ffa:x) \mid x \not \in \ffa\}$.}.\] 
+    So $\operatorname{Ass}_R(\ffa)$ is independent of the minimal primary decomposition. 
 \end{proposition}
 
 \begin{proof}
     Let $x \in R$. Then $(\ffa:x) = (\bigcap_{i=1}^{n} \ffq_i:x) = \bigcap_{i=1}^{n} (\ffq_i:x)$ by Fact \ref{1.54}\ref{1.54i}. So $\operatorname{rad}(\ffa:x) = \operatorname{rad}(\bigcap_{i=1}^{n}(\ffq_i:x)) = \bigcap_{i=1}^{n} \operatorname{rad}(\ffq_i:x) = \bigcap_{i=1, x \not \in \ffq_i}^{n} \ffp_i$ by Proposition \ref{4.29}, where the intersection of empty ideals is the $R$. \par
-    ``$\supseteq$''. Let $\ffp \in \operatorname{Spec}(R) \cap \{\operatorname{rad}(\ffa:x) \mid x \in R\}$. Then $\ffp \in \operatorname{Spec}(R)$ and there exists $x \in R$ such that $\ffp = \operatorname{rad}(\ffa:x) = \bigcap_{i=1,x \not \in \ffq_i}^{n} \ffp_i$  which is not an empty intersection since $\ffp \neq R$. So by Proposition \ref{1.47}\ref{1.47b}, $\ffp = \ffp_i$ with $x \not\in \ffq_i$ for some $i \in \{1,\cdots,n\}$. \par
-    ``$\subseteq$''. Let $j \in \{1,\cdots,n\}$. Since $\ffa = \bigcap_{i=1}^{n}\ffq_i$ is a minimal primary decomposition, $\bigcap_{i=1,i \neq j}^{n} \ffq_i \not\subseteq \ffq_j$. So there exists $x \in \bigcap_{i=1,i \neq j}^{n} \ffq_i$ such that $x \not\in \ffq_j$, i.e., $x \in \ffq_i$ for $1 \leq i \leq n$ with $i \neq j$ and $x \not \in \ffq_j$. So $\operatorname{rad}(\ffa:x) = \bigcap_{i=1,x \not \in \ffq_i}^{n} \ffp_i = \ffp_j$. Hence $\ffp_j \in \operatorname{Spec}(R) \cap \{\operatorname{rad}(\ffa:x) \mid x \in R\}$.
+    ``$\supseteq$''. Let $\ffp \in \operatorname{Spec}(R) \cap \{\operatorname{rad}(\ffa:x) \mid x \in R\}$. Then $\ffp \in \operatorname{Spec}(R)$ and there exists $x \in R$ such that $\ffp = \operatorname{rad}(\ffa:x) = \bigcap_{i=1,x \not \in \ffq_i}^{n} \ffp_i$  which is not an empty intersection since $\ffp \neq R$. So by Proposition \ref{1.47}\ref{1.47b}, $\ffp = \ffp_i$ with $x \not\in \ffq_i$ for some $i \in \{1,\ldots,n\}$. \par
+    ``$\subseteq$''. Let $j \in \{1,\ldots,n\}$. Since $\ffa = \bigcap_{i=1}^{n}\ffq_i$ is a minimal primary decomposition, $\bigcap_{i=1,i \neq j}^{n} \ffq_i \not\subseteq \ffq_j$. So there exists $x \in \bigcap_{i=1,i \neq j}^{n} \ffq_i$ such that $x \not\in \ffq_j$, i.e., $x \in \ffq_i$ for $1 \leq i \leq n$ with $i \neq j$ and $x \not \in \ffq_j$. So $\operatorname{rad}(\ffa:x) = \bigcap_{i=1,x \not \in \ffq_i}^{n} \ffp_i = \ffp_j$. Hence $\ffp_j \in \operatorname{Spec}(R) \cap \{\operatorname{rad}(\ffa:x) \mid x \in R\}$.
 \end{proof}
 
 \begin{theorem}\label{4.31}
-    If $R$ is noetherian, then $\operatorname{Ass}_R(\ffa) := \{\ffp_1,\cdots,\ffp_n\} = \operatorname{Spec}(R) \cap \{(\ffa:x) \mid x \in R\} = \operatorname{Spec}(R) \cap \{\operatorname{Ann}_R(\overbar{x}) \mid \overbar{x} \in R/\ffa\} =: \operatorname{Ass}_R(R/\ffa)$.
+    If $R$ is noetherian, then 
+    \begin{align*}
+        \operatorname{Ass}_R(\ffa) &:= \{\ffp_1,\ldots,\ffp_n\} = \operatorname{Spec}(R) \cap \{(\ffa:x) \mid x \in R\} \\
+        &= \operatorname{Spec}(R) \cap \{\operatorname{Ann}_R(\overbar{x}) \mid \overbar{x} \in R/\ffa\} =: \operatorname{Ass}_R(R/\ffa).
+    \end{align*}
 \end{theorem}
 
 \begin{proof}
-    Proof of the first equality. ``$\supseteq$''. Let $\ffp \in \operatorname{Spec}(R)$ such that $\ffp = (\ffa:x)$ for some $x \in R$. Then $\ffp = \operatorname{rad}(\ffp) = \operatorname{rad}(\ffa:x)$. So by Proposition \ref{4.30}, $\ffp = \ffp_i$ for some $i \in \{1,\cdots,n\}$. ``$\subseteq$''. Let $j \in \{1,\cdots,n\}$. Since $\ffa = \bigcap_{i=1}^{n}\ffq_i$ is a minimal primary decomposition, $\ffa \subsetneq \bigcap_{i=1, i \neq j}^{n} \ffq_i$. Since $R$ is noetherian, $\ffp_j$ is finitely generated. Also, since $\operatorname{rad}(\ffq_j) = \ffp_j$, there exists $m \geq 1$ such that $\ffp_j^{m} \subseteq \ffq_j$. Let $\ffa_j := \bigcap_{i=1,i \neq j}^{n} \ffq_i$. Then $\ffa_j \ffp_j^{m} \subseteq \ffa_j \cap \ffp_j^{m} \subseteq \ffa_j \cap \ffq_j = \bigcap_{i=1}^{n} \ffq_i = \ffa$. Let $l = \min\{m \geq 1 \mid \ffa_j \ffp_j^{m} \subseteq \ffa\}$. Note $\ffa_j \ffp_j^{0} = \ffa_j \supsetneq \ffa$. Since $\ffa_j \ffp_j^{l-1} \not \subseteq \ffa$, there exists $x \in \ffa_j \ffp_j^{l-1} \smallsetminus \ffa \subseteq \ffa_j \smallsetminus \ffa = (\bigcap_{i=1,i \neq j}^{n} \ffq_i) \smallsetminus \ffq_j $, i.e., $x \in \ffq_i$ for $1 \leq i \leq n$ with $i \neq j$ and $x \not \in \ffq_j$. So by the proof of Proposition \ref{4.30}, $(\ffa:x) \subseteq \operatorname{rad}(\ffa:x) = \ffp_j$. On the other hand, since $x\ffp_j \subseteq \ffa_j\ffp_j^{l-1}\ffp_j = \ffa_j \ffp_j^{l} \subseteq \ffa$, we have $\ffp_j \subseteq (\ffa:x)$. Hence $\ffp_j = (\ffa:x)$.
+    Proof of the first equality. ``$\supseteq$''. Let $\ffp \in \operatorname{Spec}(R)$ such that $\ffp = (\ffa:x)$ for some $x \in R$. Then $\ffp = \operatorname{rad}(\ffp) = \operatorname{rad}(\ffa:x)$. So by Proposition \ref{4.30}, $\ffp = \ffp_i$ for some $i \in \{1,\ldots,n\}$. ``$\subseteq$''. Let $j \in \{1,\ldots,n\}$. Since $\ffa = \bigcap_{i=1}^{n}\ffq_i$ is a minimal primary decomposition, $\ffa \subsetneq \bigcap_{i=1, i \neq j}^{n} \ffq_i$. Since $R$ is noetherian, $\ffp_j$ is finitely generated. Also, since $\operatorname{rad}(\ffq_j) = \ffp_j$, there exists $m \geq 1$ such that $\ffp_j^{m} \subseteq \ffq_j$. Let $\ffa_j := \bigcap_{i=1,i \neq j}^{n} \ffq_i$. Then $\ffa_j \ffp_j^{m} \subseteq \ffa_j \cap \ffp_j^{m} \subseteq \ffa_j \cap \ffq_j = \bigcap_{i=1}^{n} \ffq_i = \ffa$. Let $l = \min\{m \geq 1 \mid \ffa_j \ffp_j^{m} \subseteq \ffa\}$. Note $\ffa_j \ffp_j^{0} = \ffa_j \supsetneq \ffa$. Since $\ffa_j \ffp_j^{l-1} \not \subseteq \ffa$, there exists $x \in \ffa_j \ffp_j^{l-1} \smallsetminus \ffa \subseteq \ffa_j \smallsetminus \ffa = (\bigcap_{i=1,i \neq j}^{n} \ffq_i) \smallsetminus \ffq_j $, i.e., $x \in \ffq_i$ for $1 \leq i \leq n$ with $i \neq j$ and $x \not \in \ffq_j$. So by the proof of Proposition \ref{4.30}, $(\ffa:x) \subseteq \operatorname{rad}(\ffa:x) = \ffp_j$. On the other hand, since $x\ffp_j \subseteq \ffa_j\ffp_j^{l-1}\ffp_j = \ffa_j \ffp_j^{l} \subseteq \ffa$, we have $\ffp_j \subseteq (\ffa:x)$. Hence $\ffp_j = (\ffa:x)$.
 \end{proof}
 
 \begin{example}\label{4.32}
@@ -363,21 +368,22 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{example}
 
 \begin{proposition}\label{4.33}
-    $\{x \in R \mid (\ffa:x) \neq \ffa\} = \bigcup_{i=1}^{n} \ffp_i = \bigcup_{\ffp \in \operatorname{Ass}_R(\ffa)} \ffp$.
+    \[\{x \in R \mid (\ffa:x) \neq \ffa\} = \bigcup_{i=1}^{n} \ffp_i = \bigcup_{\ffp \in \operatorname{Ass}_R(\ffa)} \ffp.\]
 \end{proposition}
 
 \begin{proof}
     Claim. $\{x \in R \mid (\ffa:x) \neq \ffa\} = \bigcup_{y \not\in \ffa} \operatorname{rad}(\ffa:y)$. ``$\subseteq$''. Then $x \in R$ such that $(\ffa:x) \neq \ffa$. So $(\ffa:x) \supsetneq \ffa$. Then there exists $z \in (\ffa:x) \smallsetminus \ffa$, i.e., $z \not \in \ffa$ and $xz \in \ffa$, i.e., $z \not \in \ffa$ and $x \in (\ffa:z) \subseteq \operatorname{rad}(\ffa:z) \subseteq \bigcup_{y \not\in \ffa} \operatorname{rad}(\ffa:y)$. ``$\supseteq$''. Let $x \in \operatorname{rad}(\ffa:y)$ for some $y \not\in \ffa$. Then $x^{m}y \in \ffa$ for some $m \geq 1$. Let $n = \min\{m \geq 1 \mid x^{m}y \in \ffa\}$. Note $x^{0}y = y \not \in \ffa$. Then $x^{n}y \in \ffa$ but $x^{n-1}y \not \in \ffa$. So $x^{n-1}y \in (\ffa:x)$. Hence $(\ffa:x) \neq \ffa$. \par
-    Claim. $\bigcup_{y \not\in \ffa} \operatorname{rad}(\ffa:y) = \bigcup_{i=1}^{n}\ffp_i$. ``$\subseteq$''. Let $y \not\in \ffa = \bigcap_{i=1}^{n} \ffq_i$. Then by the proof of Proposition \ref{4.30}, $\operatorname{rad}(\ffa:y) = \bigcap_{i=1,y \not \in \ffq_i}^{n} \ffp_i = \bigcap_{i=1}^{n} \ffp_i \subseteq \bigcup_{i=1}^{n}\ffp_i$. ``$\supseteq$''. By Proposition \ref{4.30}, there exists $y_i \not \in \ffa$ such that $\ffp_i = \operatorname{rad}(\ffa:y_i)$ for $i = 1,\cdots,i$. So $\bigcup_{y \not\in \ffa} \operatorname{rad}(\ffa:y) \supseteq \bigcup_{i=1}^{n} \ffp_i$. 
+    Claim. $\bigcup_{y \not\in \ffa} \operatorname{rad}(\ffa:y) = \bigcup_{i=1}^{n}\ffp_i$. ``$\subseteq$''. Let $y \not\in \ffa = \bigcap_{i=1}^{n} \ffq_i$. Then by the proof of Proposition \ref{4.30}, $\operatorname{rad}(\ffa:y) = \bigcap_{i=1,y \not \in \ffq_i}^{n} \ffp_i = \bigcap_{i=1}^{n} \ffp_i \subseteq \bigcup_{i=1}^{n}\ffp_i$. ``$\supseteq$''. By Proposition \ref{4.30}, there exists $y_i \not \in \ffa$ such that $\ffp_i = \operatorname{rad}(\ffa:y_i)$ for $i = 1,\ldots,i$. So $\bigcup_{y \not\in \ffa} \operatorname{rad}(\ffa:y) \supseteq \bigcup_{i=1}^{n} \ffp_i$. 
 \end{proof}
 
 \begin{corollary}\label{4.34}
-    Let $\ffa = 0$, then $\operatorname{ZD}(R) = \{x \in R \mid (0:x) \neq 0\} = \bigcup_{i=1}^{n} \ffp_i = \bigcup_{\ffp \in \operatorname{Ass}_R(0)}\ffp$.
+    Set $\ffa = 0$ in Proposition \ref{4.33}, we get 
+    \[\operatorname{ZD}(R) = \{x \in R \mid (0:x) \neq 0\} = \bigcup_{i=1}^{n} \ffp_i = \bigcup_{\ffp \in \operatorname{Ass}_R(0)}\ffp.\]
 \end{corollary}
 
 \begin{summary}\label{4.35}
-    Let $R$ be noetherian and $\ffa = 0$. Then $\operatorname{ZD}(R) = \bigcup_{i=1}^{n} \ffp_i = \bigcup_{\ffp \in \operatorname{Ass}_R(0)}\ffp$. (Use with prime avoidence to get useful information about ideals and $\operatorname{NZD}(R)$.) \par 
-    $\operatorname{Nil}(R) = \operatorname{rad}(0) = \operatorname{rad}(\bigcap_{i=1}^{n}\ffq_i) = \bigcap_{i=1}^{n} \ffp_i = \bigcap_{\ffp \in \operatorname{Min}(0)} \ffp$.
+    Let $R$ be noetherian and $\ffa = 0$. Then $\operatorname{ZD}(R) = \bigcup_{i=1}^{n} \ffp_i = \bigcup_{\ffp \in \operatorname{Ass}_R(0)}\ffp$. (Use with prime avoidence to get useful information about ideals and $\operatorname{NZD}(R)$.)
+    \[\operatorname{Nil}(R) = \operatorname{rad}(0) = \operatorname{rad}\biggl(\bigcap_{i=1}^{n}\ffq_i\biggr) = \bigcap_{i=1}^{n} \ffp_i = \bigcap_{\ffp \in \operatorname{Min}(0)} \ffp.\]
 \end{summary}
 
 \begin{example*}
@@ -385,7 +391,10 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{example*}
 
 \begin{proposition}\label{4.36}
-    $\operatorname{Min}(\ffa) = \min\{\ffp_1,\cdots,\ffp_n\} = \operatorname{Min}(\operatorname{V}(\ffa))$. In particular, $\operatorname{Min}(0) = \operatorname{Min}(\operatorname{V}(0)) = \operatorname{Min}(\operatorname{Spec}(R)) = \operatorname{Min}(R)$.
+    We have
+    \[\operatorname{Min}(\ffa) = \min\{\ffp_1,\ldots,\ffp_n\} = \operatorname{Min}(\operatorname{V}(\ffa)).\]
+    In particular, 
+    \[\operatorname{Min}(0) = \operatorname{Min}(\operatorname{V}(0)) = \operatorname{Min}(\operatorname{Spec}(R)) = \operatorname{Min}(R).\]
 \end{proposition}
 
 \begin{proof}
@@ -411,9 +420,9 @@ Let $R$ be a nonzero commutative ring with identity.
 
 \begin{theorem}[Second uniqueness theorem]\label{4.38}
     \begin{enumerate}
-        \item Let $\ffq = \ffq_i$ be $\ffp$-primary for some $i \in \{1,\cdots,n\}$ 
+        \item Let $\ffq = \ffq_i$ be $\ffp$-primary for some $i \in \{1,\ldots,n\}$ 
             with $\ffp \in \operatorname{Min}(\ffa)$. Then $\ffq = \psi^{-1}(\ffa_{\ffp})$\footnote[2]{That is, $\ffq$ is the kernel of the ring homomorphism $R \to (R/\ffa)_\ffp$.}, where $\psi: R \to R_{\ffp}$ and $U = R \smallsetminus \ffp$, so $\ffq$ is independent of choice of minimal primary decomposition.
-        \item If $\Lambda = \langle \ffp_{i_1},\cdots,\ffp_{i_m} \rangle$ is an ``isolated'' subset of $\operatorname{Ass}_R(\ffa) = \{\ffp_1,\cdots,\ffp_n\}$, then $\bigcap_{j=1}^{m} \ffq_{i_j} = \Psi^{-1}(U^{-1}\ffa)$, where $\Psi: R \to U^{-1}R$ and $U = R \smallsetminus \{\ffp_{i_1} \cup \cdots \cup \ffp_{i_m}\}$. So $\bigcap_{j=1}^{m}\ffq_{i_j}$ is independent of choice of minimal primary decomposition.
+        \item If $\Lambda = \langle \ffp_{i_1},\ldots,\ffp_{i_m} \rangle$ is an ``isolated'' subset of $\operatorname{Ass}_R(\ffa) = \{\ffp_1,\ldots,\ffp_n\}$, then $\bigcap_{j=1}^{m} \ffq_{i_j} = \Psi^{-1}(U^{-1}\ffa)$, where $\Psi: R \to U^{-1}R$ and $U = R \smallsetminus \{\ffp_{i_1} \cup \cdots \cup \ffp_{i_m}\}$. So $\bigcap_{j=1}^{m}\ffq_{i_j}$ is independent of choice of minimal primary decomposition.
     \end{enumerate}
 \end{theorem}
 
@@ -434,16 +443,16 @@ Let $R$ be a nonzero commutative ring with identity.
         \item\label{4.40a}
             If $\ffm \in \operatorname{m-Spec}(R)$, then $\ffm^{n}$ is $\ffm$-primary for $n \geq 1$ by Example \ref{4.11}\ref{4.11b}. \par 
         \item\label{4.40b} 
-            Let $k$ be a field. If $\ffp = \langle X_{i_1}, \cdots, X_{i_m} \rangle \lneq k[X_1,\cdots,X_d]$, then $\ffp^{n}$ is $\ffp$-primary for $n \geq 1$.
+            Let $k$ be a field. If $\ffp = \langle X_{i_1}, \cdots, X_{i_m} \rangle \lneq k[X_1,\ldots,X_d]$, then $\ffp^{n}$ is $\ffp$-primary for $n \geq 1$.
     \end{enumerate}
 \end{discussion}
 
 \begin{proof}
     \begin{enumerate}
         \item[(b)]
-            Note $\langle X_{i_1}^{a_1},\cdots,X_{i_m}^{a_m} \rangle$ is $\ffp$-primary for $a_1,\cdots,a_m \geq 1$ by Example \ref{4.12}\ref{4.12c}. Let $\Lambda = \{\underline a \in \bbN^{m} \mid a_1 + \cdots + a_m = m+n-1\}$. Set $\ffp_{\underline a} = \langle X_{i_1}^{a_1},\cdots,X_{i_m}^{a_m} \rangle$ for $\underline a \in \Lambda$. Claim. $\ffp^{n} = \bigcap_{\underline a \in \Lambda} \ffp_{\underline a}$, then by Proposition \ref{4.22}, $\ffp^{n}$ is $\ffp$-primary. \par
-            ``$\subseteq$''. Let $\Lambda_0 = \{\underline e \in \bbZ_{\geq 0}^{m} \mid e_1 + \cdots + e_m = n\}$. For $n \geq 1$, $\ffp^{n} = (\langle X_{i_1} \rangle + \cdots + \langle X_{i_m} \rangle)^{n} = \sum_{\underline e \in \Lambda_0} \langle X_{i_1}^{e_1} \cdots X_{i_m}^{e_m} \rangle$. Suppose $X_{(i)}^{\underline e} := X_{i_1}^{e_1} \cdots X_{i_m}^{e_m} \in \ffp^{n} \smallsetminus \ffp_{\underline a}$ for some $\underline e \in \Lambda_0$ and $\underline a \in \Lambda$. Then $a_i \geq e_i+1$ for $i = 1,\cdots,m$. So $m+n-1 = \sum_{i=1}^{m}a_i \geq m + \sum_{i=1}^{m}e_i = m+n$, a contradiction. So $X^{\underline e}_{(i)} \in \ffp_{\underline a}$ for all $\underline e \in \Lambda_0$ and $\underline a \in \Lambda$. Hence $\ffp^{n} \subseteq \bigcap_{\underline a \in \Lambda} \ffp_{\underline a}$. \par 
-        ``$\supseteq$''. Let $R' := k[X_{i_1},\cdots,X_{i_m}] \subseteq k[X_1,\cdots,X_d]$ and $\ffp' = (X_{i_1},\cdots,X_{i_m})R'$. Set $\ffp'_{\underline a} = \langle X_{i_1}^{a_1},\cdots,X_{i_m}^{a_m} \rangle R'$ for $\underline a \in \Lambda$. We know $\ffp'^{n}$ in $R'$ has an (irredundant) parametric decomposition $\ffp'^{n} = \bigcap_{f' \in C_{R'}(\ffp')} P_R(f') = \bigcap_{\underline a \in \Lambda} \ffp'_{\underline a}$. Let $q = \# \Lambda$. Since $\bigcap_{\underline a \in \Lambda} \ffp_{\underline a}$ and $\bigcap_{\underline a \in \Lambda} \ffp'_{\underline a}$ have the same generating set $\{\operatorname{lcm}(f_1,\cdots,f_q) \mid f_j \text{ is a generator of $\ffp_{\underline a_j}$ with $\underline a_j \in \Lambda$ for $j=1,\cdots,q$}\}$, we have the generators of $\bigcap_{\underline a \in \Lambda} \ffp_{\underline a}$ are in $\bigcap_{\underline a \in \Lambda} \ffp_{\underline a}' = \ffp'^{n} \subseteq \ffp^{n}$. Hence $\ffp^{n} \supseteq \bigcap_{\underline a \in \Lambda} \ffp_{\underline a}$. \qedhere
+            Note $\langle X_{i_1}^{a_1},\ldots,X_{i_m}^{a_m} \rangle$ is $\ffp$-primary for $a_1,\ldots,a_m \geq 1$ by Example \ref{4.12}\ref{4.12c}. Let $\Lambda = \{\underline a \in \bbN^{m} \mid a_1 + \cdots + a_m = m+n-1\}$. Set $\ffp_{\underline a} = \langle X_{i_1}^{a_1},\ldots,X_{i_m}^{a_m} \rangle$ for $\underline a \in \Lambda$. Claim. $\ffp^{n} = \bigcap_{\underline a \in \Lambda} \ffp_{\underline a}$, then by Proposition \ref{4.22}, $\ffp^{n}$ is $\ffp$-primary. \par
+            ``$\subseteq$''. Let $\Lambda_0 = \{\underline e \in \bbZ_{\geq 0}^{m} \mid e_1 + \cdots + e_m = n\}$. For $n \geq 1$, $\ffp^{n} = (\langle X_{i_1} \rangle + \cdots + \langle X_{i_m} \rangle)^{n} = \sum_{\underline e \in \Lambda_0} \langle X_{i_1}^{e_1} \cdots X_{i_m}^{e_m} \rangle$. Suppose $X_{(i)}^{\underline e} := X_{i_1}^{e_1} \cdots X_{i_m}^{e_m} \in \ffp^{n} \smallsetminus \ffp_{\underline a}$ for some $\underline e \in \Lambda_0$ and $\underline a \in \Lambda$. Then $a_i \geq e_i+1$ for $i = 1,\ldots,m$. So $m+n-1 = \sum_{i=1}^{m}a_i \geq m + \sum_{i=1}^{m}e_i = m+n$, a contradiction. So $X^{\underline e}_{(i)} \in \ffp_{\underline a}$ for all $\underline e \in \Lambda_0$ and $\underline a \in \Lambda$. Hence $\ffp^{n} \subseteq \bigcap_{\underline a \in \Lambda} \ffp_{\underline a}$. \par 
+        ``$\supseteq$''. Let $R' := k[X_{i_1},\ldots,X_{i_m}] \subseteq k[X_1,\ldots,X_d]$ and $\ffp' = (X_{i_1},\ldots,X_{i_m})R'$. Set $\ffp'_{\underline a} = \langle X_{i_1}^{a_1},\ldots,X_{i_m}^{a_m} \rangle R'$ for $\underline a \in \Lambda$. We know $\ffp'^{n}$ in $R'$ has an (irredundant) parametric decomposition $\ffp'^{n} = \bigcap_{f' \in C_{R'}(\ffp')} P_R(f') = \bigcap_{\underline a \in \Lambda} \ffp'_{\underline a}$. Let $q = \# \Lambda$. Since $\bigcap_{\underline a \in \Lambda} \ffp_{\underline a}$ and $\bigcap_{\underline a \in \Lambda} \ffp'_{\underline a}$ have the same generating set $\{\operatorname{lcm}(f_1,\ldots,f_q) \mid f_j \text{ is a generator of $\ffp_{\underline a_j}$ with $\underline a_j \in \Lambda$ for $j=1,\ldots,q$}\}$, we have the generators of $\bigcap_{\underline a \in \Lambda} \ffp_{\underline a}$ are in $\bigcap_{\underline a \in \Lambda} \ffp_{\underline a}' = \ffp'^{n} \subseteq \ffp^{n}$. Hence $\ffp^{n} \supseteq \bigcap_{\underline a \in \Lambda} \ffp_{\underline a}$. \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -464,17 +473,17 @@ Let $R$ be a nonzero commutative ring with identity.
     \begin{enumerate}
         \item\label{4.44a}
             Let $\ffm \in \operatorname{m-Spec}(R)$ and $\psi: R \to R_\ffm$. Since $\ffm^{n}$ is $\ffm$-primary by Example \ref{4.11}\ref{4.11b} and $\ffm \cap (R \smallsetminus \ffm) = \emptyset$, by Lemma \ref{4.37}\ref{4.37b}, $\ffm^{n} = \psi^{-1}((\ffm^{n})_\ffm) =: \ffm^{(n)}$ for $n \geq 1$. 
-        \item\label{4.44b} Let $k$ be a field and $\ffp = \langle X_{i_1}, \cdots, X_{i_m} \rangle \lneq k[X_1,\cdots,X_d]$. Since $\ffp^{n}$ is $\ffp$-primary by Discussion \ref{4.40}\ref{4.40b} and $\ffp \cap (R \smallsetminus \ffp) = \emptyset$, by Lemma \ref{4.37}\ref{4.37b}, $\ffp^{n} = \psi^{-1}((\ffp^{n})_\ffp) =: \ffp^{(n)}$ for $n \geq 1$.
+        \item\label{4.44b} Let $k$ be a field and $\ffp = \langle X_{i_1}, \cdots, X_{i_m} \rangle \lneq k[X_1,\ldots,X_d]$. Since $\ffp^{n}$ is $\ffp$-primary by Discussion \ref{4.40}\ref{4.40b} and $\ffp \cap (R \smallsetminus \ffp) = \emptyset$, by Lemma \ref{4.37}\ref{4.37b}, $\ffp^{n} = \psi^{-1}((\ffp^{n})_\ffp) =: \ffp^{(n)}$ for $n \geq 1$.
         \item\label{4.44c} Let $R = \frac{k[X,Y,Z]}{\langle XY-Z^{2} \rangle}$ and $x = \overbar X, y = \overline Y, z = \overbar Z \in R$. Let $\ffp = \langle x, z \rangle$. Claim. $\ffp^{(2)} = \langle x \rangle$. ``$\supseteq$''. Since $y \not \in \ffp$ and $xy = z^{2} \in \ffp^{2}$, we have $x = \frac{x}{1} = \frac{xy}{y} \in (\ffp^{2})_\ffp$ in $R_\ffp$. So $x \in \psi^{-1}(\ffp^{2})_\ffp) = \ffp^{(2)}$. ``$\subseteq$''. Let $a \in \ffp^{(2)}$. Then $a = \frac{a}{1} = \psi(a) \in (\ffp^{2})_\ffp$. So there exists $b \in R \smallsetminus \ffp$ such that $ab \in \ffp^{2} = \langle x^{2},xz,z^{2} \rangle = \langle x^{2}, xz,xy \rangle$. Also, since $b \not \in \langle x \rangle$, $a \in \langle x \rangle$. Hence $\ffp^{(2)} \subseteq \langle x \rangle$. Thus, $\ffp^{(2)} = \langle x \rangle \supsetneq \langle x^{2},xz,xy \rangle = \ffp^{2}$. \par Note a basis for $R$ over $k$ is $\{x^{a}y^{b},x^{a}y^{b}z \mid a,b \geq 0\}$. 
     \end{enumerate}
 \end{example}
 
 \begin{proposition}\label{4.45}
-    If $\ffp \in \operatorname{Spec}(R)$, then $\ffp^{(n)}$ is the ``$\ffp$-primary component'' of $\ffp^{n}$, i.e., if $\ffp^{n}$ has a minimal primary decomposition $\ffp^{n} = \bigcap_{i=1}^{m} \ffq_i$ such that $\ffp_i = \operatorname{rad}(\ffq_i)$ for $i = 1,\cdots,m$, then $\ffp_j = \ffp$ and $\ffq_j = \ffp^{(n)}$ for some $j \in \{1,\cdots,m\}$. 
+    If $\ffp \in \operatorname{Spec}(R)$, then $\ffp^{(n)}$ is the ``$\ffp$-primary component'' of $\ffp^{n}$, i.e., if $\ffp^{n}$ has a minimal primary decomposition $\ffp^{n} = \bigcap_{i=1}^{m} \ffq_i$ such that $\ffp_i = \operatorname{rad}(\ffq_i)$ for $i = 1,\ldots,m$, then $\ffp_j = \ffp$ and $\ffq_j = \ffp^{(n)}$ for some $j \in \{1,\ldots,m\}$. 
 \end{proposition}
 
 \begin{proof}
-    Since $\operatorname{rad}(\ffp^{n}) = \ffp$, $\operatorname{Min}(\ffp^{n}) = \{\ffp\}$. So $\ffp = \operatorname{rad}(\ffq_j) = \ffp_j$ for some $j \in \{1,\cdots,m\}$. Then by the second uniqueness theorem, $\ffq_j = \psi^{-1}((\ffp_j^{n})_{\ffp_j}) = \psi^{-1}((\ffp^{n})_\ffp) = \ffp^{(n)}$.
+    Since $\operatorname{rad}(\ffp^{n}) = \ffp$, $\operatorname{Min}(\ffp^{n}) = \{\ffp\}$. So $\ffp = \operatorname{rad}(\ffq_j) = \ffp_j$ for some $j \in \{1,\ldots,m\}$. Then by the second uniqueness theorem, $\ffq_j = \psi^{-1}((\ffp_j^{n})_{\ffp_j}) = \psi^{-1}((\ffp^{n})_\ffp) = \ffp^{(n)}$.
 \end{proof}
 
 \begin{example}\label{4.46}
@@ -482,7 +491,7 @@ Let $R$ be a nonzero commutative ring with identity.
 \end{example}
 
 \begin{definition}[Calculus content]\label{4.47}
-    Let $R = \bbC[X_1,\cdots,X_d]$ and $\ffp \in \operatorname{Spec}(R)$ (Zariski). 
-    \[\ffp^{(2)} = \left\{f \in \ffp \mathrel{\Big |} \frac{\partial f}{ \partial x_i} \in \ffp,\fa i = 1,\cdots,d\right\},\] 
-    \[\ffp^{(n)} = \left\{f \in \ffp \mathrel{\Big |} \frac{\partial^{i} f}{\partial \underline x} \in \ffp, \text{ all partials of order } i = 1,\cdots,n-1\right\},\fa n \geq 3.\]
+    Let $R = \bbC[X_1,\ldots,X_d]$ and $\ffp \in \operatorname{Spec}(R)$ (Zariski). 
+    \[\ffp^{(2)} = \left\{f \in \ffp \mathrel{\Big |} \frac{\partial f}{ \partial x_i} \in \ffp,\fa i = 1,\ldots,d\right\},\] 
+    \[\ffp^{(n)} = \left\{f \in \ffp \mathrel{\Big |} \frac{\partial^{i} f}{\partial \underline x} \in \ffp, \text{ all partials of order } i = 1,\ldots,n-1\right\},\fa n \geq 3.\]
 \end{definition}
