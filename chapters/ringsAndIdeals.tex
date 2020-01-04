@@ -438,7 +438,9 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\ldots,\ffa_n \leq R$, $S_\lambda \subseteq
         \item [(c)]
             Let $I = \{\sum_{i}^{\text{finite}} a_ib_i \mid a_i \in \ffa,b_i \in \ffb\}$. Check $I \leq R$ through $I \subseteq \ffa \ffb \subseteq I$ like Fact \ref{1.31}\ref{1.31c}.
         \item [(f)]
-            For any $a \in \ffa \leq R$, we have $ab \in \ffa$ for any $b \in \ffb$. For any $b \in \ffb \leq R$, we have $ab \in \ffb$ for any $a \in \ffa$. So $ab \in \ffa \cap \ffb$ for any $a \in \ffa$ and $b \in \ffb$. Hence $\ffa \ffb \subseteq \ffa \cap \ffb$ by Fact \ref{1.12}. \qedhere
+            Method 1. For any $a \in \ffa \leq R$, we have $ab \in \ffa$ for any $b \in \ffb$. For any $b \in \ffb \leq R$, we have $ab \in \ffb$ for any $a \in \ffa$. So $ab \in \ffa \cap \ffb$ for any $a \in \ffa$ and $b \in \ffb$. Hence $\ffa \ffb \subseteq \ffa \cap \ffb$ by Fact \ref{1.12}. \par
+            Method 2. It follows from $\ffa \ffb \subseteq \ffa R = \ffa$ and $\ffa\ffb \subseteq R\ffb = \ffb$.
+            \qedhere
     \end{enumerate}
 \end{proof}
 
@@ -547,7 +549,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\ldots,\ffa_n \leq R$, $S_\lambda \subseteq
 \begin{proposition}\label{1.47}
     Let $\ffa_1,\ldots,\ffa_n \leq R$ and $\ffp \in \operatorname{Spec}(R)$.
     \begin{enumerate}
-        \item\label{1.47a} If $\ffp = \ffa_1 \cdots \ffa_n$, then $\ffp = \ffa_i$ for $i = 1,\dots,n$.
+        \item\label{1.47a} If $\ffp = \ffa_1 \cdots \ffa_n$, then $\ffp = \ffa_i$ for some $i \in \{1,\dots,n\}$.
         \item\label{1.47b} If $\ffp \supseteq \ffa_1 \cap \cdots \cap \ffa_n$, then $\ffp \supseteq \ffa_i$ for some $i \in \{1,\ldots,n\}$.
         \item\label{1.47c} If $\ffp = \ffa_1 \cap \cdots \cap \ffa_n$, then $\ffp = \ffa_i$ for some $i \in \{1,\ldots,n\}$.
     \end{enumerate}
@@ -558,7 +560,7 @@ Let $\ffa,\ffb,\ffc \leq R$, $\ffa_1,\ldots,\ffa_n \leq R$, $S_\lambda \subseteq
         \item [(b)] Assume $\ffp \supseteq \ffa_1 \cap \cdots \cap \ffa_n \supseteq \ffa_1 \cdots \ffa_n$ by Fact~\ref{1.38}\ref{1.38f}. Since $\ffp \in \operatorname{Spec}(R)$, there exists some $i \in \{1,\ldots,n\}$ such that $\ffp \supseteq \ffa_i$. 
         \item[(c)]
             By (b), there exists $i \in \{1,\ldots,n\}$ such that $\ffa_i \subseteq \ffp = \ffa_1 \cap \cdots \cap \ffa_n \subseteq \ffa_i$. So $\ffp = \ffa_i$. 
-        \item[(a)] Note that $\ffp = \ffa_1 \cdots \ffa_n \supseteq \ffa_i$ for $i = 1,\dots,n$. Also, we have $\ffp = \ffa_1 \cdots \ffa_n \subseteq \ffa_1 \cap \cdots \cap \ffa_n$ by Fact~\ref{1.38}\ref{1.38f}. So $\ffp \subseteq \ffa_i$ for $i = 1,\dots,n$. \qedhere
+        \item[(a)] Since $\ffp \supseteq \ffa_1 \cdots \ffa_n$, we have $\ffp \supseteq \ffa_i$ for some $i \in \{1,\dots,n\}$. Also, we have $\ffp = \ffa_1 \cdots \ffa_n \subseteq \ffa_i$. \qedhere
     \end{enumerate}
 \end{proof}
 
